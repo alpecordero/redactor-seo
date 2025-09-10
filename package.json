@@ -4,7 +4,8 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build && tinacms build",
+    "build": "astro build",
+    "build:with-cms": "astro build && tinacms build",
     "preview": "astro preview",
     "astro": "astro",
     "tinacms:dev": "tinacms dev -c \"npm run dev\"",
