@@ -1,0 +1,15 @@
+fragment PostParts on Post {
+  __typename
+  title
+  description
+  pubDate
+  heroImage
+  body
+}
+
+fragment PagesParts on Pages {
+  __typename
+  title
+  description
+  body
+}

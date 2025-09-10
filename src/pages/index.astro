@@ -9,7 +9,12 @@ import Layout from '../layouts/Layout.astro'
       <!-- Main headline -->
       <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-black leading-tight mb-6">
         Creamos contenido<br>
-        <span class="text-teal-500">que convierte</span>
+        <span class="relative inline-block">
+          que convierte
+          <svg class="absolute -bottom-2 left-0 w-full h-3 text-gray-300" viewBox="0 0 300 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 8c20-3 40-6 60-3s40 6 60 3 40-6 60-3 40 6 60 3 40-6 55-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+          </svg>
+        </span>
       </h1>
       
       <!-- Subtitle -->
@@ -22,7 +27,7 @@ import Layout from '../layouts/Layout.astro'
   <!-- Services Preview -->
   <section class="py-20 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center">
+      <div class="text-center animate-on-scroll opacity-0 translate-y-8 transition-all duration-700">
         <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
           Servicios que impulsan tu negocio
         </h2>
@@ -32,7 +37,7 @@ import Layout from '../layouts/Layout.astro'
       </div>
 
       <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-white p-6 rounded-lg border border-gray-200 hover:border-teal-500 transition-colors">
+        <div class="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-100 bg-white p-6 rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
           <div class="w-12 h-12 bg-teal-50 rounded-lg flex items-center justify-center mb-4">
             <svg class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
@@ -44,7 +49,7 @@ import Layout from '../layouts/Layout.astro'
           </p>
         </div>
 
-        <div class="bg-white p-6 rounded-lg border border-gray-200 hover:border-teal-500 transition-colors">
+        <div class="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-200 bg-white p-6 rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
           <div class="w-12 h-12 bg-teal-50 rounded-lg flex items-center justify-center mb-4">
             <svg class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
@@ -56,7 +61,7 @@ import Layout from '../layouts/Layout.astro'
           </p>
         </div>
 
-        <div class="bg-white p-6 rounded-lg border border-gray-200 hover:border-teal-500 transition-colors">
+        <div class="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-300 bg-white p-6 rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
           <div class="w-12 h-12 bg-teal-50 rounded-lg flex items-center justify-center mb-4">
             <svg class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9.5a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path>
@@ -69,10 +74,10 @@ import Layout from '../layouts/Layout.astro'
         </div>
       </div>
 
-      <div class="text-center mt-12">
+      <div class="text-center mt-12 animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-500">
         <a
           href="/servicios"
-          class="inline-flex items-center bg-teal-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-600 transition-colors"
+          class="inline-flex items-center bg-teal-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-600 hover:scale-105 transition-all duration-300"
         >
           Ver todos los servicios
           <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -86,7 +91,7 @@ import Layout from '../layouts/Layout.astro'
   <!-- Stats Section -->
   <section class="py-20 bg-white border-t border-gray-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center">
+      <div class="text-center animate-on-scroll opacity-0 translate-y-8 transition-all duration-700">
         <h2 class="text-3xl md:text-4xl font-bold mb-4 text-black">
           Resultados que hablan por sí solos
         </h2>
@@ -96,16 +101,16 @@ import Layout from '../layouts/Layout.astro'
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-        <div class="p-6">
-          <div class="text-5xl font-bold text-teal-500 mb-2">150%</div>
+        <div class="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-100 p-6 hover:scale-105 transition-transform duration-300">
+          <div class="text-5xl font-bold text-teal-500 mb-2 counter" data-target="150">0%</div>
           <div class="text-xl text-gray-600">Aumento promedio en tráfico orgánico</div>
         </div>
-        <div class="p-6">
-          <div class="text-5xl font-bold text-teal-500 mb-2">50+</div>
+        <div class="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-200 p-6 hover:scale-105 transition-transform duration-300">
+          <div class="text-5xl font-bold text-teal-500 mb-2 counter" data-target="50">0+</div>
           <div class="text-xl text-gray-600">Proyectos completados exitosamente</div>
         </div>
-        <div class="p-6">
-          <div class="text-5xl font-bold text-teal-500 mb-2">95%</div>
+        <div class="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-300 p-6 hover:scale-105 transition-transform duration-300">
+          <div class="text-5xl font-bold text-teal-500 mb-2 counter" data-target="95">0%</div>
           <div class="text-xl text-gray-600">Clientes satisfechos que repiten</div>
         </div>
       </div>
@@ -114,7 +119,7 @@ import Layout from '../layouts/Layout.astro'
 
   <!-- CTA Section -->
   <section class="py-20 bg-black text-white">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-on-scroll opacity-0 translate-y-8 transition-all duration-700">
       <h2 class="text-3xl md:text-4xl font-bold mb-4">
         ¿Listo para hacer crecer tu negocio?
       </h2>
@@ -123,10 +128,58 @@ import Layout from '../layouts/Layout.astro'
       </p>
       <a
         href="/contacto"
-        class="bg-teal-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-teal-600 transition-colors inline-block"
+        class="bg-teal-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-teal-600 hover:scale-105 transition-all duration-300 inline-block"
       >
         Empezar mi proyecto ahora
       </a>
     </div>
   </section>
 </Layout>
+
+<script is:inline>
+  // Intersection Observer para animaciones on scroll - SOLO HOMEPAGE
+  (function() {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove('opacity-0', 'translate-y-8')
+          entry.target.classList.add('opacity-100', 'translate-y-0')
+          
+          // Animar contadores de números
+          if (entry.target.querySelector('.counter')) {
+            const counters = entry.target.querySelectorAll('.counter')
+            counters.forEach(counter => {
+              const target = parseInt(counter.getAttribute('data-target'))
+              const suffix = counter.textContent.includes('%') ? '%' : '+'
+              let count = 0
+              const increment = target / 60
+              
+              const timer = setInterval(() => {
+                count += increment
+                if (count >= target) {
+                  counter.textContent = target + suffix
+                  clearInterval(timer)
+                } else {
+                  counter.textContent = Math.floor(count) + suffix
+                }
+              }, 30)
+            })
+          }
+          
+          observer.unobserve(entry.target)
+        }
+      })
+    }, observerOptions)
+
+    // Observar todos los elementos con la clase animate-on-scroll
+    document.addEventListener('DOMContentLoaded', () => {
+      const animatedElements = document.querySelectorAll('.animate-on-scroll')
+      animatedElements.forEach(el => observer.observe(el))
+    })
+  })()
+</script>
