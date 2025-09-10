@@ -1,43 +1,47 @@
-# Astro Starter Kit: Minimal
+# RedactorSEO
 
-```sh
-npm create astro@latest -- --template minimal
+Sitio web profesional y minimalista para servicios de redacción SEO, construido con Astro.
+
+## 🚀 Estructura del proyecto
+
 ```
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
 /
 ├── public/
 ├── src/
-│   └── pages/
-│       └── index.astro
+│   ├── components/     # Componentes reutilizables
+│   ├── layouts/        # Layouts de página
+│   ├── pages/          # Páginas del sitio
+│   ├── styles/         # Estilos CSS/SCSS
+│   ├── content/blog/   # Contenido del blog
+│   ├── assets/         # Imágenes y recursos
+│   └── utils/          # Utilidades y helpers
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 🧞 Scripts disponibles
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+| Comando           | Acción                                     |
+|:----------------  |:-------------------------------------------|
+| `npm run dev`     | Inicia servidor de desarrollo en `localhost:4321` |
+| `npm run build`   | Construye el sitio para producción en `./dist/` |
+| `npm run preview` | Vista previa local del sitio construido   |
 
-Any static assets, like images, can be placed in the `public/` directory.
+## 📝 Páginas
 
-## 🧞 Commands
+- **Homepage**: Página principal con hero y servicios
+- **Servicios**: Descripción detallada de servicios SEO
+- **Sobre mí**: Información personal y profesional
+- **Portfolio**: Casos de estudio y trabajos realizados
+- **Contacto**: Formulario de contacto
+- **Blog**: Artículos sobre SEO y redacción
 
-All commands are run from the root of the project, from a terminal:
+## 🛠️ Tecnologías
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+- **Astro** - Framework web moderno
+- **Tailwind CSS** - Framework CSS utilitario
+- **Tina CMS** - Sistema de gestión de contenido
+- **TypeScript** - Tipado estático (opcional)
 
-## 👀 Want to learn more?
+## 🚀 Despliegue
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+El sitio se despliega automáticamente en Vercel desde GitHub.
