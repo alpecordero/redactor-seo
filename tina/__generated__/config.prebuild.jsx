@@ -32,7 +32,8 @@ var config_default = defineConfig({
           {
             type: "string",
             name: "description",
-            label: "Descripci\xF3n",
+            label: "Descripci\xF3n SEO",
+            description: "Descripci\xF3n que aparecer\xE1 en Google (m\xE1x. 160 caracteres)",
             required: true
           },
           {
@@ -44,7 +45,21 @@ var config_default = defineConfig({
           {
             type: "image",
             name: "heroImage",
-            label: "Imagen destacada"
+            label: "Imagen destacada",
+            description: "Imagen principal del art\xEDculo (recomendado: 1200x630px)"
+          },
+          {
+            type: "string",
+            name: "tags",
+            label: "Etiquetas",
+            list: true,
+            description: "Palabras clave relevantes para el art\xEDculo"
+          },
+          {
+            type: "string",
+            name: "metaTitle",
+            label: "T\xEDtulo SEO (opcional)",
+            description: "Si no se especifica, se usar\xE1 el t\xEDtulo principal"
           },
           {
             type: "rich-text",

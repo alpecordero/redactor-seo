@@ -13,11 +13,6 @@ const links = {
     { name: 'Portfolio', href: '/portfolio' },
     { name: 'Blog', href: '/blog' },
     { name: 'Contacto', href: '/contacto' },
-  ],
-  social: [
-    { name: 'LinkedIn', href: '#', external: true },
-    { name: 'Twitter', href: '#', external: true },
-    { name: 'Instagram', href: '#', external: true },
   ]
 }
 ---
@@ -31,17 +26,6 @@ const links = {
           <p class="mt-4 text-gray-300 text-base">
             Impulso tu presencia online con contenido optimizado para SEO que atrae, convierte y posiciona tu marca en los primeros resultados.
           </p>
-        </div>
-        <div class="flex space-x-6">
-          {links.social.map((item) => (
-            <a href={item.href} class="text-gray-400 hover:text-gray-300 transition-colors">
-              <span class="sr-only">{item.name}</span>
-              <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                <!-- Icon placeholder -->
-                <circle cx="12" cy="12" r="10"/>
-              </svg>
-            </a>
-          ))}
         </div>
       </div>
       

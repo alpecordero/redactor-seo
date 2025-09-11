@@ -32,7 +32,8 @@ export default defineConfig({
           {
             type: "string",
             name: "description",
-            label: "Descripción",
+            label: "Descripción SEO",
+            description: "Descripción que aparecerá en Google (máx. 160 caracteres)",
             required: true,
           },
           {
@@ -45,6 +46,20 @@ export default defineConfig({
             type: "image",
             name: "heroImage",
             label: "Imagen destacada",
+            description: "Imagen principal del artículo (recomendado: 1200x630px)",
+          },
+          {
+            type: "string",
+            name: "tags",
+            label: "Etiquetas",
+            list: true,
+            description: "Palabras clave relevantes para el artículo",
+          },
+          {
+            type: "string",
+            name: "metaTitle",
+            label: "Título SEO (opcional)",
+            description: "Si no se especifica, se usará el título principal",
           },
           {
             type: "rich-text",

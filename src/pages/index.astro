@@ -4,28 +4,88 @@ import Layout from '../layouts/Layout.astro'
 
 <Layout title="RedactorSEO - Contenido que posiciona y convierte">
   <!-- Hero Section -->
-  <section class="bg-white">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 text-center">
-      <!-- Main headline -->
-      <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-black leading-tight mb-6">
-        Creamos contenido<br>
-        <span class="relative inline-block">
-          que convierte
-          <svg class="absolute -bottom-2 left-0 w-full h-3 text-gray-300" viewBox="0 0 300 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M5 8c20-3 40-6 60-3s40 6 60 3 40-6 60-3 40 6 60 3 40-6 55-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
-          </svg>
-        </span>
-      </h1>
+  <section id="hero" class="relative h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-black text-white overflow-hidden">
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJtMzYgMzRjMC0yIDIwLTIgMjAgMHMtMjAgMi0yMCAweiIvPjwvZz48L2c+PC9zdmc+');"></div>
+    </div>
+    
+    <!-- Floating Elements -->
+    <div class="absolute top-20 left-10 w-20 h-20 bg-blue-500/20 rounded-full blur-xl animate-pulse"></div>
+    <div class="absolute bottom-32 right-16 w-32 h-32 bg-emerald-500/20 rounded-full blur-xl animate-pulse" style="animation-delay: 2s;"></div>
+    <div class="absolute top-1/2 left-1/4 w-16 h-16 bg-purple-500/20 rounded-full blur-xl animate-pulse" style="animation-delay: 4s;"></div>
+    
+    <div class="relative h-full flex flex-col justify-center px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto text-center flex-1 flex flex-col justify-center">
+        
+        <!-- Credencial Superior -->
+        <div class="mb-8 animate-fade-in-up" style="animation-delay: 0.2s;">
+          <span class="inline-flex items-center px-4 py-2 bg-white/10 border border-white/20 rounded-full text-white/80 text-sm font-medium backdrop-blur-sm">
+            <span class="w-2 h-2 bg-white rounded-full mr-2 animate-pulse"></span>
+            #1 en Google • Estrategia SEO desde 2010 • 100% Anti-IA
+          </span>
+        </div>
+        
+        <!-- Main Headline -->
+        <h1 class="text-5xl md:text-7xl lg:text-8xl font-black leading-none mb-8 animate-fade-in-up" style="animation-delay: 0.4s;">
+          <span class="block text-white">
+            Redactor SEO
+          </span>
+          <span class="block text-white/80">Estratega</span>
+        </h1>
+        
+        <!-- Subtitle Power -->
+        <div class="max-w-4xl mx-auto mb-12 animate-fade-in-up" style="animation-delay: 0.6s;">
+          <p class="text-xl md:text-2xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
+            Transformo palabras en <span class="text-white font-semibold">posicionamiento</span> y posicionamiento en <span class="text-white font-semibold">ventas</span>
+          </p>
+        </div>
+        
+        <!-- Social Proof Stats -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12 animate-fade-in-up" style="animation-delay: 0.8s;">
+          <div class="text-center">
+            <div class="text-3xl md:text-4xl font-bold text-white mb-2">+300%</div>
+            <div class="text-sm text-gray-400 uppercase tracking-wider">Más clientes cualificados</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl md:text-4xl font-bold text-white mb-2">TOP 3</div>
+            <div class="text-sm text-gray-400 uppercase tracking-wider">Tráfico de alta calidad</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl md:text-4xl font-bold text-white mb-2">IA+SEO</div>
+            <div class="text-sm text-gray-400 uppercase tracking-wider">Visitas premium optimizadas</div>
+          </div>
+        </div>
+        
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up" style="animation-delay: 1s;">
+          <a href="/contacto" class="px-8 py-4 bg-white text-black rounded-xl font-bold text-lg hover:bg-gray-100 transition-all duration-300">
+            Quiero más clientes
+          </a>
+          
+          <a href="/portfolio" class="px-8 py-4 border-2 border-white/30 rounded-xl font-semibold text-lg hover:bg-white/10 transition-all duration-300 text-white">
+            Ver casos de éxito
+          </a>
+        </div>
+      </div>
       
-      <!-- Subtitle -->
-      <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-        Redacción SEO estratégica que posiciona tu marca y multiplica tus ventas
-      </p>
+      <!-- Scroll Indicator -->
+      <div class="pb-8 flex justify-center">
+        <button 
+          onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})"
+          class="animate-bounce hover:animate-none transition-all duration-300 p-2 rounded-full hover:bg-white/10 group"
+          aria-label="Scroll to next section"
+        >
+          <svg class="w-6 h-6 text-white/80 group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          </svg>
+        </button>
+      </div>
     </div>
   </section>
 
   <!-- Services Preview -->
-  <section class="py-20 bg-gray-50">
+  <section id="services" class="py-20 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center animate-on-scroll opacity-0 translate-y-8 transition-all duration-700">
         <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
@@ -135,6 +195,45 @@ import Layout from '../layouts/Layout.astro'
     </div>
   </section>
 </Layout>
+
+<style>
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .animate-fade-in-up {
+    animation: fade-in-up 1s ease-out forwards;
+    opacity: 0;
+  }
+  
+  .animate-gradient {
+    animation: gradient 3s ease infinite;
+    background-size: 300% 300%;
+  }
+  
+  .bg-300\% {
+    background-size: 300% 300%;
+  }
+</style>
 
 <script is:inline>
   // Intersection Observer para animaciones on scroll - SOLO HOMEPAGE

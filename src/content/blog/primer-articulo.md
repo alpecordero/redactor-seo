@@ -4,10 +4,9 @@ description: >-
   Descubre las técnicas avanzadas para crear contenido que no solo posiciona en
   Google, sino que también convierte visitantes en clientes.
 pubDate: 2024-01-15T00:00:00.000Z
-heroImage: /src/assets/images/botas-futbol-anchas-mizuno.jpg
+heroImage: >-
+  https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=1200&h=630&fit=crop
 ---
-
-# Cómo escribir contenido SEO que realmente convierte
 
 En el mundo digital actual, no basta con crear contenido que posicione bien en Google. El verdadero desafío es crear textos que no solo atraigan tráfico orgánico, sino que también **conviertan visitantes en clientes**.
 

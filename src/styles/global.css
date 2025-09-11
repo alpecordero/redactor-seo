@@ -1,1 +1,198 @@
 @import "tailwindcss";
+
+/* Estilos para el contenido de los artículos del blog */
+.article-content {
+  @apply text-lg leading-relaxed text-gray-700;
+}
+
+/* Títulos principales */
+.article-content h1, .article-content h1[id] {
+  @apply text-4xl font-extrabold text-gray-900 leading-tight mt-12 mb-6 tracking-tight;
+}
+
+.article-content h2, .article-content h2[id] {
+  @apply text-3xl font-bold text-gray-900 leading-snug mt-12 mb-5 tracking-tight;
+}
+
+.article-content h3, .article-content h3[id] {
+  @apply text-2xl font-semibold text-gray-800 leading-normal mt-10 mb-4 tracking-tight;
+}
+
+.article-content h4, .article-content h4[id] {
+  @apply text-xl font-semibold text-gray-700 leading-normal mt-8 mb-3;
+}
+
+.article-content h5, .article-content h5[id] {
+  @apply text-lg font-semibold text-gray-600 leading-normal mt-7 mb-2;
+}
+
+.article-content h6, .article-content h6[id] {
+  @apply text-base font-semibold text-gray-500 leading-normal mt-6 mb-2 uppercase tracking-wide;
+}
+
+/* Párrafos y textos */
+.article-content p {
+  @apply mb-7 leading-relaxed text-justify;
+}
+
+.article-content p:first-child {
+  @apply mt-0 text-lg font-normal text-gray-600 leading-relaxed;
+}
+
+/* Enlaces */
+.article-content a {
+  @apply text-blue-600 font-medium underline decoration-2 underline-offset-2 transition-all duration-200 hover:text-blue-800 hover:decoration-4 hover:underline-offset-4;
+}
+
+/* Énfasis y negritas */
+.article-content strong, .article-content b {
+  @apply font-bold text-gray-900;
+}
+
+.article-content em, .article-content i {
+  @apply italic text-gray-700;
+}
+
+/* Listas */
+.article-content ul, .article-content ol {
+  @apply my-8 pl-6 space-y-3;
+}
+
+.article-content ul {
+  @apply list-none;
+}
+
+.article-content ul li {
+  @apply relative pl-6;
+}
+
+.article-content ul li::before {
+  content: "•";
+  @apply absolute left-0 top-0 text-blue-500 text-xl font-bold;
+}
+
+.article-content ol {
+  @apply list-decimal list-outside;
+}
+
+.article-content ol li {
+  @apply pl-2;
+}
+
+.article-content li > ul, .article-content li > ol {
+  @apply my-2;
+}
+
+/* Citas */
+.article-content blockquote {
+  @apply relative my-10 p-6 bg-gradient-to-r from-blue-50 to-cyan-50 border-l-4 border-sky-500 rounded-lg italic text-lg text-sky-900 shadow-md;
+}
+
+.article-content blockquote::before {
+  content: '"';
+  @apply absolute -top-2 left-4 text-6xl text-sky-500 opacity-30;
+  font-family: Georgia, serif;
+}
+
+.article-content blockquote p {
+  @apply m-0 text-left;
+}
+
+/* Código */
+.article-content code {
+  @apply bg-slate-100 text-rose-600 px-2 py-1 rounded-md text-sm font-medium;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace;
+}
+
+.article-content pre {
+  @apply bg-slate-800 text-slate-200 p-6 rounded-xl my-8 overflow-x-auto shadow-lg;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace;
+  line-height: 1.6;
+}
+
+.article-content pre code {
+  @apply bg-transparent text-inherit p-0 rounded-none text-sm;
+}
+
+/* Imágenes */
+.article-content img {
+  @apply max-w-full h-auto rounded-xl my-10 shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl;
+}
+
+.article-content figure {
+  @apply my-10 text-center;
+}
+
+.article-content figcaption {
+  @apply mt-4 text-sm text-gray-600 italic text-center;
+}
+
+/* Tablas */
+.article-content table {
+  @apply w-full my-10 border-collapse rounded-xl overflow-hidden shadow-md;
+}
+
+.article-content th {
+  @apply bg-gray-800 text-white font-semibold p-4 text-left border-b-2 border-gray-700;
+}
+
+.article-content td {
+  @apply p-3 border-b border-gray-200;
+}
+
+.article-content tr:nth-child(even) {
+  @apply bg-gray-50;
+}
+
+.article-content tr:hover {
+  @apply bg-gray-100;
+}
+
+/* Separadores */
+.article-content hr {
+  @apply my-12 border-none h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent;
+}
+
+/* Espaciado mejorado para elementos consecutivos */
+.article-content h2 + h3 {
+  @apply mt-6;
+}
+
+.article-content h3 + h4 {
+  @apply mt-4;
+}
+
+.article-content h4 + h5 {
+  @apply mt-3;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .article-content {
+    @apply text-base;
+  }
+
+  .article-content h1 {
+    @apply text-3xl;
+  }
+
+  .article-content h2 {
+    @apply text-2xl;
+  }
+
+  .article-content h3 {
+    @apply text-xl;
+  }
+
+  .article-content p:first-child {
+    @apply text-base;
+  }
+
+  .article-content blockquote {
+    @apply p-4 my-8;
+  }
+
+  .article-content img {
+    @apply my-8;
+  }
+}
