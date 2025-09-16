@@ -2,7 +2,6 @@
 const navigation = [
   { name: 'Servicios', href: '/servicios' },
   { name: 'Sobre mí', href: '/sobre-mi' },
-  { name: 'Portfolio', href: '/portfolio' },
   { name: 'Blog', href: '/blog' },
   { name: 'Contacto', href: '/contacto' },
 ]
@@ -12,33 +11,26 @@ const navigation = [
   <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center py-6">
       <div class="flex-shrink-0">
-        <a href="/" class="text-2xl font-bold text-gray-900">
-          RedactorSEO
+        <a href="/" class="flex items-center group">
+          <span class="text-2xl font-display font-semibold text-gray-900 tracking-tight">
+            REDACTOR<span class="font-light">SEO</span>
+          </span>
+          <div class="relative ml-2">
+            <div class="w-2 h-2 bg-naranja-vibrante rounded-full dot-pulse"></div>
+          </div>
         </a>
       </div>
       
       <!-- Desktop Navigation -->
-      <div class="hidden md:block">
-        <div class="ml-10 flex items-baseline space-x-4">
-          {navigation.map((item) => (
-            <a
-              href={item.href}
-              class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium transition-colors"
-            >
-              {item.name}
-            </a>
-          ))}
-        </div>
-      </div>
-      
-      <!-- CTA Button -->
-      <div class="hidden md:block">
-        <a
-          href="/contacto"
-          class="bg-teal-500 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-teal-600 transition-colors"
-        >
-          Cotizar proyecto
-        </a>
+      <div class="hidden md:flex md:ml-auto md:items-baseline md:space-x-4">
+        {navigation.map((item) => (
+          <a
+            href={item.href}
+            class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+          >
+            {item.name}
+          </a>
+        ))}
       </div>
       
       <!-- Mobile menu button -->
@@ -58,7 +50,7 @@ const navigation = [
     <!-- Mobile Navigation -->
     <div class="md:hidden hidden" id="mobile-menu">
       <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-        {navigation.map((item) => (
+        {navigation.slice(0, -1).map((item) => (
           <a
             href={item.href}
             class="text-gray-600 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
@@ -68,9 +60,9 @@ const navigation = [
         ))}
         <a
           href="/contacto"
-          class="bg-teal-500 text-white block px-3 py-2 rounded-md text-base font-medium mt-4"
+          class="bg-naranja-vibrante text-white block px-3 py-2 rounded-md text-base font-body font-bold mt-6 text-center"
         >
-          Cotizar proyecto
+          Contacto
         </a>
       </div>
     </div>

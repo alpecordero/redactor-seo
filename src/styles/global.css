@@ -1,5 +1,59 @@
 @import "tailwindcss";
 
+@theme {
+  --font-body: "Inter", sans-serif;
+  --font-display: "Inter", sans-serif;
+
+  /* Colores corporativos exactos */
+  --azul-profundo: #1a365d;
+  --naranja-vibrante: #ff6b35;
+  --gris-carbon: #2d3748;
+  --gris-suave: #718096;
+  --blanco: #ffffff;
+  --gris-claro: #f7fafc;
+  --negro-profundo: #1a202c;
+}
+
+/* Configuración de fuentes para Tailwind v4 */
+@layer utilities {
+  .font-body { font-family: var(--font-body); }
+  .font-display { font-family: var(--font-display); }
+
+  /* Clases de colores corporativos */
+  .bg-azul-profundo { background-color: var(--azul-profundo); }
+  .bg-naranja-vibrante { background-color: var(--naranja-vibrante); }
+  .bg-gris-carbon { background-color: var(--gris-carbon); }
+  .bg-gris-suave { background-color: var(--gris-suave); }
+  .bg-gris-claro { background-color: var(--gris-claro); }
+  .bg-negro-profundo { background-color: var(--negro-profundo); }
+
+  .text-azul-profundo { color: var(--azul-profundo); }
+  .text-naranja-vibrante { color: var(--naranja-vibrante); }
+  .text-gris-carbon { color: var(--gris-carbon); }
+  .text-gris-suave { color: var(--gris-suave); }
+  .text-negro-profundo { color: var(--negro-profundo); }
+
+  .border-azul-profundo { border-color: var(--azul-profundo); }
+  .border-naranja-vibrante { border-color: var(--naranja-vibrante); }
+  .border-gris-carbon { border-color: var(--gris-carbon); }
+
+  /* Logo dot animation */
+  .dot-pulse {
+    animation: dot-pulse 3s ease-in-out infinite;
+  }
+
+  @keyframes dot-pulse {
+    0%, 80%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    40% {
+      transform: scale(1.2);
+      opacity: 0.8;
+    }
+  }
+}
+
 /* Estilos para el contenido de los artículos del blog */
 .article-content {
   @apply text-lg leading-relaxed text-gray-700;
@@ -7,27 +61,27 @@
 
 /* Títulos principales */
 .article-content h1, .article-content h1[id] {
-  @apply text-4xl font-extrabold text-gray-900 leading-tight mt-12 mb-6 tracking-tight;
+  @apply text-4xl font-display font-bold text-gray-900 leading-tight mt-12 mb-6 tracking-tight;
 }
 
 .article-content h2, .article-content h2[id] {
-  @apply text-3xl font-bold text-gray-900 leading-snug mt-12 mb-5 tracking-tight;
+  @apply text-3xl font-display font-bold text-gray-900 leading-snug mt-12 mb-5 tracking-tight;
 }
 
 .article-content h3, .article-content h3[id] {
-  @apply text-2xl font-semibold text-gray-800 leading-normal mt-10 mb-4 tracking-tight;
+  @apply text-2xl font-display font-bold text-gray-800 leading-normal mt-10 mb-4 tracking-tight;
 }
 
 .article-content h4, .article-content h4[id] {
-  @apply text-xl font-semibold text-gray-700 leading-normal mt-8 mb-3;
+  @apply text-xl font-display font-bold text-gray-700 leading-normal mt-8 mb-3;
 }
 
 .article-content h5, .article-content h5[id] {
-  @apply text-lg font-semibold text-gray-600 leading-normal mt-7 mb-2;
+  @apply text-lg font-display font-bold text-gray-600 leading-normal mt-7 mb-2;
 }
 
 .article-content h6, .article-content h6[id] {
-  @apply text-base font-semibold text-gray-500 leading-normal mt-6 mb-2 uppercase tracking-wide;
+  @apply text-base font-display font-bold text-gray-500 leading-normal mt-6 mb-2 uppercase tracking-wide;
 }
 
 /* Párrafos y textos */
