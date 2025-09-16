@@ -28,5 +28,132 @@
         "solution": "Sin roadmap claro"
       }
     ]
+  },
+  "richText": {
+    "type": "root",
+    "children": [
+      {
+        "type": "h2",
+        "children": [
+          {
+            "type": "text",
+            "text": "Bienvenido a la nueva era del SEO"
+          }
+        ]
+      },
+      {
+        "type": "p",
+        "children": [
+          {
+            "type": "text",
+            "text": "Este es un ejemplo de contenido enriquecido que puedes editar desde Tina CMS. Aquí puedes agregar:"
+          }
+        ]
+      },
+      {
+        "type": "ul",
+        "children": [
+          {
+            "type": "li",
+            "children": [
+              {
+                "type": "text",
+                "text": "Títulos de diferentes niveles (H2, H3, H4)"
+              }
+            ]
+          },
+          {
+            "type": "li",
+            "children": [
+              {
+                "type": "text",
+                "text": "Listas con viñetas como esta"
+              }
+            ]
+          },
+          {
+            "type": "li",
+            "children": [
+              {
+                "type": "text",
+                "text": "Texto en "
+              },
+              {
+                "type": "strong",
+                "children": [
+                  {
+                    "type": "text",
+                    "text": "negrita"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "text": " y "
+              },
+              {
+                "type": "em",
+                "children": [
+                  {
+                    "type": "text",
+                    "text": "cursiva"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "h3",
+        "children": [
+          {
+            "type": "text",
+            "text": "También puedes agregar subtítulos"
+          }
+        ]
+      },
+      {
+        "type": "ol",
+        "children": [
+          {
+            "type": "li",
+            "children": [
+              {
+                "type": "text",
+                "text": "Listas numeradas"
+              }
+            ]
+          },
+          {
+            "type": "li",
+            "children": [
+              {
+                "type": "text",
+                "text": "Con elementos ordenados"
+              }
+            ]
+          },
+          {
+            "type": "li",
+            "children": [
+              {
+                "type": "text",
+                "text": "Para explicar procesos paso a paso"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "p",
+        "children": [
+          {
+            "type": "text",
+            "text": "Puedes editar todo este contenido directamente desde el panel de administración de Tina CMS."
+          }
+        ]
+      }
+    ]
   }
 }

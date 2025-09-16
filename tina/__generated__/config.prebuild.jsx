@@ -17,6 +17,93 @@ var config_default = defineConfig({
   schema: {
     collections: [
       {
+        name: "homepage",
+        label: "Homepage",
+        path: "src/content/homepage",
+        format: "json",
+        ui: {
+          allowedActions: {
+            create: false,
+            delete: false
+          }
+        },
+        match: {
+          include: "index"
+        },
+        fields: [
+          {
+            type: "object",
+            name: "hero",
+            label: "Secci\xF3n Hero",
+            fields: [
+              {
+                type: "string",
+                name: "subtitle",
+                label: "Subt\xEDtulo",
+                required: true
+              },
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo Principal",
+                required: true,
+                ui: {
+                  component: "textarea"
+                }
+              },
+              {
+                type: "string",
+                name: "description",
+                label: "Descripci\xF3n",
+                required: true,
+                ui: {
+                  component: "textarea"
+                }
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "phrases",
+            label: "Secci\xF3n de Frases",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo de la secci\xF3n",
+                required: true
+              },
+              {
+                type: "object",
+                name: "items",
+                label: "Frases",
+                list: true,
+                fields: [
+                  {
+                    type: "string",
+                    name: "problem",
+                    label: "Problema",
+                    required: true
+                  },
+                  {
+                    type: "string",
+                    name: "solution",
+                    label: "Soluci\xF3n",
+                    required: true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: "rich-text",
+            name: "richText",
+            label: "Contenido Enriquecido",
+            description: "Secci\xF3n de texto enriquecido editable con t\xEDtulos, listas y formato"
+          }
+        ]
+      },
+      {
         name: "post",
         label: "Blog Posts",
         path: "src/content/blog",

@@ -14,13 +14,13 @@ const pageDescription = 'Artículos sobre SEO, redacción de contenidos y market
 <Layout title={pageTitle} description={pageDescription}>
   <main class="min-h-screen bg-gray-50">
     <!-- Hero Section -->
-    <section class="bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white py-20">
+    <section class="bg-gradient-to-br from-azul-profundo via-gris-carbon to-negro-profundo text-white py-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center">
-          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            Blog de <span class="text-blue-300">SEO</span>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6">
+            Blog de <span class="text-naranja-vibrante">SEO</span>
           </h1>
-          <p class="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto">
+          <p class="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto">
             {pageDescription}
           </p>
         </div>
@@ -55,7 +55,7 @@ const pageDescription = 'Artículos sobre SEO, redacción de contenidos y market
                   </time>
                 </div>
                 
-                <h2 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">
+                <h2 class="text-xl font-display font-bold text-gray-900 mb-3 group-hover:text-naranja-vibrante transition-colors duration-300">
                   <a href={`/blog/${post.slug}`} class="block">
                     {post.data.title}
                   </a>
@@ -68,7 +68,7 @@ const pageDescription = 'Artículos sobre SEO, redacción de contenidos y market
                 {post.data.tags && post.data.tags.length > 0 && (
                   <div class="flex flex-wrap gap-2 mb-4">
                     {post.data.tags.slice(0, 3).map((tag) => (
-                      <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-medium">
+                      <span class="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded-full font-medium">
                         {tag}
                       </span>
                     ))}
@@ -77,7 +77,7 @@ const pageDescription = 'Artículos sobre SEO, redacción de contenidos y market
                 
                 <a
                   href={`/blog/${post.slug}`}
-                  class="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors duration-300"
+                  class="inline-flex items-center text-naranja-vibrante hover:text-orange-700 font-medium transition-colors duration-300"
                 >
                   Leer artículo
                   <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -101,17 +101,17 @@ const pageDescription = 'Artículos sobre SEO, redacción de contenidos y market
     </section>
 
     <!-- Newsletter CTA -->
-    <section class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-16">
+    <section class="bg-gradient-to-r from-azul-profundo to-negro-profundo text-white py-16">
       <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+        <h2 class="text-3xl md:text-4xl font-display font-bold mb-4">
           ¿Quieres recibir más consejos de SEO?
         </h2>
-        <p class="text-xl text-blue-100 mb-8">
+        <p class="text-xl text-white/80 mb-8">
           Suscríbete a mi newsletter y recibe contenido exclusivo sobre redacción SEO directamente en tu email.
         </p>
         <a
           href="/contacto"
-          class="inline-block bg-white text-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-300 shadow-lg"
+          class="inline-block bg-white text-azul-profundo px-8 py-4 rounded-full font-body font-bold hover:bg-gray-100 transition-colors duration-300 shadow-lg"
         >
           Suscribirme
         </a>

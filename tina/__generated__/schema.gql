@@ -54,6 +54,8 @@ type Query {
   collections: [Collection!]!
   node(id: String): Node!
   document(collection: String, relativePath: String): DocumentNode!
+  homepage(relativePath: String): Homepage!
+  homepageConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: HomepageFilter): HomepageConnection!
   post(relativePath: String): Post!
   postConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: PostFilter): PostConnection!
   pages(relativePath: String): Pages!
@@ -61,6 +63,7 @@ type Query {
 }
 
 input DocumentFilter {
+  homepage: HomepageFilter
   post: PostFilter
   pages: PagesFilter
 }
@@ -88,7 +91,78 @@ type Collection {
   documents(before: String, after: String, first: Float, last: Float, sort: String, filter: DocumentFilter, folder: String): DocumentConnection!
 }
 
-union DocumentNode = Post | Pages | Folder
+union DocumentNode = Homepage | Post | Pages | Folder
+
+type HomepageHero {
+  subtitle: String!
+  title: String!
+  description: String!
+}
+
+type HomepagePhrasesItems {
+  problem: String!
+  solution: String!
+}
+
+type HomepagePhrases {
+  title: String!
+  items: [HomepagePhrasesItems]
+}
+
+type Homepage implements Node & Document {
+  hero: HomepageHero
+  phrases: HomepagePhrases
+  richText: JSON
+  id: ID!
+  _sys: SystemInfo!
+  _values: JSON!
+}
+
+input StringFilter {
+  startsWith: String
+  eq: String
+  exists: Boolean
+  in: [String]
+}
+
+input HomepageHeroFilter {
+  subtitle: StringFilter
+  title: StringFilter
+  description: StringFilter
+}
+
+input HomepagePhrasesItemsFilter {
+  problem: StringFilter
+  solution: StringFilter
+}
+
+input HomepagePhrasesFilter {
+  title: StringFilter
+  items: HomepagePhrasesItemsFilter
+}
+
+input RichTextFilter {
+  startsWith: String
+  eq: String
+  exists: Boolean
+}
+
+input HomepageFilter {
+  hero: HomepageHeroFilter
+  phrases: HomepagePhrasesFilter
+  richText: RichTextFilter
+}
+
+type HomepageConnectionEdges {
+  cursor: String!
+  node: Homepage
+}
+
+type HomepageConnection implements Connection {
+  pageInfo: PageInfo!
+  totalCount: Float!
+  edges: [HomepageConnectionEdges]
+}
 
 type Post implements Node & Document {
   title: String!
@@ -101,13 +175,6 @@ type Post implements Node & Document {
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
-}
-
-input StringFilter {
-  startsWith: String
-  eq: String
-  exists: Boolean
-  in: [String]
 }
 
 input DatetimeFilter {
@@ -123,12 +190,6 @@ input ImageFilter {
   eq: String
   exists: Boolean
   in: [String]
-}
-
-input RichTextFilter {
-  startsWith: String
-  eq: String
-  exists: Boolean
 }
 
 input PostFilter {
@@ -184,6 +245,8 @@ type Mutation {
   deleteDocument(collection: String, relativePath: String!): DocumentNode!
   createDocument(collection: String, relativePath: String!, params: DocumentMutation!): DocumentNode!
   createFolder(collection: String, relativePath: String!): DocumentNode!
+  updateHomepage(relativePath: String!, params: HomepageMutation!): Homepage!
+  createHomepage(relativePath: String!, params: HomepageMutation!): Homepage!
   updatePost(relativePath: String!, params: PostMutation!): Post!
   createPost(relativePath: String!, params: PostMutation!): Post!
   updatePages(relativePath: String!, params: PagesMutation!): Pages!
@@ -191,14 +254,38 @@ type Mutation {
 }
 
 input DocumentUpdateMutation {
+  homepage: HomepageMutation
   post: PostMutation
   pages: PagesMutation
   relativePath: String
 }
 
 input DocumentMutation {
+  homepage: HomepageMutation
   post: PostMutation
   pages: PagesMutation
+}
+
+input HomepageHeroMutation {
+  subtitle: String
+  title: String
+  description: String
+}
+
+input HomepagePhrasesItemsMutation {
+  problem: String
+  solution: String
+}
+
+input HomepagePhrasesMutation {
+  title: String
+  items: [HomepagePhrasesItemsMutation]
+}
+
+input HomepageMutation {
+  hero: HomepageHeroMutation
+  phrases: HomepagePhrasesMutation
+  richText: JSON
 }
 
 input PostMutation {

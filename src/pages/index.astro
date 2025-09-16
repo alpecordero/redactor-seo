@@ -3,11 +3,12 @@ import Layout from '../layouts/Layout.astro'
 import PhrasesSection from '../components/PhrasesSection.astro'
 import PowerfulMessage from '../components/PowerfulMessage.astro'
 import ComparisonSection from '../components/ComparisonSection.astro'
+import RichText from '../components/RichText.astro'
 
 // Import homepage content directly from JSON file for now
 import homepageContent from '../content/homepage/index.json'
 
-const { hero, phrases } = homepageContent
+const { hero, phrases, richText } = homepageContent
 ---
 
 <Layout title="RedactorSEO - Contenido que posiciona y convierte">
@@ -30,12 +31,12 @@ const { hero, phrases } = homepageContent
 
         <!-- Main title with special styling for the humorous message -->
         <div class="mb-12">
-          <h1 class="font-black leading-none tracking-tight">
+          <h1 class="font-bold leading-none tracking-tight">
             <span class="block text-6xl md:text-8xl lg:text-9xl mb-8">
               <span style="color: #4285F4;">G</span><span style="color: #EA4335;">o</span><span style="color: #FBBC04;">o</span><span style="color: #4285F4;">g</span><span style="color: #34A853;">l</span><span style="color: #EA4335;">e</span>
             </span>
             <span class="block text-4xl md:text-5xl lg:text-6xl text-gray-400 font-light tracking-wider mb-8">1995-2025</span>
-            <span class="block text-7xl md:text-9xl lg:text-[10rem] text-white font-black tracking-tighter drop-shadow-2xl">D.E.P</span>
+            <span class="block text-7xl md:text-9xl lg:text-[10rem] text-white font-bold tracking-tighter drop-shadow-2xl">D.E.P</span>
           </h1>
         </div>
 
@@ -51,12 +52,14 @@ const { hero, phrases } = homepageContent
         <div class="flex justify-center mb-16">
           <button
             id="candleButton"
-            class="bg-gradient-to-r from-naranja-vibrante to-orange-600 px-8 py-4 rounded-full text-white font-bold text-lg hover:scale-105 transition-all duration-300 cursor-pointer shadow-2xl hover:shadow-orange-500/25 relative overflow-hidden"
-            onclick="lightCandle()"
+            class="bg-white/10 backdrop-blur-sm border-2 border-white/30 px-8 py-4 rounded-lg text-white font-medium text-lg hover:bg-white/20 hover:border-white/50 transition-all duration-300 cursor-pointer relative group"
           >
-            <span id="candleText">🕯️ Enciende una vela</span>
-            <!-- Candle flame effect (hidden by default) -->
-            <div id="flameEffect" class="absolute inset-0 bg-gradient-to-t from-yellow-400 via-orange-500 to-red-500 opacity-0 rounded-full animate-pulse"></div>
+            <span id="candleText" class="relative z-10 flex items-center gap-2">
+              <span class="candle-emoji">🕯️</span>
+              <span>Enciende una vela</span>
+            </span>
+            <!-- Subtle glow effect on hover -->
+            <div class="absolute inset-0 bg-white/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </button>
         </div>
 
@@ -96,6 +99,9 @@ const { hero, phrases } = homepageContent
       <div class="text-5xl opacity-20">⚰️</div>
     </div>
   </section>
+
+  <!-- Rich Text Section -->
+  <RichText content={richText} />
 
   <!-- Phrases Section -->
   <PhrasesSection
@@ -397,11 +403,21 @@ const { hero, phrases } = homepageContent
       0 0 20px rgba(255, 138, 76, 0.4),
       0 0 40px rgba(255, 138, 76, 0.2);
   }
+
 </style>
 
 <script is:inline>
   // Counter for candle clicks
   let candleClickCount = 0;
+
+  // Wait for DOM to be ready
+  document.addEventListener('DOMContentLoaded', function() {
+    // Ensure the button is clickable
+    const candleButton = document.getElementById('candleButton');
+    if (candleButton) {
+      candleButton.addEventListener('click', lightCandle);
+    }
+  });
 
   // Messages for each click
   const candleMessages = [
@@ -413,22 +429,22 @@ const { hero, phrases } = homepageContent
 
   function lightCandle() {
     const button = document.getElementById('candleButton');
-    const flameEffect = document.getElementById('flameEffect');
+    const candleEmoji = button.querySelector('.candle-emoji');
     const messageDiv = document.getElementById('candleMessage');
     const messageText = document.getElementById('messageText');
 
     // Add shake effect to button
     button.classList.add('animate-shake');
 
-    // Show flame effect
+    // Add temporary glow effect to candle
     if (candleClickCount < 3) {
-      flameEffect.classList.remove('opacity-0');
-      flameEffect.classList.add('opacity-80', 'animate-flame');
+      candleEmoji.style.textShadow = '0 0 20px #ffd700, 0 0 30px #ffa500, 0 0 40px #ff6b35';
+      candleEmoji.style.transform = 'scale(1.2)';
 
-      // Hide flame effect after animation
+      // Remove glow effect after animation
       setTimeout(() => {
-        flameEffect.classList.add('opacity-0');
-        flameEffect.classList.remove('opacity-80', 'animate-flame');
+        candleEmoji.style.textShadow = '';
+        candleEmoji.style.transform = '';
       }, 1000);
     }
 

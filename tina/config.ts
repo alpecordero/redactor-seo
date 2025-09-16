@@ -17,6 +17,93 @@ export default defineConfig({
   schema: {
     collections: [
       {
+        name: "homepage",
+        label: "Homepage",
+        path: "src/content/homepage",
+        format: "json",
+        ui: {
+          allowedActions: {
+            create: false,
+            delete: false,
+          },
+        },
+        match: {
+          include: "index",
+        },
+        fields: [
+          {
+            type: "object",
+            name: "hero",
+            label: "Sección Hero",
+            fields: [
+              {
+                type: "string",
+                name: "subtitle",
+                label: "Subtítulo",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "title",
+                label: "Título Principal",
+                required: true,
+                ui: {
+                  component: "textarea",
+                },
+              },
+              {
+                type: "string",
+                name: "description",
+                label: "Descripción",
+                required: true,
+                ui: {
+                  component: "textarea",
+                },
+              },
+            ],
+          },
+          {
+            type: "object",
+            name: "phrases",
+            label: "Sección de Frases",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "Título de la sección",
+                required: true,
+              },
+              {
+                type: "object",
+                name: "items",
+                label: "Frases",
+                list: true,
+                fields: [
+                  {
+                    type: "string",
+                    name: "problem",
+                    label: "Problema",
+                    required: true,
+                  },
+                  {
+                    type: "string",
+                    name: "solution",
+                    label: "Solución",
+                    required: true,
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            type: "rich-text",
+            name: "richText",
+            label: "Contenido Enriquecido",
+            description: "Sección de texto enriquecido editable con títulos, listas y formato",
+          },
+        ],
+      },
+      {
         name: "post",
         label: "Blog Posts",
         path: "src/content/blog",

@@ -1,3 +1,23 @@
+fragment HomepageParts on Homepage {
+  __typename
+  hero {
+    __typename
+    subtitle
+    title
+    description
+  }
+  phrases {
+    __typename
+    title
+    items {
+      __typename
+      problem
+      solution
+    }
+  }
+  richText
+}
+
 fragment PostParts on Post {
   __typename
   title
