@@ -1,0 +1,34 @@
+---
+interface Props {
+  mainMessage: string;
+  highlightedWords: string[];
+  secondaryMessage: string;
+}
+
+const { mainMessage, highlightedWords, secondaryMessage } = Astro.props;
+
+// Función para destacar palabras específicas
+function highlightWords(text: string, wordsToHighlight: string[]): string {
+  let highlightedText = text;
+  wordsToHighlight.forEach(word => {
+    const regex = new RegExp(`\\b${word}\\b`, 'gi');
+    highlightedText = highlightedText.replace(regex, `<span class="text-naranja-vibrante">${word}</span>`);
+  });
+  return highlightedText;
+}
+
+const processedMainMessage = highlightWords(mainMessage, highlightedWords);
+---
+
+<section class="py-20 bg-azul-profundo">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <div class="text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-relaxed mb-8">
+        <span set:html={processedMainMessage}></span>
+      </div>
+      <div class="text-lg md:text-xl text-blue-200 leading-relaxed">
+        {secondaryMessage}
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,28 @@
+---
+interface Props {
+  title: string;
+  phrases: Array<{
+    problem: string;
+    solution: string;
+  }>;
+}
+
+const { title, phrases } = Astro.props;
+---
+
+<section class="py-20 bg-white">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16">{title}</h2>
+
+    <div class="space-y-8">
+      {phrases.map((phrase) => (
+        <div class="text-center">
+          <p class="text-lg text-gray-600 mb-2">"{phrase.problem}"</p>
+          <p class="text-lg text-gray-900">
+            <span class="text-naranja-vibrante font-medium">→</span> {phrase.solution}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

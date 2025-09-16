@@ -1,0 +1,32 @@
+{
+  "hero": {
+    "subtitle": "Redactor SEO · Estratega de contenidos",
+    "title": "Google \n1995-2025\nD.E.P",
+    "description": "La familia del SEO no te olvida."
+  },
+  "phrases": {
+    "title": "Antes tenías (al menos) cinco problemas:",
+    "items": [
+      {
+        "problem": "Los clientes no entendían lo que ofrecías",
+        "solution": "Vendías "
+      },
+      {
+        "problem": "Los clientes no entienden qué ofrezco",
+        "solution": "Mi competencia me copia"
+      },
+      {
+        "problem": "Escribo mucho pero no veo resultados",
+        "solution": "No sé qué contenido crear"
+      },
+      {
+        "problem": "Ahora tienes exactamente los mismos y uno superior:",
+        "solution": "Google no está. Antes tenías varios problemas. "
+      },
+      {
+        "problem": "No sé qué contenido crear",
+        "solution": "Sin roadmap claro"
+      }
+    ]
+  }
+}
