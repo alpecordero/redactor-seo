@@ -1,256 +1,367 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import PhrasesSection from '../components/PhrasesSection.astro'
-import PowerfulMessage from '../components/PowerfulMessage.astro'
-import ComparisonSection from '../components/ComparisonSection.astro'
-import RichText from '../components/RichText.astro'
 
 // Import homepage content directly from JSON file for now
 import homepageContent from '../content/homepage/index.json'
 
-const { hero, phrases, richText } = homepageContent
+const {
+  hero,
+  googleDeathSection,
+  painPointsSection,
+  transitionMessageSection,
+  bridgeSection,
+  servicesPackagesSection,
+  statsSection,
+  ctaSection
+} = homepageContent
 ---
 
 <Layout title="RedactorSEO - Contenido que posiciona y convierte">
-  <!-- Hero Section -->
-  <section id="hero" class="relative min-h-screen flex items-center bg-gradient-to-br from-slate-900 via-gray-800 to-blue-900 text-white overflow-hidden">
-    <!-- Background Effects -->
+  <!-- Hero Section - Minimalista -->
+  <section id="hero" class="relative min-h-screen flex items-center bg-white overflow-hidden">
+    <!-- Subtle background elements -->
     <div class="absolute inset-0">
-      <!-- Animated grid pattern -->
-      <div class="absolute inset-0 opacity-5" style="background-image: repeating-linear-gradient(90deg, transparent, transparent 98px, rgba(255,255,255,0.03) 100px), repeating-linear-gradient(0deg, transparent, transparent 98px, rgba(255,255,255,0.03) 100px);"></div>
+      <div class="absolute top-20 right-20 w-40 h-40 bg-gray-50 rounded-full -z-10"></div>
+      <div class="absolute bottom-32 left-16 w-24 h-24 bg-naranja-vibrante/5 rounded-full -z-10"></div>
     </div>
 
-    <div class="relative px-4 sm:px-6 lg:px-8 w-full">
-      <div class="max-w-6xl mx-auto text-center">
-        <!-- Subtitle with orange accent -->
-        <div class="mb-8 lg:mb-12 mt-8 lg:mt-16 flex items-center justify-center space-x-3">
-          <div class="h-px bg-gradient-to-r from-transparent via-naranja-vibrante to-transparent flex-1 max-w-24"></div>
-          <p class="text-sm opacity-75 font-medium tracking-wide text-gray-400">{hero.subtitle}</p>
-          <div class="h-px bg-gradient-to-r from-transparent via-naranja-vibrante to-transparent flex-1 max-w-24"></div>
+    <div class="relative px-4 sm:px-6 lg:px-12 xl:px-16 w-full">
+      <div class="max-w-4xl mx-auto text-center">
+        <!-- Subtitle -->
+        <div class="mb-8 lg:mb-12 mt-8 lg:mt-16">
+          <p class="text-sm font-medium tracking-wide text-gray-500 uppercase">{hero.subtitle}</p>
         </div>
 
-        <!-- Main title with special styling for the humorous message -->
+        <!-- Google Memorial Message -->
         <div class="mb-12">
-          <h1 class="font-bold leading-none tracking-tight">
-            <span class="block text-6xl md:text-8xl lg:text-9xl mb-8">
-              <span style="color: #4285F4;">G</span><span style="color: #EA4335;">o</span><span style="color: #FBBC04;">o</span><span style="color: #4285F4;">g</span><span style="color: #34A853;">l</span><span style="color: #EA4335;">e</span>
-            </span>
-            <span class="block text-4xl md:text-5xl lg:text-6xl text-gray-400 font-light tracking-wider mb-8">1995-2025</span>
-            <span class="block text-7xl md:text-9xl lg:text-[10rem] text-white font-bold tracking-tighter drop-shadow-2xl">D.E.P</span>
-          </h1>
+          <div class="max-w-4xl mx-auto text-center">
+            <h1 class="font-bold leading-none tracking-tight">
+              <span class="block text-4xl sm:text-5xl md:text-7xl lg:text-8xl mb-6 sm:mb-8">
+                <span style="color: #4285F4;">G</span><span style="color: #EA4335;">o</span><span style="color: #FBBC04;">o</span><span style="color: #4285F4;">g</span><span style="color: #34A853;">l</span><span style="color: #EA4335;">e</span>
+              </span>
+              <span class="block text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-500 font-light tracking-wider mb-6 sm:mb-8">1995-2025</span>
+              <span class="block text-5xl sm:text-6xl md:text-8xl lg:text-9xl text-gray-900 font-bold tracking-tighter mb-12 sm:mb-16">D.E.P</span>
+            </h1>
+
+          </div>
         </div>
 
-        <!-- Description with enhanced styling -->
-        <div class="mb-16 max-w-2xl mx-auto">
-          <p class="text-lg md:text-xl lg:text-2xl leading-relaxed font-light">
-            <span class="text-gray-400">{hero.description.slice(0, -1)}</span>
-            <span class="text-naranja-vibrante font-medium">.</span>
-          </p>
-        </div>
 
-        <!-- Enhanced CTA with memorial theme -->
-        <div class="flex justify-center mb-16">
+        <!-- Minimalist CTA with memorial theme -->
+        <div class="flex justify-center mb-6 sm:mb-8">
           <button
             id="candleButton"
-            class="bg-white/10 backdrop-blur-sm border-2 border-white/30 px-8 py-4 rounded-lg text-white font-medium text-lg hover:bg-white/20 hover:border-white/50 transition-all duration-300 cursor-pointer relative group"
+            class="bg-gray-900 border-2 border-gray-900 px-8 py-4 rounded-lg text-white font-medium text-lg hover:bg-gray-800 hover:border-gray-800 transition-all duration-300 cursor-pointer relative group shadow-lg"
           >
-            <span id="candleText" class="relative z-10 flex items-center gap-2">
-              <span class="candle-emoji">🕯️</span>
+            <span id="candleText" class="relative z-10">
               <span>Enciende una vela</span>
             </span>
-            <!-- Subtle glow effect on hover -->
-            <div class="absolute inset-0 bg-white/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </button>
+        </div>
+
+        <!-- Counter display -->
+        <div class="mb-4 sm:mb-6">
+          <p id="candleCounter" class="text-gray-600 text-lg flex items-center justify-center gap-2">
+            <span class="candle-emoji">🕯️</span> <span id="counterNumber">0</span> almas han rendido homenaje
+          </p>
         </div>
 
         <!-- Message display area -->
         <div id="candleMessage" class="mb-8 opacity-0 transition-all duration-500 transform translate-y-4">
-          <div class="bg-black/50 backdrop-blur-sm border border-naranja-vibrante/30 rounded-lg px-6 py-4 max-w-md mx-auto">
-            <p id="messageText" class="text-white font-medium text-center"></p>
+          <div class="bg-gray-100 border border-gray-200 rounded-lg px-6 py-4 max-w-md mx-auto shadow-sm">
+            <p id="messageText" class="text-gray-800 font-medium text-center"></p>
           </div>
         </div>
 
-        <!-- Animated scroll indicator -->
-        <div class="flex justify-center mt-8 lg:mt-16 mb-8 lg:mb-16">
-          <button
-            onclick="document.querySelector('.phrases-section, [class*=PhrasesSection]').scrollIntoView({behavior: 'smooth'})"
-            class="group flex flex-col items-center text-gray-400 hover:text-naranja-vibrante transition-all duration-300"
-            aria-label="Ir a la siguiente sección"
-          >
-            <span class="text-sm mb-4 opacity-75 font-medium tracking-wide">Si te sientes preparado para avanzar, avanza</span>
-            <div class="animate-arrow-bounce">
-              <svg class="w-8 h-8 text-naranja-vibrante" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2L12 20M12 20L6 14M12 20L18 14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-          </button>
-        </div>
       </div>
     </div>
 
-    <!-- Floating elements for extra impact -->
-    <div class="absolute top-20 left-10 animate-float">
-      <div class="text-6xl opacity-20">💀</div>
-    </div>
-    <div class="absolute top-32 right-16 animate-float delay-1000">
-      <div class="text-4xl opacity-20">🪦</div>
-    </div>
-    <div class="absolute bottom-32 left-20 animate-float delay-2000">
-      <div class="text-5xl opacity-20">⚰️</div>
+  </section>
+
+  <!-- Google Death Section -->
+  <section class="py-20 md:py-32 lg:py-40 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
+      <div class="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 text-center">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-8">
+          {googleDeathSection.title}
+        </h2>
+        <p class="text-xl text-gray-600 mb-12 leading-relaxed max-w-3xl mx-auto">
+          {googleDeathSection.paragraph}
+        </p>
+
+        <div class="space-y-6 max-w-3xl mx-auto mb-12">
+          {googleDeathSection.checkboxItems.map((item, index) => (
+            <div class={`animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-${(index + 1) * 100} flex items-start space-x-4 text-left`}>
+              <div class="flex-shrink-0 mt-1">
+                <div class="w-6 h-6 bg-naranja-vibrante rounded border-2 border-naranja-vibrante flex items-center justify-center">
+                  <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+              </div>
+              <p class="text-lg text-gray-700 leading-relaxed" set:html={item.text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-naranja-vibrante hover:text-orange-600 underline">$1</a>')} />
+            </div>
+          ))}
+        </div>
+
+        {/* Nueva frase al final */}
+        <div class="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-300">
+          <p class="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto text-center" style="font-weight: 400;">
+            {googleDeathSection.closingPhrase}
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Rich Text Section -->
-  <RichText content={richText} />
-
-  <!-- Phrases Section -->
-  <PhrasesSection
-    title={phrases.title}
-    phrases={phrases.items}
-  />
-
-  <!-- Powerful Message Section -->
-  <PowerfulMessage
-    mainMessage="El mercado está saturado de contenido genérico, la voz única es tu única ventaja competitiva real."
-    highlightedWords={["voz única"]}
-    secondaryMessage="Para conseguirlo necesitas más que redacción SEO. Necesitas estrategia."
-  />
-
-  <!-- Comparison Section -->
-  <ComparisonSection
-    title="Lo que realmente nos diferencia"
-    subtitle="Sin promesas vacías, solo hechos contrastables"
-    leftColumn={{
-      title: "Otros redactores SEO",
-      items: [
-        "Escriben artículos genéricos optimizados",
-        "Se enfocan solo en palabras clave",
-        "Prometen resultados en 30 días",
-        "Cobran por palabra o artículo",
-        "No entienden tu negocio real",
-        "Desaparecen tras entregar"
-      ]
-    }}
-    rightColumn={{
-      title: "Mi enfoque",
-      items: [
-        "Entiendo tu negocio antes que las keywords",
-        "Creo estrategias de contenido completas",
-        "Trabajo contigo 6+ meses (datos reales)",
-        "Cobro por transformación del negocio",
-        "Me involucro en tus objetivos comerciales",
-        "Construyo relaciones a largo plazo"
-      ]
-    }}
-  />
-
-  <!-- Services Preview -->
-  <section id="services" class="py-20 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center animate-on-scroll opacity-0 translate-y-8 transition-all duration-700">
-        <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900">
-          Servicios que impulsan tu negocio
+  <!-- Pain Points Section -->
+  <section class="py-20 md:py-32 lg:py-40 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
+      <div class="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 text-center">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-8">
+          {painPointsSection.title}
         </h2>
-        <p class="mt-4 text-xl text-gray-600 max-w-2xl mx-auto">
-          Cada palabra cuenta. Cada texto está diseñado para posicionar tu marca y convertir visitantes en clientes.
+        <div class="text-xl text-gray-600 mb-12 leading-relaxed max-w-3xl mx-auto">
+          <p>{painPointsSection.subtitleFirstPart}</p>
+        </div>
+
+        <div class="space-y-8 max-w-3xl mx-auto mb-12">
+          {painPointsSection.phrases.map((phrase, index) => (
+            <div class={`animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-${(index + 1) * 100} flex items-center justify-center gap-4`}>
+              <p class="text-lg text-gray-600 flex-1 text-right">{phrase.leftPart}</p>
+              <div class="flex-shrink-0">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-naranja-vibrante">
+                  <path d="M13 7L18 12L13 17M6 12H18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <p class="text-lg text-gray-900 flex-1 text-left font-medium">{phrase.rightPart}</p>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Transition Message Section -->
+  <section class="py-20 md:py-32 lg:py-40 bg-azul-profundo">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
+      <div class="text-center animate-on-scroll opacity-0 translate-y-8 transition-all duration-700">
+        <!-- Quote -->
+        <div class="mb-12 animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-200">
+          <blockquote class="text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-relaxed">
+            {transitionMessageSection.mainText} <span class="text-naranja-vibrante">{transitionMessageSection.highlightedText}</span>
+          </blockquote>
+          <cite class="text-lg text-white font-medium mt-4 block">
+            — {transitionMessageSection.continuationText}
+          </cite>
+        </div>
+        <div class="text-lg md:text-xl text-blue-200 leading-relaxed animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-400">
+          {transitionMessageSection.secondaryText}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bridge Section -->
+  <section class="py-20 md:py-32 lg:py-40 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
+      <div class="text-center animate-on-scroll opacity-0 translate-y-8 transition-all duration-700">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-6">
+          {bridgeSection.title}
+        </h2>
+        <p class="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+          {bridgeSection.paragraph}
         </p>
       </div>
+    </div>
+  </section>
 
-      <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-100 bg-white p-6 rounded-lg border border-gray-200 hover:border-naranja-vibrante hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-          <div class="w-12 h-12 bg-orange-50 rounded-lg flex items-center justify-center mb-4">
-            <svg class="w-6 h-6 text-naranja-vibrante" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold text-black mb-2">Redacción SEO</h3>
-          <p class="text-gray-600">
-            Contenido optimizado para motores de búsqueda que posiciona tu web en los primeros resultados
-          </p>
-        </div>
+  <!-- Services Section -->
+  <section class="py-20 md:py-32 lg:py-40 bg-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
 
-        <div class="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-200 bg-white p-6 rounded-lg border border-gray-200 hover:border-naranja-vibrante hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-          <div class="w-12 h-12 bg-orange-50 rounded-lg flex items-center justify-center mb-4">
-            <svg class="w-6 h-6 text-naranja-vibrante" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold text-black mb-2">Copywriting</h3>
-          <p class="text-gray-600">
-            Textos persuasivos que conectan con tu audiencia y la impulsan a tomar acción
-          </p>
-        </div>
-
-        <div class="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-300 bg-white p-6 rounded-lg border border-gray-200 hover:border-naranja-vibrante hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-          <div class="w-12 h-12 bg-orange-50 rounded-lg flex items-center justify-center mb-4">
-            <svg class="w-6 h-6 text-naranja-vibrante" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9.5a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold text-black mb-2">Blog Posts</h3>
-          <p class="text-gray-600">
-            Artículos informativos y engaging que establecen tu autoridad y atraen tráfico orgánico
+      <!-- Header with Creative Layout -->
+      <div class="text-center mb-20 animate-on-scroll opacity-0 translate-y-8 transition-all duration-700">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4">
+          {servicesPackagesSection.title}
+        </h2>
+        <div class="max-w-2xl mx-auto">
+          <p class="text-xl text-gray-600 leading-relaxed">
+            {servicesPackagesSection.subtitle}
           </p>
         </div>
       </div>
 
-      <div class="text-center mt-12 animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-500">
-        <a
-          href="/servicios"
-          class="inline-flex items-center bg-naranja-vibrante text-white px-6 py-3 rounded-lg font-body font-bold hover:bg-orange-600 hover:scale-105 transition-all duration-300"
-        >
-          Ver todos los servicios
-          <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-          </svg>
-        </a>
+      <!-- Services Flow Layout -->
+      <div class="relative">
+
+        <!-- Service Items with Alternating Positioning -->
+        <div class="space-y-24 lg:space-y-32">
+          {servicesPackagesSection.packages.map((service, index) => {
+            const isEven = index % 2 === 1; // Service 2 (index 1) is featured
+            const buttonClass = index === 1 ? 'bg-naranja-vibrante hover:bg-orange-600' : 'bg-azul-profundo hover:bg-gray-800';
+            const deliverablesList = service.deliverables.join(' • ');
+
+            return (
+              <div class={`animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-${(index + 1) * 200} lg:grid lg:grid-cols-12 lg:gap-8 lg:items-center`}>
+
+                {/* Mobile: Standard Structure */}
+                <div class="lg:hidden mb-8">
+                  <h3 class="text-2xl font-display font-bold text-gray-900 mb-4 text-center">
+                    {service.heading}
+                  </h3>
+
+                  <p class="text-xl text-gray-600 mb-6 leading-relaxed text-center">
+                    {service.description}
+                  </p>
+
+                  <div class="text-base text-gray-500 mb-8 text-center leading-relaxed">
+                    {deliverablesList}
+                  </div>
+
+                  <div class="text-center">
+                    <a
+                      href={service.ctaLink}
+                      class={`${buttonClass} text-white px-8 py-4 rounded-lg text-lg font-body font-bold hover:scale-105 transition-all duration-300 inline-block w-full text-center`}
+                    >
+                      {service.ctaText}
+                    </a>
+                  </div>
+                </div>
+
+                {/* Desktop Layout */}
+                {isEven ? (
+                  // Featured service (right aligned content, CTA first)
+                  <>
+                    <div class="hidden lg:block lg:col-span-4 lg:order-1">
+                      <a
+                        href={service.ctaLink}
+                        class={`${buttonClass} text-white px-8 py-4 rounded-lg text-lg font-body font-bold hover:scale-105 transition-all duration-300 inline-block w-full lg:w-auto text-center`}
+                      >
+                        {service.ctaText}
+                      </a>
+                    </div>
+
+                    <div class="hidden lg:flex lg:col-span-2 lg:order-2 justify-center">
+                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" class="text-naranja-vibrante transform rotate-180">
+                        <path d="M13 7L18 12L13 17M6 12H18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
+
+                    <div class="hidden lg:block lg:col-span-6 lg:order-3 lg:text-left">
+                      <h3 class="text-3xl font-display font-bold text-gray-900 mb-4">
+                        {service.heading}
+                      </h3>
+
+                      <p class="text-xl text-gray-600 mb-6 leading-relaxed">
+                        {service.description}
+                      </p>
+
+                      <div class="text-base text-gray-500 mb-8 leading-relaxed">
+                        {deliverablesList}
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  // Regular services (left aligned content, CTA right)
+                  <>
+                    <div class="hidden lg:block lg:col-span-6 lg:text-right">
+                      <h3 class="text-3xl font-display font-bold text-gray-900 mb-4">
+                        {service.heading}
+                      </h3>
+
+                      <p class="text-xl text-gray-600 mb-6 leading-relaxed">
+                        {service.description}
+                      </p>
+
+                      <div class="text-base text-gray-500 mb-8 leading-relaxed">
+                        {deliverablesList}
+                      </div>
+                    </div>
+
+                    <div class="hidden lg:flex lg:col-span-2 justify-center">
+                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" class="text-naranja-vibrante">
+                        <path d="M13 7L18 12L13 17M6 12H18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
+
+                    <div class="hidden lg:block lg:col-span-4">
+                      <a
+                        href={service.ctaLink}
+                        class={`${buttonClass} text-white px-8 py-4 rounded-lg text-lg font-body font-bold hover:scale-105 transition-all duration-300 inline-block w-full lg:w-auto text-center`}
+                      >
+                        {service.ctaText}
+                      </a>
+                    </div>
+                  </>
+                )}
+              </div>
+            );
+          })}
+        </div>
       </div>
+
+      <!-- Footer with Creative CTA -->
+      <div class="text-center mt-20 animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-600">
+        <div class="max-w-lg mx-auto">
+          <p class="text-gray-600 mb-6 leading-relaxed">
+            {servicesPackagesSection.finalCta.text}
+          </p>
+          <a
+            href={servicesPackagesSection.finalCta.linkUrl}
+            class="text-naranja-vibrante hover:text-orange-600 underline font-medium transition-colors duration-300"
+          >
+            {servicesPackagesSection.finalCta.linkText}
+          </a>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <!-- Stats Section -->
-  <section class="py-20 bg-white border-t border-gray-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section class="py-20 md:py-32 lg:py-40 bg-white border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
       <div class="text-center animate-on-scroll opacity-0 translate-y-8 transition-all duration-700">
         <h2 class="text-3xl md:text-4xl font-display font-bold mb-4 text-black">
-          Resultados que hablan por sí solos
+          {statsSection.title}
         </h2>
         <p class="text-xl text-gray-600 mb-16 max-w-2xl mx-auto">
-          Datos reales de proyectos exitosos que demuestran el impacto del contenido SEO estratégico
+          {statsSection.subtitle}
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-        <div class="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-100 p-6 hover:scale-105 transition-transform duration-300">
-          <div class="text-5xl font-display font-bold text-naranja-vibrante mb-2 counter" data-target="150">0%</div>
-          <div class="text-xl text-gray-600">Aumento promedio en tráfico orgánico</div>
-        </div>
-        <div class="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-200 p-6 hover:scale-105 transition-transform duration-300">
-          <div class="text-5xl font-display font-bold text-naranja-vibrante mb-2 counter" data-target="50">0+</div>
-          <div class="text-xl text-gray-600">Proyectos completados exitosamente</div>
-        </div>
-        <div class="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-300 p-6 hover:scale-105 transition-transform duration-300">
-          <div class="text-5xl font-display font-bold text-naranja-vibrante mb-2 counter" data-target="95">0%</div>
-          <div class="text-xl text-gray-600">Clientes satisfechos que repiten</div>
-        </div>
+        {statsSection.stats.map((stat, index) => (
+          <div class={`animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-${(index + 1) * 100} p-6 hover:scale-105 transition-transform duration-300`}>
+            <div class="text-5xl font-display font-bold text-naranja-vibrante mb-2 counter" data-target={stat.value}>0{stat.suffix}</div>
+            <div class="text-xl text-gray-600">{stat.description}</div>
+          </div>
+        ))}
       </div>
     </div>
   </section>
 
+
+
+
+
   <!-- CTA Section -->
-  <section class="py-20 bg-black text-white">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-on-scroll opacity-0 translate-y-8 transition-all duration-700">
+  <section class="py-20 md:py-32 lg:py-40 bg-black text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 text-center animate-on-scroll opacity-0 translate-y-8 transition-all duration-700">
       <h2 class="text-3xl md:text-4xl font-display font-bold mb-4">
-        ¿Listo para hacer crecer tu negocio?
+        {ctaSection.title}
       </h2>
       <p class="text-xl text-gray-300 mb-10">
-        Conversemos sobre tu proyecto y veamos cómo el contenido SEO puede transformar tu presencia digital
+        {ctaSection.description}
       </p>
       <a
-        href="/contacto"
+        href={ctaSection.buttonLink}
         class="bg-naranja-vibrante text-white px-8 py-4 rounded-lg text-lg font-body font-bold hover:bg-orange-600 hover:scale-105 transition-all duration-300 inline-block"
       >
-        Empezar mi proyecto ahora
+        {ctaSection.buttonText}
       </a>
     </div>
   </section>
@@ -407,11 +518,69 @@ const { hero, phrases, richText } = homepageContent
 </style>
 
 <script is:inline>
-  // Counter for candle clicks
-  let candleClickCount = 0;
+  // Candle messages from content
+  const candleMessages = [
+    "Por repetir la misma palabra clave 147 veces",
+    "Por SEO Yoast",
+    "Por el Page Rank",
+    "Por Matt Cutts (¿sigue vivo?)",
+    "Por los que estudiaron un Máster de SEO",
+    "Por los artículos de 'Las 10 mejores'",
+    "Por las 'Guías definitivas'",
+    "Por Romuald Fons (¿sigue vivo?)",
+    "Por Google+",
+    "Por las agencias SEO que no saben hacer SEO",
+    "Por el fin de una era",
+    "El SEO ha muerto",
+    "Larga vida al SEO",
+    "Ahora importa esto:",
+    "Estrategia. Creatividad. Contenido.",
+    "Resucita tu página web 👇"
+  ];
 
+  // Counter utility functions
+  function getRealisticCount() {
+    const baseCount = 500;
+    const launchDate = new Date('2025-01-01');
+    const daysSinceLaunch = Math.floor((Date.now() - launchDate) / (1000 * 60 * 60 * 24));
+
+    // Deterministic daily growth using date as seed
+    // Each day gets a consistent "random" growth between 5-25 souls
+    let totalGrowth = 0;
+    for (let day = 0; day < daysSinceLaunch; day++) {
+      const dateForDay = new Date(launchDate);
+      dateForDay.setDate(dateForDay.getDate() + day);
+      const seed = dateForDay.getTime();
+      // Simple deterministic "random" function using date seed
+      const pseudoRandom = Math.abs(Math.sin(seed)) * 10000;
+      const dailyGrowth = Math.floor((pseudoRandom % 21)) + 5; // 5-25 range with ±10 margin
+      totalGrowth += dailyGrowth;
+    }
+
+    return baseCount + totalGrowth;
+  }
+
+  function getCounterWithUserClicks() {
+    const realisticCount = getRealisticCount();
+    const currentUserClicks = parseInt(localStorage.getItem('userCandleClicks') || '0');
+    return realisticCount + currentUserClicks;
+  }
+
+  function incrementUserClicks() {
+    const currentUserClicks = parseInt(localStorage.getItem('userCandleClicks') || '0');
+    const newUserClicks = currentUserClicks + 1;
+    localStorage.setItem('userCandleClicks', newUserClicks.toString());
+    return newUserClicks;
+  }
   // Wait for DOM to be ready
   document.addEventListener('DOMContentLoaded', function() {
+    // Initialize counter display with realistic count
+    const counterNumber = document.getElementById('counterNumber');
+    if (counterNumber) {
+      const currentCount = getCounterWithUserClicks();
+      counterNumber.textContent = currentCount.toLocaleString('es-ES'); // Format with Spanish thousand separators (points)
+    }
+
     // Ensure the button is clickable
     const candleButton = document.getElementById('candleButton');
     if (candleButton) {
@@ -419,25 +588,24 @@ const { hero, phrases, richText } = homepageContent
     }
   });
 
-  // Messages for each click
-  const candleMessages = [
-    "Gracias por honrar el recuerdo de Google.",
-    "Su alma viaja más allá de los satélites de SpaceX.",
-    "¿Tanto querías a Google?",
-    "Velas agotadas."
-  ];
+  // Messages for each click - will be loaded from global variable
 
   function lightCandle() {
     const button = document.getElementById('candleButton');
-    const candleEmoji = button.querySelector('.candle-emoji');
+    const candleEmoji = document.querySelector('.candle-emoji'); // Now in the counter
     const messageDiv = document.getElementById('candleMessage');
     const messageText = document.getElementById('messageText');
+    const counterNumber = document.getElementById('counterNumber');
 
     // Add shake effect to button
     button.classList.add('animate-shake');
 
-    // Add temporary glow effect to candle
-    if (candleClickCount < 3) {
+    // Increment user clicks first
+    incrementUserClicks();
+    const userClicks = parseInt(localStorage.getItem('userCandleClicks') || '0');
+
+    // Add temporary glow effect to candle (now in the counter)
+    if (userClicks < 3) {
       candleEmoji.style.textShadow = '0 0 20px #ffd700, 0 0 30px #ffa500, 0 0 40px #ff6b35';
       candleEmoji.style.transform = 'scale(1.2)';
 
@@ -451,9 +619,11 @@ const { hero, phrases, richText } = homepageContent
     // Create sparkles effect
     createSparkles(button);
 
-    // Get message based on click count
-    const messageIndex = Math.min(candleClickCount, candleMessages.length - 1);
-    messageText.textContent = candleMessages[messageIndex];
+    // Get message based on user click count (userClicks is already incremented)
+    const messageIndex = userClicks <= candleMessages.length ? userClicks - 1 : candleMessages.length - 1;
+    if (candleMessages[messageIndex]) {
+      messageText.textContent = candleMessages[messageIndex];
+    }
 
     // Show message with animation
     messageDiv.classList.remove('opacity-0', 'translate-y-4');
@@ -471,7 +641,9 @@ const { hero, phrases, richText } = homepageContent
       button.classList.remove('animate-shake');
     }, 500);
 
-    candleClickCount++;
+    // Update counter display with new realistic total
+    const newTotal = getCounterWithUserClicks();
+    counterNumber.textContent = newTotal.toLocaleString('es-ES');
   }
 
   function createSparkles(element) {

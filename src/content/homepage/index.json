@@ -1,159 +1,154 @@
 {
   "hero": {
-    "subtitle": "Redactor SEO · Estratega de contenidos",
+    "subtitle": "Redactor SEO · Estratega",
     "title": "Google \n1995-2025\nD.E.P",
-    "description": "La familia del SEO no te olvida."
+    "description": "La familia del SEO no te olvida.",
+    "candleMessages": [
+      "Por repetir la misma palabra clave 147 veces",
+      "Por SEO Yoast",
+      "Por el Page Rank",
+      "Por Matt Cutts (¿sigue vivo?)",
+      "Por los que estudiaron un Máster de SEO",
+      "Por los artículos de \"Las 10 mejores\"",
+      "Por las \"Guías definitivas\"",
+      "Por Romuald Fons (¿sigue vivo?)",
+      "Por Google+",
+      "Por las agencias SEO que no saben hacer SEO",
+      "Por el fin de una era",
+      "El SEO ha muerto",
+      "Larga vida al SEO",
+      "Ahora importa esto:",
+      "Estrategia. Creatividad. Contenido.",
+      "Resucita tu página web 👇"
+    ]
   },
-  "phrases": {
-    "title": "Antes tenías (al menos) cinco problemas:",
-    "items": [
+  "googleDeathSection": {
+    "title": "El SEO viejuno no funciona",
+    "paragraph": "La gente se ha modernizado.Tú igual sigues siendo un clásico y has tecleando \"redactor seo\" en Google. Pero tu audiencia ya no busca así:",
+    "checkboxItems": [
       {
-        "problem": "Los clientes no entendían lo que ofrecías",
-        "solution": "Vendías "
+        "text": "El 70% de las búsquedas no salen de Google. [SingleGrain.com](https://www.singlegrain.com/digital-marketing-strategy/how-aeo-can-help-with-zero-click-searches-in-2025/)"
       },
       {
-        "problem": "Los clientes no entienden qué ofrezco",
-        "solution": "Mi competencia me copia"
+        "text": "El 77% usan ChatGPT como motor de búsqueda. [Adobe.com](https://www.adobe.com/express/learn/blog/chatgpt-as-a-search-engine)"
       },
       {
-        "problem": "Escribo mucho pero no veo resultados",
-        "solution": "No sé qué contenido crear"
+        "text": "La IA genera toneladas de contenido genérico cada día."
+      }
+    ],
+    "closingPhrase": "Los redactores y los SEOs de la vieja escuela usan técnicas obsoletas."
+  },
+  "painPointsSection": {
+    "title": "Lo que todo el mundo hace",
+    "subtitleFirstPart": "(Y no funciona)",
+    "phrases": [
+      {
+        "leftPart": "Escribir con ChatGPT Plus",
+        "rightPart": "Las palabras parecen huecas"
       },
       {
-        "problem": "Ahora tienes exactamente los mismos y uno superior:",
-        "solution": "Google no está. Antes tenías varios problemas. "
+        "leftPart": "Poner muchas palabras clave",
+        "rightPart": "El tráfico sigue sin despegar"
       },
       {
-        "problem": "No sé qué contenido crear",
-        "solution": "Sin roadmap claro"
+        "leftPart": "Aplicar fórmulas de gurús",
+        "rightPart": "No funcionan"
+      },
+      {
+        "leftPart": "Copiar a la competencia",
+        "rightPart": "Pierden credibilidad"
+      },
+      {
+        "leftPart": "Tirar de tópicos",
+        "rightPart": "Diluyen su valor"
+      }
+    ],
+    "closingPhrase": "El problema no eres tú, es que lo han diseñado para que des vueltas en círculos."
+  },
+  "transitionMessageSection": {
+    "mainText": "Loco es el que, haciendo siempre lo mismo, espera",
+    "highlightedText": "resultados diferentes",
+    "continuationText": "Albert Einstein",
+    "secondaryText": "Todos los redactores SEO y copywriters hacen lo mismo."
+  },
+  "bridgeSection": {
+    "title": "Por eso trabajo diferente",
+    "paragraph": "Mientras otros copian fórmulas y exprimen los límites de la IA, yo desarrollo estrategias personalizadas para cada marca. Sin plantillas ni fórmulas de vendehúmos. Conexión auténtica con tu público, así funciona el SEO."
+  },
+  "servicesPackagesSection": {
+    "title": "Mi propuesta:",
+    "packages": [
+      {
+        "icon": "🔍",
+        "heading": "¿Por qué no te eligen?",
+        "description": "Tu competencia vende lo mismo que tú, pero ellos facturan más. Te muestro exactamente qué están haciendo diferente y cómo superarlos.",
+        "deliverables": [
+          "Análisis de 5 competidores directos",
+          "Mapa de oportunidades",
+          "Propuesta diferenciada",
+          "Plan de acción inmediato"
+        ],
+        "ctaText": "Descubre tus ventajas ocultas",
+        "ctaLink": "/audit"
+      },
+      {
+        "icon": "✍️",
+        "heading": "Convierto visitas en clientes",
+        "description": "Tu web recibe tráfico pero no vende. Reescribo cada sección para que tus visitantes entiendan tu valor en segundos y actúen de inmediato.",
+        "deliverables": [
+          "Web completa reescrita",
+          "Mensajes optimizado para conversión",
+          "Pautas de marca",
+          "Textos que venden y convencen"
+        ],
+        "ctaText": "Multiplicar mis conversiones",
+        "ctaLink": "/rewrite"
+      },
+      {
+        "icon": "🗺️",
+        "heading": "Sé el referente",
+        "description": "Deja de perseguir clientes. Desarrollo la estrategia para que sean ellos quienes te busquen y te vean como la única opción.",
+        "deliverables": [
+          "Estrategia de autoridad 90 días",
+          "Calendario editorial",
+          "Contenido que genera demanda",
+          "KPIs definidos"
+        ],
+        "ctaText": "Ser la referencia de mi sector",
+        "ctaLink": "/strategy"
+      }
+    ],
+    "finalCta": {
+      "text": "¿No sabes cuál necesitas?",
+      "linkText": "Ver todos los servicios",
+      "linkUrl": "/servicios"
+    }
+  },
+  "statsSection": {
+    "title": "Lo que he conseguido",
+    "subtitle": "Datos que tú mismo podrás contrastar mediante SEO estratégico",
+    "stats": [
+      {
+        "value": 1,
+        "suffix": "\"",
+        "description": "Aumento promedio en tráfico orgánico"
+      },
+      {
+        "value": 50,
+        "suffix": "+",
+        "description": "Proyectos completados exitosamente"
+      },
+      {
+        "value": 95,
+        "suffix": "%",
+        "description": "Clientes satisfechos que repiten"
       }
     ]
   },
-  "richText": {
-    "type": "root",
-    "children": [
-      {
-        "type": "h2",
-        "children": [
-          {
-            "type": "text",
-            "text": "Bienvenido a la nueva era del SEO"
-          }
-        ]
-      },
-      {
-        "type": "p",
-        "children": [
-          {
-            "type": "text",
-            "text": "Este es un ejemplo de contenido enriquecido que puedes editar desde Tina CMS. Aquí puedes agregar:"
-          }
-        ]
-      },
-      {
-        "type": "ul",
-        "children": [
-          {
-            "type": "li",
-            "children": [
-              {
-                "type": "text",
-                "text": "Títulos de diferentes niveles (H2, H3, H4)"
-              }
-            ]
-          },
-          {
-            "type": "li",
-            "children": [
-              {
-                "type": "text",
-                "text": "Listas con viñetas como esta"
-              }
-            ]
-          },
-          {
-            "type": "li",
-            "children": [
-              {
-                "type": "text",
-                "text": "Texto en "
-              },
-              {
-                "type": "strong",
-                "children": [
-                  {
-                    "type": "text",
-                    "text": "negrita"
-                  }
-                ]
-              },
-              {
-                "type": "text",
-                "text": " y "
-              },
-              {
-                "type": "em",
-                "children": [
-                  {
-                    "type": "text",
-                    "text": "cursiva"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "type": "h3",
-        "children": [
-          {
-            "type": "text",
-            "text": "También puedes agregar subtítulos"
-          }
-        ]
-      },
-      {
-        "type": "ol",
-        "children": [
-          {
-            "type": "li",
-            "children": [
-              {
-                "type": "text",
-                "text": "Listas numeradas"
-              }
-            ]
-          },
-          {
-            "type": "li",
-            "children": [
-              {
-                "type": "text",
-                "text": "Con elementos ordenados"
-              }
-            ]
-          },
-          {
-            "type": "li",
-            "children": [
-              {
-                "type": "text",
-                "text": "Para explicar procesos paso a paso"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "type": "p",
-        "children": [
-          {
-            "type": "text",
-            "text": "Puedes editar todo este contenido directamente desde el panel de administración de Tina CMS."
-          }
-        ]
-      }
-    ]
+  "ctaSection": {
+    "title": "¿Listo para hacer crecer tu negocio?",
+    "description": "El mundo está cambiando. La redacción SEO, también.",
+    "buttonText": "Transforma tu proyecto",
+    "buttonLink": "/contacto"
   }
 }
