@@ -7,6 +7,21 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   output: 'static',
   vite: {
-    plugins: [tailwindcss()]
-  }
+    plugins: [tailwindcss()],
+    build: {
+      cssCodeSplit: true,
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            vendor: ['astro']
+          }
+        }
+      }
+    }
+  },
+  build: {
+    assets: '_astro',
+    inlineStylesheets: 'auto'
+  },
+  compressHTML: true
 });
