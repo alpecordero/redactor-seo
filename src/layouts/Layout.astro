@@ -36,49 +36,108 @@ const { title, description = "Servicios profesionales de redacción SEO para imp
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap&subset=latin" rel="stylesheet"></noscript>
     <title>{title}</title>
 
-    <!-- Critical CSS inline for immediate rendering -->
+    <!-- Critical CSS inline for immediate rendering - Comprehensive above-the-fold styles -->
     <style>
-      /* Critical fonts and base styles */
-      html { font-family: ui-sans-serif, system-ui, sans-serif; }
-      body { margin: 0; background: white; }
+      /* Reset and base styles */
+      *,::before,::after{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}
+      ::before,::after{--tw-content:''}
+      html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal}
+      body{margin:0;line-height:inherit;background:white;font-family:Inter,ui-sans-serif,system-ui,sans-serif}
 
-      /* Critical layout styles for above-the-fold content */
-      .hero-critical {
-        position: relative;
-        padding: 5rem 1rem;
-        background: white;
-        text-align: center;
-      }
+      /* Header critical styles */
+      header{background:white;box-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px -1px rgba(0,0,0,.1)}
+      nav{max-width:80rem;margin:0 auto;padding:1.5rem 1rem;display:flex;justify-content:space-between;align-items:center}
+      .logo{display:flex;align-items:center}
+      .nav-links{display:none}
+      @media (min-width:768px){.nav-links{display:flex;space-x:2rem}}
 
-      /* Critical typography for hero */
-      .hero-title {
-        font-weight: 700;
-        line-height: 1;
-        letter-spacing: -0.025em;
-        margin-bottom: 3rem;
-      }
+      /* Hero section critical */
+      #hero{position:relative;padding:4rem 1rem;background:white;overflow:hidden}
+      @media (min-width:768px){#hero{padding:5rem 1rem}}
+      @media (min-width:1024px){#hero{padding:6rem 3rem}}
 
-      /* Critical Google colors */
-      .google-g1 { color: #4285F4; }
-      .google-o1 { color: #EA4335; }
-      .google-o2 { color: #FBBC04; }
-      .google-g2 { color: #4285F4; }
-      .google-l { color: #34A853; }
-      .google-e { color: #EA4335; }
+      /* Background elements */
+      .hero-bg-1{position:absolute;top:5rem;right:5rem;width:10rem;height:10rem;background:#f9fafb;border-radius:50%;z-index:-1}
+      .hero-bg-2{position:absolute;bottom:8rem;left:4rem;width:6rem;height:6rem;background:rgba(229,90,46,0.05);border-radius:50%;z-index:-1}
 
-      /* Critical button styles */
-      .hero-button {
-        background: #1f2937;
-        color: white;
-        padding: 1rem 2rem;
-        border-radius: 0.5rem;
-        border: 2px solid #1f2937;
-        font-weight: 500;
-        font-size: 1.125rem;
-        cursor: pointer;
-        transition: all 0.3s ease;
-      }
+      /* Hero container */
+      .hero-container{position:relative;width:100%;max-width:64rem;margin:0 auto;text-align:center}
+
+      /* Subtitle critical */
+      .hero-subtitle{margin-bottom:1.5rem;margin-top:1rem;text-transform:uppercase;font-size:.875rem;font-weight:500;letter-spacing:.05em;color:#6b7280}
+      @media (min-width:1024px){.hero-subtitle{margin-bottom:2rem;margin-top:2rem}}
+
+      /* Google text critical */
+      .hero-google{display:block;font-size:6rem;margin-bottom:1.5rem;font-weight:700;line-height:1;letter-spacing:-.025em}
+      @media (min-width:640px){.hero-google{font-size:7rem}}
+      @media (min-width:768px){.hero-google{font-size:8rem}}
+      @media (min-width:1024px){.hero-google{font-size:8rem}}
+      @media (min-width:1280px){.hero-google{font-size:9rem}}
+
+      /* Years critical */
+      .hero-years{display:block;font-size:1.125rem;color:#6b7280;font-weight:300;letter-spacing:.05em;margin:1.5rem 0}
+      @media (min-width:640px){.hero-years{font-size:1.25rem}}
+      @media (min-width:768px){.hero-years{font-size:1.5rem}}
+      @media (min-width:1024px){.hero-years{font-size:1.875rem}}
+
+      /* DEP critical */
+      .hero-dep{display:block;font-size:7rem;color:#1f2937;font-weight:700;letter-spacing:-.05em;margin-bottom:2rem;line-height:1}
+      @media (min-width:640px){.hero-dep{font-size:8rem}}
+      @media (min-width:768px){.hero-dep{font-size:9rem}}
+      @media (min-width:1024px){.hero-dep{font-size:9rem;margin-bottom:3rem}}
+      @media (min-width:1280px){.hero-dep{font-size:8rem}}
+
+      /* Google colors critical */
+      .g1{color:#4285F4} .o1{color:#EA4335} .o2{color:#FBBC04} .g2{color:#4285F4} .l{color:#34A853} .e{color:#EA4335}
+
+      /* Button critical */
+      .hero-btn{background:#1f2937;color:white;padding:1rem 2rem;border-radius:.5rem;border:2px solid #1f2937;font-weight:500;font-size:1.125rem;cursor:pointer;display:inline-block;margin:1rem 0;text-decoration:none}
+      .hero-btn:hover{background:#374151;border-color:#374151}
+
+      /* Counter critical */
+      .hero-counter{color:#6b7280;font-size:1.125rem;display:flex;align-items:center;justify-content:center;gap:.5rem;margin:1rem 0}
+
+      /* Utility classes */
+      .relative{position:relative}
+      .absolute{position:absolute}
+      .inset-0{top:0;right:0;bottom:0;left:0}
+      .block{display:block}
+      .flex{display:flex}
+      .items-center{align-items:center}
+      .justify-center{justify-content:center}
+      .text-center{text-align:center}
+      .mx-auto{margin-left:auto;margin-right:auto}
+      .w-full{width:100%}
+      .bg-white{background-color:white}
+      .overflow-hidden{overflow:hidden}
+      .mb-2{margin-bottom:.5rem}
+      .mb-4{margin-bottom:1rem}
+      .mb-6{margin-bottom:1.5rem}
+      .mb-8{margin-bottom:2rem}
+      .gap-2{gap:.5rem}
+      .px-4{padding-left:1rem;padding-right:1rem}
+      .py-16{padding-top:4rem;padding-bottom:4rem}
+      @media (min-width:640px){.sm\\:px-6{padding-left:1.5rem;padding-right:1.5rem}}
+      @media (min-width:768px){.md\\:py-20{padding-top:5rem;padding-bottom:5rem}}
+      @media (min-width:1024px){.lg\\:px-12{padding-left:3rem;padding-right:3rem};.lg\\:py-24{padding-top:6rem;padding-bottom:6rem}}
+      @media (min-width:1280px){.xl\\:px-16{padding-left:4rem;padding-right:4rem}}
+
+      /* Hide non-critical content initially */
+      .lazy-load{opacity:0;visibility:hidden}
     </style>
+
+    <!-- Load main CSS after critical render -->
+    <script>
+      // Load non-critical CSS after page load
+      window.addEventListener('DOMContentLoaded', function() {
+        // Show lazy content immediately since we have critical CSS
+        document.querySelectorAll('.lazy-load').forEach(el => {
+          el.style.opacity = '1';
+          el.style.visibility = 'visible';
+          el.style.transition = 'opacity 0.3s ease';
+        });
+      });
+    </script>
 
 
     <slot name="head" />

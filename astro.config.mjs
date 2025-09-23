@@ -21,7 +21,7 @@ export default defineConfig({
   },
   build: {
     assets: '_astro',
-    inlineStylesheets: 'auto'
+    inlineStylesheets: 'auto' // Let Astro inline small CSS automatically
   },
   compressHTML: true
 });
