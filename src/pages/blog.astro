@@ -14,8 +14,8 @@ const pageDescription = 'Artículos sobre SEO, redacción de contenidos y market
 <Layout title={pageTitle} description={pageDescription}>
   <main class="min-h-screen bg-gray-50">
     <!-- Hero Section -->
-    <section class="bg-gradient-to-br from-azul-profundo via-gris-carbon to-negro-profundo text-white py-20">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section class="bg-gradient-to-br from-azul-profundo via-gris-carbon to-negro-profundo text-white py-20 md:py-32 lg:py-40">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
         <div class="text-center">
           <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6">
             Blog de <span class="text-naranja-vibrante">SEO</span>
@@ -29,7 +29,7 @@ const pageDescription = 'Artículos sobre SEO, redacción de contenidos y market
 
     <!-- Blog Posts Grid -->
     <section class="py-16">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {sortedPosts.map((post) => (
             <article class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 group">
@@ -102,7 +102,7 @@ const pageDescription = 'Artículos sobre SEO, redacción de contenidos y market
 
     <!-- Newsletter CTA -->
     <section class="bg-gradient-to-r from-azul-profundo to-negro-profundo text-white py-16">
-      <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-12 xl:px-16">
         <h2 class="text-3xl md:text-4xl font-display font-bold mb-4">
           ¿Quieres recibir más consejos de SEO?
         </h2>

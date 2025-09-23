@@ -13,6 +13,10 @@ const links = {
     { name: 'Portfolio', href: '/portfolio' },
     { name: 'Blog', href: '/blog' },
     { name: 'Contacto', href: '/contacto' },
+  ],
+  legal: [
+    { name: 'Política de Privacidad', href: '/privacidad' },
+    { name: 'Aviso Legal', href: '/aviso-legal' },
   ]
 }
 ---
@@ -43,11 +47,26 @@ const links = {
               ))}
             </ul>
           </div>
-          
+
           <div class="mt-12 md:mt-0">
             <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Empresa</h3>
             <ul class="mt-4 space-y-4">
               {links.empresa.map((item) => (
+                <li>
+                  <a href={item.href} class="text-base text-gray-300 hover:text-white transition-colors">
+                    {item.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <div class="md:grid md:grid-cols-1 md:gap-8">
+          <div>
+            <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Legal</h3>
+            <ul class="mt-4 space-y-4">
+              {links.legal.map((item) => (
                 <li>
                   <a href={item.href} class="text-base text-gray-300 hover:text-white transition-colors">
                     {item.name}

@@ -5,17 +5,78 @@ fragment HomepageParts on Homepage {
     subtitle
     title
     description
+    candleMessages
   }
-  phrases {
+  googleDeathSection {
     __typename
     title
-    items {
+    paragraph
+    checkboxItems {
       __typename
-      problem
-      solution
+      text
+    }
+    closingPhrase
+  }
+  painPointsSection {
+    __typename
+    title
+    subtitleFirstPart
+    phrases {
+      __typename
+      leftPart
+      rightPart
+    }
+    closingPhrase
+  }
+  transitionMessageSection {
+    __typename
+    mainText
+    highlightedText
+    continuationText
+    secondaryText
+  }
+  bridgeSection {
+    __typename
+    title
+    paragraph
+  }
+  servicesPackagesSection {
+    __typename
+    title
+    packages {
+      __typename
+      icon
+      heading
+      description
+      deliverables
+      ctaText
+      ctaLink
+    }
+    finalCta {
+      __typename
+      text
+      linkText
+      linkUrl
     }
   }
-  richText
+  statsSection {
+    __typename
+    title
+    subtitle
+    stats {
+      __typename
+      value
+      suffix
+      description
+    }
+  }
+  ctaSection {
+    __typename
+    title
+    description
+    buttonText
+    buttonLink
+  }
 }
 
 fragment PostParts on Post {
@@ -33,5 +94,41 @@ fragment PagesParts on Pages {
   __typename
   title
   description
+  subtitle
+  introduction
+  profileImage
+  experienceSection {
+    __typename
+    title
+    subtitle
+    items {
+      __typename
+      icon
+      title
+      description
+    }
+  }
+  valuesSection {
+    __typename
+    title
+    subtitle
+    values {
+      __typename
+      title
+      description
+    }
+  }
+  testimonial {
+    __typename
+    quote
+    author
+    role
+  }
+  ctaSection {
+    __typename
+    title
+    description
+    buttonText
+  }
   body
 }

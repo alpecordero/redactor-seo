@@ -1,0 +1,326 @@
+---
+import Layout from '../layouts/Layout.astro'
+import { getEntry } from 'astro:content'
+
+let entry, Content
+try {
+  entry = await getEntry('pages', 'sobre-mi')
+  if (entry) {
+    const result = await entry.render()
+    Content = result.Content
+  }
+} catch (error) {
+  console.error('Error loading sobre-mi content:', error)
+}
+
+// Valores por defecto si no se puede cargar el contenido
+const defaultData = {
+  title: "Soy Álvaro",
+  subtitle: "Redactor SEO · Estratega de contenidos",
+  introduction: "Transformo ideas en contenido que posiciona, conecta y convierte. Más de 5 años ayudando a empresas a crecer online.",
+  profileImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
+  experienceSection: {
+    title: "Mi experiencia al servicio de tu negocio",
+    subtitle: "Años perfeccionando el arte de crear contenido que realmente funciona",
+    items: [
+      {
+        icon: "🎯",
+        title: "Estrategia SEO",
+        description: "Análisis profundo de keywords, competencia y oportunidades para crear contenido que posicione desde el primer día."
+      },
+      {
+        icon: "✍️",
+        title: "Redacción especializada",
+        description: "Textos que conectan con tu audiencia y transmiten la personalidad única de tu marca con un estilo propio."
+      },
+      {
+        icon: "📈",
+        title: "Resultados medibles",
+        description: "Seguimiento constante de métricas y optimización continua para maximizar el ROI de cada pieza de contenido."
+      },
+      {
+        icon: "🤝",
+        title: "Colaboración estrecha",
+        description: "Trabajo codo a codo contigo para entender tu negocio y crear contenido alineado con tus objetivos."
+      },
+      {
+        icon: "🚀",
+        title: "Proyectos escalables",
+        description: "Estrategias de contenido que crecen con tu negocio y se adaptan a las necesidades del mercado."
+      },
+      {
+        icon: "💡",
+        title: "Innovación constante",
+        description: "Siempre al día con las últimas tendencias en SEO y marketing de contenidos para mantenerte por delante."
+      }
+    ]
+  },
+  valuesSection: {
+    title: "Los principios que guían mi trabajo",
+    subtitle: "Valores que se reflejan en cada proyecto y cada texto que escribo",
+    values: [
+      {
+        title: "Transparencia total",
+        description: "Sin letra pequeña ni promesas vacías. Te explico exactamente qué hago, cómo lo hago y qué resultados puedes esperar."
+      },
+      {
+        title: "Compromiso real",
+        description: "Tu éxito es mi éxito. Me involucro en tu proyecto como si fuera mío y trabajo hasta conseguir los objetivos."
+      },
+      {
+        title: "Calidad sin compromisos",
+        description: "Prefiero hacer menos proyectos pero con la máxima calidad que aceptar cualquier trabajo por volumen."
+      },
+      {
+        title: "Comunicación constante",
+        description: "Informes regulares, feedback continuo y disponibilidad total para resolver cualquier duda o ajuste."
+      }
+    ]
+  },
+  testimonial: {
+    quote: "Álvaro no solo mejoró nuestro posicionamiento, sino que entendió perfectamente nuestro negocio y nos ayudó a comunicar mejor nuestro valor.",
+    author: "María González",
+    role: "CEO, TechStart"
+  },
+  ctaSection: {
+    title: "¿Hablamos de tu proyecto?",
+    description: "Cuéntame qué necesitas y veamos cómo puedo ayudarte a conseguir tus objetivos",
+    buttonText: "Empezar ahora"
+  }
+}
+
+const data = entry?.data || defaultData
+---
+
+<Layout title="Sobre Mí - Álvaro Pérez | Redactor SEO">
+  <!-- Hero Section -->
+  <section class="relative min-h-[70vh] flex items-center bg-gradient-to-br from-slate-900 via-gray-800 to-blue-900 text-white overflow-hidden">
+    <!-- Background Effects -->
+    <div class="absolute inset-0">
+      <div class="absolute inset-0 opacity-5" style="background-image: repeating-linear-gradient(90deg, transparent, transparent 98px, rgba(255,255,255,0.03) 100px), repeating-linear-gradient(0deg, transparent, transparent 98px, rgba(255,255,255,0.03) 100px);"></div>
+    </div>
+
+    <div class="relative px-4 sm:px-6 lg:px-8 w-full">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <!-- Content -->
+          <div>
+            <div class="mb-6 flex items-center space-x-3">
+              <div class="h-px bg-gradient-to-r from-transparent via-naranja-vibrante to-transparent flex-1 max-w-16"></div>
+              <p class="text-sm opacity-75 font-medium tracking-wide text-gray-400">{data.subtitle}</p>
+              <div class="h-px bg-gradient-to-r from-transparent via-naranja-vibrante to-transparent flex-1 max-w-16"></div>
+            </div>
+
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight mb-6">
+              {data.title}
+            </h1>
+
+            <p class="text-xl md:text-2xl leading-relaxed font-light text-gray-300 mb-8">
+              {data.introduction}
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="/contacto" class="bg-naranja-vibrante text-white px-8 py-4 rounded-lg font-bold hover:bg-orange-600 hover:scale-105 transition-all duration-300 text-center">
+                Trabajemos juntos
+              </a>
+              <a href="/portfolio" class="border-2 border-white/30 text-white px-8 py-4 rounded-lg font-medium hover:bg-white/10 hover:border-white/50 transition-all duration-300 text-center">
+                Ver mi trabajo
+              </a>
+            </div>
+          </div>
+
+          <!-- Profile Image -->
+          <div class="flex justify-center lg:justify-end">
+            <div class="relative">
+              <div class="w-80 h-80 rounded-full bg-gradient-to-br from-naranja-vibrante to-orange-600 p-1">
+                <div class="w-full h-full rounded-full bg-gray-800 flex items-center justify-center">
+                  <img src={data.profileImage} alt="Álvaro Pérez" class="w-72 h-72 rounded-full object-cover" />
+                </div>
+              </div>
+              <!-- Floating Elements -->
+              <div class="absolute -top-4 -right-4 w-8 h-8 bg-naranja-vibrante rounded-full animate-pulse"></div>
+              <div class="absolute -bottom-6 -left-6 w-6 h-6 bg-white/20 rounded-full animate-pulse delay-1000"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="prose prose-lg max-w-none">
+        {Content ? <Content /> : (
+          <div>
+            <h2>Mi historia</h2>
+            <p>No siempre me dediqué al SEO. Empecé en el mundo del marketing tradicional, pero pronto me di cuenta de que el futuro estaba online. Me especialicé en marketing digital y, específicamente, en SEO porque me fascinaba la idea de crear contenido que realmente funcionara.</p>
+
+            <h2>Mi enfoque</h2>
+            <p>Creo firmemente que el SEO no es solo una cuestión técnica. Es entender a las personas, sus necesidades, sus miedos y sus deseos. Es crear contenido que no solo posicione en Google, sino que realmente conecte con quien lo lee.</p>
+
+            <h2>Mi compromiso contigo</h2>
+            <p>Si decides trabajar conmigo, no solo tendrás un redactor SEO. Tendrás un socio estratégico que entiende tu negocio, adapta su estilo a tu marca y se compromete con tus objetivos a largo plazo.</p>
+          </div>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience & Skills Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          {data.experienceSection?.title || "Mi experiencia"}
+        </h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          {data.experienceSection?.subtitle || "Años de experiencia en SEO"}
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {(data.experienceSection?.items || []).map((item) => (
+          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+            <div class="w-12 h-12 bg-orange-50 rounded-lg flex items-center justify-center mb-4">
+              <span class="text-2xl">{item.icon}</span>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">{item.title}</h3>
+            <p class="text-gray-600">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Values Section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          {data.valuesSection?.title || "Mis valores"}
+        </h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          {data.valuesSection?.subtitle || "Principios que guían mi trabajo"}
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        {(data.valuesSection?.values || []).map((value) => (
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-8 h-8 bg-naranja-vibrante rounded-full flex items-center justify-center">
+              <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">{value.title}</h3>
+              <p class="text-gray-600">{value.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial Section -->
+  <section class="py-20 bg-gray-900 text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="mb-8">
+        <svg class="w-12 h-12 text-naranja-vibrante mx-auto mb-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
+        </svg>
+        <blockquote class="text-2xl md:text-3xl font-light leading-relaxed mb-6">
+          "{data.testimonial?.quote || 'Excelente trabajo profesional'}"
+        </blockquote>
+        <cite class="text-naranja-vibrante font-medium">
+          {data.testimonial?.author || 'Cliente'} - {data.testimonial?.role || 'Satisfecho'}
+        </cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-naranja-vibrante text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">
+        {data.ctaSection?.title || '¿Hablamos de tu proyecto?'}
+      </h2>
+      <p class="text-xl mb-8 opacity-90">
+        {data.ctaSection?.description || 'Cuéntame qué necesitas y veamos cómo puedo ayudarte'}
+      </p>
+      <a href="/contacto" class="bg-white text-naranja-vibrante px-8 py-4 rounded-lg text-lg font-bold hover:bg-gray-100 hover:scale-105 transition-all duration-300 inline-block">
+        {data.ctaSection?.buttonText || 'Empezar ahora'}
+      </a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .prose h2 {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #111827;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .prose h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .prose p {
+    color: #374151;
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+    font-size: 1.125rem;
+  }
+
+  .prose ul {
+    list-style-type: disc;
+    list-style-position: inside;
+    margin-bottom: 1.5rem;
+    color: #374151;
+  }
+
+  .prose li {
+    margin-bottom: 0.75rem;
+    font-size: 1.125rem;
+  }
+
+  .prose strong {
+    font-weight: 600;
+    color: #111827;
+  }
+
+  .prose blockquote {
+    border-left: 4px solid #ff8a4c;
+    padding-left: 1.5rem;
+    font-style: italic;
+    color: #6b7280;
+    margin: 2rem 0;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0) rotate(0deg);
+    }
+    25% {
+      transform: translateY(-5px) rotate(2deg);
+    }
+    50% {
+      transform: translateY(-10px) rotate(-1deg);
+    }
+    75% {
+      transform: translateY(-5px) rotate(1deg);
+    }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+</style>

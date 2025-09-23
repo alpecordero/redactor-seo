@@ -97,22 +97,93 @@ type HomepageHero {
   subtitle: String!
   title: String!
   description: String!
+  candleMessages: [String!]!
 }
 
-type HomepagePhrasesItems {
-  problem: String!
-  solution: String!
+type HomepageGoogleDeathSectionCheckboxItems {
+  text: String!
 }
 
-type HomepagePhrases {
+type HomepageGoogleDeathSection {
   title: String!
-  items: [HomepagePhrasesItems]
+  paragraph: String!
+  checkboxItems: [HomepageGoogleDeathSectionCheckboxItems]
+  closingPhrase: String!
+}
+
+type HomepagePainPointsSectionPhrases {
+  leftPart: String!
+  rightPart: String!
+}
+
+type HomepagePainPointsSection {
+  title: String!
+  subtitleFirstPart: String!
+  phrases: [HomepagePainPointsSectionPhrases!]!
+  closingPhrase: String!
+}
+
+type HomepageTransitionMessageSection {
+  mainText: String!
+  highlightedText: String!
+  continuationText: String!
+  secondaryText: String!
+}
+
+type HomepageBridgeSection {
+  title: String!
+  paragraph: String!
+}
+
+type HomepageServicesPackagesSectionPackages {
+  icon: String!
+  heading: String!
+  description: String!
+  deliverables: [String!]!
+  ctaText: String!
+  ctaLink: String!
+}
+
+type HomepageServicesPackagesSectionFinalCta {
+  text: String!
+  linkText: String!
+  linkUrl: String!
+}
+
+type HomepageServicesPackagesSection {
+  title: String!
+  packages: [HomepageServicesPackagesSectionPackages]
+  finalCta: HomepageServicesPackagesSectionFinalCta
+}
+
+type HomepageStatsSectionStats {
+  value: Float!
+  suffix: String!
+  description: String!
+}
+
+type HomepageStatsSection {
+  title: String!
+  subtitle: String!
+  stats: [HomepageStatsSectionStats]
+}
+
+type HomepageCtaSection {
+  title: String!
+  description: String!
+  buttonText: String!
+  buttonLink: String!
 }
 
 type Homepage implements Node & Document {
   hero: HomepageHero
-  phrases: HomepagePhrases
-  richText: JSON
+  googleDeathSection: HomepageGoogleDeathSection
+  painPointsSection: HomepagePainPointsSection
+  transitionMessageSection: HomepageTransitionMessageSection
+  bridgeSection: HomepageBridgeSection
+  servicesPackagesSection: HomepageServicesPackagesSection
+  statsSection: HomepageStatsSection
+  ctaSection: HomepageCtaSection
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
@@ -129,28 +200,103 @@ input HomepageHeroFilter {
   subtitle: StringFilter
   title: StringFilter
   description: StringFilter
+  candleMessages: StringFilter
 }
 
-input HomepagePhrasesItemsFilter {
-  problem: StringFilter
-  solution: StringFilter
+input HomepageGoogleDeathSectionCheckboxItemsFilter {
+  text: StringFilter
 }
 
-input HomepagePhrasesFilter {
+input HomepageGoogleDeathSectionFilter {
   title: StringFilter
-  items: HomepagePhrasesItemsFilter
+  paragraph: StringFilter
+  checkboxItems: HomepageGoogleDeathSectionCheckboxItemsFilter
+  closingPhrase: StringFilter
 }
 
-input RichTextFilter {
-  startsWith: String
-  eq: String
+input HomepagePainPointsSectionPhrasesFilter {
+  leftPart: StringFilter
+  rightPart: StringFilter
+}
+
+input HomepagePainPointsSectionFilter {
+  title: StringFilter
+  subtitleFirstPart: StringFilter
+  phrases: HomepagePainPointsSectionPhrasesFilter
+  closingPhrase: StringFilter
+}
+
+input HomepageTransitionMessageSectionFilter {
+  mainText: StringFilter
+  highlightedText: StringFilter
+  continuationText: StringFilter
+  secondaryText: StringFilter
+}
+
+input HomepageBridgeSectionFilter {
+  title: StringFilter
+  paragraph: StringFilter
+}
+
+input HomepageServicesPackagesSectionPackagesFilter {
+  icon: StringFilter
+  heading: StringFilter
+  description: StringFilter
+  deliverables: StringFilter
+  ctaText: StringFilter
+  ctaLink: StringFilter
+}
+
+input HomepageServicesPackagesSectionFinalCtaFilter {
+  text: StringFilter
+  linkText: StringFilter
+  linkUrl: StringFilter
+}
+
+input HomepageServicesPackagesSectionFilter {
+  title: StringFilter
+  packages: HomepageServicesPackagesSectionPackagesFilter
+  finalCta: HomepageServicesPackagesSectionFinalCtaFilter
+}
+
+input NumberFilter {
+  lt: Float
+  lte: Float
+  gte: Float
+  gt: Float
+  eq: Float
   exists: Boolean
+  in: [Float]
+}
+
+input HomepageStatsSectionStatsFilter {
+  value: NumberFilter
+  suffix: StringFilter
+  description: StringFilter
+}
+
+input HomepageStatsSectionFilter {
+  title: StringFilter
+  subtitle: StringFilter
+  stats: HomepageStatsSectionStatsFilter
+}
+
+input HomepageCtaSectionFilter {
+  title: StringFilter
+  description: StringFilter
+  buttonText: StringFilter
+  buttonLink: StringFilter
 }
 
 input HomepageFilter {
   hero: HomepageHeroFilter
-  phrases: HomepagePhrasesFilter
-  richText: RichTextFilter
+  googleDeathSection: HomepageGoogleDeathSectionFilter
+  painPointsSection: HomepagePainPointsSectionFilter
+  transitionMessageSection: HomepageTransitionMessageSectionFilter
+  bridgeSection: HomepageBridgeSectionFilter
+  servicesPackagesSection: HomepageServicesPackagesSectionFilter
+  statsSection: HomepageStatsSectionFilter
+  ctaSection: HomepageCtaSectionFilter
 }
 
 type HomepageConnectionEdges {
@@ -192,6 +338,12 @@ input ImageFilter {
   in: [String]
 }
 
+input RichTextFilter {
+  startsWith: String
+  eq: String
+  exists: Boolean
+}
+
 input PostFilter {
   title: StringFilter
   description: StringFilter
@@ -213,18 +365,102 @@ type PostConnection implements Connection {
   edges: [PostConnectionEdges]
 }
 
+type PagesExperienceSectionItems {
+  icon: String
+  title: String
+  description: String
+}
+
+type PagesExperienceSection {
+  title: String
+  subtitle: String
+  items: [PagesExperienceSectionItems]
+}
+
+type PagesValuesSectionValues {
+  title: String
+  description: String
+}
+
+type PagesValuesSection {
+  title: String
+  subtitle: String
+  values: [PagesValuesSectionValues]
+}
+
+type PagesTestimonial {
+  quote: String
+  author: String
+  role: String
+}
+
+type PagesCtaSection {
+  title: String
+  description: String
+  buttonText: String
+}
+
 type Pages implements Node & Document {
   title: String!
   description: String
+  subtitle: String
+  introduction: String
+  profileImage: String
+  experienceSection: PagesExperienceSection
+  valuesSection: PagesValuesSection
+  testimonial: PagesTestimonial
+  ctaSection: PagesCtaSection
   body: JSON
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
 }
 
+input PagesExperienceSectionItemsFilter {
+  icon: StringFilter
+  title: StringFilter
+  description: StringFilter
+}
+
+input PagesExperienceSectionFilter {
+  title: StringFilter
+  subtitle: StringFilter
+  items: PagesExperienceSectionItemsFilter
+}
+
+input PagesValuesSectionValuesFilter {
+  title: StringFilter
+  description: StringFilter
+}
+
+input PagesValuesSectionFilter {
+  title: StringFilter
+  subtitle: StringFilter
+  values: PagesValuesSectionValuesFilter
+}
+
+input PagesTestimonialFilter {
+  quote: StringFilter
+  author: StringFilter
+  role: StringFilter
+}
+
+input PagesCtaSectionFilter {
+  title: StringFilter
+  description: StringFilter
+  buttonText: StringFilter
+}
+
 input PagesFilter {
   title: StringFilter
   description: StringFilter
+  subtitle: StringFilter
+  introduction: StringFilter
+  profileImage: ImageFilter
+  experienceSection: PagesExperienceSectionFilter
+  valuesSection: PagesValuesSectionFilter
+  testimonial: PagesTestimonialFilter
+  ctaSection: PagesCtaSectionFilter
   body: RichTextFilter
 }
 
@@ -270,22 +506,93 @@ input HomepageHeroMutation {
   subtitle: String
   title: String
   description: String
+  candleMessages: [String]
 }
 
-input HomepagePhrasesItemsMutation {
-  problem: String
-  solution: String
+input HomepageGoogleDeathSectionCheckboxItemsMutation {
+  text: String
 }
 
-input HomepagePhrasesMutation {
+input HomepageGoogleDeathSectionMutation {
   title: String
-  items: [HomepagePhrasesItemsMutation]
+  paragraph: String
+  checkboxItems: [HomepageGoogleDeathSectionCheckboxItemsMutation]
+  closingPhrase: String
+}
+
+input HomepagePainPointsSectionPhrasesMutation {
+  leftPart: String
+  rightPart: String
+}
+
+input HomepagePainPointsSectionMutation {
+  title: String
+  subtitleFirstPart: String
+  phrases: [HomepagePainPointsSectionPhrasesMutation]
+  closingPhrase: String
+}
+
+input HomepageTransitionMessageSectionMutation {
+  mainText: String
+  highlightedText: String
+  continuationText: String
+  secondaryText: String
+}
+
+input HomepageBridgeSectionMutation {
+  title: String
+  paragraph: String
+}
+
+input HomepageServicesPackagesSectionPackagesMutation {
+  icon: String
+  heading: String
+  description: String
+  deliverables: [String]
+  ctaText: String
+  ctaLink: String
+}
+
+input HomepageServicesPackagesSectionFinalCtaMutation {
+  text: String
+  linkText: String
+  linkUrl: String
+}
+
+input HomepageServicesPackagesSectionMutation {
+  title: String
+  packages: [HomepageServicesPackagesSectionPackagesMutation]
+  finalCta: HomepageServicesPackagesSectionFinalCtaMutation
+}
+
+input HomepageStatsSectionStatsMutation {
+  value: Float
+  suffix: String
+  description: String
+}
+
+input HomepageStatsSectionMutation {
+  title: String
+  subtitle: String
+  stats: [HomepageStatsSectionStatsMutation]
+}
+
+input HomepageCtaSectionMutation {
+  title: String
+  description: String
+  buttonText: String
+  buttonLink: String
 }
 
 input HomepageMutation {
   hero: HomepageHeroMutation
-  phrases: HomepagePhrasesMutation
-  richText: JSON
+  googleDeathSection: HomepageGoogleDeathSectionMutation
+  painPointsSection: HomepagePainPointsSectionMutation
+  transitionMessageSection: HomepageTransitionMessageSectionMutation
+  bridgeSection: HomepageBridgeSectionMutation
+  servicesPackagesSection: HomepageServicesPackagesSectionMutation
+  statsSection: HomepageStatsSectionMutation
+  ctaSection: HomepageCtaSectionMutation
 }
 
 input PostMutation {
@@ -298,9 +605,51 @@ input PostMutation {
   body: JSON
 }
 
+input PagesExperienceSectionItemsMutation {
+  icon: String
+  title: String
+  description: String
+}
+
+input PagesExperienceSectionMutation {
+  title: String
+  subtitle: String
+  items: [PagesExperienceSectionItemsMutation]
+}
+
+input PagesValuesSectionValuesMutation {
+  title: String
+  description: String
+}
+
+input PagesValuesSectionMutation {
+  title: String
+  subtitle: String
+  values: [PagesValuesSectionValuesMutation]
+}
+
+input PagesTestimonialMutation {
+  quote: String
+  author: String
+  role: String
+}
+
+input PagesCtaSectionMutation {
+  title: String
+  description: String
+  buttonText: String
+}
+
 input PagesMutation {
   title: String
   description: String
+  subtitle: String
+  introduction: String
+  profileImage: String
+  experienceSection: PagesExperienceSectionMutation
+  valuesSection: PagesValuesSectionMutation
+  testimonial: PagesTestimonialMutation
+  ctaSection: PagesCtaSectionMutation
   body: JSON
 }
 
