@@ -1,0 +1,129 @@
+{
+  "seo": {
+    "title": "Auditoría de Contenido - RedactorSEO",
+    "description": "La mayoría de tus clientes no te entienden. Por eso te compran menos. En esta auditoría te digo dónde está el error y cómo solucionarlo paso a paso."
+  },
+  "hero": {
+    "subtitle": "AUDITORÍA DE CONTENIDO",
+    "titlePart1": "Vendes un 2%",
+    "titlePart2": "Auméntalo al 8%",
+    "description": "La mayoría de tus clientes no te entienden. Por eso te compran menos. En esta auditoría te digo dónde está el error y cómo solucionarlo paso a paso.",
+    "ctaText": "Quiero que me entiendan",
+    "ctaLink": "/contacto"
+  },
+  "problemsSection": {
+    "title": "¿Te identificas?",
+    "subtitle": "(problemas que veo cada día)",
+    "problems": [
+      {
+        "problem": "Tengo visitas pero pocas consultas",
+        "consequence": "Algo falla, pero ¿qué?"
+      },
+      {
+        "problem": "Mi web no explica bien lo que hago",
+        "consequence": "Mensaje confuso"
+      },
+      {
+        "problem": "La competencia me está ganando",
+        "consequence": "Falta diferenciación"
+      },
+      {
+        "problem": "Invierto en marketing sin resultados",
+        "consequence": "El problema no es el tráfico"
+      }
+    ],
+    "closingText": "Sin un diagnóstico claro, seguirás **gastando tiempo y dinero** sin saber qué está fallando."
+  },
+  "approachSection": {
+    "title": "Mi enfoque es diferente",
+    "points": [
+      {
+        "title": "No es una auditoría técnica",
+        "description": "Analizo **por qué** tu web no convierte. El problema no suele ser técnico, es de comunicación."
+      },
+      {
+        "title": "Te doy soluciones concretas",
+        "description": "No una lista de problemas. Un **plan paso a paso** que tu equipo puede implementar sin programador."
+      },
+      {
+        "title": "Pongo ejemplos específicos",
+        "description": "Te muestro **exactamente cómo** cambiar cada sección con referencias reales y mejores prácticas."
+      }
+    ],
+    "conclusion": "Resultado: claridad total sobre qué cambiar y cómo hacerlo."
+  },
+  "testimonialsSection": {
+    "title": "Casos de éxito",
+    "testimonials": [
+      {
+        "quote": "La auditoría me ayudó a identificar por qué mi web no convertía. Con el plan de acción, mi equipo supo exactamente qué cambiar. Resultados en 15 días.",
+        "author": "María González, Consultoría RRHH"
+      },
+      {
+        "quote": "Por fin entendí qué estaba fallando en mi web. El plan era tan claro que mi programador lo implementó en una semana. Los resultados llegaron al mes.",
+        "author": "Carlos Ruiz, Agencia de Marketing"
+      }
+    ]
+  },
+  "pricingSection": {
+    "title": "¿Cuánto cuesta descubrir qué está fallando?",
+    "subtitle": "Una auditoría completa que te ahorre meses de prueba y error",
+    "price": "599",
+    "currency": "€",
+    "priceDescription": "Auditoría de contenido completa + Plan de acción",
+    "includes": [
+      "Análisis técnico completo de tu web (SEO, UX, conversión)",
+      "Identificación de los 5-10 problemas críticos que frenan conversiones",
+      "Plan de acción paso a paso con prioridades",
+      "Recomendaciones específicas de copy y estructura",
+      "Hoja de ruta de optimización para 90 días",
+      "1 sesión de consultoría para resolver dudas"
+    ],
+    "delivery": "7 días laborables",
+    "format": "Documento PDF ejecutivo + vídeo explicativo",
+    "ctaText": "Solicitar mi auditoría →",
+    "ctaLink": "/contacto"
+  },
+  "faqSection": {
+    "title": "Preguntas frecuentes",
+    "questions": [
+      {
+        "question": "¿Y si mi web ya está bien y el problema es otro?",
+        "answer": "Mi trabajo es identificar exactamente qué falla. Si tras la auditoría no encuentro problemas claros o mejoras útiles, **te devuelvo el 100% del dinero.**"
+      },
+      {
+        "question": "599€ parece caro para una auditoría",
+        "answer": "No es solo una auditoría. Es un diagnóstico completo + plan de acción detallado + sesión personalizada. Una consultoría estratégica similar cuesta €3,000+ en agencias. Aquí tienes **claridad total por menos de la mitad.**"
+      },
+      {
+        "question": "No tengo equipo técnico para implementar",
+        "answer": "El plan incluye instrucciones claras que cualquier persona puede seguir. También puedes **contratarme para implementarlo** o dárselo a tu diseñador/programador habitual."
+      },
+      {
+        "question": "Mi sector es muy específico/técnico",
+        "answer": "Mejor aún. Los sectores técnicos suelen tener los problemas de comunicación más graves. Es donde más impacto tienen las mejoras. **He auditado desde software B2B hasta clínicas dentales.**"
+      }
+    ]
+  },
+  "finalCtaSection": {
+    "guaranteeEmoji": "💯",
+    "guaranteeTitle": "Garantía Total de Satisfacción",
+    "guaranteeDescription": "Si después de recibir la auditoría no identifico problemas claros o no encuentras valor en el diagnóstico, **te devuelvo el 100% de tu dinero.** Sin preguntas.",
+    "title": "Todo lo que necesitas para solucionar tu web:",
+    "features": [
+      "Diagnóstico completo de tu web",
+      "Análisis de competencia",
+      "Plan de acción detallado",
+      "Priorización por impacto",
+      "Ejemplos concretos",
+      "Sesión follow-up de 30 minutos",
+      "Garantía 100% satisfacción"
+    ],
+    "price": "599",
+    "currency": "€",
+    "priceNote": "(Entrega garantizada en 7 días laborables)",
+    "ctaText": "SÍ, quiero saber qué falla en mi web →",
+    "ctaLink": "/contacto",
+    "securityNote": "Pago seguro. Factura incluida. Garantía total."
+  }
+}

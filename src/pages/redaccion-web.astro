@@ -1,0 +1,265 @@
+---
+import Layout from '../layouts/Layout.astro'
+
+// Import redaccion-web content from JSON file
+import redaccionContent from '../content/redaccion-web/index.json'
+
+const {
+  hero,
+  problemsSection,
+  approachSection,
+  testimonialsSection,
+  pricingSection,
+  faqSection,
+  finalCtaSection
+} = redaccionContent
+---
+
+<Layout title={redaccionContent.seo.title} description={redaccionContent.seo.description}>
+  <!-- SECCIÓN 1: Hero Hook -->
+  <section class="relative py-16 md:py-20 lg:py-24 bg-white overflow-hidden">
+    <!-- Subtle background elements -->
+    <div class="absolute inset-0">
+      <div class="absolute top-20 right-20 w-32 h-32 bg-gray-50 rounded-full -z-10"></div>
+      <div class="absolute bottom-32 left-16 w-20 h-20 bg-naranja-vibrante/5 rounded-full -z-10"></div>
+    </div>
+
+    <div class="relative px-4 sm:px-6 lg:px-12 xl:px-16 w-full">
+      <div class="max-w-3xl mx-auto text-center">
+        <!-- Subtitle -->
+        <div class="mb-8 lg:mb-12">
+          <p class="text-sm font-medium tracking-wide text-gray-500 uppercase">{hero.subtitle}</p>
+        </div>
+
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-8 lg:mb-12">
+          {hero.titlePart1}
+          <span class="block text-naranja-vibrante mt-4">{hero.titlePart2}</span>
+        </h1>
+
+        <p class="text-xl md:text-2xl text-gray-600 leading-relaxed mb-12 lg:mb-16 max-w-2xl mx-auto">
+          {hero.description}
+        </p>
+
+        <a href={hero.ctaLink} class="bg-azul-profundo text-white px-10 py-5 rounded-lg text-xl font-bold hover:bg-gray-800 hover:scale-105 transition-all duration-300 inline-block shadow-lg">
+          {hero.ctaText}
+        </a>
+
+        <!-- Flecha de scroll -->
+        <div class="mt-16 mb-0 flex justify-center">
+          <div class="animate-bounce">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-naranja-vibrante">
+              <path d="M7 13L12 18L17 13M12 6V17" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 2: Problemas comunes -->
+  <section class="py-20 md:py-32 lg:py-40 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
+      <div class="text-center">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-8">
+          {problemsSection.title}
+        </h2>
+        <div class="text-xl text-gray-600 mb-12 leading-relaxed max-w-3xl mx-auto">
+          <p>{problemsSection.subtitle}</p>
+        </div>
+        <div class="space-y-8 max-w-3xl mx-auto mb-12">
+          {problemsSection.problems.map((item) => (
+            <div class="flex items-center justify-center gap-4">
+              <p class="text-lg text-gray-600 flex-1 text-right">"{item.problem}"</p>
+              <div class="flex-shrink-0">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-naranja-vibrante">
+                  <path d="M13 7L18 12L13 17M6 12H18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <p class="text-lg text-gray-900 flex-1 text-left font-medium">{item.consequence}</p>
+            </div>
+          ))}
+        </div>
+
+        <div class="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+          <p set:html={problemsSection.closingText}></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 3: Mi enfoque -->
+  <section class="py-20 md:py-32 lg:py-40 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-12">
+          {approachSection.title}
+        </h2>
+
+        <!-- Enfoque simple y directo -->
+        <div class="max-w-2xl mx-auto space-y-12">
+          {approachSection.points.map((point) => (
+            <div class="text-left">
+              <h3 class="text-xl font-semibold text-gray-900 mb-3">{point.title}</h3>
+              <p class="text-lg text-gray-600 leading-relaxed" set:html={point.description}></p>
+            </div>
+          ))}
+        </div>
+
+        <!-- Mensaje final -->
+        <div class="mt-16 max-w-3xl mx-auto">
+          <p class="text-xl text-gray-600 leading-relaxed text-center">
+            {approachSection.conclusion}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 4: Casos de éxito -->
+  <section class="py-20 md:py-32 lg:py-40 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4">
+          {testimonialsSection.title}
+        </h2>
+      </div>
+
+      <div class="space-y-12 max-w-3xl mx-auto">
+        {testimonialsSection.testimonials.map((testimonial) => (
+          <div class="border-l-4 border-gray-200 pl-6">
+            <blockquote class="text-lg text-gray-600 leading-relaxed mb-4">
+              "{testimonial.quote}"
+            </blockquote>
+            <cite class="text-gray-900 font-medium">{testimonial.author}</cite>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 5: Qué Incluye Exactamente -->
+  <section class="py-20 md:py-32 lg:py-40 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
+      <div class="text-center mb-8">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+          {pricingSection.title}
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          {pricingSection.subtitle}
+        </p>
+      </div>
+
+      <!-- Precio destacado -->
+      <div class="bg-white border-2 border-gray-200 rounded-2xl p-8 mb-12 max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <div class="text-5xl md:text-6xl font-bold text-azul-profundo mb-4">{pricingSection.price}<span class="text-3xl md:text-4xl">{pricingSection.currency}</span></div>
+          <div class="text-xl font-semibold text-naranja-vibrante mb-6">{pricingSection.priceDescription}</div>
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-lg font-bold text-gray-900 mb-4 text-center">QUÉ INCLUYE EXACTAMENTE:</h3>
+
+          <div class="space-y-3">
+            {pricingSection.includes.map((item) => (
+              <div class="flex items-start space-x-3">
+                <svg class="w-5 h-5 text-naranja-vibrante flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                <span class="text-gray-900">{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="text-center mb-8">
+          <div class="space-y-1 text-sm text-gray-500">
+            <p><strong>ENTREGA:</strong> {pricingSection.delivery}</p>
+            <p><strong>FORMATO:</strong> {pricingSection.format}</p>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <a href={pricingSection.ctaLink} class="bg-azul-profundo text-white px-8 py-4 rounded-lg text-xl font-bold hover:bg-gray-800 hover:scale-105 transition-all duration-300 inline-block">
+            {pricingSection.ctaText}
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECCIÓN 6: Destruir Objeciones -->
+  <section class="py-20 md:py-32 lg:py-40 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
+      <div class="text-center mb-16 ">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          {faqSection.title}
+        </h2>
+      </div>
+
+      <div class="space-y-4 max-w-3xl mx-auto">
+        {faqSection.questions.map((faq) => (
+          <details class="bg-white rounded-lg border border-gray-200 overflow-hidden group">
+            <summary class="flex justify-between items-center p-6 cursor-pointer">
+              <h3 class="text-lg font-semibold text-gray-900">
+                {faq.question}
+              </h3>
+              <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-6 pb-6">
+              <p class="text-gray-600 leading-relaxed" set:html={faq.answer}></p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SECCIÓN 7: CTA Final + Garantía -->
+  <section class="py-20 md:py-32 lg:py-40 bg-black text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 text-center">
+      <div class="mb-12">
+        <div class="text-4xl mb-4">{finalCtaSection.guaranteeEmoji}</div>
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">{finalCtaSection.guaranteeTitle}</h2>
+        <p class="text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto" set:html={finalCtaSection.guaranteeDescription}></p>
+      </div>
+
+      <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 mb-8">
+        <h3 class="text-2xl font-bold mb-6">{finalCtaSection.title}</h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-left mb-8">
+          {finalCtaSection.features.map((feature) => (
+            <div class="flex items-center space-x-3">
+              <svg class="w-4 h-4 text-white flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-gray-300">{feature}</span>
+            </div>
+          ))}
+        </div>
+
+        <div class="text-center mb-6">
+          <div class="text-4xl md:text-5xl font-bold mb-2">{finalCtaSection.price}<span class="text-2xl md:text-3xl">{finalCtaSection.currency}</span></div>
+          <div class="text-gray-300">{finalCtaSection.priceNote}</div>
+        </div>
+
+        <a href={finalCtaSection.ctaLink} class="inline-flex items-center bg-naranja-vibrante text-white px-8 py-4 rounded-xl text-xl font-bold hover:bg-orange-600 hover:scale-105 transition-all duration-300 mb-4">
+          {finalCtaSection.ctaText}
+        </a>
+
+        <p class="text-sm text-gray-400">
+          {finalCtaSection.securityNote}
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .prose {
+    max-width: none;
+  }
+</style>

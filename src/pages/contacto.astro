@@ -1,40 +1,40 @@
 ---
 import Layout from '../layouts/Layout.astro'
+
+// Import the contact content from Tina CMS
+import contactContent from '../content/contacto/index.json'
 ---
 
-<Layout title="Contacto - RedactorSEO">
+<Layout title={contactContent.seo.title} description={contactContent.seo.description}>
   <!-- Hero Section Contacto -->
-  <section class="relative pt-32 pb-20 bg-gradient-to-br from-slate-900 via-gray-900 to-black text-white overflow-hidden">
-    <!-- Background Pattern -->
-    <div class="absolute inset-0 opacity-10">
-      <div class="absolute inset-0" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJtMzYgMzRjMC0yIDIwLTIgMjAgMHMtMjAgMi0yMCAweiIvPjwvZz48L2c+PC9zdmc+');"></div>
+  <section class="relative bg-white py-20 lg:py-32 overflow-hidden">
+    <!-- Background Elements -->
+    <div class="absolute inset-0">
+      <div class="absolute top-20 left-20 w-72 h-72 bg-azul-profundo/5 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-20 right-20 w-96 h-96 bg-naranja-vibrante/5 rounded-full blur-3xl"></div>
     </div>
-    
-    <!-- Floating Elements -->
-    <div class="absolute top-20 left-10 w-20 h-20 bg-blue-500/20 rounded-full blur-xl animate-pulse"></div>
-    <div class="absolute bottom-32 right-16 w-32 h-32 bg-emerald-500/20 rounded-full blur-xl animate-pulse" style="animation-delay: 2s;"></div>
-    
-    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 text-center">
-      <h1 class="text-4xl md:text-6xl font-display font-bold leading-tight mb-6 animate-fade-in-up" style="animation-delay: 0.4s;">
-        <span class="block text-white">¿Preparado para</span>
-        <span class="block text-white/80">atraer nuevos clientes?</span>
+
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+        <span class="block text-black">{contactContent.hero.titlePart1}</span>
+        <span class="block text-naranja-vibrante">{contactContent.hero.titlePart2}</span>
       </h1>
-      
-      <p class="text-xl md:text-2xl text-gray-300 leading-relaxed mb-8 animate-fade-in-up" style="animation-delay: 0.6s;">
-        Háblame de tu proyecto para ver si podemos trabajar juntos
+
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        {contactContent.hero.description}
       </p>
     </div>
   </section>
 
   <!-- Contact Form Section -->
-  <section class="py-20 md:py-32 lg:py-40 bg-gray-50">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
-      
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
       <!-- Form Column -->
-      <div class="bg-white rounded-2xl shadow-xl p-8 lg:p-12 mb-12">
+      <div class="bg-white rounded-lg border border-gray-200 p-8 lg:p-12 mb-8">
         <div class="mb-8">
-          <h2 class="text-3xl font-display font-bold text-gray-900 mb-4">Hablemos de tu proyecto</h2>
-          <p class="text-gray-600">Completa este formulario para recibir una propuesta personalizada</p>
+          <h2 class="text-3xl font-display font-bold text-gray-900 mb-4">{contactContent.form.title}</h2>
+          <p class="text-gray-600">{contactContent.form.description}</p>
         </div>
           
           <form id="contact-form" class="space-y-6">
@@ -76,34 +76,30 @@ import Layout from '../layouts/Layout.astro'
 
             <div>
               <label for="servicio" class="block text-sm font-medium text-gray-700 mb-2">¿Qué necesitas? *</label>
-              <select 
-                id="servicio" 
-                name="servicio" 
-                required 
+              <select
+                id="servicio"
+                name="servicio"
+                required
                 class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-naranja-vibrante focus:border-transparent transition-all duration-200"
               >
                 <option value="">Selecciona un servicio</option>
-                <option value="redaccion-seo">Redacción SEO</option>
-                <option value="copywriting">Copywriting</option>
-                <option value="blog-posts">Blog Posts</option>
-                <option value="auditoria-contenido">Auditoría de contenido</option>
-                <option value="estrategia-contenidos">Estrategia de contenidos</option>
-                <option value="otros">Otros</option>
+                {contactContent.form.services.map((service) => (
+                  <option value={service.value}>{service.label}</option>
+                ))}
               </select>
             </div>
 
             <div>
               <label for="presupuesto" class="block text-sm font-medium text-gray-700 mb-2">Presupuesto aproximado</label>
-              <select 
-                id="presupuesto" 
-                name="presupuesto" 
+              <select
+                id="presupuesto"
+                name="presupuesto"
                 class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-naranja-vibrante focus:border-transparent transition-all duration-200"
               >
                 <option value="">Selecciona un rango</option>
-                <option value="500-1000">500€ - 1.000€</option>
-                <option value="1000-2500">1.000€ - 2.500€</option>
-                <option value="2500-5000">2.500€ - 5.000€</option>
-                <option value="5000+">Más de 5.000€</option>
+                {contactContent.form.budgetRanges.map((range) => (
+                  <option value={range.value}>{range.label}</option>
+                ))}
               </select>
             </div>
 
@@ -127,17 +123,16 @@ import Layout from '../layouts/Layout.astro'
                 required 
                 class="mt-1 h-4 w-4 text-naranja-vibrante focus:ring-naranja-vibrante border-gray-300 rounded"
               />
-              <label for="privacidad" class="ml-3 text-sm text-gray-600">
-                Acepto la <a href="/privacidad" class="text-naranja-vibrante hover:text-orange-700 underline">política de privacidad</a> y autorizo el tratamiento de mis datos *
-              </label>
+              <label for="privacidad" class="ml-3 text-sm text-gray-600" set:html={contactContent.form.privacyPolicyText.replace(/\[([^\]]+)\]\(([^\)]+)\)/g, '<a href="$2" class="text-naranja-vibrante hover:text-orange-700 underline">$1</a>')}
+              ></label>
             </div>
 
-            <button 
-              type="submit" 
+            <button
+              type="submit"
               id="submit-btn"
               class="w-full bg-naranja-vibrante text-white py-4 px-6 rounded-lg font-semibold text-lg hover:bg-orange-600 hover:scale-105 transition-all duration-300 flex items-center justify-center"
             >
-              <span id="btn-text">Quiero más clientes</span>
+              <span id="btn-text">{contactContent.form.submitButtonText}</span>
               <svg id="btn-loading" class="hidden animate-spin ml-2 h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" aria-hidden="true">
                 <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                 <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
@@ -151,7 +146,7 @@ import Layout from '../layouts/Layout.astro'
               <svg class="w-5 h-5 text-green-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
               </svg>
-              <p class="text-green-700 font-medium">¡Mensaje enviado! Te contacto pronto.</p>
+              <p class="text-green-700 font-medium">{contactContent.messages.successMessage}</p>
             </div>
           </div>
 
@@ -160,14 +155,14 @@ import Layout from '../layouts/Layout.astro'
               <svg class="w-5 h-5 text-red-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
               </svg>
-              <p class="text-red-700 font-medium">Error al enviar. Por favor, inténtalo de nuevo o escribe directamente a info@redactorseo.es</p>
+              <p class="text-red-700 font-medium">{contactContent.messages.errorMessage}</p>
             </div>
           </div>
       </div>
       
       <!-- Contact Info -->
-      <div class="bg-white rounded-2xl shadow-xl p-8 text-center">
-        <h3 class="text-2xl font-bold text-gray-900 mb-6">Información de contacto</h3>
+      <div class="bg-white rounded-lg border border-gray-200 p-8 text-center">
+        <h3 class="text-2xl font-bold text-gray-900 mb-6">{contactContent.contactInfo.title}</h3>
         
         <div class="flex flex-col sm:flex-row items-center justify-center gap-8">
           <div class="flex items-center">
@@ -178,7 +173,7 @@ import Layout from '../layouts/Layout.astro'
             </div>
             <div class="ml-3">
               <p class="text-sm font-medium text-gray-900">Email</p>
-              <p class="text-sm text-gray-600">info@redactorseo.es</p>
+              <p class="text-sm text-gray-600">{contactContent.contactInfo.email}</p>
             </div>
           </div>
           
@@ -190,7 +185,7 @@ import Layout from '../layouts/Layout.astro'
             </div>
             <div class="ml-3">
               <p class="text-sm font-medium text-gray-900">Tiempo de respuesta</p>
-              <p class="text-sm text-gray-600">Menos de 24 horas</p>
+              <p class="text-sm text-gray-600">{contactContent.contactInfo.responseTime}</p>
             </div>
           </div>
         </div>
@@ -199,25 +194,8 @@ import Layout from '../layouts/Layout.astro'
   </section>
 </Layout>
 
-<style>
-  @keyframes fade-in-up {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  .animate-fade-in-up {
-    animation: fade-in-up 1s ease-out forwards;
-    opacity: 0;
-  }
-</style>
 
-<script is:inline>
+<script define:vars={{ contactContent }}>
   document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('contact-form');
     const submitBtn = document.getElementById('submit-btn');
@@ -228,10 +206,10 @@ import Layout from '../layouts/Layout.astro'
 
     form.addEventListener('submit', async function(e) {
       e.preventDefault();
-      
+
       // Show loading state
       submitBtn.disabled = true;
-      btnText.textContent = 'Enviando...';
+      btnText.textContent = contactContent.messages.loadingText;
       btnLoading.classList.remove('hidden');
       successMsg.classList.add('hidden');
       errorMsg.classList.add('hidden');
@@ -266,7 +244,7 @@ import Layout from '../layouts/Layout.astro'
       } finally {
         // Reset button state
         submitBtn.disabled = false;
-        btnText.textContent = 'Quiero más clientes';
+        btnText.textContent = contactContent.form.submitButtonText;
         btnLoading.classList.add('hidden');
       }
     });

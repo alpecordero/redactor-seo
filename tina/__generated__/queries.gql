@@ -53,61 +53,6 @@ query homepageConnection($before: String, $after: String, $first: Float, $last: 
   }
 }
 
-query post($relativePath: String!) {
-  post(relativePath: $relativePath) {
-    ... on Document {
-      _sys {
-        filename
-        basename
-        hasReferences
-        breadcrumbs
-        path
-        relativePath
-        extension
-      }
-      id
-    }
-    ...PostParts
-  }
-}
-
-query postConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: PostFilter) {
-  postConnection(
-    before: $before
-    after: $after
-    first: $first
-    last: $last
-    sort: $sort
-    filter: $filter
-  ) {
-    pageInfo {
-      hasPreviousPage
-      hasNextPage
-      startCursor
-      endCursor
-    }
-    totalCount
-    edges {
-      cursor
-      node {
-        ... on Document {
-          _sys {
-            filename
-            basename
-            hasReferences
-            breadcrumbs
-            path
-            relativePath
-            extension
-          }
-          id
-        }
-        ...PostParts
-      }
-    }
-  }
-}
-
 query pages($relativePath: String!) {
   pages(relativePath: $relativePath) {
     ... on Document {
@@ -158,6 +103,226 @@ query pagesConnection($before: String, $after: String, $first: Float, $last: Flo
           id
         }
         ...PagesParts
+      }
+    }
+  }
+}
+
+query auditoria($relativePath: String!) {
+  auditoria(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...AuditoriaParts
+  }
+}
+
+query auditoriaConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: AuditoriaFilter) {
+  auditoriaConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...AuditoriaParts
+      }
+    }
+  }
+}
+
+query redaccion_web($relativePath: String!) {
+  redaccion_web(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...Redaccion_webParts
+  }
+}
+
+query redaccion_webConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: Redaccion_webFilter) {
+  redaccion_webConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...Redaccion_webParts
+      }
+    }
+  }
+}
+
+query redaccion_estrategica_blogs($relativePath: String!) {
+  redaccion_estrategica_blogs(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...Redaccion_estrategica_blogsParts
+  }
+}
+
+query redaccion_estrategica_blogsConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: Redaccion_estrategica_blogsFilter) {
+  redaccion_estrategica_blogsConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...Redaccion_estrategica_blogsParts
+      }
+    }
+  }
+}
+
+query contact_page($relativePath: String!) {
+  contact_page(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...Contact_pageParts
+  }
+}
+
+query contact_pageConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: Contact_pageFilter) {
+  contact_pageConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...Contact_pageParts
       }
     }
   }

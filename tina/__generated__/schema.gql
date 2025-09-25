@@ -56,16 +56,25 @@ type Query {
   document(collection: String, relativePath: String): DocumentNode!
   homepage(relativePath: String): Homepage!
   homepageConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: HomepageFilter): HomepageConnection!
-  post(relativePath: String): Post!
-  postConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: PostFilter): PostConnection!
   pages(relativePath: String): Pages!
   pagesConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: PagesFilter): PagesConnection!
+  auditoria(relativePath: String): Auditoria!
+  auditoriaConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: AuditoriaFilter): AuditoriaConnection!
+  redaccion_web(relativePath: String): Redaccion_web!
+  redaccion_webConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: Redaccion_webFilter): Redaccion_webConnection!
+  redaccion_estrategica_blogs(relativePath: String): Redaccion_estrategica_blogs!
+  redaccion_estrategica_blogsConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: Redaccion_estrategica_blogsFilter): Redaccion_estrategica_blogsConnection!
+  contact_page(relativePath: String): Contact_page!
+  contact_pageConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: Contact_pageFilter): Contact_pageConnection!
 }
 
 input DocumentFilter {
   homepage: HomepageFilter
-  post: PostFilter
   pages: PagesFilter
+  auditoria: AuditoriaFilter
+  redaccion_web: Redaccion_webFilter
+  redaccion_estrategica_blogs: Redaccion_estrategica_blogsFilter
+  contact_page: Contact_pageFilter
 }
 
 type DocumentConnectionEdges {
@@ -91,7 +100,12 @@ type Collection {
   documents(before: String, after: String, first: Float, last: Float, sort: String, filter: DocumentFilter, folder: String): DocumentConnection!
 }
 
-union DocumentNode = Homepage | Post | Pages | Folder
+union DocumentNode = Homepage | Pages | Auditoria | Redaccion_web | Redaccion_estrategica_blogs | Contact_page | Folder
+
+type HomepageSeo {
+  title: String!
+  description: String!
+}
 
 type HomepageHero {
   subtitle: String!
@@ -168,6 +182,20 @@ type HomepageStatsSection {
   stats: [HomepageStatsSectionStats]
 }
 
+type HomepageTestimonialsSectionTestimonials {
+  name: String!
+  company: String!
+  testimonial: String!
+  image: String!
+  link: String
+}
+
+type HomepageTestimonialsSection {
+  title: String!
+  subtitle: String!
+  testimonials: [HomepageTestimonialsSectionTestimonials]
+}
+
 type HomepageCtaSection {
   title: String!
   description: String!
@@ -176,6 +204,7 @@ type HomepageCtaSection {
 }
 
 type Homepage implements Node & Document {
+  seo: HomepageSeo
   hero: HomepageHero
   googleDeathSection: HomepageGoogleDeathSection
   painPointsSection: HomepagePainPointsSection
@@ -183,6 +212,7 @@ type Homepage implements Node & Document {
   bridgeSection: HomepageBridgeSection
   servicesPackagesSection: HomepageServicesPackagesSection
   statsSection: HomepageStatsSection
+  testimonialsSection: HomepageTestimonialsSection
   ctaSection: HomepageCtaSection
   id: ID!
   _sys: SystemInfo!
@@ -194,6 +224,11 @@ input StringFilter {
   eq: String
   exists: Boolean
   in: [String]
+}
+
+input HomepageSeoFilter {
+  title: StringFilter
+  description: StringFilter
 }
 
 input HomepageHeroFilter {
@@ -281,6 +316,27 @@ input HomepageStatsSectionFilter {
   stats: HomepageStatsSectionStatsFilter
 }
 
+input ImageFilter {
+  startsWith: String
+  eq: String
+  exists: Boolean
+  in: [String]
+}
+
+input HomepageTestimonialsSectionTestimonialsFilter {
+  name: StringFilter
+  company: StringFilter
+  testimonial: StringFilter
+  image: ImageFilter
+  link: StringFilter
+}
+
+input HomepageTestimonialsSectionFilter {
+  title: StringFilter
+  subtitle: StringFilter
+  testimonials: HomepageTestimonialsSectionTestimonialsFilter
+}
+
 input HomepageCtaSectionFilter {
   title: StringFilter
   description: StringFilter
@@ -289,6 +345,7 @@ input HomepageCtaSectionFilter {
 }
 
 input HomepageFilter {
+  seo: HomepageSeoFilter
   hero: HomepageHeroFilter
   googleDeathSection: HomepageGoogleDeathSectionFilter
   painPointsSection: HomepagePainPointsSectionFilter
@@ -296,6 +353,7 @@ input HomepageFilter {
   bridgeSection: HomepageBridgeSectionFilter
   servicesPackagesSection: HomepageServicesPackagesSectionFilter
   statsSection: HomepageStatsSectionFilter
+  testimonialsSection: HomepageTestimonialsSectionFilter
   ctaSection: HomepageCtaSectionFilter
 }
 
@@ -308,61 +366,6 @@ type HomepageConnection implements Connection {
   pageInfo: PageInfo!
   totalCount: Float!
   edges: [HomepageConnectionEdges]
-}
-
-type Post implements Node & Document {
-  title: String!
-  description: String!
-  pubDate: String!
-  heroImage: String
-  tags: [String]
-  metaTitle: String
-  body: JSON
-  id: ID!
-  _sys: SystemInfo!
-  _values: JSON!
-}
-
-input DatetimeFilter {
-  after: String
-  before: String
-  eq: String
-  exists: Boolean
-  in: [String]
-}
-
-input ImageFilter {
-  startsWith: String
-  eq: String
-  exists: Boolean
-  in: [String]
-}
-
-input RichTextFilter {
-  startsWith: String
-  eq: String
-  exists: Boolean
-}
-
-input PostFilter {
-  title: StringFilter
-  description: StringFilter
-  pubDate: DatetimeFilter
-  heroImage: ImageFilter
-  tags: StringFilter
-  metaTitle: StringFilter
-  body: RichTextFilter
-}
-
-type PostConnectionEdges {
-  cursor: String!
-  node: Post
-}
-
-type PostConnection implements Connection {
-  pageInfo: PageInfo!
-  totalCount: Float!
-  edges: [PostConnectionEdges]
 }
 
 type PagesExperienceSectionItems {
@@ -451,6 +454,12 @@ input PagesCtaSectionFilter {
   buttonText: StringFilter
 }
 
+input RichTextFilter {
+  startsWith: String
+  eq: String
+  exists: Boolean
+}
+
 input PagesFilter {
   title: StringFilter
   description: StringFilter
@@ -475,6 +484,732 @@ type PagesConnection implements Connection {
   edges: [PagesConnectionEdges]
 }
 
+type AuditoriaSeo {
+  title: String!
+  description: String!
+}
+
+type AuditoriaHero {
+  subtitle: String!
+  titlePart1: String!
+  titlePart2: String!
+  description: String!
+  ctaText: String!
+  ctaLink: String!
+}
+
+type AuditoriaProblemsSectionProblems {
+  problem: String!
+  consequence: String!
+}
+
+type AuditoriaProblemsSection {
+  title: String!
+  subtitle: String!
+  problems: [AuditoriaProblemsSectionProblems]
+  closingText: String!
+}
+
+type AuditoriaApproachSectionPoints {
+  title: String!
+  description: String!
+}
+
+type AuditoriaApproachSection {
+  title: String!
+  points: [AuditoriaApproachSectionPoints]
+  conclusion: String!
+}
+
+type AuditoriaTestimonialsSectionTestimonials {
+  quote: String!
+  author: String!
+}
+
+type AuditoriaTestimonialsSection {
+  title: String!
+  testimonials: [AuditoriaTestimonialsSectionTestimonials]
+}
+
+type AuditoriaPricingSection {
+  title: String!
+  subtitle: String!
+  price: String!
+  currency: String!
+  priceDescription: String!
+  includes: [String!]!
+  delivery: String!
+  format: String!
+  ctaText: String!
+  ctaLink: String!
+}
+
+type AuditoriaFaqSectionQuestions {
+  question: String!
+  answer: String!
+}
+
+type AuditoriaFaqSection {
+  title: String!
+  questions: [AuditoriaFaqSectionQuestions]
+}
+
+type AuditoriaFinalCtaSection {
+  guaranteeEmoji: String!
+  guaranteeTitle: String!
+  guaranteeDescription: String!
+  title: String!
+  features: [String!]!
+  price: String!
+  currency: String!
+  priceNote: String!
+  ctaText: String!
+  ctaLink: String!
+  securityNote: String!
+}
+
+type Auditoria implements Node & Document {
+  seo: AuditoriaSeo
+  hero: AuditoriaHero
+  problemsSection: AuditoriaProblemsSection
+  approachSection: AuditoriaApproachSection
+  testimonialsSection: AuditoriaTestimonialsSection
+  pricingSection: AuditoriaPricingSection
+  faqSection: AuditoriaFaqSection
+  finalCtaSection: AuditoriaFinalCtaSection
+  id: ID!
+  _sys: SystemInfo!
+  _values: JSON!
+}
+
+input AuditoriaSeoFilter {
+  title: StringFilter
+  description: StringFilter
+}
+
+input AuditoriaHeroFilter {
+  subtitle: StringFilter
+  titlePart1: StringFilter
+  titlePart2: StringFilter
+  description: StringFilter
+  ctaText: StringFilter
+  ctaLink: StringFilter
+}
+
+input AuditoriaProblemsSectionProblemsFilter {
+  problem: StringFilter
+  consequence: StringFilter
+}
+
+input AuditoriaProblemsSectionFilter {
+  title: StringFilter
+  subtitle: StringFilter
+  problems: AuditoriaProblemsSectionProblemsFilter
+  closingText: StringFilter
+}
+
+input AuditoriaApproachSectionPointsFilter {
+  title: StringFilter
+  description: StringFilter
+}
+
+input AuditoriaApproachSectionFilter {
+  title: StringFilter
+  points: AuditoriaApproachSectionPointsFilter
+  conclusion: StringFilter
+}
+
+input AuditoriaTestimonialsSectionTestimonialsFilter {
+  quote: StringFilter
+  author: StringFilter
+}
+
+input AuditoriaTestimonialsSectionFilter {
+  title: StringFilter
+  testimonials: AuditoriaTestimonialsSectionTestimonialsFilter
+}
+
+input AuditoriaPricingSectionFilter {
+  title: StringFilter
+  subtitle: StringFilter
+  price: StringFilter
+  currency: StringFilter
+  priceDescription: StringFilter
+  includes: StringFilter
+  delivery: StringFilter
+  format: StringFilter
+  ctaText: StringFilter
+  ctaLink: StringFilter
+}
+
+input AuditoriaFaqSectionQuestionsFilter {
+  question: StringFilter
+  answer: StringFilter
+}
+
+input AuditoriaFaqSectionFilter {
+  title: StringFilter
+  questions: AuditoriaFaqSectionQuestionsFilter
+}
+
+input AuditoriaFinalCtaSectionFilter {
+  guaranteeEmoji: StringFilter
+  guaranteeTitle: StringFilter
+  guaranteeDescription: StringFilter
+  title: StringFilter
+  features: StringFilter
+  price: StringFilter
+  currency: StringFilter
+  priceNote: StringFilter
+  ctaText: StringFilter
+  ctaLink: StringFilter
+  securityNote: StringFilter
+}
+
+input AuditoriaFilter {
+  seo: AuditoriaSeoFilter
+  hero: AuditoriaHeroFilter
+  problemsSection: AuditoriaProblemsSectionFilter
+  approachSection: AuditoriaApproachSectionFilter
+  testimonialsSection: AuditoriaTestimonialsSectionFilter
+  pricingSection: AuditoriaPricingSectionFilter
+  faqSection: AuditoriaFaqSectionFilter
+  finalCtaSection: AuditoriaFinalCtaSectionFilter
+}
+
+type AuditoriaConnectionEdges {
+  cursor: String!
+  node: Auditoria
+}
+
+type AuditoriaConnection implements Connection {
+  pageInfo: PageInfo!
+  totalCount: Float!
+  edges: [AuditoriaConnectionEdges]
+}
+
+type Redaccion_webSeo {
+  title: String!
+  description: String!
+}
+
+type Redaccion_webHero {
+  subtitle: String!
+  titlePart1: String!
+  titlePart2: String!
+  description: String!
+  ctaText: String!
+  ctaLink: String!
+}
+
+type Redaccion_webProblemsSectionProblems {
+  problem: String!
+  consequence: String!
+}
+
+type Redaccion_webProblemsSection {
+  title: String!
+  subtitle: String!
+  problems: [Redaccion_webProblemsSectionProblems]
+  closingText: String!
+}
+
+type Redaccion_webApproachSectionPoints {
+  title: String!
+  description: String!
+}
+
+type Redaccion_webApproachSection {
+  title: String!
+  points: [Redaccion_webApproachSectionPoints]
+  conclusion: String!
+}
+
+type Redaccion_webTestimonialsSectionTestimonials {
+  quote: String!
+  author: String!
+}
+
+type Redaccion_webTestimonialsSection {
+  title: String!
+  testimonials: [Redaccion_webTestimonialsSectionTestimonials]
+}
+
+type Redaccion_webPricingSection {
+  title: String!
+  subtitle: String!
+  price: String!
+  currency: String!
+  priceDescription: String!
+  includes: [String!]!
+  delivery: String!
+  format: String!
+  ctaText: String!
+  ctaLink: String!
+}
+
+type Redaccion_webFaqSectionQuestions {
+  question: String!
+  answer: String!
+}
+
+type Redaccion_webFaqSection {
+  title: String!
+  questions: [Redaccion_webFaqSectionQuestions]
+}
+
+type Redaccion_webFinalCtaSection {
+  guaranteeEmoji: String!
+  guaranteeTitle: String!
+  guaranteeDescription: String!
+  title: String!
+  features: [String!]!
+  price: String!
+  currency: String!
+  priceNote: String!
+  ctaText: String!
+  ctaLink: String!
+  securityNote: String!
+}
+
+type Redaccion_web implements Node & Document {
+  seo: Redaccion_webSeo
+  hero: Redaccion_webHero
+  problemsSection: Redaccion_webProblemsSection
+  approachSection: Redaccion_webApproachSection
+  testimonialsSection: Redaccion_webTestimonialsSection
+  pricingSection: Redaccion_webPricingSection
+  faqSection: Redaccion_webFaqSection
+  finalCtaSection: Redaccion_webFinalCtaSection
+  id: ID!
+  _sys: SystemInfo!
+  _values: JSON!
+}
+
+input Redaccion_webSeoFilter {
+  title: StringFilter
+  description: StringFilter
+}
+
+input Redaccion_webHeroFilter {
+  subtitle: StringFilter
+  titlePart1: StringFilter
+  titlePart2: StringFilter
+  description: StringFilter
+  ctaText: StringFilter
+  ctaLink: StringFilter
+}
+
+input Redaccion_webProblemsSectionProblemsFilter {
+  problem: StringFilter
+  consequence: StringFilter
+}
+
+input Redaccion_webProblemsSectionFilter {
+  title: StringFilter
+  subtitle: StringFilter
+  problems: Redaccion_webProblemsSectionProblemsFilter
+  closingText: StringFilter
+}
+
+input Redaccion_webApproachSectionPointsFilter {
+  title: StringFilter
+  description: StringFilter
+}
+
+input Redaccion_webApproachSectionFilter {
+  title: StringFilter
+  points: Redaccion_webApproachSectionPointsFilter
+  conclusion: StringFilter
+}
+
+input Redaccion_webTestimonialsSectionTestimonialsFilter {
+  quote: StringFilter
+  author: StringFilter
+}
+
+input Redaccion_webTestimonialsSectionFilter {
+  title: StringFilter
+  testimonials: Redaccion_webTestimonialsSectionTestimonialsFilter
+}
+
+input Redaccion_webPricingSectionFilter {
+  title: StringFilter
+  subtitle: StringFilter
+  price: StringFilter
+  currency: StringFilter
+  priceDescription: StringFilter
+  includes: StringFilter
+  delivery: StringFilter
+  format: StringFilter
+  ctaText: StringFilter
+  ctaLink: StringFilter
+}
+
+input Redaccion_webFaqSectionQuestionsFilter {
+  question: StringFilter
+  answer: StringFilter
+}
+
+input Redaccion_webFaqSectionFilter {
+  title: StringFilter
+  questions: Redaccion_webFaqSectionQuestionsFilter
+}
+
+input Redaccion_webFinalCtaSectionFilter {
+  guaranteeEmoji: StringFilter
+  guaranteeTitle: StringFilter
+  guaranteeDescription: StringFilter
+  title: StringFilter
+  features: StringFilter
+  price: StringFilter
+  currency: StringFilter
+  priceNote: StringFilter
+  ctaText: StringFilter
+  ctaLink: StringFilter
+  securityNote: StringFilter
+}
+
+input Redaccion_webFilter {
+  seo: Redaccion_webSeoFilter
+  hero: Redaccion_webHeroFilter
+  problemsSection: Redaccion_webProblemsSectionFilter
+  approachSection: Redaccion_webApproachSectionFilter
+  testimonialsSection: Redaccion_webTestimonialsSectionFilter
+  pricingSection: Redaccion_webPricingSectionFilter
+  faqSection: Redaccion_webFaqSectionFilter
+  finalCtaSection: Redaccion_webFinalCtaSectionFilter
+}
+
+type Redaccion_webConnectionEdges {
+  cursor: String!
+  node: Redaccion_web
+}
+
+type Redaccion_webConnection implements Connection {
+  pageInfo: PageInfo!
+  totalCount: Float!
+  edges: [Redaccion_webConnectionEdges]
+}
+
+type Redaccion_estrategica_blogsSeo {
+  title: String!
+  description: String!
+}
+
+type Redaccion_estrategica_blogsHero {
+  subtitle: String!
+  titlePart1: String!
+  titlePart2: String!
+  description: String!
+  ctaText: String!
+  ctaLink: String!
+}
+
+type Redaccion_estrategica_blogsProblemsSectionProblems {
+  problem: String!
+  consequence: String!
+}
+
+type Redaccion_estrategica_blogsProblemsSection {
+  title: String!
+  subtitle: String!
+  problems: [Redaccion_estrategica_blogsProblemsSectionProblems]
+  closingText: String!
+}
+
+type Redaccion_estrategica_blogsApproachSectionPoints {
+  title: String!
+  description: String!
+}
+
+type Redaccion_estrategica_blogsApproachSection {
+  title: String!
+  points: [Redaccion_estrategica_blogsApproachSectionPoints]
+  conclusion: String!
+}
+
+type Redaccion_estrategica_blogsTestimonialsSectionTestimonials {
+  quote: String!
+  author: String!
+}
+
+type Redaccion_estrategica_blogsTestimonialsSection {
+  title: String!
+  testimonials: [Redaccion_estrategica_blogsTestimonialsSectionTestimonials]
+}
+
+type Redaccion_estrategica_blogsPricingSection {
+  title: String!
+  subtitle: String!
+  price: String!
+  currency: String!
+  priceDescription: String!
+  includes: [String!]!
+  delivery: String!
+  format: String!
+  ctaText: String!
+  ctaLink: String!
+}
+
+type Redaccion_estrategica_blogsFaqSectionQuestions {
+  question: String!
+  answer: String!
+}
+
+type Redaccion_estrategica_blogsFaqSection {
+  title: String!
+  questions: [Redaccion_estrategica_blogsFaqSectionQuestions]
+}
+
+type Redaccion_estrategica_blogsFinalCtaSection {
+  guaranteeEmoji: String!
+  guaranteeTitle: String!
+  guaranteeDescription: String!
+  title: String!
+  features: [String!]!
+  price: String!
+  currency: String!
+  priceNote: String!
+  ctaText: String!
+  ctaLink: String!
+  securityNote: String!
+}
+
+type Redaccion_estrategica_blogs implements Node & Document {
+  seo: Redaccion_estrategica_blogsSeo
+  hero: Redaccion_estrategica_blogsHero
+  problemsSection: Redaccion_estrategica_blogsProblemsSection
+  approachSection: Redaccion_estrategica_blogsApproachSection
+  testimonialsSection: Redaccion_estrategica_blogsTestimonialsSection
+  pricingSection: Redaccion_estrategica_blogsPricingSection
+  faqSection: Redaccion_estrategica_blogsFaqSection
+  finalCtaSection: Redaccion_estrategica_blogsFinalCtaSection
+  id: ID!
+  _sys: SystemInfo!
+  _values: JSON!
+}
+
+input Redaccion_estrategica_blogsSeoFilter {
+  title: StringFilter
+  description: StringFilter
+}
+
+input Redaccion_estrategica_blogsHeroFilter {
+  subtitle: StringFilter
+  titlePart1: StringFilter
+  titlePart2: StringFilter
+  description: StringFilter
+  ctaText: StringFilter
+  ctaLink: StringFilter
+}
+
+input Redaccion_estrategica_blogsProblemsSectionProblemsFilter {
+  problem: StringFilter
+  consequence: StringFilter
+}
+
+input Redaccion_estrategica_blogsProblemsSectionFilter {
+  title: StringFilter
+  subtitle: StringFilter
+  problems: Redaccion_estrategica_blogsProblemsSectionProblemsFilter
+  closingText: StringFilter
+}
+
+input Redaccion_estrategica_blogsApproachSectionPointsFilter {
+  title: StringFilter
+  description: StringFilter
+}
+
+input Redaccion_estrategica_blogsApproachSectionFilter {
+  title: StringFilter
+  points: Redaccion_estrategica_blogsApproachSectionPointsFilter
+  conclusion: StringFilter
+}
+
+input Redaccion_estrategica_blogsTestimonialsSectionTestimonialsFilter {
+  quote: StringFilter
+  author: StringFilter
+}
+
+input Redaccion_estrategica_blogsTestimonialsSectionFilter {
+  title: StringFilter
+  testimonials: Redaccion_estrategica_blogsTestimonialsSectionTestimonialsFilter
+}
+
+input Redaccion_estrategica_blogsPricingSectionFilter {
+  title: StringFilter
+  subtitle: StringFilter
+  price: StringFilter
+  currency: StringFilter
+  priceDescription: StringFilter
+  includes: StringFilter
+  delivery: StringFilter
+  format: StringFilter
+  ctaText: StringFilter
+  ctaLink: StringFilter
+}
+
+input Redaccion_estrategica_blogsFaqSectionQuestionsFilter {
+  question: StringFilter
+  answer: StringFilter
+}
+
+input Redaccion_estrategica_blogsFaqSectionFilter {
+  title: StringFilter
+  questions: Redaccion_estrategica_blogsFaqSectionQuestionsFilter
+}
+
+input Redaccion_estrategica_blogsFinalCtaSectionFilter {
+  guaranteeEmoji: StringFilter
+  guaranteeTitle: StringFilter
+  guaranteeDescription: StringFilter
+  title: StringFilter
+  features: StringFilter
+  price: StringFilter
+  currency: StringFilter
+  priceNote: StringFilter
+  ctaText: StringFilter
+  ctaLink: StringFilter
+  securityNote: StringFilter
+}
+
+input Redaccion_estrategica_blogsFilter {
+  seo: Redaccion_estrategica_blogsSeoFilter
+  hero: Redaccion_estrategica_blogsHeroFilter
+  problemsSection: Redaccion_estrategica_blogsProblemsSectionFilter
+  approachSection: Redaccion_estrategica_blogsApproachSectionFilter
+  testimonialsSection: Redaccion_estrategica_blogsTestimonialsSectionFilter
+  pricingSection: Redaccion_estrategica_blogsPricingSectionFilter
+  faqSection: Redaccion_estrategica_blogsFaqSectionFilter
+  finalCtaSection: Redaccion_estrategica_blogsFinalCtaSectionFilter
+}
+
+type Redaccion_estrategica_blogsConnectionEdges {
+  cursor: String!
+  node: Redaccion_estrategica_blogs
+}
+
+type Redaccion_estrategica_blogsConnection implements Connection {
+  pageInfo: PageInfo!
+  totalCount: Float!
+  edges: [Redaccion_estrategica_blogsConnectionEdges]
+}
+
+type Contact_pageSeo {
+  title: String!
+  description: String!
+}
+
+type Contact_pageHero {
+  titlePart1: String!
+  titlePart2: String!
+  description: String!
+}
+
+type Contact_pageFormServices {
+  value: String!
+  label: String!
+}
+
+type Contact_pageFormBudgetRanges {
+  value: String!
+  label: String!
+}
+
+type Contact_pageForm {
+  title: String!
+  description: String!
+  services: [Contact_pageFormServices]
+  budgetRanges: [Contact_pageFormBudgetRanges]
+  submitButtonText: String!
+  privacyPolicyText: String!
+}
+
+type Contact_pageContactInfo {
+  title: String!
+  email: String!
+  responseTime: String!
+}
+
+type Contact_pageMessages {
+  successMessage: String!
+  errorMessage: String!
+  loadingText: String!
+}
+
+type Contact_page implements Node & Document {
+  seo: Contact_pageSeo
+  hero: Contact_pageHero
+  form: Contact_pageForm
+  contactInfo: Contact_pageContactInfo
+  messages: Contact_pageMessages
+  id: ID!
+  _sys: SystemInfo!
+  _values: JSON!
+}
+
+input Contact_pageSeoFilter {
+  title: StringFilter
+  description: StringFilter
+}
+
+input Contact_pageHeroFilter {
+  titlePart1: StringFilter
+  titlePart2: StringFilter
+  description: StringFilter
+}
+
+input Contact_pageFormServicesFilter {
+  value: StringFilter
+  label: StringFilter
+}
+
+input Contact_pageFormBudgetRangesFilter {
+  value: StringFilter
+  label: StringFilter
+}
+
+input Contact_pageFormFilter {
+  title: StringFilter
+  description: StringFilter
+  services: Contact_pageFormServicesFilter
+  budgetRanges: Contact_pageFormBudgetRangesFilter
+  submitButtonText: StringFilter
+  privacyPolicyText: StringFilter
+}
+
+input Contact_pageContactInfoFilter {
+  title: StringFilter
+  email: StringFilter
+  responseTime: StringFilter
+}
+
+input Contact_pageMessagesFilter {
+  successMessage: StringFilter
+  errorMessage: StringFilter
+  loadingText: StringFilter
+}
+
+input Contact_pageFilter {
+  seo: Contact_pageSeoFilter
+  hero: Contact_pageHeroFilter
+  form: Contact_pageFormFilter
+  contactInfo: Contact_pageContactInfoFilter
+  messages: Contact_pageMessagesFilter
+}
+
+type Contact_pageConnectionEdges {
+  cursor: String!
+  node: Contact_page
+}
+
+type Contact_pageConnection implements Connection {
+  pageInfo: PageInfo!
+  totalCount: Float!
+  edges: [Contact_pageConnectionEdges]
+}
+
 type Mutation {
   addPendingDocument(collection: String!, relativePath: String!, template: String): DocumentNode!
   updateDocument(collection: String, relativePath: String!, params: DocumentUpdateMutation!): DocumentNode!
@@ -483,23 +1218,40 @@ type Mutation {
   createFolder(collection: String, relativePath: String!): DocumentNode!
   updateHomepage(relativePath: String!, params: HomepageMutation!): Homepage!
   createHomepage(relativePath: String!, params: HomepageMutation!): Homepage!
-  updatePost(relativePath: String!, params: PostMutation!): Post!
-  createPost(relativePath: String!, params: PostMutation!): Post!
   updatePages(relativePath: String!, params: PagesMutation!): Pages!
   createPages(relativePath: String!, params: PagesMutation!): Pages!
+  updateAuditoria(relativePath: String!, params: AuditoriaMutation!): Auditoria!
+  createAuditoria(relativePath: String!, params: AuditoriaMutation!): Auditoria!
+  updateRedaccion_web(relativePath: String!, params: Redaccion_webMutation!): Redaccion_web!
+  createRedaccion_web(relativePath: String!, params: Redaccion_webMutation!): Redaccion_web!
+  updateRedaccion_estrategica_blogs(relativePath: String!, params: Redaccion_estrategica_blogsMutation!): Redaccion_estrategica_blogs!
+  createRedaccion_estrategica_blogs(relativePath: String!, params: Redaccion_estrategica_blogsMutation!): Redaccion_estrategica_blogs!
+  updateContact_page(relativePath: String!, params: Contact_pageMutation!): Contact_page!
+  createContact_page(relativePath: String!, params: Contact_pageMutation!): Contact_page!
 }
 
 input DocumentUpdateMutation {
   homepage: HomepageMutation
-  post: PostMutation
   pages: PagesMutation
+  auditoria: AuditoriaMutation
+  redaccion_web: Redaccion_webMutation
+  redaccion_estrategica_blogs: Redaccion_estrategica_blogsMutation
+  contact_page: Contact_pageMutation
   relativePath: String
 }
 
 input DocumentMutation {
   homepage: HomepageMutation
-  post: PostMutation
   pages: PagesMutation
+  auditoria: AuditoriaMutation
+  redaccion_web: Redaccion_webMutation
+  redaccion_estrategica_blogs: Redaccion_estrategica_blogsMutation
+  contact_page: Contact_pageMutation
+}
+
+input HomepageSeoMutation {
+  title: String
+  description: String
 }
 
 input HomepageHeroMutation {
@@ -577,6 +1329,20 @@ input HomepageStatsSectionMutation {
   stats: [HomepageStatsSectionStatsMutation]
 }
 
+input HomepageTestimonialsSectionTestimonialsMutation {
+  name: String
+  company: String
+  testimonial: String
+  image: String
+  link: String
+}
+
+input HomepageTestimonialsSectionMutation {
+  title: String
+  subtitle: String
+  testimonials: [HomepageTestimonialsSectionTestimonialsMutation]
+}
+
 input HomepageCtaSectionMutation {
   title: String
   description: String
@@ -585,6 +1351,7 @@ input HomepageCtaSectionMutation {
 }
 
 input HomepageMutation {
+  seo: HomepageSeoMutation
   hero: HomepageHeroMutation
   googleDeathSection: HomepageGoogleDeathSectionMutation
   painPointsSection: HomepagePainPointsSectionMutation
@@ -592,17 +1359,8 @@ input HomepageMutation {
   bridgeSection: HomepageBridgeSectionMutation
   servicesPackagesSection: HomepageServicesPackagesSectionMutation
   statsSection: HomepageStatsSectionMutation
+  testimonialsSection: HomepageTestimonialsSectionMutation
   ctaSection: HomepageCtaSectionMutation
-}
-
-input PostMutation {
-  title: String
-  description: String
-  pubDate: String
-  heroImage: String
-  tags: [String]
-  metaTitle: String
-  body: JSON
 }
 
 input PagesExperienceSectionItemsMutation {
@@ -651,6 +1409,341 @@ input PagesMutation {
   testimonial: PagesTestimonialMutation
   ctaSection: PagesCtaSectionMutation
   body: JSON
+}
+
+input AuditoriaSeoMutation {
+  title: String
+  description: String
+}
+
+input AuditoriaHeroMutation {
+  subtitle: String
+  titlePart1: String
+  titlePart2: String
+  description: String
+  ctaText: String
+  ctaLink: String
+}
+
+input AuditoriaProblemsSectionProblemsMutation {
+  problem: String
+  consequence: String
+}
+
+input AuditoriaProblemsSectionMutation {
+  title: String
+  subtitle: String
+  problems: [AuditoriaProblemsSectionProblemsMutation]
+  closingText: String
+}
+
+input AuditoriaApproachSectionPointsMutation {
+  title: String
+  description: String
+}
+
+input AuditoriaApproachSectionMutation {
+  title: String
+  points: [AuditoriaApproachSectionPointsMutation]
+  conclusion: String
+}
+
+input AuditoriaTestimonialsSectionTestimonialsMutation {
+  quote: String
+  author: String
+}
+
+input AuditoriaTestimonialsSectionMutation {
+  title: String
+  testimonials: [AuditoriaTestimonialsSectionTestimonialsMutation]
+}
+
+input AuditoriaPricingSectionMutation {
+  title: String
+  subtitle: String
+  price: String
+  currency: String
+  priceDescription: String
+  includes: [String]
+  delivery: String
+  format: String
+  ctaText: String
+  ctaLink: String
+}
+
+input AuditoriaFaqSectionQuestionsMutation {
+  question: String
+  answer: String
+}
+
+input AuditoriaFaqSectionMutation {
+  title: String
+  questions: [AuditoriaFaqSectionQuestionsMutation]
+}
+
+input AuditoriaFinalCtaSectionMutation {
+  guaranteeEmoji: String
+  guaranteeTitle: String
+  guaranteeDescription: String
+  title: String
+  features: [String]
+  price: String
+  currency: String
+  priceNote: String
+  ctaText: String
+  ctaLink: String
+  securityNote: String
+}
+
+input AuditoriaMutation {
+  seo: AuditoriaSeoMutation
+  hero: AuditoriaHeroMutation
+  problemsSection: AuditoriaProblemsSectionMutation
+  approachSection: AuditoriaApproachSectionMutation
+  testimonialsSection: AuditoriaTestimonialsSectionMutation
+  pricingSection: AuditoriaPricingSectionMutation
+  faqSection: AuditoriaFaqSectionMutation
+  finalCtaSection: AuditoriaFinalCtaSectionMutation
+}
+
+input Redaccion_webSeoMutation {
+  title: String
+  description: String
+}
+
+input Redaccion_webHeroMutation {
+  subtitle: String
+  titlePart1: String
+  titlePart2: String
+  description: String
+  ctaText: String
+  ctaLink: String
+}
+
+input Redaccion_webProblemsSectionProblemsMutation {
+  problem: String
+  consequence: String
+}
+
+input Redaccion_webProblemsSectionMutation {
+  title: String
+  subtitle: String
+  problems: [Redaccion_webProblemsSectionProblemsMutation]
+  closingText: String
+}
+
+input Redaccion_webApproachSectionPointsMutation {
+  title: String
+  description: String
+}
+
+input Redaccion_webApproachSectionMutation {
+  title: String
+  points: [Redaccion_webApproachSectionPointsMutation]
+  conclusion: String
+}
+
+input Redaccion_webTestimonialsSectionTestimonialsMutation {
+  quote: String
+  author: String
+}
+
+input Redaccion_webTestimonialsSectionMutation {
+  title: String
+  testimonials: [Redaccion_webTestimonialsSectionTestimonialsMutation]
+}
+
+input Redaccion_webPricingSectionMutation {
+  title: String
+  subtitle: String
+  price: String
+  currency: String
+  priceDescription: String
+  includes: [String]
+  delivery: String
+  format: String
+  ctaText: String
+  ctaLink: String
+}
+
+input Redaccion_webFaqSectionQuestionsMutation {
+  question: String
+  answer: String
+}
+
+input Redaccion_webFaqSectionMutation {
+  title: String
+  questions: [Redaccion_webFaqSectionQuestionsMutation]
+}
+
+input Redaccion_webFinalCtaSectionMutation {
+  guaranteeEmoji: String
+  guaranteeTitle: String
+  guaranteeDescription: String
+  title: String
+  features: [String]
+  price: String
+  currency: String
+  priceNote: String
+  ctaText: String
+  ctaLink: String
+  securityNote: String
+}
+
+input Redaccion_webMutation {
+  seo: Redaccion_webSeoMutation
+  hero: Redaccion_webHeroMutation
+  problemsSection: Redaccion_webProblemsSectionMutation
+  approachSection: Redaccion_webApproachSectionMutation
+  testimonialsSection: Redaccion_webTestimonialsSectionMutation
+  pricingSection: Redaccion_webPricingSectionMutation
+  faqSection: Redaccion_webFaqSectionMutation
+  finalCtaSection: Redaccion_webFinalCtaSectionMutation
+}
+
+input Redaccion_estrategica_blogsSeoMutation {
+  title: String
+  description: String
+}
+
+input Redaccion_estrategica_blogsHeroMutation {
+  subtitle: String
+  titlePart1: String
+  titlePart2: String
+  description: String
+  ctaText: String
+  ctaLink: String
+}
+
+input Redaccion_estrategica_blogsProblemsSectionProblemsMutation {
+  problem: String
+  consequence: String
+}
+
+input Redaccion_estrategica_blogsProblemsSectionMutation {
+  title: String
+  subtitle: String
+  problems: [Redaccion_estrategica_blogsProblemsSectionProblemsMutation]
+  closingText: String
+}
+
+input Redaccion_estrategica_blogsApproachSectionPointsMutation {
+  title: String
+  description: String
+}
+
+input Redaccion_estrategica_blogsApproachSectionMutation {
+  title: String
+  points: [Redaccion_estrategica_blogsApproachSectionPointsMutation]
+  conclusion: String
+}
+
+input Redaccion_estrategica_blogsTestimonialsSectionTestimonialsMutation {
+  quote: String
+  author: String
+}
+
+input Redaccion_estrategica_blogsTestimonialsSectionMutation {
+  title: String
+  testimonials: [Redaccion_estrategica_blogsTestimonialsSectionTestimonialsMutation]
+}
+
+input Redaccion_estrategica_blogsPricingSectionMutation {
+  title: String
+  subtitle: String
+  price: String
+  currency: String
+  priceDescription: String
+  includes: [String]
+  delivery: String
+  format: String
+  ctaText: String
+  ctaLink: String
+}
+
+input Redaccion_estrategica_blogsFaqSectionQuestionsMutation {
+  question: String
+  answer: String
+}
+
+input Redaccion_estrategica_blogsFaqSectionMutation {
+  title: String
+  questions: [Redaccion_estrategica_blogsFaqSectionQuestionsMutation]
+}
+
+input Redaccion_estrategica_blogsFinalCtaSectionMutation {
+  guaranteeEmoji: String
+  guaranteeTitle: String
+  guaranteeDescription: String
+  title: String
+  features: [String]
+  price: String
+  currency: String
+  priceNote: String
+  ctaText: String
+  ctaLink: String
+  securityNote: String
+}
+
+input Redaccion_estrategica_blogsMutation {
+  seo: Redaccion_estrategica_blogsSeoMutation
+  hero: Redaccion_estrategica_blogsHeroMutation
+  problemsSection: Redaccion_estrategica_blogsProblemsSectionMutation
+  approachSection: Redaccion_estrategica_blogsApproachSectionMutation
+  testimonialsSection: Redaccion_estrategica_blogsTestimonialsSectionMutation
+  pricingSection: Redaccion_estrategica_blogsPricingSectionMutation
+  faqSection: Redaccion_estrategica_blogsFaqSectionMutation
+  finalCtaSection: Redaccion_estrategica_blogsFinalCtaSectionMutation
+}
+
+input Contact_pageSeoMutation {
+  title: String
+  description: String
+}
+
+input Contact_pageHeroMutation {
+  titlePart1: String
+  titlePart2: String
+  description: String
+}
+
+input Contact_pageFormServicesMutation {
+  value: String
+  label: String
+}
+
+input Contact_pageFormBudgetRangesMutation {
+  value: String
+  label: String
+}
+
+input Contact_pageFormMutation {
+  title: String
+  description: String
+  services: [Contact_pageFormServicesMutation]
+  budgetRanges: [Contact_pageFormBudgetRangesMutation]
+  submitButtonText: String
+  privacyPolicyText: String
+}
+
+input Contact_pageContactInfoMutation {
+  title: String
+  email: String
+  responseTime: String
+}
+
+input Contact_pageMessagesMutation {
+  successMessage: String
+  errorMessage: String
+  loadingText: String
+}
+
+input Contact_pageMutation {
+  seo: Contact_pageSeoMutation
+  hero: Contact_pageHeroMutation
+  form: Contact_pageFormMutation
+  contactInfo: Contact_pageContactInfoMutation
+  messages: Contact_pageMessagesMutation
 }
 
 schema {

@@ -1,0 +1,71 @@
+{
+  "seo": {
+    "title": "Contacto - RedactorSEO",
+    "description": "¿Preparado para atraer nuevos clientes? Háblame de tu proyecto para recibir una propuesta personalizada de redacción SEO."
+  },
+  "hero": {
+    "titlePart1": "¿Preparado para",
+    "titlePart2": "atraer nuevos clientes?",
+    "description": "Háblame de tu proyecto para ver si podemos trabajar juntos"
+  },
+  "form": {
+    "title": "Hablemos de tu proyecto",
+    "description": "Completa este formulario para recibir una propuesta personalizada",
+    "services": [
+      {
+        "value": "redaccion-seo",
+        "label": "Redacción SEO"
+      },
+      {
+        "value": "copywriting",
+        "label": "Copywriting"
+      },
+      {
+        "value": "blog-posts",
+        "label": "Blog Posts"
+      },
+      {
+        "value": "auditoria-contenido",
+        "label": "Auditoría de contenido"
+      },
+      {
+        "value": "estrategia-contenidos",
+        "label": "Estrategia de contenidos"
+      },
+      {
+        "value": "otros",
+        "label": "Otros"
+      }
+    ],
+    "budgetRanges": [
+      {
+        "value": "500-1000",
+        "label": "500€ - 1.000€"
+      },
+      {
+        "value": "1000-2500",
+        "label": "1.000€ - 2.500€"
+      },
+      {
+        "value": "2500-5000",
+        "label": "2.500€ - 5.000€"
+      },
+      {
+        "value": "5000+",
+        "label": "Más de 5.000€"
+      }
+    ],
+    "submitButtonText": "Quiero más clientes",
+    "privacyPolicyText": "Acepto la [política de privacidad](/privacidad) y autorizo el tratamiento de mis datos *"
+  },
+  "contactInfo": {
+    "title": "Información de contacto",
+    "email": "info@redactorseo.es",
+    "responseTime": "Menos de 24 horas"
+  },
+  "messages": {
+    "successMessage": "¡Mensaje enviado! Te contacto pronto.",
+    "errorMessage": "Error al enviar. Por favor, inténtalo de nuevo o escribe directamente a info@redactorseo.es",
+    "loadingText": "Enviando..."
+  }
+}

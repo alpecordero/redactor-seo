@@ -1,0 +1,131 @@
+{
+  "seo": {
+    "title": "Redacción Estratégica para Blogs - RedactorSEO",
+    "description": "Creo contenido estratégico que posiciona tu negocio como autoridad en tu sector. Tus clientes te buscarán y recomendarán."
+  },
+  "hero": {
+    "subtitle": "REDACCIÓN ESTRATÉGICA PARA BLOGS",
+    "titlePart1": "Tu blog no posiciona",
+    "titlePart2": "Yo lo convierto en referente",
+    "description": "Creo contenido estratégico que posiciona tu negocio como autoridad en tu sector. Tus clientes te buscarán y recomendarán.",
+    "ctaText": "Quiero ser el referente →",
+    "ctaLink": "/contacto"
+  },
+  "problemsSection": {
+    "title": "¿Reconoces estos errores?",
+    "subtitle": "(lo que veo en 9 de cada 10 blogs)",
+    "problems": [
+      {
+        "problem": "Publico cada mes pero nadie me lee",
+        "consequence": "Contenido irrelevante"
+      },
+      {
+        "problem": "Escribo sobre lo mismo que todos",
+        "consequence": "Te confundes con la competencia"
+      },
+      {
+        "problem": "Mis artículos no aparecen en Google",
+        "consequence": "SEO mal ejecutado"
+      },
+      {
+        "problem": "Leo mis posts y me parecen aburridos",
+        "consequence": "Falta narrativa y gancho"
+      }
+    ],
+    "closingText": "Un blog sin estrategia es **tiempo perdido**. Escribes, publicas y nadie te encuentra ni te recuerda."
+  },
+  "approachSection": {
+    "title": "Mi estrategia es diferente",
+    "points": [
+      {
+        "title": "Análisis profundo antes de escribir",
+        "description": "Investigo qué busca exactamente tu audiencia, qué hace la competencia y qué **oportunidades de contenido** nadie está aprovechando en tu nicho."
+      },
+      {
+        "title": "Contenido con propósito comercial",
+        "description": "Cada artículo cumple un objetivo estratégico: **posicionar, educar, persuadir o convertir**. Nada se escribe por escribir."
+      },
+      {
+        "title": "SEO estratégico, no técnico",
+        "description": "Optimizo para palabras clave con **intención comercial real**. Que te encuentren los que buscan lo que vendes, no cualquiera."
+      }
+    ],
+    "conclusion": "Resultado: un blog que genera demanda real y posiciona tu marca como la opción obvia."
+  },
+  "testimonialsSection": {
+    "title": "Casos de éxito",
+    "testimonials": [
+      {
+        "quote": "En 6 meses mi blog se convirtió en referencia del sector. Ahora los clientes me contactan porque me ven como el experto. Las ventas hablan por sí solas.",
+        "author": "Ana Torres, Consultora Financiera"
+      },
+      {
+        "quote": "Pasé de 200 visitas mensuales a más de 8.000. Lo mejor es que ahora me buscan clientes ideales, no curiosos. La calidad de leads ha cambiado completamente.",
+        "author": "Roberto Silva, Agencia Marketing Digital"
+      }
+    ]
+  },
+  "pricingSection": {
+    "title": "¿Cuánto cuesta convertirse en referente?",
+    "subtitle": "Estrategia de contenido completa + 8 artículos estratégicos mensuales",
+    "price": "2.995",
+    "currency": "€",
+    "priceDescription": "Estrategia de blog + 8 artículos mensuales durante 3 meses",
+    "includes": [
+      "Estrategia de contenido personalizada (keyword research + calendar)",
+      "8 artículos estratégicos mensuales (2.400-3.000 palabras cada uno)",
+      "Optimización SEO avanzada en cada pieza",
+      "Distribución y promoción en redes sociales",
+      "Análisis mensual de rendimiento y ajustes",
+      "Templates reutilizables para tu equipo",
+      "Consulta estratégica mensual de seguimiento",
+      "Garantía de mejora en posicionamiento y tráfico"
+    ],
+    "delivery": "3 meses de trabajo continuado",
+    "format": "8 artículos mensuales + estrategia + seguimiento personalizado",
+    "ctaText": "Ser el referente →",
+    "ctaLink": "/contacto"
+  },
+  "faqSection": {
+    "title": "Preguntas frecuentes",
+    "questions": [
+      {
+        "question": "¿3 meses es suficiente para ver resultados?",
+        "answer": "Los primeros artículos empiezan a posicionar desde el mes 2. A los 3 meses tendrás **24 artículos estratégicos** trabajando para ti las 24 horas. Es cuando realmente se nota el impacto en autoridad y tráfico cualificado."
+      },
+      {
+        "question": "2.995€ mensuales es mucho para contenido",
+        "answer": "No es solo contenido. Es una **estrategia completa de posicionamiento** que incluye investigación, redacción, SEO, distribución y consultoría mensual. Una agencia te cobraría 8.000€+ por lo mismo, y sin garantías."
+      },
+      {
+        "question": "¿Trabajas con cualquier nicho?",
+        "answer": "Trabajo con sectores B2B y servicios profesionales: consultorías, tecnología, finanzas, salud, legal, inmobiliario... Lo importante es que tengas **audiencia dispuesta a pagar** por servicios de valor."
+      },
+      {
+        "question": "¿Qué pasa después de los 3 meses?",
+        "answer": "Tienes dos opciones: continuar conmigo para **dominar completamente tu nicho**, o implementar la estrategia con tu equipo usando los templates y guías que te proporciono. Ambas funcionan."
+      }
+    ]
+  },
+  "finalCtaSection": {
+    "guaranteeEmoji": "🎯",
+    "guaranteeTitle": "Garantía de Resultados",
+    "guaranteeDescription": "Si en 3 meses no mejora significativamente tu posicionamiento y la calidad de leads de tu blog, **trabajamos un mes adicional gratis** hasta conseguir los resultados prometidos.",
+    "title": "Lo que consigues en 3 meses:",
+    "features": [
+      "24 artículos estratégicos posicionando",
+      "Autoridad reconocida en tu nicho",
+      "Tráfico cualificado constante",
+      "Leads de mayor calidad",
+      "Estrategia escalable para tu equipo",
+      "Posicionamiento SEO mejorado",
+      "Sistema replicable post-proyecto"
+    ],
+    "price": "2.995",
+    "currency": "€",
+    "priceNote": "(Facturación mensual durante 3 meses)",
+    "ctaText": "SÍ, quiero dominar mi nicho →",
+    "ctaLink": "/contacto",
+    "securityNote": "Pago mensual. Cancelas cuando quieras. Garantía de resultados."
+  }
+}

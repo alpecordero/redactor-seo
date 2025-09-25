@@ -28,6 +28,32 @@ export default defineConfig({
         fields: [
           {
             type: "object",
+            name: "seo",
+            label: "SEO",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "Título SEO",
+                required: true,
+                ui: {
+                  description: "Título que aparece en Google (máx. 60 caracteres)",
+                },
+              },
+              {
+                type: "string",
+                name: "description",
+                label: "Meta descripción",
+                required: true,
+                ui: {
+                  component: "textarea",
+                  description: "Descripción que aparece en Google (máx. 160 caracteres)",
+                },
+              },
+            ],
+          },
+          {
+            type: "object",
             name: "hero",
             label: "1. Sección Hero",
             fields: [
@@ -240,7 +266,7 @@ export default defineConfig({
                 required: true,
                 ui: {
                   component: "textarea",
-                  description: "Texto explicativo que conecta la filosofía con la propuesta",
+                  description: "Texto explicativo que conecta la filosofía con la propuesta. Puedes usar enlaces con formato markdown: [texto](url)",
                 },
               },
             ],
@@ -391,6 +417,71 @@ export default defineConfig({
           },
           {
             type: "object",
+            name: "testimonialsSection",
+            label: "6.5. Testimonios de Clientes",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "Título de la sección",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "subtitle",
+                label: "Subtítulo",
+                required: true,
+                ui: {
+                  component: "textarea",
+                },
+              },
+              {
+                type: "object",
+                name: "testimonials",
+                label: "Testimonios",
+                list: true,
+                fields: [
+                  {
+                    type: "string",
+                    name: "name",
+                    label: "Nombre del cliente",
+                    required: true,
+                  },
+                  {
+                    type: "string",
+                    name: "company",
+                    label: "Empresa/Posición",
+                    required: true,
+                  },
+                  {
+                    type: "string",
+                    name: "testimonial",
+                    label: "Testimonio",
+                    required: true,
+                    ui: {
+                      component: "textarea",
+                    },
+                  },
+                  {
+                    type: "image",
+                    name: "image",
+                    label: "Foto del cliente",
+                    required: true,
+                  },
+                  {
+                    type: "string",
+                    name: "link",
+                    label: "Enlace web/perfil",
+                    ui: {
+                      description: "URL a su web, LinkedIn o perfil profesional",
+                    },
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            type: "object",
             name: "ctaSection",
             label: "7. Sección - Call to Action Final",
             fields: [
@@ -419,59 +510,6 @@ export default defineConfig({
                 required: true,
               },
             ],
-          },
-        ],
-      },
-      {
-        name: "post",
-        label: "Blog Posts",
-        path: "src/content/blog",
-        format: "md",
-        fields: [
-          {
-            type: "string",
-            name: "title",
-            label: "Título",
-            isTitle: true,
-            required: true,
-          },
-          {
-            type: "string",
-            name: "description",
-            label: "Descripción SEO",
-            description: "Descripción que aparecerá en Google (máx. 160 caracteres)",
-            required: true,
-          },
-          {
-            type: "datetime",
-            name: "pubDate",
-            label: "Fecha de publicación",
-            required: true,
-          },
-          {
-            type: "image",
-            name: "heroImage",
-            label: "Imagen destacada",
-            description: "Imagen principal del artículo (recomendado: 1200x630px)",
-          },
-          {
-            type: "string",
-            name: "tags",
-            label: "Etiquetas",
-            list: true,
-            description: "Palabras clave relevantes para el artículo",
-          },
-          {
-            type: "string",
-            name: "metaTitle",
-            label: "Título SEO (opcional)",
-            description: "Si no se especifica, se usará el título principal",
-          },
-          {
-            type: "rich-text",
-            name: "body",
-            label: "Contenido",
-            isBody: true,
           },
         ],
       },
@@ -651,6 +689,1416 @@ export default defineConfig({
             name: "body",
             label: "Contenido principal",
             isBody: true,
+          },
+        ],
+      },
+      {
+        name: "auditoria",
+        label: "Auditoría de Contenido",
+        path: "src/content/auditoria",
+        format: "json",
+        ui: {
+          allowedActions: {
+            create: false,
+            delete: false,
+          },
+        },
+        fields: [
+          {
+            type: "object",
+            name: "seo",
+            label: "SEO",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "Título SEO",
+                required: true,
+                ui: {
+                  description: "Título que aparece en Google (máx. 60 caracteres)",
+                },
+              },
+              {
+                type: "string",
+                name: "description",
+                label: "Meta descripción",
+                required: true,
+                ui: {
+                  component: "textarea",
+                  description: "Descripción que aparece en Google (máx. 160 caracteres)",
+                },
+              },
+            ],
+          },
+          {
+            type: "object",
+            name: "hero",
+            label: "1. Sección Hero",
+            fields: [
+              {
+                type: "string",
+                name: "subtitle",
+                label: "Subtítulo",
+                required: true,
+                ui: {
+                  description: "Ej: 'AUDITORÍA DE CONTENIDO'",
+                },
+              },
+              {
+                type: "string",
+                name: "titlePart1",
+                label: "Título - Parte 1 (Negro)",
+                required: true,
+                ui: {
+                  description: "Primera parte del título que aparece en negro",
+                },
+              },
+              {
+                type: "string",
+                name: "titlePart2",
+                label: "Título - Parte 2 (Naranja)",
+                required: true,
+                ui: {
+                  description: "Segunda parte del título que aparece en naranja",
+                },
+              },
+              {
+                type: "string",
+                name: "description",
+                label: "Descripción",
+                required: true,
+                ui: {
+                  component: "textarea",
+                },
+              },
+              {
+                type: "string",
+                name: "ctaText",
+                label: "Texto del botón CTA",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "ctaLink",
+                label: "Enlace del botón CTA",
+                required: true,
+              },
+            ],
+          },
+          {
+            type: "object",
+            name: "problemsSection",
+            label: "2. Sección Problemas",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "Título (H2)",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "subtitle",
+                label: "Subtítulo",
+                required: true,
+              },
+              {
+                type: "object",
+                name: "problems",
+                label: "Problemas",
+                list: true,
+                fields: [
+                  {
+                    type: "string",
+                    name: "problem",
+                    label: "Problema (izquierda)",
+                    required: true,
+                  },
+                  {
+                    type: "string",
+                    name: "consequence",
+                    label: "Consecuencia (derecha)",
+                    required: true,
+                  },
+                ],
+              },
+              {
+                type: "string",
+                name: "closingText",
+                label: "Texto de cierre",
+                required: true,
+                ui: {
+                  component: "textarea",
+                },
+              },
+            ],
+          },
+          {
+            type: "object",
+            name: "approachSection",
+            label: "3. Mi Enfoque",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "Título (H2)",
+                required: true,
+              },
+              {
+                type: "object",
+                name: "points",
+                label: "Puntos del enfoque",
+                list: true,
+                fields: [
+                  {
+                    type: "string",
+                    name: "title",
+                    label: "Título del punto",
+                    required: true,
+                  },
+                  {
+                    type: "string",
+                    name: "description",
+                    label: "Descripción",
+                    required: true,
+                    ui: {
+                      component: "textarea",
+                    },
+                  },
+                ],
+              },
+              {
+                type: "string",
+                name: "conclusion",
+                label: "Texto de conclusión",
+                required: true,
+              },
+            ],
+          },
+          {
+            type: "object",
+            name: "testimonialsSection",
+            label: "4. Casos de Éxito",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "Título (H2)",
+                required: true,
+              },
+              {
+                type: "object",
+                name: "testimonials",
+                label: "Testimonios",
+                list: true,
+                fields: [
+                  {
+                    type: "string",
+                    name: "quote",
+                    label: "Testimonio",
+                    required: true,
+                    ui: {
+                      component: "textarea",
+                    },
+                  },
+                  {
+                    type: "string",
+                    name: "author",
+                    label: "Autor",
+                    required: true,
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            type: "object",
+            name: "pricingSection",
+            label: "5. Precio y Qué Incluye",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "Título principal",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "subtitle",
+                label: "Subtítulo explicativo",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "price",
+                label: "Precio (solo número)",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "currency",
+                label: "Moneda",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "priceDescription",
+                label: "Descripción del precio",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "includes",
+                label: "Qué incluye",
+                list: true,
+                required: true,
+              },
+              {
+                type: "string",
+                name: "delivery",
+                label: "Información de entrega",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "format",
+                label: "Información de formato",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "ctaText",
+                label: "Texto del botón CTA",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "ctaLink",
+                label: "Enlace del botón CTA",
+                required: true,
+              },
+            ],
+          },
+          {
+            type: "object",
+            name: "faqSection",
+            label: "6. Preguntas Frecuentes",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "Título (H2)",
+                required: true,
+              },
+              {
+                type: "object",
+                name: "questions",
+                label: "Preguntas y Respuestas",
+                list: true,
+                fields: [
+                  {
+                    type: "string",
+                    name: "question",
+                    label: "Pregunta",
+                    required: true,
+                  },
+                  {
+                    type: "string",
+                    name: "answer",
+                    label: "Respuesta",
+                    required: true,
+                    ui: {
+                      component: "textarea",
+                    },
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            type: "object",
+            name: "finalCtaSection",
+            label: "7. CTA Final + Garantía",
+            fields: [
+              {
+                type: "string",
+                name: "guaranteeEmoji",
+                label: "Emoji de la garantía",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "guaranteeTitle",
+                label: "Título de la garantía",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "guaranteeDescription",
+                label: "Descripción de la garantía",
+                required: true,
+                ui: {
+                  component: "textarea",
+                },
+              },
+              {
+                type: "string",
+                name: "title",
+                label: "Título del resumen",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "features",
+                label: "Características incluidas",
+                list: true,
+                required: true,
+              },
+              {
+                type: "string",
+                name: "price",
+                label: "Precio final (solo número)",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "currency",
+                label: "Moneda",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "priceNote",
+                label: "Nota del precio",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "ctaText",
+                label: "Texto del botón CTA final",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "ctaLink",
+                label: "Enlace del botón CTA final",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "securityNote",
+                label: "Nota de seguridad",
+                required: true,
+              },
+            ],
+          },
+        ],
+      },
+      {
+        name: "redaccion_web",
+        nameOverride: "redaccion-web",
+        label: "Redacción Web",
+        path: "src/content/redaccion-web",
+        format: "json",
+        ui: {
+          allowedActions: {
+            create: false,
+            delete: false,
+          },
+        },
+        fields: [
+          {
+            type: "object",
+            name: "seo",
+            label: "SEO",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "Título SEO",
+                required: true,
+                ui: {
+                  description: "Título que aparece en Google (máx. 60 caracteres)",
+                },
+              },
+              {
+                type: "string",
+                name: "description",
+                label: "Meta descripción",
+                required: true,
+                ui: {
+                  component: "textarea",
+                  description: "Descripción que aparece en Google (máx. 160 caracteres)",
+                },
+              },
+            ],
+          },
+          {
+            type: "object",
+            name: "hero",
+            label: "1. Sección Hero",
+            fields: [
+              {
+                type: "string",
+                name: "subtitle",
+                label: "Subtítulo",
+                required: true,
+                ui: {
+                  description: "Ej: 'REDACCIÓN WEB COMPLETA'",
+                },
+              },
+              {
+                type: "string",
+                name: "titlePart1",
+                label: "Título - Parte 1 (Negro)",
+                required: true,
+                ui: {
+                  description: "Primera parte del título que aparece en negro",
+                },
+              },
+              {
+                type: "string",
+                name: "titlePart2",
+                label: "Título - Parte 2 (Naranja)",
+                required: true,
+                ui: {
+                  description: "Segunda parte del título que aparece en naranja",
+                },
+              },
+              {
+                type: "string",
+                name: "description",
+                label: "Descripción",
+                required: true,
+                ui: {
+                  component: "textarea",
+                },
+              },
+              {
+                type: "string",
+                name: "ctaText",
+                label: "Texto del botón CTA",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "ctaLink",
+                label: "Enlace del botón CTA",
+                required: true,
+              },
+            ],
+          },
+          {
+            type: "object",
+            name: "problemsSection",
+            label: "2. Sección Problemas",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "Título (H2)",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "subtitle",
+                label: "Subtítulo",
+                required: true,
+              },
+              {
+                type: "object",
+                name: "problems",
+                label: "Problemas",
+                list: true,
+                fields: [
+                  {
+                    type: "string",
+                    name: "problem",
+                    label: "Problema (izquierda)",
+                    required: true,
+                  },
+                  {
+                    type: "string",
+                    name: "consequence",
+                    label: "Consecuencia (derecha)",
+                    required: true,
+                  },
+                ],
+              },
+              {
+                type: "string",
+                name: "closingText",
+                label: "Texto de cierre",
+                required: true,
+                ui: {
+                  component: "textarea",
+                },
+              },
+            ],
+          },
+          {
+            type: "object",
+            name: "approachSection",
+            label: "3. Mi Método",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "Título (H2)",
+                required: true,
+              },
+              {
+                type: "object",
+                name: "points",
+                label: "Puntos del método",
+                list: true,
+                fields: [
+                  {
+                    type: "string",
+                    name: "title",
+                    label: "Título del punto",
+                    required: true,
+                  },
+                  {
+                    type: "string",
+                    name: "description",
+                    label: "Descripción",
+                    required: true,
+                    ui: {
+                      component: "textarea",
+                    },
+                  },
+                ],
+              },
+              {
+                type: "string",
+                name: "conclusion",
+                label: "Texto de conclusión",
+                required: true,
+              },
+            ],
+          },
+          {
+            type: "object",
+            name: "testimonialsSection",
+            label: "4. Casos de Éxito",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "Título (H2)",
+                required: true,
+              },
+              {
+                type: "object",
+                name: "testimonials",
+                label: "Testimonios",
+                list: true,
+                fields: [
+                  {
+                    type: "string",
+                    name: "quote",
+                    label: "Testimonio",
+                    required: true,
+                    ui: {
+                      component: "textarea",
+                    },
+                  },
+                  {
+                    type: "string",
+                    name: "author",
+                    label: "Autor",
+                    required: true,
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            type: "object",
+            name: "pricingSection",
+            label: "5. Precio y Qué Incluye",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "Título principal",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "subtitle",
+                label: "Subtítulo explicativo",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "price",
+                label: "Precio (solo número)",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "currency",
+                label: "Moneda",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "priceDescription",
+                label: "Descripción del precio",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "includes",
+                label: "Qué incluye",
+                list: true,
+                required: true,
+              },
+              {
+                type: "string",
+                name: "delivery",
+                label: "Información de entrega",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "format",
+                label: "Información de formato",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "ctaText",
+                label: "Texto del botón CTA",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "ctaLink",
+                label: "Enlace del botón CTA",
+                required: true,
+              },
+            ],
+          },
+          {
+            type: "object",
+            name: "faqSection",
+            label: "6. Preguntas Frecuentes",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "Título (H2)",
+                required: true,
+              },
+              {
+                type: "object",
+                name: "questions",
+                label: "Preguntas y Respuestas",
+                list: true,
+                fields: [
+                  {
+                    type: "string",
+                    name: "question",
+                    label: "Pregunta",
+                    required: true,
+                  },
+                  {
+                    type: "string",
+                    name: "answer",
+                    label: "Respuesta",
+                    required: true,
+                    ui: {
+                      component: "textarea",
+                    },
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            type: "object",
+            name: "finalCtaSection",
+            label: "7. CTA Final + Garantía",
+            fields: [
+              {
+                type: "string",
+                name: "guaranteeEmoji",
+                label: "Emoji de la garantía",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "guaranteeTitle",
+                label: "Título de la garantía",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "guaranteeDescription",
+                label: "Descripción de la garantía",
+                required: true,
+                ui: {
+                  component: "textarea",
+                },
+              },
+              {
+                type: "string",
+                name: "title",
+                label: "Título del resumen",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "features",
+                label: "Características incluidas",
+                list: true,
+                required: true,
+              },
+              {
+                type: "string",
+                name: "price",
+                label: "Precio final (solo número)",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "currency",
+                label: "Moneda",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "priceNote",
+                label: "Nota del precio",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "ctaText",
+                label: "Texto del botón CTA final",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "ctaLink",
+                label: "Enlace del botón CTA final",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "securityNote",
+                label: "Nota de seguridad",
+                required: true,
+              },
+            ],
+          },
+        ],
+      },
+      {
+        name: "redaccion_estrategica_blogs",
+        nameOverride: "redaccion-estrategica-blogs",
+        label: "Redacción Estratégica Blogs",
+        path: "src/content/redaccion-estrategica-blogs",
+        format: "json",
+        ui: {
+          allowedActions: {
+            create: false,
+            delete: false,
+          },
+        },
+        fields: [
+          {
+            type: "object",
+            name: "seo",
+            label: "SEO",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "Título SEO",
+                required: true,
+                ui: {
+                  description: "Título que aparece en Google (máx. 60 caracteres)",
+                },
+              },
+              {
+                type: "string",
+                name: "description",
+                label: "Meta descripción",
+                required: true,
+                ui: {
+                  component: "textarea",
+                  description: "Descripción que aparece en Google (máx. 160 caracteres)",
+                },
+              },
+            ],
+          },
+          {
+            type: "object",
+            name: "hero",
+            label: "1. Sección Hero",
+            fields: [
+              {
+                type: "string",
+                name: "subtitle",
+                label: "Subtítulo",
+                required: true,
+                ui: {
+                  description: "Ej: 'REDACCIÓN ESTRATÉGICA PARA BLOGS'",
+                },
+              },
+              {
+                type: "string",
+                name: "titlePart1",
+                label: "Título - Parte 1 (Negro)",
+                required: true,
+                ui: {
+                  description: "Primera parte del título que aparece en negro",
+                },
+              },
+              {
+                type: "string",
+                name: "titlePart2",
+                label: "Título - Parte 2 (Naranja)",
+                required: true,
+                ui: {
+                  description: "Segunda parte del título que aparece en naranja",
+                },
+              },
+              {
+                type: "string",
+                name: "description",
+                label: "Descripción",
+                required: true,
+                ui: {
+                  component: "textarea",
+                },
+              },
+              {
+                type: "string",
+                name: "ctaText",
+                label: "Texto del botón CTA",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "ctaLink",
+                label: "Enlace del botón CTA",
+                required: true,
+              },
+            ],
+          },
+          {
+            type: "object",
+            name: "problemsSection",
+            label: "2. Sección Problemas",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "Título (H2)",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "subtitle",
+                label: "Subtítulo",
+                required: true,
+              },
+              {
+                type: "object",
+                name: "problems",
+                label: "Problemas",
+                list: true,
+                fields: [
+                  {
+                    type: "string",
+                    name: "problem",
+                    label: "Problema (izquierda)",
+                    required: true,
+                  },
+                  {
+                    type: "string",
+                    name: "consequence",
+                    label: "Consecuencia (derecha)",
+                    required: true,
+                  },
+                ],
+              },
+              {
+                type: "string",
+                name: "closingText",
+                label: "Texto de cierre",
+                required: true,
+                ui: {
+                  component: "textarea",
+                },
+              },
+            ],
+          },
+          {
+            type: "object",
+            name: "approachSection",
+            label: "3. Mi Estrategia",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "Título (H2)",
+                required: true,
+              },
+              {
+                type: "object",
+                name: "points",
+                label: "Puntos de la estrategia",
+                list: true,
+                fields: [
+                  {
+                    type: "string",
+                    name: "title",
+                    label: "Título del punto",
+                    required: true,
+                  },
+                  {
+                    type: "string",
+                    name: "description",
+                    label: "Descripción",
+                    required: true,
+                    ui: {
+                      component: "textarea",
+                    },
+                  },
+                ],
+              },
+              {
+                type: "string",
+                name: "conclusion",
+                label: "Texto de conclusión",
+                required: true,
+              },
+            ],
+          },
+          {
+            type: "object",
+            name: "testimonialsSection",
+            label: "4. Casos de Éxito",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "Título (H2)",
+                required: true,
+              },
+              {
+                type: "object",
+                name: "testimonials",
+                label: "Testimonios",
+                list: true,
+                fields: [
+                  {
+                    type: "string",
+                    name: "quote",
+                    label: "Testimonio",
+                    required: true,
+                    ui: {
+                      component: "textarea",
+                    },
+                  },
+                  {
+                    type: "string",
+                    name: "author",
+                    label: "Autor",
+                    required: true,
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            type: "object",
+            name: "pricingSection",
+            label: "5. Precio y Qué Incluye",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "Título principal",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "subtitle",
+                label: "Subtítulo explicativo",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "price",
+                label: "Precio (solo número)",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "currency",
+                label: "Moneda",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "priceDescription",
+                label: "Descripción del precio",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "includes",
+                label: "Qué incluye",
+                list: true,
+                required: true,
+              },
+              {
+                type: "string",
+                name: "delivery",
+                label: "Información de entrega",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "format",
+                label: "Información de formato",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "ctaText",
+                label: "Texto del botón CTA",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "ctaLink",
+                label: "Enlace del botón CTA",
+                required: true,
+              },
+            ],
+          },
+          {
+            type: "object",
+            name: "faqSection",
+            label: "6. Preguntas Frecuentes",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "Título (H2)",
+                required: true,
+              },
+              {
+                type: "object",
+                name: "questions",
+                label: "Preguntas y Respuestas",
+                list: true,
+                fields: [
+                  {
+                    type: "string",
+                    name: "question",
+                    label: "Pregunta",
+                    required: true,
+                  },
+                  {
+                    type: "string",
+                    name: "answer",
+                    label: "Respuesta",
+                    required: true,
+                    ui: {
+                      component: "textarea",
+                    },
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            type: "object",
+            name: "finalCtaSection",
+            label: "7. CTA Final + Garantía",
+            fields: [
+              {
+                type: "string",
+                name: "guaranteeEmoji",
+                label: "Emoji de la garantía",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "guaranteeTitle",
+                label: "Título de la garantía",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "guaranteeDescription",
+                label: "Descripción de la garantía",
+                required: true,
+                ui: {
+                  component: "textarea",
+                },
+              },
+              {
+                type: "string",
+                name: "title",
+                label: "Título del resumen",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "features",
+                label: "Características incluidas",
+                list: true,
+                required: true,
+              },
+              {
+                type: "string",
+                name: "price",
+                label: "Precio final (solo número)",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "currency",
+                label: "Moneda",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "priceNote",
+                label: "Nota del precio",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "ctaText",
+                label: "Texto del botón CTA final",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "ctaLink",
+                label: "Enlace del botón CTA final",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "securityNote",
+                label: "Nota de seguridad",
+                required: true,
+              },
+            ],
+          },
+        ],
+      },
+      {
+        name: "contact_page",
+        label: "Página de Contacto",
+        path: "src/content/contacto",
+        format: "json",
+        ui: {
+          allowedActions: {
+            create: false,
+            delete: false,
+          },
+        },
+        fields: [
+          {
+            type: "object",
+            name: "seo",
+            label: "SEO",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "Título SEO",
+                required: true,
+                ui: {
+                  description: "Título que aparece en Google (máx. 60 caracteres)",
+                },
+              },
+              {
+                type: "string",
+                name: "description",
+                label: "Meta descripción",
+                required: true,
+                ui: {
+                  component: "textarea",
+                  description: "Descripción que aparece en Google (máx. 160 caracteres)",
+                },
+              },
+            ],
+          },
+          {
+            type: "object",
+            name: "hero",
+            label: "1. Sección Hero",
+            fields: [
+              {
+                type: "string",
+                name: "titlePart1",
+                label: "Título - Parte 1 (Negro)",
+                required: true,
+                ui: {
+                  description: "Primera parte del título que aparece en negro",
+                },
+              },
+              {
+                type: "string",
+                name: "titlePart2",
+                label: "Título - Parte 2 (Naranja)",
+                required: true,
+                ui: {
+                  description: "Segunda parte del título que aparece en naranja",
+                },
+              },
+              {
+                type: "string",
+                name: "description",
+                label: "Descripción",
+                required: true,
+                ui: {
+                  description: "Texto descriptivo que aparece debajo del título",
+                },
+              },
+            ],
+          },
+          {
+            type: "object",
+            name: "form",
+            label: "2. Formulario de Contacto",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "Título del formulario",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "description",
+                label: "Descripción del formulario",
+                required: true,
+              },
+              {
+                type: "object",
+                name: "services",
+                label: "Opciones de servicios",
+                list: true,
+                fields: [
+                  {
+                    type: "string",
+                    name: "value",
+                    label: "Valor (para el formulario)",
+                    required: true,
+                  },
+                  {
+                    type: "string",
+                    name: "label",
+                    label: "Texto mostrado",
+                    required: true,
+                  },
+                ],
+              },
+              {
+                type: "object",
+                name: "budgetRanges",
+                label: "Rangos de presupuesto",
+                list: true,
+                fields: [
+                  {
+                    type: "string",
+                    name: "value",
+                    label: "Valor (para el formulario)",
+                    required: true,
+                  },
+                  {
+                    type: "string",
+                    name: "label",
+                    label: "Texto mostrado",
+                    required: true,
+                  },
+                ],
+              },
+              {
+                type: "string",
+                name: "submitButtonText",
+                label: "Texto del botón de envío",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "privacyPolicyText",
+                label: "Texto de política de privacidad",
+                required: true,
+                ui: {
+                  component: "textarea",
+                  description: "Usa [texto](url) para enlaces",
+                },
+              },
+            ],
+          },
+          {
+            type: "object",
+            name: "contactInfo",
+            label: "3. Información de Contacto",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "Título de la sección",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "email",
+                label: "Dirección de email",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "responseTime",
+                label: "Tiempo de respuesta",
+                required: true,
+              },
+            ],
+          },
+          {
+            type: "object",
+            name: "messages",
+            label: "4. Mensajes del Sistema",
+            fields: [
+              {
+                type: "string",
+                name: "successMessage",
+                label: "Mensaje de éxito",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "errorMessage",
+                label: "Mensaje de error",
+                required: true,
+                ui: {
+                  component: "textarea",
+                },
+              },
+              {
+                type: "string",
+                name: "loadingText",
+                label: "Texto durante el envío",
+                required: true,
+              },
+            ],
           },
         ],
       },

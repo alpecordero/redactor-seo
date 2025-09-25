@@ -1,5 +1,10 @@
 fragment HomepageParts on Homepage {
   __typename
+  seo {
+    __typename
+    title
+    description
+  }
   hero {
     __typename
     subtitle
@@ -70,6 +75,19 @@ fragment HomepageParts on Homepage {
       description
     }
   }
+  testimonialsSection {
+    __typename
+    title
+    subtitle
+    testimonials {
+      __typename
+      name
+      company
+      testimonial
+      image
+      link
+    }
+  }
   ctaSection {
     __typename
     title
@@ -77,17 +95,6 @@ fragment HomepageParts on Homepage {
     buttonText
     buttonLink
   }
-}
-
-fragment PostParts on Post {
-  __typename
-  title
-  description
-  pubDate
-  heroImage
-  tags
-  metaTitle
-  body
 }
 
 fragment PagesParts on Pages {
@@ -131,4 +138,300 @@ fragment PagesParts on Pages {
     buttonText
   }
   body
+}
+
+fragment AuditoriaParts on Auditoria {
+  __typename
+  seo {
+    __typename
+    title
+    description
+  }
+  hero {
+    __typename
+    subtitle
+    titlePart1
+    titlePart2
+    description
+    ctaText
+    ctaLink
+  }
+  problemsSection {
+    __typename
+    title
+    subtitle
+    problems {
+      __typename
+      problem
+      consequence
+    }
+    closingText
+  }
+  approachSection {
+    __typename
+    title
+    points {
+      __typename
+      title
+      description
+    }
+    conclusion
+  }
+  testimonialsSection {
+    __typename
+    title
+    testimonials {
+      __typename
+      quote
+      author
+    }
+  }
+  pricingSection {
+    __typename
+    title
+    subtitle
+    price
+    currency
+    priceDescription
+    includes
+    delivery
+    format
+    ctaText
+    ctaLink
+  }
+  faqSection {
+    __typename
+    title
+    questions {
+      __typename
+      question
+      answer
+    }
+  }
+  finalCtaSection {
+    __typename
+    guaranteeEmoji
+    guaranteeTitle
+    guaranteeDescription
+    title
+    features
+    price
+    currency
+    priceNote
+    ctaText
+    ctaLink
+    securityNote
+  }
+}
+
+fragment Redaccion_webParts on Redaccion_web {
+  __typename
+  seo {
+    __typename
+    title
+    description
+  }
+  hero {
+    __typename
+    subtitle
+    titlePart1
+    titlePart2
+    description
+    ctaText
+    ctaLink
+  }
+  problemsSection {
+    __typename
+    title
+    subtitle
+    problems {
+      __typename
+      problem
+      consequence
+    }
+    closingText
+  }
+  approachSection {
+    __typename
+    title
+    points {
+      __typename
+      title
+      description
+    }
+    conclusion
+  }
+  testimonialsSection {
+    __typename
+    title
+    testimonials {
+      __typename
+      quote
+      author
+    }
+  }
+  pricingSection {
+    __typename
+    title
+    subtitle
+    price
+    currency
+    priceDescription
+    includes
+    delivery
+    format
+    ctaText
+    ctaLink
+  }
+  faqSection {
+    __typename
+    title
+    questions {
+      __typename
+      question
+      answer
+    }
+  }
+  finalCtaSection {
+    __typename
+    guaranteeEmoji
+    guaranteeTitle
+    guaranteeDescription
+    title
+    features
+    price
+    currency
+    priceNote
+    ctaText
+    ctaLink
+    securityNote
+  }
+}
+
+fragment Redaccion_estrategica_blogsParts on Redaccion_estrategica_blogs {
+  __typename
+  seo {
+    __typename
+    title
+    description
+  }
+  hero {
+    __typename
+    subtitle
+    titlePart1
+    titlePart2
+    description
+    ctaText
+    ctaLink
+  }
+  problemsSection {
+    __typename
+    title
+    subtitle
+    problems {
+      __typename
+      problem
+      consequence
+    }
+    closingText
+  }
+  approachSection {
+    __typename
+    title
+    points {
+      __typename
+      title
+      description
+    }
+    conclusion
+  }
+  testimonialsSection {
+    __typename
+    title
+    testimonials {
+      __typename
+      quote
+      author
+    }
+  }
+  pricingSection {
+    __typename
+    title
+    subtitle
+    price
+    currency
+    priceDescription
+    includes
+    delivery
+    format
+    ctaText
+    ctaLink
+  }
+  faqSection {
+    __typename
+    title
+    questions {
+      __typename
+      question
+      answer
+    }
+  }
+  finalCtaSection {
+    __typename
+    guaranteeEmoji
+    guaranteeTitle
+    guaranteeDescription
+    title
+    features
+    price
+    currency
+    priceNote
+    ctaText
+    ctaLink
+    securityNote
+  }
+}
+
+fragment Contact_pageParts on Contact_page {
+  __typename
+  seo {
+    __typename
+    title
+    description
+  }
+  hero {
+    __typename
+    titlePart1
+    titlePart2
+    description
+  }
+  form {
+    __typename
+    title
+    description
+    services {
+      __typename
+      value
+      label
+    }
+    budgetRanges {
+      __typename
+      value
+      label
+    }
+    submitButtonText
+    privacyPolicyText
+  }
+  contactInfo {
+    __typename
+    title
+    email
+    responseTime
+  }
+  messages {
+    __typename
+    successMessage
+    errorMessage
+    loadingText
+  }
 }

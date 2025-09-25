@@ -1,66 +1,70 @@
 {
+  "seo": {
+    "title": "RedactorSEO - Contenido que posiciona y convierte",
+    "description": "Servicios profesionales de redacción SEO para impulsar tu negocio online. Contenido optimizado que atrae, convierte y posiciona tu marca en los primeros resultados."
+  },
   "hero": {
     "subtitle": "Redactor SEO · Estratega",
     "title": "Google \n1995-2025\nD.E.P",
     "description": "La familia del SEO no te olvida.",
     "candleMessages": [
-      "Por repetir la misma palabra clave 147 veces",
-      "Por SEO Yoast",
-      "Por el Page Rank",
-      "Por Matt Cutts (¿sigue vivo?)",
-      "Por los que estudiaron un Máster de SEO",
-      "Por los artículos de \"Las 10 mejores\"",
-      "Por las \"Guías definitivas\"",
-      "Por Romuald Fons (¿sigue vivo?)",
-      "Por Google+",
-      "Por las agencias SEO que no saben hacer SEO",
+      "Por gastar 3.000€ en una web cutre",
+      "Por pensarte lo del Kit Digital (no has caído, ¿verdad?)",
+      "Porque tú entiendes lo que escribes...",
+      "... pero ellos no",
+      "Por escribir cosas que nadie lee",
+      "Por no saber qué poner en el \"Sobre nosotros\"",
+      "Por darle las llaves de tu negocio a ChatGPT",
+      "Por pensar que lo anterior era buena idea",
+      "Por tirar el dinero en anuncios",
+      "Por contratar agencias SEO que no saben hacer SEO",
       "Por el fin de una era",
-      "El SEO ha muerto",
-      "Larga vida al SEO",
+      "Por el inicio de otra",
+      "¿Sabes?",
       "Ahora importa esto:",
       "Estrategia. Creatividad. Contenido.",
       "Resucita tu página web 👇"
     ]
   },
   "googleDeathSection": {
-    "title": "El SEO viejuno no funciona",
-    "paragraph": "La gente se ha modernizado.Tú igual sigues siendo un clásico y has tecleando \"redactor seo\" en Google. Pero tu audiencia ya no busca así:",
+    "title": "El SEO que te venden no funciona",
+    "paragraph": "La gente se ha modernizado. Tú igual sigues siendo un clásico y has tecleando \"redactor seo\" en Google. Pero tu audiencia ya no busca así:",
     "checkboxItems": [
       {
-        "text": "El 70% de las búsquedas no salen de Google. [SingleGrain.com](https://www.singlegrain.com/digital-marketing-strategy/how-aeo-can-help-with-zero-click-searches-in-2025/)"
+        "text": "El 70% de las búsquedas terminan sin clic. [SingleGrain.com](https://www.singlegrain.com/digital-marketing-strategy/how-aeo-can-help-with-zero-click-searches-in-2025/)"
       },
       {
         "text": "El 77% usan ChatGPT como motor de búsqueda. [Adobe.com](https://www.adobe.com/express/learn/blog/chatgpt-as-a-search-engine)"
       },
       {
-        "text": "La IA genera toneladas de contenido genérico cada día."
+        "text": "El 60% de las búsquedas locales están dominadas por la IA. [LocalFalcon.com](https://www.localfalcon.com/blog/whitepaper-studies-the-impact-of-google-ai-overviews-on-local-business-search-visibility)"
       }
     ],
-    "closingPhrase": "Los redactores y los SEOs de la vieja escuela usan técnicas obsoletas."
+    "closingPhrase": "Te buscan en ChatGPT, en Gemini o en Grok. <strong>Y ahí no sales.</strong>"
   },
   "painPointsSection": {
     "title": "Lo que todo el mundo hace",
-    "subtitleFirstPart": "(Y no funciona)",
+    "subtitleFirstPart": "(para convencer a las IAs y a los clientes)",
     "phrases": [
       {
         "leftPart": "Escribir con ChatGPT Plus",
-        "rightPart": "Las palabras parecen huecas"
+        "rightPart": "Pierdes el tiempo"
       },
       {
         "leftPart": "Poner muchas palabras clave",
-        "rightPart": "El tráfico sigue sin despegar"
+        "rightPart": "Pierdes oportunidades"
       },
       {
         "leftPart": "Aplicar fórmulas de gurús",
-        "rightPart": "No funcionan"
+        "rightPart": "Pierdes dinero"
       },
       {
         "leftPart": "Copiar a la competencia",
-        "rightPart": "Pierden credibilidad"
+        "rightPart": "Pierdes credibilidad"
       },
       {
         "leftPart": "Tirar de tópicos",
-        "rightPart": "Diluyen su valor"
+        "rightPart": "Diluyes tu valor"
       }
     ],
     "closingPhrase": "El problema no eres tú, es que lo han diseñado para que des vueltas en círculos."
@@ -69,53 +73,50 @@
     "mainText": "Loco es el que, haciendo siempre lo mismo, espera",
     "highlightedText": "resultados diferentes",
     "continuationText": "Albert Einstein",
-    "secondaryText": "Todos los redactores SEO y copywriters hacen lo mismo."
+    "secondaryText": "Todas las agencias, redactores SEO y copywriters repiten lo mismo."
   },
   "bridgeSection": {
-    "title": "Por eso trabajo diferente",
-    "paragraph": "Mientras otros copian fórmulas y exprimen los límites de la IA, yo desarrollo estrategias personalizadas para cada marca. Sin plantillas ni fórmulas de vendehúmos. Conexión auténtica con tu público, así funciona el SEO."
+    "title": "¿Entonces?",
+    "paragraph": "Conoce a tu público y dale lo que espera. Simple. Es lo que hacen las 500 mayores empresas del mundo. Los peces gordos ni improvisan ni crean textos con IA, eligen contenido humano de alta calidad. [Originality.ai](https://originality.ai/blog/ai-generated-content-dominates-on-some-fortune-500-sites)"
   },
   "servicesPackagesSection": {
     "title": "Mi propuesta:",
     "packages": [
       {
         "icon": "🔍",
-        "heading": "¿Por qué no te eligen?",
-        "description": "Tu competencia vende lo mismo que tú, pero ellos facturan más. Te muestro exactamente qué están haciendo diferente y cómo superarlos.",
+        "heading": "Auditoría + Plan de acción",
+        "description": "Audito tu web. Porque no funciona como esperas y no sabes por qué. Pondré nombre al problema y te diré cómo solucionarlo.",
         "deliverables": [
-          "Análisis de 5 competidores directos",
-          "Mapa de oportunidades",
-          "Propuesta diferenciada",
-          "Plan de acción inmediato"
+          "Claridad",
+          "Dirección",
+          "Hoja de ruta"
         ],
-        "ctaText": "Descubre tus ventajas ocultas",
-        "ctaLink": "/audit"
+        "ctaText": "Empieza por la auditoría",
+        "ctaLink": "/auditoria-contenido"
       },
       {
         "icon": "✍️",
-        "heading": "Convierto visitas en clientes",
-        "description": "Tu web recibe tráfico pero no vende. Reescribo cada sección para que tus visitantes entiendan tu valor en segundos y actúen de inmediato.",
+        "heading": "Redacción web completa",
+        "description": "Redacto las 5 páginas más importantes de tu web. Conectarás mejor con los clientes y conseguirás más ventas.",
         "deliverables": [
-          "Web completa reescrita",
-          "Mensajes optimizado para conversión",
-          "Pautas de marca",
-          "Textos que venden y convencen"
+          "Confianza",
+          "Conversión",
+          "Credibilidad"
         ],
-        "ctaText": "Multiplicar mis conversiones",
-        "ctaLink": "/rewrite"
+        "ctaText": "Renovar mi web",
+        "ctaLink": "/redaccion-web"
       },
       {
         "icon": "🗺️",
-        "heading": "Sé el referente",
-        "description": "Deja de perseguir clientes. Desarrollo la estrategia para que sean ellos quienes te busquen y te vean como la única opción.",
+        "heading": "Blog estratégico",
+        "description": "Creo contenido que posiciona tu negocio como referente. Tus clientes te buscarán y recomendarán.",
         "deliverables": [
-          "Estrategia de autoridad 90 días",
-          "Calendario editorial",
-          "Contenido que genera demanda",
-          "KPIs definidos"
+          "Autoridad",
+          "Visibilidad",
+          "Demanda"
         ],
-        "ctaText": "Ser la referencia de mi sector",
-        "ctaLink": "/strategy"
+        "ctaText": "Sé el referente",
+        "ctaLink": "/redaccion-estrategica-blogs"
       }
     ],
     "finalCta": {
@@ -142,6 +143,33 @@
         "value": 95,
         "suffix": "%",
         "description": "Clientes satisfechos que repiten"
+      }
+    ]
+  },
+  "testimonialsSection": {
+    "title": "Mis clientes opinan",
+    "subtitle": "Testimonios reales de gente como tú",
+    "testimonials": [
+      {
+        "name": "INFOAUTÓNOMOS",
+        "company": "Asesoría online",
+        "testimonial": "Álvaro es un gran profesional del copywriting. Nos ha ayudado enormemente a desarrollar nuestra estrategia de contenidos para posicionar nuestra asesoría online. Tiene una gran capacidad para documentarse y generar contenidos de calidad sobre los temas que preocupan a los autónomos en el día a día.",
+        "image": "/infoautonomos.jpg",
+        "link": "https://www.infoautonomos.com/"
+      },
+      {
+        "name": "YAEL NACHMOW",
+        "company": "Frontend Developer",
+        "testimonial": "Álvaro es un fuera de serie. Es rápido, proactivo y su trabajo siempre es impecable. Le he pedido textos de todo tipo, y en todas las ocasiones ha sabido plasmar lo que yo quería (con unas técnicas de copywriting y SEO impecables). Siempre entrega los trabajos a tiempo (y además es muy majo). No es barato, pero te aseguro que cada céntimo que le pagues habrá valido muchísimo la pena.",
+        "image": "/yael-cliente-1.jpg",
+        "link": "https://www.linkedin.com/in/yael-nachumow/"
+      },
+      {
+        "name": "CRISTINA RODRÍGUEZ",
+        "company": "Diseñadora gráfica",
+        "testimonial": "Trabajar con Álvaro ha sido un acierto. Es un gran profesional, capta perfectamente la idea que el cliente desea transmitir y le da forma conforme a parámetros SEO. Y, muy importante, es serio y escrupulosamente cumplidor en plazos, con una agenda muy bien estructurada para no fallar.",
+        "image": "/cristina-cliente.jpg",
+        "link": "https://icreare.es/"
       }
     ]
   },

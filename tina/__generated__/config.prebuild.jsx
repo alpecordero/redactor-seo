@@ -28,6 +28,32 @@ var config_default = defineConfig({
         fields: [
           {
             type: "object",
+            name: "seo",
+            label: "SEO",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo SEO",
+                required: true,
+                ui: {
+                  description: "T\xEDtulo que aparece en Google (m\xE1x. 60 caracteres)"
+                }
+              },
+              {
+                type: "string",
+                name: "description",
+                label: "Meta descripci\xF3n",
+                required: true,
+                ui: {
+                  component: "textarea",
+                  description: "Descripci\xF3n que aparece en Google (m\xE1x. 160 caracteres)"
+                }
+              }
+            ]
+          },
+          {
+            type: "object",
             name: "hero",
             label: "1. Secci\xF3n Hero",
             fields: [
@@ -240,7 +266,7 @@ var config_default = defineConfig({
                 required: true,
                 ui: {
                   component: "textarea",
-                  description: "Texto explicativo que conecta la filosof\xEDa con la propuesta"
+                  description: "Texto explicativo que conecta la filosof\xEDa con la propuesta. Puedes usar enlaces con formato markdown: [texto](url)"
                 }
               }
             ]
@@ -391,6 +417,71 @@ var config_default = defineConfig({
           },
           {
             type: "object",
+            name: "testimonialsSection",
+            label: "6.5. Testimonios de Clientes",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo de la secci\xF3n",
+                required: true
+              },
+              {
+                type: "string",
+                name: "subtitle",
+                label: "Subt\xEDtulo",
+                required: true,
+                ui: {
+                  component: "textarea"
+                }
+              },
+              {
+                type: "object",
+                name: "testimonials",
+                label: "Testimonios",
+                list: true,
+                fields: [
+                  {
+                    type: "string",
+                    name: "name",
+                    label: "Nombre del cliente",
+                    required: true
+                  },
+                  {
+                    type: "string",
+                    name: "company",
+                    label: "Empresa/Posici\xF3n",
+                    required: true
+                  },
+                  {
+                    type: "string",
+                    name: "testimonial",
+                    label: "Testimonio",
+                    required: true,
+                    ui: {
+                      component: "textarea"
+                    }
+                  },
+                  {
+                    type: "image",
+                    name: "image",
+                    label: "Foto del cliente",
+                    required: true
+                  },
+                  {
+                    type: "string",
+                    name: "link",
+                    label: "Enlace web/perfil",
+                    ui: {
+                      description: "URL a su web, LinkedIn o perfil profesional"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: "object",
             name: "ctaSection",
             label: "7. Secci\xF3n - Call to Action Final",
             fields: [
@@ -419,59 +510,6 @@ var config_default = defineConfig({
                 required: true
               }
             ]
-          }
-        ]
-      },
-      {
-        name: "post",
-        label: "Blog Posts",
-        path: "src/content/blog",
-        format: "md",
-        fields: [
-          {
-            type: "string",
-            name: "title",
-            label: "T\xEDtulo",
-            isTitle: true,
-            required: true
-          },
-          {
-            type: "string",
-            name: "description",
-            label: "Descripci\xF3n SEO",
-            description: "Descripci\xF3n que aparecer\xE1 en Google (m\xE1x. 160 caracteres)",
-            required: true
-          },
-          {
-            type: "datetime",
-            name: "pubDate",
-            label: "Fecha de publicaci\xF3n",
-            required: true
-          },
-          {
-            type: "image",
-            name: "heroImage",
-            label: "Imagen destacada",
-            description: "Imagen principal del art\xEDculo (recomendado: 1200x630px)"
-          },
-          {
-            type: "string",
-            name: "tags",
-            label: "Etiquetas",
-            list: true,
-            description: "Palabras clave relevantes para el art\xEDculo"
-          },
-          {
-            type: "string",
-            name: "metaTitle",
-            label: "T\xEDtulo SEO (opcional)",
-            description: "Si no se especifica, se usar\xE1 el t\xEDtulo principal"
-          },
-          {
-            type: "rich-text",
-            name: "body",
-            label: "Contenido",
-            isBody: true
           }
         ]
       },
@@ -651,6 +689,1416 @@ var config_default = defineConfig({
             name: "body",
             label: "Contenido principal",
             isBody: true
+          }
+        ]
+      },
+      {
+        name: "auditoria",
+        label: "Auditor\xEDa de Contenido",
+        path: "src/content/auditoria",
+        format: "json",
+        ui: {
+          allowedActions: {
+            create: false,
+            delete: false
+          }
+        },
+        fields: [
+          {
+            type: "object",
+            name: "seo",
+            label: "SEO",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo SEO",
+                required: true,
+                ui: {
+                  description: "T\xEDtulo que aparece en Google (m\xE1x. 60 caracteres)"
+                }
+              },
+              {
+                type: "string",
+                name: "description",
+                label: "Meta descripci\xF3n",
+                required: true,
+                ui: {
+                  component: "textarea",
+                  description: "Descripci\xF3n que aparece en Google (m\xE1x. 160 caracteres)"
+                }
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "hero",
+            label: "1. Secci\xF3n Hero",
+            fields: [
+              {
+                type: "string",
+                name: "subtitle",
+                label: "Subt\xEDtulo",
+                required: true,
+                ui: {
+                  description: "Ej: 'AUDITOR\xCDA DE CONTENIDO'"
+                }
+              },
+              {
+                type: "string",
+                name: "titlePart1",
+                label: "T\xEDtulo - Parte 1 (Negro)",
+                required: true,
+                ui: {
+                  description: "Primera parte del t\xEDtulo que aparece en negro"
+                }
+              },
+              {
+                type: "string",
+                name: "titlePart2",
+                label: "T\xEDtulo - Parte 2 (Naranja)",
+                required: true,
+                ui: {
+                  description: "Segunda parte del t\xEDtulo que aparece en naranja"
+                }
+              },
+              {
+                type: "string",
+                name: "description",
+                label: "Descripci\xF3n",
+                required: true,
+                ui: {
+                  component: "textarea"
+                }
+              },
+              {
+                type: "string",
+                name: "ctaText",
+                label: "Texto del bot\xF3n CTA",
+                required: true
+              },
+              {
+                type: "string",
+                name: "ctaLink",
+                label: "Enlace del bot\xF3n CTA",
+                required: true
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "problemsSection",
+            label: "2. Secci\xF3n Problemas",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo (H2)",
+                required: true
+              },
+              {
+                type: "string",
+                name: "subtitle",
+                label: "Subt\xEDtulo",
+                required: true
+              },
+              {
+                type: "object",
+                name: "problems",
+                label: "Problemas",
+                list: true,
+                fields: [
+                  {
+                    type: "string",
+                    name: "problem",
+                    label: "Problema (izquierda)",
+                    required: true
+                  },
+                  {
+                    type: "string",
+                    name: "consequence",
+                    label: "Consecuencia (derecha)",
+                    required: true
+                  }
+                ]
+              },
+              {
+                type: "string",
+                name: "closingText",
+                label: "Texto de cierre",
+                required: true,
+                ui: {
+                  component: "textarea"
+                }
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "approachSection",
+            label: "3. Mi Enfoque",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo (H2)",
+                required: true
+              },
+              {
+                type: "object",
+                name: "points",
+                label: "Puntos del enfoque",
+                list: true,
+                fields: [
+                  {
+                    type: "string",
+                    name: "title",
+                    label: "T\xEDtulo del punto",
+                    required: true
+                  },
+                  {
+                    type: "string",
+                    name: "description",
+                    label: "Descripci\xF3n",
+                    required: true,
+                    ui: {
+                      component: "textarea"
+                    }
+                  }
+                ]
+              },
+              {
+                type: "string",
+                name: "conclusion",
+                label: "Texto de conclusi\xF3n",
+                required: true
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "testimonialsSection",
+            label: "4. Casos de \xC9xito",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo (H2)",
+                required: true
+              },
+              {
+                type: "object",
+                name: "testimonials",
+                label: "Testimonios",
+                list: true,
+                fields: [
+                  {
+                    type: "string",
+                    name: "quote",
+                    label: "Testimonio",
+                    required: true,
+                    ui: {
+                      component: "textarea"
+                    }
+                  },
+                  {
+                    type: "string",
+                    name: "author",
+                    label: "Autor",
+                    required: true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "pricingSection",
+            label: "5. Precio y Qu\xE9 Incluye",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo principal",
+                required: true
+              },
+              {
+                type: "string",
+                name: "subtitle",
+                label: "Subt\xEDtulo explicativo",
+                required: true
+              },
+              {
+                type: "string",
+                name: "price",
+                label: "Precio (solo n\xFAmero)",
+                required: true
+              },
+              {
+                type: "string",
+                name: "currency",
+                label: "Moneda",
+                required: true
+              },
+              {
+                type: "string",
+                name: "priceDescription",
+                label: "Descripci\xF3n del precio",
+                required: true
+              },
+              {
+                type: "string",
+                name: "includes",
+                label: "Qu\xE9 incluye",
+                list: true,
+                required: true
+              },
+              {
+                type: "string",
+                name: "delivery",
+                label: "Informaci\xF3n de entrega",
+                required: true
+              },
+              {
+                type: "string",
+                name: "format",
+                label: "Informaci\xF3n de formato",
+                required: true
+              },
+              {
+                type: "string",
+                name: "ctaText",
+                label: "Texto del bot\xF3n CTA",
+                required: true
+              },
+              {
+                type: "string",
+                name: "ctaLink",
+                label: "Enlace del bot\xF3n CTA",
+                required: true
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "faqSection",
+            label: "6. Preguntas Frecuentes",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo (H2)",
+                required: true
+              },
+              {
+                type: "object",
+                name: "questions",
+                label: "Preguntas y Respuestas",
+                list: true,
+                fields: [
+                  {
+                    type: "string",
+                    name: "question",
+                    label: "Pregunta",
+                    required: true
+                  },
+                  {
+                    type: "string",
+                    name: "answer",
+                    label: "Respuesta",
+                    required: true,
+                    ui: {
+                      component: "textarea"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "finalCtaSection",
+            label: "7. CTA Final + Garant\xEDa",
+            fields: [
+              {
+                type: "string",
+                name: "guaranteeEmoji",
+                label: "Emoji de la garant\xEDa",
+                required: true
+              },
+              {
+                type: "string",
+                name: "guaranteeTitle",
+                label: "T\xEDtulo de la garant\xEDa",
+                required: true
+              },
+              {
+                type: "string",
+                name: "guaranteeDescription",
+                label: "Descripci\xF3n de la garant\xEDa",
+                required: true,
+                ui: {
+                  component: "textarea"
+                }
+              },
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo del resumen",
+                required: true
+              },
+              {
+                type: "string",
+                name: "features",
+                label: "Caracter\xEDsticas incluidas",
+                list: true,
+                required: true
+              },
+              {
+                type: "string",
+                name: "price",
+                label: "Precio final (solo n\xFAmero)",
+                required: true
+              },
+              {
+                type: "string",
+                name: "currency",
+                label: "Moneda",
+                required: true
+              },
+              {
+                type: "string",
+                name: "priceNote",
+                label: "Nota del precio",
+                required: true
+              },
+              {
+                type: "string",
+                name: "ctaText",
+                label: "Texto del bot\xF3n CTA final",
+                required: true
+              },
+              {
+                type: "string",
+                name: "ctaLink",
+                label: "Enlace del bot\xF3n CTA final",
+                required: true
+              },
+              {
+                type: "string",
+                name: "securityNote",
+                label: "Nota de seguridad",
+                required: true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        name: "redaccion_web",
+        nameOverride: "redaccion-web",
+        label: "Redacci\xF3n Web",
+        path: "src/content/redaccion-web",
+        format: "json",
+        ui: {
+          allowedActions: {
+            create: false,
+            delete: false
+          }
+        },
+        fields: [
+          {
+            type: "object",
+            name: "seo",
+            label: "SEO",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo SEO",
+                required: true,
+                ui: {
+                  description: "T\xEDtulo que aparece en Google (m\xE1x. 60 caracteres)"
+                }
+              },
+              {
+                type: "string",
+                name: "description",
+                label: "Meta descripci\xF3n",
+                required: true,
+                ui: {
+                  component: "textarea",
+                  description: "Descripci\xF3n que aparece en Google (m\xE1x. 160 caracteres)"
+                }
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "hero",
+            label: "1. Secci\xF3n Hero",
+            fields: [
+              {
+                type: "string",
+                name: "subtitle",
+                label: "Subt\xEDtulo",
+                required: true,
+                ui: {
+                  description: "Ej: 'REDACCI\xD3N WEB COMPLETA'"
+                }
+              },
+              {
+                type: "string",
+                name: "titlePart1",
+                label: "T\xEDtulo - Parte 1 (Negro)",
+                required: true,
+                ui: {
+                  description: "Primera parte del t\xEDtulo que aparece en negro"
+                }
+              },
+              {
+                type: "string",
+                name: "titlePart2",
+                label: "T\xEDtulo - Parte 2 (Naranja)",
+                required: true,
+                ui: {
+                  description: "Segunda parte del t\xEDtulo que aparece en naranja"
+                }
+              },
+              {
+                type: "string",
+                name: "description",
+                label: "Descripci\xF3n",
+                required: true,
+                ui: {
+                  component: "textarea"
+                }
+              },
+              {
+                type: "string",
+                name: "ctaText",
+                label: "Texto del bot\xF3n CTA",
+                required: true
+              },
+              {
+                type: "string",
+                name: "ctaLink",
+                label: "Enlace del bot\xF3n CTA",
+                required: true
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "problemsSection",
+            label: "2. Secci\xF3n Problemas",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo (H2)",
+                required: true
+              },
+              {
+                type: "string",
+                name: "subtitle",
+                label: "Subt\xEDtulo",
+                required: true
+              },
+              {
+                type: "object",
+                name: "problems",
+                label: "Problemas",
+                list: true,
+                fields: [
+                  {
+                    type: "string",
+                    name: "problem",
+                    label: "Problema (izquierda)",
+                    required: true
+                  },
+                  {
+                    type: "string",
+                    name: "consequence",
+                    label: "Consecuencia (derecha)",
+                    required: true
+                  }
+                ]
+              },
+              {
+                type: "string",
+                name: "closingText",
+                label: "Texto de cierre",
+                required: true,
+                ui: {
+                  component: "textarea"
+                }
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "approachSection",
+            label: "3. Mi M\xE9todo",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo (H2)",
+                required: true
+              },
+              {
+                type: "object",
+                name: "points",
+                label: "Puntos del m\xE9todo",
+                list: true,
+                fields: [
+                  {
+                    type: "string",
+                    name: "title",
+                    label: "T\xEDtulo del punto",
+                    required: true
+                  },
+                  {
+                    type: "string",
+                    name: "description",
+                    label: "Descripci\xF3n",
+                    required: true,
+                    ui: {
+                      component: "textarea"
+                    }
+                  }
+                ]
+              },
+              {
+                type: "string",
+                name: "conclusion",
+                label: "Texto de conclusi\xF3n",
+                required: true
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "testimonialsSection",
+            label: "4. Casos de \xC9xito",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo (H2)",
+                required: true
+              },
+              {
+                type: "object",
+                name: "testimonials",
+                label: "Testimonios",
+                list: true,
+                fields: [
+                  {
+                    type: "string",
+                    name: "quote",
+                    label: "Testimonio",
+                    required: true,
+                    ui: {
+                      component: "textarea"
+                    }
+                  },
+                  {
+                    type: "string",
+                    name: "author",
+                    label: "Autor",
+                    required: true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "pricingSection",
+            label: "5. Precio y Qu\xE9 Incluye",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo principal",
+                required: true
+              },
+              {
+                type: "string",
+                name: "subtitle",
+                label: "Subt\xEDtulo explicativo",
+                required: true
+              },
+              {
+                type: "string",
+                name: "price",
+                label: "Precio (solo n\xFAmero)",
+                required: true
+              },
+              {
+                type: "string",
+                name: "currency",
+                label: "Moneda",
+                required: true
+              },
+              {
+                type: "string",
+                name: "priceDescription",
+                label: "Descripci\xF3n del precio",
+                required: true
+              },
+              {
+                type: "string",
+                name: "includes",
+                label: "Qu\xE9 incluye",
+                list: true,
+                required: true
+              },
+              {
+                type: "string",
+                name: "delivery",
+                label: "Informaci\xF3n de entrega",
+                required: true
+              },
+              {
+                type: "string",
+                name: "format",
+                label: "Informaci\xF3n de formato",
+                required: true
+              },
+              {
+                type: "string",
+                name: "ctaText",
+                label: "Texto del bot\xF3n CTA",
+                required: true
+              },
+              {
+                type: "string",
+                name: "ctaLink",
+                label: "Enlace del bot\xF3n CTA",
+                required: true
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "faqSection",
+            label: "6. Preguntas Frecuentes",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo (H2)",
+                required: true
+              },
+              {
+                type: "object",
+                name: "questions",
+                label: "Preguntas y Respuestas",
+                list: true,
+                fields: [
+                  {
+                    type: "string",
+                    name: "question",
+                    label: "Pregunta",
+                    required: true
+                  },
+                  {
+                    type: "string",
+                    name: "answer",
+                    label: "Respuesta",
+                    required: true,
+                    ui: {
+                      component: "textarea"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "finalCtaSection",
+            label: "7. CTA Final + Garant\xEDa",
+            fields: [
+              {
+                type: "string",
+                name: "guaranteeEmoji",
+                label: "Emoji de la garant\xEDa",
+                required: true
+              },
+              {
+                type: "string",
+                name: "guaranteeTitle",
+                label: "T\xEDtulo de la garant\xEDa",
+                required: true
+              },
+              {
+                type: "string",
+                name: "guaranteeDescription",
+                label: "Descripci\xF3n de la garant\xEDa",
+                required: true,
+                ui: {
+                  component: "textarea"
+                }
+              },
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo del resumen",
+                required: true
+              },
+              {
+                type: "string",
+                name: "features",
+                label: "Caracter\xEDsticas incluidas",
+                list: true,
+                required: true
+              },
+              {
+                type: "string",
+                name: "price",
+                label: "Precio final (solo n\xFAmero)",
+                required: true
+              },
+              {
+                type: "string",
+                name: "currency",
+                label: "Moneda",
+                required: true
+              },
+              {
+                type: "string",
+                name: "priceNote",
+                label: "Nota del precio",
+                required: true
+              },
+              {
+                type: "string",
+                name: "ctaText",
+                label: "Texto del bot\xF3n CTA final",
+                required: true
+              },
+              {
+                type: "string",
+                name: "ctaLink",
+                label: "Enlace del bot\xF3n CTA final",
+                required: true
+              },
+              {
+                type: "string",
+                name: "securityNote",
+                label: "Nota de seguridad",
+                required: true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        name: "redaccion_estrategica_blogs",
+        nameOverride: "redaccion-estrategica-blogs",
+        label: "Redacci\xF3n Estrat\xE9gica Blogs",
+        path: "src/content/redaccion-estrategica-blogs",
+        format: "json",
+        ui: {
+          allowedActions: {
+            create: false,
+            delete: false
+          }
+        },
+        fields: [
+          {
+            type: "object",
+            name: "seo",
+            label: "SEO",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo SEO",
+                required: true,
+                ui: {
+                  description: "T\xEDtulo que aparece en Google (m\xE1x. 60 caracteres)"
+                }
+              },
+              {
+                type: "string",
+                name: "description",
+                label: "Meta descripci\xF3n",
+                required: true,
+                ui: {
+                  component: "textarea",
+                  description: "Descripci\xF3n que aparece en Google (m\xE1x. 160 caracteres)"
+                }
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "hero",
+            label: "1. Secci\xF3n Hero",
+            fields: [
+              {
+                type: "string",
+                name: "subtitle",
+                label: "Subt\xEDtulo",
+                required: true,
+                ui: {
+                  description: "Ej: 'REDACCI\xD3N ESTRAT\xC9GICA PARA BLOGS'"
+                }
+              },
+              {
+                type: "string",
+                name: "titlePart1",
+                label: "T\xEDtulo - Parte 1 (Negro)",
+                required: true,
+                ui: {
+                  description: "Primera parte del t\xEDtulo que aparece en negro"
+                }
+              },
+              {
+                type: "string",
+                name: "titlePart2",
+                label: "T\xEDtulo - Parte 2 (Naranja)",
+                required: true,
+                ui: {
+                  description: "Segunda parte del t\xEDtulo que aparece en naranja"
+                }
+              },
+              {
+                type: "string",
+                name: "description",
+                label: "Descripci\xF3n",
+                required: true,
+                ui: {
+                  component: "textarea"
+                }
+              },
+              {
+                type: "string",
+                name: "ctaText",
+                label: "Texto del bot\xF3n CTA",
+                required: true
+              },
+              {
+                type: "string",
+                name: "ctaLink",
+                label: "Enlace del bot\xF3n CTA",
+                required: true
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "problemsSection",
+            label: "2. Secci\xF3n Problemas",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo (H2)",
+                required: true
+              },
+              {
+                type: "string",
+                name: "subtitle",
+                label: "Subt\xEDtulo",
+                required: true
+              },
+              {
+                type: "object",
+                name: "problems",
+                label: "Problemas",
+                list: true,
+                fields: [
+                  {
+                    type: "string",
+                    name: "problem",
+                    label: "Problema (izquierda)",
+                    required: true
+                  },
+                  {
+                    type: "string",
+                    name: "consequence",
+                    label: "Consecuencia (derecha)",
+                    required: true
+                  }
+                ]
+              },
+              {
+                type: "string",
+                name: "closingText",
+                label: "Texto de cierre",
+                required: true,
+                ui: {
+                  component: "textarea"
+                }
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "approachSection",
+            label: "3. Mi Estrategia",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo (H2)",
+                required: true
+              },
+              {
+                type: "object",
+                name: "points",
+                label: "Puntos de la estrategia",
+                list: true,
+                fields: [
+                  {
+                    type: "string",
+                    name: "title",
+                    label: "T\xEDtulo del punto",
+                    required: true
+                  },
+                  {
+                    type: "string",
+                    name: "description",
+                    label: "Descripci\xF3n",
+                    required: true,
+                    ui: {
+                      component: "textarea"
+                    }
+                  }
+                ]
+              },
+              {
+                type: "string",
+                name: "conclusion",
+                label: "Texto de conclusi\xF3n",
+                required: true
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "testimonialsSection",
+            label: "4. Casos de \xC9xito",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo (H2)",
+                required: true
+              },
+              {
+                type: "object",
+                name: "testimonials",
+                label: "Testimonios",
+                list: true,
+                fields: [
+                  {
+                    type: "string",
+                    name: "quote",
+                    label: "Testimonio",
+                    required: true,
+                    ui: {
+                      component: "textarea"
+                    }
+                  },
+                  {
+                    type: "string",
+                    name: "author",
+                    label: "Autor",
+                    required: true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "pricingSection",
+            label: "5. Precio y Qu\xE9 Incluye",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo principal",
+                required: true
+              },
+              {
+                type: "string",
+                name: "subtitle",
+                label: "Subt\xEDtulo explicativo",
+                required: true
+              },
+              {
+                type: "string",
+                name: "price",
+                label: "Precio (solo n\xFAmero)",
+                required: true
+              },
+              {
+                type: "string",
+                name: "currency",
+                label: "Moneda",
+                required: true
+              },
+              {
+                type: "string",
+                name: "priceDescription",
+                label: "Descripci\xF3n del precio",
+                required: true
+              },
+              {
+                type: "string",
+                name: "includes",
+                label: "Qu\xE9 incluye",
+                list: true,
+                required: true
+              },
+              {
+                type: "string",
+                name: "delivery",
+                label: "Informaci\xF3n de entrega",
+                required: true
+              },
+              {
+                type: "string",
+                name: "format",
+                label: "Informaci\xF3n de formato",
+                required: true
+              },
+              {
+                type: "string",
+                name: "ctaText",
+                label: "Texto del bot\xF3n CTA",
+                required: true
+              },
+              {
+                type: "string",
+                name: "ctaLink",
+                label: "Enlace del bot\xF3n CTA",
+                required: true
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "faqSection",
+            label: "6. Preguntas Frecuentes",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo (H2)",
+                required: true
+              },
+              {
+                type: "object",
+                name: "questions",
+                label: "Preguntas y Respuestas",
+                list: true,
+                fields: [
+                  {
+                    type: "string",
+                    name: "question",
+                    label: "Pregunta",
+                    required: true
+                  },
+                  {
+                    type: "string",
+                    name: "answer",
+                    label: "Respuesta",
+                    required: true,
+                    ui: {
+                      component: "textarea"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "finalCtaSection",
+            label: "7. CTA Final + Garant\xEDa",
+            fields: [
+              {
+                type: "string",
+                name: "guaranteeEmoji",
+                label: "Emoji de la garant\xEDa",
+                required: true
+              },
+              {
+                type: "string",
+                name: "guaranteeTitle",
+                label: "T\xEDtulo de la garant\xEDa",
+                required: true
+              },
+              {
+                type: "string",
+                name: "guaranteeDescription",
+                label: "Descripci\xF3n de la garant\xEDa",
+                required: true,
+                ui: {
+                  component: "textarea"
+                }
+              },
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo del resumen",
+                required: true
+              },
+              {
+                type: "string",
+                name: "features",
+                label: "Caracter\xEDsticas incluidas",
+                list: true,
+                required: true
+              },
+              {
+                type: "string",
+                name: "price",
+                label: "Precio final (solo n\xFAmero)",
+                required: true
+              },
+              {
+                type: "string",
+                name: "currency",
+                label: "Moneda",
+                required: true
+              },
+              {
+                type: "string",
+                name: "priceNote",
+                label: "Nota del precio",
+                required: true
+              },
+              {
+                type: "string",
+                name: "ctaText",
+                label: "Texto del bot\xF3n CTA final",
+                required: true
+              },
+              {
+                type: "string",
+                name: "ctaLink",
+                label: "Enlace del bot\xF3n CTA final",
+                required: true
+              },
+              {
+                type: "string",
+                name: "securityNote",
+                label: "Nota de seguridad",
+                required: true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        name: "contact_page",
+        label: "P\xE1gina de Contacto",
+        path: "src/content/contacto",
+        format: "json",
+        ui: {
+          allowedActions: {
+            create: false,
+            delete: false
+          }
+        },
+        fields: [
+          {
+            type: "object",
+            name: "seo",
+            label: "SEO",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo SEO",
+                required: true,
+                ui: {
+                  description: "T\xEDtulo que aparece en Google (m\xE1x. 60 caracteres)"
+                }
+              },
+              {
+                type: "string",
+                name: "description",
+                label: "Meta descripci\xF3n",
+                required: true,
+                ui: {
+                  component: "textarea",
+                  description: "Descripci\xF3n que aparece en Google (m\xE1x. 160 caracteres)"
+                }
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "hero",
+            label: "1. Secci\xF3n Hero",
+            fields: [
+              {
+                type: "string",
+                name: "titlePart1",
+                label: "T\xEDtulo - Parte 1 (Negro)",
+                required: true,
+                ui: {
+                  description: "Primera parte del t\xEDtulo que aparece en negro"
+                }
+              },
+              {
+                type: "string",
+                name: "titlePart2",
+                label: "T\xEDtulo - Parte 2 (Naranja)",
+                required: true,
+                ui: {
+                  description: "Segunda parte del t\xEDtulo que aparece en naranja"
+                }
+              },
+              {
+                type: "string",
+                name: "description",
+                label: "Descripci\xF3n",
+                required: true,
+                ui: {
+                  description: "Texto descriptivo que aparece debajo del t\xEDtulo"
+                }
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "form",
+            label: "2. Formulario de Contacto",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo del formulario",
+                required: true
+              },
+              {
+                type: "string",
+                name: "description",
+                label: "Descripci\xF3n del formulario",
+                required: true
+              },
+              {
+                type: "object",
+                name: "services",
+                label: "Opciones de servicios",
+                list: true,
+                fields: [
+                  {
+                    type: "string",
+                    name: "value",
+                    label: "Valor (para el formulario)",
+                    required: true
+                  },
+                  {
+                    type: "string",
+                    name: "label",
+                    label: "Texto mostrado",
+                    required: true
+                  }
+                ]
+              },
+              {
+                type: "object",
+                name: "budgetRanges",
+                label: "Rangos de presupuesto",
+                list: true,
+                fields: [
+                  {
+                    type: "string",
+                    name: "value",
+                    label: "Valor (para el formulario)",
+                    required: true
+                  },
+                  {
+                    type: "string",
+                    name: "label",
+                    label: "Texto mostrado",
+                    required: true
+                  }
+                ]
+              },
+              {
+                type: "string",
+                name: "submitButtonText",
+                label: "Texto del bot\xF3n de env\xEDo",
+                required: true
+              },
+              {
+                type: "string",
+                name: "privacyPolicyText",
+                label: "Texto de pol\xEDtica de privacidad",
+                required: true,
+                ui: {
+                  component: "textarea",
+                  description: "Usa [texto](url) para enlaces"
+                }
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "contactInfo",
+            label: "3. Informaci\xF3n de Contacto",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo de la secci\xF3n",
+                required: true
+              },
+              {
+                type: "string",
+                name: "email",
+                label: "Direcci\xF3n de email",
+                required: true
+              },
+              {
+                type: "string",
+                name: "responseTime",
+                label: "Tiempo de respuesta",
+                required: true
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "messages",
+            label: "4. Mensajes del Sistema",
+            fields: [
+              {
+                type: "string",
+                name: "successMessage",
+                label: "Mensaje de \xE9xito",
+                required: true
+              },
+              {
+                type: "string",
+                name: "errorMessage",
+                label: "Mensaje de error",
+                required: true,
+                ui: {
+                  component: "textarea"
+                }
+              },
+              {
+                type: "string",
+                name: "loadingText",
+                label: "Texto durante el env\xEDo",
+                required: true
+              }
+            ]
           }
         ]
       }
