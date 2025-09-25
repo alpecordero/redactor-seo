@@ -2101,6 +2101,223 @@ var config_default = defineConfig({
             ]
           }
         ]
+      },
+      {
+        name: "sobre_mi",
+        label: "Sobre M\xED",
+        path: "src/content/sobre-mi",
+        format: "json",
+        nameOverride: "sobre-mi",
+        ui: {
+          allowedActions: {
+            create: false,
+            delete: false
+          }
+        },
+        fields: [
+          {
+            type: "object",
+            name: "seo",
+            label: "SEO",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo SEO",
+                required: true,
+                ui: {
+                  description: "T\xEDtulo que aparece en Google (m\xE1x. 60 caracteres)"
+                }
+              },
+              {
+                type: "string",
+                name: "description",
+                label: "Meta descripci\xF3n",
+                required: true,
+                ui: {
+                  component: "textarea",
+                  description: "Descripci\xF3n que aparece en Google (m\xE1x. 160 caracteres)"
+                }
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "hero",
+            label: "1. Secci\xF3n Hero",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo principal",
+                required: true
+              },
+              {
+                type: "string",
+                name: "subtitle",
+                label: "Subt\xEDtulo",
+                required: true
+              },
+              {
+                type: "string",
+                name: "introduction",
+                label: "Introducci\xF3n",
+                required: true,
+                ui: {
+                  component: "textarea"
+                }
+              },
+              {
+                type: "image",
+                name: "profileImage",
+                label: "Imagen de perfil",
+                required: true
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "experienceSection",
+            label: "2. Secci\xF3n de Experiencia",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo de la secci\xF3n",
+                required: true
+              },
+              {
+                type: "string",
+                name: "subtitle",
+                label: "Subt\xEDtulo de la secci\xF3n",
+                required: true
+              },
+              {
+                type: "object",
+                name: "items",
+                label: "Elementos de experiencia",
+                list: true,
+                fields: [
+                  {
+                    type: "string",
+                    name: "icon",
+                    label: "Icono (emoji)",
+                    required: true
+                  },
+                  {
+                    type: "string",
+                    name: "title",
+                    label: "T\xEDtulo",
+                    required: true
+                  },
+                  {
+                    type: "string",
+                    name: "description",
+                    label: "Descripci\xF3n",
+                    required: true,
+                    ui: {
+                      component: "textarea"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "storySection",
+            label: "3. Secci\xF3n Historia - T\xEDtulo y Subt\xEDtulo",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo de la secci\xF3n",
+                required: true,
+                ui: {
+                  description: "Ej: 'Mi historia con el SEO'"
+                }
+              },
+              {
+                type: "string",
+                name: "subtitle",
+                label: "Subt\xEDtulo de la secci\xF3n",
+                required: true,
+                ui: {
+                  description: "Ej: 'De marketer tradicional a especialista en contenido que convierte'"
+                }
+              }
+            ]
+          },
+          {
+            type: "string",
+            name: "storyContent",
+            label: "3.1. Historia - Contenido Principal",
+            required: true,
+            ui: {
+              component: "textarea",
+              description: "El contenido principal de la p\xE1gina (Mi historia, Mi enfoque, etc.)"
+            }
+          },
+          {
+            type: "object",
+            name: "testimonial",
+            label: "4. Testimonio Principal",
+            fields: [
+              {
+                type: "string",
+                name: "quote",
+                label: "Cita del testimonio",
+                required: true,
+                ui: {
+                  component: "textarea"
+                }
+              },
+              {
+                type: "string",
+                name: "author",
+                label: "Autor del testimonio",
+                required: true
+              },
+              {
+                type: "string",
+                name: "role",
+                label: "Cargo del autor",
+                required: true
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "ctaSection",
+            label: "5. Secci\xF3n CTA Final",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo del CTA",
+                required: true
+              },
+              {
+                type: "string",
+                name: "description",
+                label: "Descripci\xF3n del CTA",
+                required: true
+              },
+              {
+                type: "string",
+                name: "buttonText",
+                label: "Texto del bot\xF3n",
+                required: true
+              },
+              {
+                type: "string",
+                name: "buttonLink",
+                label: "Enlace del bot\xF3n",
+                required: true
+              }
+            ]
+          }
+        ]
       }
     ]
   }

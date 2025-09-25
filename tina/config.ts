@@ -2102,6 +2102,223 @@ export default defineConfig({
           },
         ],
       },
+      {
+        name: "sobre_mi",
+        label: "Sobre Mí",
+        path: "src/content/sobre-mi",
+        format: "json",
+        nameOverride: "sobre-mi",
+        ui: {
+          allowedActions: {
+            create: false,
+            delete: false,
+          },
+        },
+        fields: [
+          {
+            type: "object",
+            name: "seo",
+            label: "SEO",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "Título SEO",
+                required: true,
+                ui: {
+                  description: "Título que aparece en Google (máx. 60 caracteres)",
+                },
+              },
+              {
+                type: "string",
+                name: "description",
+                label: "Meta descripción",
+                required: true,
+                ui: {
+                  component: "textarea",
+                  description: "Descripción que aparece en Google (máx. 160 caracteres)",
+                },
+              },
+            ],
+          },
+          {
+            type: "object",
+            name: "hero",
+            label: "1. Sección Hero",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "Título principal",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "subtitle",
+                label: "Subtítulo",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "introduction",
+                label: "Introducción",
+                required: true,
+                ui: {
+                  component: "textarea",
+                },
+              },
+              {
+                type: "image",
+                name: "profileImage",
+                label: "Imagen de perfil",
+                required: true,
+              },
+            ],
+          },
+          {
+            type: "object",
+            name: "experienceSection",
+            label: "2. Sección de Experiencia",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "Título de la sección",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "subtitle",
+                label: "Subtítulo de la sección",
+                required: true,
+              },
+              {
+                type: "object",
+                name: "items",
+                label: "Elementos de experiencia",
+                list: true,
+                fields: [
+                  {
+                    type: "string",
+                    name: "icon",
+                    label: "Icono (emoji)",
+                    required: true,
+                  },
+                  {
+                    type: "string",
+                    name: "title",
+                    label: "Título",
+                    required: true,
+                  },
+                  {
+                    type: "string",
+                    name: "description",
+                    label: "Descripción",
+                    required: true,
+                    ui: {
+                      component: "textarea",
+                    },
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            type: "object",
+            name: "storySection",
+            label: "3. Sección Historia - Título y Subtítulo",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "Título de la sección",
+                required: true,
+                ui: {
+                  description: "Ej: 'Mi historia con el SEO'",
+                },
+              },
+              {
+                type: "string",
+                name: "subtitle",
+                label: "Subtítulo de la sección",
+                required: true,
+                ui: {
+                  description: "Ej: 'De marketer tradicional a especialista en contenido que convierte'",
+                },
+              },
+            ],
+          },
+          {
+            type: "string",
+            name: "storyContent",
+            label: "3.1. Historia - Contenido Principal",
+            required: true,
+            ui: {
+              component: "textarea",
+              description: "El contenido principal de la página (Mi historia, Mi enfoque, etc.)",
+            },
+          },
+          {
+            type: "object",
+            name: "testimonial",
+            label: "4. Testimonio Principal",
+            fields: [
+              {
+                type: "string",
+                name: "quote",
+                label: "Cita del testimonio",
+                required: true,
+                ui: {
+                  component: "textarea",
+                },
+              },
+              {
+                type: "string",
+                name: "author",
+                label: "Autor del testimonio",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "role",
+                label: "Cargo del autor",
+                required: true,
+              },
+            ],
+          },
+          {
+            type: "object",
+            name: "ctaSection",
+            label: "5. Sección CTA Final",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "Título del CTA",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "description",
+                label: "Descripción del CTA",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "buttonText",
+                label: "Texto del botón",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "buttonLink",
+                label: "Enlace del botón",
+                required: true,
+              },
+            ],
+          },
+        ],
+      },
     ],
   },
 });

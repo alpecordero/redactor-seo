@@ -66,6 +66,8 @@ type Query {
   redaccion_estrategica_blogsConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: Redaccion_estrategica_blogsFilter): Redaccion_estrategica_blogsConnection!
   contact_page(relativePath: String): Contact_page!
   contact_pageConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: Contact_pageFilter): Contact_pageConnection!
+  sobre_mi(relativePath: String): Sobre_mi!
+  sobre_miConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: Sobre_miFilter): Sobre_miConnection!
 }
 
 input DocumentFilter {
@@ -75,6 +77,7 @@ input DocumentFilter {
   redaccion_web: Redaccion_webFilter
   redaccion_estrategica_blogs: Redaccion_estrategica_blogsFilter
   contact_page: Contact_pageFilter
+  sobre_mi: Sobre_miFilter
 }
 
 type DocumentConnectionEdges {
@@ -100,7 +103,7 @@ type Collection {
   documents(before: String, after: String, first: Float, last: Float, sort: String, filter: DocumentFilter, folder: String): DocumentConnection!
 }
 
-union DocumentNode = Homepage | Pages | Auditoria | Redaccion_web | Redaccion_estrategica_blogs | Contact_page | Folder
+union DocumentNode = Homepage | Pages | Auditoria | Redaccion_web | Redaccion_estrategica_blogs | Contact_page | Sobre_mi | Folder
 
 type HomepageSeo {
   title: String!
@@ -1210,6 +1213,124 @@ type Contact_pageConnection implements Connection {
   edges: [Contact_pageConnectionEdges]
 }
 
+type Sobre_miSeo {
+  title: String!
+  description: String!
+}
+
+type Sobre_miHero {
+  title: String!
+  subtitle: String!
+  introduction: String!
+  profileImage: String!
+}
+
+type Sobre_miExperienceSectionItems {
+  icon: String!
+  title: String!
+  description: String!
+}
+
+type Sobre_miExperienceSection {
+  title: String!
+  subtitle: String!
+  items: [Sobre_miExperienceSectionItems]
+}
+
+type Sobre_miStorySection {
+  title: String!
+  subtitle: String!
+}
+
+type Sobre_miTestimonial {
+  quote: String!
+  author: String!
+  role: String!
+}
+
+type Sobre_miCtaSection {
+  title: String!
+  description: String!
+  buttonText: String!
+  buttonLink: String!
+}
+
+type Sobre_mi implements Node & Document {
+  seo: Sobre_miSeo
+  hero: Sobre_miHero
+  experienceSection: Sobre_miExperienceSection
+  storySection: Sobre_miStorySection
+  storyContent: String!
+  testimonial: Sobre_miTestimonial
+  ctaSection: Sobre_miCtaSection
+  id: ID!
+  _sys: SystemInfo!
+  _values: JSON!
+}
+
+input Sobre_miSeoFilter {
+  title: StringFilter
+  description: StringFilter
+}
+
+input Sobre_miHeroFilter {
+  title: StringFilter
+  subtitle: StringFilter
+  introduction: StringFilter
+  profileImage: ImageFilter
+}
+
+input Sobre_miExperienceSectionItemsFilter {
+  icon: StringFilter
+  title: StringFilter
+  description: StringFilter
+}
+
+input Sobre_miExperienceSectionFilter {
+  title: StringFilter
+  subtitle: StringFilter
+  items: Sobre_miExperienceSectionItemsFilter
+}
+
+input Sobre_miStorySectionFilter {
+  title: StringFilter
+  subtitle: StringFilter
+}
+
+input Sobre_miTestimonialFilter {
+  quote: StringFilter
+  author: StringFilter
+  role: StringFilter
+}
+
+input Sobre_miCtaSectionFilter {
+  title: StringFilter
+  description: StringFilter
+  buttonText: StringFilter
+  buttonLink: StringFilter
+}
+
+input Sobre_miFilter {
+  seo: Sobre_miSeoFilter
+  hero: Sobre_miHeroFilter
+  experienceSection: Sobre_miExperienceSectionFilter
+  storySection: Sobre_miStorySectionFilter
+  storyContent: StringFilter
+  testimonial: Sobre_miTestimonialFilter
+  ctaSection: Sobre_miCtaSectionFilter
+}
+
+type Sobre_miConnectionEdges {
+  cursor: String!
+  node: Sobre_mi
+}
+
+type Sobre_miConnection implements Connection {
+  pageInfo: PageInfo!
+  totalCount: Float!
+  edges: [Sobre_miConnectionEdges]
+}
+
 type Mutation {
   addPendingDocument(collection: String!, relativePath: String!, template: String): DocumentNode!
   updateDocument(collection: String, relativePath: String!, params: DocumentUpdateMutation!): DocumentNode!
@@ -1228,6 +1349,8 @@ type Mutation {
   createRedaccion_estrategica_blogs(relativePath: String!, params: Redaccion_estrategica_blogsMutation!): Redaccion_estrategica_blogs!
   updateContact_page(relativePath: String!, params: Contact_pageMutation!): Contact_page!
   createContact_page(relativePath: String!, params: Contact_pageMutation!): Contact_page!
+  updateSobre_mi(relativePath: String!, params: Sobre_miMutation!): Sobre_mi!
+  createSobre_mi(relativePath: String!, params: Sobre_miMutation!): Sobre_mi!
 }
 
 input DocumentUpdateMutation {
@@ -1237,6 +1360,7 @@ input DocumentUpdateMutation {
   redaccion_web: Redaccion_webMutation
   redaccion_estrategica_blogs: Redaccion_estrategica_blogsMutation
   contact_page: Contact_pageMutation
+  sobre_mi: Sobre_miMutation
   relativePath: String
 }
 
@@ -1247,6 +1371,7 @@ input DocumentMutation {
   redaccion_web: Redaccion_webMutation
   redaccion_estrategica_blogs: Redaccion_estrategica_blogsMutation
   contact_page: Contact_pageMutation
+  sobre_mi: Sobre_miMutation
 }
 
 input HomepageSeoMutation {
@@ -1744,6 +1869,58 @@ input Contact_pageMutation {
   form: Contact_pageFormMutation
   contactInfo: Contact_pageContactInfoMutation
   messages: Contact_pageMessagesMutation
+}
+
+input Sobre_miSeoMutation {
+  title: String
+  description: String
+}
+
+input Sobre_miHeroMutation {
+  title: String
+  subtitle: String
+  introduction: String
+  profileImage: String
+}
+
+input Sobre_miExperienceSectionItemsMutation {
+  icon: String
+  title: String
+  description: String
+}
+
+input Sobre_miExperienceSectionMutation {
+  title: String
+  subtitle: String
+  items: [Sobre_miExperienceSectionItemsMutation]
+}
+
+input Sobre_miStorySectionMutation {
+  title: String
+  subtitle: String
+}
+
+input Sobre_miTestimonialMutation {
+  quote: String
+  author: String
+  role: String
+}
+
+input Sobre_miCtaSectionMutation {
+  title: String
+  description: String
+  buttonText: String
+  buttonLink: String
+}
+
+input Sobre_miMutation {
+  seo: Sobre_miSeoMutation
+  hero: Sobre_miHeroMutation
+  experienceSection: Sobre_miExperienceSectionMutation
+  storySection: Sobre_miStorySectionMutation
+  storyContent: String
+  testimonial: Sobre_miTestimonialMutation
+  ctaSection: Sobre_miCtaSectionMutation
 }
 
 schema {

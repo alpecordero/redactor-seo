@@ -94,6 +94,8 @@ export type Query = {
   redaccion_estrategica_blogsConnection: Redaccion_Estrategica_BlogsConnection;
   contact_page: Contact_Page;
   contact_pageConnection: Contact_PageConnection;
+  sobre_mi: Sobre_Mi;
+  sobre_miConnection: Sobre_MiConnection;
 };
 
 
@@ -207,6 +209,21 @@ export type QueryContact_PageConnectionArgs = {
   filter?: InputMaybe<Contact_PageFilter>;
 };
 
+
+export type QuerySobre_MiArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QuerySobre_MiConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<Sobre_MiFilter>;
+};
+
 export type DocumentFilter = {
   homepage?: InputMaybe<HomepageFilter>;
   pages?: InputMaybe<PagesFilter>;
@@ -214,6 +231,7 @@ export type DocumentFilter = {
   redaccion_web?: InputMaybe<Redaccion_WebFilter>;
   redaccion_estrategica_blogs?: InputMaybe<Redaccion_Estrategica_BlogsFilter>;
   contact_page?: InputMaybe<Contact_PageFilter>;
+  sobre_mi?: InputMaybe<Sobre_MiFilter>;
 };
 
 export type DocumentConnectionEdges = {
@@ -253,7 +271,7 @@ export type CollectionDocumentsArgs = {
   folder?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type DocumentNode = Homepage | Pages | Auditoria | Redaccion_Web | Redaccion_Estrategica_Blogs | Contact_Page | Folder;
+export type DocumentNode = Homepage | Pages | Auditoria | Redaccion_Web | Redaccion_Estrategica_Blogs | Contact_Page | Sobre_Mi | Folder;
 
 export type HomepageSeo = {
   __typename?: 'HomepageSeo';
@@ -1446,6 +1464,134 @@ export type Contact_PageConnection = Connection & {
   edges?: Maybe<Array<Maybe<Contact_PageConnectionEdges>>>;
 };
 
+export type Sobre_MiSeo = {
+  __typename?: 'Sobre_miSeo';
+  title: Scalars['String']['output'];
+  description: Scalars['String']['output'];
+};
+
+export type Sobre_MiHero = {
+  __typename?: 'Sobre_miHero';
+  title: Scalars['String']['output'];
+  subtitle: Scalars['String']['output'];
+  introduction: Scalars['String']['output'];
+  profileImage: Scalars['String']['output'];
+};
+
+export type Sobre_MiExperienceSectionItems = {
+  __typename?: 'Sobre_miExperienceSectionItems';
+  icon: Scalars['String']['output'];
+  title: Scalars['String']['output'];
+  description: Scalars['String']['output'];
+};
+
+export type Sobre_MiExperienceSection = {
+  __typename?: 'Sobre_miExperienceSection';
+  title: Scalars['String']['output'];
+  subtitle: Scalars['String']['output'];
+  items?: Maybe<Array<Maybe<Sobre_MiExperienceSectionItems>>>;
+};
+
+export type Sobre_MiStorySection = {
+  __typename?: 'Sobre_miStorySection';
+  title: Scalars['String']['output'];
+  subtitle: Scalars['String']['output'];
+};
+
+export type Sobre_MiTestimonial = {
+  __typename?: 'Sobre_miTestimonial';
+  quote: Scalars['String']['output'];
+  author: Scalars['String']['output'];
+  role: Scalars['String']['output'];
+};
+
+export type Sobre_MiCtaSection = {
+  __typename?: 'Sobre_miCtaSection';
+  title: Scalars['String']['output'];
+  description: Scalars['String']['output'];
+  buttonText: Scalars['String']['output'];
+  buttonLink: Scalars['String']['output'];
+};
+
+export type Sobre_Mi = Node & Document & {
+  __typename?: 'Sobre_mi';
+  seo?: Maybe<Sobre_MiSeo>;
+  hero?: Maybe<Sobre_MiHero>;
+  experienceSection?: Maybe<Sobre_MiExperienceSection>;
+  storySection?: Maybe<Sobre_MiStorySection>;
+  storyContent: Scalars['String']['output'];
+  testimonial?: Maybe<Sobre_MiTestimonial>;
+  ctaSection?: Maybe<Sobre_MiCtaSection>;
+  id: Scalars['ID']['output'];
+  _sys: SystemInfo;
+  _values: Scalars['JSON']['output'];
+};
+
+export type Sobre_MiSeoFilter = {
+  title?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
+};
+
+export type Sobre_MiHeroFilter = {
+  title?: InputMaybe<StringFilter>;
+  subtitle?: InputMaybe<StringFilter>;
+  introduction?: InputMaybe<StringFilter>;
+  profileImage?: InputMaybe<ImageFilter>;
+};
+
+export type Sobre_MiExperienceSectionItemsFilter = {
+  icon?: InputMaybe<StringFilter>;
+  title?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
+};
+
+export type Sobre_MiExperienceSectionFilter = {
+  title?: InputMaybe<StringFilter>;
+  subtitle?: InputMaybe<StringFilter>;
+  items?: InputMaybe<Sobre_MiExperienceSectionItemsFilter>;
+};
+
+export type Sobre_MiStorySectionFilter = {
+  title?: InputMaybe<StringFilter>;
+  subtitle?: InputMaybe<StringFilter>;
+};
+
+export type Sobre_MiTestimonialFilter = {
+  quote?: InputMaybe<StringFilter>;
+  author?: InputMaybe<StringFilter>;
+  role?: InputMaybe<StringFilter>;
+};
+
+export type Sobre_MiCtaSectionFilter = {
+  title?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
+  buttonText?: InputMaybe<StringFilter>;
+  buttonLink?: InputMaybe<StringFilter>;
+};
+
+export type Sobre_MiFilter = {
+  seo?: InputMaybe<Sobre_MiSeoFilter>;
+  hero?: InputMaybe<Sobre_MiHeroFilter>;
+  experienceSection?: InputMaybe<Sobre_MiExperienceSectionFilter>;
+  storySection?: InputMaybe<Sobre_MiStorySectionFilter>;
+  storyContent?: InputMaybe<StringFilter>;
+  testimonial?: InputMaybe<Sobre_MiTestimonialFilter>;
+  ctaSection?: InputMaybe<Sobre_MiCtaSectionFilter>;
+};
+
+export type Sobre_MiConnectionEdges = {
+  __typename?: 'Sobre_miConnectionEdges';
+  cursor: Scalars['String']['output'];
+  node?: Maybe<Sobre_Mi>;
+};
+
+export type Sobre_MiConnection = Connection & {
+  __typename?: 'Sobre_miConnection';
+  pageInfo: PageInfo;
+  totalCount: Scalars['Float']['output'];
+  edges?: Maybe<Array<Maybe<Sobre_MiConnectionEdges>>>;
+};
+
 export type Mutation = {
   __typename?: 'Mutation';
   addPendingDocument: DocumentNode;
@@ -1465,6 +1611,8 @@ export type Mutation = {
   createRedaccion_estrategica_blogs: Redaccion_Estrategica_Blogs;
   updateContact_page: Contact_Page;
   createContact_page: Contact_Page;
+  updateSobre_mi: Sobre_Mi;
+  createSobre_mi: Sobre_Mi;
 };
 
 
@@ -1572,6 +1720,18 @@ export type MutationCreateContact_PageArgs = {
   params: Contact_PageMutation;
 };
 
+
+export type MutationUpdateSobre_MiArgs = {
+  relativePath: Scalars['String']['input'];
+  params: Sobre_MiMutation;
+};
+
+
+export type MutationCreateSobre_MiArgs = {
+  relativePath: Scalars['String']['input'];
+  params: Sobre_MiMutation;
+};
+
 export type DocumentUpdateMutation = {
   homepage?: InputMaybe<HomepageMutation>;
   pages?: InputMaybe<PagesMutation>;
@@ -1579,6 +1739,7 @@ export type DocumentUpdateMutation = {
   redaccion_web?: InputMaybe<Redaccion_WebMutation>;
   redaccion_estrategica_blogs?: InputMaybe<Redaccion_Estrategica_BlogsMutation>;
   contact_page?: InputMaybe<Contact_PageMutation>;
+  sobre_mi?: InputMaybe<Sobre_MiMutation>;
   relativePath?: InputMaybe<Scalars['String']['input']>;
 };
 
@@ -1589,6 +1750,7 @@ export type DocumentMutation = {
   redaccion_web?: InputMaybe<Redaccion_WebMutation>;
   redaccion_estrategica_blogs?: InputMaybe<Redaccion_Estrategica_BlogsMutation>;
   contact_page?: InputMaybe<Contact_PageMutation>;
+  sobre_mi?: InputMaybe<Sobre_MiMutation>;
 };
 
 export type HomepageSeoMutation = {
@@ -2088,6 +2250,58 @@ export type Contact_PageMutation = {
   messages?: InputMaybe<Contact_PageMessagesMutation>;
 };
 
+export type Sobre_MiSeoMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type Sobre_MiHeroMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  subtitle?: InputMaybe<Scalars['String']['input']>;
+  introduction?: InputMaybe<Scalars['String']['input']>;
+  profileImage?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type Sobre_MiExperienceSectionItemsMutation = {
+  icon?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type Sobre_MiExperienceSectionMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  subtitle?: InputMaybe<Scalars['String']['input']>;
+  items?: InputMaybe<Array<InputMaybe<Sobre_MiExperienceSectionItemsMutation>>>;
+};
+
+export type Sobre_MiStorySectionMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  subtitle?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type Sobre_MiTestimonialMutation = {
+  quote?: InputMaybe<Scalars['String']['input']>;
+  author?: InputMaybe<Scalars['String']['input']>;
+  role?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type Sobre_MiCtaSectionMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  buttonText?: InputMaybe<Scalars['String']['input']>;
+  buttonLink?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type Sobre_MiMutation = {
+  seo?: InputMaybe<Sobre_MiSeoMutation>;
+  hero?: InputMaybe<Sobre_MiHeroMutation>;
+  experienceSection?: InputMaybe<Sobre_MiExperienceSectionMutation>;
+  storySection?: InputMaybe<Sobre_MiStorySectionMutation>;
+  storyContent?: InputMaybe<Scalars['String']['input']>;
+  testimonial?: InputMaybe<Sobre_MiTestimonialMutation>;
+  ctaSection?: InputMaybe<Sobre_MiCtaSectionMutation>;
+};
+
 export type HomepagePartsFragment = { __typename: 'Homepage', seo?: { __typename: 'HomepageSeo', title: string, description: string } | null, hero?: { __typename: 'HomepageHero', subtitle: string, title: string, description: string, candleMessages: Array<string> } | null, googleDeathSection?: { __typename: 'HomepageGoogleDeathSection', title: string, paragraph: string, closingPhrase: string, checkboxItems?: Array<{ __typename: 'HomepageGoogleDeathSectionCheckboxItems', text: string } | null> | null } | null, painPointsSection?: { __typename: 'HomepagePainPointsSection', title: string, subtitleFirstPart: string, closingPhrase: string, phrases: Array<{ __typename: 'HomepagePainPointsSectionPhrases', leftPart: string, rightPart: string }> } | null, transitionMessageSection?: { __typename: 'HomepageTransitionMessageSection', mainText: string, highlightedText: string, continuationText: string, secondaryText: string } | null, bridgeSection?: { __typename: 'HomepageBridgeSection', title: string, paragraph: string } | null, servicesPackagesSection?: { __typename: 'HomepageServicesPackagesSection', title: string, packages?: Array<{ __typename: 'HomepageServicesPackagesSectionPackages', icon: string, heading: string, description: string, deliverables: Array<string>, ctaText: string, ctaLink: string } | null> | null, finalCta?: { __typename: 'HomepageServicesPackagesSectionFinalCta', text: string, linkText: string, linkUrl: string } | null } | null, statsSection?: { __typename: 'HomepageStatsSection', title: string, subtitle: string, stats?: Array<{ __typename: 'HomepageStatsSectionStats', value: number, suffix: string, description: string } | null> | null } | null, testimonialsSection?: { __typename: 'HomepageTestimonialsSection', title: string, subtitle: string, testimonials?: Array<{ __typename: 'HomepageTestimonialsSectionTestimonials', name: string, company: string, testimonial: string, image: string, link?: string | null } | null> | null } | null, ctaSection?: { __typename: 'HomepageCtaSection', title: string, description: string, buttonText: string, buttonLink: string } | null };
 
 export type PagesPartsFragment = { __typename: 'Pages', title: string, description?: string | null, subtitle?: string | null, introduction?: string | null, profileImage?: string | null, body?: any | null, experienceSection?: { __typename: 'PagesExperienceSection', title?: string | null, subtitle?: string | null, items?: Array<{ __typename: 'PagesExperienceSectionItems', icon?: string | null, title?: string | null, description?: string | null } | null> | null } | null, valuesSection?: { __typename: 'PagesValuesSection', title?: string | null, subtitle?: string | null, values?: Array<{ __typename: 'PagesValuesSectionValues', title?: string | null, description?: string | null } | null> | null } | null, testimonial?: { __typename: 'PagesTestimonial', quote?: string | null, author?: string | null, role?: string | null } | null, ctaSection?: { __typename: 'PagesCtaSection', title?: string | null, description?: string | null, buttonText?: string | null } | null };
@@ -2099,6 +2313,8 @@ export type Redaccion_WebPartsFragment = { __typename: 'Redaccion_web', seo?: { 
 export type Redaccion_Estrategica_BlogsPartsFragment = { __typename: 'Redaccion_estrategica_blogs', seo?: { __typename: 'Redaccion_estrategica_blogsSeo', title: string, description: string } | null, hero?: { __typename: 'Redaccion_estrategica_blogsHero', subtitle: string, titlePart1: string, titlePart2: string, description: string, ctaText: string, ctaLink: string } | null, problemsSection?: { __typename: 'Redaccion_estrategica_blogsProblemsSection', title: string, subtitle: string, closingText: string, problems?: Array<{ __typename: 'Redaccion_estrategica_blogsProblemsSectionProblems', problem: string, consequence: string } | null> | null } | null, approachSection?: { __typename: 'Redaccion_estrategica_blogsApproachSection', title: string, conclusion: string, points?: Array<{ __typename: 'Redaccion_estrategica_blogsApproachSectionPoints', title: string, description: string } | null> | null } | null, testimonialsSection?: { __typename: 'Redaccion_estrategica_blogsTestimonialsSection', title: string, testimonials?: Array<{ __typename: 'Redaccion_estrategica_blogsTestimonialsSectionTestimonials', quote: string, author: string } | null> | null } | null, pricingSection?: { __typename: 'Redaccion_estrategica_blogsPricingSection', title: string, subtitle: string, price: string, currency: string, priceDescription: string, includes: Array<string>, delivery: string, format: string, ctaText: string, ctaLink: string } | null, faqSection?: { __typename: 'Redaccion_estrategica_blogsFaqSection', title: string, questions?: Array<{ __typename: 'Redaccion_estrategica_blogsFaqSectionQuestions', question: string, answer: string } | null> | null } | null, finalCtaSection?: { __typename: 'Redaccion_estrategica_blogsFinalCtaSection', guaranteeEmoji: string, guaranteeTitle: string, guaranteeDescription: string, title: string, features: Array<string>, price: string, currency: string, priceNote: string, ctaText: string, ctaLink: string, securityNote: string } | null };
 
 export type Contact_PagePartsFragment = { __typename: 'Contact_page', seo?: { __typename: 'Contact_pageSeo', title: string, description: string } | null, hero?: { __typename: 'Contact_pageHero', titlePart1: string, titlePart2: string, description: string } | null, form?: { __typename: 'Contact_pageForm', title: string, description: string, submitButtonText: string, privacyPolicyText: string, services?: Array<{ __typename: 'Contact_pageFormServices', value: string, label: string } | null> | null, budgetRanges?: Array<{ __typename: 'Contact_pageFormBudgetRanges', value: string, label: string } | null> | null } | null, contactInfo?: { __typename: 'Contact_pageContactInfo', title: string, email: string, responseTime: string } | null, messages?: { __typename: 'Contact_pageMessages', successMessage: string, errorMessage: string, loadingText: string } | null };
+
+export type Sobre_MiPartsFragment = { __typename: 'Sobre_mi', storyContent: string, seo?: { __typename: 'Sobre_miSeo', title: string, description: string } | null, hero?: { __typename: 'Sobre_miHero', title: string, subtitle: string, introduction: string, profileImage: string } | null, experienceSection?: { __typename: 'Sobre_miExperienceSection', title: string, subtitle: string, items?: Array<{ __typename: 'Sobre_miExperienceSectionItems', icon: string, title: string, description: string } | null> | null } | null, storySection?: { __typename: 'Sobre_miStorySection', title: string, subtitle: string } | null, testimonial?: { __typename: 'Sobre_miTestimonial', quote: string, author: string, role: string } | null, ctaSection?: { __typename: 'Sobre_miCtaSection', title: string, description: string, buttonText: string, buttonLink: string } | null };
 
 export type HomepageQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
@@ -2213,6 +2429,25 @@ export type Contact_PageConnectionQueryVariables = Exact<{
 
 
 export type Contact_PageConnectionQuery = { __typename?: 'Query', contact_pageConnection: { __typename?: 'Contact_pageConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'Contact_pageConnectionEdges', cursor: string, node?: { __typename: 'Contact_page', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'Contact_pageSeo', title: string, description: string } | null, hero?: { __typename: 'Contact_pageHero', titlePart1: string, titlePart2: string, description: string } | null, form?: { __typename: 'Contact_pageForm', title: string, description: string, submitButtonText: string, privacyPolicyText: string, services?: Array<{ __typename: 'Contact_pageFormServices', value: string, label: string } | null> | null, budgetRanges?: Array<{ __typename: 'Contact_pageFormBudgetRanges', value: string, label: string } | null> | null } | null, contactInfo?: { __typename: 'Contact_pageContactInfo', title: string, email: string, responseTime: string } | null, messages?: { __typename: 'Contact_pageMessages', successMessage: string, errorMessage: string, loadingText: string } | null } | null } | null> | null } };
+
+export type Sobre_MiQueryVariables = Exact<{
+  relativePath: Scalars['String']['input'];
+}>;
+
+
+export type Sobre_MiQuery = { __typename?: 'Query', sobre_mi: { __typename: 'Sobre_mi', id: string, storyContent: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'Sobre_miSeo', title: string, description: string } | null, hero?: { __typename: 'Sobre_miHero', title: string, subtitle: string, introduction: string, profileImage: string } | null, experienceSection?: { __typename: 'Sobre_miExperienceSection', title: string, subtitle: string, items?: Array<{ __typename: 'Sobre_miExperienceSectionItems', icon: string, title: string, description: string } | null> | null } | null, storySection?: { __typename: 'Sobre_miStorySection', title: string, subtitle: string } | null, testimonial?: { __typename: 'Sobre_miTestimonial', quote: string, author: string, role: string } | null, ctaSection?: { __typename: 'Sobre_miCtaSection', title: string, description: string, buttonText: string, buttonLink: string } | null } };
+
+export type Sobre_MiConnectionQueryVariables = Exact<{
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<Sobre_MiFilter>;
+}>;
+
+
+export type Sobre_MiConnectionQuery = { __typename?: 'Query', sobre_miConnection: { __typename?: 'Sobre_miConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'Sobre_miConnectionEdges', cursor: string, node?: { __typename: 'Sobre_mi', id: string, storyContent: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'Sobre_miSeo', title: string, description: string } | null, hero?: { __typename: 'Sobre_miHero', title: string, subtitle: string, introduction: string, profileImage: string } | null, experienceSection?: { __typename: 'Sobre_miExperienceSection', title: string, subtitle: string, items?: Array<{ __typename: 'Sobre_miExperienceSectionItems', icon: string, title: string, description: string } | null> | null } | null, storySection?: { __typename: 'Sobre_miStorySection', title: string, subtitle: string } | null, testimonial?: { __typename: 'Sobre_miTestimonial', quote: string, author: string, role: string } | null, ctaSection?: { __typename: 'Sobre_miCtaSection', title: string, description: string, buttonText: string, buttonLink: string } | null } | null } | null> | null } };
 
 export const HomepagePartsFragmentDoc = gql`
     fragment HomepageParts on Homepage {
@@ -2658,6 +2893,53 @@ export const Contact_PagePartsFragmentDoc = gql`
   }
 }
     `;
+export const Sobre_MiPartsFragmentDoc = gql`
+    fragment Sobre_miParts on Sobre_mi {
+  __typename
+  seo {
+    __typename
+    title
+    description
+  }
+  hero {
+    __typename
+    title
+    subtitle
+    introduction
+    profileImage
+  }
+  experienceSection {
+    __typename
+    title
+    subtitle
+    items {
+      __typename
+      icon
+      title
+      description
+    }
+  }
+  storySection {
+    __typename
+    title
+    subtitle
+  }
+  storyContent
+  testimonial {
+    __typename
+    quote
+    author
+    role
+  }
+  ctaSection {
+    __typename
+    title
+    description
+    buttonText
+    buttonLink
+  }
+}
+    `;
 export const HomepageDocument = gql`
     query homepage($relativePath: String!) {
   homepage(relativePath: $relativePath) {
@@ -3000,6 +3282,63 @@ export const Contact_PageConnectionDocument = gql`
   }
 }
     ${Contact_PagePartsFragmentDoc}`;
+export const Sobre_MiDocument = gql`
+    query sobre_mi($relativePath: String!) {
+  sobre_mi(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...Sobre_miParts
+  }
+}
+    ${Sobre_MiPartsFragmentDoc}`;
+export const Sobre_MiConnectionDocument = gql`
+    query sobre_miConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: Sobre_miFilter) {
+  sobre_miConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...Sobre_miParts
+      }
+    }
+  }
+}
+    ${Sobre_MiPartsFragmentDoc}`;
 export type Requester<C= {}> = <R, V>(doc: DocumentNode, vars?: V, options?: C) => Promise<R>
   export function getSdk<C>(requester: Requester<C>) {
     return {
@@ -3038,6 +3377,12 @@ export type Requester<C= {}> = <R, V>(doc: DocumentNode, vars?: V, options?: C) 
       },
     contact_pageConnection(variables?: Contact_PageConnectionQueryVariables, options?: C): Promise<{data: Contact_PageConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: Contact_PageConnectionQueryVariables, query: string}> {
         return requester<{data: Contact_PageConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: Contact_PageConnectionQueryVariables, query: string}, Contact_PageConnectionQueryVariables>(Contact_PageConnectionDocument, variables, options);
+      },
+    sobre_mi(variables: Sobre_MiQueryVariables, options?: C): Promise<{data: Sobre_MiQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: Sobre_MiQueryVariables, query: string}> {
+        return requester<{data: Sobre_MiQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: Sobre_MiQueryVariables, query: string}, Sobre_MiQueryVariables>(Sobre_MiDocument, variables, options);
+      },
+    sobre_miConnection(variables?: Sobre_MiConnectionQueryVariables, options?: C): Promise<{data: Sobre_MiConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: Sobre_MiConnectionQueryVariables, query: string}> {
+        return requester<{data: Sobre_MiConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: Sobre_MiConnectionQueryVariables, query: string}, Sobre_MiConnectionQueryVariables>(Sobre_MiConnectionDocument, variables, options);
       }
     };
   }

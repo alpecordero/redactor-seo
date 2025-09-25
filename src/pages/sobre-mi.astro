@@ -2,12 +2,11 @@
 import Layout from '../layouts/Layout.astro'
 import { getEntry } from 'astro:content'
 
-let entry, Content
+let entry, sobreContent
 try {
-  entry = await getEntry('pages', 'sobre-mi')
+  entry = await getEntry('sobre_mi', 'index')
   if (entry) {
-    const result = await entry.render()
-    Content = result.Content
+    sobreContent = entry.data
   }
 } catch (error) {
   console.error('Error loading sobre-mi content:', error)
@@ -16,9 +15,7 @@ try {
 // Valores por defecto si no se puede cargar el contenido
 const defaultData = {
   title: "Soy Álvaro",
-  subtitle: "Redactor SEO · Estratega de contenidos",
-  introduction: "Transformo ideas en contenido que posiciona, conecta y convierte. Más de 5 años ayudando a empresas a crecer online.",
-  profileImage: "/redactor-seo-1.jpg",
+  introduction: "Transformo ideas en contenido que posiciona, conecta y convierte. Más de 16 años ayudando a empresas a crecer online.",
   experienceSection: {
     title: "Mi experiencia al servicio de tu negocio",
     subtitle: "Años perfeccionando el arte de crear contenido que realmente funciona",
@@ -89,10 +86,10 @@ const defaultData = {
   }
 }
 
-const data = entry?.data || defaultData
+const data = sobreContent || defaultData
 ---
 
-<Layout title="Sobre Mí - Álvaro Pérez | Redactor SEO">
+<Layout title={data.seo?.title || "Sobre Mí - Álvaro Pérez | Redactor SEO"} description={data.seo?.description}>
   <!-- Hero Section -->
   <section class="relative bg-white py-20 lg:py-32 overflow-hidden">
     <!-- Background Elements -->
@@ -105,15 +102,13 @@ const data = entry?.data || defaultData
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <!-- Content -->
         <div>
-          <p class="text-sm font-medium tracking-wide text-gray-500 uppercase mb-6">{data.subtitle}</p>
-
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-            <span class="block text-black">Soy</span>
-            <span class="block text-naranja-vibrante">Álvaro</span>
+            <span class="block text-black">{(data.hero?.title || data.title)?.split(' ')[0] || 'Soy'}</span>
+            <span class="block text-naranja-vibrante">{(data.hero?.title || data.title)?.split(' ')[1] || 'Álvaro'}</span>
           </h1>
 
           <p class="text-xl text-gray-600 mb-8 max-w-lg">
-            {data.introduction}
+            {data.hero?.introduction || data.introduction}
           </p>
 
           <div class="flex flex-col sm:flex-row gap-4 mb-12">
@@ -149,7 +144,7 @@ const data = entry?.data || defaultData
         <div class="flex justify-center lg:justify-end">
           <div class="relative">
             <div class="w-80 h-80 md:w-96 md:h-96 relative">
-              <img src={data.profileImage} alt="Álvaro Pérez - Redactor SEO" class="w-full h-full rounded-lg object-cover border border-gray-200" />
+              <img src={data.hero?.profileImage || "/alvaro-seo.jpg"} alt="Álvaro Pérez - Redactor SEO" class="w-full h-full rounded-lg object-contain" />
             </div>
 
           </div>
@@ -163,38 +158,23 @@ const data = entry?.data || defaultData
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
         <h2 class="text-3xl md:text-4xl font-bold text-black mb-4">
-          Mi historia con el <span class="text-naranja-vibrante">SEO</span>
+          {data.storySection?.title ? (
+            <span set:html={data.storySection.title.replace('SEO', '<span class="text-naranja-vibrante">SEO</span>')}></span>
+          ) : (
+            <>Mi historia con el <span class="text-naranja-vibrante">SEO</span></>
+          )}
         </h2>
         <p class="text-xl text-gray-600">
-          De marketer tradicional a especialista en contenido que convierte
+          {data.storySection?.subtitle || "De marketer tradicional a especialista en contenido que convierte"}
         </p>
       </div>
 
       <div class="space-y-12">
-        {Content ? <Content /> : (
-          <div class="space-y-8">
-            <div class="bg-white rounded-lg border border-gray-200 p-8">
-              <h3 class="text-2xl font-bold text-black mb-4">Los inicios</h3>
-              <p class="text-lg text-gray-600 leading-relaxed">
-                No siempre me dediqué al SEO. Empecé en el mundo del marketing tradicional, pero pronto me di cuenta de que el futuro estaba online. Me especialicé en marketing digital y, específicamente, en SEO porque me fascinaba la idea de crear contenido que realmente funcionara.
-              </p>
-            </div>
-
-            <div class="bg-white rounded-lg border border-gray-200 p-8">
-              <h3 class="text-2xl font-bold text-black mb-4">Mi enfoque diferente</h3>
-              <p class="text-lg text-gray-600 leading-relaxed">
-                Creo firmemente que el SEO no es solo una cuestión técnica. Es entender a las personas, sus necesidades, sus miedos y sus deseos. Es crear contenido que no solo posicione en Google, sino que realmente conecte con quien lo lee.
-              </p>
-            </div>
-
-            <div class="bg-white rounded-lg border border-gray-200 p-8">
-              <h3 class="text-2xl font-bold text-black mb-4">Mi compromiso contigo</h3>
-              <p class="text-lg text-gray-600 leading-relaxed">
-                Si decides trabajar conmigo, no solo tendrás un redactor SEO. Tendrás un socio estratégico que entiende tu negocio, adapta su estilo a tu marca y se compromete con tus objetivos a largo plazo.
-              </p>
-            </div>
-          </div>
-        )}
+        <div class="space-y-8">
+          {data.storyContent && data.storyContent.split('\n\n').map((paragraph: string) => (
+            <p class="text-lg leading-relaxed text-gray-700">{paragraph}</p>
+          ))}
+        </div>
       </div>
     </div>
   </section>
@@ -241,53 +221,6 @@ const data = entry?.data || defaultData
 </Layout>
 
 <style>
-  .prose h2 {
-    font-size: 1.75rem;
-    font-weight: bold;
-    color: #111827;
-    margin-top: 2.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .prose h3 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #1f2937;
-    margin-top: 2rem;
-    margin-bottom: 0.75rem;
-  }
-
-  .prose p {
-    color: #374151;
-    line-height: 1.75;
-    margin-bottom: 1.25rem;
-    font-size: 1.125rem;
-  }
-
-  .prose ul {
-    list-style-type: disc;
-    list-style-position: inside;
-    margin-bottom: 1.5rem;
-    color: #374151;
-  }
-
-  .prose li {
-    margin-bottom: 0.75rem;
-    font-size: 1.125rem;
-  }
-
-  .prose strong {
-    font-weight: 600;
-    color: #111827;
-  }
-
-  .prose blockquote {
-    border-left: 4px solid #ff8a4c;
-    padding-left: 1.5rem;
-    font-style: italic;
-    color: #6b7280;
-    margin: 2rem 0;
-  }
 
   @keyframes float {
     0%, 100% {

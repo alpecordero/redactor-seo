@@ -435,3 +435,49 @@ fragment Contact_pageParts on Contact_page {
     loadingText
   }
 }
+
+fragment Sobre_miParts on Sobre_mi {
+  __typename
+  seo {
+    __typename
+    title
+    description
+  }
+  hero {
+    __typename
+    title
+    subtitle
+    introduction
+    profileImage
+  }
+  experienceSection {
+    __typename
+    title
+    subtitle
+    items {
+      __typename
+      icon
+      title
+      description
+    }
+  }
+  storySection {
+    __typename
+    title
+    subtitle
+  }
+  storyContent
+  testimonial {
+    __typename
+    quote
+    author
+    role
+  }
+  ctaSection {
+    __typename
+    title
+    description
+    buttonText
+    buttonLink
+  }
+}

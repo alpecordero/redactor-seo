@@ -126,23 +126,23 @@
     }
   },
   "statsSection": {
-    "title": "Lo que he conseguido",
-    "subtitle": "Datos que tú mismo podrás contrastar mediante SEO estratégico",
+    "title": "Mi experiencia en números",
+    "subtitle": "Más de una década ayudando a empresas a crecer online",
     "stats": [
       {
-        "value": 1,
-        "suffix": "\"",
-        "description": "Aumento promedio en tráfico orgánico"
-      },
-      {
-        "value": 50,
+        "value": 16,
         "suffix": "+",
-        "description": "Proyectos completados exitosamente"
+        "description": "Años de experiencia en SEO y contenido"
       },
       {
-        "value": 95,
+        "value": 150,
+        "suffix": "+",
+        "description": "Clientes han confiado en mi trabajo"
+      },
+      {
+        "value": 80,
         "suffix": "%",
-        "description": "Clientes satisfechos que repiten"
+        "description": "De clientes contratan más de un servicio"
       }
     ]
   },
