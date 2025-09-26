@@ -48,37 +48,45 @@ const navigation = [
         </button>
       </div>
     </div>
-    
-    <!-- Mobile Navigation -->
-    <div class="md:hidden hidden" id="mobile-menu">
-      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-        {navigation.slice(0, -1).map((item) => (
-          <a
-            href={item.href}
-            class="text-gray-600 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
-          >
-            {item.name}
-          </a>
-        ))}
-        <a
-          href="/contacto"
-          class="bg-naranja-vibrante text-white block px-3 py-2 rounded-md text-base font-body font-bold mt-6 text-center"
-        >
-          Contacto
-        </a>
-      </div>
-    </div>
   </nav>
+
+  <!-- Mobile Navigation Overlay -->
+  <div class="md:hidden fixed left-0 right-0 bottom-0 top-24 bg-black/20 backdrop-blur-sm hidden z-40" id="mobile-menu-overlay"></div>
+
+  <!-- Mobile Navigation -->
+  <div class="md:hidden hidden relative z-50 bg-white shadow-lg w-full" id="mobile-menu">
+    <div class="px-4 pt-2 pb-6 space-y-1">
+      {navigation.slice(0, -1).map((item) => (
+        <a
+          href={item.href}
+          class="text-gray-600 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
+        >
+          {item.name}
+        </a>
+      ))}
+      <a
+        href="/contacto"
+        class="bg-naranja-vibrante text-white block px-3 py-2 rounded-md text-base font-body font-bold mt-6 text-center"
+      >
+        Contacto
+      </a>
+    </div>
+  </div>
 </header>
 
 <script>
-  // Simple mobile menu toggle with accessibility
+  // Simple mobile menu toggle with overlay
   const mobileMenuButton = document.getElementById('mobile-menu-button')
   const mobileMenu = document.getElementById('mobile-menu')
+  const mobileMenuOverlay = document.getElementById('mobile-menu-overlay')
 
-  mobileMenuButton?.addEventListener('click', () => {
+  const toggleMenu = () => {
     const isHidden = mobileMenu?.classList.contains('hidden')
     mobileMenu?.classList.toggle('hidden')
+    mobileMenuOverlay?.classList.toggle('hidden')
     mobileMenuButton?.setAttribute('aria-expanded', isHidden ? 'true' : 'false')
-  })
+  }
+
+  mobileMenuButton?.addEventListener('click', toggleMenu)
+  mobileMenuOverlay?.addEventListener('click', toggleMenu)
 </script>
