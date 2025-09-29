@@ -1,0 +1,18 @@
+# Configuración de Cloudflare Worker para el contador de almas
+name = "redactor-seo-counter"
+main = "counter.js"
+compatibility_date = "2024-10-01"
+
+# KV namespace para almacenar sesiones temporales (24h TTL)
+[[kv_namespaces]]
+binding = "COUNTER_CACHE"
+id = "counter_cache_namespace"
+preview_id = "counter_cache_namespace_preview"
+
+[vars]
+ENVIRONMENT = "production"
+
+# Configuración de rutas (opcional - solo si quieres usar un dominio personalizado)
+# [[route]]
+# pattern = "redactorseo.es/api/counter/*"
+# zone_name = "redactorseo.es"
