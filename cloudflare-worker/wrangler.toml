@@ -1,0 +1,22 @@
+# Configuración de Cloudflare Worker para el formulario de contacto
+name = "redactor-seo-contact-form"
+main = "contact-form.js"
+compatibility_date = "2024-01-01"
+
+# Variables de entorno (configurar en Cloudflare Dashboard)
+[vars]
+# Estas variables se configuran en el dashboard de Cloudflare
+# CONTACT_EMAIL_FROM = "info@redactorseo.es"
+# CONTACT_EMAIL_TO = "info@redactorseo.es"
+# RESEND_API_KEY = "re_xxxxxxxx" (obtener de resend.com)
+
+# KV namespace para rate limiting (opcional pero recomendado)
+[[kv_namespaces]]
+binding = "RATE_LIMIT_KV"
+id = "rate_limit_namespace"
+preview_id = "rate_limit_namespace_preview"
+
+# Configuración de rutas (opcional - solo si quieres usar un dominio personalizado)
+# [[route]]
+# pattern = "redactorseo.es/api/contact"
+# zone_name = "redactorseo.es"

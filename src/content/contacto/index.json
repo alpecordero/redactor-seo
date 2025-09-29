@@ -13,24 +13,12 @@
     "description": "Completa este formulario para recibir una propuesta personalizada",
     "services": [
       {
-        "value": "redaccion-seo",
-        "label": "Redacción SEO"
+        "value": "renovar-textos-web",
+        "label": "Renovar los textos de la web"
       },
       {
-        "value": "copywriting",
-        "label": "Copywriting"
-      },
-      {
-        "value": "blog-posts",
-        "label": "Blog Posts"
-      },
-      {
-        "value": "auditoria-contenido",
-        "label": "Auditoría de contenido"
-      },
-      {
-        "value": "estrategia-contenidos",
-        "label": "Estrategia de contenidos"
+        "value": "contenido-estrategico-blog",
+        "label": "Crear contenido estratégico para el blog"
       },
       {
         "value": "otros",
