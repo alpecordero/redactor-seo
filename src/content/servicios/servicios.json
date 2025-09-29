@@ -1,0 +1,103 @@
+{
+  "seo": {
+    "title": "Servicios de Redacción SEO | Contenido que Convierte",
+    "description": "Descubre mis servicios de redacción SEO: auditorías de contenido, redacción web completa y estrategias de blog. Contenido que conecta y convierte.",
+    "keywords": "redacción SEO, auditoría contenido, redacción web, marketing contenidos, copywriting, SEO copywriter",
+    "ogTitle": "",
+    "ogDescription": "",
+    "ogImage": "",
+    "canonicalUrl": "",
+    "noindex": false
+  },
+  "hero": {
+    "titlePart1": "Tres formas de DE",
+    "titlePart2": "trabajar conmigo",
+    "description": "Desde claridad básica hasta dominación completa de tu nicho. Encuentra el servicio que mejor se adapte a tu momento."
+  },
+  "servicePackages": {
+    "packages": [
+      {
+        "title": "Auditoría",
+        "subtitle": "Para obtener claridad",
+        "price": "499",
+        "currency": "€",
+        "priceNote": "Una sola vez",
+        "features": [
+          "Diagnóstico del contenido",
+          "Coherencia de marca",
+          "Análisis del blog",
+          "Plan para que ejecutes tú",
+          "Ejemplos prácticos"
+        ],
+        "ctaText": "Ver auditoría",
+        "ctaLink": "/auditoria-contenido",
+        "isPopular": false
+      },
+      {
+        "title": "Redacción Web",
+        "subtitle": "Para conectar con tus clientes",
+        "price": "1.599",
+        "currency": "€",
+        "priceNote": "Una sola vez",
+        "features": [
+          "Investigación completa",
+          "Redacción de 5 secciones",
+          "Optimización SEO e IA",
+          "Para copiar y pegar",
+          "Entrega en 10 días"
+        ],
+        "ctaText": "Ver redacción web",
+        "ctaLink": "/redaccion-web",
+        "isPopular": true
+      },
+      {
+        "title": "Redacción Blog",
+        "subtitle": "Para dominar tu nicho",
+        "price": "599",
+        "currency": "€",
+        "priceNote": "al mes",
+        "features": [
+          "Estrategia de contenido",
+          "Calendario editorial",
+          "Contenido 100% humano",
+          "4 artículos optimizados",
+          "Consejos de enlazado"
+        ],
+        "ctaText": "Ver blog estratégico",
+        "ctaLink": "/redaccion-estrategica-blogs",
+        "isPopular": false
+      }
+    ],
+    "customProjects": {
+      "description": "¿Necesitas algo más específico? Proyectos especiales, consultoría estratégica a largo plazo, o colaboraciones únicas.",
+      "linkText": "Trabajemos juntos",
+      "linkUrl": "/contacto"
+    }
+  },
+  "faqSection": {
+    "title": "¿Cuál servicio necesito?",
+    "subtitle": "Guía rápida para elegir la opción perfecta para tu situación",
+    "questions": [
+      {
+        "question": "Tengo una web pero no convierto. ¿Por dónde empiezo?",
+        "answerTitle": "Empieza con Audit (€1.495)",
+        "answerText": "Necesitas claridad sobre qué está fallando. El Audit te dará un diagnóstico completo de tu contenido actual, identificará los puntos de fuga en tu embudo de ventas, y te proporcionará un roadmap claro de mejoras prioritarias. Perfecto si tienes tráfico pero no conviertes."
+      },
+      {
+        "question": "Quiero rehacer completamente mi mensaje y contenido",
+        "answerTitle": "Ve directo a Redacción Web (€1.599)",
+        "answerText": "Es tu opción más popular. Redacción completa de las 5 páginas más importantes de tu web, investigación de audiencia incluida, análisis de competencia y estrategia SEO básica. Sales con textos que conectan con tus clientes y los convencen para comprarte."
+      },
+      {
+        "question": "Quiero ser el referente absoluto en mi sector",
+        "answerTitle": "Necesitas Blog Estratégico (€2.995/mes)",
+        "answerText": "Estrategia completa de blog durante 3 meses: 24 artículos estratégicos, SEO avanzado, consultoría mensual y garantía de resultados. Para empresas serias que quieren dominar su nicho con autoridad de contenido."
+      },
+      {
+        "question": "Mi caso es único/complejo/especial",
+        "answerTitle": "Conversemos → \"Trabajemos Juntos\"",
+        "answerText": "Proyectos especiales, colaboraciones a largo plazo, consultorías específicas, o situaciones únicas requieren un enfoque personalizado. Agenda una consulta y diseñamos la solución perfecta para tu caso particular."
+      }
+    ]
+  }
+}

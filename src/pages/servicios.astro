@@ -1,8 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro'
+
+// Import servicios content from Tina CMS
+import serviciosContent from '../content/servicios/servicios.json'
+
+const {
+  seo,
+  hero,
+  servicePackages,
+  faqSection
+} = serviciosContent
 ---
 
-<Layout title="Servicios - RedactorSEO">
+<Layout title={seo.title} description={seo.description}>
   <!-- Hero Section -->
   <section class="relative py-16 md:py-20 lg:py-24 bg-white overflow-hidden">
     <!-- Subtle background elements -->
@@ -14,12 +24,12 @@ import Layout from '../layouts/Layout.astro'
     <div class="relative px-4 sm:px-6 lg:px-12 xl:px-16 w-full">
       <div class="max-w-3xl mx-auto text-center">
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-8 lg:mb-12">
-          Tres formas de
-          <span class="block text-naranja-vibrante mt-4">trabajar conmigo</span>
+          {hero.titlePart1}
+          <span class="block text-naranja-vibrante mt-4">{hero.titlePart2}</span>
         </h1>
 
         <p class="text-xl md:text-2xl text-gray-600 leading-relaxed mb-12 lg:mb-16 max-w-2xl mx-auto">
-          Desde claridad básica hasta dominación completa de tu nicho. Encuentra el servicio que mejor se adapte a tu momento.
+          {hero.description}
         </p>
       </div>
     </div>
@@ -30,143 +40,55 @@ import Layout from '../layouts/Layout.astro'
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-        <!-- Audit Service -->
-        <div class="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-100 bg-white p-8 rounded-2xl border border-gray-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-          <div class="text-center mb-8">
-            <h3 class="text-2xl font-bold text-gray-900 mb-3">Auditoría</h3>
-            <p class="text-gray-600 mb-6 leading-relaxed">¿Solo necesitas claridad sobre qué está fallando?</p>
-            <div class="text-4xl font-bold text-azul-profundo mb-2">599<span class="text-2xl">€</span></div>
-            <p class="text-sm text-gray-500">Una sola vez</p>
-          </div>
+        {servicePackages.packages.map((service, index) => (
+          <div class={`animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-${(index + 1) * 100} bg-white p-8 rounded-2xl ${service.isPopular ? 'border-2 border-naranja-vibrante' : 'border border-gray-200'} hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group relative`}>
+            {service.isPopular && (
+              <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                <span class="bg-naranja-vibrante text-white text-xs font-bold px-3 py-1 rounded-full">MÁS POPULAR</span>
+              </div>
+            )}
 
-          <div class="space-y-3 mb-8">
-            <div class="flex items-start space-x-3">
-              <svg class="w-5 h-5 text-naranja-vibrante flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-              </svg>
-              <span class="text-gray-700">Diagnóstico completo de tu web</span>
+            <div class="text-center mb-8">
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">{service.title}</h3>
+              <p class="text-gray-600 mb-6 leading-relaxed">{service.subtitle}</p>
+              <div class="text-4xl font-bold text-azul-profundo mb-2">{service.price}<span class="text-2xl">{service.currency}</span></div>
+              {service.priceNote && <p class="text-sm text-gray-500">{service.priceNote}</p>}
             </div>
-            <div class="flex items-start space-x-3">
-              <svg class="w-5 h-5 text-naranja-vibrante flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-              </svg>
-              <span class="text-gray-700">Plan de acción paso a paso</span>
-            </div>
-            <div class="flex items-start space-x-3">
-              <svg class="w-5 h-5 text-naranja-vibrante flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-              </svg>
-              <span class="text-gray-700">Sesión de consultoría incluida</span>
-            </div>
-          </div>
 
-          <div class="text-center">
-            <a href="/auditoria-contenido" class="w-full inline-flex items-center justify-center bg-azul-profundo text-white px-6 py-3 rounded-xl font-semibold hover:bg-gray-800 hover:scale-105 transition-all duration-300">
-              Ver auditoría
-              <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- Redacción Web Service -->
-        <div class="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-200 bg-white p-8 rounded-2xl border-2 border-naranja-vibrante hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group relative">
-          <!-- Badge destacado -->
-          <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
-            <span class="bg-naranja-vibrante text-white text-xs font-bold px-3 py-1 rounded-full">MÁS POPULAR</span>
-          </div>
-
-          <div class="text-center mb-8">
-            <h3 class="text-2xl font-bold text-gray-900 mb-3">Redacción Web</h3>
-            <p class="text-gray-600 mb-6 leading-relaxed">¿Tu web no conecta con tus clientes?</p>
-            <div class="text-4xl font-bold text-azul-profundo mb-2">1.599<span class="text-2xl">€</span></div>
-            <p class="text-sm text-gray-500">Una sola vez</p>
-          </div>
-
-          <div class="space-y-3 mb-8">
-            <div class="flex items-start space-x-3">
-              <svg class="w-5 h-5 text-naranja-vibrante flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-              </svg>
-              <span class="text-gray-700">5 páginas redactadas profesionalmente</span>
+            <div class="space-y-3 mb-8">
+              {service.features.map((feature) => (
+                <div class="flex items-start space-x-3">
+                  <svg class="w-5 h-5 text-naranja-vibrante flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                  </svg>
+                  <span class="text-gray-700">{feature}</span>
+                </div>
+              ))}
             </div>
-            <div class="flex items-start space-x-3">
-              <svg class="w-5 h-5 text-naranja-vibrante flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-              </svg>
-              <span class="text-gray-700">Investigación de audiencia incluida</span>
-            </div>
-            <div class="flex items-start space-x-3">
-              <svg class="w-5 h-5 text-naranja-vibrante flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-              </svg>
-              <span class="text-gray-700">2 rondas de revisiones</span>
+
+            <div class="text-center">
+              <a href={service.ctaLink} class={`w-full inline-flex items-center justify-center ${service.isPopular ? 'bg-naranja-vibrante hover:bg-orange-600' : 'bg-azul-profundo hover:bg-gray-800'} text-white px-6 py-3 rounded-xl font-semibold hover:scale-105 transition-all duration-300`}>
+                {service.ctaText}
+                <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
             </div>
           </div>
-
-          <div class="text-center">
-            <a href="/redaccion-web" class="w-full inline-flex items-center justify-center bg-naranja-vibrante text-white px-6 py-3 rounded-xl font-semibold hover:bg-orange-600 hover:scale-105 transition-all duration-300">
-              Ver redacción web
-              <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- Blog Estratégico Service -->
-        <div class="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-300 bg-white p-8 rounded-2xl border border-gray-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-          <div class="text-center mb-8">
-            <h3 class="text-2xl font-bold text-gray-900 mb-3">Blog Estratégico</h3>
-            <p class="text-gray-600 mb-6 leading-relaxed">¿Quieres dominar tu nicho con contenido?</p>
-            <div class="text-4xl font-bold text-azul-profundo mb-2">2.995<span class="text-2xl">€</span></div>
-            <p class="text-sm text-gray-500">/mes durante 3 meses</p>
-          </div>
-
-          <div class="space-y-3 mb-8">
-            <div class="flex items-start space-x-3">
-              <svg class="w-5 h-5 text-naranja-vibrante flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-              </svg>
-              <span class="text-gray-700">8 artículos estratégicos mensuales</span>
-            </div>
-            <div class="flex items-start space-x-3">
-              <svg class="w-5 h-5 text-naranja-vibrante flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-              </svg>
-              <span class="text-gray-700">SEO avanzado + distribución</span>
-            </div>
-            <div class="flex items-start space-x-3">
-              <svg class="w-5 h-5 text-naranja-vibrante flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-              </svg>
-              <span class="text-gray-700">Garantía de resultados</span>
-            </div>
-          </div>
-
-          <div class="text-center">
-            <a href="/redaccion-estrategica-blogs" class="w-full inline-flex items-center justify-center bg-azul-profundo text-white px-6 py-3 rounded-xl font-semibold hover:bg-gray-800 hover:scale-105 transition-all duration-300">
-              Ver blog estratégico
-              <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-            </a>
-          </div>
-        </div>
+        ))}
       </div>
 
       <!-- Custom Projects Option -->
       <div class="text-center mt-20 animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-400">
         <div class="max-w-lg mx-auto">
           <p class="text-gray-600 mb-6 leading-relaxed">
-            ¿Necesitas algo más específico? Proyectos especiales, consultoría estratégica a largo plazo, o colaboraciones únicas.
+            {servicePackages.customProjects.description}
           </p>
           <a
-            href="/contacto"
+            href={servicePackages.customProjects.linkUrl}
             class="text-naranja-vibrante hover:text-orange-600 underline font-medium transition-colors duration-300"
           >
-            Trabajemos juntos
+            {servicePackages.customProjects.linkText}
           </a>
         </div>
       </div>
@@ -178,101 +100,36 @@ import Layout from '../layouts/Layout.astro'
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
       <div class="text-center mb-12 animate-on-scroll opacity-0 translate-y-8 transition-all duration-700">
         <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-          ¿Cuál servicio necesito?
+          {faqSection.title}
         </h2>
         <p class="text-xl text-gray-600">
-          Guía rápida para elegir la opción perfecta para tu situación
+          {faqSection.subtitle}
         </p>
       </div>
 
       <div class="space-y-6">
-        <!-- FAQ 1 -->
-        <div class="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-100 bg-white rounded-xl border border-gray-200 overflow-hidden">
-          <button class="w-full px-8 py-6 text-left faq-button cursor-pointer" onclick="toggleFAQ(this)" aria-expanded="false">
-            <div class="flex items-center justify-between">
-              <h3 class="text-lg font-semibold text-gray-900 pr-4">
-                Tengo una web pero no convierto. ¿Por dónde empiezo?
-              </h3>
-              <svg class="w-6 h-6 text-gray-400 transform transition-transform duration-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
+        {faqSection.questions.map((faq, index) => (
+          <div class={`animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-${(index + 1) * 100} bg-white rounded-xl border border-gray-200 overflow-hidden`}>
+            <button class="w-full px-8 py-6 text-left faq-button cursor-pointer" onclick="toggleFAQ(this)" aria-expanded="false">
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-semibold text-gray-900 pr-4">
+                  {faq.question}
+                </h3>
+                <svg class="w-6 h-6 text-gray-400 transform transition-transform duration-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </div>
+            </button>
+            <div class="faq-content px-8 pb-6 hidden">
+              <p class="text-gray-600 leading-relaxed mb-4">
+                <strong class="text-gray-900">{faq.answerTitle}</strong>
+              </p>
+              <p class="text-gray-600 leading-relaxed">
+                {faq.answerText}
+              </p>
             </div>
-          </button>
-          <div class="faq-content px-8 pb-6 hidden">
-            <p class="text-gray-600 leading-relaxed mb-4">
-              <strong class="text-gray-900">Empieza con Audit (€1.495)</strong>
-            </p>
-            <p class="text-gray-600 leading-relaxed">
-              Necesitas claridad sobre qué está fallando. El Audit te dará un diagnóstico completo de tu contenido actual, identificará los puntos de fuga en tu embudo de ventas, y te proporcionará un roadmap claro de mejoras prioritarias. Perfecto si tienes tráfico pero no conviertes.
-            </p>
           </div>
-        </div>
-
-        <!-- FAQ 2 -->
-        <div class="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-200 bg-white rounded-xl border border-gray-200 overflow-hidden">
-          <button class="w-full px-8 py-6 text-left faq-button cursor-pointer" onclick="toggleFAQ(this)" aria-expanded="false">
-            <div class="flex items-center justify-between">
-              <h3 class="text-lg font-semibold text-gray-900 pr-4">
-                Quiero rehacer completamente mi mensaje y contenido
-              </h3>
-              <svg class="w-6 h-6 text-gray-400 transform transition-transform duration-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </div>
-          </button>
-          <div class="faq-content px-8 pb-6 hidden">
-            <p class="text-gray-600 leading-relaxed mb-4">
-              <strong class="text-gray-900">Ve directo a Redacción Web (€1.599)</strong>
-            </p>
-            <p class="text-gray-600 leading-relaxed">
-              Es tu opción más popular. Redacción completa de las 5 páginas más importantes de tu web, investigación de audiencia incluida, análisis de competencia y estrategia SEO básica. Sales con textos que conectan con tus clientes y los convencen para comprarte.
-            </p>
-          </div>
-        </div>
-
-        <!-- FAQ 3 -->
-        <div class="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-300 bg-white rounded-xl border border-gray-200 overflow-hidden">
-          <button class="w-full px-8 py-6 text-left faq-button cursor-pointer" onclick="toggleFAQ(this)" aria-expanded="false">
-            <div class="flex items-center justify-between">
-              <h3 class="text-lg font-semibold text-gray-900 pr-4">
-                Quiero ser el referente absoluto en mi sector
-              </h3>
-              <svg class="w-6 h-6 text-gray-400 transform transition-transform duration-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </div>
-          </button>
-          <div class="faq-content px-8 pb-6 hidden">
-            <p class="text-gray-600 leading-relaxed mb-4">
-              <strong class="text-purple-600">Necesitas Blog Estratégico (€2.995/mes)</strong>
-            </p>
-            <p class="text-gray-600 leading-relaxed">
-              Estrategia completa de blog durante 3 meses: 24 artículos estratégicos, SEO avanzado, consultoría mensual y garantía de resultados. Para empresas serias que quieren dominar su nicho con autoridad de contenido.
-            </p>
-          </div>
-        </div>
-
-        <!-- FAQ 4 -->
-        <div class="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-400 bg-white rounded-xl border border-gray-200 overflow-hidden">
-          <button class="w-full px-8 py-6 text-left faq-button cursor-pointer" onclick="toggleFAQ(this)" aria-expanded="false">
-            <div class="flex items-center justify-between">
-              <h3 class="text-lg font-semibold text-gray-900 pr-4">
-                Mi caso es único/complejo/especial
-              </h3>
-              <svg class="w-6 h-6 text-gray-400 transform transition-transform duration-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </div>
-          </button>
-          <div class="faq-content px-8 pb-6 hidden">
-            <p class="text-gray-600 leading-relaxed mb-4">
-              <strong class="text-gray-900">Conversemos → "Trabajemos Juntos"</strong>
-            </p>
-            <p class="text-gray-600 leading-relaxed">
-              Proyectos especiales, colaboraciones a largo plazo, consultorías específicas, o situaciones únicas requieren un enfoque personalizado. Agenda una consulta y diseñamos la solución perfecta para tu caso particular.
-            </p>
-          </div>
-        </div>
+        ))}
       </div>
 
     </div>

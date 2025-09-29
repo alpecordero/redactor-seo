@@ -2318,6 +2318,305 @@ var config_default = defineConfig({
             ]
           }
         ]
+      },
+      {
+        name: "servicios_page",
+        label: "P\xE1gina de Servicios",
+        path: "src/content/servicios",
+        format: "json",
+        ui: {
+          allowedActions: {
+            create: false,
+            delete: false
+          }
+        },
+        fields: [
+          {
+            type: "object",
+            name: "seo",
+            label: "SEO",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo SEO",
+                required: true,
+                ui: {
+                  description: "T\xEDtulo que aparece en Google (m\xE1x. 60 caracteres)"
+                }
+              },
+              {
+                type: "string",
+                name: "description",
+                label: "Meta descripci\xF3n",
+                required: true,
+                ui: {
+                  component: "textarea",
+                  description: "Descripci\xF3n que aparece en Google (m\xE1x. 160 caracteres)"
+                }
+              },
+              {
+                type: "string",
+                name: "keywords",
+                label: "Palabras clave",
+                ui: {
+                  description: "Palabras clave separadas por comas"
+                }
+              },
+              {
+                type: "string",
+                name: "ogTitle",
+                label: "T\xEDtulo Open Graph",
+                ui: {
+                  description: "T\xEDtulo para redes sociales (opcional, usa el t\xEDtulo SEO si est\xE1 vac\xEDo)"
+                }
+              },
+              {
+                type: "string",
+                name: "ogDescription",
+                label: "Descripci\xF3n Open Graph",
+                ui: {
+                  component: "textarea",
+                  description: "Descripci\xF3n para redes sociales (opcional, usa la meta descripci\xF3n si est\xE1 vac\xEDa)"
+                }
+              },
+              {
+                type: "image",
+                name: "ogImage",
+                label: "Imagen Open Graph",
+                ui: {
+                  description: "Imagen para redes sociales (1200x630px recomendado)"
+                }
+              },
+              {
+                type: "string",
+                name: "canonicalUrl",
+                label: "URL Can\xF3nica",
+                ui: {
+                  description: "URL can\xF3nica (opcional, se genera autom\xE1ticamente si est\xE1 vac\xEDa)"
+                }
+              },
+              {
+                type: "boolean",
+                name: "noindex",
+                label: "No indexar p\xE1gina",
+                ui: {
+                  description: "Marcar para evitar que los motores de b\xFAsqueda indexen esta p\xE1gina"
+                }
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "hero",
+            label: "1. Secci\xF3n Hero",
+            fields: [
+              {
+                type: "string",
+                name: "titlePart1",
+                label: "T\xEDtulo - Parte 1 (Negro)",
+                required: true,
+                ui: {
+                  description: "Ej: 'Tres formas de'"
+                }
+              },
+              {
+                type: "string",
+                name: "titlePart2",
+                label: "T\xEDtulo - Parte 2 (Naranja)",
+                required: true,
+                ui: {
+                  description: "Ej: 'trabajar conmigo'"
+                }
+              },
+              {
+                type: "string",
+                name: "description",
+                label: "Descripci\xF3n",
+                required: true,
+                ui: {
+                  component: "textarea",
+                  description: "Texto descriptivo bajo el t\xEDtulo"
+                }
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "servicePackages",
+            label: "2. Paquetes de Servicios",
+            fields: [
+              {
+                type: "object",
+                name: "packages",
+                label: "Servicios disponibles",
+                list: true,
+                fields: [
+                  {
+                    type: "string",
+                    name: "title",
+                    label: "T\xEDtulo del servicio",
+                    required: true,
+                    ui: {
+                      description: "Ej: 'Auditor\xEDa', 'Redacci\xF3n Web', 'Blog Estrat\xE9gico'"
+                    }
+                  },
+                  {
+                    type: "string",
+                    name: "subtitle",
+                    label: "Subt\xEDtulo descriptivo",
+                    required: true,
+                    ui: {
+                      description: "Pregunta o descripci\xF3n breve"
+                    }
+                  },
+                  {
+                    type: "string",
+                    name: "price",
+                    label: "Precio",
+                    required: true,
+                    ui: {
+                      description: "Solo el n\xFAmero, ej: '599'"
+                    }
+                  },
+                  {
+                    type: "string",
+                    name: "currency",
+                    label: "Moneda",
+                    required: true,
+                    ui: {
+                      description: "Ej: '\u20AC'"
+                    }
+                  },
+                  {
+                    type: "string",
+                    name: "priceNote",
+                    label: "Nota del precio",
+                    ui: {
+                      description: "Ej: 'Una sola vez', '/mes durante 3 meses'"
+                    }
+                  },
+                  {
+                    type: "string",
+                    name: "features",
+                    label: "Caracter\xEDsticas incluidas",
+                    list: true,
+                    required: true,
+                    ui: {
+                      description: "Lista de caracter\xEDsticas o beneficios"
+                    }
+                  },
+                  {
+                    type: "string",
+                    name: "ctaText",
+                    label: "Texto del bot\xF3n",
+                    required: true
+                  },
+                  {
+                    type: "string",
+                    name: "ctaLink",
+                    label: "Enlace del bot\xF3n",
+                    required: true
+                  },
+                  {
+                    type: "boolean",
+                    name: "isPopular",
+                    label: "\xBFEs el m\xE1s popular?",
+                    ui: {
+                      description: "Marcar para mostrar badge 'M\xC1S POPULAR'"
+                    }
+                  }
+                ]
+              },
+              {
+                type: "object",
+                name: "customProjects",
+                label: "Secci\xF3n Proyectos Personalizados",
+                fields: [
+                  {
+                    type: "string",
+                    name: "description",
+                    label: "Descripci\xF3n",
+                    required: true,
+                    ui: {
+                      component: "textarea"
+                    }
+                  },
+                  {
+                    type: "string",
+                    name: "linkText",
+                    label: "Texto del enlace",
+                    required: true
+                  },
+                  {
+                    type: "string",
+                    name: "linkUrl",
+                    label: "URL del enlace",
+                    required: true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "faqSection",
+            label: "3. Preguntas Frecuentes",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo principal",
+                required: true,
+                ui: {
+                  description: "Ej: '\xBFCu\xE1l servicio necesito?'"
+                }
+              },
+              {
+                type: "string",
+                name: "subtitle",
+                label: "Subt\xEDtulo",
+                required: true,
+                ui: {
+                  description: "Descripci\xF3n bajo el t\xEDtulo"
+                }
+              },
+              {
+                type: "object",
+                name: "questions",
+                label: "Preguntas y Respuestas",
+                list: true,
+                fields: [
+                  {
+                    type: "string",
+                    name: "question",
+                    label: "Pregunta",
+                    required: true
+                  },
+                  {
+                    type: "string",
+                    name: "answerTitle",
+                    label: "T\xEDtulo de la respuesta",
+                    required: true,
+                    ui: {
+                      description: "Texto en negrita, ej: 'Empieza con Audit (\u20AC1.495)'"
+                    }
+                  },
+                  {
+                    type: "string",
+                    name: "answerText",
+                    label: "Texto de la respuesta",
+                    required: true,
+                    ui: {
+                      component: "textarea",
+                      description: "Explicaci\xF3n detallada"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
       }
     ]
   }

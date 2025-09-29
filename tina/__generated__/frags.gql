@@ -481,3 +481,56 @@ fragment Sobre_miParts on Sobre_mi {
     buttonLink
   }
 }
+
+fragment Servicios_pageParts on Servicios_page {
+  __typename
+  seo {
+    __typename
+    title
+    description
+    keywords
+    ogTitle
+    ogDescription
+    ogImage
+    canonicalUrl
+    noindex
+  }
+  hero {
+    __typename
+    titlePart1
+    titlePart2
+    description
+  }
+  servicePackages {
+    __typename
+    packages {
+      __typename
+      title
+      subtitle
+      price
+      currency
+      priceNote
+      features
+      ctaText
+      ctaLink
+      isPopular
+    }
+    customProjects {
+      __typename
+      description
+      linkText
+      linkUrl
+    }
+  }
+  faqSection {
+    __typename
+    title
+    subtitle
+    questions {
+      __typename
+      question
+      answerTitle
+      answerText
+    }
+  }
+}

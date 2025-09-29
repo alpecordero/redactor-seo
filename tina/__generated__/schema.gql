@@ -68,6 +68,8 @@ type Query {
   contact_pageConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: Contact_pageFilter): Contact_pageConnection!
   sobre_mi(relativePath: String): Sobre_mi!
   sobre_miConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: Sobre_miFilter): Sobre_miConnection!
+  servicios_page(relativePath: String): Servicios_page!
+  servicios_pageConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: Servicios_pageFilter): Servicios_pageConnection!
 }
 
 input DocumentFilter {
@@ -78,6 +80,7 @@ input DocumentFilter {
   redaccion_estrategica_blogs: Redaccion_estrategica_blogsFilter
   contact_page: Contact_pageFilter
   sobre_mi: Sobre_miFilter
+  servicios_page: Servicios_pageFilter
 }
 
 type DocumentConnectionEdges {
@@ -103,7 +106,7 @@ type Collection {
   documents(before: String, after: String, first: Float, last: Float, sort: String, filter: DocumentFilter, folder: String): DocumentConnection!
 }
 
-union DocumentNode = Homepage | Pages | Auditoria | Redaccion_web | Redaccion_estrategica_blogs | Contact_page | Sobre_mi | Folder
+union DocumentNode = Homepage | Pages | Auditoria | Redaccion_web | Redaccion_estrategica_blogs | Contact_page | Sobre_mi | Servicios_page | Folder
 
 type HomepageSeo {
   title: String!
@@ -1331,6 +1334,143 @@ type Sobre_miConnection implements Connection {
   edges: [Sobre_miConnectionEdges]
 }
 
+type Servicios_pageSeo {
+  title: String!
+  description: String!
+  keywords: String
+  ogTitle: String
+  ogDescription: String
+  ogImage: String
+  canonicalUrl: String
+  noindex: Boolean
+}
+
+type Servicios_pageHero {
+  titlePart1: String!
+  titlePart2: String!
+  description: String!
+}
+
+type Servicios_pageServicePackagesPackages {
+  title: String!
+  subtitle: String!
+  price: String!
+  currency: String!
+  priceNote: String
+  features: [String!]!
+  ctaText: String!
+  ctaLink: String!
+  isPopular: Boolean
+}
+
+type Servicios_pageServicePackagesCustomProjects {
+  description: String!
+  linkText: String!
+  linkUrl: String!
+}
+
+type Servicios_pageServicePackages {
+  packages: [Servicios_pageServicePackagesPackages]
+  customProjects: Servicios_pageServicePackagesCustomProjects
+}
+
+type Servicios_pageFaqSectionQuestions {
+  question: String!
+  answerTitle: String!
+  answerText: String!
+}
+
+type Servicios_pageFaqSection {
+  title: String!
+  subtitle: String!
+  questions: [Servicios_pageFaqSectionQuestions]
+}
+
+type Servicios_page implements Node & Document {
+  seo: Servicios_pageSeo
+  hero: Servicios_pageHero
+  servicePackages: Servicios_pageServicePackages
+  faqSection: Servicios_pageFaqSection
+  id: ID!
+  _sys: SystemInfo!
+  _values: JSON!
+}
+
+input BooleanFilter {
+  eq: Boolean
+  exists: Boolean
+}
+
+input Servicios_pageSeoFilter {
+  title: StringFilter
+  description: StringFilter
+  keywords: StringFilter
+  ogTitle: StringFilter
+  ogDescription: StringFilter
+  ogImage: ImageFilter
+  canonicalUrl: StringFilter
+  noindex: BooleanFilter
+}
+
+input Servicios_pageHeroFilter {
+  titlePart1: StringFilter
+  titlePart2: StringFilter
+  description: StringFilter
+}
+
+input Servicios_pageServicePackagesPackagesFilter {
+  title: StringFilter
+  subtitle: StringFilter
+  price: StringFilter
+  currency: StringFilter
+  priceNote: StringFilter
+  features: StringFilter
+  ctaText: StringFilter
+  ctaLink: StringFilter
+  isPopular: BooleanFilter
+}
+
+input Servicios_pageServicePackagesCustomProjectsFilter {
+  description: StringFilter
+  linkText: StringFilter
+  linkUrl: StringFilter
+}
+
+input Servicios_pageServicePackagesFilter {
+  packages: Servicios_pageServicePackagesPackagesFilter
+  customProjects: Servicios_pageServicePackagesCustomProjectsFilter
+}
+
+input Servicios_pageFaqSectionQuestionsFilter {
+  question: StringFilter
+  answerTitle: StringFilter
+  answerText: StringFilter
+}
+
+input Servicios_pageFaqSectionFilter {
+  title: StringFilter
+  subtitle: StringFilter
+  questions: Servicios_pageFaqSectionQuestionsFilter
+}
+
+input Servicios_pageFilter {
+  seo: Servicios_pageSeoFilter
+  hero: Servicios_pageHeroFilter
+  servicePackages: Servicios_pageServicePackagesFilter
+  faqSection: Servicios_pageFaqSectionFilter
+}
+
+type Servicios_pageConnectionEdges {
+  cursor: String!
+  node: Servicios_page
+}
+
+type Servicios_pageConnection implements Connection {
+  pageInfo: PageInfo!
+  totalCount: Float!
+  edges: [Servicios_pageConnectionEdges]
+}
+
 type Mutation {
   addPendingDocument(collection: String!, relativePath: String!, template: String): DocumentNode!
   updateDocument(collection: String, relativePath: String!, params: DocumentUpdateMutation!): DocumentNode!
@@ -1351,6 +1491,8 @@ type Mutation {
   createContact_page(relativePath: String!, params: Contact_pageMutation!): Contact_page!
   updateSobre_mi(relativePath: String!, params: Sobre_miMutation!): Sobre_mi!
   createSobre_mi(relativePath: String!, params: Sobre_miMutation!): Sobre_mi!
+  updateServicios_page(relativePath: String!, params: Servicios_pageMutation!): Servicios_page!
+  createServicios_page(relativePath: String!, params: Servicios_pageMutation!): Servicios_page!
 }
 
 input DocumentUpdateMutation {
@@ -1361,6 +1503,7 @@ input DocumentUpdateMutation {
   redaccion_estrategica_blogs: Redaccion_estrategica_blogsMutation
   contact_page: Contact_pageMutation
   sobre_mi: Sobre_miMutation
+  servicios_page: Servicios_pageMutation
   relativePath: String
 }
 
@@ -1372,6 +1515,7 @@ input DocumentMutation {
   redaccion_estrategica_blogs: Redaccion_estrategica_blogsMutation
   contact_page: Contact_pageMutation
   sobre_mi: Sobre_miMutation
+  servicios_page: Servicios_pageMutation
 }
 
 input HomepageSeoMutation {
@@ -1921,6 +2065,65 @@ input Sobre_miMutation {
   storyContent: String
   testimonial: Sobre_miTestimonialMutation
   ctaSection: Sobre_miCtaSectionMutation
+}
+
+input Servicios_pageSeoMutation {
+  title: String
+  description: String
+  keywords: String
+  ogTitle: String
+  ogDescription: String
+  ogImage: String
+  canonicalUrl: String
+  noindex: Boolean
+}
+
+input Servicios_pageHeroMutation {
+  titlePart1: String
+  titlePart2: String
+  description: String
+}
+
+input Servicios_pageServicePackagesPackagesMutation {
+  title: String
+  subtitle: String
+  price: String
+  currency: String
+  priceNote: String
+  features: [String]
+  ctaText: String
+  ctaLink: String
+  isPopular: Boolean
+}
+
+input Servicios_pageServicePackagesCustomProjectsMutation {
+  description: String
+  linkText: String
+  linkUrl: String
+}
+
+input Servicios_pageServicePackagesMutation {
+  packages: [Servicios_pageServicePackagesPackagesMutation]
+  customProjects: Servicios_pageServicePackagesCustomProjectsMutation
+}
+
+input Servicios_pageFaqSectionQuestionsMutation {
+  question: String
+  answerTitle: String
+  answerText: String
+}
+
+input Servicios_pageFaqSectionMutation {
+  title: String
+  subtitle: String
+  questions: [Servicios_pageFaqSectionQuestionsMutation]
+}
+
+input Servicios_pageMutation {
+  seo: Servicios_pageSeoMutation
+  hero: Servicios_pageHeroMutation
+  servicePackages: Servicios_pageServicePackagesMutation
+  faqSection: Servicios_pageFaqSectionMutation
 }
 
 schema {

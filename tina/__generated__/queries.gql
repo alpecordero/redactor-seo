@@ -382,3 +382,58 @@ query sobre_miConnection($before: String, $after: String, $first: Float, $last: 
     }
   }
 }
+
+query servicios_page($relativePath: String!) {
+  servicios_page(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...Servicios_pageParts
+  }
+}
+
+query servicios_pageConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: Servicios_pageFilter) {
+  servicios_pageConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...Servicios_pageParts
+      }
+    }
+  }
+}

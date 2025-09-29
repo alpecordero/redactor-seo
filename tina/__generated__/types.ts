@@ -96,6 +96,8 @@ export type Query = {
   contact_pageConnection: Contact_PageConnection;
   sobre_mi: Sobre_Mi;
   sobre_miConnection: Sobre_MiConnection;
+  servicios_page: Servicios_Page;
+  servicios_pageConnection: Servicios_PageConnection;
 };
 
 
@@ -224,6 +226,21 @@ export type QuerySobre_MiConnectionArgs = {
   filter?: InputMaybe<Sobre_MiFilter>;
 };
 
+
+export type QueryServicios_PageArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryServicios_PageConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<Servicios_PageFilter>;
+};
+
 export type DocumentFilter = {
   homepage?: InputMaybe<HomepageFilter>;
   pages?: InputMaybe<PagesFilter>;
@@ -232,6 +249,7 @@ export type DocumentFilter = {
   redaccion_estrategica_blogs?: InputMaybe<Redaccion_Estrategica_BlogsFilter>;
   contact_page?: InputMaybe<Contact_PageFilter>;
   sobre_mi?: InputMaybe<Sobre_MiFilter>;
+  servicios_page?: InputMaybe<Servicios_PageFilter>;
 };
 
 export type DocumentConnectionEdges = {
@@ -271,7 +289,7 @@ export type CollectionDocumentsArgs = {
   folder?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type DocumentNode = Homepage | Pages | Auditoria | Redaccion_Web | Redaccion_Estrategica_Blogs | Contact_Page | Sobre_Mi | Folder;
+export type DocumentNode = Homepage | Pages | Auditoria | Redaccion_Web | Redaccion_Estrategica_Blogs | Contact_Page | Sobre_Mi | Servicios_Page | Folder;
 
 export type HomepageSeo = {
   __typename?: 'HomepageSeo';
@@ -1592,6 +1610,153 @@ export type Sobre_MiConnection = Connection & {
   edges?: Maybe<Array<Maybe<Sobre_MiConnectionEdges>>>;
 };
 
+export type Servicios_PageSeo = {
+  __typename?: 'Servicios_pageSeo';
+  title: Scalars['String']['output'];
+  description: Scalars['String']['output'];
+  keywords?: Maybe<Scalars['String']['output']>;
+  ogTitle?: Maybe<Scalars['String']['output']>;
+  ogDescription?: Maybe<Scalars['String']['output']>;
+  ogImage?: Maybe<Scalars['String']['output']>;
+  canonicalUrl?: Maybe<Scalars['String']['output']>;
+  noindex?: Maybe<Scalars['Boolean']['output']>;
+};
+
+export type Servicios_PageHero = {
+  __typename?: 'Servicios_pageHero';
+  titlePart1: Scalars['String']['output'];
+  titlePart2: Scalars['String']['output'];
+  description: Scalars['String']['output'];
+};
+
+export type Servicios_PageServicePackagesPackages = {
+  __typename?: 'Servicios_pageServicePackagesPackages';
+  title: Scalars['String']['output'];
+  subtitle: Scalars['String']['output'];
+  price: Scalars['String']['output'];
+  currency: Scalars['String']['output'];
+  priceNote?: Maybe<Scalars['String']['output']>;
+  features: Array<Scalars['String']['output']>;
+  ctaText: Scalars['String']['output'];
+  ctaLink: Scalars['String']['output'];
+  isPopular?: Maybe<Scalars['Boolean']['output']>;
+};
+
+export type Servicios_PageServicePackagesCustomProjects = {
+  __typename?: 'Servicios_pageServicePackagesCustomProjects';
+  description: Scalars['String']['output'];
+  linkText: Scalars['String']['output'];
+  linkUrl: Scalars['String']['output'];
+};
+
+export type Servicios_PageServicePackages = {
+  __typename?: 'Servicios_pageServicePackages';
+  packages?: Maybe<Array<Maybe<Servicios_PageServicePackagesPackages>>>;
+  customProjects?: Maybe<Servicios_PageServicePackagesCustomProjects>;
+};
+
+export type Servicios_PageFaqSectionQuestions = {
+  __typename?: 'Servicios_pageFaqSectionQuestions';
+  question: Scalars['String']['output'];
+  answerTitle: Scalars['String']['output'];
+  answerText: Scalars['String']['output'];
+};
+
+export type Servicios_PageFaqSection = {
+  __typename?: 'Servicios_pageFaqSection';
+  title: Scalars['String']['output'];
+  subtitle: Scalars['String']['output'];
+  questions?: Maybe<Array<Maybe<Servicios_PageFaqSectionQuestions>>>;
+};
+
+export type Servicios_Page = Node & Document & {
+  __typename?: 'Servicios_page';
+  seo?: Maybe<Servicios_PageSeo>;
+  hero?: Maybe<Servicios_PageHero>;
+  servicePackages?: Maybe<Servicios_PageServicePackages>;
+  faqSection?: Maybe<Servicios_PageFaqSection>;
+  id: Scalars['ID']['output'];
+  _sys: SystemInfo;
+  _values: Scalars['JSON']['output'];
+};
+
+export type BooleanFilter = {
+  eq?: InputMaybe<Scalars['Boolean']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+export type Servicios_PageSeoFilter = {
+  title?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
+  keywords?: InputMaybe<StringFilter>;
+  ogTitle?: InputMaybe<StringFilter>;
+  ogDescription?: InputMaybe<StringFilter>;
+  ogImage?: InputMaybe<ImageFilter>;
+  canonicalUrl?: InputMaybe<StringFilter>;
+  noindex?: InputMaybe<BooleanFilter>;
+};
+
+export type Servicios_PageHeroFilter = {
+  titlePart1?: InputMaybe<StringFilter>;
+  titlePart2?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
+};
+
+export type Servicios_PageServicePackagesPackagesFilter = {
+  title?: InputMaybe<StringFilter>;
+  subtitle?: InputMaybe<StringFilter>;
+  price?: InputMaybe<StringFilter>;
+  currency?: InputMaybe<StringFilter>;
+  priceNote?: InputMaybe<StringFilter>;
+  features?: InputMaybe<StringFilter>;
+  ctaText?: InputMaybe<StringFilter>;
+  ctaLink?: InputMaybe<StringFilter>;
+  isPopular?: InputMaybe<BooleanFilter>;
+};
+
+export type Servicios_PageServicePackagesCustomProjectsFilter = {
+  description?: InputMaybe<StringFilter>;
+  linkText?: InputMaybe<StringFilter>;
+  linkUrl?: InputMaybe<StringFilter>;
+};
+
+export type Servicios_PageServicePackagesFilter = {
+  packages?: InputMaybe<Servicios_PageServicePackagesPackagesFilter>;
+  customProjects?: InputMaybe<Servicios_PageServicePackagesCustomProjectsFilter>;
+};
+
+export type Servicios_PageFaqSectionQuestionsFilter = {
+  question?: InputMaybe<StringFilter>;
+  answerTitle?: InputMaybe<StringFilter>;
+  answerText?: InputMaybe<StringFilter>;
+};
+
+export type Servicios_PageFaqSectionFilter = {
+  title?: InputMaybe<StringFilter>;
+  subtitle?: InputMaybe<StringFilter>;
+  questions?: InputMaybe<Servicios_PageFaqSectionQuestionsFilter>;
+};
+
+export type Servicios_PageFilter = {
+  seo?: InputMaybe<Servicios_PageSeoFilter>;
+  hero?: InputMaybe<Servicios_PageHeroFilter>;
+  servicePackages?: InputMaybe<Servicios_PageServicePackagesFilter>;
+  faqSection?: InputMaybe<Servicios_PageFaqSectionFilter>;
+};
+
+export type Servicios_PageConnectionEdges = {
+  __typename?: 'Servicios_pageConnectionEdges';
+  cursor: Scalars['String']['output'];
+  node?: Maybe<Servicios_Page>;
+};
+
+export type Servicios_PageConnection = Connection & {
+  __typename?: 'Servicios_pageConnection';
+  pageInfo: PageInfo;
+  totalCount: Scalars['Float']['output'];
+  edges?: Maybe<Array<Maybe<Servicios_PageConnectionEdges>>>;
+};
+
 export type Mutation = {
   __typename?: 'Mutation';
   addPendingDocument: DocumentNode;
@@ -1613,6 +1778,8 @@ export type Mutation = {
   createContact_page: Contact_Page;
   updateSobre_mi: Sobre_Mi;
   createSobre_mi: Sobre_Mi;
+  updateServicios_page: Servicios_Page;
+  createServicios_page: Servicios_Page;
 };
 
 
@@ -1732,6 +1899,18 @@ export type MutationCreateSobre_MiArgs = {
   params: Sobre_MiMutation;
 };
 
+
+export type MutationUpdateServicios_PageArgs = {
+  relativePath: Scalars['String']['input'];
+  params: Servicios_PageMutation;
+};
+
+
+export type MutationCreateServicios_PageArgs = {
+  relativePath: Scalars['String']['input'];
+  params: Servicios_PageMutation;
+};
+
 export type DocumentUpdateMutation = {
   homepage?: InputMaybe<HomepageMutation>;
   pages?: InputMaybe<PagesMutation>;
@@ -1740,6 +1919,7 @@ export type DocumentUpdateMutation = {
   redaccion_estrategica_blogs?: InputMaybe<Redaccion_Estrategica_BlogsMutation>;
   contact_page?: InputMaybe<Contact_PageMutation>;
   sobre_mi?: InputMaybe<Sobre_MiMutation>;
+  servicios_page?: InputMaybe<Servicios_PageMutation>;
   relativePath?: InputMaybe<Scalars['String']['input']>;
 };
 
@@ -1751,6 +1931,7 @@ export type DocumentMutation = {
   redaccion_estrategica_blogs?: InputMaybe<Redaccion_Estrategica_BlogsMutation>;
   contact_page?: InputMaybe<Contact_PageMutation>;
   sobre_mi?: InputMaybe<Sobre_MiMutation>;
+  servicios_page?: InputMaybe<Servicios_PageMutation>;
 };
 
 export type HomepageSeoMutation = {
@@ -2302,6 +2483,65 @@ export type Sobre_MiMutation = {
   ctaSection?: InputMaybe<Sobre_MiCtaSectionMutation>;
 };
 
+export type Servicios_PageSeoMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  keywords?: InputMaybe<Scalars['String']['input']>;
+  ogTitle?: InputMaybe<Scalars['String']['input']>;
+  ogDescription?: InputMaybe<Scalars['String']['input']>;
+  ogImage?: InputMaybe<Scalars['String']['input']>;
+  canonicalUrl?: InputMaybe<Scalars['String']['input']>;
+  noindex?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+export type Servicios_PageHeroMutation = {
+  titlePart1?: InputMaybe<Scalars['String']['input']>;
+  titlePart2?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type Servicios_PageServicePackagesPackagesMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  subtitle?: InputMaybe<Scalars['String']['input']>;
+  price?: InputMaybe<Scalars['String']['input']>;
+  currency?: InputMaybe<Scalars['String']['input']>;
+  priceNote?: InputMaybe<Scalars['String']['input']>;
+  features?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  ctaText?: InputMaybe<Scalars['String']['input']>;
+  ctaLink?: InputMaybe<Scalars['String']['input']>;
+  isPopular?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+export type Servicios_PageServicePackagesCustomProjectsMutation = {
+  description?: InputMaybe<Scalars['String']['input']>;
+  linkText?: InputMaybe<Scalars['String']['input']>;
+  linkUrl?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type Servicios_PageServicePackagesMutation = {
+  packages?: InputMaybe<Array<InputMaybe<Servicios_PageServicePackagesPackagesMutation>>>;
+  customProjects?: InputMaybe<Servicios_PageServicePackagesCustomProjectsMutation>;
+};
+
+export type Servicios_PageFaqSectionQuestionsMutation = {
+  question?: InputMaybe<Scalars['String']['input']>;
+  answerTitle?: InputMaybe<Scalars['String']['input']>;
+  answerText?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type Servicios_PageFaqSectionMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  subtitle?: InputMaybe<Scalars['String']['input']>;
+  questions?: InputMaybe<Array<InputMaybe<Servicios_PageFaqSectionQuestionsMutation>>>;
+};
+
+export type Servicios_PageMutation = {
+  seo?: InputMaybe<Servicios_PageSeoMutation>;
+  hero?: InputMaybe<Servicios_PageHeroMutation>;
+  servicePackages?: InputMaybe<Servicios_PageServicePackagesMutation>;
+  faqSection?: InputMaybe<Servicios_PageFaqSectionMutation>;
+};
+
 export type HomepagePartsFragment = { __typename: 'Homepage', seo?: { __typename: 'HomepageSeo', title: string, description: string } | null, hero?: { __typename: 'HomepageHero', subtitle: string, title: string, description: string, candleMessages: Array<string> } | null, googleDeathSection?: { __typename: 'HomepageGoogleDeathSection', title: string, paragraph: string, closingPhrase: string, checkboxItems?: Array<{ __typename: 'HomepageGoogleDeathSectionCheckboxItems', text: string } | null> | null } | null, painPointsSection?: { __typename: 'HomepagePainPointsSection', title: string, subtitleFirstPart: string, closingPhrase: string, phrases: Array<{ __typename: 'HomepagePainPointsSectionPhrases', leftPart: string, rightPart: string }> } | null, transitionMessageSection?: { __typename: 'HomepageTransitionMessageSection', mainText: string, highlightedText: string, continuationText: string, secondaryText: string } | null, bridgeSection?: { __typename: 'HomepageBridgeSection', title: string, paragraph: string } | null, servicesPackagesSection?: { __typename: 'HomepageServicesPackagesSection', title: string, packages?: Array<{ __typename: 'HomepageServicesPackagesSectionPackages', icon: string, heading: string, description: string, deliverables: Array<string>, ctaText: string, ctaLink: string } | null> | null, finalCta?: { __typename: 'HomepageServicesPackagesSectionFinalCta', text: string, linkText: string, linkUrl: string } | null } | null, statsSection?: { __typename: 'HomepageStatsSection', title: string, subtitle: string, stats?: Array<{ __typename: 'HomepageStatsSectionStats', value: number, suffix: string, description: string } | null> | null } | null, testimonialsSection?: { __typename: 'HomepageTestimonialsSection', title: string, subtitle: string, testimonials?: Array<{ __typename: 'HomepageTestimonialsSectionTestimonials', name: string, company: string, testimonial: string, image: string, link?: string | null } | null> | null } | null, ctaSection?: { __typename: 'HomepageCtaSection', title: string, description: string, buttonText: string, buttonLink: string } | null };
 
 export type PagesPartsFragment = { __typename: 'Pages', title: string, description?: string | null, subtitle?: string | null, introduction?: string | null, profileImage?: string | null, body?: any | null, experienceSection?: { __typename: 'PagesExperienceSection', title?: string | null, subtitle?: string | null, items?: Array<{ __typename: 'PagesExperienceSectionItems', icon?: string | null, title?: string | null, description?: string | null } | null> | null } | null, valuesSection?: { __typename: 'PagesValuesSection', title?: string | null, subtitle?: string | null, values?: Array<{ __typename: 'PagesValuesSectionValues', title?: string | null, description?: string | null } | null> | null } | null, testimonial?: { __typename: 'PagesTestimonial', quote?: string | null, author?: string | null, role?: string | null } | null, ctaSection?: { __typename: 'PagesCtaSection', title?: string | null, description?: string | null, buttonText?: string | null } | null };
@@ -2315,6 +2555,8 @@ export type Redaccion_Estrategica_BlogsPartsFragment = { __typename: 'Redaccion_
 export type Contact_PagePartsFragment = { __typename: 'Contact_page', seo?: { __typename: 'Contact_pageSeo', title: string, description: string } | null, hero?: { __typename: 'Contact_pageHero', titlePart1: string, titlePart2: string, description: string } | null, form?: { __typename: 'Contact_pageForm', title: string, description: string, submitButtonText: string, privacyPolicyText: string, services?: Array<{ __typename: 'Contact_pageFormServices', value: string, label: string } | null> | null, budgetRanges?: Array<{ __typename: 'Contact_pageFormBudgetRanges', value: string, label: string } | null> | null } | null, contactInfo?: { __typename: 'Contact_pageContactInfo', title: string, email: string, responseTime: string } | null, messages?: { __typename: 'Contact_pageMessages', successMessage: string, errorMessage: string, loadingText: string } | null };
 
 export type Sobre_MiPartsFragment = { __typename: 'Sobre_mi', storyContent: string, seo?: { __typename: 'Sobre_miSeo', title: string, description: string } | null, hero?: { __typename: 'Sobre_miHero', title: string, subtitle: string, introduction: string, profileImage: string } | null, experienceSection?: { __typename: 'Sobre_miExperienceSection', title: string, subtitle: string, items?: Array<{ __typename: 'Sobre_miExperienceSectionItems', icon: string, title: string, description: string } | null> | null } | null, storySection?: { __typename: 'Sobre_miStorySection', title: string, subtitle: string } | null, testimonial?: { __typename: 'Sobre_miTestimonial', quote: string, author: string, role: string } | null, ctaSection?: { __typename: 'Sobre_miCtaSection', title: string, description: string, buttonText: string, buttonLink: string } | null };
+
+export type Servicios_PagePartsFragment = { __typename: 'Servicios_page', seo?: { __typename: 'Servicios_pageSeo', title: string, description: string, keywords?: string | null, ogTitle?: string | null, ogDescription?: string | null, ogImage?: string | null, canonicalUrl?: string | null, noindex?: boolean | null } | null, hero?: { __typename: 'Servicios_pageHero', titlePart1: string, titlePart2: string, description: string } | null, servicePackages?: { __typename: 'Servicios_pageServicePackages', packages?: Array<{ __typename: 'Servicios_pageServicePackagesPackages', title: string, subtitle: string, price: string, currency: string, priceNote?: string | null, features: Array<string>, ctaText: string, ctaLink: string, isPopular?: boolean | null } | null> | null, customProjects?: { __typename: 'Servicios_pageServicePackagesCustomProjects', description: string, linkText: string, linkUrl: string } | null } | null, faqSection?: { __typename: 'Servicios_pageFaqSection', title: string, subtitle: string, questions?: Array<{ __typename: 'Servicios_pageFaqSectionQuestions', question: string, answerTitle: string, answerText: string } | null> | null } | null };
 
 export type HomepageQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
@@ -2448,6 +2690,25 @@ export type Sobre_MiConnectionQueryVariables = Exact<{
 
 
 export type Sobre_MiConnectionQuery = { __typename?: 'Query', sobre_miConnection: { __typename?: 'Sobre_miConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'Sobre_miConnectionEdges', cursor: string, node?: { __typename: 'Sobre_mi', id: string, storyContent: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'Sobre_miSeo', title: string, description: string } | null, hero?: { __typename: 'Sobre_miHero', title: string, subtitle: string, introduction: string, profileImage: string } | null, experienceSection?: { __typename: 'Sobre_miExperienceSection', title: string, subtitle: string, items?: Array<{ __typename: 'Sobre_miExperienceSectionItems', icon: string, title: string, description: string } | null> | null } | null, storySection?: { __typename: 'Sobre_miStorySection', title: string, subtitle: string } | null, testimonial?: { __typename: 'Sobre_miTestimonial', quote: string, author: string, role: string } | null, ctaSection?: { __typename: 'Sobre_miCtaSection', title: string, description: string, buttonText: string, buttonLink: string } | null } | null } | null> | null } };
+
+export type Servicios_PageQueryVariables = Exact<{
+  relativePath: Scalars['String']['input'];
+}>;
+
+
+export type Servicios_PageQuery = { __typename?: 'Query', servicios_page: { __typename: 'Servicios_page', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'Servicios_pageSeo', title: string, description: string, keywords?: string | null, ogTitle?: string | null, ogDescription?: string | null, ogImage?: string | null, canonicalUrl?: string | null, noindex?: boolean | null } | null, hero?: { __typename: 'Servicios_pageHero', titlePart1: string, titlePart2: string, description: string } | null, servicePackages?: { __typename: 'Servicios_pageServicePackages', packages?: Array<{ __typename: 'Servicios_pageServicePackagesPackages', title: string, subtitle: string, price: string, currency: string, priceNote?: string | null, features: Array<string>, ctaText: string, ctaLink: string, isPopular?: boolean | null } | null> | null, customProjects?: { __typename: 'Servicios_pageServicePackagesCustomProjects', description: string, linkText: string, linkUrl: string } | null } | null, faqSection?: { __typename: 'Servicios_pageFaqSection', title: string, subtitle: string, questions?: Array<{ __typename: 'Servicios_pageFaqSectionQuestions', question: string, answerTitle: string, answerText: string } | null> | null } | null } };
+
+export type Servicios_PageConnectionQueryVariables = Exact<{
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<Servicios_PageFilter>;
+}>;
+
+
+export type Servicios_PageConnectionQuery = { __typename?: 'Query', servicios_pageConnection: { __typename?: 'Servicios_pageConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'Servicios_pageConnectionEdges', cursor: string, node?: { __typename: 'Servicios_page', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'Servicios_pageSeo', title: string, description: string, keywords?: string | null, ogTitle?: string | null, ogDescription?: string | null, ogImage?: string | null, canonicalUrl?: string | null, noindex?: boolean | null } | null, hero?: { __typename: 'Servicios_pageHero', titlePart1: string, titlePart2: string, description: string } | null, servicePackages?: { __typename: 'Servicios_pageServicePackages', packages?: Array<{ __typename: 'Servicios_pageServicePackagesPackages', title: string, subtitle: string, price: string, currency: string, priceNote?: string | null, features: Array<string>, ctaText: string, ctaLink: string, isPopular?: boolean | null } | null> | null, customProjects?: { __typename: 'Servicios_pageServicePackagesCustomProjects', description: string, linkText: string, linkUrl: string } | null } | null, faqSection?: { __typename: 'Servicios_pageFaqSection', title: string, subtitle: string, questions?: Array<{ __typename: 'Servicios_pageFaqSectionQuestions', question: string, answerTitle: string, answerText: string } | null> | null } | null } | null } | null> | null } };
 
 export const HomepagePartsFragmentDoc = gql`
     fragment HomepageParts on Homepage {
@@ -2940,6 +3201,60 @@ export const Sobre_MiPartsFragmentDoc = gql`
   }
 }
     `;
+export const Servicios_PagePartsFragmentDoc = gql`
+    fragment Servicios_pageParts on Servicios_page {
+  __typename
+  seo {
+    __typename
+    title
+    description
+    keywords
+    ogTitle
+    ogDescription
+    ogImage
+    canonicalUrl
+    noindex
+  }
+  hero {
+    __typename
+    titlePart1
+    titlePart2
+    description
+  }
+  servicePackages {
+    __typename
+    packages {
+      __typename
+      title
+      subtitle
+      price
+      currency
+      priceNote
+      features
+      ctaText
+      ctaLink
+      isPopular
+    }
+    customProjects {
+      __typename
+      description
+      linkText
+      linkUrl
+    }
+  }
+  faqSection {
+    __typename
+    title
+    subtitle
+    questions {
+      __typename
+      question
+      answerTitle
+      answerText
+    }
+  }
+}
+    `;
 export const HomepageDocument = gql`
     query homepage($relativePath: String!) {
   homepage(relativePath: $relativePath) {
@@ -3339,6 +3654,63 @@ export const Sobre_MiConnectionDocument = gql`
   }
 }
     ${Sobre_MiPartsFragmentDoc}`;
+export const Servicios_PageDocument = gql`
+    query servicios_page($relativePath: String!) {
+  servicios_page(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...Servicios_pageParts
+  }
+}
+    ${Servicios_PagePartsFragmentDoc}`;
+export const Servicios_PageConnectionDocument = gql`
+    query servicios_pageConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: Servicios_pageFilter) {
+  servicios_pageConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...Servicios_pageParts
+      }
+    }
+  }
+}
+    ${Servicios_PagePartsFragmentDoc}`;
 export type Requester<C= {}> = <R, V>(doc: DocumentNode, vars?: V, options?: C) => Promise<R>
   export function getSdk<C>(requester: Requester<C>) {
     return {
@@ -3383,6 +3755,12 @@ export type Requester<C= {}> = <R, V>(doc: DocumentNode, vars?: V, options?: C) 
       },
     sobre_miConnection(variables?: Sobre_MiConnectionQueryVariables, options?: C): Promise<{data: Sobre_MiConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: Sobre_MiConnectionQueryVariables, query: string}> {
         return requester<{data: Sobre_MiConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: Sobre_MiConnectionQueryVariables, query: string}, Sobre_MiConnectionQueryVariables>(Sobre_MiConnectionDocument, variables, options);
+      },
+    servicios_page(variables: Servicios_PageQueryVariables, options?: C): Promise<{data: Servicios_PageQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: Servicios_PageQueryVariables, query: string}> {
+        return requester<{data: Servicios_PageQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: Servicios_PageQueryVariables, query: string}, Servicios_PageQueryVariables>(Servicios_PageDocument, variables, options);
+      },
+    servicios_pageConnection(variables?: Servicios_PageConnectionQueryVariables, options?: C): Promise<{data: Servicios_PageConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: Servicios_PageConnectionQueryVariables, query: string}> {
+        return requester<{data: Servicios_PageConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: Servicios_PageConnectionQueryVariables, query: string}, Servicios_PageConnectionQueryVariables>(Servicios_PageConnectionDocument, variables, options);
       }
     };
   }
