@@ -12,6 +12,8 @@ try {
   console.error('Error loading sobre-mi content:', error)
 }
 
+const baseUrl = 'https://redactorseo.es'
+
 // Valores por defecto si no se puede cargar el contenido
 const defaultData = {
   title: "Soy Álvaro",
@@ -90,6 +92,28 @@ const data = sobreContent || defaultData
 ---
 
 <Layout title={data.seo?.title || "Sobre Mí - Álvaro Pérez | Redactor SEO"} description={data.seo?.description}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Álvaro Pérez",
+      "jobTitle": "Redactor y Copywriter",
+      "description": "Redactor SEO especializado en contenido que posiciona, conecta y convierte. Más de 5 años ayudando a empresas a crecer online.",
+      "url": `${baseUrl}/sobre-mi`,
+      "image": `${baseUrl}/alvaro-seo.jpg`,
+      "email": "info@redactorseo.es",
+      "worksFor": {
+        "@type": "ProfessionalService",
+        "name": "Redactor SEO",
+        "url": baseUrl
+      },
+      "knowsAbout": ["SEO", "Redacción Web", "Copywriting", "Content Marketing", "Marketing Digital"],
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Formación en Marketing Digital y SEO"
+      }
+    })} />
+  </Fragment>
   <!-- Hero Section -->
   <section class="relative bg-white py-20 lg:py-32 overflow-hidden">
     <!-- Background Elements -->

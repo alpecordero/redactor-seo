@@ -10,7 +10,6 @@
   },
   "form": {
     "title": "Hablemos de tu proyecto",
-    "description": "Completa este formulario para recibir una propuesta personalizada",
     "services": [
       {
         "value": "renovar-textos-web",
@@ -25,25 +24,7 @@
         "label": "Otros"
       }
     ],
-    "budgetRanges": [
-      {
-        "value": "500-1000",
-        "label": "500€ - 1.000€"
-      },
-      {
-        "value": "1000-2500",
-        "label": "1.000€ - 2.500€"
-      },
-      {
-        "value": "2500-5000",
-        "label": "2.500€ - 5.000€"
-      },
-      {
-        "value": "5000+",
-        "label": "Más de 5.000€"
-      }
-    ],
-    "submitButtonText": "Quiero más clientes",
+    "submitButtonText": "Contactar ahora",
     "privacyPolicyText": "Acepto la [política de privacidad](/privacidad) y autorizo el tratamiento de mis datos *"
   },
   "contactInfo": {
@@ -52,7 +33,7 @@
     "responseTime": "Menos de 24 horas"
   },
   "messages": {
-    "successMessage": "¡Mensaje enviado! Te contacto pronto.",
+    "successMessage": "¡Mensaje enviado! Te responderé pronto.",
     "errorMessage": "Error al enviar. Por favor, inténtalo de nuevo o escribe directamente a info@redactorseo.es",
     "loadingText": "Enviando..."
   }

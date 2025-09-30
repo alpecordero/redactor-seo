@@ -10,41 +10,24 @@
     "noindex": false
   },
   "hero": {
-    "titlePart1": "Tres formas de DE",
+    "titlePart1": "Dos formas de",
     "titlePart2": "trabajar conmigo",
-    "description": "Desde claridad básica hasta dominación completa de tu nicho. Encuentra el servicio que mejor se adapte a tu momento."
+    "description": "Redacción web profesional y contenido estratégico para blogs. Encuentra el servicio que mejor se adapte a tu momento."
   },
   "servicePackages": {
     "packages": [
       {
-        "title": "Auditoría",
-        "subtitle": "Para obtener claridad",
-        "price": "499",
-        "currency": "€",
-        "priceNote": "Una sola vez",
-        "features": [
-          "Diagnóstico del contenido",
-          "Coherencia de marca",
-          "Análisis del blog",
-          "Plan para que ejecutes tú",
-          "Ejemplos prácticos"
-        ],
-        "ctaText": "Ver auditoría",
-        "ctaLink": "/auditoria-contenido",
-        "isPopular": false
-      },
-      {
         "title": "Redacción Web",
         "subtitle": "Para conectar con tus clientes",
-        "price": "1.599",
+        "price": "399",
         "currency": "€",
-        "priceNote": "Una sola vez",
+        "priceNote": "desde",
         "features": [
           "Investigación completa",
-          "Redacción de 5 secciones",
+          "Redacción de páginas web",
           "Optimización SEO e IA",
           "Para copiar y pegar",
-          "Entrega en 10 días"
+          "Entrega rápida"
         ],
         "ctaText": "Ver redacción web",
         "ctaLink": "/redaccion-web",
@@ -53,14 +36,14 @@
       {
         "title": "Redacción Blog",
         "subtitle": "Para dominar tu nicho",
-        "price": "599",
+        "price": "399",
         "currency": "€",
-        "priceNote": "al mes",
+        "priceNote": "desde / mes",
         "features": [
           "Estrategia de contenido",
           "Calendario editorial",
           "Contenido 100% humano",
-          "4 artículos optimizados",
+          "Artículos optimizados SEO",
           "Consejos de enlazado"
         ],
         "ctaText": "Ver blog estratégico",
@@ -79,24 +62,19 @@
     "subtitle": "Guía rápida para elegir la opción perfecta para tu situación",
     "questions": [
       {
-        "question": "Tengo una web pero no convierto. ¿Por dónde empiezo?",
-        "answerTitle": "Empieza con Audit (€1.495)",
-        "answerText": "Necesitas claridad sobre qué está fallando. El Audit te dará un diagnóstico completo de tu contenido actual, identificará los puntos de fuga en tu embudo de ventas, y te proporcionará un roadmap claro de mejoras prioritarias. Perfecto si tienes tráfico pero no conviertes."
+        "question": "Necesito mejorar mi web para que convierta más",
+        "answerTitle": "Elige Redacción Web (desde €399)",
+        "answerText": "Redacción profesional de las páginas de tu web. Investigación de audiencia incluida, textos optimizados para SEO y conversión. Textos listos para copiar y pegar que conectan con tus clientes y los convencen para comprarte."
       },
       {
-        "question": "Quiero rehacer completamente mi mensaje y contenido",
-        "answerTitle": "Ve directo a Redacción Web (€1.599)",
-        "answerText": "Es tu opción más popular. Redacción completa de las 5 páginas más importantes de tu web, investigación de audiencia incluida, análisis de competencia y estrategia SEO básica. Sales con textos que conectan con tus clientes y los convencen para comprarte."
+        "question": "Quiero posicionarme como referente con contenido",
+        "answerTitle": "Elige Blog Estratégico (desde €399/mes)",
+        "answerText": "Contenido estratégico para tu blog con planificación editorial, artículos optimizados para SEO y estrategia de enlazado. Contenido 100% humano que posiciona tu marca como autoridad en tu sector."
       },
       {
-        "question": "Quiero ser el referente absoluto en mi sector",
-        "answerTitle": "Necesitas Blog Estratégico (€2.995/mes)",
-        "answerText": "Estrategia completa de blog durante 3 meses: 24 artículos estratégicos, SEO avanzado, consultoría mensual y garantía de resultados. Para empresas serias que quieren dominar su nicho con autoridad de contenido."
-      },
-      {
-        "question": "Mi caso es único/complejo/especial",
+        "question": "Mi caso es único o necesito algo específico",
         "answerTitle": "Conversemos → \"Trabajemos Juntos\"",
-        "answerText": "Proyectos especiales, colaboraciones a largo plazo, consultorías específicas, o situaciones únicas requieren un enfoque personalizado. Agenda una consulta y diseñamos la solución perfecta para tu caso particular."
+        "answerText": "Proyectos especiales, colaboraciones a largo plazo, consultorías específicas, o situaciones únicas requieren un enfoque personalizado. Contacta conmigo y diseñamos la solución perfecta para tu caso particular."
       }
     ]
   }

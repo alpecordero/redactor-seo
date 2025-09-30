@@ -13,9 +13,47 @@ const {
   faqSection,
   finalCtaSection
 } = redaccionContent
+
+const baseUrl = 'https://redactorseo.es'
 ---
 
 <Layout title={redaccionContent.seo.title} description={redaccionContent.seo.description}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Redacción Web",
+      "name": "Redacción Web Profesional",
+      "description": "Redacción de páginas web que conectan con los clientes y generan ventas. Textos profesionales para tu sitio web.",
+      "url": `${baseUrl}/redaccion-web`,
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "Redactor SEO",
+        "url": baseUrl,
+        "email": "info@redactorseo.es"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "España"
+      },
+      "offers": {
+        "@type": "Offer",
+        "name": "Servicio de Redacción Web",
+        "price": pricingSection.price,
+        "priceCurrency": "EUR",
+        "description": pricingSection.priceDescription,
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Redacción Web Profesional"
+        }
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": testimonialsSection.testimonials.length
+      }
+    })} />
+  </Fragment>
   <!-- SECCIÓN 1: Hero Hook -->
   <section class="relative py-16 md:py-20 lg:py-24 bg-white overflow-hidden">
     <!-- Subtle background elements -->

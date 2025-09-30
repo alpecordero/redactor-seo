@@ -13,9 +13,47 @@ const {
   faqSection,
   finalCtaSection
 } = blogsContent
+
+const baseUrl = 'https://redactorseo.es'
 ---
 
 <Layout title={blogsContent.seo.title} description={blogsContent.seo.description}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Redacción Estratégica de Blogs",
+      "name": "Redacción Estratégica de Blogs SEO",
+      "description": "Contenido de blog que posiciona tu negocio como referente en los buscadores y que recomienda la IA.",
+      "url": `${baseUrl}/redaccion-estrategica-blogs`,
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "Redactor SEO",
+        "url": baseUrl,
+        "email": "info@redactorseo.es"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "España"
+      },
+      "offers": {
+        "@type": "Offer",
+        "name": "Redacción Estratégica de Blogs",
+        "price": pricingSection.price,
+        "priceCurrency": "EUR",
+        "description": pricingSection.priceDescription,
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Redacción Estratégica de Blogs SEO"
+        }
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": testimonialsSection.testimonials.length
+      }
+    })} />
+  </Fragment>
   <!-- SECCIÓN 1: Hero Hook -->
   <section class="relative py-16 md:py-20 lg:py-24 bg-white overflow-hidden">
     <!-- Subtle background elements -->

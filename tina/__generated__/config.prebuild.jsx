@@ -1984,35 +1984,9 @@ var config_default = defineConfig({
                 required: true
               },
               {
-                type: "string",
-                name: "description",
-                label: "Descripci\xF3n del formulario",
-                required: true
-              },
-              {
                 type: "object",
                 name: "services",
                 label: "Opciones de servicios",
-                list: true,
-                fields: [
-                  {
-                    type: "string",
-                    name: "value",
-                    label: "Valor (para el formulario)",
-                    required: true
-                  },
-                  {
-                    type: "string",
-                    name: "label",
-                    label: "Texto mostrado",
-                    required: true
-                  }
-                ]
-              },
-              {
-                type: "object",
-                name: "budgetRanges",
-                label: "Rangos de presupuesto",
                 list: true,
                 fields: [
                   {

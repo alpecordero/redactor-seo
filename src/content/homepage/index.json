@@ -83,37 +83,25 @@
     "title": "Mi propuesta:",
     "packages": [
       {
-        "icon": "🔍",
-        "heading": "Auditoría + Plan de acción",
-        "description": "Audito tu web. Porque no funciona como esperas y no sabes por qué. Pondré nombre al problema y te diré cómo solucionarlo.",
+        "icon": "✍️",
+        "heading": "Textos para convertir visitas en clientes",
+        "description": "Redacto las secciones de tu sitio web (homepage, servicios, sobre nosotros...) con copy persuasivo que genera confianza y aumenta tus ventas.",
         "deliverables": [
           "Claridad",
-          "Dirección",
-          "Hoja de ruta"
-        ],
-        "ctaText": "Empieza por la auditoría",
-        "ctaLink": "/auditoria-contenido"
-      },
-      {
-        "icon": "✍️",
-        "heading": "Redacción web completa",
-        "description": "Redacto las 5 páginas más importantes de tu web. Conectarás mejor con los clientes y conseguirás más ventas.",
-        "deliverables": [
-          "Confianza",
-          "Conversión",
-          "Credibilidad"
+          "Credibilidad",
+          "Conversión"
         ],
         "ctaText": "Renovar mi web",
         "ctaLink": "/redaccion-web"
       },
       {
         "icon": "🗺️",
-        "heading": "Blog estratégico",
-        "description": "Creo contenido que posiciona tu negocio como referente. Tus clientes te buscarán y recomendarán.",
+        "heading": "Posiciona con tu blog",
+        "description": "Creo contenido que posiciona tu negocio como referente en los buscadores y que recomienda la IA.",
         "deliverables": [
           "Autoridad",
           "Visibilidad",
-          "Demanda"
+          "Credibilidad"
         ],
         "ctaText": "Sé el referente",
         "ctaLink": "/redaccion-estrategica-blogs"

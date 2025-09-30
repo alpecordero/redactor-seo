@@ -1377,18 +1377,10 @@ export type Contact_PageFormServices = {
   label: Scalars['String']['output'];
 };
 
-export type Contact_PageFormBudgetRanges = {
-  __typename?: 'Contact_pageFormBudgetRanges';
-  value: Scalars['String']['output'];
-  label: Scalars['String']['output'];
-};
-
 export type Contact_PageForm = {
   __typename?: 'Contact_pageForm';
   title: Scalars['String']['output'];
-  description: Scalars['String']['output'];
   services?: Maybe<Array<Maybe<Contact_PageFormServices>>>;
-  budgetRanges?: Maybe<Array<Maybe<Contact_PageFormBudgetRanges>>>;
   submitButtonText: Scalars['String']['output'];
   privacyPolicyText: Scalars['String']['output'];
 };
@@ -1435,16 +1427,9 @@ export type Contact_PageFormServicesFilter = {
   label?: InputMaybe<StringFilter>;
 };
 
-export type Contact_PageFormBudgetRangesFilter = {
-  value?: InputMaybe<StringFilter>;
-  label?: InputMaybe<StringFilter>;
-};
-
 export type Contact_PageFormFilter = {
   title?: InputMaybe<StringFilter>;
-  description?: InputMaybe<StringFilter>;
   services?: InputMaybe<Contact_PageFormServicesFilter>;
-  budgetRanges?: InputMaybe<Contact_PageFormBudgetRangesFilter>;
   submitButtonText?: InputMaybe<StringFilter>;
   privacyPolicyText?: InputMaybe<StringFilter>;
 };
@@ -2397,16 +2382,9 @@ export type Contact_PageFormServicesMutation = {
   label?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type Contact_PageFormBudgetRangesMutation = {
-  value?: InputMaybe<Scalars['String']['input']>;
-  label?: InputMaybe<Scalars['String']['input']>;
-};
-
 export type Contact_PageFormMutation = {
   title?: InputMaybe<Scalars['String']['input']>;
-  description?: InputMaybe<Scalars['String']['input']>;
   services?: InputMaybe<Array<InputMaybe<Contact_PageFormServicesMutation>>>;
-  budgetRanges?: InputMaybe<Array<InputMaybe<Contact_PageFormBudgetRangesMutation>>>;
   submitButtonText?: InputMaybe<Scalars['String']['input']>;
   privacyPolicyText?: InputMaybe<Scalars['String']['input']>;
 };
@@ -2552,7 +2530,7 @@ export type Redaccion_WebPartsFragment = { __typename: 'Redaccion_web', seo?: { 
 
 export type Redaccion_Estrategica_BlogsPartsFragment = { __typename: 'Redaccion_estrategica_blogs', seo?: { __typename: 'Redaccion_estrategica_blogsSeo', title: string, description: string } | null, hero?: { __typename: 'Redaccion_estrategica_blogsHero', subtitle: string, titlePart1: string, titlePart2: string, description: string, ctaText: string, ctaLink: string } | null, problemsSection?: { __typename: 'Redaccion_estrategica_blogsProblemsSection', title: string, subtitle: string, closingText: string, problems?: Array<{ __typename: 'Redaccion_estrategica_blogsProblemsSectionProblems', problem: string, consequence: string } | null> | null } | null, approachSection?: { __typename: 'Redaccion_estrategica_blogsApproachSection', title: string, conclusion: string, points?: Array<{ __typename: 'Redaccion_estrategica_blogsApproachSectionPoints', title: string, description: string } | null> | null } | null, testimonialsSection?: { __typename: 'Redaccion_estrategica_blogsTestimonialsSection', title: string, testimonials?: Array<{ __typename: 'Redaccion_estrategica_blogsTestimonialsSectionTestimonials', quote: string, author: string } | null> | null } | null, pricingSection?: { __typename: 'Redaccion_estrategica_blogsPricingSection', title: string, subtitle: string, price: string, currency: string, priceDescription: string, includes: Array<string>, delivery: string, format: string, ctaText: string, ctaLink: string } | null, faqSection?: { __typename: 'Redaccion_estrategica_blogsFaqSection', title: string, questions?: Array<{ __typename: 'Redaccion_estrategica_blogsFaqSectionQuestions', question: string, answer: string } | null> | null } | null, finalCtaSection?: { __typename: 'Redaccion_estrategica_blogsFinalCtaSection', guaranteeEmoji: string, guaranteeTitle: string, guaranteeDescription: string, title: string, features: Array<string>, price: string, currency: string, priceNote: string, ctaText: string, ctaLink: string, securityNote: string } | null };
 
-export type Contact_PagePartsFragment = { __typename: 'Contact_page', seo?: { __typename: 'Contact_pageSeo', title: string, description: string } | null, hero?: { __typename: 'Contact_pageHero', titlePart1: string, titlePart2: string, description: string } | null, form?: { __typename: 'Contact_pageForm', title: string, description: string, submitButtonText: string, privacyPolicyText: string, services?: Array<{ __typename: 'Contact_pageFormServices', value: string, label: string } | null> | null, budgetRanges?: Array<{ __typename: 'Contact_pageFormBudgetRanges', value: string, label: string } | null> | null } | null, contactInfo?: { __typename: 'Contact_pageContactInfo', title: string, email: string, responseTime: string } | null, messages?: { __typename: 'Contact_pageMessages', successMessage: string, errorMessage: string, loadingText: string } | null };
+export type Contact_PagePartsFragment = { __typename: 'Contact_page', seo?: { __typename: 'Contact_pageSeo', title: string, description: string } | null, hero?: { __typename: 'Contact_pageHero', titlePart1: string, titlePart2: string, description: string } | null, form?: { __typename: 'Contact_pageForm', title: string, submitButtonText: string, privacyPolicyText: string, services?: Array<{ __typename: 'Contact_pageFormServices', value: string, label: string } | null> | null } | null, contactInfo?: { __typename: 'Contact_pageContactInfo', title: string, email: string, responseTime: string } | null, messages?: { __typename: 'Contact_pageMessages', successMessage: string, errorMessage: string, loadingText: string } | null };
 
 export type Sobre_MiPartsFragment = { __typename: 'Sobre_mi', storyContent: string, seo?: { __typename: 'Sobre_miSeo', title: string, description: string } | null, hero?: { __typename: 'Sobre_miHero', title: string, subtitle: string, introduction: string, profileImage: string } | null, experienceSection?: { __typename: 'Sobre_miExperienceSection', title: string, subtitle: string, items?: Array<{ __typename: 'Sobre_miExperienceSectionItems', icon: string, title: string, description: string } | null> | null } | null, storySection?: { __typename: 'Sobre_miStorySection', title: string, subtitle: string } | null, testimonial?: { __typename: 'Sobre_miTestimonial', quote: string, author: string, role: string } | null, ctaSection?: { __typename: 'Sobre_miCtaSection', title: string, description: string, buttonText: string, buttonLink: string } | null };
 
@@ -2658,7 +2636,7 @@ export type Contact_PageQueryVariables = Exact<{
 }>;
 
 
-export type Contact_PageQuery = { __typename?: 'Query', contact_page: { __typename: 'Contact_page', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'Contact_pageSeo', title: string, description: string } | null, hero?: { __typename: 'Contact_pageHero', titlePart1: string, titlePart2: string, description: string } | null, form?: { __typename: 'Contact_pageForm', title: string, description: string, submitButtonText: string, privacyPolicyText: string, services?: Array<{ __typename: 'Contact_pageFormServices', value: string, label: string } | null> | null, budgetRanges?: Array<{ __typename: 'Contact_pageFormBudgetRanges', value: string, label: string } | null> | null } | null, contactInfo?: { __typename: 'Contact_pageContactInfo', title: string, email: string, responseTime: string } | null, messages?: { __typename: 'Contact_pageMessages', successMessage: string, errorMessage: string, loadingText: string } | null } };
+export type Contact_PageQuery = { __typename?: 'Query', contact_page: { __typename: 'Contact_page', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'Contact_pageSeo', title: string, description: string } | null, hero?: { __typename: 'Contact_pageHero', titlePart1: string, titlePart2: string, description: string } | null, form?: { __typename: 'Contact_pageForm', title: string, submitButtonText: string, privacyPolicyText: string, services?: Array<{ __typename: 'Contact_pageFormServices', value: string, label: string } | null> | null } | null, contactInfo?: { __typename: 'Contact_pageContactInfo', title: string, email: string, responseTime: string } | null, messages?: { __typename: 'Contact_pageMessages', successMessage: string, errorMessage: string, loadingText: string } | null } };
 
 export type Contact_PageConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -2670,7 +2648,7 @@ export type Contact_PageConnectionQueryVariables = Exact<{
 }>;
 
 
-export type Contact_PageConnectionQuery = { __typename?: 'Query', contact_pageConnection: { __typename?: 'Contact_pageConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'Contact_pageConnectionEdges', cursor: string, node?: { __typename: 'Contact_page', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'Contact_pageSeo', title: string, description: string } | null, hero?: { __typename: 'Contact_pageHero', titlePart1: string, titlePart2: string, description: string } | null, form?: { __typename: 'Contact_pageForm', title: string, description: string, submitButtonText: string, privacyPolicyText: string, services?: Array<{ __typename: 'Contact_pageFormServices', value: string, label: string } | null> | null, budgetRanges?: Array<{ __typename: 'Contact_pageFormBudgetRanges', value: string, label: string } | null> | null } | null, contactInfo?: { __typename: 'Contact_pageContactInfo', title: string, email: string, responseTime: string } | null, messages?: { __typename: 'Contact_pageMessages', successMessage: string, errorMessage: string, loadingText: string } | null } | null } | null> | null } };
+export type Contact_PageConnectionQuery = { __typename?: 'Query', contact_pageConnection: { __typename?: 'Contact_pageConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'Contact_pageConnectionEdges', cursor: string, node?: { __typename: 'Contact_page', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'Contact_pageSeo', title: string, description: string } | null, hero?: { __typename: 'Contact_pageHero', titlePart1: string, titlePart2: string, description: string } | null, form?: { __typename: 'Contact_pageForm', title: string, submitButtonText: string, privacyPolicyText: string, services?: Array<{ __typename: 'Contact_pageFormServices', value: string, label: string } | null> | null } | null, contactInfo?: { __typename: 'Contact_pageContactInfo', title: string, email: string, responseTime: string } | null, messages?: { __typename: 'Contact_pageMessages', successMessage: string, errorMessage: string, loadingText: string } | null } | null } | null> | null } };
 
 export type Sobre_MiQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
@@ -3126,13 +3104,7 @@ export const Contact_PagePartsFragmentDoc = gql`
   form {
     __typename
     title
-    description
     services {
-      __typename
-      value
-      label
-    }
-    budgetRanges {
       __typename
       value
       label

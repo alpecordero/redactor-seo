@@ -408,13 +408,7 @@ fragment Contact_pageParts on Contact_page {
   form {
     __typename
     title
-    description
     services {
-      __typename
-      value
-      label
-    }
-    budgetRanges {
       __typename
       value
       label

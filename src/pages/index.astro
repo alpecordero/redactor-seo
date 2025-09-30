@@ -16,9 +16,36 @@ const {
   testimonialsSection,
   ctaSection
 } = homepageContent
+
+const baseUrl = 'https://redactorseo.es'
 ---
 
 <Layout title={homepageContent.seo.title} description={homepageContent.seo.description}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": homepageContent.seo.title,
+      "description": homepageContent.seo.description,
+      "url": baseUrl,
+      "mainEntity": {
+        "@type": "ProfessionalService",
+        "name": "Redactor SEO",
+        "url": baseUrl
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": baseUrl
+          }
+        ]
+      }
+    })} />
+  </Fragment>
   <!-- Hero Section - Minimalista -->
   <section id="hero" class="relative py-16 md:py-20 lg:py-24 bg-white overflow-hidden">
     <!-- Subtle background elements -->
@@ -313,6 +340,76 @@ const {
             {servicesPackagesSection.finalCta.linkText}
           </a>
         </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Complementary Services Highlight Section -->
+  <section class="py-20 md:py-32 lg:py-40 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
+
+      <!-- Section Header -->
+      <div class="text-center mb-16 animate-on-scroll opacity-0 translate-y-8 transition-all duration-700">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4">
+          Servicios complementarios
+        </h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          Potencia tu presencia online con estos servicios especializados
+        </p>
+      </div>
+
+      <!-- Two Services Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+
+        <!-- Service 1: Redacto tu web -->
+        <div class="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-200 bg-white rounded-lg p-8 hover:shadow-lg transition-shadow duration-300 border-2 border-gray-100">
+          <div class="mb-6">
+            <div class="text-5xl mb-4">✍️</div>
+            <h3 class="text-2xl font-display font-bold text-gray-900 mb-3">
+              Dale vida a tu web
+            </h3>
+            <p class="text-lg text-gray-600 leading-relaxed mb-6">
+              Redacto las páginas de tu web para que conectes con los clientes y consegas más ventas.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Confianza</span>
+              <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Conversión</span>
+              <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Credibilidad</span>
+            </div>
+          </div>
+          <a
+            href="/redaccion-web"
+            class="bg-naranja-vibrante text-white px-6 py-3 rounded-lg text-base font-bold hover:bg-orange-600 hover:scale-105 transition-all duration-300 inline-block w-full text-center"
+          >
+            Renovar mi web
+          </a>
+        </div>
+
+        <!-- Service 2: Sé el referente -->
+        <div class="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-400 bg-white rounded-lg p-8 hover:shadow-lg transition-shadow duration-300 border-2 border-gray-100">
+          <div class="mb-6">
+            <div class="text-5xl mb-4">🗺️</div>
+            <h3 class="text-2xl font-display font-bold text-gray-900 mb-3">
+              Posiciona con tu blog
+            </h3>
+            <p class="text-lg text-gray-600 leading-relaxed mb-6">
+              Creo contenido que posiciona tu negocio como referente en los buscadores y que recomienda la IA.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Autoridad</span>
+              <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Visibilidad</span>
+              <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Credibilidad</span>
+            </div>
+          </div>
+          <a
+            href="/redaccion-estrategica-blogs"
+            class="bg-azul-profundo text-white px-6 py-3 rounded-lg text-base font-bold hover:bg-gray-800 hover:scale-105 transition-all duration-300 inline-block w-full text-center"
+          >
+            Sé el referente
+          </a>
+        </div>
+
       </div>
 
     </div>

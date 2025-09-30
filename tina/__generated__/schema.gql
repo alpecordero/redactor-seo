@@ -1118,16 +1118,9 @@ type Contact_pageFormServices {
   label: String!
 }
 
-type Contact_pageFormBudgetRanges {
-  value: String!
-  label: String!
-}
-
 type Contact_pageForm {
   title: String!
-  description: String!
   services: [Contact_pageFormServices]
-  budgetRanges: [Contact_pageFormBudgetRanges]
   submitButtonText: String!
   privacyPolicyText: String!
 }
@@ -1171,16 +1164,9 @@ input Contact_pageFormServicesFilter {
   label: StringFilter
 }
 
-input Contact_pageFormBudgetRangesFilter {
-  value: StringFilter
-  label: StringFilter
-}
-
 input Contact_pageFormFilter {
   title: StringFilter
-  description: StringFilter
   services: Contact_pageFormServicesFilter
-  budgetRanges: Contact_pageFormBudgetRangesFilter
   submitButtonText: StringFilter
   privacyPolicyText: StringFilter
 }
@@ -1981,16 +1967,9 @@ input Contact_pageFormServicesMutation {
   label: String
 }
 
-input Contact_pageFormBudgetRangesMutation {
-  value: String
-  label: String
-}
-
 input Contact_pageFormMutation {
   title: String
-  description: String
   services: [Contact_pageFormServicesMutation]
-  budgetRanges: [Contact_pageFormBudgetRangesMutation]
   submitButtonText: String
   privacyPolicyText: String
 }

@@ -36,6 +36,80 @@ const { title, description = "Servicios profesionales de redacción SEO para imp
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap&subset=latin" rel="stylesheet"></noscript>
     <title>{title}</title>
 
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Redactor SEO",
+        "description": "Servicios profesionales de redacción web, SEO y copywriting",
+        "url": "https://redactorseo.es",
+        "logo": "https://redactorseo.es/logo.png",
+        "image": "https://redactorseo.es/logo.png",
+        "email": "info@redactorseo.es",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "ES",
+          "addressRegion": "España"
+        },
+        "priceRange": "€€-€€€",
+        "areaServed": {
+          "@type": "Country",
+          "name": "España"
+        },
+        "serviceType": ["Redacción SEO", "Copywriting", "Content Marketing"],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Servicios de Redacción SEO",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Redacción Web",
+                "description": "Redacción de páginas web que conectan y convierten",
+                "url": "https://redactorseo.es/redaccion-web"
+              },
+              "price": "399",
+              "priceCurrency": "EUR",
+              "priceSpecification": {
+                "@type": "PriceSpecification",
+                "price": "399",
+                "priceCurrency": "EUR"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Redacción Estratégica de Blogs",
+                "description": "Contenido de blog que posiciona como referente",
+                "url": "https://redactorseo.es/redaccion-estrategica-blogs"
+              },
+              "price": "399",
+              "priceCurrency": "EUR",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": "399",
+                "priceCurrency": "EUR",
+                "referenceQuantity": {
+                  "@type": "QuantitativeValue",
+                  "value": "1",
+                  "unitCode": "MON"
+                }
+              }
+            }
+          ]
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "Customer Service",
+          "email": "info@redactorseo.es",
+          "availableLanguage": ["Spanish"]
+        }
+      }
+    </script>
+
     <!-- Critical CSS inline for immediate rendering - Comprehensive above-the-fold styles -->
     <style>
       /* Reset and base styles */
