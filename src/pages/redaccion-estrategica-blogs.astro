@@ -23,34 +23,20 @@ const baseUrl = 'https://redactorseo.es'
       "@context": "https://schema.org",
       "@type": "Service",
       "serviceType": "Redacción Estratégica de Blogs",
-      "name": "Redacción Estratégica de Blogs SEO",
-      "description": "Contenido de blog que posiciona tu negocio como referente en los buscadores y que recomienda la IA.",
+      "name": "Servicio de Redacción Estratégica de Blogs SEO",
+      "description": "Contenido de blog que posiciona tu negocio como referente en los buscadores y que recomienda la IA. Artículos optimizados para SEO con estrategia de contenido.",
       "url": `${baseUrl}/redaccion-estrategica-blogs`,
       "provider": {
         "@type": "ProfessionalService",
         "name": "Redactor SEO",
-        "url": baseUrl,
-        "email": "info@redactorseo.es"
+        "url": baseUrl
       },
-      "areaServed": {
-        "@type": "Country",
-        "name": "España"
-      },
+      "areaServed": "ES",
       "offers": {
         "@type": "Offer",
-        "name": "Redacción Estratégica de Blogs",
-        "price": pricingSection.price,
-        "priceCurrency": "EUR",
-        "description": pricingSection.priceDescription,
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Redacción Estratégica de Blogs SEO"
-        }
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5",
-        "reviewCount": testimonialsSection.testimonials.length
+        "availability": "https://schema.org/InStock",
+        "price": `desde ${pricingSection.price}`,
+        "priceCurrency": "EUR"
       }
     })} />
   </Fragment>

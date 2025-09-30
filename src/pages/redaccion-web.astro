@@ -23,34 +23,20 @@ const baseUrl = 'https://redactorseo.es'
       "@context": "https://schema.org",
       "@type": "Service",
       "serviceType": "Redacción Web",
-      "name": "Redacción Web Profesional",
-      "description": "Redacción de páginas web que conectan con los clientes y generan ventas. Textos profesionales para tu sitio web.",
+      "name": "Servicio de Redacción Web SEO",
+      "description": "Redacción de páginas web que conectan con los clientes y generan ventas. Textos profesionales optimizados para SEO y conversión.",
       "url": `${baseUrl}/redaccion-web`,
       "provider": {
         "@type": "ProfessionalService",
         "name": "Redactor SEO",
-        "url": baseUrl,
-        "email": "info@redactorseo.es"
+        "url": baseUrl
       },
-      "areaServed": {
-        "@type": "Country",
-        "name": "España"
-      },
+      "areaServed": "ES",
       "offers": {
         "@type": "Offer",
-        "name": "Servicio de Redacción Web",
-        "price": pricingSection.price,
-        "priceCurrency": "EUR",
-        "description": pricingSection.priceDescription,
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Redacción Web Profesional"
-        }
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5",
-        "reviewCount": testimonialsSection.testimonials.length
+        "availability": "https://schema.org/InStock",
+        "price": `desde ${pricingSection.price}`,
+        "priceCurrency": "EUR"
       }
     })} />
   </Fragment>
