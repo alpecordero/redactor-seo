@@ -60,21 +60,27 @@ export default {
 
 // Simple but effective counter simulation using timestamps
 function getCurrentCount(sessionId) {
-  // Base count that grows slowly over time
+  // Base count that grows daily
   const baseTime = new Date('2024-12-15T00:00:00Z').getTime();
   const now = Date.now();
   const daysSince = Math.floor((now - baseTime) / (1000 * 60 * 60 * 24));
 
-  // Very slow organic growth: about 10-20 per day
-  const organicGrowth = daysSince * (10 + Math.sin(daysSince * 0.1) * 5);
+  // Daily growth: accumulate random increments for each day (5-15 clicks per day)
+  // We calculate the cumulative sum of daily increments from day 0 to current day
+  let organicGrowth = 0;
+  for (let day = 0; day < daysSince; day++) {
+    // Generate a deterministic but pseudo-random daily increment between 5 and 15
+    const dailyIncrement = 10 + Math.sin(day * 0.7) * 5;
+    organicGrowth += dailyIncrement;
+  }
 
-  // Hour-based variation for realism
+  // Hour-based variation for realism (small fluctuation within the day)
   const hourVariation = Math.sin(new Date().getHours() / 24 * Math.PI * 2) * 3;
 
-  let baseCount = Math.floor(850 + organicGrowth + hourVariation);
+  let baseCount = Math.floor(1500 + organicGrowth + hourVariation);
 
-  // Ensure realistic bounds
-  return Math.max(850, Math.min(baseCount, 1500));
+  // Ensure minimum of 1500, no maximum limit
+  return Math.max(1500, baseCount);
 }
 
 // Global click tracking using timestamps (survives for worker lifetime)
@@ -121,8 +127,9 @@ function generateSessionId() {
 
 function getEmergencyCount() {
   // Fallback count if all systems fail
-  const now = new Date();
-  const baseEmergency = 850;
-  const dayOffset = now.getDate() * 2 + now.getHours();
-  return baseEmergency + (dayOffset % 50);
+  const baseTime = new Date('2024-12-15T00:00:00Z').getTime();
+  const now = Date.now();
+  const daysSince = Math.floor((now - baseTime) / (1000 * 60 * 60 * 24));
+  const emergencyGrowth = daysSince * 10; // Conservative 10 per day
+  return 1500 + emergencyGrowth;
 }
