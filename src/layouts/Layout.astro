@@ -9,6 +9,9 @@ export interface Props {
 }
 
 const { title, description = "Servicios profesionales de redacción SEO para impulsar tu negocio online" } = Astro.props
+
+// Añadir automáticamente " - RedactorSEO.es" al título si no lo tiene ya
+const fullTitle = title.includes('RedactorSEO.es') ? title : `${title} - RedactorSEO.es`
 ---
 
 <!DOCTYPE html>
@@ -34,7 +37,7 @@ const { title, description = "Servicios profesionales de redacción SEO para imp
     <!-- Load fonts with font-display swap for faster rendering -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap&subset=latin" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap&subset=latin" rel="stylesheet"></noscript>
-    <title>{title}</title>
+    <title>{fullTitle}</title>
 
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">

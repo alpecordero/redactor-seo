@@ -192,11 +192,11 @@ var config_default = defineConfig({
               },
               {
                 type: "string",
-                name: "closingPhrase",
-                label: "Frase final de introducci\xF3n a productos",
-                required: true,
+                name: "aiStatistic",
+                label: "Estad\xEDstica sobre IA",
                 ui: {
-                  component: "textarea"
+                  component: "textarea",
+                  description: "Estad\xEDstica que aparece despu\xE9s de los bullets. Soporta enlaces con formato markdown: [texto](url) y HTML b\xE1sico como <strong> para negrita"
                 }
               }
             ]
@@ -232,23 +232,13 @@ var config_default = defineConfig({
                 ui: {
                   description: "Nombre del autor de la cita (ej: 'Albert Einstein')"
                 }
-              },
-              {
-                type: "string",
-                name: "secondaryText",
-                label: "Texto secundario",
-                required: true,
-                ui: {
-                  description: "Aparecer\xE1 debajo en tama\xF1o m\xE1s peque\xF1o",
-                  component: "textarea"
-                }
               }
             ]
           },
           {
             type: "object",
             name: "bridgeSection",
-            label: "4.5. Secci\xF3n - Puente filos\xF3fico",
+            label: "5. Secci\xF3n - Puente filos\xF3fico",
             fields: [
               {
                 type: "string",
@@ -268,102 +258,33 @@ var config_default = defineConfig({
                   component: "textarea",
                   description: "Texto explicativo que conecta la filosof\xEDa con la propuesta. Puedes usar enlaces con formato markdown: [texto](url)"
                 }
-              }
-            ]
-          },
-          {
-            type: "object",
-            name: "servicesPackagesSection",
-            label: "5. Secci\xF3n - Paquetes de servicios",
-            fields: [
+              },
               {
                 type: "string",
-                name: "title",
-                label: "T\xEDtulo principal",
-                required: true
+                name: "secondaryParagraph",
+                label: "P\xE1rrafo secundario (opcional)",
+                ui: {
+                  component: "textarea",
+                  description: "Texto adicional que aparecer\xE1 debajo del p\xE1rrafo principal. Puedes usar enlaces con formato markdown: [texto](url)"
+                }
               },
               {
-                type: "object",
-                name: "packages",
-                label: "Paquetes de servicios",
-                list: true,
-                fields: [
-                  {
-                    type: "string",
-                    name: "icon",
-                    label: "Icono (emoji)",
-                    required: true
-                  },
-                  {
-                    type: "string",
-                    name: "heading",
-                    label: "T\xEDtulo del servicio",
-                    required: true,
-                    ui: {
-                      description: "Ej: 'Audito tu mensaje', 'Reescribo tu web'"
-                    }
-                  },
-                  {
-                    type: "string",
-                    name: "description",
-                    label: "Descripci\xF3n del servicio",
-                    required: true,
-                    ui: {
-                      component: "textarea",
-                      description: "Descripci\xF3n principal que aparece debajo del t\xEDtulo (texto de 20px)"
-                    }
-                  },
-                  {
-                    type: "string",
-                    name: "deliverables",
-                    label: "Bullets/Entregables",
-                    list: true,
-                    required: true,
-                    ui: {
-                      description: "Lista de entregables separados por bullets (\u2022). Ej: 'Reporte completo', 'An\xE1lisis competencia'"
-                    }
-                  },
-                  {
-                    type: "string",
-                    name: "ctaText",
-                    label: "Texto del bot\xF3n",
-                    required: true,
-                    ui: {
-                      description: "Texto que aparece en el bot\xF3n CTA"
-                    }
-                  },
-                  {
-                    type: "string",
-                    name: "ctaLink",
-                    label: "Enlace del bot\xF3n CTA",
-                    required: true
-                  }
-                ]
+                type: "string",
+                name: "tertiaryParagraph",
+                label: "P\xE1rrafo terciario (opcional)",
+                ui: {
+                  component: "textarea",
+                  description: "Tercer p\xE1rrafo opcional. Puedes usar enlaces con formato markdown: [texto](url)"
+                }
               },
               {
-                type: "object",
-                name: "finalCta",
-                label: "CTA final hacia servicios",
-                fields: [
-                  {
-                    type: "string",
-                    name: "text",
-                    label: "Texto introductorio",
-                    required: true
-                  },
-                  {
-                    type: "string",
-                    name: "linkText",
-                    label: "Texto del enlace",
-                    required: true
-                  },
-                  {
-                    type: "string",
-                    name: "linkUrl",
-                    label: "URL del enlace",
-                    required: true
-                  }
-                ]
+                type: "string",
+                name: "closingParagraph",
+                label: "P\xE1rrafo de cierre (opcional)",
+                ui: {
+                  component: "textarea",
+                  description: "P\xE1rrafo final de cierre. Puedes usar enlaces con formato markdown: [texto](url). Palabras como 'claridad y dos activos' aparecer\xE1n en negrita autom\xE1ticamente."
+                }
               }
             ]
           },
@@ -417,8 +338,139 @@ var config_default = defineConfig({
           },
           {
             type: "object",
+            name: "featuredServiceSection",
+            label: "7. Servicio Destacado",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo principal (H2)",
+                required: true
+              },
+              {
+                type: "string",
+                name: "subtitle",
+                label: "Subt\xEDtulo",
+                required: true
+              },
+              {
+                type: "string",
+                name: "benefit1",
+                label: "Beneficio 1",
+                required: true,
+                ui: {
+                  description: "Ej: 'Blog que genera autoridad'"
+                }
+              },
+              {
+                type: "string",
+                name: "benefit2",
+                label: "Beneficio 2",
+                required: true,
+                ui: {
+                  description: "Ej: 'Web que cierra ventas'"
+                }
+              },
+              {
+                type: "string",
+                name: "packLabel",
+                label: "Etiqueta del pack",
+                required: true,
+                ui: {
+                  description: "Ej: 'PACK LANZAMIENTO'"
+                }
+              },
+              {
+                type: "string",
+                name: "packTitle",
+                label: "T\xEDtulo del pack",
+                required: true,
+                ui: {
+                  description: "Ej: 'Despegue digital completo'"
+                }
+              },
+              {
+                type: "string",
+                name: "features",
+                label: "Caracter\xEDsticas incluidas (checks)",
+                list: true,
+                ui: {
+                  description: "Lista de caracter\xEDsticas que aparecer\xE1n con checks"
+                }
+              },
+              {
+                type: "string",
+                name: "originalPrice",
+                label: "Precio original",
+                required: true,
+                ui: {
+                  description: "Ej: '1.798\u20AC'"
+                }
+              },
+              {
+                type: "string",
+                name: "currentPrice",
+                label: "Precio actual",
+                required: true,
+                ui: {
+                  description: "Ej: '1.399\u20AC'"
+                }
+              },
+              {
+                type: "string",
+                name: "savings",
+                label: "Ahorro",
+                required: true,
+                ui: {
+                  description: "Ej: '399\u20AC'"
+                }
+              },
+              {
+                type: "string",
+                name: "ctaText",
+                label: "Texto del bot\xF3n CTA",
+                required: true
+              },
+              {
+                type: "string",
+                name: "ctaLink",
+                label: "Enlace del bot\xF3n CTA",
+                required: true
+              },
+              {
+                type: "string",
+                name: "alternativeServicesText",
+                label: "Texto de servicios alternativos",
+                ui: {
+                  description: "Ej: 'Servicios individuales disponibles:'"
+                }
+              },
+              {
+                type: "object",
+                name: "alternativeLinks",
+                label: "Enlaces alternativos",
+                list: true,
+                fields: [
+                  {
+                    type: "string",
+                    name: "text",
+                    label: "Texto del enlace",
+                    required: true
+                  },
+                  {
+                    type: "string",
+                    name: "url",
+                    label: "URL del enlace",
+                    required: true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: "object",
             name: "testimonialsSection",
-            label: "6.5. Testimonios de Clientes",
+            label: "8. Testimonios de Clientes",
             fields: [
               {
                 type: "string",
@@ -483,7 +535,7 @@ var config_default = defineConfig({
           {
             type: "object",
             name: "ctaSection",
-            label: "7. Secci\xF3n - Call to Action Final",
+            label: "9. Secci\xF3n - Call to Action Final",
             fields: [
               {
                 type: "string",
@@ -1317,7 +1369,7 @@ var config_default = defineConfig({
           {
             type: "object",
             name: "pricingSection",
-            label: "5. Precio y Qu\xE9 Incluye",
+            label: "5. Precio y Qu\xE9 Incluye - 3 Paquetes",
             fields: [
               {
                 type: "string",
@@ -1332,53 +1384,108 @@ var config_default = defineConfig({
                 required: true
               },
               {
-                type: "string",
-                name: "price",
-                label: "Precio (solo n\xFAmero)",
-                required: true
-              },
-              {
-                type: "string",
-                name: "currency",
-                label: "Moneda",
-                required: true
-              },
-              {
-                type: "string",
-                name: "priceDescription",
-                label: "Descripci\xF3n del precio",
-                required: true
-              },
-              {
-                type: "string",
-                name: "includes",
-                label: "Qu\xE9 incluye",
+                type: "object",
+                name: "packages",
+                label: "Paquetes de redacci\xF3n web",
                 list: true,
-                required: true
-              },
-              {
-                type: "string",
-                name: "delivery",
-                label: "Informaci\xF3n de entrega",
-                required: true
-              },
-              {
-                type: "string",
-                name: "format",
-                label: "Informaci\xF3n de formato",
-                required: true
-              },
-              {
-                type: "string",
-                name: "ctaText",
-                label: "Texto del bot\xF3n CTA",
-                required: true
-              },
-              {
-                type: "string",
-                name: "ctaLink",
-                label: "Enlace del bot\xF3n CTA",
-                required: true
+                ui: {
+                  description: "Los 3 paquetes disponibles (Esencial, Completo, Premium)"
+                },
+                fields: [
+                  {
+                    type: "string",
+                    name: "name",
+                    label: "Nombre del paquete",
+                    required: true,
+                    ui: {
+                      description: "Ej: 'Esencial', 'Completo', 'Premium'"
+                    }
+                  },
+                  {
+                    type: "string",
+                    name: "pages",
+                    label: "N\xFAmero de p\xE1ginas",
+                    required: true,
+                    ui: {
+                      description: "Ej: '3 p\xE1ginas', '5 p\xE1ginas', '7 p\xE1ginas'"
+                    }
+                  },
+                  {
+                    type: "string",
+                    name: "price",
+                    label: "Precio (solo n\xFAmero)",
+                    required: true,
+                    ui: {
+                      description: "Ej: '899', '1399', '1799'"
+                    }
+                  },
+                  {
+                    type: "string",
+                    name: "currency",
+                    label: "Moneda",
+                    required: true,
+                    ui: {
+                      description: "Ej: '\u20AC'"
+                    }
+                  },
+                  {
+                    type: "string",
+                    name: "priceDescription",
+                    label: "Descripci\xF3n del precio",
+                    required: true,
+                    ui: {
+                      description: "Ej: 'Para empezar con lo b\xE1sico'"
+                    }
+                  },
+                  {
+                    type: "string",
+                    name: "includes",
+                    label: "Qu\xE9 incluye",
+                    list: true,
+                    required: true,
+                    ui: {
+                      description: "Lista de caracter\xEDsticas incluidas en el paquete"
+                    }
+                  },
+                  {
+                    type: "string",
+                    name: "delivery",
+                    label: "Informaci\xF3n de entrega",
+                    required: true,
+                    ui: {
+                      description: "Ej: '7 d\xEDas laborables'"
+                    }
+                  },
+                  {
+                    type: "string",
+                    name: "format",
+                    label: "Informaci\xF3n de formato",
+                    required: true,
+                    ui: {
+                      description: "Ej: 'Textos listos para copiar y pegar'"
+                    }
+                  },
+                  {
+                    type: "string",
+                    name: "ctaText",
+                    label: "Texto del bot\xF3n CTA",
+                    required: true
+                  },
+                  {
+                    type: "string",
+                    name: "ctaLink",
+                    label: "Enlace del bot\xF3n CTA",
+                    required: true
+                  },
+                  {
+                    type: "boolean",
+                    name: "isPopular",
+                    label: "\xBFEs el m\xE1s elegido?",
+                    ui: {
+                      description: "Marca esto para el paquete central (Completo) para destacarlo"
+                    }
+                  }
+                ]
               }
             ]
           },
@@ -1720,7 +1827,7 @@ var config_default = defineConfig({
           {
             type: "object",
             name: "pricingSection",
-            label: "5. Precio y Qu\xE9 Incluye",
+            label: "5. Precio y Qu\xE9 Incluye - 2 Paquetes",
             fields: [
               {
                 type: "string",
@@ -1735,53 +1842,108 @@ var config_default = defineConfig({
                 required: true
               },
               {
-                type: "string",
-                name: "price",
-                label: "Precio (solo n\xFAmero)",
-                required: true
-              },
-              {
-                type: "string",
-                name: "currency",
-                label: "Moneda",
-                required: true
-              },
-              {
-                type: "string",
-                name: "priceDescription",
-                label: "Descripci\xF3n del precio",
-                required: true
-              },
-              {
-                type: "string",
-                name: "includes",
-                label: "Qu\xE9 incluye",
+                type: "object",
+                name: "packages",
+                label: "Paquetes de blog",
                 list: true,
-                required: true
-              },
-              {
-                type: "string",
-                name: "delivery",
-                label: "Informaci\xF3n de entrega",
-                required: true
-              },
-              {
-                type: "string",
-                name: "format",
-                label: "Informaci\xF3n de formato",
-                required: true
-              },
-              {
-                type: "string",
-                name: "ctaText",
-                label: "Texto del bot\xF3n CTA",
-                required: true
-              },
-              {
-                type: "string",
-                name: "ctaLink",
-                label: "Enlace del bot\xF3n CTA",
-                required: true
+                ui: {
+                  description: "Los 2 paquetes disponibles (Est\xE1ndar, Intensivo)"
+                },
+                fields: [
+                  {
+                    type: "string",
+                    name: "name",
+                    label: "Nombre del paquete",
+                    required: true,
+                    ui: {
+                      description: "Ej: 'Est\xE1ndar', 'Intensivo'"
+                    }
+                  },
+                  {
+                    type: "string",
+                    name: "articles",
+                    label: "N\xFAmero de art\xEDculos",
+                    required: true,
+                    ui: {
+                      description: "Ej: '2 art\xEDculos', '4 art\xEDculos'"
+                    }
+                  },
+                  {
+                    type: "string",
+                    name: "price",
+                    label: "Precio (solo n\xFAmero)",
+                    required: true,
+                    ui: {
+                      description: "Ej: '399', '599'"
+                    }
+                  },
+                  {
+                    type: "string",
+                    name: "currency",
+                    label: "Moneda",
+                    required: true,
+                    ui: {
+                      description: "Ej: '\u20AC'"
+                    }
+                  },
+                  {
+                    type: "string",
+                    name: "priceDescription",
+                    label: "Descripci\xF3n del precio",
+                    required: true,
+                    ui: {
+                      description: "Ej: 'Para empezar con contenido estrat\xE9gico'"
+                    }
+                  },
+                  {
+                    type: "string",
+                    name: "includes",
+                    label: "Qu\xE9 incluye",
+                    list: true,
+                    required: true,
+                    ui: {
+                      description: "Lista de caracter\xEDsticas incluidas en el paquete"
+                    }
+                  },
+                  {
+                    type: "string",
+                    name: "delivery",
+                    label: "Informaci\xF3n de entrega",
+                    required: true,
+                    ui: {
+                      description: "Ej: 'Entrega continua cada mes'"
+                    }
+                  },
+                  {
+                    type: "string",
+                    name: "format",
+                    label: "Informaci\xF3n de formato",
+                    required: true,
+                    ui: {
+                      description: "Ej: '2 art\xEDculos listos para publicar + calendario'"
+                    }
+                  },
+                  {
+                    type: "string",
+                    name: "ctaText",
+                    label: "Texto del bot\xF3n CTA",
+                    required: true
+                  },
+                  {
+                    type: "string",
+                    name: "ctaLink",
+                    label: "Enlace del bot\xF3n CTA",
+                    required: true
+                  },
+                  {
+                    type: "boolean",
+                    name: "isPopular",
+                    label: "\xBFEs el m\xE1s elegido?",
+                    ui: {
+                      description: "Marca esto para el paquete Intensivo para destacarlo"
+                    }
+                  }
+                ]
               }
             ]
           },
@@ -2423,8 +2585,11 @@ var config_default = defineConfig({
               {
                 type: "object",
                 name: "packages",
-                label: "Servicios disponibles",
+                label: "Servicios principales (2 columnas)",
                 list: true,
+                ui: {
+                  description: "Servicios que aparecen en dos columnas (Redacci\xF3n Web y Redacci\xF3n Blog)"
+                },
                 fields: [
                   {
                     type: "string",
@@ -2432,7 +2597,7 @@ var config_default = defineConfig({
                     label: "T\xEDtulo del servicio",
                     required: true,
                     ui: {
-                      description: "Ej: 'Auditor\xEDa', 'Redacci\xF3n Web', 'Blog Estrat\xE9gico'"
+                      description: "Ej: 'Redacci\xF3n Web', 'Redacci\xF3n Blog'"
                     }
                   },
                   {
@@ -2450,7 +2615,7 @@ var config_default = defineConfig({
                     label: "Precio",
                     required: true,
                     ui: {
-                      description: "Solo el n\xFAmero, ej: '599'"
+                      description: "Solo el n\xFAmero, ej: '399'"
                     }
                   },
                   {
@@ -2467,7 +2632,7 @@ var config_default = defineConfig({
                     name: "priceNote",
                     label: "Nota del precio",
                     ui: {
-                      description: "Ej: 'Una sola vez', '/mes durante 3 meses'"
+                      description: "Ej: 'desde', 'desde / mes'"
                     }
                   },
                   {
@@ -2497,8 +2662,94 @@ var config_default = defineConfig({
                     name: "isPopular",
                     label: "\xBFEs el m\xE1s popular?",
                     ui: {
-                      description: "Marcar para mostrar badge 'M\xC1S POPULAR'"
+                      description: "OBSOLETO - No se usa actualmente en el dise\xF1o"
                     }
+                  }
+                ]
+              },
+              {
+                type: "object",
+                name: "packInevitable",
+                label: "Pack Inevitable (horizontal)",
+                ui: {
+                  description: "El pack especial que aparece debajo en dise\xF1o horizontal"
+                },
+                fields: [
+                  {
+                    type: "string",
+                    name: "packLabel",
+                    label: "Etiqueta del pack",
+                    required: true,
+                    ui: {
+                      description: "Ej: 'PACK INEVITABLE' - aparece en badge naranja"
+                    }
+                  },
+                  {
+                    type: "string",
+                    name: "title",
+                    label: "T\xEDtulo del pack",
+                    required: true,
+                    ui: {
+                      description: "Ej: 'Estrategia + Blog + Web'"
+                    }
+                  },
+                  {
+                    type: "string",
+                    name: "subtitle",
+                    label: "Subt\xEDtulo",
+                    required: true,
+                    ui: {
+                      description: "Ej: 'De invisible a inevitable'"
+                    }
+                  },
+                  {
+                    type: "string",
+                    name: "features",
+                    label: "Caracter\xEDsticas incluidas",
+                    list: true,
+                    required: true,
+                    ui: {
+                      description: "Lista completa de caracter\xEDsticas del pack"
+                    }
+                  },
+                  {
+                    type: "string",
+                    name: "originalPrice",
+                    label: "Precio original (tachado)",
+                    required: true,
+                    ui: {
+                      description: "Ej: '1.798\u20AC'"
+                    }
+                  },
+                  {
+                    type: "string",
+                    name: "currentPrice",
+                    label: "Precio actual",
+                    required: true,
+                    ui: {
+                      description: "Ej: '1.399\u20AC'"
+                    }
+                  },
+                  {
+                    type: "string",
+                    name: "savings",
+                    label: "Ahorro",
+                    required: true,
+                    ui: {
+                      description: "Ej: '399\u20AC'"
+                    }
+                  },
+                  {
+                    type: "string",
+                    name: "ctaText",
+                    label: "Texto del bot\xF3n CTA",
+                    required: true
+                  },
+                  {
+                    type: "string",
+                    name: "ctaLink",
+                    label: "Enlace del bot\xF3n CTA",
+                    required: true
                   }
                 ]
               },
@@ -2587,6 +2838,895 @@ var config_default = defineConfig({
                     }
                   }
                 ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        name: "colaboraciones_agencias",
+        nameOverride: "colaboraciones-agencias",
+        label: "Colaboraciones Agencias",
+        path: "src/content/colaboraciones-agencias",
+        format: "json",
+        ui: {
+          allowedActions: {
+            create: false,
+            delete: false
+          }
+        },
+        fields: [
+          {
+            type: "object",
+            name: "seo",
+            label: "SEO",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo SEO",
+                required: true,
+                ui: {
+                  description: "T\xEDtulo que aparece en Google (m\xE1x. 60 caracteres)"
+                }
+              },
+              {
+                type: "string",
+                name: "description",
+                label: "Meta descripci\xF3n",
+                required: true,
+                ui: {
+                  component: "textarea",
+                  description: "Descripci\xF3n que aparece en Google (m\xE1x. 160 caracteres)"
+                }
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "hero",
+            label: "1. Secci\xF3n Hero",
+            fields: [
+              {
+                type: "string",
+                name: "subtitle",
+                label: "Subt\xEDtulo",
+                required: true,
+                ui: {
+                  description: "Ej: 'COLABORACIONES B2B'"
+                }
+              },
+              {
+                type: "string",
+                name: "titlePart1",
+                label: "T\xEDtulo - Parte 1 (Negro)",
+                required: true,
+                ui: {
+                  description: "Primera parte del t\xEDtulo que aparece en negro"
+                }
+              },
+              {
+                type: "string",
+                name: "titlePart2",
+                label: "T\xEDtulo - Parte 2 (Naranja)",
+                required: true,
+                ui: {
+                  description: "Segunda parte del t\xEDtulo que aparece en naranja"
+                }
+              },
+              {
+                type: "string",
+                name: "description",
+                label: "Descripci\xF3n",
+                required: true,
+                ui: {
+                  component: "textarea"
+                }
+              },
+              {
+                type: "string",
+                name: "ctaText",
+                label: "Texto del bot\xF3n CTA",
+                required: true
+              },
+              {
+                type: "string",
+                name: "ctaLink",
+                label: "Enlace del bot\xF3n CTA",
+                required: true
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "targetSection",
+            label: "2. \xBFEs para tu agencia?",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo (H2)",
+                required: true
+              },
+              {
+                type: "string",
+                name: "yesItems",
+                label: "Items afirmativos (\u2705)",
+                list: true,
+                required: true,
+                ui: {
+                  description: "Caracter\xEDsticas que debe cumplir"
+                }
+              },
+              {
+                type: "string",
+                name: "noItems",
+                label: "Items negativos (\u274C)",
+                list: true,
+                required: true,
+                ui: {
+                  description: "Lo que NO es este servicio"
+                }
+              },
+              {
+                type: "string",
+                name: "noItemsLink",
+                label: "Enlace de servicio alternativo",
+                ui: {
+                  description: "Ej: /redaccion-web"
+                }
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "conditionsSection",
+            label: "3. Condiciones de colaboraci\xF3n",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo (H2)",
+                required: true
+              },
+              {
+                type: "object",
+                name: "pricing",
+                label: "Precios",
+                fields: [
+                  {
+                    type: "string",
+                    name: "basePriceText",
+                    label: "Precio base",
+                    required: true,
+                    ui: {
+                      description: "Ej: '110\u20AC por p\xE1gina (hasta 600 palabras)'"
+                    }
+                  },
+                  {
+                    type: "string",
+                    name: "additionalPriceText",
+                    label: "Precio adicional",
+                    required: true,
+                    ui: {
+                      description: "Ej: '+50\u20AC por cada 300 palabras adicionales'"
+                    }
+                  },
+                  {
+                    type: "string",
+                    name: "minimumText",
+                    label: "M\xEDnimo proyecto",
+                    required: true,
+                    ui: {
+                      description: "Ej: 'M\xEDnimo: 5 p\xE1ginas por proyecto'"
+                    }
+                  }
+                ]
+              },
+              {
+                type: "object",
+                name: "conditions",
+                label: "Condiciones",
+                list: true,
+                fields: [
+                  {
+                    type: "string",
+                    name: "label",
+                    label: "Etiqueta",
+                    required: true
+                  },
+                  {
+                    type: "string",
+                    name: "value",
+                    label: "Valor",
+                    required: true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "includesSection",
+            label: "4. Qu\xE9 incluye",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo (H2)",
+                required: true
+              },
+              {
+                type: "string",
+                name: "included",
+                label: "Qu\xE9 incluye (\u2713)",
+                list: true,
+                required: true
+              },
+              {
+                type: "string",
+                name: "notIncludedTitle",
+                label: "T\xEDtulo de lo que NO incluye",
+                required: true
+              },
+              {
+                type: "string",
+                name: "notIncluded",
+                label: "Qu\xE9 NO incluye (\u2717)",
+                list: true,
+                required: true
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "processSection",
+            label: "5. C\xF3mo trabajamos",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo (H2)",
+                required: true
+              },
+              {
+                type: "object",
+                name: "steps",
+                label: "Pasos del proceso",
+                list: true,
+                fields: [
+                  {
+                    type: "string",
+                    name: "number",
+                    label: "N\xFAmero del paso",
+                    required: true
+                  },
+                  {
+                    type: "string",
+                    name: "title",
+                    label: "T\xEDtulo del paso",
+                    required: true
+                  },
+                  {
+                    type: "string",
+                    name: "description",
+                    label: "Descripci\xF3n",
+                    required: true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "faqSection",
+            label: "6. Preguntas Frecuentes",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo (H2)",
+                required: true
+              },
+              {
+                type: "object",
+                name: "questions",
+                label: "Preguntas y Respuestas",
+                list: true,
+                fields: [
+                  {
+                    type: "string",
+                    name: "question",
+                    label: "Pregunta",
+                    required: true
+                  },
+                  {
+                    type: "string",
+                    name: "answer",
+                    label: "Respuesta",
+                    required: true,
+                    ui: {
+                      component: "textarea"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "finalCtaSection",
+            label: "7. CTA Final",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo",
+                required: true
+              },
+              {
+                type: "string",
+                name: "description",
+                label: "Descripci\xF3n",
+                required: true,
+                ui: {
+                  component: "textarea"
+                }
+              },
+              {
+                type: "string",
+                name: "ctaText",
+                label: "Texto del bot\xF3n CTA",
+                required: true
+              },
+              {
+                type: "string",
+                name: "ctaLink",
+                label: "Enlace del bot\xF3n CTA",
+                required: true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        name: "renovar_web_y_blog_empresa",
+        nameOverride: "renovar-web-y-blog-empresa",
+        label: "Renovar Web y Blog Empresa",
+        path: "src/content/renovar-web-y-blog-empresa",
+        format: "json",
+        ui: {
+          allowedActions: {
+            create: false,
+            delete: false
+          }
+        },
+        fields: [
+          {
+            type: "object",
+            name: "seo",
+            label: "SEO",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo SEO",
+                required: true,
+                ui: {
+                  description: "T\xEDtulo que aparece en Google (m\xE1x. 60 caracteres)"
+                }
+              },
+              {
+                type: "string",
+                name: "description",
+                label: "Meta descripci\xF3n",
+                required: true,
+                ui: {
+                  component: "textarea",
+                  description: "Descripci\xF3n que aparece en Google (m\xE1x. 160 caracteres)"
+                }
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "hero",
+            label: "1. Secci\xF3n Hero",
+            fields: [
+              {
+                type: "string",
+                name: "subtitle",
+                label: "Subt\xEDtulo",
+                required: true
+              },
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo Principal (H1)",
+                required: true,
+                ui: {
+                  component: "textarea"
+                }
+              },
+              {
+                type: "string",
+                name: "description",
+                label: "Descripci\xF3n",
+                required: true,
+                ui: {
+                  component: "textarea"
+                }
+              },
+              {
+                type: "string",
+                name: "ctaText",
+                label: "Texto del bot\xF3n CTA",
+                required: true
+              },
+              {
+                type: "string",
+                name: "ctaLink",
+                label: "Enlace del bot\xF3n CTA",
+                required: true
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "problemSection",
+            label: "2. Secci\xF3n Problema",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo (H2)",
+                required: true
+              },
+              {
+                type: "string",
+                name: "content",
+                label: "Contenido",
+                required: true,
+                ui: {
+                  component: "textarea"
+                }
+              },
+              {
+                type: "string",
+                name: "keywords",
+                label: "Keywords SEO",
+                list: true
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "whatIncludesSection",
+            label: "3. Qu\xE9 Incluye Este Servicio",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo (H2)",
+                required: true
+              },
+              {
+                type: "object",
+                name: "webRedaction",
+                label: "Redacci\xF3n Web",
+                fields: [
+                  {
+                    type: "string",
+                    name: "subtitle",
+                    label: "Subt\xEDtulo (H3)",
+                    required: true
+                  },
+                  {
+                    type: "string",
+                    name: "items",
+                    label: "Items incluidos",
+                    list: true,
+                    required: true
+                  },
+                  {
+                    type: "string",
+                    name: "keywords",
+                    label: "Keywords SEO",
+                    list: true
+                  }
+                ]
+              },
+              {
+                type: "object",
+                name: "strategicBlog",
+                label: "Blog Estrat\xE9gico",
+                fields: [
+                  {
+                    type: "string",
+                    name: "subtitle",
+                    label: "Subt\xEDtulo (H3)",
+                    required: true
+                  },
+                  {
+                    type: "string",
+                    name: "items",
+                    label: "Items incluidos",
+                    list: true,
+                    required: true
+                  },
+                  {
+                    type: "string",
+                    name: "keywords",
+                    label: "Keywords SEO",
+                    list: true
+                  }
+                ]
+              },
+              {
+                type: "object",
+                name: "tripleOptimization",
+                label: "Optimizaci\xF3n Triple",
+                fields: [
+                  {
+                    type: "string",
+                    name: "subtitle",
+                    label: "Subt\xEDtulo (H3)",
+                    required: true
+                  },
+                  {
+                    type: "string",
+                    name: "items",
+                    label: "Items incluidos",
+                    list: true,
+                    required: true
+                  },
+                  {
+                    type: "string",
+                    name: "keywords",
+                    label: "Keywords SEO",
+                    list: true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "forWhomSection",
+            label: "4. Para Qui\xE9n es Este Servicio",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo (H2)",
+                required: true
+              },
+              {
+                type: "string",
+                name: "items",
+                label: "Lista de perfiles",
+                list: true,
+                required: true
+              },
+              {
+                type: "string",
+                name: "keywords",
+                label: "Keywords SEO",
+                list: true
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "investmentSection",
+            label: "5. Inversi\xF3n y Valor",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo (H2)",
+                required: true
+              },
+              {
+                type: "object",
+                name: "comparison",
+                label: "Tabla Comparativa",
+                fields: [
+                  {
+                    type: "object",
+                    name: "separate",
+                    label: "Precios Por Separado",
+                    fields: [
+                      {
+                        type: "object",
+                        name: "webComplete",
+                        label: "Web Completa",
+                        fields: [
+                          {
+                            type: "string",
+                            name: "label",
+                            label: "Etiqueta"
+                          },
+                          {
+                            type: "string",
+                            name: "price",
+                            label: "Precio"
+                          }
+                        ]
+                      },
+                      {
+                        type: "object",
+                        name: "blogFirst",
+                        label: "Blog Primer Mes",
+                        fields: [
+                          {
+                            type: "string",
+                            name: "label",
+                            label: "Etiqueta"
+                          },
+                          {
+                            type: "string",
+                            name: "price",
+                            label: "Precio"
+                          }
+                        ]
+                      },
+                      {
+                        type: "string",
+                        name: "total",
+                        label: "Total"
+                      }
+                    ]
+                  },
+                  {
+                    type: "object",
+                    name: "package",
+                    label: "Precio del Paquete",
+                    fields: [
+                      {
+                        type: "string",
+                        name: "label",
+                        label: "Etiqueta"
+                      },
+                      {
+                        type: "string",
+                        name: "price",
+                        label: "Precio"
+                      }
+                    ]
+                  },
+                  {
+                    type: "string",
+                    name: "savings",
+                    label: "Ahorro Total"
+                  }
+                ]
+              },
+              {
+                type: "string",
+                name: "ctaText",
+                label: "Texto del bot\xF3n CTA",
+                required: true
+              },
+              {
+                type: "string",
+                name: "ctaLink",
+                label: "Enlace del bot\xF3n CTA",
+                required: true
+              },
+              {
+                type: "string",
+                name: "keywords",
+                label: "Keywords SEO",
+                list: true
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "processSection",
+            label: "6. C\xF3mo Funciona el Proceso",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo (H2)",
+                required: true
+              },
+              {
+                type: "object",
+                name: "steps",
+                label: "Pasos del Proceso",
+                list: true,
+                fields: [
+                  {
+                    type: "string",
+                    name: "number",
+                    label: "N\xFAmero del paso",
+                    required: true
+                  },
+                  {
+                    type: "string",
+                    name: "title",
+                    label: "T\xEDtulo del paso",
+                    required: true
+                  },
+                  {
+                    type: "string",
+                    name: "duration",
+                    label: "Duraci\xF3n",
+                    required: true
+                  },
+                  {
+                    type: "string",
+                    name: "description",
+                    label: "Descripci\xF3n",
+                    required: true,
+                    ui: {
+                      component: "textarea"
+                    }
+                  }
+                ]
+              },
+              {
+                type: "string",
+                name: "keywords",
+                label: "Keywords SEO",
+                list: true
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "faqSection",
+            label: "7. Preguntas Frecuentes",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo (H2)",
+                required: true
+              },
+              {
+                type: "object",
+                name: "questions",
+                label: "Preguntas",
+                list: true,
+                fields: [
+                  {
+                    type: "string",
+                    name: "question",
+                    label: "Pregunta (H3)",
+                    required: true
+                  },
+                  {
+                    type: "string",
+                    name: "answer",
+                    label: "Respuesta",
+                    required: true,
+                    ui: {
+                      component: "textarea"
+                    }
+                  }
+                ]
+              },
+              {
+                type: "string",
+                name: "keywords",
+                label: "Keywords SEO",
+                list: true
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "resultsSection",
+            label: "8. Ejemplos de Resultados",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo (H2)",
+                required: true
+              },
+              {
+                type: "boolean",
+                name: "enabled",
+                label: "Mostrar secci\xF3n"
+              },
+              {
+                type: "object",
+                name: "examples",
+                label: "Ejemplos de Resultados",
+                list: true,
+                fields: [
+                  {
+                    type: "string",
+                    name: "client",
+                    label: "Cliente",
+                    required: true
+                  },
+                  {
+                    type: "string",
+                    name: "result",
+                    label: "Resultado",
+                    required: true
+                  }
+                ]
+              },
+              {
+                type: "string",
+                name: "keywords",
+                label: "Keywords SEO",
+                list: true
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "finalCtaSection",
+            label: "9. CTA Final",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo",
+                required: true
+              },
+              {
+                type: "string",
+                name: "description",
+                label: "Descripci\xF3n",
+                required: true,
+                ui: {
+                  component: "textarea"
+                }
+              },
+              {
+                type: "string",
+                name: "price",
+                label: "Precio",
+                required: true
+              },
+              {
+                type: "string",
+                name: "priceNote",
+                label: "Nota del precio",
+                required: true
+              },
+              {
+                type: "string",
+                name: "ctaText",
+                label: "Texto del bot\xF3n CTA",
+                required: true
+              },
+              {
+                type: "string",
+                name: "ctaLink",
+                label: "Enlace del bot\xF3n CTA",
+                required: true
+              },
+              {
+                type: "string",
+                name: "guaranteeTitle",
+                label: "T\xEDtulo de Garant\xEDa",
+                required: true
+              },
+              {
+                type: "string",
+                name: "guaranteeDescription",
+                label: "Descripci\xF3n de Garant\xEDa",
+                required: true,
+                ui: {
+                  component: "textarea"
+                }
+              },
+              {
+                type: "string",
+                name: "features",
+                label: "Caracter\xEDsticas incluidas",
+                list: true,
+                required: true
               }
             ]
           }

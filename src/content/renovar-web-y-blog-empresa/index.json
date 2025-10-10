@@ -1,0 +1,174 @@
+{
+  "seo": {
+    "title": "Renueva tu Web y Blog | Presencia Digital Completa",
+    "description": "Web completa (5 páginas) + blog estratégico. Optimizado para Google e IA. Convierte visitantes en clientes. Desde 1.399€. Sin suscripciones eternas."
+  },
+  "hero": {
+    "subtitle": "PRESENCIA DIGITAL COMPLETA",
+    "title": "Renueva tu Web y Arranca tu Blog: Presencia Digital Completa para Negocios Locales",
+    "description": "Web que vende + contenido que atrae. Todo lo que necesitas para dominar online en un solo paquete.",
+    "ctaText": "Consultar ahora",
+    "ctaLink": "/contacto"
+  },
+  "problemSection": {
+    "title": "¿Tu Web No Te Trae Clientes? El Problema es Doble",
+    "content": "No basta con tener una página web bonita. Si no generas contenido estratégico de forma regular, estás invisible para Google, para las IA y para tus clientes potenciales. Una web sin blog es como una tienda sin escaparate: nadie sabe que existes.",
+    "keywords": ["web no trae clientes", "página web sin resultados"]
+  },
+  "whatIncludesSection": {
+    "title": "Qué Incluye Este Servicio de Renovación Digital",
+    "webRedaction": {
+      "subtitle": "Redacción Completa de tu Página Web (5 Secciones)",
+      "items": [
+        "Home optimizada para conversión",
+        "Servicios que explican tu valor",
+        "Sobre nosotros que genera confianza",
+        "Contacto que invita a la acción",
+        "Landing/Blog de apoyo"
+      ],
+      "keywords": ["redacción página web", "mejorar textos web"]
+    },
+    "strategicBlog": {
+      "subtitle": "Blog Estratégico para Captar Clientes",
+      "items": [
+        "Estrategia de contenido trimestral",
+        "2 artículos mensuales optimizados",
+        "Calendario editorial",
+        "Optimización para buscadores e IA"
+      ],
+      "keywords": ["blog para captar clientes", "estrategia contenido blog empresa"]
+    },
+    "tripleOptimization": {
+      "subtitle": "Optimización Triple: SEO + IA + Conversión",
+      "items": [
+        "Aparece en Google",
+        "Las IA te recomiendan (ChatGPT, Claude, Copilot)",
+        "Los visitantes se convierten en clientes"
+      ],
+      "keywords": ["optimización SEO página web", "aparecer en ChatGPT"]
+    }
+  },
+  "forWhomSection": {
+    "title": "Para Quién es Este Servicio",
+    "items": [
+      "Negocios locales que renuevan su presencia digital",
+      "Empresas que tienen web pero no funciona",
+      "Negocios que quieren dejar de depender solo de redes sociales",
+      "PYMEs que buscan más clientes online"
+    ],
+    "keywords": ["renovar presencia digital", "mejorar web negocio local"]
+  },
+  "investmentSection": {
+    "title": "Inversión y Valor",
+    "comparison": {
+      "separate": {
+        "webComplete": {
+          "label": "Web Completa (5 páginas)",
+          "price": "1.399€"
+        },
+        "blogFirst": {
+          "label": "Blog Estratégico (primer mes)",
+          "price": "399€"
+        },
+        "total": "1.798€"
+      },
+      "package": {
+        "label": "Con este paquete",
+        "price": "1.399€"
+      },
+      "savings": "399€"
+    },
+    "ctaText": "Solicitar presupuesto",
+    "ctaLink": "/contacto",
+    "keywords": ["precio renovar página web", "cuánto cuesta rediseño web"]
+  },
+  "processSection": {
+    "title": "Cómo Funciona el Proceso",
+    "steps": [
+      {
+        "number": "1",
+        "title": "Reunión estratégica",
+        "duration": "30 min",
+        "description": "Entendemos tu negocio, objetivos y audiencia"
+      },
+      {
+        "number": "2",
+        "title": "Investigación y redacción",
+        "duration": "10 días",
+        "description": "Creamos todo el contenido optimizado para SEO e IA"
+      },
+      {
+        "number": "3",
+        "title": "Revisiones y ajustes",
+        "duration": "3 días",
+        "description": "Refinamos el contenido según tus comentarios"
+      },
+      {
+        "number": "4",
+        "title": "Entrega y formación",
+        "duration": "2 días",
+        "description": "Recibes todo listo para implementar"
+      }
+    ],
+    "keywords": ["proceso renovación web", "cómo renovar página web empresa"]
+  },
+  "faqSection": {
+    "title": "Preguntas Frecuentes",
+    "questions": [
+      {
+        "question": "¿Cuánto tiempo tarda la renovación completa?",
+        "answer": "15 días desde que empezamos hasta que tienes todo listo para implementar."
+      },
+      {
+        "question": "¿Necesito conocimientos técnicos?",
+        "answer": "No. Te entrego todo listo para copiar y pegar en tu gestor de contenidos (WordPress, Shopify, etc.)."
+      },
+      {
+        "question": "¿El blog es para siempre?",
+        "answer": "El primer mes va incluido. Después, puedes continuar por 399€/mes o pausarlo cuando quieras. Sin permanencia."
+      },
+      {
+        "question": "¿Funciona para cualquier sector?",
+        "answer": "Sí, especialmente para negocios locales de servicios: abogados, arquitectos, consultores, clínicas, agencias, etc."
+      }
+    ],
+    "keywords": ["cuánto tarda renovar web", "necesito conocimientos técnicos web"]
+  },
+  "resultsSection": {
+    "title": "Ejemplos de Resultados",
+    "enabled": true,
+    "examples": [
+      {
+        "client": "Cliente A",
+        "result": "+150% visitas orgánicas en 3 meses"
+      },
+      {
+        "client": "Cliente B",
+        "result": "Primeras recomendaciones de ChatGPT en su sector"
+      },
+      {
+        "client": "Cliente C",
+        "result": "5 consultas mensuales desde la nueva web"
+      }
+    ],
+    "keywords": ["resultados renovación web", "casos éxito rediseño web"]
+  },
+  "finalCtaSection": {
+    "title": "Empieza Tu Transformación Digital Hoy",
+    "description": "Web profesional + contenido estratégico. Todo lo que necesitas para dejar de ser invisible online.",
+    "price": "1.399€",
+    "priceNote": "Paquete completo - Pago único",
+    "ctaText": "Solicitar presupuesto sin compromiso",
+    "ctaLink": "/contacto",
+    "guaranteeTitle": "Garantía de Satisfacción",
+    "guaranteeDescription": "Si no estás satisfecho con el resultado, revisamos hasta que lo estés. Sin letra pequeña.",
+    "features": [
+      "Web completa (5 páginas)",
+      "Blog estratégico (primer mes)",
+      "Optimización SEO + IA",
+      "2 rondas de revisiones",
+      "Entrega en 15 días",
+      "Sin permanencia"
+    ]
+  }
+}

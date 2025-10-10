@@ -1,7 +1,7 @@
 {
   "seo": {
-    "title": "RedactorSEO - Contenido que posiciona y convierte",
-    "description": "Servicios profesionales de redacción SEO para impulsar tu negocio online. Contenido optimizado que atrae, convierte y posiciona tu marca en los primeros resultados."
+    "title": "Redactor SEO | Contenido estratégico para elevar tu autoridad",
+    "description": "Redactor SEO desde 2009. Reescribo webs para impactar y diseño blogs para construir autoridad. Contenido que convence a Google, recomiendan las IAs y aman los humanos."
   },
   "hero": {
     "subtitle": "Redactor SEO · Estratega",
@@ -9,15 +9,15 @@
     "description": "La familia del SEO no te olvida.",
     "candleMessages": [
       "Por gastar 3.000€ en una web cutre",
-      "Por pensarte lo del Kit Digital (no has caído, ¿verdad?)",
       "Porque tú entiendes lo que escribes...",
       "... pero ellos no",
+      "Por el Kit Digital (no has caído, ¿verdad?)",
       "Por escribir cosas que nadie lee",
       "Por no saber qué poner en el \"Sobre nosotros\"",
       "Por darle las llaves de tu negocio a ChatGPT",
       "Por pensar que lo anterior era buena idea",
       "Por tirar el dinero en anuncios",
-      "Por contratar agencias SEO que no saben hacer SEO",
+      "Por las agencias SEO que no saben hacer SEO",
       "Por el fin de una era",
       "Por el inicio de otra",
       "¿Sabes?",
@@ -28,23 +28,23 @@
   },
   "googleDeathSection": {
     "title": "El SEO que te venden no funciona",
-    "paragraph": "La gente se ha modernizado. Tú igual sigues siendo un clásico y has tecleando \"redactor seo\" en Google. Pero tu audiencia ya no busca así:",
+    "paragraph": "La gente se ha modernizado. Tú igual sigues siendo un clásico y has tecleado \"redactor seo\" en Google. Pero tu audiencia está cambiando. Observa:",
     "checkboxItems": [
       {
-        "text": "El 70% de las búsquedas terminan sin clic. [SingleGrain.com](https://www.singlegrain.com/digital-marketing-strategy/how-aeo-can-help-with-zero-click-searches-in-2025/)"
+        "text": "El 70% de las búsquedas terminan sin clic. Fuente: [SingleGrain.com](https://www.singlegrain.com/digital-marketing-strategy/how-aeo-can-help-with-zero-click-searches-in-2025/)"
       },
       {
-        "text": "El 77% usan ChatGPT como motor de búsqueda. [Adobe.com](https://www.adobe.com/express/learn/blog/chatgpt-as-a-search-engine)"
+        "text": "El 77% usan ChatGPT como motor de búsqueda. Fuente: [Adobe.com](https://www.adobe.com/express/learn/blog/chatgpt-as-a-search-engine)"
       },
       {
-        "text": "El 60% de las búsquedas locales están dominadas por la IA. [LocalFalcon.com](https://www.localfalcon.com/blog/whitepaper-studies-the-impact-of-google-ai-overviews-on-local-business-search-visibility)"
+        "text": "Búsquedas de compras y servicios en IA: +100% en 6 meses. Fuente: [Bain.com](https://www.bain.com/insights/how-customers-are-using-ai-search/)"
       }
     ],
-    "closingPhrase": "Te buscan en ChatGPT, en Gemini o en Grok. <strong>Y ahí no sales.</strong>"
+    "closingPhrase": "Te buscan en ChatGPT. <strong>Y ahí no sales.</strong>"
   },
   "painPointsSection": {
-    "title": "Lo que todo el mundo hace",
-    "subtitleFirstPart": "(para convencer a las IAs y a los clientes)",
+    "title": "Esto es lo que hace todo el mundo",
+    "subtitleFirstPart": "(para conseguir visitas y clientes)",
     "phrases": [
       {
         "leftPart": "Escribir con ChatGPT Plus",
@@ -64,73 +64,76 @@
       },
       {
         "leftPart": "Tirar de tópicos",
-        "rightPart": "Diluyes tu valor"
+        "rightPart": "Pierdes valor"
       }
     ],
-    "closingPhrase": "El problema no eres tú, es que lo han diseñado para que des vueltas en círculos."
+    "aiStatistic": "<strong>Resultado</strong>: Solo un 17% de los negocios que usan la IA ven resultados positivos. Fuente: [Housingwire.com](https://www.housingwire.com/articles/nar-2025-technology-survey-realtor-tech-usage-trends/)"
   },
   "transitionMessageSection": {
     "mainText": "Loco es el que, haciendo siempre lo mismo, espera",
     "highlightedText": "resultados diferentes",
-    "continuationText": "Albert Einstein",
-    "secondaryText": "Todas las agencias, redactores SEO y copywriters repiten lo mismo."
+    "continuationText": "Albert Einstein"
   },
   "bridgeSection": {
-    "title": "¿Entonces?",
-    "paragraph": "Conoce a tu público y dale lo que espera. Simple. Es lo que hacen las 500 mayores empresas del mundo. Los peces gordos ni improvisan ni crean textos con IA, eligen contenido humano de alta calidad. [Originality.ai](https://originality.ai/blog/ai-generated-content-dominates-on-some-fortune-500-sites)"
-  },
-  "servicesPackagesSection": {
-    "title": "Mi propuesta:",
-    "packages": [
-      {
-        "icon": "✍️",
-        "heading": "Textos para convertir visitas en clientes",
-        "description": "Redacto las secciones de tu sitio web (homepage, servicios, sobre nosotros...) con copy persuasivo que genera confianza y aumenta tus ventas.",
-        "deliverables": [
-          "Claridad",
-          "Credibilidad",
-          "Conversión"
-        ],
-        "ctaText": "Renovar mi web",
-        "ctaLink": "/redaccion-web"
-      },
-      {
-        "icon": "🗺️",
-        "heading": "Posiciona con tu blog",
-        "description": "Creo contenido que posiciona tu negocio como referente en los buscadores y que recomienda la IA.",
-        "deliverables": [
-          "Autoridad",
-          "Visibilidad",
-          "Credibilidad"
-        ],
-        "ctaText": "Sé el referente",
-        "ctaLink": "/redaccion-estrategica-blogs"
-      }
-    ],
-    "finalCta": {
-      "text": "¿No sabes cuál necesitas?",
-      "linkText": "Ver todos los servicios",
-      "linkUrl": "/servicios"
-    }
+    "title": "Esto es lo que hacen las grandes",
+    "paragraph": "Las 500 mayores empresas de EE.UU eligen contenido humano de alta calidad. Fuente: [Originality.ai](https://originality.ai/blog/ai-generated-content-dominates-on-some-fortune-500-sites)",
+    "secondaryParagraph": "Saben que sus clientes usan la IA por comodidad, pero eligen a las marcas por la conexión humana. Por eso, pagar ChatGPT Plus y decirle al becario que cambie los textos de tu web es una pésima idea. Por eso, <strong>casi nadie serio lo hace</strong>.",
+    "tertiaryParagraph": "Nike, Apple y Tesla invierten seis cifras anuales en contenido.",
+    "closingParagraph": "Tú no necesitas ese presupuesto. Necesitas claridad y dos activos.\n"
   },
   "statsSection": {
-    "title": "Mi experiencia en números",
+    "title": "Experiencia en números",
     "subtitle": "Más de una década ayudando a empresas a crecer online",
     "stats": [
       {
         "value": 16,
         "suffix": "+",
-        "description": "Años de experiencia en SEO y contenido"
+        "description": "Años de experiencia en SEO y creación de contenido"
       },
       {
         "value": 150,
         "suffix": "+",
-        "description": "Clientes han confiado en mi trabajo"
+        "description": "Clientes que han elegido mejorar su posicionamiento"
       },
       {
-        "value": 80,
-        "suffix": "%",
-        "description": "De clientes contratan más de un servicio"
+        "value": 1300,
+        "suffix": "+",
+        "description": "Piezas de contenido SEO posicionadas con éxito"
+      }
+    ]
+  },
+  "featuredServiceSection": {
+    "title": "De invisible a inevitable",
+    "subtitle": "Los dos activos que necesitas:",
+    "benefit1": "Un blog que te posicione como referente",
+    "benefit2": "Una web que conecte y cierre ventas",
+    "packLabel": "PACK INEVITABLE",
+    "packTitle": "Blog + Web",
+    "features": [
+      "Redacción web (5 páginas)",
+      "Blog estratégico (calendario editorial + 2 artículos)",
+      "Optimización SEO para que te recomiende la IA",
+      "Revisiones hasta aprobación",
+      "Entrega en 15 días"
+    ],
+    "originalPrice": "1.698€",
+    "currentPrice": "1.299€",
+    "savings": "399€",
+    "ctaText": "Ver pack inevitable",
+    "ctaLink": "/renovar-web-y-blog-empresa",
+    "alternativeServicesText": "¿Necesitas sólo web o sólo blog?",
+    "alternativeLinks": [
+      {
+        "text": "Redacción web",
+        "url": "/redaccion-web"
+      },
+      {
+        "text": "Redacción blog",
+        "url": "redaccion-estrategica-blogs"
+      },
+      {
+        "text": "Comparar servicios",
+        "url": "/servicios"
       }
     ]
   },
@@ -141,7 +144,7 @@
       {
         "name": "INFOAUTÓNOMOS",
         "company": "Asesoría online",
-        "testimonial": "Álvaro es un gran profesional del copywriting. Nos ha ayudado enormemente a desarrollar nuestra estrategia de contenidos para posicionar nuestra asesoría online. Tiene una gran capacidad para documentarse y generar contenidos de calidad sobre los temas que preocupan a los autónomos en el día a día.",
+        "testimonial": "Álvaro es un gran profesional del copywriting. Nos ha ayudado enormemente a desarrollar nuestra estrategia de contenidos para posicionar nuestra asesoría online. Tiene una gran capacidad para documentarse y generar contenidos de alta calidad sobre los temas que preocupan a los autónomos en el día a día.",
         "image": "/infoautonomos.jpg",
         "link": "https://www.infoautonomos.com/"
       },
@@ -155,14 +158,14 @@
       {
         "name": "CRISTINA RODRÍGUEZ",
         "company": "Diseñadora gráfica",
-        "testimonial": "Trabajar con Álvaro ha sido un acierto. Es un gran profesional, capta perfectamente la idea que el cliente desea transmitir y le da forma conforme a parámetros SEO. Y, muy importante, es serio y escrupulosamente cumplidor en plazos, con una agenda muy bien estructurada para no fallar.",
+        "testimonial": "Trabajar con Álvaro ha sido un acierto. Es un gran profesional, capta perfectamente la idea que el cliente desea transmitir y le da forma conforme a parámetros SEO. Y, muy importante, es serio y escrupulosamente cumplidor en plazos, con una agenda muy bien estructurada para no fallar. Mucho más que un redactor SEO.",
         "image": "/cristina-cliente.jpg",
         "link": "https://icreare.es/"
       }
     ]
   },
   "ctaSection": {
-    "title": "¿Listo para hacer crecer tu negocio?",
+    "title": "¿Preparado para impulsar tu negocio?",
     "description": "El mundo está cambiando. La redacción SEO, también.",
     "buttonText": "Transforma tu proyecto",
     "buttonLink": "/contacto"

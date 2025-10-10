@@ -11,8 +11,8 @@ const {
   painPointsSection,
   transitionMessageSection,
   bridgeSection,
-  servicesPackagesSection,
   statsSection,
+  featuredServiceSection,
   testimonialsSection,
   ctaSection
 } = homepageContent
@@ -165,6 +165,12 @@ const baseUrl = 'https://redactorseo.es'
           ))}
         </div>
 
+        {painPointsSection.aiStatistic && (
+          <div class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p set:html={painPointsSection.aiStatistic.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-naranja-vibrante hover:text-orange-600 underline">$1</a>')} />
+          </div>
+        )}
+
       </div>
     </div>
   </section>
@@ -174,16 +180,13 @@ const baseUrl = 'https://redactorseo.es'
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
       <div class="text-center animate-on-scroll opacity-0 translate-y-8 transition-all duration-700">
         <!-- Quote -->
-        <div class="mb-12 animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-200">
+        <div class="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-200">
           <blockquote class="text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-relaxed">
             {transitionMessageSection.mainText} <span class="text-naranja-vibrante">{transitionMessageSection.highlightedText}</span>
           </blockquote>
           <cite class="text-lg text-white font-medium mt-4 block">
             — {transitionMessageSection.continuationText}
           </cite>
-        </div>
-        <div class="text-lg md:text-xl text-blue-200 leading-relaxed animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-400">
-          {transitionMessageSection.secondaryText}
         </div>
       </div>
     </div>
@@ -196,222 +199,136 @@ const baseUrl = 'https://redactorseo.es'
         <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-6">
           {bridgeSection.title}
         </h2>
-        <p class="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto" set:html={bridgeSection.paragraph.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-naranja-vibrante hover:text-orange-600 underline font-medium transition-colors duration-300">$1</a>')}>
+        <p class="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto mb-8" set:html={bridgeSection.paragraph.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-naranja-vibrante hover:text-orange-600 underline font-medium transition-colors duration-300">$1</a>')}>
         </p>
+        {bridgeSection.secondaryParagraph && (
+          <p class="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto mb-8" set:html={bridgeSection.secondaryParagraph.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-naranja-vibrante hover:text-orange-600 underline font-medium transition-colors duration-300">$1</a>').replace(/500\.000€ anuales/g, '<strong>500.000€ anuales</strong>')}>
+          </p>
+        )}
+        {bridgeSection.tertiaryParagraph && (
+          <p class="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto mb-8" set:html={bridgeSection.tertiaryParagraph.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-naranja-vibrante hover:text-orange-600 underline font-medium transition-colors duration-300">$1</a>')}>
+          </p>
+        )}
+        {bridgeSection.closingParagraph && (
+          <p class="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto" set:html={bridgeSection.closingParagraph.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-naranja-vibrante hover:text-orange-600 underline font-medium transition-colors duration-300">$1</a>').replace(/claridad y dos activos/g, '<strong>claridad y dos activos</strong>')}>
+          </p>
+        )}
       </div>
     </div>
   </section>
 
-  <!-- Services Section -->
+  <!-- Featured Service Section -->
   <section class="py-20 md:py-32 lg:py-40 bg-white">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
-
-      <!-- Header with Creative Layout -->
-      <div class="text-center mb-20 animate-on-scroll opacity-0 translate-y-8 transition-all duration-700">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
+      <div class="text-center mb-12">
         <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4">
-          {servicesPackagesSection.title}
+          {featuredServiceSection.title}
         </h2>
-        <div class="max-w-2xl mx-auto">
-          <p class="text-xl text-gray-600 leading-relaxed">
-            {servicesPackagesSection.subtitle}
-          </p>
-        </div>
-      </div>
-
-      <!-- Services Flow Layout -->
-      <div class="relative">
-
-        <!-- Service Items with Alternating Positioning -->
-        <div class="space-y-24 lg:space-y-32">
-          {servicesPackagesSection.packages.map((service, index) => {
-            const isEven = index % 2 === 1; // Service 2 (index 1) is featured
-            const buttonClass = index === 1 ? 'bg-naranja-vibrante hover:bg-orange-600' : 'bg-azul-profundo hover:bg-gray-800';
-            const deliverablesList = service.deliverables.join(' • ');
-
-            return (
-              <div class={`animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-${(index + 1) * 200} lg:grid lg:grid-cols-12 lg:gap-8 lg:items-center`}>
-
-                {/* Mobile: Standard Structure */}
-                <div class="lg:hidden mb-8">
-                  <h3 class="text-2xl font-display font-bold text-gray-900 mb-4 text-center">
-                    {service.heading}
-                  </h3>
-
-                  <p class="text-xl text-gray-600 mb-6 leading-relaxed text-center">
-                    {service.description}
-                  </p>
-
-                  <div class="text-base text-gray-500 mb-8 text-center leading-relaxed">
-                    {deliverablesList}
-                  </div>
-
-                  <div class="text-center">
-                    <a
-                      href={service.ctaLink}
-                      class={`${buttonClass} text-white px-8 py-4 rounded-lg text-lg font-body font-bold hover:scale-105 transition-all duration-300 inline-block w-full text-center`}
-                    >
-                      {service.ctaText}
-                    </a>
-                  </div>
-                </div>
-
-                {/* Desktop Layout */}
-                {isEven ? (
-                  // Featured service (right aligned content, CTA first)
-                  <>
-                    <div class="hidden lg:block lg:col-span-4 lg:order-1">
-                      <a
-                        href={service.ctaLink}
-                        class={`${buttonClass} text-white px-8 py-4 rounded-lg text-lg font-body font-bold hover:scale-105 transition-all duration-300 inline-block w-full lg:w-auto text-center`}
-                      >
-                        {service.ctaText}
-                      </a>
-                    </div>
-
-                    <div class="hidden lg:flex lg:col-span-2 lg:order-2 justify-center">
-                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" class="text-naranja-vibrante transform rotate-180">
-                        <path d="M13 7L18 12L13 17M6 12H18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                      </svg>
-                    </div>
-
-                    <div class="hidden lg:block lg:col-span-6 lg:order-3 lg:text-left">
-                      <h3 class="text-3xl font-display font-bold text-gray-900 mb-4">
-                        {service.heading}
-                      </h3>
-
-                      <p class="text-xl text-gray-600 mb-6 leading-relaxed">
-                        {service.description}
-                      </p>
-
-                      <div class="text-base text-gray-500 mb-8 leading-relaxed">
-                        {deliverablesList}
-                      </div>
-                    </div>
-                  </>
-                ) : (
-                  // Regular services (left aligned content, CTA right)
-                  <>
-                    <div class="hidden lg:block lg:col-span-6 lg:text-right">
-                      <h3 class="text-3xl font-display font-bold text-gray-900 mb-4">
-                        {service.heading}
-                      </h3>
-
-                      <p class="text-xl text-gray-600 mb-6 leading-relaxed">
-                        {service.description}
-                      </p>
-
-                      <div class="text-base text-gray-500 mb-8 leading-relaxed">
-                        {deliverablesList}
-                      </div>
-                    </div>
-
-                    <div class="hidden lg:flex lg:col-span-2 justify-center">
-                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" class="text-naranja-vibrante">
-                        <path d="M13 7L18 12L13 17M6 12H18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                      </svg>
-                    </div>
-
-                    <div class="hidden lg:block lg:col-span-4">
-                      <a
-                        href={service.ctaLink}
-                        class={`${buttonClass} text-white px-8 py-4 rounded-lg text-lg font-body font-bold hover:scale-105 transition-all duration-300 inline-block w-full lg:w-auto text-center`}
-                      >
-                        {service.ctaText}
-                      </a>
-                    </div>
-                  </>
-                )}
-              </div>
-            );
-          })}
-        </div>
-      </div>
-
-      <!-- Footer with Creative CTA -->
-      <div class="text-center mt-20 animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-600">
-        <div class="max-w-lg mx-auto">
-          <p class="text-gray-600 mb-6 leading-relaxed">
-            {servicesPackagesSection.finalCta.text}
-          </p>
-          <a
-            href={servicesPackagesSection.finalCta.linkUrl}
-            class="text-naranja-vibrante hover:text-orange-600 underline font-medium transition-colors duration-300"
-          >
-            {servicesPackagesSection.finalCta.linkText}
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Complementary Services Highlight Section -->
-  <section class="py-20 md:py-32 lg:py-40 bg-gray-50">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
-
-      <!-- Section Header -->
-      <div class="text-center mb-16 animate-on-scroll opacity-0 translate-y-8 transition-all duration-700">
-        <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4">
-          Servicios complementarios
-        </h2>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-          Potencia tu presencia online con estos servicios especializados
+        <p class="text-xl text-gray-600 mb-8">
+          {featuredServiceSection.subtitle}
         </p>
-      </div>
 
-      <!-- Two Services Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-
-        <!-- Service 1: Redacto tu web -->
-        <div class="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-200 bg-white rounded-lg p-8 hover:shadow-lg transition-shadow duration-300 border-2 border-gray-100">
-          <div class="mb-6">
-            <div class="text-5xl mb-4">✍️</div>
-            <h3 class="text-2xl font-display font-bold text-gray-900 mb-3">
-              Dale vida a tu web
-            </h3>
-            <p class="text-lg text-gray-600 leading-relaxed mb-6">
-              Redacto las páginas de tu web para que conectes con los clientes y consegas más ventas.
-            </p>
-            <div class="flex flex-wrap gap-2 mb-6">
-              <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Confianza</span>
-              <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Conversión</span>
-              <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Credibilidad</span>
+        <!-- Benefits list -->
+        <div class="flex justify-center mt-12 mb-16">
+          <div class="inline-flex flex-col gap-6">
+            <div class="flex items-center gap-4">
+              <div class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center flex-shrink-0">
+                <span class="text-white font-bold text-sm">1</span>
+              </div>
+              <span class="text-gray-700 font-medium text-lg">{featuredServiceSection.benefit1}</span>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center flex-shrink-0">
+                <span class="text-white font-bold text-sm">2</span>
+              </div>
+              <span class="text-gray-700 font-medium text-lg">{featuredServiceSection.benefit2}</span>
             </div>
           </div>
-          <a
-            href="/redaccion-web"
-            class="bg-naranja-vibrante text-white px-6 py-3 rounded-lg text-base font-bold hover:bg-orange-600 hover:scale-105 transition-all duration-300 inline-block w-full text-center"
-          >
-            Renovar mi web
-          </a>
         </div>
-
-        <!-- Service 2: Sé el referente -->
-        <div class="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-400 bg-white rounded-lg p-8 hover:shadow-lg transition-shadow duration-300 border-2 border-gray-100">
-          <div class="mb-6">
-            <div class="text-5xl mb-4">🗺️</div>
-            <h3 class="text-2xl font-display font-bold text-gray-900 mb-3">
-              Posiciona con tu blog
-            </h3>
-            <p class="text-lg text-gray-600 leading-relaxed mb-6">
-              Creo contenido que posiciona tu negocio como referente en los buscadores y que recomienda la IA.
-            </p>
-            <div class="flex flex-wrap gap-2 mb-6">
-              <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Autoridad</span>
-              <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Visibilidad</span>
-              <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Credibilidad</span>
-            </div>
-          </div>
-          <a
-            href="/redaccion-estrategica-blogs"
-            class="bg-azul-profundo text-white px-6 py-3 rounded-lg text-base font-bold hover:bg-gray-800 hover:scale-105 transition-all duration-300 inline-block w-full text-center"
-          >
-            Sé el referente
-          </a>
-        </div>
-
       </div>
 
+      <div class="max-w-2xl mx-auto">
+        <!-- Pack Card -->
+        <div class="border-2 border-gray-200 rounded-2xl p-8 bg-white hover:border-naranja-vibrante transition-all duration-300 hover:shadow-xl relative pt-10">
+          <!-- Pack Label positioned outside/above -->
+          <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+            <span class="inline-block bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full border border-gray-300">
+              {featuredServiceSection.packLabel}
+            </span>
+          </div>
+
+          <!-- Pack Header -->
+          <div class="text-center mb-8 pb-6 border-b-2 border-dashed border-gray-300">
+            <h3 class="text-2xl font-bold text-gray-900">
+              {featuredServiceSection.packTitle}
+            </h3>
+          </div>
+
+          <!-- Features with checks -->
+          {featuredServiceSection.features && featuredServiceSection.features.length > 0 && (
+            <div class="mb-8 flex justify-center">
+              <div class="space-y-2 inline-block">
+                {featuredServiceSection.features.map((feature) => (
+                  <div class="flex items-center gap-2">
+                    <svg class="w-4 h-4 text-naranja-vibrante flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-sm text-gray-700">{feature}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <!-- Pricing -->
+          <div class="mb-8">
+            <div class="max-w-sm mx-auto border-2 border-gray-300 rounded-lg p-6 bg-gray-50">
+              <div class="space-y-3">
+                <div class="flex justify-between items-center">
+                  <span class="text-gray-600 font-medium">VALOR REAL:</span>
+                  <span class="text-gray-500 line-through text-3xl">{featuredServiceSection.originalPrice}</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-gray-900 font-bold">PRECIO:</span>
+                  <span class="text-3xl font-bold text-azul-profundo">{featuredServiceSection.currentPrice}</span>
+                </div>
+                <div class="border-t-2 border-gray-300 my-3"></div>
+                <div class="flex justify-between items-center">
+                  <span class="text-naranja-vibrante font-medium">AHORRAS:</span>
+                  <span class="text-2xl font-medium text-naranja-vibrante">{featuredServiceSection.savings}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CTA Button -->
+          <div class="text-center">
+            <a
+              href={featuredServiceSection.ctaLink}
+              class="inline-block bg-naranja-vibrante text-white px-10 py-4 rounded-xl text-lg font-bold hover:bg-orange-600 hover:scale-105 transition-all duration-300 shadow-lg uppercase tracking-wide"
+            >
+              {featuredServiceSection.ctaText}
+            </a>
+          </div>
+        </div>
+
+        <!-- Alternative Options -->
+        {featuredServiceSection.alternativeLinks && featuredServiceSection.alternativeLinks.length > 0 && (
+          <div class="mt-12">
+            <div class="text-center">
+              <p class="text-gray-600 text-base mb-3">{featuredServiceSection.alternativeServicesText}</p>
+              <p class="text-base">
+                {featuredServiceSection.alternativeLinks.map((link, index) => (
+                  <>
+                    <a href={link.url} class="text-naranja-vibrante hover:text-orange-600 underline font-medium transition-colors duration-300">{link.text}</a>
+                    {index < featuredServiceSection.alternativeLinks.length - 1 && <span> · </span>}
+                  </>
+                ))}
+              </p>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   </section>
 
@@ -658,18 +575,17 @@ const baseUrl = 'https://redactorseo.es'
 </style>
 
 <script is:inline>
-  // Candle messages from content
   const candleMessages = [
     "Por gastar 3.000€ en una web cutre",
-    "Por pensarte lo del Kit Digital (no has caído, ¿verdad?)",
     "Porque tú entiendes lo que escribes...",
     "... pero ellos no",
+    "Por el Kit Digital (no has caído, ¿verdad?)",
     "Por escribir cosas que nadie lee",
     "Por no saber qué poner en el \"Sobre nosotros\"",
     "Por darle las llaves de tu negocio a ChatGPT",
     "Por pensar que lo anterior era buena idea",
     "Por tirar el dinero en anuncios",
-    "Por contratar agencias SEO que no saben hacer SEO",
+    "Por las agencias SEO que no saben hacer SEO",
     "Por el fin de una era",
     "Por el inicio de otra",
     "¿Sabes?",
@@ -678,7 +594,6 @@ const baseUrl = 'https://redactorseo.es'
     "Resucita tu página web 👇"
   ];
 
-  // Professional counter system
   const COUNTER_API = 'https://redactor-seo-counter.dawn-smoke-fbd0.workers.dev';
   let sessionId = sessionStorage.getItem('cs_sid') || null;
 
@@ -734,14 +649,13 @@ const baseUrl = 'https://redactorseo.es'
   function getFallbackCount() {
     const t = Date.now();
     const d = new Date();
-    const base = 850;
-    const variance = Math.sin(t / 900000) * 10;
-    const daily = d.getDate() * 2 + d.getHours();
-    return Math.floor(base + variance + (daily % 30));
+    const s1 = Math.abs(Math.sin(t / 1000000) * 9999);
+    const s2 = d.getDate() * 31 + d.getMonth() * 17;
+    const s3 = Math.cos(d.getHours() * 0.261) * 47;
+    return Math.floor(1100 + (s1 % 200) + (s2 % 150) + s3);
   }
-  // Wait for DOM to be ready
+
   document.addEventListener('DOMContentLoaded', async function() {
-    // Initialize counter display with secure count
     const counterNumber = document.getElementById('counterNumber');
     if (counterNumber) {
       try {
@@ -753,34 +667,26 @@ const baseUrl = 'https://redactorseo.es'
       }
     }
 
-    // Ensure the button is clickable
     const candleButton = document.getElementById('candleButton');
     if (candleButton) {
       candleButton.addEventListener('click', lightCandle);
     }
   });
 
-  // Messages for each click - will be loaded from global variable
-
   async function lightCandle() {
     const button = document.getElementById('candleButton');
-    const candleEmoji = document.querySelector('.candle-emoji'); // Now in the counter
+    const candleEmoji = document.querySelector('.candle-emoji');
     const messageDiv = document.getElementById('candleMessage');
     const messageText = document.getElementById('messageText');
     const counterNumber = document.getElementById('counterNumber');
 
-    // Add shake effect to button
     button.classList.add('animate-shake');
 
-    // Handle counter increment securely
     let newCount = null;
     try {
       newCount = await incrementCount();
-      console.log('Counter increment response:', newCount);
     } catch (error) {
-      console.log('Counter increment error:', error);
       if (error.message === 'RATE_LIMITED') {
-        // Show rate limit message briefly
         messageText.textContent = "¡Espera un momento entre cada homenaje! 🕯️";
         messageDiv.classList.remove('opacity-0', 'translate-y-4');
         messageDiv.classList.add('opacity-100', 'translate-y-0');
@@ -793,59 +699,46 @@ const baseUrl = 'https://redactorseo.es'
       }
     }
 
-    // Get current user click count for message selection
     const userClicks = parseInt(sessionStorage.getItem('user_clicks') || '0') + 1;
 
-    // Add temporary glow effect to candle (now in the counter)
     if (userClicks < 3) {
       candleEmoji.style.textShadow = '0 0 20px #ffd700, 0 0 30px #ffa500, 0 0 40px #ff6b35';
       candleEmoji.style.transform = 'scale(1.2)';
 
-      // Remove glow effect after animation
       setTimeout(() => {
         candleEmoji.style.textShadow = '';
         candleEmoji.style.transform = '';
       }, 1000);
     }
 
-    // Create sparkles effect
     createSparkles(button);
 
-    // Get message based on user click count
     const messageIndex = userClicks <= candleMessages.length ? userClicks - 1 : candleMessages.length - 1;
     if (candleMessages[messageIndex]) {
       messageText.textContent = candleMessages[messageIndex];
     }
 
-    // Show message with animation
     messageDiv.classList.remove('opacity-0', 'translate-y-4');
     messageDiv.classList.add('opacity-100', 'translate-y-0');
 
-    // Hide message after 8 seconds or until user clicks again
     clearTimeout(window.messageTimeout);
     window.messageTimeout = setTimeout(() => {
       messageDiv.classList.add('opacity-0', 'translate-y-4');
       messageDiv.classList.remove('opacity-100', 'translate-y-0');
     }, 8000);
 
-    // Remove shake effect
     setTimeout(() => {
       button.classList.remove('animate-shake');
     }, 500);
 
-    // Update counter display and save click count
     if (newCount && counterNumber) {
-      console.log('Updating counter to:', newCount);
       counterNumber.textContent = newCount.toLocaleString('es-ES');
     } else if (counterNumber) {
-      // If server increment failed, show local increment for better UX
-      const currentCount = parseInt(counterNumber.textContent.replace(/\./g, '')) || 850;
+      const currentCount = parseInt(counterNumber.textContent.replace(/\./g, '')) || 1100;
       const newLocalCount = currentCount + 1;
-      console.log('Local increment from', currentCount, 'to', newLocalCount);
       counterNumber.textContent = newLocalCount.toLocaleString('es-ES');
     }
 
-    // Save click count to sessionStorage
     sessionStorage.setItem('user_clicks', userClicks.toString());
   }
 
@@ -869,7 +762,6 @@ const baseUrl = 'https://redactorseo.es'
     }
   }
 
-  // Intersection Observer para animaciones on scroll - SOLO HOMEPAGE
   (function() {
     const observerOptions = {
       threshold: 0.1,
@@ -882,7 +774,6 @@ const baseUrl = 'https://redactorseo.es'
           entry.target.classList.remove('opacity-0', 'translate-y-8')
           entry.target.classList.add('opacity-100', 'translate-y-0')
 
-          // Animar contadores de números
           if (entry.target.querySelector('.counter')) {
             const counters = entry.target.querySelectorAll('.counter')
             counters.forEach(counter => {
@@ -908,7 +799,6 @@ const baseUrl = 'https://redactorseo.es'
       })
     }, observerOptions)
 
-    // Observar todos los elementos con la clase animate-on-scroll
     document.addEventListener('DOMContentLoaded', () => {
       const animatedElements = document.querySelectorAll('.animate-on-scroll')
       animatedElements.forEach(el => observer.observe(el))

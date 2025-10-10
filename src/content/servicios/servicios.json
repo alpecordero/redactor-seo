@@ -12,33 +12,16 @@
   "hero": {
     "titlePart1": "Dos formas de",
     "titlePart2": "trabajar conmigo",
-    "description": "Redacción web profesional y contenido estratégico para blogs. Encuentra el servicio que mejor se adapte a tu momento."
+    "description": "Redacción web profesional y contenido para convertir tu blog en el referente del sector."
   },
   "servicePackages": {
     "packages": [
-      {
-        "title": "Redacción Web",
-        "subtitle": "Para conectar con tus clientes",
-        "price": "399",
-        "currency": "€",
-        "priceNote": "desde",
-        "features": [
-          "Investigación completa",
-          "Redacción de páginas web",
-          "Optimización SEO e IA",
-          "Para copiar y pegar",
-          "Entrega rápida"
-        ],
-        "ctaText": "Ver redacción web",
-        "ctaLink": "/redaccion-web",
-        "isPopular": true
-      },
       {
         "title": "Redacción Blog",
         "subtitle": "Para dominar tu nicho",
         "price": "399",
         "currency": "€",
-        "priceNote": "desde / mes",
+        "priceNote": "pago mensual",
         "features": [
           "Estrategia de contenido",
           "Calendario editorial",
@@ -49,8 +32,44 @@
         "ctaText": "Ver blog estratégico",
         "ctaLink": "/redaccion-estrategica-blogs",
         "isPopular": false
+      },
+      {
+        "title": "Redacción Web",
+        "subtitle": "Para convertir visitas en clientes",
+        "price": "1.299",
+        "currency": "€",
+        "priceNote": "pago único",
+        "features": [
+          "Investigación completa",
+          "Redacción de páginas web",
+          "Optimización SEO e IA",
+          "Para copiar y pegar",
+          "Entrega rápida"
+        ],
+        "ctaText": "Ver redacción web",
+        "ctaLink": "/redaccion-web",
+        "isPopular": false
       }
     ],
+    "packInevitable": {
+      "packLabel": "Blog + Web",
+      "title": "Pack Inevitable",
+      "subtitle": "De invisible a inevitable",
+      "features": [
+        "Estrategia de posicionamiento para tu negocio",
+        "Redacción web completa (5 páginas)",
+        "Blog estratégico (2 artículos + calendario)",
+        "Optimización para que te recomiende la IA",
+        "Optimización SEO para buscadores",
+        "Revisiones hasta aprobación",
+        "Entrega en 15 días"
+      ],
+      "originalPrice": "1.698€",
+      "currentPrice": "1.299€",
+      "savings": "399€",
+      "ctaText": "Ver pack inevitable",
+      "ctaLink": "/renovar-web-y-blog-empresa"
+    },
     "customProjects": {
       "description": "¿Necesitas algo más específico? Proyectos especiales, consultoría estratégica a largo plazo, o colaboraciones únicas.",
       "linkText": "Trabajemos juntos",
@@ -70,6 +89,11 @@
         "question": "Quiero posicionarme como referente con contenido",
         "answerTitle": "Elige Blog Estratégico (desde €399/mes)",
         "answerText": "Contenido estratégico para tu blog con planificación editorial, artículos optimizados para SEO y estrategia de enlazado. Contenido 100% humano que posiciona tu marca como autoridad en tu sector."
+      },
+      {
+        "question": "Necesito renovar completamente mi presencia digital",
+        "answerTitle": "Elige Renovación Completa (€1.399 - Ahorra €399)",
+        "answerText": "Web completa (5 páginas) + blog estratégico en un solo paquete. Obtienes todo lo necesario para dominar online: redacción profesional de tu web, estrategia de contenido, optimización SEO e IA. Entrega en 15 días con 2 rondas de revisiones incluidas."
       },
       {
         "question": "Mi caso es único o necesito algo específico",

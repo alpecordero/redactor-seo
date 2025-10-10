@@ -1,0 +1,35 @@
+version: 2
+updates:
+  # Mantener actualizadas las dependencias npm
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "Europe/Madrid"
+    open-pull-requests-limit: 10
+    # Agrupar actualizaciones de TinaCMS
+    groups:
+      tinacms:
+        patterns:
+          - "tinacms"
+          - "@tinacms/*"
+      astro:
+        patterns:
+          - "astro"
+          - "@astrojs/*"
+      tailwindcss:
+        patterns:
+          - "tailwindcss"
+          - "@tailwindcss/*"
+    # Configuración de commits
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+    # Etiquetas para los PRs
+    labels:
+      - "dependencies"
+      - "automerge"
+    # Actualizar también lockfile
+    versioning-strategy: auto

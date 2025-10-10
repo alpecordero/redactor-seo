@@ -69,18 +69,18 @@ function getCurrentCount(sessionId) {
   // We calculate the cumulative sum of daily increments from day 0 to current day
   let organicGrowth = 0;
   for (let day = 0; day < daysSince; day++) {
-    // Generate a deterministic but pseudo-random daily increment between 5 and 15
-    const dailyIncrement = 10 + Math.sin(day * 0.7) * 5;
+    // Generate a deterministic pseudo-random daily increment between 5 and 15
+    // Use Math.abs to ensure it's always positive, then map to 5-15 range
+    const seed = Math.abs(Math.sin(day * 12.9898 + day * 78.233) * 43758.5453);
+    const dailyIncrement = 5 + (seed % 11); // 5 + (0-10) = range 5-15
     organicGrowth += dailyIncrement;
   }
 
-  // Hour-based variation for realism (small fluctuation within the day)
-  const hourVariation = Math.sin(new Date().getHours() / 24 * Math.PI * 2) * 3;
+  // Start at 1100 base + accumulated daily growth
+  let baseCount = Math.floor(1100 + organicGrowth);
 
-  let baseCount = Math.floor(1500 + organicGrowth + hourVariation);
-
-  // Ensure minimum of 1500, no maximum limit
-  return Math.max(1500, baseCount);
+  // Ensure minimum of 1100, no maximum limit
+  return Math.max(1100, baseCount);
 }
 
 // Global click tracking using timestamps (survives for worker lifetime)
@@ -131,5 +131,5 @@ function getEmergencyCount() {
   const now = Date.now();
   const daysSince = Math.floor((now - baseTime) / (1000 * 60 * 60 * 24));
   const emergencyGrowth = daysSince * 10; // Conservative 10 per day
-  return 1500 + emergencyGrowth;
+  return 1100 + emergencyGrowth;
 }

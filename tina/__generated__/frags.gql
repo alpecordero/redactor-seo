@@ -31,38 +31,21 @@ fragment HomepageParts on Homepage {
       leftPart
       rightPart
     }
-    closingPhrase
+    aiStatistic
   }
   transitionMessageSection {
     __typename
     mainText
     highlightedText
     continuationText
-    secondaryText
   }
   bridgeSection {
     __typename
     title
     paragraph
-  }
-  servicesPackagesSection {
-    __typename
-    title
-    packages {
-      __typename
-      icon
-      heading
-      description
-      deliverables
-      ctaText
-      ctaLink
-    }
-    finalCta {
-      __typename
-      text
-      linkText
-      linkUrl
-    }
+    secondaryParagraph
+    tertiaryParagraph
+    closingParagraph
   }
   statsSection {
     __typename
@@ -73,6 +56,27 @@ fragment HomepageParts on Homepage {
       value
       suffix
       description
+    }
+  }
+  featuredServiceSection {
+    __typename
+    title
+    subtitle
+    benefit1
+    benefit2
+    packLabel
+    packTitle
+    features
+    originalPrice
+    currentPrice
+    savings
+    ctaText
+    ctaLink
+    alternativeServicesText
+    alternativeLinks {
+      __typename
+      text
+      url
     }
   }
   testimonialsSection {
@@ -274,14 +278,20 @@ fragment Redaccion_webParts on Redaccion_web {
     __typename
     title
     subtitle
-    price
-    currency
-    priceDescription
-    includes
-    delivery
-    format
-    ctaText
-    ctaLink
+    packages {
+      __typename
+      name
+      pages
+      price
+      currency
+      priceDescription
+      includes
+      delivery
+      format
+      ctaText
+      ctaLink
+      isPopular
+    }
   }
   faqSection {
     __typename
@@ -358,14 +368,20 @@ fragment Redaccion_estrategica_blogsParts on Redaccion_estrategica_blogs {
     __typename
     title
     subtitle
-    price
-    currency
-    priceDescription
-    includes
-    delivery
-    format
-    ctaText
-    ctaLink
+    packages {
+      __typename
+      name
+      articles
+      price
+      currency
+      priceDescription
+      includes
+      delivery
+      format
+      ctaText
+      ctaLink
+      isPopular
+    }
   }
   faqSection {
     __typename
@@ -509,6 +525,18 @@ fragment Servicios_pageParts on Servicios_page {
       ctaLink
       isPopular
     }
+    packInevitable {
+      __typename
+      packLabel
+      title
+      subtitle
+      features
+      originalPrice
+      currentPrice
+      savings
+      ctaText
+      ctaLink
+    }
     customProjects {
       __typename
       description
@@ -526,5 +554,204 @@ fragment Servicios_pageParts on Servicios_page {
       answerTitle
       answerText
     }
+  }
+}
+
+fragment Colaboraciones_agenciasParts on Colaboraciones_agencias {
+  __typename
+  seo {
+    __typename
+    title
+    description
+  }
+  hero {
+    __typename
+    subtitle
+    titlePart1
+    titlePart2
+    description
+    ctaText
+    ctaLink
+  }
+  targetSection {
+    __typename
+    title
+    yesItems
+    noItems
+    noItemsLink
+  }
+  conditionsSection {
+    __typename
+    title
+    pricing {
+      __typename
+      basePriceText
+      additionalPriceText
+      minimumText
+    }
+    conditions {
+      __typename
+      label
+      value
+    }
+  }
+  includesSection {
+    __typename
+    title
+    included
+    notIncludedTitle
+    notIncluded
+  }
+  processSection {
+    __typename
+    title
+    steps {
+      __typename
+      number
+      title
+      description
+    }
+  }
+  faqSection {
+    __typename
+    title
+    questions {
+      __typename
+      question
+      answer
+    }
+  }
+  finalCtaSection {
+    __typename
+    title
+    description
+    ctaText
+    ctaLink
+  }
+}
+
+fragment Renovar_web_y_blog_empresaParts on Renovar_web_y_blog_empresa {
+  __typename
+  seo {
+    __typename
+    title
+    description
+  }
+  hero {
+    __typename
+    subtitle
+    title
+    description
+    ctaText
+    ctaLink
+  }
+  problemSection {
+    __typename
+    title
+    content
+    keywords
+  }
+  whatIncludesSection {
+    __typename
+    title
+    webRedaction {
+      __typename
+      subtitle
+      items
+      keywords
+    }
+    strategicBlog {
+      __typename
+      subtitle
+      items
+      keywords
+    }
+    tripleOptimization {
+      __typename
+      subtitle
+      items
+      keywords
+    }
+  }
+  forWhomSection {
+    __typename
+    title
+    items
+    keywords
+  }
+  investmentSection {
+    __typename
+    title
+    comparison {
+      __typename
+      separate {
+        __typename
+        webComplete {
+          __typename
+          label
+          price
+        }
+        blogFirst {
+          __typename
+          label
+          price
+        }
+        total
+      }
+      package {
+        __typename
+        label
+        price
+      }
+      savings
+    }
+    ctaText
+    ctaLink
+    keywords
+  }
+  processSection {
+    __typename
+    title
+    steps {
+      __typename
+      number
+      title
+      duration
+      description
+    }
+    keywords
+  }
+  faqSection {
+    __typename
+    title
+    questions {
+      __typename
+      question
+      answer
+    }
+    keywords
+  }
+  resultsSection {
+    __typename
+    title
+    enabled
+    examples {
+      __typename
+      client
+      result
+    }
+    keywords
+  }
+  finalCtaSection {
+    __typename
+    title
+    description
+    price
+    priceNote
+    ctaText
+    ctaLink
+    guaranteeTitle
+    guaranteeDescription
+    features
   }
 }

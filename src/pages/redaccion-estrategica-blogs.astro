@@ -32,12 +32,13 @@ const baseUrl = 'https://redactorseo.es'
         "url": baseUrl
       },
       "areaServed": "ES",
-      "offers": {
+      "offers": pricingSection.packages.map(pkg => ({
         "@type": "Offer",
+        "name": pkg.name,
         "availability": "https://schema.org/InStock",
-        "price": `desde ${pricingSection.price}`,
+        "price": pkg.price,
         "priceCurrency": "EUR"
-      }
+      }))
     })} />
   </Fragment>
   <!-- SECCIÓN 1: Hero Hook -->
@@ -163,8 +164,8 @@ const baseUrl = 'https://redactorseo.es'
 
   <!-- SECCIÓN 5: Qué Incluye Exactamente -->
   <section class="py-20 md:py-32 lg:py-40 bg-white">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
-      <div class="text-center mb-8">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
+      <div class="text-center mb-12">
         <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
           {pricingSection.title}
         </h2>
@@ -173,40 +174,72 @@ const baseUrl = 'https://redactorseo.es'
         </p>
       </div>
 
-      <!-- Precio destacado -->
-      <div class="bg-white border-2 border-gray-200 rounded-2xl p-8 mb-12 max-w-3xl mx-auto">
-        <div class="text-center mb-8">
-          <div class="text-5xl md:text-6xl font-bold text-azul-profundo mb-4">{pricingSection.price}<span class="text-3xl md:text-4xl">{pricingSection.currency}</span></div>
-          <div class="text-xl font-semibold text-naranja-vibrante mb-6">{pricingSection.priceDescription}</div>
-        </div>
-
-        <div class="mb-8">
-          <h3 class="text-lg font-bold text-gray-900 mb-4 text-center">QUÉ INCLUYE EXACTAMENTE:</h3>
-
-          <div class="space-y-3">
-            {pricingSection.includes.map((item) => (
-              <div class="flex items-start space-x-3">
-                <svg class="w-5 h-5 text-naranja-vibrante flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                </svg>
-                <span class="text-gray-900">{item}</span>
+      <!-- Grid de 2 paquetes -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch max-w-5xl mx-auto">
+        {pricingSection.packages.map((pkg, index) => (
+          <div class={`bg-white rounded-2xl p-8 transition-all duration-300 ${
+            pkg.isPopular
+              ? 'border-2 border-naranja-vibrante shadow-2xl relative'
+              : 'border-2 border-gray-200 hover:border-gray-300 hover:shadow-lg'
+          }`}>
+            {/* Badge "Más popular" para el intensivo */}
+            {pkg.isPopular && (
+              <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                <span class="bg-naranja-vibrante text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wide">
+                  MÁS ELEGIDO
+                </span>
               </div>
-            ))}
-          </div>
-        </div>
+            )}
 
-        <div class="text-center mb-8">
-          <div class="space-y-1 text-sm text-gray-500">
-            <p><strong>ENTREGA:</strong> {pricingSection.delivery}</p>
-            <p><strong>FORMATO:</strong> {pricingSection.format}</p>
-          </div>
-        </div>
+            {/* Header del paquete */}
+            <div class="text-center mb-6">
+              <h3 class={`text-2xl font-bold mb-2 ${pkg.isPopular ? 'text-naranja-vibrante' : 'text-gray-900'}`}>
+                {pkg.name}
+              </h3>
+              <p class="text-sm text-gray-500 mb-4">{pkg.articles}</p>
+              <div class={`text-5xl font-bold mb-2 ${pkg.isPopular ? 'text-azul-profundo' : 'text-gray-900'}`}>
+                {pkg.price}<span class="text-3xl">{pkg.currency}</span>
+              </div>
+              <p class="text-sm text-gray-600">{pkg.priceDescription}</p>
+            </div>
 
-        <div class="text-center">
-          <a href={pricingSection.ctaLink} class="bg-azul-profundo text-white px-8 py-4 rounded-lg text-xl font-bold hover:bg-gray-800 hover:scale-105 transition-all duration-300 inline-block">
-            {pricingSection.ctaText}
-          </a>
-        </div>
+            {/* Características */}
+            <div class="mb-8">
+              <div class="space-y-3">
+                {pkg.includes.map((item) => (
+                  <div class="flex items-start space-x-2">
+                    <svg class="w-5 h-5 text-naranja-vibrante flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-sm text-gray-700">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Info adicional */}
+            <div class="text-center mb-6">
+              <div class="space-y-1 text-xs text-gray-500">
+                <p><strong>ENTREGA:</strong> {pkg.delivery}</p>
+                <p><strong>FORMATO:</strong> {pkg.format}</p>
+              </div>
+            </div>
+
+            {/* CTA */}
+            <div class="text-center">
+              <a
+                href={pkg.ctaLink}
+                class={`w-full inline-block px-6 py-3 rounded-lg font-bold transition-all duration-300 ${
+                  pkg.isPopular
+                    ? 'bg-naranja-vibrante text-white hover:bg-orange-600 hover:scale-105 text-lg'
+                    : 'bg-azul-profundo text-white hover:bg-gray-800 hover:scale-105'
+                }`}
+              >
+                {pkg.ctaText}
+              </a>
+            </div>
+          </div>
+        ))}
       </div>
 
     </div>

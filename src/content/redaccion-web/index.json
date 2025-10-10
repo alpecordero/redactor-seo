@@ -67,24 +67,72 @@
   },
   "pricingSection": {
     "title": "¿Cuánto cuesta tener una web que vende?",
-    "subtitle": "Redacción completa de las 5 páginas más importantes de tu web",
-    "price": "1.599",
-    "currency": "€",
-    "priceDescription": "Redacción web completa + Estrategia de contenido",
-    "includes": [
-      "Página de inicio que enganche y convierta",
-      "Página 'Sobre nosotros' que genere confianza",
-      "Página de servicios/productos que vendan",
-      "Página de contacto optimizada",
-      "Una página adicional (FAQ, testimonios, etc.)",
-      "Investigación previa de audiencia y competencia",
-      "Estrategia SEO básica integrada",
-      "2 rondas de revisiones incluidas"
-    ],
-    "delivery": "14 días laborables",
-    "format": "Textos listos para copiar y pegar + Documento estratégico",
-    "ctaText": "Renovar mi web →",
-    "ctaLink": "/contacto"
+    "subtitle": "Elige el paquete que mejor se adapte a tu negocio",
+    "packages": [
+      {
+        "name": "Esencial",
+        "pages": "3 páginas",
+        "price": "950",
+        "currency": "€",
+        "priceDescription": "Para empezar con lo básico",
+        "includes": [
+          "Página de inicio que enganche",
+          "Página 'Sobre nosotros' o Servicios",
+          "Página de contacto optimizada",
+          "Investigación de audiencia",
+          "SEO básico integrado",
+          "1 ronda de revisiones"
+        ],
+        "delivery": "7 días laborables",
+        "format": "Textos listos para copiar y pegar",
+        "ctaText": "Empezar →",
+        "ctaLink": "/contacto",
+        "isPopular": false
+      },
+      {
+        "name": "Completo",
+        "pages": "5 páginas",
+        "price": "1.450",
+        "currency": "€",
+        "priceDescription": "El más elegido para webs profesionales",
+        "includes": [
+          "Página de inicio que enganche y convierta",
+          "Página 'Sobre nosotros' que genere confianza",
+          "Página de servicios/productos que vendan",
+          "Página de contacto optimizada",
+          "Una página adicional (FAQ, testimonios, etc.)",
+          "Investigación previa de audiencia y competencia",
+          "Estrategia SEO básica integrada",
+          "2 rondas de revisiones incluidas"
+        ],
+        "delivery": "14 días laborables",
+        "format": "Textos listos para copiar y pegar + Documento estratégico",
+        "ctaText": "Renovar mi web →",
+        "ctaLink": "/contacto",
+        "isPopular": true
+      },
+      {
+        "name": "Premium",
+        "pages": "8 páginas",
+        "price": "1.950",
+        "currency": "€",
+        "priceDescription": "Para webs completas y ambiciosas",
+        "includes": [
+          "Todo lo del paquete Completo +",
+          "2 páginas adicionales estratégicas",
+          "Análisis competencia en profundidad",
+          "Estrategia SEO avanzada",
+          "Guía de tono de voz de marca",
+          "3 rondas de revisiones",
+          "Consultoría estratégica incluida"
+        ],
+        "delivery": "21 días laborables",
+        "format": "Textos + Documento estratégico + Guía de marca",
+        "ctaText": "Ir a lo grande →",
+        "ctaLink": "/contacto",
+        "isPopular": false
+      }
+    ]
   },
   "faqSection": {
     "title": "Preguntas frecuentes",
@@ -121,7 +169,7 @@
       "Textos listos para implementar",
       "Garantía 100% satisfacción"
     ],
-    "price": "1.599",
+    "price": "1.399",
     "currency": "€",
     "priceNote": "(Entrega garantizada en 14 días laborables)",
     "ctaText": "SÍ, quiero una web que venda →",

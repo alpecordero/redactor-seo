@@ -437,3 +437,113 @@ query servicios_pageConnection($before: String, $after: String, $first: Float, $
     }
   }
 }
+
+query colaboraciones_agencias($relativePath: String!) {
+  colaboraciones_agencias(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...Colaboraciones_agenciasParts
+  }
+}
+
+query colaboraciones_agenciasConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: Colaboraciones_agenciasFilter) {
+  colaboraciones_agenciasConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...Colaboraciones_agenciasParts
+      }
+    }
+  }
+}
+
+query renovar_web_y_blog_empresa($relativePath: String!) {
+  renovar_web_y_blog_empresa(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...Renovar_web_y_blog_empresaParts
+  }
+}
+
+query renovar_web_y_blog_empresaConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: Renovar_web_y_blog_empresaFilter) {
+  renovar_web_y_blog_empresaConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...Renovar_web_y_blog_empresaParts
+      }
+    }
+  }
+}

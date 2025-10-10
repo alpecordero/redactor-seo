@@ -1,0 +1,258 @@
+---
+import Layout from '../layouts/Layout.astro'
+
+// Import colaboraciones-agencias content from JSON file
+import colaboracionesContent from '../content/colaboraciones-agencias/index.json'
+
+const {
+  hero,
+  targetSection,
+  conditionsSection,
+  includesSection,
+  processSection,
+  faqSection,
+  finalCtaSection
+} = colaboracionesContent
+
+const baseUrl = 'https://redactorseo.es'
+---
+
+<Layout title={colaboracionesContent.seo.title} description={colaboracionesContent.seo.description}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Redacción SEO B2B",
+      "name": "Redactor SEO para Agencias de Marketing",
+      "description": "Servicio de redacción SEO para agencias. Ejecución sin estrategia previa. Colaboraciones B2B recurrentes.",
+      "url": `${baseUrl}/colaboraciones-agencias`,
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "Redactor SEO",
+        "url": baseUrl
+      },
+      "areaServed": "ES"
+    })} />
+  </Fragment>
+
+  <!-- SECCIÓN 1: Hero -->
+  <section class="relative py-16 md:py-20 lg:py-24 bg-white overflow-hidden">
+    <!-- Subtle background elements -->
+    <div class="absolute inset-0">
+      <div class="absolute top-20 right-20 w-32 h-32 bg-gray-50 rounded-full -z-10"></div>
+      <div class="absolute bottom-32 left-16 w-20 h-20 bg-naranja-vibrante/5 rounded-full -z-10"></div>
+    </div>
+
+    <div class="relative px-4 sm:px-6 lg:px-12 xl:px-16 w-full">
+      <div class="max-w-3xl mx-auto text-center">
+        <!-- Subtitle -->
+        <div class="mb-8 lg:mb-12">
+          <p class="text-sm font-medium tracking-wide text-gray-500 uppercase">{hero.subtitle}</p>
+        </div>
+
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-8 lg:mb-12">
+          {hero.titlePart1}
+          <span class="block text-naranja-vibrante mt-4">{hero.titlePart2}</span>
+        </h1>
+
+        <p class="text-xl md:text-2xl text-gray-600 leading-relaxed mb-12 lg:mb-16 max-w-2xl mx-auto">
+          {hero.description}
+        </p>
+
+        <a href={hero.ctaLink} class="bg-azul-profundo text-white px-10 py-5 rounded-lg text-xl font-bold hover:bg-gray-800 hover:scale-105 transition-all duration-300 inline-block shadow-lg">
+          {hero.ctaText}
+        </a>
+
+        <!-- Flecha de scroll -->
+        <div class="mt-16 mb-0 flex justify-center">
+          <div class="animate-bounce">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-naranja-vibrante">
+              <path d="M7 13L12 18L17 13M12 6V17" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 2: ¿Es para tu agencia? -->
+  <section class="py-20 md:py-32 lg:py-40 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
+      <div class="text-center">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-12">
+          {targetSection.title}
+        </h2>
+
+        <div class="space-y-6 max-w-3xl mx-auto text-left">
+          {targetSection.yesItems.map((item) => (
+            <div class="flex items-start gap-4">
+              <span class="text-2xl flex-shrink-0">✅</span>
+              <p class="text-lg text-gray-700 pt-1">{item}</p>
+            </div>
+          ))}
+
+          <div class="my-8 border-t border-gray-300"></div>
+
+          {targetSection.noItems.map((item, index) => (
+            <div class="flex items-start gap-4">
+              <span class="text-2xl flex-shrink-0">❌</span>
+              <p class="text-lg text-gray-700 pt-1">
+                {index === 1 ? (
+                  <span set:html={item.replace('/redaccion-web', `<a href="${targetSection.noItemsLink}" class="text-naranja-vibrante hover:underline">servicio completo</a>`)}></span>
+                ) : (
+                  item
+                )}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 3: Condiciones de colaboración -->
+  <section class="py-20 md:py-32 lg:py-40 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-12">
+          {conditionsSection.title}
+        </h2>
+
+        <!-- Precio destacado -->
+        <div class="bg-naranja-vibrante/10 border-2 border-naranja-vibrante rounded-2xl p-12 mb-12 max-w-2xl mx-auto">
+          <div class="space-y-6 text-center">
+            <p class="text-3xl md:text-4xl font-bold text-azul-profundo leading-tight">
+              {conditionsSection.pricing.basePriceText}
+            </p>
+            <p class="text-xl md:text-2xl text-gray-600">
+              {conditionsSection.pricing.additionalPriceText}
+            </p>
+          </div>
+        </div>
+
+        <!-- Lista de condiciones -->
+        <div class="max-w-2xl mx-auto space-y-4 text-left">
+          {conditionsSection.conditions.map((condition) => (
+            <div class="flex items-center gap-4 pb-3 border-b border-gray-200">
+              <strong class="text-gray-900 min-w-[140px]">{condition.label}:</strong>
+              <span class="text-gray-700">{condition.value}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 4: Qué incluye -->
+  <section class="py-20 md:py-32 lg:py-40 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-12">
+          {includesSection.title}
+        </h2>
+
+        <!-- Qué incluye -->
+        <div class="space-y-6 max-w-3xl mx-auto text-left mb-12">
+          {includesSection.included.map((item) => (
+            <div class="flex items-start gap-4">
+              <svg class="w-6 h-6 text-naranja-vibrante flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <p class="text-lg text-gray-700">{item}</p>
+            </div>
+          ))}
+        </div>
+
+        <!-- Qué NO incluye -->
+        <div class="bg-white rounded-2xl p-8 border-2 border-gray-200 max-w-3xl mx-auto">
+          <h3 class="text-xl font-bold text-gray-900 mb-6">{includesSection.notIncludedTitle}</h3>
+          <div class="space-y-4 text-left">
+            {includesSection.notIncluded.map((item) => (
+              <div class="flex items-start gap-4">
+                <svg class="w-6 h-6 text-gray-400 flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+                <p class="text-lg text-gray-600">{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 5: Cómo trabajamos -->
+  <section class="py-20 md:py-32 lg:py-40 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-12">
+          {processSection.title}
+        </h2>
+
+        <div class="space-y-8 max-w-3xl mx-auto">
+          {processSection.steps.map((step) => (
+            <div class="flex items-start gap-6 text-left">
+              <div class="flex-shrink-0 w-12 h-12 bg-naranja-vibrante rounded-full flex items-center justify-center">
+                <span class="text-white font-bold text-xl">{step.number}</span>
+              </div>
+              <div class="flex-1 pt-2">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                  {step.title} <span class="font-normal text-gray-700">{step.description}</span>
+                </h3>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 6: Preguntas frecuentes -->
+  <section class="py-20 md:py-32 lg:py-40 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          {faqSection.title}
+        </h2>
+      </div>
+
+      <div class="space-y-4 max-w-3xl mx-auto">
+        {faqSection.questions.map((faq) => (
+          <details class="bg-white rounded-lg border border-gray-200 overflow-hidden group">
+            <summary class="flex justify-between items-center p-6 cursor-pointer">
+              <h3 class="text-lg font-semibold text-gray-900">
+                {faq.question}
+              </h3>
+              <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-6 pb-6">
+              <p class="text-gray-600 leading-relaxed" set:html={faq.answer}></p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 7: CTA Final -->
+  <section class="py-20 md:py-32 lg:py-40 bg-black text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">{finalCtaSection.title}</h2>
+      <p class="text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto mb-8">
+        {finalCtaSection.description}
+      </p>
+
+      <a href={finalCtaSection.ctaLink} class="inline-flex items-center bg-naranja-vibrante text-white px-8 py-4 rounded-xl text-xl font-bold hover:bg-orange-600 hover:scale-105 transition-all duration-300">
+        {finalCtaSection.ctaText}
+      </a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .prose {
+    max-width: none;
+  }
+</style>

@@ -67,24 +67,50 @@
   },
   "pricingSection": {
     "title": "¿Cuánto cuesta convertirse en referente?",
-    "subtitle": "Estrategia de contenido completa + 8 artículos estratégicos mensuales",
-    "price": "2.995",
-    "currency": "€",
-    "priceDescription": "Estrategia de blog + 8 artículos mensuales durante 3 meses",
-    "includes": [
-      "Estrategia de contenido personalizada (keyword research + calendar)",
-      "8 artículos estratégicos mensuales (2.400-3.000 palabras cada uno)",
-      "Optimización SEO avanzada en cada pieza",
-      "Distribución y promoción en redes sociales",
-      "Análisis mensual de rendimiento y ajustes",
-      "Templates reutilizables para tu equipo",
-      "Consulta estratégica mensual de seguimiento",
-      "Garantía de mejora en posicionamiento y tráfico"
-    ],
-    "delivery": "3 meses de trabajo continuado",
-    "format": "8 artículos mensuales + estrategia + seguimiento personalizado",
-    "ctaText": "Ser el referente →",
-    "ctaLink": "/contacto"
+    "subtitle": "Elige el ritmo que mejor se adapte a tu estrategia",
+    "packages": [
+      {
+        "name": "Estándar",
+        "articles": "2 artículos",
+        "price": "399",
+        "currency": "€",
+        "priceDescription": "Para empezar con contenido estratégico",
+        "includes": [
+          "Estrategia de contenido inicial",
+          "2 artículos mensuales (2.000-2.500 palabras)",
+          "Optimización SEO completa",
+          "Calendario editorial",
+          "Investigación de palabras clave",
+          "1 ronda de revisiones por artículo"
+        ],
+        "delivery": "Entrega continua cada mes",
+        "format": "2 artículos listos para publicar + calendario",
+        "ctaText": "Empezar →",
+        "ctaLink": "/contacto",
+        "isPopular": false
+      },
+      {
+        "name": "Intensivo",
+        "articles": "4 artículos",
+        "price": "599",
+        "currency": "€",
+        "priceDescription": "Para posicionarte rápidamente",
+        "includes": [
+          "Estrategia de contenido completa",
+          "4 artículos mensuales (2.000-2.500 palabras)",
+          "Optimización SEO avanzada",
+          "Calendario editorial estratégico",
+          "Análisis de competencia",
+          "Guía de enlazado interno",
+          "2 rondas de revisiones por artículo"
+        ],
+        "delivery": "Entrega continua cada mes",
+        "format": "4 artículos + estrategia + análisis mensual",
+        "ctaText": "Acelerar →",
+        "ctaLink": "/contacto",
+        "isPopular": true
+      }
+    ]
   },
   "faqSection": {
     "title": "Preguntas frecuentes",
@@ -109,23 +135,22 @@
   },
   "finalCtaSection": {
     "guaranteeEmoji": "💯",
-    "guaranteeTitle": "Garantía de Resultados",
-    "guaranteeDescription": "Si en 3 meses no mejora significativamente tu posicionamiento y la calidad de leads de tu blog, **trabajamos un mes adicional gratis** hasta conseguir los resultados prometidos.",
-    "title": "Lo que consigues en 3 meses:",
+    "guaranteeTitle": "Garantía de Satisfacción Total",
+    "guaranteeDescription": "Si en el primer mes no estás completamente satisfecho con la calidad del contenido, **te devuelvo el 100% de tu inversión.** Sin preguntas ni excusas.",
+    "title": "Todo lo que necesitas para posicionarte:",
     "features": [
-      "24 artículos estratégicos posicionando",
-      "Autoridad reconocida en tu nicho",
-      "Tráfico cualificado constante",
-      "Leads de mayor calidad",
-      "Estrategia escalable para tu equipo",
-      "Posicionamiento SEO mejorado",
-      "Sistema replicable post-proyecto"
+      "Contenido estratégico mensual",
+      "Artículos optimizados para SEO",
+      "Calendario editorial incluido",
+      "Investigación de palabras clave",
+      "Contenido 100% humano",
+      "Revisiones hasta aprobación"
     ],
-    "price": "2.995",
+    "price": "599",
     "currency": "€",
-    "priceNote": "(Facturación mensual durante 3 meses)",
-    "ctaText": "SÍ, quiero dominar mi nicho →",
+    "priceNote": "(Facturación mensual - Cancela cuando quieras)",
+    "ctaText": "SÍ, quiero posicionarme →",
     "ctaLink": "/contacto",
-    "securityNote": "Pago mensual. Cancelas cuando quieras. Garantía de resultados."
+    "securityNote": "Pago mensual. Cancelas cuando quieras. Garantía total."
   }
 }

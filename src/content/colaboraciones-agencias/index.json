@@ -1,0 +1,123 @@
+{
+  "seo": {
+    "title": "Redactor SEO para Agencias de Marketing",
+    "description": "Servicio de redacción SEO para agencias. Ejecución sin estrategia previa. Mínimo 5 páginas por proyecto. Colaboraciones B2B recurrentes y fiables."
+  },
+  "hero": {
+    "subtitle": "COLABORACIONES B2B",
+    "titlePart1": "Redactor SEO para",
+    "titlePart2": "Agencias de Marketing",
+    "description": "Ejecución sin estrategia previa",
+    "ctaText": "Solicitar colaboración →",
+    "ctaLink": "/contacto"
+  },
+  "targetSection": {
+    "title": "¿Es para tu agencia?",
+    "yesItems": [
+      "Tienes clientes que necesitan contenido web mensualmente",
+      "Tú haces la estrategia, necesitas quien ejecute la redacción",
+      "Buscas volumen recurrente (mínimo 5 páginas por proyecto)",
+      "Necesitas calidad SEO sin microgestión"
+    ],
+    "noItems": [
+      "Buscas proyectos puntuales de pocas páginas",
+      "Necesitas estrategia + redacción (ver servicio completo)"
+    ],
+    "noItemsLink": "/redaccion-web"
+  },
+  "conditionsSection": {
+    "title": "Condiciones de colaboración",
+    "pricing": {
+      "basePriceText": "110€ por página (hasta 600 palabras)",
+      "additionalPriceText": "+50€ por cada 300 palabras adicionales",
+      "minimumText": "Mínimo: 5 páginas por proyecto"
+    },
+    "conditions": [
+      {
+        "label": "Mínimo",
+        "value": "5 páginas por proyecto"
+      },
+      {
+        "label": "Plazos",
+        "value": "15-20 días hábiles"
+      },
+      {
+        "label": "Revisiones",
+        "value": "1 ronda incluida"
+      }
+    ]
+  },
+  "includesSection": {
+    "title": "Qué incluyo",
+    "included": [
+      "Redacción SEO optimizada según tu brief",
+      "Optimización on-page básica (title, meta, headings)",
+      "Legibilidad para IAs (estructura clara)",
+      "Entrega en formato que indiques (Google Docs, Word, CMS)"
+    ],
+    "notIncludedTitle": "Qué NO incluyo (tú lo gestionas):",
+    "notIncluded": [
+      "Estrategia de contenido ni keyword research",
+      "Auditorías ni análisis competencia",
+      "Reuniones de alineación",
+      "Schemas ni optimización técnica avanzada"
+    ]
+  },
+  "processSection": {
+    "title": "Cómo trabajamos",
+    "steps": [
+      {
+        "number": "1",
+        "title": "Primer contacto:",
+        "description": "Defines volumen del proyecto (mínimo 5 páginas)"
+      },
+      {
+        "number": "2",
+        "title": "Cada mes:",
+        "description": "Me envías briefs con keywords y referencias"
+      },
+      {
+        "number": "3",
+        "title": "Yo ejecuto:",
+        "description": "Redacción + optimización según especificaciones"
+      },
+      {
+        "number": "4",
+        "title": "Entregas escalonadas:",
+        "description": "No todo el último día, entregas semanales"
+      },
+      {
+        "number": "5",
+        "title": "1 revisión:",
+        "description": "Ajustes en 48h"
+      }
+    ]
+  },
+  "faqSection": {
+    "title": "Preguntas frecuentes de agencias",
+    "questions": [
+      {
+        "question": "¿Cuál es el mínimo de páginas por proyecto?",
+        "answer": "El mínimo son 5 páginas por proyecto para que sea rentable para ambos."
+      },
+      {
+        "question": "¿Haces estrategia o solo redacción?",
+        "answer": "Solo redacción. Si tu cliente necesita estrategia completa, revisa mi <a href=\"/redaccion-web\">servicio directo</a>."
+      },
+      {
+        "question": "¿Trabajas bajo NDA?",
+        "answer": "Sí, sin problema. Puedes usar mi trabajo como white label."
+      },
+      {
+        "question": "¿Cómo funcionan las páginas con más de 600 palabras?",
+        "answer": "El precio base cubre hasta 600 palabras. Por cada 300 palabras adicionales (o fracción), se añaden 50€. Ejemplo: una página de 900 palabras costaría 160€ (110€ + 50€)."
+      }
+    ]
+  },
+  "finalCtaSection": {
+    "title": "¿Hablamos?",
+    "description": "Si tu agencia necesita un colaborador fiable para contenido recurrente, cuéntame tu caso.",
+    "ctaText": "Solicitar colaboración",
+    "ctaLink": "/contacto"
+  }
+}
