@@ -13,7 +13,7 @@
     "tinacms:admin": "tinacms admin"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.1.13",
+    "@tailwindcss/vite": "^4.1.14",
     "@tinacms/cli": "^1.10.2",
     "astro": "^5.13.7",
     "tailwindcss": "^4.1.13",
