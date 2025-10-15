@@ -7,61 +7,111 @@
     "subtitle": "COLABORACIONES B2B",
     "titlePart1": "Redactor SEO para",
     "titlePart2": "Agencias de Marketing",
-    "description": "Ejecución sin estrategia previa",
-    "ctaText": "Solicitar colaboración →",
+    "description": "Tus clientes esperan textos a la altura de tu agencia. ChatGPT, Gemini o Grok no te los van a dar.",
+    "ctaText": "Solicita colaboración",
     "ctaLink": "/contacto"
   },
   "targetSection": {
     "title": "¿Es para tu agencia?",
-    "yesItems": [
-      "Tienes clientes que necesitan contenido web mensualmente",
-      "Tú haces la estrategia, necesitas quien ejecute la redacción",
-      "Buscas volumen recurrente (mínimo 5 páginas por proyecto)",
-      "Necesitas calidad SEO sin microgestión"
+    "intro": "Trabajo con agencias de marketing que buscan copywriting y redacción profesional. Si cumples estos 5 requisitos, quizá podamos colaborar:",
+    "requirements": [
+      {
+        "title": "Mínimo 625€ por proyecto",
+        "subtitle": "(5 páginas)",
+        "description": "Proyectos más pequeños no son rentables ni para tu agencia ni para mí."
+      },
+      {
+        "title": "Briefing + keywords",
+        "description": "Tu agencia se encarga de la parte estratégica. Yo creo los textos para que conviertan, posicionen y convenzan a tu cliente."
+      },
+      {
+        "title": "Pago 50/50",
+        "description": "Cobro un 50% por adelantado y otro 50% a la finalización del proyecto."
+      },
+      {
+        "title": "Plazos realistas",
+        "subtitle": "(de 10 a 15 días)",
+        "description": "Trabajo con agencias que manejan plazos coherentes. No hago trabajos \"para ayer\"."
+      },
+      {
+        "title": "Colaboración recurrente",
+        "description": "Acepto encargos puntuales, pero priorizo las agencias de marketing que tienen un flujo constante de textos."
+      }
     ],
-    "noItems": [
-      "Buscas proyectos puntuales de pocas páginas",
-      "Necesitas estrategia + redacción (ver servicio completo)"
-    ],
-    "noItemsLink": "/redaccion-web"
-  },
-  "conditionsSection": {
-    "title": "Condiciones de colaboración",
-    "pricing": {
-      "basePriceText": "110€ por página (hasta 600 palabras)",
-      "additionalPriceText": "+50€ por cada 300 palabras adicionales",
-      "minimumText": "Mínimo: 5 páginas por proyecto"
+    "disclaimer": {
+      "text1": "¿Cumples con los cinco puntos anteriores?"
     },
-    "conditions": [
+    "ctaButtonText": "Sí, mi agencia cumple",
+    "ctaLink": "/contacto"
+  },
+  "workflowSection": {
+    "title": "¿Cómo trabajo?",
+    "intro": "Tu cliente no tiene por qué saber que delegas la redacción de los textos. Trabajo bajo acuerdos de confidencialidad. El proceso es el siguiente:\n\n",
+    "steps": [
       {
-        "label": "Mínimo",
-        "value": "5 páginas por proyecto"
+        "number": "1",
+        "title": "Hablamos de tu proyecto",
+        "description": "El estilo del proyecto que tienes entre manos, el número de páginas y todos los detalles que consideres importantes."
       },
       {
-        "label": "Plazos",
-        "value": "15-20 días hábiles"
+        "number": "2",
+        "title": "Te confirmo plazo y precio",
+        "description": "Si aceptas, recibes la factura del 50% para arrancar."
       },
       {
-        "label": "Revisiones",
-        "value": "1 ronda incluida"
+        "number": "3",
+        "title": "Me envías briefing",
+        "description": "Cliente, sector, keywords objetivo, tono deseado, referencias (si las hay). Cuanto más claro, mejor será el resultado."
+      },
+      {
+        "number": "4",
+        "title": "Programo las entregas escalonadamente",
+        "description": "Recibirás los textos progresivamente para que puedas avanzar en el proyecto. Lo haré en el formato que prefieras, y adaptándome al diseño web, para que solo tengas que copiar y pegar en la web del cliente."
+      },
+      {
+        "number": "5",
+        "title": "Ajustes",
+        "description": "¿Algo no te convence? Hago los ajustes necesarios en un plazo de 48 horas. Por último, envío la factura final del 50% restante."
       }
     ]
   },
-  "includesSection": {
-    "title": "Qué incluyo",
-    "included": [
-      "Redacción SEO optimizada según tu brief",
-      "Optimización on-page básica (title, meta, headings)",
-      "Legibilidad para IAs (estructura clara)",
-      "Entrega en formato que indiques (Google Docs, Word, CMS)"
+  "conditionsSection": {
+    "title": "Precios para agencias",
+    "basePrice": "125",
+    "currency": "€",
+    "priceDescription": "por página",
+    "priceSubtext": "hasta 1.000 palabras",
+    "conditions": [
+      {
+        "title": "Páginas extensas",
+        "description": "+1.000 palabras: 185€"
+      },
+      {
+        "title": "Mínimo proyecto",
+        "description": "5 páginas (625€)"
+      }
     ],
-    "notIncludedTitle": "Qué NO incluyo (tú lo gestionas):",
+    "ctaLink": "/contacto",
+    "ctaText": "Pide presupuesto",
+    "ctaSubtext": "Respondo en menos de 24 horas con el precio exacto"
+  },
+  "includesSection": {
+    "heading": "¿Qué incluye el servicio?",
+    "title": "Lo que sí incluye",
+    "included": [
+      "Redacción SEO optimizada según tu briefing",
+      "Optimización on-page (title, meta description, estructura H1-H3)",
+      "Estructura para legibilidad de IAs",
+      "Entrega en el formato que necesites"
+    ],
+    "notIncludedTitle": "Lo que no incluye*",
     "notIncluded": [
-      "Estrategia de contenido ni keyword research",
+      "Estrategia de contenido y keyword research",
       "Auditorías ni análisis competencia",
-      "Reuniones de alineación",
-      "Schemas ni optimización técnica avanzada"
-    ]
+      "Reuniones (briefing por escrito)",
+      "Imágenes"
+    ],
+    "clarification": "* La parte estratégica corre a cargo de tu agencia. Si además de redacción necesitas esa parte de estrategia consulta mi servicio para clientes finales."
   },
   "processSection": {
     "title": "Cómo trabajamos",
@@ -94,30 +144,50 @@
     ]
   },
   "faqSection": {
-    "title": "Preguntas frecuentes de agencias",
+    "title": "Preguntas frecuentes",
     "questions": [
       {
         "question": "¿Cuál es el mínimo de páginas por proyecto?",
-        "answer": "El mínimo son 5 páginas por proyecto para que sea rentable para ambos."
+        "answer": "El mínimo son cinco páginas por proyecto."
       },
       {
         "question": "¿Haces estrategia o solo redacción?",
         "answer": "Solo redacción. Si tu cliente necesita estrategia completa, revisa mi <a href=\"/redaccion-web\">servicio directo</a>."
       },
       {
-        "question": "¿Trabajas bajo NDA?",
-        "answer": "Sí, sin problema. Puedes usar mi trabajo como white label."
+        "question": "¿Cuántas palabras se incluyen en el precio?",
+        "answer": "El precio base cubre el trabajo profesional de redacción SEO hasta 1.000 palabras."
       },
       {
-        "question": "¿Cómo funcionan las páginas con más de 600 palabras?",
-        "answer": "El precio base cubre hasta 600 palabras. Por cada 300 palabras adicionales (o fracción), se añaden 50€. Ejemplo: una página de 900 palabras costaría 160€ (110€ + 50€)."
+        "question": "¿Redactas páginas de servicios o landings más amplias?",
+        "answer": "Sí, las agencias suelen demandar la creación de textos optimizados para landings de 1.200 o 1.500 palabras. El precio entre 1.000 y 1.500 palabras es de 185€."
+      },
+      {
+        "question": "¿Por qué una página de contacto cuesta lo mismo que una más amplia?",
+        "answer": "Una página de contacto requiere estrategia, estructura, tono y optimización. Su importancia es mayúscula. Cobro lo mismo porque aumentará las conversiones de tu cliente y será el broche de oro para tu agencia de marketing."
+      },
+      {
+        "question": "¿Por qué tus precios son más altos que los de otros redactores?",
+        "answer": "Aporto experiencia SEO demostrable. Tú mismo puedes comprobar el posicionamiento de esta web desde sus inicios (estable en el top 1 de Google y recomendada por las IAs). Además, cumplo plazos y entrego calidad que no te hace quedar mal con tu cliente. No necesitas supervisar cada palabra ni comprobar si he usado ChatGPT. La profesionalidad te ahorra tiempo y dolores de cabeza."
+      },
+      {
+        "question": "¿Envías factura? ¿El IVA está incluido?",
+        "answer": "Sí, envío factura. El precio base no incluye el IVA."
+      },
+      {
+        "question": "¿Cuántas revisiones incluyes?",
+        "answer": "Una ronda de ajustes razonables en 48h. Esto cubre cambios de enfoque, ajustes de tono o correcciones. No cubre la reescritura completa por un cambio de criterio del cliente final (ejemplo: \"ahora quiere otro enfoque totalmente diferente\"), esos casos se cobran aparte."
+      },
+      {
+        "question": "¿Haces artículos de blog para agencias?",
+        "answer": "Sí, pero en los artículos de blog soy aún más selectivo. Si tu agencia necesita 20 artículos al mes de 1.000 palabras no soy el redactor que necesitas. Si buscas artículos estratégicos, escríbeme y hablamos de las condiciones."
       }
     ]
   },
   "finalCtaSection": {
-    "title": "¿Hablamos?",
-    "description": "Si tu agencia necesita un colaborador fiable para contenido recurrente, cuéntame tu caso.",
-    "ctaText": "Solicitar colaboración",
+    "title": "Quedarás bien con tu cliente",
+    "description": "Si tu agencia necesita un colaborador fiable para crear contenido recurrente y cumples los criterios que expliqué arriba, pincha en este botón:",
+    "ctaText": "Hablemos de tu cliente",
     "ctaLink": "/contacto"
   }
 }

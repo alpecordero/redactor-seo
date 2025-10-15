@@ -7,9 +7,9 @@ import colaboracionesContent from '../content/colaboraciones-agencias/index.json
 const {
   hero,
   targetSection,
+  workflowSection,
   conditionsSection,
   includesSection,
-  processSection,
   faqSection,
   finalCtaSection
 } = colaboracionesContent
@@ -77,133 +77,210 @@ const baseUrl = 'https://redactorseo.es'
 
   <!-- SECCIÓN 2: ¿Es para tu agencia? -->
   <section class="py-20 md:py-32 lg:py-40 bg-gray-50">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
-      <div class="text-center">
-        <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-12">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
+
+      <!-- Título e intro -->
+      <div class="mb-20 text-center">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-6">
           {targetSection.title}
         </h2>
+        <p class="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
+          {targetSection.intro}
+        </p>
+      </div>
 
-        <div class="space-y-6 max-w-3xl mx-auto text-left">
-          {targetSection.yesItems.map((item) => (
-            <div class="flex items-start gap-4">
-              <span class="text-2xl flex-shrink-0">✅</span>
-              <p class="text-lg text-gray-700 pt-1">{item}</p>
+      <!-- Requisitos - Lista minimalista con fondo blanco -->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 mb-20 overflow-hidden">
+        {targetSection.requirements.map((req, index) => (
+          <div class="py-7 px-8 border-b border-gray-100 last:border-b-0 hover:bg-gray-50 transition-colors">
+            <div class="flex items-start gap-5">
+              <span class="text-gray-400 font-semibold text-base flex-shrink-0 w-7">
+                {index + 1}.
+              </span>
+              <div class="flex-1">
+                <h3 class="text-lg font-bold text-gray-900 mb-1.5">
+                  {req.title}
+                  {req.subtitle && <span class="text-gray-500 font-normal"> {req.subtitle}</span>}
+                </h3>
+                <p class="text-base text-gray-600 leading-relaxed">
+                  {req.description}
+                </p>
+              </div>
             </div>
-          ))}
+          </div>
+        ))}
+      </div>
 
-          <div class="my-8 border-t border-gray-300"></div>
+      <!-- Disclaimer minimalista -->
+      <div class="mb-16 text-center">
+        <p class="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
+          {targetSection.disclaimer.text1}
+        </p>
+      </div>
 
-          {targetSection.noItems.map((item, index) => (
-            <div class="flex items-start gap-4">
-              <span class="text-2xl flex-shrink-0">❌</span>
-              <p class="text-lg text-gray-700 pt-1">
-                {index === 1 ? (
-                  <span set:html={item.replace('/redaccion-web', `<a href="${targetSection.noItemsLink}" class="text-naranja-vibrante hover:underline">servicio completo</a>`)}></span>
-                ) : (
-                  item
-                )}
+      <!-- CTA -->
+      <div class="text-center">
+        <a
+          href={targetSection.ctaLink}
+          class="bg-azul-profundo text-white px-10 py-5 rounded-lg text-xl font-bold hover:bg-gray-800 hover:scale-105 transition-all duration-300 inline-block shadow-lg"
+        >
+          {targetSection.ctaButtonText}
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECCIÓN 3: Cómo trabajamos -->
+  <section class="py-20 md:py-32 lg:py-40 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
+
+      <!-- Título e intro -->
+      <div class="mb-16 text-center">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-6">
+          {workflowSection.title}
+        </h2>
+        <p class="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
+          {workflowSection.intro}
+        </p>
+      </div>
+
+      <!-- Lista de pasos minimalista -->
+      <div class="space-y-6 max-w-2xl mx-auto">
+        {workflowSection.steps.map((step, index) => (
+          <div class="group">
+            <div class="flex items-start gap-5">
+              <div class="flex-shrink-0 w-8 h-8 rounded-md bg-gray-100 flex items-center justify-center text-gray-900 font-bold text-base border border-gray-200 group-hover:border-gray-300 transition-colors">
+                {step.number}
+              </div>
+              <div class="flex-1">
+                <h3 class="text-lg font-semibold text-gray-900 mb-1.5">
+                  {step.title}
+                </h3>
+                <p class="text-base text-gray-600 leading-relaxed">
+                  {step.description}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECCIÓN 4: Precios para agencias -->
+  <section class="py-20 md:py-32 lg:py-40 bg-gray-50">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
+
+      <!-- Título -->
+      <div class="mb-16 text-center">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900">
+          {conditionsSection.title}
+        </h2>
+      </div>
+
+      <!-- Tarjeta de precio principal -->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 py-10 px-8 mb-16">
+        <!-- Precio principal -->
+        <div class="text-center mb-8">
+          <div class="mb-3">
+            <span class="text-6xl md:text-7xl font-bold text-gray-900">{conditionsSection.basePrice}</span>
+            <span class="text-4xl md:text-[2.75rem] font-bold text-gray-900 align-baseline">{conditionsSection.currency}</span>
+          </div>
+          <p class="text-xl font-medium text-gray-700 mb-2">
+            {conditionsSection.priceDescription}
+          </p>
+          <p class="text-sm text-gray-500">
+            {conditionsSection.priceSubtext}
+          </p>
+        </div>
+
+        <!-- Grid de condiciones -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-8 border-t border-gray-100">
+          {conditionsSection.conditions.map((condition, index) => (
+            <div class={`text-center md:border-l md:border-gray-200 md:pl-6 ${index === 0 ? 'md:first:border-l-0 md:first:pl-0' : ''}`}>
+              <h4 class="text-base font-bold text-gray-900 mb-1.5">
+                {condition.title}
+              </h4>
+              <p class="text-sm text-gray-600">
+                {condition.description}
               </p>
             </div>
           ))}
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- SECCIÓN 3: Condiciones de colaboración -->
-  <section class="py-20 md:py-32 lg:py-40 bg-white">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-12">
-          {conditionsSection.title}
-        </h2>
-
-        <!-- Precio destacado -->
-        <div class="bg-naranja-vibrante/10 border-2 border-naranja-vibrante rounded-2xl p-12 mb-12 max-w-2xl mx-auto">
-          <div class="space-y-6 text-center">
-            <p class="text-3xl md:text-4xl font-bold text-azul-profundo leading-tight">
-              {conditionsSection.pricing.basePriceText}
-            </p>
-            <p class="text-xl md:text-2xl text-gray-600">
-              {conditionsSection.pricing.additionalPriceText}
-            </p>
-          </div>
-        </div>
-
-        <!-- Lista de condiciones -->
-        <div class="max-w-2xl mx-auto space-y-4 text-left">
-          {conditionsSection.conditions.map((condition) => (
-            <div class="flex items-center gap-4 pb-3 border-b border-gray-200">
-              <strong class="text-gray-900 min-w-[140px]">{condition.label}:</strong>
-              <span class="text-gray-700">{condition.value}</span>
-            </div>
-          ))}
-        </div>
+      <!-- CTA -->
+      <div class="text-center">
+        <a
+          href={conditionsSection.ctaLink}
+          class="bg-azul-profundo text-white px-10 py-5 rounded-lg text-xl font-bold hover:bg-gray-800 hover:scale-105 transition-all duration-300 inline-block shadow-lg"
+        >
+          {conditionsSection.ctaText}
+        </a>
+        <p class="text-sm text-gray-500 mt-4">
+          {conditionsSection.ctaSubtext}
+        </p>
       </div>
+
     </div>
   </section>
 
-  <!-- SECCIÓN 4: Qué incluye -->
-  <section class="py-20 md:py-32 lg:py-40 bg-gray-50">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-12">
-          {includesSection.title}
+  <!-- SECCIÓN 5: Qué incluye -->
+  <section class="py-20 md:py-32 lg:py-40 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
+
+      <!-- Título de la sección -->
+      <div class="mb-16 text-center">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900">
+          {includesSection.heading}
         </h2>
+      </div>
 
-        <!-- Qué incluye -->
-        <div class="space-y-6 max-w-3xl mx-auto text-left mb-12">
-          {includesSection.included.map((item) => (
-            <div class="flex items-start gap-4">
-              <svg class="w-6 h-6 text-naranja-vibrante flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-              </svg>
-              <p class="text-lg text-gray-700">{item}</p>
-            </div>
-          ))}
-        </div>
+      <!-- Grid de 2 columnas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
 
-        <!-- Qué NO incluye -->
-        <div class="bg-white rounded-2xl p-8 border-2 border-gray-200 max-w-3xl mx-auto">
-          <h3 class="text-xl font-bold text-gray-900 mb-6">{includesSection.notIncludedTitle}</h3>
-          <div class="space-y-4 text-left">
-            {includesSection.notIncluded.map((item) => (
-              <div class="flex items-start gap-4">
-                <svg class="w-6 h-6 text-gray-400 flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-                <p class="text-lg text-gray-600">{item}</p>
+        <!-- Columna izquierda: Qué incluyo -->
+        <div>
+          <h3 class="text-xl font-bold text-gray-900 mb-6">{includesSection.title}</h3>
+          <div class="space-y-4">
+            {includesSection.included.map((item) => (
+              <div class="flex items-start gap-3">
+                <span class="text-green-600 font-bold text-lg flex-shrink-0 mt-0.5">✓</span>
+                <p class="text-base text-gray-700 leading-relaxed">
+                  {item}
+                </p>
               </div>
             ))}
           </div>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- SECCIÓN 5: Cómo trabajamos -->
-  <section class="py-20 md:py-32 lg:py-40 bg-white">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-12">
-          {processSection.title}
-        </h2>
-
-        <div class="space-y-8 max-w-3xl mx-auto">
-          {processSection.steps.map((step) => (
-            <div class="flex items-start gap-6 text-left">
-              <div class="flex-shrink-0 w-12 h-12 bg-naranja-vibrante rounded-full flex items-center justify-center">
-                <span class="text-white font-bold text-xl">{step.number}</span>
+        <!-- Columna derecha: Qué NO incluyo -->
+        <div>
+          <h3 class="text-xl font-bold text-gray-900 mb-6">{includesSection.notIncludedTitle}</h3>
+          <div class="space-y-4">
+            {includesSection.notIncluded.map((item) => (
+              <div class="flex items-start gap-3">
+                <span class="text-gray-400 font-bold text-lg flex-shrink-0 mt-0.5">✗</span>
+                <p class="text-base text-gray-600 leading-relaxed">
+                  {item}
+                </p>
               </div>
-              <div class="flex-1 pt-2">
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">
-                  {step.title} <span class="font-normal text-gray-700">{step.description}</span>
-                </h3>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
+
       </div>
+
+      <!-- Párrafo aclaratorio -->
+      {includesSection.clarification && (
+        <div class="text-center">
+          <p class="text-base text-gray-600 leading-relaxed max-w-2xl mx-auto" set:html={includesSection.clarification}>
+          </p>
+        </div>
+      )}
+
     </div>
   </section>
 
@@ -216,18 +293,18 @@ const baseUrl = 'https://redactorseo.es'
         </h2>
       </div>
 
-      <div class="space-y-4 max-w-3xl mx-auto">
+      <div class="space-y-3 max-w-3xl mx-auto">
         {faqSection.questions.map((faq) => (
-          <details class="bg-white rounded-lg border border-gray-200 overflow-hidden group">
-            <summary class="flex justify-between items-center p-6 cursor-pointer">
+          <details class="bg-white rounded-lg border border-gray-200 overflow-hidden group hover:border-gray-300 transition-colors">
+            <summary class="flex justify-between items-center p-6 cursor-pointer hover:bg-gray-50 transition-colors">
               <h3 class="text-lg font-semibold text-gray-900">
                 {faq.question}
               </h3>
-              <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform duration-200 flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </summary>
-            <div class="px-6 pb-6">
+            <div class="px-6 pb-6 bg-gray-50">
               <p class="text-gray-600 leading-relaxed" set:html={faq.answer}></p>
             </div>
           </details>

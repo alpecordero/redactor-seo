@@ -10,24 +10,23 @@
     "noindex": false
   },
   "hero": {
-    "titlePart1": "Dos formas de",
+    "titlePart1": "Tres formas de",
     "titlePart2": "trabajar conmigo",
-    "description": "Redacción web profesional y contenido para convertir tu blog en el referente del sector."
+    "description": "Si no sabes cuál elegir, el Pack Inevitable es lo que recomiendo."
   },
   "servicePackages": {
     "packages": [
       {
         "title": "Redacción Blog",
         "subtitle": "Para dominar tu nicho",
-        "price": "399",
-        "currency": "€",
-        "priceNote": "pago mensual",
+        "price": "450",
+        "currency": "€/mes",
+        "priceNote": "(mínimo 3 meses)",
         "features": [
-          "Estrategia de contenido",
-          "Calendario editorial",
-          "Contenido 100% humano",
-          "Artículos optimizados SEO",
-          "Consejos de enlazado"
+          "2 artículos estratégicos al mes",
+          "Calendario editorial trimestral",
+          "Posicionamiento como referente",
+          "Optimización SEO para Google e IA"
         ],
         "ctaText": "Ver blog estratégico",
         "ctaLink": "/redaccion-estrategica-blogs",
@@ -36,15 +35,14 @@
       {
         "title": "Redacción Web",
         "subtitle": "Para convertir visitas en clientes",
-        "price": "1.299",
+        "price": "1.450",
         "currency": "€",
         "priceNote": "pago único",
         "features": [
-          "Investigación completa",
-          "Redacción de páginas web",
-          "Optimización SEO e IA",
-          "Para copiar y pegar",
-          "Entrega rápida"
+          "5 páginas web estratégicas",
+          "Arquitectura de conversión",
+          "Optimización SEO para Google e IA",
+          "Entrega en 10-15 días"
         ],
         "ctaText": "Ver redacción web",
         "ctaLink": "/redaccion-web",
@@ -54,51 +52,49 @@
     "packInevitable": {
       "packLabel": "Blog + Web",
       "title": "Pack Inevitable",
-      "subtitle": "De invisible a inevitable",
-      "features": [
-        "Estrategia de posicionamiento para tu negocio",
-        "Redacción web completa (5 páginas)",
-        "Blog estratégico (2 artículos + calendario)",
-        "Optimización para que te recomiende la IA",
-        "Optimización SEO para buscadores",
-        "Revisiones hasta aprobación",
-        "Entrega en 15 días"
+      "subtitle": "Redacción web + Blog (3 meses)",
+      "benefits": [
+        "Tu web vendiendo",
+        "Tu blog posicionando",
+        "Todo optimizado para Google y recomendaciones de IA"
       ],
-      "originalPrice": "1.698€",
-      "currentPrice": "1.299€",
-      "savings": "399€",
-      "ctaText": "Ver pack inevitable",
+      "features": [
+        "Redacción de 5 páginas estratégicas",
+        "Creación de 6 artículos (dos cada mes)",
+        "Plan de contenido trimestral",
+        "Entrega en 15 días (web) + entregas mensuales (blog)"
+      ],
+      "currentPrice": "2.350€",
+      "originalPrice": "2.800€",
+      "savings": "450€",
+      "ctaText": "Ver pack",
       "ctaLink": "/renovar-web-y-blog-empresa"
     },
     "customProjects": {
-      "description": "¿Necesitas algo más específico? Proyectos especiales, consultoría estratégica a largo plazo, o colaboraciones únicas.",
-      "linkText": "Trabajemos juntos",
+      "description": "¿Necesitas servicios de escritura especiales? Pincha aquí:",
+      "linkText": "Escríbeme para otros servicios",
       "linkUrl": "/contacto"
     }
   },
   "faqSection": {
-    "title": "¿Cuál servicio necesito?",
-    "subtitle": "Guía rápida para elegir la opción perfecta para tu situación",
+    "title": "¿Qué servicio necesitas?",
+    "subtitle": "Guía rápida para elegir la mejor opción:",
     "questions": [
       {
-        "question": "Necesito mejorar mi web para que convierta más",
-        "answerTitle": "Elige Redacción Web (desde €399)",
-        "answerText": "Redacción profesional de las páginas de tu web. Investigación de audiencia incluida, textos optimizados para SEO y conversión. Textos listos para copiar y pegar que conectan con tus clientes y los convencen para comprarte."
+        "question": "Necesito mejorar mi web para conseguir resultados",
+        "answer": "Elige Redacción Web. La fachada (diseño web) importa menos. Si quieres obtener resultados ve a lo importante: cambia tu mensaje. Elige el servicio \"redacción web\". Conectarás con tus clientes y notarás la diferencia."
       },
       {
-        "question": "Quiero posicionarme como referente con contenido",
-        "answerTitle": "Elige Blog Estratégico (desde €399/mes)",
-        "answerText": "Contenido estratégico para tu blog con planificación editorial, artículos optimizados para SEO y estrategia de enlazado. Contenido 100% humano que posiciona tu marca como autoridad en tu sector."
+        "question": "Quiero posicionarme como referente",
+        "answer": "Trabaja el blog, pero con inteligencia. Si crees que publicar contenido genérico o hecho con IA es suficiente te equivocas. Para ser referente necesitas estrategia a medio plazo y contenido que conecte con tus potenciales clientes. ¡Ah! Y optimización SEO para convencer a Google y aparecer en las recomendaciones de las IA. El servicio \"Redacción Blog\" está pensado para conseguirlo."
       },
       {
-        "question": "Necesito renovar completamente mi presencia digital",
-        "answerTitle": "Elige Renovación Completa (€1.399 - Ahorra €399)",
-        "answerText": "Web completa (5 páginas) + blog estratégico en un solo paquete. Obtienes todo lo necesario para dominar online: redacción profesional de tu web, estrategia de contenido, optimización SEO e IA. Entrega en 15 días con 2 rondas de revisiones incluidas."
+        "question": "Quiero transformar mi presencia digital",
+        "answer": "Esto sirve tanto si empiezas una nueva web como si quieres transformar la actual. Elige el Pack Inevitable. Recibirás nuevos clientes recomendados por la IA y subirás posiciones en Google. ¿Cómo? Cambiando el mensaje de tu web y trabajando el blog con inteligencia. "
       },
       {
-        "question": "Mi caso es único o necesito algo específico",
-        "answerTitle": "Conversemos → \"Trabajemos Juntos\"",
-        "answerText": "Proyectos especiales, colaboraciones a largo plazo, consultorías específicas, o situaciones únicas requieren un enfoque personalizado. Contacta conmigo y diseñamos la solución perfecta para tu caso particular."
+        "question": "Mi caso es diferente",
+        "answer": "Si necesitas algo especial, escríbeme y veamos si podemos trabajar juntos."
       }
     ]
   }
