@@ -781,6 +781,7 @@ export type AuditoriaApproachSectionPoints = {
 export type AuditoriaApproachSection = {
   __typename?: 'AuditoriaApproachSection';
   title: Scalars['String']['output'];
+  subtitle?: Maybe<Scalars['String']['output']>;
   points?: Maybe<Array<Maybe<AuditoriaApproachSectionPoints>>>;
   conclusion: Scalars['String']['output'];
 };
@@ -825,17 +826,10 @@ export type AuditoriaFaqSection = {
 
 export type AuditoriaFinalCtaSection = {
   __typename?: 'AuditoriaFinalCtaSection';
-  guaranteeEmoji: Scalars['String']['output'];
-  guaranteeTitle: Scalars['String']['output'];
-  guaranteeDescription: Scalars['String']['output'];
   title: Scalars['String']['output'];
-  features: Array<Scalars['String']['output']>;
-  price: Scalars['String']['output'];
-  currency: Scalars['String']['output'];
-  priceNote: Scalars['String']['output'];
+  description: Scalars['String']['output'];
   ctaText: Scalars['String']['output'];
   ctaLink: Scalars['String']['output'];
-  securityNote: Scalars['String']['output'];
 };
 
 export type Auditoria = Node & Document & {
@@ -886,6 +880,7 @@ export type AuditoriaApproachSectionPointsFilter = {
 
 export type AuditoriaApproachSectionFilter = {
   title?: InputMaybe<StringFilter>;
+  subtitle?: InputMaybe<StringFilter>;
   points?: InputMaybe<AuditoriaApproachSectionPointsFilter>;
   conclusion?: InputMaybe<StringFilter>;
 };
@@ -924,17 +919,10 @@ export type AuditoriaFaqSectionFilter = {
 };
 
 export type AuditoriaFinalCtaSectionFilter = {
-  guaranteeEmoji?: InputMaybe<StringFilter>;
-  guaranteeTitle?: InputMaybe<StringFilter>;
-  guaranteeDescription?: InputMaybe<StringFilter>;
   title?: InputMaybe<StringFilter>;
-  features?: InputMaybe<StringFilter>;
-  price?: InputMaybe<StringFilter>;
-  currency?: InputMaybe<StringFilter>;
-  priceNote?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
   ctaText?: InputMaybe<StringFilter>;
   ctaLink?: InputMaybe<StringFilter>;
-  securityNote?: InputMaybe<StringFilter>;
 };
 
 export type AuditoriaFilter = {
@@ -1000,6 +988,7 @@ export type Redaccion_WebApproachSectionPoints = {
 export type Redaccion_WebApproachSection = {
   __typename?: 'Redaccion_webApproachSection';
   title: Scalars['String']['output'];
+  subtitle?: Maybe<Scalars['String']['output']>;
   points?: Maybe<Array<Maybe<Redaccion_WebApproachSectionPoints>>>;
   conclusion: Scalars['String']['output'];
 };
@@ -1052,17 +1041,10 @@ export type Redaccion_WebFaqSection = {
 
 export type Redaccion_WebFinalCtaSection = {
   __typename?: 'Redaccion_webFinalCtaSection';
-  guaranteeEmoji: Scalars['String']['output'];
-  guaranteeTitle: Scalars['String']['output'];
-  guaranteeDescription: Scalars['String']['output'];
   title: Scalars['String']['output'];
-  features: Array<Scalars['String']['output']>;
-  price: Scalars['String']['output'];
-  currency: Scalars['String']['output'];
-  priceNote: Scalars['String']['output'];
+  description: Scalars['String']['output'];
   ctaText: Scalars['String']['output'];
   ctaLink: Scalars['String']['output'];
-  securityNote: Scalars['String']['output'];
 };
 
 export type Redaccion_Web = Node & Document & {
@@ -1113,6 +1095,7 @@ export type Redaccion_WebApproachSectionPointsFilter = {
 
 export type Redaccion_WebApproachSectionFilter = {
   title?: InputMaybe<StringFilter>;
+  subtitle?: InputMaybe<StringFilter>;
   points?: InputMaybe<Redaccion_WebApproachSectionPointsFilter>;
   conclusion?: InputMaybe<StringFilter>;
 };
@@ -1163,17 +1146,10 @@ export type Redaccion_WebFaqSectionFilter = {
 };
 
 export type Redaccion_WebFinalCtaSectionFilter = {
-  guaranteeEmoji?: InputMaybe<StringFilter>;
-  guaranteeTitle?: InputMaybe<StringFilter>;
-  guaranteeDescription?: InputMaybe<StringFilter>;
   title?: InputMaybe<StringFilter>;
-  features?: InputMaybe<StringFilter>;
-  price?: InputMaybe<StringFilter>;
-  currency?: InputMaybe<StringFilter>;
-  priceNote?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
   ctaText?: InputMaybe<StringFilter>;
   ctaLink?: InputMaybe<StringFilter>;
-  securityNote?: InputMaybe<StringFilter>;
 };
 
 export type Redaccion_WebFilter = {
@@ -1239,6 +1215,7 @@ export type Redaccion_Estrategica_BlogsApproachSectionPoints = {
 export type Redaccion_Estrategica_BlogsApproachSection = {
   __typename?: 'Redaccion_estrategica_blogsApproachSection';
   title: Scalars['String']['output'];
+  subtitle?: Maybe<Scalars['String']['output']>;
   points?: Maybe<Array<Maybe<Redaccion_Estrategica_BlogsApproachSectionPoints>>>;
   conclusion: Scalars['String']['output'];
 };
@@ -1291,17 +1268,10 @@ export type Redaccion_Estrategica_BlogsFaqSection = {
 
 export type Redaccion_Estrategica_BlogsFinalCtaSection = {
   __typename?: 'Redaccion_estrategica_blogsFinalCtaSection';
-  guaranteeEmoji: Scalars['String']['output'];
-  guaranteeTitle: Scalars['String']['output'];
-  guaranteeDescription: Scalars['String']['output'];
   title: Scalars['String']['output'];
-  features: Array<Scalars['String']['output']>;
-  price: Scalars['String']['output'];
-  currency: Scalars['String']['output'];
-  priceNote: Scalars['String']['output'];
+  description: Scalars['String']['output'];
   ctaText: Scalars['String']['output'];
   ctaLink: Scalars['String']['output'];
-  securityNote: Scalars['String']['output'];
 };
 
 export type Redaccion_Estrategica_Blogs = Node & Document & {
@@ -1352,6 +1322,7 @@ export type Redaccion_Estrategica_BlogsApproachSectionPointsFilter = {
 
 export type Redaccion_Estrategica_BlogsApproachSectionFilter = {
   title?: InputMaybe<StringFilter>;
+  subtitle?: InputMaybe<StringFilter>;
   points?: InputMaybe<Redaccion_Estrategica_BlogsApproachSectionPointsFilter>;
   conclusion?: InputMaybe<StringFilter>;
 };
@@ -1397,17 +1368,10 @@ export type Redaccion_Estrategica_BlogsFaqSectionFilter = {
 };
 
 export type Redaccion_Estrategica_BlogsFinalCtaSectionFilter = {
-  guaranteeEmoji?: InputMaybe<StringFilter>;
-  guaranteeTitle?: InputMaybe<StringFilter>;
-  guaranteeDescription?: InputMaybe<StringFilter>;
   title?: InputMaybe<StringFilter>;
-  features?: InputMaybe<StringFilter>;
-  price?: InputMaybe<StringFilter>;
-  currency?: InputMaybe<StringFilter>;
-  priceNote?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
   ctaText?: InputMaybe<StringFilter>;
   ctaLink?: InputMaybe<StringFilter>;
-  securityNote?: InputMaybe<StringFilter>;
 };
 
 export type Redaccion_Estrategica_BlogsFilter = {
@@ -1708,9 +1672,10 @@ export type Servicios_PageServicePackagesPackInevitable = {
   packLabel: Scalars['String']['output'];
   title: Scalars['String']['output'];
   subtitle: Scalars['String']['output'];
+  benefits: Array<Scalars['String']['output']>;
   features: Array<Scalars['String']['output']>;
-  originalPrice: Scalars['String']['output'];
   currentPrice: Scalars['String']['output'];
+  originalPrice: Scalars['String']['output'];
   savings: Scalars['String']['output'];
   ctaText: Scalars['String']['output'];
   ctaLink: Scalars['String']['output'];
@@ -1733,8 +1698,7 @@ export type Servicios_PageServicePackages = {
 export type Servicios_PageFaqSectionQuestions = {
   __typename?: 'Servicios_pageFaqSectionQuestions';
   question: Scalars['String']['output'];
-  answerTitle: Scalars['String']['output'];
-  answerText: Scalars['String']['output'];
+  answer: Scalars['String']['output'];
 };
 
 export type Servicios_PageFaqSection = {
@@ -1788,9 +1752,10 @@ export type Servicios_PageServicePackagesPackInevitableFilter = {
   packLabel?: InputMaybe<StringFilter>;
   title?: InputMaybe<StringFilter>;
   subtitle?: InputMaybe<StringFilter>;
+  benefits?: InputMaybe<StringFilter>;
   features?: InputMaybe<StringFilter>;
-  originalPrice?: InputMaybe<StringFilter>;
   currentPrice?: InputMaybe<StringFilter>;
+  originalPrice?: InputMaybe<StringFilter>;
   savings?: InputMaybe<StringFilter>;
   ctaText?: InputMaybe<StringFilter>;
   ctaLink?: InputMaybe<StringFilter>;
@@ -1810,8 +1775,7 @@ export type Servicios_PageServicePackagesFilter = {
 
 export type Servicios_PageFaqSectionQuestionsFilter = {
   question?: InputMaybe<StringFilter>;
-  answerTitle?: InputMaybe<StringFilter>;
-  answerText?: InputMaybe<StringFilter>;
+  answer?: InputMaybe<StringFilter>;
 };
 
 export type Servicios_PageFaqSectionFilter = {
@@ -1856,40 +1820,69 @@ export type Colaboraciones_AgenciasHero = {
   ctaLink: Scalars['String']['output'];
 };
 
+export type Colaboraciones_AgenciasTargetSectionRequirements = {
+  __typename?: 'Colaboraciones_agenciasTargetSectionRequirements';
+  title: Scalars['String']['output'];
+  subtitle?: Maybe<Scalars['String']['output']>;
+  description: Scalars['String']['output'];
+};
+
+export type Colaboraciones_AgenciasTargetSectionDisclaimer = {
+  __typename?: 'Colaboraciones_agenciasTargetSectionDisclaimer';
+  text1: Scalars['String']['output'];
+};
+
 export type Colaboraciones_AgenciasTargetSection = {
   __typename?: 'Colaboraciones_agenciasTargetSection';
   title: Scalars['String']['output'];
-  yesItems: Array<Scalars['String']['output']>;
-  noItems: Array<Scalars['String']['output']>;
-  noItemsLink?: Maybe<Scalars['String']['output']>;
+  intro: Scalars['String']['output'];
+  requirements?: Maybe<Array<Maybe<Colaboraciones_AgenciasTargetSectionRequirements>>>;
+  disclaimer?: Maybe<Colaboraciones_AgenciasTargetSectionDisclaimer>;
+  ctaButtonText: Scalars['String']['output'];
+  ctaLink: Scalars['String']['output'];
 };
 
-export type Colaboraciones_AgenciasConditionsSectionPricing = {
-  __typename?: 'Colaboraciones_agenciasConditionsSectionPricing';
-  basePriceText: Scalars['String']['output'];
-  additionalPriceText: Scalars['String']['output'];
-  minimumText: Scalars['String']['output'];
+export type Colaboraciones_AgenciasWorkflowSectionSteps = {
+  __typename?: 'Colaboraciones_agenciasWorkflowSectionSteps';
+  number: Scalars['String']['output'];
+  title: Scalars['String']['output'];
+  description: Scalars['String']['output'];
+};
+
+export type Colaboraciones_AgenciasWorkflowSection = {
+  __typename?: 'Colaboraciones_agenciasWorkflowSection';
+  title: Scalars['String']['output'];
+  intro: Scalars['String']['output'];
+  steps?: Maybe<Array<Maybe<Colaboraciones_AgenciasWorkflowSectionSteps>>>;
 };
 
 export type Colaboraciones_AgenciasConditionsSectionConditions = {
   __typename?: 'Colaboraciones_agenciasConditionsSectionConditions';
-  label: Scalars['String']['output'];
-  value: Scalars['String']['output'];
+  title: Scalars['String']['output'];
+  description: Scalars['String']['output'];
 };
 
 export type Colaboraciones_AgenciasConditionsSection = {
   __typename?: 'Colaboraciones_agenciasConditionsSection';
   title: Scalars['String']['output'];
-  pricing?: Maybe<Colaboraciones_AgenciasConditionsSectionPricing>;
+  basePrice: Scalars['String']['output'];
+  currency: Scalars['String']['output'];
+  priceDescription: Scalars['String']['output'];
+  priceSubtext: Scalars['String']['output'];
   conditions?: Maybe<Array<Maybe<Colaboraciones_AgenciasConditionsSectionConditions>>>;
+  ctaLink: Scalars['String']['output'];
+  ctaText: Scalars['String']['output'];
+  ctaSubtext: Scalars['String']['output'];
 };
 
 export type Colaboraciones_AgenciasIncludesSection = {
   __typename?: 'Colaboraciones_agenciasIncludesSection';
+  heading: Scalars['String']['output'];
   title: Scalars['String']['output'];
   included: Array<Scalars['String']['output']>;
   notIncludedTitle: Scalars['String']['output'];
   notIncluded: Array<Scalars['String']['output']>;
+  clarification?: Maybe<Scalars['String']['output']>;
 };
 
 export type Colaboraciones_AgenciasProcessSectionSteps = {
@@ -1930,6 +1923,7 @@ export type Colaboraciones_Agencias = Node & Document & {
   seo?: Maybe<Colaboraciones_AgenciasSeo>;
   hero?: Maybe<Colaboraciones_AgenciasHero>;
   targetSection?: Maybe<Colaboraciones_AgenciasTargetSection>;
+  workflowSection?: Maybe<Colaboraciones_AgenciasWorkflowSection>;
   conditionsSection?: Maybe<Colaboraciones_AgenciasConditionsSection>;
   includesSection?: Maybe<Colaboraciones_AgenciasIncludesSection>;
   processSection?: Maybe<Colaboraciones_AgenciasProcessSection>;
@@ -1954,35 +1948,61 @@ export type Colaboraciones_AgenciasHeroFilter = {
   ctaLink?: InputMaybe<StringFilter>;
 };
 
-export type Colaboraciones_AgenciasTargetSectionFilter = {
+export type Colaboraciones_AgenciasTargetSectionRequirementsFilter = {
   title?: InputMaybe<StringFilter>;
-  yesItems?: InputMaybe<StringFilter>;
-  noItems?: InputMaybe<StringFilter>;
-  noItemsLink?: InputMaybe<StringFilter>;
+  subtitle?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
 };
 
-export type Colaboraciones_AgenciasConditionsSectionPricingFilter = {
-  basePriceText?: InputMaybe<StringFilter>;
-  additionalPriceText?: InputMaybe<StringFilter>;
-  minimumText?: InputMaybe<StringFilter>;
+export type Colaboraciones_AgenciasTargetSectionDisclaimerFilter = {
+  text1?: InputMaybe<StringFilter>;
+};
+
+export type Colaboraciones_AgenciasTargetSectionFilter = {
+  title?: InputMaybe<StringFilter>;
+  intro?: InputMaybe<StringFilter>;
+  requirements?: InputMaybe<Colaboraciones_AgenciasTargetSectionRequirementsFilter>;
+  disclaimer?: InputMaybe<Colaboraciones_AgenciasTargetSectionDisclaimerFilter>;
+  ctaButtonText?: InputMaybe<StringFilter>;
+  ctaLink?: InputMaybe<StringFilter>;
+};
+
+export type Colaboraciones_AgenciasWorkflowSectionStepsFilter = {
+  number?: InputMaybe<StringFilter>;
+  title?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
+};
+
+export type Colaboraciones_AgenciasWorkflowSectionFilter = {
+  title?: InputMaybe<StringFilter>;
+  intro?: InputMaybe<StringFilter>;
+  steps?: InputMaybe<Colaboraciones_AgenciasWorkflowSectionStepsFilter>;
 };
 
 export type Colaboraciones_AgenciasConditionsSectionConditionsFilter = {
-  label?: InputMaybe<StringFilter>;
-  value?: InputMaybe<StringFilter>;
+  title?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
 };
 
 export type Colaboraciones_AgenciasConditionsSectionFilter = {
   title?: InputMaybe<StringFilter>;
-  pricing?: InputMaybe<Colaboraciones_AgenciasConditionsSectionPricingFilter>;
+  basePrice?: InputMaybe<StringFilter>;
+  currency?: InputMaybe<StringFilter>;
+  priceDescription?: InputMaybe<StringFilter>;
+  priceSubtext?: InputMaybe<StringFilter>;
   conditions?: InputMaybe<Colaboraciones_AgenciasConditionsSectionConditionsFilter>;
+  ctaLink?: InputMaybe<StringFilter>;
+  ctaText?: InputMaybe<StringFilter>;
+  ctaSubtext?: InputMaybe<StringFilter>;
 };
 
 export type Colaboraciones_AgenciasIncludesSectionFilter = {
+  heading?: InputMaybe<StringFilter>;
   title?: InputMaybe<StringFilter>;
   included?: InputMaybe<StringFilter>;
   notIncludedTitle?: InputMaybe<StringFilter>;
   notIncluded?: InputMaybe<StringFilter>;
+  clarification?: InputMaybe<StringFilter>;
 };
 
 export type Colaboraciones_AgenciasProcessSectionStepsFilter = {
@@ -2017,6 +2037,7 @@ export type Colaboraciones_AgenciasFilter = {
   seo?: InputMaybe<Colaboraciones_AgenciasSeoFilter>;
   hero?: InputMaybe<Colaboraciones_AgenciasHeroFilter>;
   targetSection?: InputMaybe<Colaboraciones_AgenciasTargetSectionFilter>;
+  workflowSection?: InputMaybe<Colaboraciones_AgenciasWorkflowSectionFilter>;
   conditionsSection?: InputMaybe<Colaboraciones_AgenciasConditionsSectionFilter>;
   includesSection?: InputMaybe<Colaboraciones_AgenciasIncludesSectionFilter>;
   processSection?: InputMaybe<Colaboraciones_AgenciasProcessSectionFilter>;
@@ -2774,6 +2795,7 @@ export type AuditoriaApproachSectionPointsMutation = {
 
 export type AuditoriaApproachSectionMutation = {
   title?: InputMaybe<Scalars['String']['input']>;
+  subtitle?: InputMaybe<Scalars['String']['input']>;
   points?: InputMaybe<Array<InputMaybe<AuditoriaApproachSectionPointsMutation>>>;
   conclusion?: InputMaybe<Scalars['String']['input']>;
 };
@@ -2812,17 +2834,10 @@ export type AuditoriaFaqSectionMutation = {
 };
 
 export type AuditoriaFinalCtaSectionMutation = {
-  guaranteeEmoji?: InputMaybe<Scalars['String']['input']>;
-  guaranteeTitle?: InputMaybe<Scalars['String']['input']>;
-  guaranteeDescription?: InputMaybe<Scalars['String']['input']>;
   title?: InputMaybe<Scalars['String']['input']>;
-  features?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  price?: InputMaybe<Scalars['String']['input']>;
-  currency?: InputMaybe<Scalars['String']['input']>;
-  priceNote?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
   ctaText?: InputMaybe<Scalars['String']['input']>;
   ctaLink?: InputMaybe<Scalars['String']['input']>;
-  securityNote?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type AuditoriaMutation = {
@@ -2869,6 +2884,7 @@ export type Redaccion_WebApproachSectionPointsMutation = {
 
 export type Redaccion_WebApproachSectionMutation = {
   title?: InputMaybe<Scalars['String']['input']>;
+  subtitle?: InputMaybe<Scalars['String']['input']>;
   points?: InputMaybe<Array<InputMaybe<Redaccion_WebApproachSectionPointsMutation>>>;
   conclusion?: InputMaybe<Scalars['String']['input']>;
 };
@@ -2914,17 +2930,10 @@ export type Redaccion_WebFaqSectionMutation = {
 };
 
 export type Redaccion_WebFinalCtaSectionMutation = {
-  guaranteeEmoji?: InputMaybe<Scalars['String']['input']>;
-  guaranteeTitle?: InputMaybe<Scalars['String']['input']>;
-  guaranteeDescription?: InputMaybe<Scalars['String']['input']>;
   title?: InputMaybe<Scalars['String']['input']>;
-  features?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  price?: InputMaybe<Scalars['String']['input']>;
-  currency?: InputMaybe<Scalars['String']['input']>;
-  priceNote?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
   ctaText?: InputMaybe<Scalars['String']['input']>;
   ctaLink?: InputMaybe<Scalars['String']['input']>;
-  securityNote?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type Redaccion_WebMutation = {
@@ -2971,6 +2980,7 @@ export type Redaccion_Estrategica_BlogsApproachSectionPointsMutation = {
 
 export type Redaccion_Estrategica_BlogsApproachSectionMutation = {
   title?: InputMaybe<Scalars['String']['input']>;
+  subtitle?: InputMaybe<Scalars['String']['input']>;
   points?: InputMaybe<Array<InputMaybe<Redaccion_Estrategica_BlogsApproachSectionPointsMutation>>>;
   conclusion?: InputMaybe<Scalars['String']['input']>;
 };
@@ -3016,17 +3026,10 @@ export type Redaccion_Estrategica_BlogsFaqSectionMutation = {
 };
 
 export type Redaccion_Estrategica_BlogsFinalCtaSectionMutation = {
-  guaranteeEmoji?: InputMaybe<Scalars['String']['input']>;
-  guaranteeTitle?: InputMaybe<Scalars['String']['input']>;
-  guaranteeDescription?: InputMaybe<Scalars['String']['input']>;
   title?: InputMaybe<Scalars['String']['input']>;
-  features?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  price?: InputMaybe<Scalars['String']['input']>;
-  currency?: InputMaybe<Scalars['String']['input']>;
-  priceNote?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
   ctaText?: InputMaybe<Scalars['String']['input']>;
   ctaLink?: InputMaybe<Scalars['String']['input']>;
-  securityNote?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type Redaccion_Estrategica_BlogsMutation = {
@@ -3168,9 +3171,10 @@ export type Servicios_PageServicePackagesPackInevitableMutation = {
   packLabel?: InputMaybe<Scalars['String']['input']>;
   title?: InputMaybe<Scalars['String']['input']>;
   subtitle?: InputMaybe<Scalars['String']['input']>;
+  benefits?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   features?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  originalPrice?: InputMaybe<Scalars['String']['input']>;
   currentPrice?: InputMaybe<Scalars['String']['input']>;
+  originalPrice?: InputMaybe<Scalars['String']['input']>;
   savings?: InputMaybe<Scalars['String']['input']>;
   ctaText?: InputMaybe<Scalars['String']['input']>;
   ctaLink?: InputMaybe<Scalars['String']['input']>;
@@ -3190,8 +3194,7 @@ export type Servicios_PageServicePackagesMutation = {
 
 export type Servicios_PageFaqSectionQuestionsMutation = {
   question?: InputMaybe<Scalars['String']['input']>;
-  answerTitle?: InputMaybe<Scalars['String']['input']>;
-  answerText?: InputMaybe<Scalars['String']['input']>;
+  answer?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type Servicios_PageFaqSectionMutation = {
@@ -3221,35 +3224,61 @@ export type Colaboraciones_AgenciasHeroMutation = {
   ctaLink?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type Colaboraciones_AgenciasTargetSectionMutation = {
+export type Colaboraciones_AgenciasTargetSectionRequirementsMutation = {
   title?: InputMaybe<Scalars['String']['input']>;
-  yesItems?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  noItems?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  noItemsLink?: InputMaybe<Scalars['String']['input']>;
+  subtitle?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type Colaboraciones_AgenciasConditionsSectionPricingMutation = {
-  basePriceText?: InputMaybe<Scalars['String']['input']>;
-  additionalPriceText?: InputMaybe<Scalars['String']['input']>;
-  minimumText?: InputMaybe<Scalars['String']['input']>;
+export type Colaboraciones_AgenciasTargetSectionDisclaimerMutation = {
+  text1?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type Colaboraciones_AgenciasTargetSectionMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  intro?: InputMaybe<Scalars['String']['input']>;
+  requirements?: InputMaybe<Array<InputMaybe<Colaboraciones_AgenciasTargetSectionRequirementsMutation>>>;
+  disclaimer?: InputMaybe<Colaboraciones_AgenciasTargetSectionDisclaimerMutation>;
+  ctaButtonText?: InputMaybe<Scalars['String']['input']>;
+  ctaLink?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type Colaboraciones_AgenciasWorkflowSectionStepsMutation = {
+  number?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type Colaboraciones_AgenciasWorkflowSectionMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  intro?: InputMaybe<Scalars['String']['input']>;
+  steps?: InputMaybe<Array<InputMaybe<Colaboraciones_AgenciasWorkflowSectionStepsMutation>>>;
 };
 
 export type Colaboraciones_AgenciasConditionsSectionConditionsMutation = {
-  label?: InputMaybe<Scalars['String']['input']>;
-  value?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type Colaboraciones_AgenciasConditionsSectionMutation = {
   title?: InputMaybe<Scalars['String']['input']>;
-  pricing?: InputMaybe<Colaboraciones_AgenciasConditionsSectionPricingMutation>;
+  basePrice?: InputMaybe<Scalars['String']['input']>;
+  currency?: InputMaybe<Scalars['String']['input']>;
+  priceDescription?: InputMaybe<Scalars['String']['input']>;
+  priceSubtext?: InputMaybe<Scalars['String']['input']>;
   conditions?: InputMaybe<Array<InputMaybe<Colaboraciones_AgenciasConditionsSectionConditionsMutation>>>;
+  ctaLink?: InputMaybe<Scalars['String']['input']>;
+  ctaText?: InputMaybe<Scalars['String']['input']>;
+  ctaSubtext?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type Colaboraciones_AgenciasIncludesSectionMutation = {
+  heading?: InputMaybe<Scalars['String']['input']>;
   title?: InputMaybe<Scalars['String']['input']>;
   included?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   notIncludedTitle?: InputMaybe<Scalars['String']['input']>;
   notIncluded?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  clarification?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type Colaboraciones_AgenciasProcessSectionStepsMutation = {
@@ -3284,6 +3313,7 @@ export type Colaboraciones_AgenciasMutation = {
   seo?: InputMaybe<Colaboraciones_AgenciasSeoMutation>;
   hero?: InputMaybe<Colaboraciones_AgenciasHeroMutation>;
   targetSection?: InputMaybe<Colaboraciones_AgenciasTargetSectionMutation>;
+  workflowSection?: InputMaybe<Colaboraciones_AgenciasWorkflowSectionMutation>;
   conditionsSection?: InputMaybe<Colaboraciones_AgenciasConditionsSectionMutation>;
   includesSection?: InputMaybe<Colaboraciones_AgenciasIncludesSectionMutation>;
   processSection?: InputMaybe<Colaboraciones_AgenciasProcessSectionMutation>;
@@ -3441,19 +3471,19 @@ export type HomepagePartsFragment = { __typename: 'Homepage', seo?: { __typename
 
 export type PagesPartsFragment = { __typename: 'Pages', title: string, description?: string | null, subtitle?: string | null, introduction?: string | null, profileImage?: string | null, body?: any | null, experienceSection?: { __typename: 'PagesExperienceSection', title?: string | null, subtitle?: string | null, items?: Array<{ __typename: 'PagesExperienceSectionItems', icon?: string | null, title?: string | null, description?: string | null } | null> | null } | null, valuesSection?: { __typename: 'PagesValuesSection', title?: string | null, subtitle?: string | null, values?: Array<{ __typename: 'PagesValuesSectionValues', title?: string | null, description?: string | null } | null> | null } | null, testimonial?: { __typename: 'PagesTestimonial', quote?: string | null, author?: string | null, role?: string | null } | null, ctaSection?: { __typename: 'PagesCtaSection', title?: string | null, description?: string | null, buttonText?: string | null } | null };
 
-export type AuditoriaPartsFragment = { __typename: 'Auditoria', seo?: { __typename: 'AuditoriaSeo', title: string, description: string } | null, hero?: { __typename: 'AuditoriaHero', subtitle: string, titlePart1: string, titlePart2: string, description: string, ctaText: string, ctaLink: string } | null, problemsSection?: { __typename: 'AuditoriaProblemsSection', title: string, subtitle: string, closingText: string, problems?: Array<{ __typename: 'AuditoriaProblemsSectionProblems', problem: string, consequence: string } | null> | null } | null, approachSection?: { __typename: 'AuditoriaApproachSection', title: string, conclusion: string, points?: Array<{ __typename: 'AuditoriaApproachSectionPoints', title: string, description: string } | null> | null } | null, testimonialsSection?: { __typename: 'AuditoriaTestimonialsSection', title: string, testimonials?: Array<{ __typename: 'AuditoriaTestimonialsSectionTestimonials', quote: string, author: string } | null> | null } | null, pricingSection?: { __typename: 'AuditoriaPricingSection', title: string, subtitle: string, price: string, currency: string, priceDescription: string, includes: Array<string>, delivery: string, format: string, ctaText: string, ctaLink: string } | null, faqSection?: { __typename: 'AuditoriaFaqSection', title: string, questions?: Array<{ __typename: 'AuditoriaFaqSectionQuestions', question: string, answer: string } | null> | null } | null, finalCtaSection?: { __typename: 'AuditoriaFinalCtaSection', guaranteeEmoji: string, guaranteeTitle: string, guaranteeDescription: string, title: string, features: Array<string>, price: string, currency: string, priceNote: string, ctaText: string, ctaLink: string, securityNote: string } | null };
+export type AuditoriaPartsFragment = { __typename: 'Auditoria', seo?: { __typename: 'AuditoriaSeo', title: string, description: string } | null, hero?: { __typename: 'AuditoriaHero', subtitle: string, titlePart1: string, titlePart2: string, description: string, ctaText: string, ctaLink: string } | null, problemsSection?: { __typename: 'AuditoriaProblemsSection', title: string, subtitle: string, closingText: string, problems?: Array<{ __typename: 'AuditoriaProblemsSectionProblems', problem: string, consequence: string } | null> | null } | null, approachSection?: { __typename: 'AuditoriaApproachSection', title: string, subtitle?: string | null, conclusion: string, points?: Array<{ __typename: 'AuditoriaApproachSectionPoints', title: string, description: string } | null> | null } | null, testimonialsSection?: { __typename: 'AuditoriaTestimonialsSection', title: string, testimonials?: Array<{ __typename: 'AuditoriaTestimonialsSectionTestimonials', quote: string, author: string } | null> | null } | null, pricingSection?: { __typename: 'AuditoriaPricingSection', title: string, subtitle: string, price: string, currency: string, priceDescription: string, includes: Array<string>, delivery: string, format: string, ctaText: string, ctaLink: string } | null, faqSection?: { __typename: 'AuditoriaFaqSection', title: string, questions?: Array<{ __typename: 'AuditoriaFaqSectionQuestions', question: string, answer: string } | null> | null } | null, finalCtaSection?: { __typename: 'AuditoriaFinalCtaSection', title: string, description: string, ctaText: string, ctaLink: string } | null };
 
-export type Redaccion_WebPartsFragment = { __typename: 'Redaccion_web', seo?: { __typename: 'Redaccion_webSeo', title: string, description: string } | null, hero?: { __typename: 'Redaccion_webHero', subtitle: string, titlePart1: string, titlePart2: string, description: string, ctaText: string, ctaLink: string } | null, problemsSection?: { __typename: 'Redaccion_webProblemsSection', title: string, subtitle: string, closingText: string, problems?: Array<{ __typename: 'Redaccion_webProblemsSectionProblems', problem: string, consequence: string } | null> | null } | null, approachSection?: { __typename: 'Redaccion_webApproachSection', title: string, conclusion: string, points?: Array<{ __typename: 'Redaccion_webApproachSectionPoints', title: string, description: string } | null> | null } | null, testimonialsSection?: { __typename: 'Redaccion_webTestimonialsSection', title: string, testimonials?: Array<{ __typename: 'Redaccion_webTestimonialsSectionTestimonials', quote: string, author: string } | null> | null } | null, pricingSection?: { __typename: 'Redaccion_webPricingSection', title: string, subtitle: string, packages?: Array<{ __typename: 'Redaccion_webPricingSectionPackages', name: string, pages: string, price: string, currency: string, priceDescription: string, includes: Array<string>, delivery: string, format: string, ctaText: string, ctaLink: string, isPopular?: boolean | null } | null> | null } | null, faqSection?: { __typename: 'Redaccion_webFaqSection', title: string, questions?: Array<{ __typename: 'Redaccion_webFaqSectionQuestions', question: string, answer: string } | null> | null } | null, finalCtaSection?: { __typename: 'Redaccion_webFinalCtaSection', guaranteeEmoji: string, guaranteeTitle: string, guaranteeDescription: string, title: string, features: Array<string>, price: string, currency: string, priceNote: string, ctaText: string, ctaLink: string, securityNote: string } | null };
+export type Redaccion_WebPartsFragment = { __typename: 'Redaccion_web', seo?: { __typename: 'Redaccion_webSeo', title: string, description: string } | null, hero?: { __typename: 'Redaccion_webHero', subtitle: string, titlePart1: string, titlePart2: string, description: string, ctaText: string, ctaLink: string } | null, problemsSection?: { __typename: 'Redaccion_webProblemsSection', title: string, subtitle: string, closingText: string, problems?: Array<{ __typename: 'Redaccion_webProblemsSectionProblems', problem: string, consequence: string } | null> | null } | null, approachSection?: { __typename: 'Redaccion_webApproachSection', title: string, subtitle?: string | null, conclusion: string, points?: Array<{ __typename: 'Redaccion_webApproachSectionPoints', title: string, description: string } | null> | null } | null, testimonialsSection?: { __typename: 'Redaccion_webTestimonialsSection', title: string, testimonials?: Array<{ __typename: 'Redaccion_webTestimonialsSectionTestimonials', quote: string, author: string } | null> | null } | null, pricingSection?: { __typename: 'Redaccion_webPricingSection', title: string, subtitle: string, packages?: Array<{ __typename: 'Redaccion_webPricingSectionPackages', name: string, pages: string, price: string, currency: string, priceDescription: string, includes: Array<string>, delivery: string, format: string, ctaText: string, ctaLink: string, isPopular?: boolean | null } | null> | null } | null, faqSection?: { __typename: 'Redaccion_webFaqSection', title: string, questions?: Array<{ __typename: 'Redaccion_webFaqSectionQuestions', question: string, answer: string } | null> | null } | null, finalCtaSection?: { __typename: 'Redaccion_webFinalCtaSection', title: string, description: string, ctaText: string, ctaLink: string } | null };
 
-export type Redaccion_Estrategica_BlogsPartsFragment = { __typename: 'Redaccion_estrategica_blogs', seo?: { __typename: 'Redaccion_estrategica_blogsSeo', title: string, description: string } | null, hero?: { __typename: 'Redaccion_estrategica_blogsHero', subtitle: string, titlePart1: string, titlePart2: string, description: string, ctaText: string, ctaLink: string } | null, problemsSection?: { __typename: 'Redaccion_estrategica_blogsProblemsSection', title: string, subtitle: string, closingText: string, problems?: Array<{ __typename: 'Redaccion_estrategica_blogsProblemsSectionProblems', problem: string, consequence: string } | null> | null } | null, approachSection?: { __typename: 'Redaccion_estrategica_blogsApproachSection', title: string, conclusion: string, points?: Array<{ __typename: 'Redaccion_estrategica_blogsApproachSectionPoints', title: string, description: string } | null> | null } | null, testimonialsSection?: { __typename: 'Redaccion_estrategica_blogsTestimonialsSection', title: string, testimonials?: Array<{ __typename: 'Redaccion_estrategica_blogsTestimonialsSectionTestimonials', quote: string, author: string } | null> | null } | null, pricingSection?: { __typename: 'Redaccion_estrategica_blogsPricingSection', title: string, subtitle: string, packages?: Array<{ __typename: 'Redaccion_estrategica_blogsPricingSectionPackages', name: string, articles: string, price: string, currency: string, priceDescription: string, includes: Array<string>, delivery: string, format: string, ctaText: string, ctaLink: string, isPopular?: boolean | null } | null> | null } | null, faqSection?: { __typename: 'Redaccion_estrategica_blogsFaqSection', title: string, questions?: Array<{ __typename: 'Redaccion_estrategica_blogsFaqSectionQuestions', question: string, answer: string } | null> | null } | null, finalCtaSection?: { __typename: 'Redaccion_estrategica_blogsFinalCtaSection', guaranteeEmoji: string, guaranteeTitle: string, guaranteeDescription: string, title: string, features: Array<string>, price: string, currency: string, priceNote: string, ctaText: string, ctaLink: string, securityNote: string } | null };
+export type Redaccion_Estrategica_BlogsPartsFragment = { __typename: 'Redaccion_estrategica_blogs', seo?: { __typename: 'Redaccion_estrategica_blogsSeo', title: string, description: string } | null, hero?: { __typename: 'Redaccion_estrategica_blogsHero', subtitle: string, titlePart1: string, titlePart2: string, description: string, ctaText: string, ctaLink: string } | null, problemsSection?: { __typename: 'Redaccion_estrategica_blogsProblemsSection', title: string, subtitle: string, closingText: string, problems?: Array<{ __typename: 'Redaccion_estrategica_blogsProblemsSectionProblems', problem: string, consequence: string } | null> | null } | null, approachSection?: { __typename: 'Redaccion_estrategica_blogsApproachSection', title: string, subtitle?: string | null, conclusion: string, points?: Array<{ __typename: 'Redaccion_estrategica_blogsApproachSectionPoints', title: string, description: string } | null> | null } | null, testimonialsSection?: { __typename: 'Redaccion_estrategica_blogsTestimonialsSection', title: string, testimonials?: Array<{ __typename: 'Redaccion_estrategica_blogsTestimonialsSectionTestimonials', quote: string, author: string } | null> | null } | null, pricingSection?: { __typename: 'Redaccion_estrategica_blogsPricingSection', title: string, subtitle: string, packages?: Array<{ __typename: 'Redaccion_estrategica_blogsPricingSectionPackages', name: string, articles: string, price: string, currency: string, priceDescription: string, includes: Array<string>, delivery: string, format: string, ctaText: string, ctaLink: string, isPopular?: boolean | null } | null> | null } | null, faqSection?: { __typename: 'Redaccion_estrategica_blogsFaqSection', title: string, questions?: Array<{ __typename: 'Redaccion_estrategica_blogsFaqSectionQuestions', question: string, answer: string } | null> | null } | null, finalCtaSection?: { __typename: 'Redaccion_estrategica_blogsFinalCtaSection', title: string, description: string, ctaText: string, ctaLink: string } | null };
 
 export type Contact_PagePartsFragment = { __typename: 'Contact_page', seo?: { __typename: 'Contact_pageSeo', title: string, description: string } | null, hero?: { __typename: 'Contact_pageHero', titlePart1: string, titlePart2: string, description: string } | null, form?: { __typename: 'Contact_pageForm', title: string, submitButtonText: string, privacyPolicyText: string, services?: Array<{ __typename: 'Contact_pageFormServices', value: string, label: string } | null> | null } | null, contactInfo?: { __typename: 'Contact_pageContactInfo', title: string, email: string, responseTime: string } | null, messages?: { __typename: 'Contact_pageMessages', successMessage: string, errorMessage: string, loadingText: string } | null };
 
 export type Sobre_MiPartsFragment = { __typename: 'Sobre_mi', storyContent: string, seo?: { __typename: 'Sobre_miSeo', title: string, description: string } | null, hero?: { __typename: 'Sobre_miHero', title: string, subtitle: string, introduction: string, profileImage: string } | null, experienceSection?: { __typename: 'Sobre_miExperienceSection', title: string, subtitle: string, items?: Array<{ __typename: 'Sobre_miExperienceSectionItems', icon: string, title: string, description: string } | null> | null } | null, storySection?: { __typename: 'Sobre_miStorySection', title: string, subtitle: string } | null, testimonial?: { __typename: 'Sobre_miTestimonial', quote: string, author: string, role: string } | null, ctaSection?: { __typename: 'Sobre_miCtaSection', title: string, description: string, buttonText: string, buttonLink: string } | null };
 
-export type Servicios_PagePartsFragment = { __typename: 'Servicios_page', seo?: { __typename: 'Servicios_pageSeo', title: string, description: string, keywords?: string | null, ogTitle?: string | null, ogDescription?: string | null, ogImage?: string | null, canonicalUrl?: string | null, noindex?: boolean | null } | null, hero?: { __typename: 'Servicios_pageHero', titlePart1: string, titlePart2: string, description: string } | null, servicePackages?: { __typename: 'Servicios_pageServicePackages', packages?: Array<{ __typename: 'Servicios_pageServicePackagesPackages', title: string, subtitle: string, price: string, currency: string, priceNote?: string | null, features: Array<string>, ctaText: string, ctaLink: string, isPopular?: boolean | null } | null> | null, packInevitable?: { __typename: 'Servicios_pageServicePackagesPackInevitable', packLabel: string, title: string, subtitle: string, features: Array<string>, originalPrice: string, currentPrice: string, savings: string, ctaText: string, ctaLink: string } | null, customProjects?: { __typename: 'Servicios_pageServicePackagesCustomProjects', description: string, linkText: string, linkUrl: string } | null } | null, faqSection?: { __typename: 'Servicios_pageFaqSection', title: string, subtitle: string, questions?: Array<{ __typename: 'Servicios_pageFaqSectionQuestions', question: string, answerTitle: string, answerText: string } | null> | null } | null };
+export type Servicios_PagePartsFragment = { __typename: 'Servicios_page', seo?: { __typename: 'Servicios_pageSeo', title: string, description: string, keywords?: string | null, ogTitle?: string | null, ogDescription?: string | null, ogImage?: string | null, canonicalUrl?: string | null, noindex?: boolean | null } | null, hero?: { __typename: 'Servicios_pageHero', titlePart1: string, titlePart2: string, description: string } | null, servicePackages?: { __typename: 'Servicios_pageServicePackages', packages?: Array<{ __typename: 'Servicios_pageServicePackagesPackages', title: string, subtitle: string, price: string, currency: string, priceNote?: string | null, features: Array<string>, ctaText: string, ctaLink: string, isPopular?: boolean | null } | null> | null, packInevitable?: { __typename: 'Servicios_pageServicePackagesPackInevitable', packLabel: string, title: string, subtitle: string, benefits: Array<string>, features: Array<string>, currentPrice: string, originalPrice: string, savings: string, ctaText: string, ctaLink: string } | null, customProjects?: { __typename: 'Servicios_pageServicePackagesCustomProjects', description: string, linkText: string, linkUrl: string } | null } | null, faqSection?: { __typename: 'Servicios_pageFaqSection', title: string, subtitle: string, questions?: Array<{ __typename: 'Servicios_pageFaqSectionQuestions', question: string, answer: string } | null> | null } | null };
 
-export type Colaboraciones_AgenciasPartsFragment = { __typename: 'Colaboraciones_agencias', seo?: { __typename: 'Colaboraciones_agenciasSeo', title: string, description: string } | null, hero?: { __typename: 'Colaboraciones_agenciasHero', subtitle: string, titlePart1: string, titlePart2: string, description: string, ctaText: string, ctaLink: string } | null, targetSection?: { __typename: 'Colaboraciones_agenciasTargetSection', title: string, yesItems: Array<string>, noItems: Array<string>, noItemsLink?: string | null } | null, conditionsSection?: { __typename: 'Colaboraciones_agenciasConditionsSection', title: string, pricing?: { __typename: 'Colaboraciones_agenciasConditionsSectionPricing', basePriceText: string, additionalPriceText: string, minimumText: string } | null, conditions?: Array<{ __typename: 'Colaboraciones_agenciasConditionsSectionConditions', label: string, value: string } | null> | null } | null, includesSection?: { __typename: 'Colaboraciones_agenciasIncludesSection', title: string, included: Array<string>, notIncludedTitle: string, notIncluded: Array<string> } | null, processSection?: { __typename: 'Colaboraciones_agenciasProcessSection', title: string, steps?: Array<{ __typename: 'Colaboraciones_agenciasProcessSectionSteps', number: string, title: string, description: string } | null> | null } | null, faqSection?: { __typename: 'Colaboraciones_agenciasFaqSection', title: string, questions?: Array<{ __typename: 'Colaboraciones_agenciasFaqSectionQuestions', question: string, answer: string } | null> | null } | null, finalCtaSection?: { __typename: 'Colaboraciones_agenciasFinalCtaSection', title: string, description: string, ctaText: string, ctaLink: string } | null };
+export type Colaboraciones_AgenciasPartsFragment = { __typename: 'Colaboraciones_agencias', seo?: { __typename: 'Colaboraciones_agenciasSeo', title: string, description: string } | null, hero?: { __typename: 'Colaboraciones_agenciasHero', subtitle: string, titlePart1: string, titlePart2: string, description: string, ctaText: string, ctaLink: string } | null, targetSection?: { __typename: 'Colaboraciones_agenciasTargetSection', title: string, intro: string, ctaButtonText: string, ctaLink: string, requirements?: Array<{ __typename: 'Colaboraciones_agenciasTargetSectionRequirements', title: string, subtitle?: string | null, description: string } | null> | null, disclaimer?: { __typename: 'Colaboraciones_agenciasTargetSectionDisclaimer', text1: string } | null } | null, workflowSection?: { __typename: 'Colaboraciones_agenciasWorkflowSection', title: string, intro: string, steps?: Array<{ __typename: 'Colaboraciones_agenciasWorkflowSectionSteps', number: string, title: string, description: string } | null> | null } | null, conditionsSection?: { __typename: 'Colaboraciones_agenciasConditionsSection', title: string, basePrice: string, currency: string, priceDescription: string, priceSubtext: string, ctaLink: string, ctaText: string, ctaSubtext: string, conditions?: Array<{ __typename: 'Colaboraciones_agenciasConditionsSectionConditions', title: string, description: string } | null> | null } | null, includesSection?: { __typename: 'Colaboraciones_agenciasIncludesSection', heading: string, title: string, included: Array<string>, notIncludedTitle: string, notIncluded: Array<string>, clarification?: string | null } | null, processSection?: { __typename: 'Colaboraciones_agenciasProcessSection', title: string, steps?: Array<{ __typename: 'Colaboraciones_agenciasProcessSectionSteps', number: string, title: string, description: string } | null> | null } | null, faqSection?: { __typename: 'Colaboraciones_agenciasFaqSection', title: string, questions?: Array<{ __typename: 'Colaboraciones_agenciasFaqSectionQuestions', question: string, answer: string } | null> | null } | null, finalCtaSection?: { __typename: 'Colaboraciones_agenciasFinalCtaSection', title: string, description: string, ctaText: string, ctaLink: string } | null };
 
 export type Renovar_Web_Y_Blog_EmpresaPartsFragment = { __typename: 'Renovar_web_y_blog_empresa', seo?: { __typename: 'Renovar_web_y_blog_empresaSeo', title: string, description: string } | null, hero?: { __typename: 'Renovar_web_y_blog_empresaHero', subtitle: string, title: string, description: string, ctaText: string, ctaLink: string } | null, problemSection?: { __typename: 'Renovar_web_y_blog_empresaProblemSection', title: string, content: string, keywords?: Array<string | null> | null } | null, whatIncludesSection?: { __typename: 'Renovar_web_y_blog_empresaWhatIncludesSection', title: string, webRedaction?: { __typename: 'Renovar_web_y_blog_empresaWhatIncludesSectionWebRedaction', subtitle: string, items: Array<string>, keywords?: Array<string | null> | null } | null, strategicBlog?: { __typename: 'Renovar_web_y_blog_empresaWhatIncludesSectionStrategicBlog', subtitle: string, items: Array<string>, keywords?: Array<string | null> | null } | null, tripleOptimization?: { __typename: 'Renovar_web_y_blog_empresaWhatIncludesSectionTripleOptimization', subtitle: string, items: Array<string>, keywords?: Array<string | null> | null } | null } | null, forWhomSection?: { __typename: 'Renovar_web_y_blog_empresaForWhomSection', title: string, items: Array<string>, keywords?: Array<string | null> | null } | null, investmentSection?: { __typename: 'Renovar_web_y_blog_empresaInvestmentSection', title: string, ctaText: string, ctaLink: string, keywords?: Array<string | null> | null, comparison?: { __typename: 'Renovar_web_y_blog_empresaInvestmentSectionComparison', savings?: string | null, separate?: { __typename: 'Renovar_web_y_blog_empresaInvestmentSectionComparisonSeparate', total?: string | null, webComplete?: { __typename: 'Renovar_web_y_blog_empresaInvestmentSectionComparisonSeparateWebComplete', label?: string | null, price?: string | null } | null, blogFirst?: { __typename: 'Renovar_web_y_blog_empresaInvestmentSectionComparisonSeparateBlogFirst', label?: string | null, price?: string | null } | null } | null, package?: { __typename: 'Renovar_web_y_blog_empresaInvestmentSectionComparisonPackage', label?: string | null, price?: string | null } | null } | null } | null, processSection?: { __typename: 'Renovar_web_y_blog_empresaProcessSection', title: string, keywords?: Array<string | null> | null, steps?: Array<{ __typename: 'Renovar_web_y_blog_empresaProcessSectionSteps', number: string, title: string, duration: string, description: string } | null> | null } | null, faqSection?: { __typename: 'Renovar_web_y_blog_empresaFaqSection', title: string, keywords?: Array<string | null> | null, questions?: Array<{ __typename: 'Renovar_web_y_blog_empresaFaqSectionQuestions', question: string, answer: string } | null> | null } | null, resultsSection?: { __typename: 'Renovar_web_y_blog_empresaResultsSection', title: string, enabled?: boolean | null, keywords?: Array<string | null> | null, examples?: Array<{ __typename: 'Renovar_web_y_blog_empresaResultsSectionExamples', client: string, result: string } | null> | null } | null, finalCtaSection?: { __typename: 'Renovar_web_y_blog_empresaFinalCtaSection', title: string, description: string, price: string, priceNote: string, ctaText: string, ctaLink: string, guaranteeTitle: string, guaranteeDescription: string, features: Array<string> } | null };
 
@@ -3500,7 +3530,7 @@ export type AuditoriaQueryVariables = Exact<{
 }>;
 
 
-export type AuditoriaQuery = { __typename?: 'Query', auditoria: { __typename: 'Auditoria', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'AuditoriaSeo', title: string, description: string } | null, hero?: { __typename: 'AuditoriaHero', subtitle: string, titlePart1: string, titlePart2: string, description: string, ctaText: string, ctaLink: string } | null, problemsSection?: { __typename: 'AuditoriaProblemsSection', title: string, subtitle: string, closingText: string, problems?: Array<{ __typename: 'AuditoriaProblemsSectionProblems', problem: string, consequence: string } | null> | null } | null, approachSection?: { __typename: 'AuditoriaApproachSection', title: string, conclusion: string, points?: Array<{ __typename: 'AuditoriaApproachSectionPoints', title: string, description: string } | null> | null } | null, testimonialsSection?: { __typename: 'AuditoriaTestimonialsSection', title: string, testimonials?: Array<{ __typename: 'AuditoriaTestimonialsSectionTestimonials', quote: string, author: string } | null> | null } | null, pricingSection?: { __typename: 'AuditoriaPricingSection', title: string, subtitle: string, price: string, currency: string, priceDescription: string, includes: Array<string>, delivery: string, format: string, ctaText: string, ctaLink: string } | null, faqSection?: { __typename: 'AuditoriaFaqSection', title: string, questions?: Array<{ __typename: 'AuditoriaFaqSectionQuestions', question: string, answer: string } | null> | null } | null, finalCtaSection?: { __typename: 'AuditoriaFinalCtaSection', guaranteeEmoji: string, guaranteeTitle: string, guaranteeDescription: string, title: string, features: Array<string>, price: string, currency: string, priceNote: string, ctaText: string, ctaLink: string, securityNote: string } | null } };
+export type AuditoriaQuery = { __typename?: 'Query', auditoria: { __typename: 'Auditoria', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'AuditoriaSeo', title: string, description: string } | null, hero?: { __typename: 'AuditoriaHero', subtitle: string, titlePart1: string, titlePart2: string, description: string, ctaText: string, ctaLink: string } | null, problemsSection?: { __typename: 'AuditoriaProblemsSection', title: string, subtitle: string, closingText: string, problems?: Array<{ __typename: 'AuditoriaProblemsSectionProblems', problem: string, consequence: string } | null> | null } | null, approachSection?: { __typename: 'AuditoriaApproachSection', title: string, subtitle?: string | null, conclusion: string, points?: Array<{ __typename: 'AuditoriaApproachSectionPoints', title: string, description: string } | null> | null } | null, testimonialsSection?: { __typename: 'AuditoriaTestimonialsSection', title: string, testimonials?: Array<{ __typename: 'AuditoriaTestimonialsSectionTestimonials', quote: string, author: string } | null> | null } | null, pricingSection?: { __typename: 'AuditoriaPricingSection', title: string, subtitle: string, price: string, currency: string, priceDescription: string, includes: Array<string>, delivery: string, format: string, ctaText: string, ctaLink: string } | null, faqSection?: { __typename: 'AuditoriaFaqSection', title: string, questions?: Array<{ __typename: 'AuditoriaFaqSectionQuestions', question: string, answer: string } | null> | null } | null, finalCtaSection?: { __typename: 'AuditoriaFinalCtaSection', title: string, description: string, ctaText: string, ctaLink: string } | null } };
 
 export type AuditoriaConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -3512,14 +3542,14 @@ export type AuditoriaConnectionQueryVariables = Exact<{
 }>;
 
 
-export type AuditoriaConnectionQuery = { __typename?: 'Query', auditoriaConnection: { __typename?: 'AuditoriaConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'AuditoriaConnectionEdges', cursor: string, node?: { __typename: 'Auditoria', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'AuditoriaSeo', title: string, description: string } | null, hero?: { __typename: 'AuditoriaHero', subtitle: string, titlePart1: string, titlePart2: string, description: string, ctaText: string, ctaLink: string } | null, problemsSection?: { __typename: 'AuditoriaProblemsSection', title: string, subtitle: string, closingText: string, problems?: Array<{ __typename: 'AuditoriaProblemsSectionProblems', problem: string, consequence: string } | null> | null } | null, approachSection?: { __typename: 'AuditoriaApproachSection', title: string, conclusion: string, points?: Array<{ __typename: 'AuditoriaApproachSectionPoints', title: string, description: string } | null> | null } | null, testimonialsSection?: { __typename: 'AuditoriaTestimonialsSection', title: string, testimonials?: Array<{ __typename: 'AuditoriaTestimonialsSectionTestimonials', quote: string, author: string } | null> | null } | null, pricingSection?: { __typename: 'AuditoriaPricingSection', title: string, subtitle: string, price: string, currency: string, priceDescription: string, includes: Array<string>, delivery: string, format: string, ctaText: string, ctaLink: string } | null, faqSection?: { __typename: 'AuditoriaFaqSection', title: string, questions?: Array<{ __typename: 'AuditoriaFaqSectionQuestions', question: string, answer: string } | null> | null } | null, finalCtaSection?: { __typename: 'AuditoriaFinalCtaSection', guaranteeEmoji: string, guaranteeTitle: string, guaranteeDescription: string, title: string, features: Array<string>, price: string, currency: string, priceNote: string, ctaText: string, ctaLink: string, securityNote: string } | null } | null } | null> | null } };
+export type AuditoriaConnectionQuery = { __typename?: 'Query', auditoriaConnection: { __typename?: 'AuditoriaConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'AuditoriaConnectionEdges', cursor: string, node?: { __typename: 'Auditoria', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'AuditoriaSeo', title: string, description: string } | null, hero?: { __typename: 'AuditoriaHero', subtitle: string, titlePart1: string, titlePart2: string, description: string, ctaText: string, ctaLink: string } | null, problemsSection?: { __typename: 'AuditoriaProblemsSection', title: string, subtitle: string, closingText: string, problems?: Array<{ __typename: 'AuditoriaProblemsSectionProblems', problem: string, consequence: string } | null> | null } | null, approachSection?: { __typename: 'AuditoriaApproachSection', title: string, subtitle?: string | null, conclusion: string, points?: Array<{ __typename: 'AuditoriaApproachSectionPoints', title: string, description: string } | null> | null } | null, testimonialsSection?: { __typename: 'AuditoriaTestimonialsSection', title: string, testimonials?: Array<{ __typename: 'AuditoriaTestimonialsSectionTestimonials', quote: string, author: string } | null> | null } | null, pricingSection?: { __typename: 'AuditoriaPricingSection', title: string, subtitle: string, price: string, currency: string, priceDescription: string, includes: Array<string>, delivery: string, format: string, ctaText: string, ctaLink: string } | null, faqSection?: { __typename: 'AuditoriaFaqSection', title: string, questions?: Array<{ __typename: 'AuditoriaFaqSectionQuestions', question: string, answer: string } | null> | null } | null, finalCtaSection?: { __typename: 'AuditoriaFinalCtaSection', title: string, description: string, ctaText: string, ctaLink: string } | null } | null } | null> | null } };
 
 export type Redaccion_WebQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
 }>;
 
 
-export type Redaccion_WebQuery = { __typename?: 'Query', redaccion_web: { __typename: 'Redaccion_web', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'Redaccion_webSeo', title: string, description: string } | null, hero?: { __typename: 'Redaccion_webHero', subtitle: string, titlePart1: string, titlePart2: string, description: string, ctaText: string, ctaLink: string } | null, problemsSection?: { __typename: 'Redaccion_webProblemsSection', title: string, subtitle: string, closingText: string, problems?: Array<{ __typename: 'Redaccion_webProblemsSectionProblems', problem: string, consequence: string } | null> | null } | null, approachSection?: { __typename: 'Redaccion_webApproachSection', title: string, conclusion: string, points?: Array<{ __typename: 'Redaccion_webApproachSectionPoints', title: string, description: string } | null> | null } | null, testimonialsSection?: { __typename: 'Redaccion_webTestimonialsSection', title: string, testimonials?: Array<{ __typename: 'Redaccion_webTestimonialsSectionTestimonials', quote: string, author: string } | null> | null } | null, pricingSection?: { __typename: 'Redaccion_webPricingSection', title: string, subtitle: string, packages?: Array<{ __typename: 'Redaccion_webPricingSectionPackages', name: string, pages: string, price: string, currency: string, priceDescription: string, includes: Array<string>, delivery: string, format: string, ctaText: string, ctaLink: string, isPopular?: boolean | null } | null> | null } | null, faqSection?: { __typename: 'Redaccion_webFaqSection', title: string, questions?: Array<{ __typename: 'Redaccion_webFaqSectionQuestions', question: string, answer: string } | null> | null } | null, finalCtaSection?: { __typename: 'Redaccion_webFinalCtaSection', guaranteeEmoji: string, guaranteeTitle: string, guaranteeDescription: string, title: string, features: Array<string>, price: string, currency: string, priceNote: string, ctaText: string, ctaLink: string, securityNote: string } | null } };
+export type Redaccion_WebQuery = { __typename?: 'Query', redaccion_web: { __typename: 'Redaccion_web', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'Redaccion_webSeo', title: string, description: string } | null, hero?: { __typename: 'Redaccion_webHero', subtitle: string, titlePart1: string, titlePart2: string, description: string, ctaText: string, ctaLink: string } | null, problemsSection?: { __typename: 'Redaccion_webProblemsSection', title: string, subtitle: string, closingText: string, problems?: Array<{ __typename: 'Redaccion_webProblemsSectionProblems', problem: string, consequence: string } | null> | null } | null, approachSection?: { __typename: 'Redaccion_webApproachSection', title: string, subtitle?: string | null, conclusion: string, points?: Array<{ __typename: 'Redaccion_webApproachSectionPoints', title: string, description: string } | null> | null } | null, testimonialsSection?: { __typename: 'Redaccion_webTestimonialsSection', title: string, testimonials?: Array<{ __typename: 'Redaccion_webTestimonialsSectionTestimonials', quote: string, author: string } | null> | null } | null, pricingSection?: { __typename: 'Redaccion_webPricingSection', title: string, subtitle: string, packages?: Array<{ __typename: 'Redaccion_webPricingSectionPackages', name: string, pages: string, price: string, currency: string, priceDescription: string, includes: Array<string>, delivery: string, format: string, ctaText: string, ctaLink: string, isPopular?: boolean | null } | null> | null } | null, faqSection?: { __typename: 'Redaccion_webFaqSection', title: string, questions?: Array<{ __typename: 'Redaccion_webFaqSectionQuestions', question: string, answer: string } | null> | null } | null, finalCtaSection?: { __typename: 'Redaccion_webFinalCtaSection', title: string, description: string, ctaText: string, ctaLink: string } | null } };
 
 export type Redaccion_WebConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -3531,14 +3561,14 @@ export type Redaccion_WebConnectionQueryVariables = Exact<{
 }>;
 
 
-export type Redaccion_WebConnectionQuery = { __typename?: 'Query', redaccion_webConnection: { __typename?: 'Redaccion_webConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'Redaccion_webConnectionEdges', cursor: string, node?: { __typename: 'Redaccion_web', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'Redaccion_webSeo', title: string, description: string } | null, hero?: { __typename: 'Redaccion_webHero', subtitle: string, titlePart1: string, titlePart2: string, description: string, ctaText: string, ctaLink: string } | null, problemsSection?: { __typename: 'Redaccion_webProblemsSection', title: string, subtitle: string, closingText: string, problems?: Array<{ __typename: 'Redaccion_webProblemsSectionProblems', problem: string, consequence: string } | null> | null } | null, approachSection?: { __typename: 'Redaccion_webApproachSection', title: string, conclusion: string, points?: Array<{ __typename: 'Redaccion_webApproachSectionPoints', title: string, description: string } | null> | null } | null, testimonialsSection?: { __typename: 'Redaccion_webTestimonialsSection', title: string, testimonials?: Array<{ __typename: 'Redaccion_webTestimonialsSectionTestimonials', quote: string, author: string } | null> | null } | null, pricingSection?: { __typename: 'Redaccion_webPricingSection', title: string, subtitle: string, packages?: Array<{ __typename: 'Redaccion_webPricingSectionPackages', name: string, pages: string, price: string, currency: string, priceDescription: string, includes: Array<string>, delivery: string, format: string, ctaText: string, ctaLink: string, isPopular?: boolean | null } | null> | null } | null, faqSection?: { __typename: 'Redaccion_webFaqSection', title: string, questions?: Array<{ __typename: 'Redaccion_webFaqSectionQuestions', question: string, answer: string } | null> | null } | null, finalCtaSection?: { __typename: 'Redaccion_webFinalCtaSection', guaranteeEmoji: string, guaranteeTitle: string, guaranteeDescription: string, title: string, features: Array<string>, price: string, currency: string, priceNote: string, ctaText: string, ctaLink: string, securityNote: string } | null } | null } | null> | null } };
+export type Redaccion_WebConnectionQuery = { __typename?: 'Query', redaccion_webConnection: { __typename?: 'Redaccion_webConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'Redaccion_webConnectionEdges', cursor: string, node?: { __typename: 'Redaccion_web', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'Redaccion_webSeo', title: string, description: string } | null, hero?: { __typename: 'Redaccion_webHero', subtitle: string, titlePart1: string, titlePart2: string, description: string, ctaText: string, ctaLink: string } | null, problemsSection?: { __typename: 'Redaccion_webProblemsSection', title: string, subtitle: string, closingText: string, problems?: Array<{ __typename: 'Redaccion_webProblemsSectionProblems', problem: string, consequence: string } | null> | null } | null, approachSection?: { __typename: 'Redaccion_webApproachSection', title: string, subtitle?: string | null, conclusion: string, points?: Array<{ __typename: 'Redaccion_webApproachSectionPoints', title: string, description: string } | null> | null } | null, testimonialsSection?: { __typename: 'Redaccion_webTestimonialsSection', title: string, testimonials?: Array<{ __typename: 'Redaccion_webTestimonialsSectionTestimonials', quote: string, author: string } | null> | null } | null, pricingSection?: { __typename: 'Redaccion_webPricingSection', title: string, subtitle: string, packages?: Array<{ __typename: 'Redaccion_webPricingSectionPackages', name: string, pages: string, price: string, currency: string, priceDescription: string, includes: Array<string>, delivery: string, format: string, ctaText: string, ctaLink: string, isPopular?: boolean | null } | null> | null } | null, faqSection?: { __typename: 'Redaccion_webFaqSection', title: string, questions?: Array<{ __typename: 'Redaccion_webFaqSectionQuestions', question: string, answer: string } | null> | null } | null, finalCtaSection?: { __typename: 'Redaccion_webFinalCtaSection', title: string, description: string, ctaText: string, ctaLink: string } | null } | null } | null> | null } };
 
 export type Redaccion_Estrategica_BlogsQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
 }>;
 
 
-export type Redaccion_Estrategica_BlogsQuery = { __typename?: 'Query', redaccion_estrategica_blogs: { __typename: 'Redaccion_estrategica_blogs', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'Redaccion_estrategica_blogsSeo', title: string, description: string } | null, hero?: { __typename: 'Redaccion_estrategica_blogsHero', subtitle: string, titlePart1: string, titlePart2: string, description: string, ctaText: string, ctaLink: string } | null, problemsSection?: { __typename: 'Redaccion_estrategica_blogsProblemsSection', title: string, subtitle: string, closingText: string, problems?: Array<{ __typename: 'Redaccion_estrategica_blogsProblemsSectionProblems', problem: string, consequence: string } | null> | null } | null, approachSection?: { __typename: 'Redaccion_estrategica_blogsApproachSection', title: string, conclusion: string, points?: Array<{ __typename: 'Redaccion_estrategica_blogsApproachSectionPoints', title: string, description: string } | null> | null } | null, testimonialsSection?: { __typename: 'Redaccion_estrategica_blogsTestimonialsSection', title: string, testimonials?: Array<{ __typename: 'Redaccion_estrategica_blogsTestimonialsSectionTestimonials', quote: string, author: string } | null> | null } | null, pricingSection?: { __typename: 'Redaccion_estrategica_blogsPricingSection', title: string, subtitle: string, packages?: Array<{ __typename: 'Redaccion_estrategica_blogsPricingSectionPackages', name: string, articles: string, price: string, currency: string, priceDescription: string, includes: Array<string>, delivery: string, format: string, ctaText: string, ctaLink: string, isPopular?: boolean | null } | null> | null } | null, faqSection?: { __typename: 'Redaccion_estrategica_blogsFaqSection', title: string, questions?: Array<{ __typename: 'Redaccion_estrategica_blogsFaqSectionQuestions', question: string, answer: string } | null> | null } | null, finalCtaSection?: { __typename: 'Redaccion_estrategica_blogsFinalCtaSection', guaranteeEmoji: string, guaranteeTitle: string, guaranteeDescription: string, title: string, features: Array<string>, price: string, currency: string, priceNote: string, ctaText: string, ctaLink: string, securityNote: string } | null } };
+export type Redaccion_Estrategica_BlogsQuery = { __typename?: 'Query', redaccion_estrategica_blogs: { __typename: 'Redaccion_estrategica_blogs', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'Redaccion_estrategica_blogsSeo', title: string, description: string } | null, hero?: { __typename: 'Redaccion_estrategica_blogsHero', subtitle: string, titlePart1: string, titlePart2: string, description: string, ctaText: string, ctaLink: string } | null, problemsSection?: { __typename: 'Redaccion_estrategica_blogsProblemsSection', title: string, subtitle: string, closingText: string, problems?: Array<{ __typename: 'Redaccion_estrategica_blogsProblemsSectionProblems', problem: string, consequence: string } | null> | null } | null, approachSection?: { __typename: 'Redaccion_estrategica_blogsApproachSection', title: string, subtitle?: string | null, conclusion: string, points?: Array<{ __typename: 'Redaccion_estrategica_blogsApproachSectionPoints', title: string, description: string } | null> | null } | null, testimonialsSection?: { __typename: 'Redaccion_estrategica_blogsTestimonialsSection', title: string, testimonials?: Array<{ __typename: 'Redaccion_estrategica_blogsTestimonialsSectionTestimonials', quote: string, author: string } | null> | null } | null, pricingSection?: { __typename: 'Redaccion_estrategica_blogsPricingSection', title: string, subtitle: string, packages?: Array<{ __typename: 'Redaccion_estrategica_blogsPricingSectionPackages', name: string, articles: string, price: string, currency: string, priceDescription: string, includes: Array<string>, delivery: string, format: string, ctaText: string, ctaLink: string, isPopular?: boolean | null } | null> | null } | null, faqSection?: { __typename: 'Redaccion_estrategica_blogsFaqSection', title: string, questions?: Array<{ __typename: 'Redaccion_estrategica_blogsFaqSectionQuestions', question: string, answer: string } | null> | null } | null, finalCtaSection?: { __typename: 'Redaccion_estrategica_blogsFinalCtaSection', title: string, description: string, ctaText: string, ctaLink: string } | null } };
 
 export type Redaccion_Estrategica_BlogsConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -3550,7 +3580,7 @@ export type Redaccion_Estrategica_BlogsConnectionQueryVariables = Exact<{
 }>;
 
 
-export type Redaccion_Estrategica_BlogsConnectionQuery = { __typename?: 'Query', redaccion_estrategica_blogsConnection: { __typename?: 'Redaccion_estrategica_blogsConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'Redaccion_estrategica_blogsConnectionEdges', cursor: string, node?: { __typename: 'Redaccion_estrategica_blogs', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'Redaccion_estrategica_blogsSeo', title: string, description: string } | null, hero?: { __typename: 'Redaccion_estrategica_blogsHero', subtitle: string, titlePart1: string, titlePart2: string, description: string, ctaText: string, ctaLink: string } | null, problemsSection?: { __typename: 'Redaccion_estrategica_blogsProblemsSection', title: string, subtitle: string, closingText: string, problems?: Array<{ __typename: 'Redaccion_estrategica_blogsProblemsSectionProblems', problem: string, consequence: string } | null> | null } | null, approachSection?: { __typename: 'Redaccion_estrategica_blogsApproachSection', title: string, conclusion: string, points?: Array<{ __typename: 'Redaccion_estrategica_blogsApproachSectionPoints', title: string, description: string } | null> | null } | null, testimonialsSection?: { __typename: 'Redaccion_estrategica_blogsTestimonialsSection', title: string, testimonials?: Array<{ __typename: 'Redaccion_estrategica_blogsTestimonialsSectionTestimonials', quote: string, author: string } | null> | null } | null, pricingSection?: { __typename: 'Redaccion_estrategica_blogsPricingSection', title: string, subtitle: string, packages?: Array<{ __typename: 'Redaccion_estrategica_blogsPricingSectionPackages', name: string, articles: string, price: string, currency: string, priceDescription: string, includes: Array<string>, delivery: string, format: string, ctaText: string, ctaLink: string, isPopular?: boolean | null } | null> | null } | null, faqSection?: { __typename: 'Redaccion_estrategica_blogsFaqSection', title: string, questions?: Array<{ __typename: 'Redaccion_estrategica_blogsFaqSectionQuestions', question: string, answer: string } | null> | null } | null, finalCtaSection?: { __typename: 'Redaccion_estrategica_blogsFinalCtaSection', guaranteeEmoji: string, guaranteeTitle: string, guaranteeDescription: string, title: string, features: Array<string>, price: string, currency: string, priceNote: string, ctaText: string, ctaLink: string, securityNote: string } | null } | null } | null> | null } };
+export type Redaccion_Estrategica_BlogsConnectionQuery = { __typename?: 'Query', redaccion_estrategica_blogsConnection: { __typename?: 'Redaccion_estrategica_blogsConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'Redaccion_estrategica_blogsConnectionEdges', cursor: string, node?: { __typename: 'Redaccion_estrategica_blogs', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'Redaccion_estrategica_blogsSeo', title: string, description: string } | null, hero?: { __typename: 'Redaccion_estrategica_blogsHero', subtitle: string, titlePart1: string, titlePart2: string, description: string, ctaText: string, ctaLink: string } | null, problemsSection?: { __typename: 'Redaccion_estrategica_blogsProblemsSection', title: string, subtitle: string, closingText: string, problems?: Array<{ __typename: 'Redaccion_estrategica_blogsProblemsSectionProblems', problem: string, consequence: string } | null> | null } | null, approachSection?: { __typename: 'Redaccion_estrategica_blogsApproachSection', title: string, subtitle?: string | null, conclusion: string, points?: Array<{ __typename: 'Redaccion_estrategica_blogsApproachSectionPoints', title: string, description: string } | null> | null } | null, testimonialsSection?: { __typename: 'Redaccion_estrategica_blogsTestimonialsSection', title: string, testimonials?: Array<{ __typename: 'Redaccion_estrategica_blogsTestimonialsSectionTestimonials', quote: string, author: string } | null> | null } | null, pricingSection?: { __typename: 'Redaccion_estrategica_blogsPricingSection', title: string, subtitle: string, packages?: Array<{ __typename: 'Redaccion_estrategica_blogsPricingSectionPackages', name: string, articles: string, price: string, currency: string, priceDescription: string, includes: Array<string>, delivery: string, format: string, ctaText: string, ctaLink: string, isPopular?: boolean | null } | null> | null } | null, faqSection?: { __typename: 'Redaccion_estrategica_blogsFaqSection', title: string, questions?: Array<{ __typename: 'Redaccion_estrategica_blogsFaqSectionQuestions', question: string, answer: string } | null> | null } | null, finalCtaSection?: { __typename: 'Redaccion_estrategica_blogsFinalCtaSection', title: string, description: string, ctaText: string, ctaLink: string } | null } | null } | null> | null } };
 
 export type Contact_PageQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
@@ -3595,7 +3625,7 @@ export type Servicios_PageQueryVariables = Exact<{
 }>;
 
 
-export type Servicios_PageQuery = { __typename?: 'Query', servicios_page: { __typename: 'Servicios_page', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'Servicios_pageSeo', title: string, description: string, keywords?: string | null, ogTitle?: string | null, ogDescription?: string | null, ogImage?: string | null, canonicalUrl?: string | null, noindex?: boolean | null } | null, hero?: { __typename: 'Servicios_pageHero', titlePart1: string, titlePart2: string, description: string } | null, servicePackages?: { __typename: 'Servicios_pageServicePackages', packages?: Array<{ __typename: 'Servicios_pageServicePackagesPackages', title: string, subtitle: string, price: string, currency: string, priceNote?: string | null, features: Array<string>, ctaText: string, ctaLink: string, isPopular?: boolean | null } | null> | null, packInevitable?: { __typename: 'Servicios_pageServicePackagesPackInevitable', packLabel: string, title: string, subtitle: string, features: Array<string>, originalPrice: string, currentPrice: string, savings: string, ctaText: string, ctaLink: string } | null, customProjects?: { __typename: 'Servicios_pageServicePackagesCustomProjects', description: string, linkText: string, linkUrl: string } | null } | null, faqSection?: { __typename: 'Servicios_pageFaqSection', title: string, subtitle: string, questions?: Array<{ __typename: 'Servicios_pageFaqSectionQuestions', question: string, answerTitle: string, answerText: string } | null> | null } | null } };
+export type Servicios_PageQuery = { __typename?: 'Query', servicios_page: { __typename: 'Servicios_page', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'Servicios_pageSeo', title: string, description: string, keywords?: string | null, ogTitle?: string | null, ogDescription?: string | null, ogImage?: string | null, canonicalUrl?: string | null, noindex?: boolean | null } | null, hero?: { __typename: 'Servicios_pageHero', titlePart1: string, titlePart2: string, description: string } | null, servicePackages?: { __typename: 'Servicios_pageServicePackages', packages?: Array<{ __typename: 'Servicios_pageServicePackagesPackages', title: string, subtitle: string, price: string, currency: string, priceNote?: string | null, features: Array<string>, ctaText: string, ctaLink: string, isPopular?: boolean | null } | null> | null, packInevitable?: { __typename: 'Servicios_pageServicePackagesPackInevitable', packLabel: string, title: string, subtitle: string, benefits: Array<string>, features: Array<string>, currentPrice: string, originalPrice: string, savings: string, ctaText: string, ctaLink: string } | null, customProjects?: { __typename: 'Servicios_pageServicePackagesCustomProjects', description: string, linkText: string, linkUrl: string } | null } | null, faqSection?: { __typename: 'Servicios_pageFaqSection', title: string, subtitle: string, questions?: Array<{ __typename: 'Servicios_pageFaqSectionQuestions', question: string, answer: string } | null> | null } | null } };
 
 export type Servicios_PageConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -3607,14 +3637,14 @@ export type Servicios_PageConnectionQueryVariables = Exact<{
 }>;
 
 
-export type Servicios_PageConnectionQuery = { __typename?: 'Query', servicios_pageConnection: { __typename?: 'Servicios_pageConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'Servicios_pageConnectionEdges', cursor: string, node?: { __typename: 'Servicios_page', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'Servicios_pageSeo', title: string, description: string, keywords?: string | null, ogTitle?: string | null, ogDescription?: string | null, ogImage?: string | null, canonicalUrl?: string | null, noindex?: boolean | null } | null, hero?: { __typename: 'Servicios_pageHero', titlePart1: string, titlePart2: string, description: string } | null, servicePackages?: { __typename: 'Servicios_pageServicePackages', packages?: Array<{ __typename: 'Servicios_pageServicePackagesPackages', title: string, subtitle: string, price: string, currency: string, priceNote?: string | null, features: Array<string>, ctaText: string, ctaLink: string, isPopular?: boolean | null } | null> | null, packInevitable?: { __typename: 'Servicios_pageServicePackagesPackInevitable', packLabel: string, title: string, subtitle: string, features: Array<string>, originalPrice: string, currentPrice: string, savings: string, ctaText: string, ctaLink: string } | null, customProjects?: { __typename: 'Servicios_pageServicePackagesCustomProjects', description: string, linkText: string, linkUrl: string } | null } | null, faqSection?: { __typename: 'Servicios_pageFaqSection', title: string, subtitle: string, questions?: Array<{ __typename: 'Servicios_pageFaqSectionQuestions', question: string, answerTitle: string, answerText: string } | null> | null } | null } | null } | null> | null } };
+export type Servicios_PageConnectionQuery = { __typename?: 'Query', servicios_pageConnection: { __typename?: 'Servicios_pageConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'Servicios_pageConnectionEdges', cursor: string, node?: { __typename: 'Servicios_page', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'Servicios_pageSeo', title: string, description: string, keywords?: string | null, ogTitle?: string | null, ogDescription?: string | null, ogImage?: string | null, canonicalUrl?: string | null, noindex?: boolean | null } | null, hero?: { __typename: 'Servicios_pageHero', titlePart1: string, titlePart2: string, description: string } | null, servicePackages?: { __typename: 'Servicios_pageServicePackages', packages?: Array<{ __typename: 'Servicios_pageServicePackagesPackages', title: string, subtitle: string, price: string, currency: string, priceNote?: string | null, features: Array<string>, ctaText: string, ctaLink: string, isPopular?: boolean | null } | null> | null, packInevitable?: { __typename: 'Servicios_pageServicePackagesPackInevitable', packLabel: string, title: string, subtitle: string, benefits: Array<string>, features: Array<string>, currentPrice: string, originalPrice: string, savings: string, ctaText: string, ctaLink: string } | null, customProjects?: { __typename: 'Servicios_pageServicePackagesCustomProjects', description: string, linkText: string, linkUrl: string } | null } | null, faqSection?: { __typename: 'Servicios_pageFaqSection', title: string, subtitle: string, questions?: Array<{ __typename: 'Servicios_pageFaqSectionQuestions', question: string, answer: string } | null> | null } | null } | null } | null> | null } };
 
 export type Colaboraciones_AgenciasQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
 }>;
 
 
-export type Colaboraciones_AgenciasQuery = { __typename?: 'Query', colaboraciones_agencias: { __typename: 'Colaboraciones_agencias', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'Colaboraciones_agenciasSeo', title: string, description: string } | null, hero?: { __typename: 'Colaboraciones_agenciasHero', subtitle: string, titlePart1: string, titlePart2: string, description: string, ctaText: string, ctaLink: string } | null, targetSection?: { __typename: 'Colaboraciones_agenciasTargetSection', title: string, yesItems: Array<string>, noItems: Array<string>, noItemsLink?: string | null } | null, conditionsSection?: { __typename: 'Colaboraciones_agenciasConditionsSection', title: string, pricing?: { __typename: 'Colaboraciones_agenciasConditionsSectionPricing', basePriceText: string, additionalPriceText: string, minimumText: string } | null, conditions?: Array<{ __typename: 'Colaboraciones_agenciasConditionsSectionConditions', label: string, value: string } | null> | null } | null, includesSection?: { __typename: 'Colaboraciones_agenciasIncludesSection', title: string, included: Array<string>, notIncludedTitle: string, notIncluded: Array<string> } | null, processSection?: { __typename: 'Colaboraciones_agenciasProcessSection', title: string, steps?: Array<{ __typename: 'Colaboraciones_agenciasProcessSectionSteps', number: string, title: string, description: string } | null> | null } | null, faqSection?: { __typename: 'Colaboraciones_agenciasFaqSection', title: string, questions?: Array<{ __typename: 'Colaboraciones_agenciasFaqSectionQuestions', question: string, answer: string } | null> | null } | null, finalCtaSection?: { __typename: 'Colaboraciones_agenciasFinalCtaSection', title: string, description: string, ctaText: string, ctaLink: string } | null } };
+export type Colaboraciones_AgenciasQuery = { __typename?: 'Query', colaboraciones_agencias: { __typename: 'Colaboraciones_agencias', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'Colaboraciones_agenciasSeo', title: string, description: string } | null, hero?: { __typename: 'Colaboraciones_agenciasHero', subtitle: string, titlePart1: string, titlePart2: string, description: string, ctaText: string, ctaLink: string } | null, targetSection?: { __typename: 'Colaboraciones_agenciasTargetSection', title: string, intro: string, ctaButtonText: string, ctaLink: string, requirements?: Array<{ __typename: 'Colaboraciones_agenciasTargetSectionRequirements', title: string, subtitle?: string | null, description: string } | null> | null, disclaimer?: { __typename: 'Colaboraciones_agenciasTargetSectionDisclaimer', text1: string } | null } | null, workflowSection?: { __typename: 'Colaboraciones_agenciasWorkflowSection', title: string, intro: string, steps?: Array<{ __typename: 'Colaboraciones_agenciasWorkflowSectionSteps', number: string, title: string, description: string } | null> | null } | null, conditionsSection?: { __typename: 'Colaboraciones_agenciasConditionsSection', title: string, basePrice: string, currency: string, priceDescription: string, priceSubtext: string, ctaLink: string, ctaText: string, ctaSubtext: string, conditions?: Array<{ __typename: 'Colaboraciones_agenciasConditionsSectionConditions', title: string, description: string } | null> | null } | null, includesSection?: { __typename: 'Colaboraciones_agenciasIncludesSection', heading: string, title: string, included: Array<string>, notIncludedTitle: string, notIncluded: Array<string>, clarification?: string | null } | null, processSection?: { __typename: 'Colaboraciones_agenciasProcessSection', title: string, steps?: Array<{ __typename: 'Colaboraciones_agenciasProcessSectionSteps', number: string, title: string, description: string } | null> | null } | null, faqSection?: { __typename: 'Colaboraciones_agenciasFaqSection', title: string, questions?: Array<{ __typename: 'Colaboraciones_agenciasFaqSectionQuestions', question: string, answer: string } | null> | null } | null, finalCtaSection?: { __typename: 'Colaboraciones_agenciasFinalCtaSection', title: string, description: string, ctaText: string, ctaLink: string } | null } };
 
 export type Colaboraciones_AgenciasConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -3626,7 +3656,7 @@ export type Colaboraciones_AgenciasConnectionQueryVariables = Exact<{
 }>;
 
 
-export type Colaboraciones_AgenciasConnectionQuery = { __typename?: 'Query', colaboraciones_agenciasConnection: { __typename?: 'Colaboraciones_agenciasConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'Colaboraciones_agenciasConnectionEdges', cursor: string, node?: { __typename: 'Colaboraciones_agencias', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'Colaboraciones_agenciasSeo', title: string, description: string } | null, hero?: { __typename: 'Colaboraciones_agenciasHero', subtitle: string, titlePart1: string, titlePart2: string, description: string, ctaText: string, ctaLink: string } | null, targetSection?: { __typename: 'Colaboraciones_agenciasTargetSection', title: string, yesItems: Array<string>, noItems: Array<string>, noItemsLink?: string | null } | null, conditionsSection?: { __typename: 'Colaboraciones_agenciasConditionsSection', title: string, pricing?: { __typename: 'Colaboraciones_agenciasConditionsSectionPricing', basePriceText: string, additionalPriceText: string, minimumText: string } | null, conditions?: Array<{ __typename: 'Colaboraciones_agenciasConditionsSectionConditions', label: string, value: string } | null> | null } | null, includesSection?: { __typename: 'Colaboraciones_agenciasIncludesSection', title: string, included: Array<string>, notIncludedTitle: string, notIncluded: Array<string> } | null, processSection?: { __typename: 'Colaboraciones_agenciasProcessSection', title: string, steps?: Array<{ __typename: 'Colaboraciones_agenciasProcessSectionSteps', number: string, title: string, description: string } | null> | null } | null, faqSection?: { __typename: 'Colaboraciones_agenciasFaqSection', title: string, questions?: Array<{ __typename: 'Colaboraciones_agenciasFaqSectionQuestions', question: string, answer: string } | null> | null } | null, finalCtaSection?: { __typename: 'Colaboraciones_agenciasFinalCtaSection', title: string, description: string, ctaText: string, ctaLink: string } | null } | null } | null> | null } };
+export type Colaboraciones_AgenciasConnectionQuery = { __typename?: 'Query', colaboraciones_agenciasConnection: { __typename?: 'Colaboraciones_agenciasConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'Colaboraciones_agenciasConnectionEdges', cursor: string, node?: { __typename: 'Colaboraciones_agencias', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'Colaboraciones_agenciasSeo', title: string, description: string } | null, hero?: { __typename: 'Colaboraciones_agenciasHero', subtitle: string, titlePart1: string, titlePart2: string, description: string, ctaText: string, ctaLink: string } | null, targetSection?: { __typename: 'Colaboraciones_agenciasTargetSection', title: string, intro: string, ctaButtonText: string, ctaLink: string, requirements?: Array<{ __typename: 'Colaboraciones_agenciasTargetSectionRequirements', title: string, subtitle?: string | null, description: string } | null> | null, disclaimer?: { __typename: 'Colaboraciones_agenciasTargetSectionDisclaimer', text1: string } | null } | null, workflowSection?: { __typename: 'Colaboraciones_agenciasWorkflowSection', title: string, intro: string, steps?: Array<{ __typename: 'Colaboraciones_agenciasWorkflowSectionSteps', number: string, title: string, description: string } | null> | null } | null, conditionsSection?: { __typename: 'Colaboraciones_agenciasConditionsSection', title: string, basePrice: string, currency: string, priceDescription: string, priceSubtext: string, ctaLink: string, ctaText: string, ctaSubtext: string, conditions?: Array<{ __typename: 'Colaboraciones_agenciasConditionsSectionConditions', title: string, description: string } | null> | null } | null, includesSection?: { __typename: 'Colaboraciones_agenciasIncludesSection', heading: string, title: string, included: Array<string>, notIncludedTitle: string, notIncluded: Array<string>, clarification?: string | null } | null, processSection?: { __typename: 'Colaboraciones_agenciasProcessSection', title: string, steps?: Array<{ __typename: 'Colaboraciones_agenciasProcessSectionSteps', number: string, title: string, description: string } | null> | null } | null, faqSection?: { __typename: 'Colaboraciones_agenciasFaqSection', title: string, questions?: Array<{ __typename: 'Colaboraciones_agenciasFaqSectionQuestions', question: string, answer: string } | null> | null } | null, finalCtaSection?: { __typename: 'Colaboraciones_agenciasFinalCtaSection', title: string, description: string, ctaText: string, ctaLink: string } | null } | null } | null> | null } };
 
 export type Renovar_Web_Y_Blog_EmpresaQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
@@ -3826,6 +3856,7 @@ export const AuditoriaPartsFragmentDoc = gql`
   approachSection {
     __typename
     title
+    subtitle
     points {
       __typename
       title
@@ -3866,17 +3897,10 @@ export const AuditoriaPartsFragmentDoc = gql`
   }
   finalCtaSection {
     __typename
-    guaranteeEmoji
-    guaranteeTitle
-    guaranteeDescription
     title
-    features
-    price
-    currency
-    priceNote
+    description
     ctaText
     ctaLink
-    securityNote
   }
 }
     `;
@@ -3911,6 +3935,7 @@ export const Redaccion_WebPartsFragmentDoc = gql`
   approachSection {
     __typename
     title
+    subtitle
     points {
       __typename
       title
@@ -3957,17 +3982,10 @@ export const Redaccion_WebPartsFragmentDoc = gql`
   }
   finalCtaSection {
     __typename
-    guaranteeEmoji
-    guaranteeTitle
-    guaranteeDescription
     title
-    features
-    price
-    currency
-    priceNote
+    description
     ctaText
     ctaLink
-    securityNote
   }
 }
     `;
@@ -4002,6 +4020,7 @@ export const Redaccion_Estrategica_BlogsPartsFragmentDoc = gql`
   approachSection {
     __typename
     title
+    subtitle
     points {
       __typename
       title
@@ -4048,17 +4067,10 @@ export const Redaccion_Estrategica_BlogsPartsFragmentDoc = gql`
   }
   finalCtaSection {
     __typename
-    guaranteeEmoji
-    guaranteeTitle
-    guaranteeDescription
     title
-    features
-    price
-    currency
-    priceNote
+    description
     ctaText
     ctaLink
-    securityNote
   }
 }
     `;
@@ -4187,9 +4199,10 @@ export const Servicios_PagePartsFragmentDoc = gql`
       packLabel
       title
       subtitle
+      benefits
       features
-      originalPrice
       currentPrice
+      originalPrice
       savings
       ctaText
       ctaLink
@@ -4208,8 +4221,7 @@ export const Servicios_PagePartsFragmentDoc = gql`
     questions {
       __typename
       question
-      answerTitle
-      answerText
+      answer
     }
   }
 }
@@ -4234,31 +4246,55 @@ export const Colaboraciones_AgenciasPartsFragmentDoc = gql`
   targetSection {
     __typename
     title
-    yesItems
-    noItems
-    noItemsLink
+    intro
+    requirements {
+      __typename
+      title
+      subtitle
+      description
+    }
+    disclaimer {
+      __typename
+      text1
+    }
+    ctaButtonText
+    ctaLink
+  }
+  workflowSection {
+    __typename
+    title
+    intro
+    steps {
+      __typename
+      number
+      title
+      description
+    }
   }
   conditionsSection {
     __typename
     title
-    pricing {
-      __typename
-      basePriceText
-      additionalPriceText
-      minimumText
-    }
+    basePrice
+    currency
+    priceDescription
+    priceSubtext
     conditions {
       __typename
-      label
-      value
+      title
+      description
     }
+    ctaLink
+    ctaText
+    ctaSubtext
   }
   includesSection {
     __typename
+    heading
     title
     included
     notIncludedTitle
     notIncluded
+    clarification
   }
   processSection {
     __typename

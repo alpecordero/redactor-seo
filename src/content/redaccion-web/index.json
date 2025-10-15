@@ -5,10 +5,10 @@
   },
   "hero": {
     "subtitle": "REDACCIÓN WEB COMPLETA",
-    "titlePart1": "Tu web no conecta",
-    "titlePart2": "Yo la transformo",
-    "description": "Redacto las 5 páginas más importantes de tu web para que conectes mejor con tus clientes y consigas más ventas.",
-    "ctaText": "Quiero conectar con mis clientes →",
+    "titlePart1": "¿La IA acabará con los negocios online?",
+    "titlePart2": "Falso.",
+    "description": "Desaparecerán aquellos negocios que sigan al rebaño. Que usen las mismas herramientas que el resto. Solo tienes un camino: impactar en el corazón de tu audiencia.",
+    "ctaText": "Quiero sobrevivir a la IA",
     "ctaLink": "/contacto"
   },
   "problemsSection": {
@@ -36,6 +36,7 @@
   },
   "approachSection": {
     "title": "Mi método es diferente",
+    "subtitle": "(tres pasos para conectar con tu audiencia)",
     "points": [
       {
         "title": "Primero entiendo tu negocio",
@@ -156,24 +157,9 @@
     ]
   },
   "finalCtaSection": {
-    "guaranteeEmoji": "💯",
-    "guaranteeTitle": "Garantía de Satisfacción Total",
-    "guaranteeDescription": "Si en 7 días tras la entrega no estás completamente satisfecho con los textos, **te devuelvo el 100% de tu inversión.** Sin preguntas ni excusas.",
-    "title": "Todo lo que necesitas para una web que convierte:",
-    "features": [
-      "5 páginas redactadas profesionalmente",
-      "Investigación de audiencia incluida",
-      "Análisis de competencia",
-      "Estrategia SEO básica",
-      "2 rondas de revisiones",
-      "Textos listos para implementar",
-      "Garantía 100% satisfacción"
-    ],
-    "price": "1.399",
-    "currency": "€",
-    "priceNote": "(Entrega garantizada en 14 días laborables)",
-    "ctaText": "SÍ, quiero una web que venda →",
-    "ctaLink": "/contacto",
-    "securityNote": "Pago seguro. Factura incluida. Garantía total."
+    "title": "¿Listo para transformar tu web?",
+    "description": "Textos profesionales que conectan con tus clientes y generan resultados reales. Sin rodeos, sin palabrería, sin perder el tiempo.",
+    "ctaText": "Empezar ahora",
+    "ctaLink": "/contacto"
   }
 }

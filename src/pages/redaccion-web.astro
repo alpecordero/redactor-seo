@@ -116,16 +116,24 @@ const baseUrl = 'https://redactorseo.es'
   <section class="py-20 md:py-32 lg:py-40 bg-white">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
       <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-12">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-8">
           {approachSection.title}
         </h2>
+        <div class="text-xl text-gray-600 mb-12 leading-relaxed max-w-3xl mx-auto">
+          <p>{approachSection.subtitle}</p>
+        </div>
 
         <!-- Enfoque simple y directo -->
         <div class="max-w-2xl mx-auto space-y-12">
-          {approachSection.points.map((point) => (
+          {approachSection.points.map((point, index) => (
             <div class="text-left">
-              <h3 class="text-xl font-semibold text-gray-900 mb-3">{point.title}</h3>
-              <p class="text-lg text-gray-600 leading-relaxed" set:html={point.description}></p>
+              <div class="flex items-start gap-4 mb-3">
+                <div class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center flex-shrink-0">
+                  <span class="text-white font-bold text-sm">{index + 1}</span>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 flex-1 pt-0.5">{point.title}</h3>
+              </div>
+              <p class="text-lg text-gray-600 leading-relaxed ml-12" set:html={point.description}></p>
             </div>
           ))}
         </div>
@@ -275,42 +283,19 @@ const baseUrl = 'https://redactorseo.es'
   </section>
 
 
-  <!-- SECCIÓN 7: CTA Final + Garantía -->
+  <!-- SECCIÓN 7: CTA Final -->
   <section class="py-20 md:py-32 lg:py-40 bg-black text-white">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 text-center">
-      <div class="mb-12">
-        <div class="text-4xl mb-4">{finalCtaSection.guaranteeEmoji}</div>
-        <h2 class="text-3xl md:text-4xl font-bold mb-6">{finalCtaSection.guaranteeTitle}</h2>
-        <p class="text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto" set:html={finalCtaSection.guaranteeDescription}></p>
-      </div>
-
-      <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 mb-8">
-        <h3 class="text-2xl font-bold mb-6">{finalCtaSection.title}</h3>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-left mb-8">
-          {finalCtaSection.features.map((feature) => (
-            <div class="flex items-center space-x-3">
-              <svg class="w-4 h-4 text-white flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-              </svg>
-              <span class="text-gray-300">{feature}</span>
-            </div>
-          ))}
-        </div>
-
-        <div class="text-center mb-6">
-          <div class="text-4xl md:text-5xl font-bold mb-2">{finalCtaSection.price}<span class="text-2xl md:text-3xl">{finalCtaSection.currency}</span></div>
-          <div class="text-gray-300">{finalCtaSection.priceNote}</div>
-        </div>
-
-        <a href={finalCtaSection.ctaLink} class="inline-flex items-center bg-naranja-vibrante text-white px-8 py-4 rounded-xl text-xl font-bold hover:bg-orange-600 hover:scale-105 transition-all duration-300 mb-4">
-          {finalCtaSection.ctaText}
-        </a>
-
-        <p class="text-sm text-gray-400">
-          {finalCtaSection.securityNote}
-        </p>
-      </div>
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">{finalCtaSection.title}</h2>
+      <p class="text-xl text-gray-300 mb-10 leading-relaxed max-w-3xl mx-auto">
+        {finalCtaSection.description}
+      </p>
+      <a
+        href={finalCtaSection.ctaLink}
+        class="bg-naranja-vibrante text-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-orange-600 hover:scale-105 transition-all duration-300 inline-block"
+      >
+        {finalCtaSection.ctaText}
+      </a>
     </div>
   </section>
 </Layout>

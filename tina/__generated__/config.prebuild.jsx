@@ -897,6 +897,13 @@ var config_default = defineConfig({
                 required: true
               },
               {
+                type: "string",
+                name: "subtitle",
+                label: "Subt\xEDtulo",
+                required: false,
+                description: "Texto aclaratorio debajo del t\xEDtulo"
+              },
+              {
                 type: "object",
                 name: "points",
                 label: "Puntos del enfoque",
@@ -1070,24 +1077,18 @@ var config_default = defineConfig({
           {
             type: "object",
             name: "finalCtaSection",
-            label: "7. CTA Final + Garant\xEDa",
+            label: "7. CTA Final",
             fields: [
               {
                 type: "string",
-                name: "guaranteeEmoji",
-                label: "Emoji de la garant\xEDa",
+                name: "title",
+                label: "T\xEDtulo",
                 required: true
               },
               {
                 type: "string",
-                name: "guaranteeTitle",
-                label: "T\xEDtulo de la garant\xEDa",
-                required: true
-              },
-              {
-                type: "string",
-                name: "guaranteeDescription",
-                label: "Descripci\xF3n de la garant\xEDa",
+                name: "description",
+                label: "Descripci\xF3n",
                 required: true,
                 ui: {
                   component: "textarea"
@@ -1095,51 +1096,14 @@ var config_default = defineConfig({
               },
               {
                 type: "string",
-                name: "title",
-                label: "T\xEDtulo del resumen",
-                required: true
-              },
-              {
-                type: "string",
-                name: "features",
-                label: "Caracter\xEDsticas incluidas",
-                list: true,
-                required: true
-              },
-              {
-                type: "string",
-                name: "price",
-                label: "Precio final (solo n\xFAmero)",
-                required: true
-              },
-              {
-                type: "string",
-                name: "currency",
-                label: "Moneda",
-                required: true
-              },
-              {
-                type: "string",
-                name: "priceNote",
-                label: "Nota del precio",
-                required: true
-              },
-              {
-                type: "string",
                 name: "ctaText",
-                label: "Texto del bot\xF3n CTA final",
+                label: "Texto del bot\xF3n CTA",
                 required: true
               },
               {
                 type: "string",
                 name: "ctaLink",
-                label: "Enlace del bot\xF3n CTA final",
-                required: true
-              },
-              {
-                type: "string",
-                name: "securityNote",
-                label: "Nota de seguridad",
+                label: "Enlace del bot\xF3n CTA",
                 required: true
               }
             ]
@@ -1298,6 +1262,15 @@ var config_default = defineConfig({
                 name: "title",
                 label: "T\xEDtulo (H2)",
                 required: true
+              },
+              {
+                type: "string",
+                name: "subtitle",
+                label: "Subt\xEDtulo",
+                required: false,
+                ui: {
+                  description: "Texto aclaratorio debajo del t\xEDtulo (ej: '(tres pasos para conectar con tu audiencia)')"
+                }
               },
               {
                 type: "object",
@@ -1528,24 +1501,18 @@ var config_default = defineConfig({
           {
             type: "object",
             name: "finalCtaSection",
-            label: "7. CTA Final + Garant\xEDa",
+            label: "7. CTA Final",
             fields: [
               {
                 type: "string",
-                name: "guaranteeEmoji",
-                label: "Emoji de la garant\xEDa",
+                name: "title",
+                label: "T\xEDtulo",
                 required: true
               },
               {
                 type: "string",
-                name: "guaranteeTitle",
-                label: "T\xEDtulo de la garant\xEDa",
-                required: true
-              },
-              {
-                type: "string",
-                name: "guaranteeDescription",
-                label: "Descripci\xF3n de la garant\xEDa",
+                name: "description",
+                label: "Descripci\xF3n",
                 required: true,
                 ui: {
                   component: "textarea"
@@ -1553,51 +1520,14 @@ var config_default = defineConfig({
               },
               {
                 type: "string",
-                name: "title",
-                label: "T\xEDtulo del resumen",
-                required: true
-              },
-              {
-                type: "string",
-                name: "features",
-                label: "Caracter\xEDsticas incluidas",
-                list: true,
-                required: true
-              },
-              {
-                type: "string",
-                name: "price",
-                label: "Precio final (solo n\xFAmero)",
-                required: true
-              },
-              {
-                type: "string",
-                name: "currency",
-                label: "Moneda",
-                required: true
-              },
-              {
-                type: "string",
-                name: "priceNote",
-                label: "Nota del precio",
-                required: true
-              },
-              {
-                type: "string",
                 name: "ctaText",
-                label: "Texto del bot\xF3n CTA final",
+                label: "Texto del bot\xF3n CTA",
                 required: true
               },
               {
                 type: "string",
                 name: "ctaLink",
-                label: "Enlace del bot\xF3n CTA final",
-                required: true
-              },
-              {
-                type: "string",
-                name: "securityNote",
-                label: "Nota de seguridad",
+                label: "Enlace del bot\xF3n CTA",
                 required: true
               }
             ]
@@ -1756,6 +1686,15 @@ var config_default = defineConfig({
                 name: "title",
                 label: "T\xEDtulo (H2)",
                 required: true
+              },
+              {
+                type: "string",
+                name: "subtitle",
+                label: "Subt\xEDtulo",
+                required: false,
+                ui: {
+                  description: "Texto aclaratorio debajo del t\xEDtulo (ej: '(y funciona mejor que el contenido gen\xE9rico)')"
+                }
               },
               {
                 type: "object",
@@ -1986,24 +1925,18 @@ var config_default = defineConfig({
           {
             type: "object",
             name: "finalCtaSection",
-            label: "7. CTA Final + Garant\xEDa",
+            label: "7. CTA Final",
             fields: [
               {
                 type: "string",
-                name: "guaranteeEmoji",
-                label: "Emoji de la garant\xEDa",
+                name: "title",
+                label: "T\xEDtulo",
                 required: true
               },
               {
                 type: "string",
-                name: "guaranteeTitle",
-                label: "T\xEDtulo de la garant\xEDa",
-                required: true
-              },
-              {
-                type: "string",
-                name: "guaranteeDescription",
-                label: "Descripci\xF3n de la garant\xEDa",
+                name: "description",
+                label: "Descripci\xF3n",
                 required: true,
                 ui: {
                   component: "textarea"
@@ -2011,51 +1944,14 @@ var config_default = defineConfig({
               },
               {
                 type: "string",
-                name: "title",
-                label: "T\xEDtulo del resumen",
-                required: true
-              },
-              {
-                type: "string",
-                name: "features",
-                label: "Caracter\xEDsticas incluidas",
-                list: true,
-                required: true
-              },
-              {
-                type: "string",
-                name: "price",
-                label: "Precio final (solo n\xFAmero)",
-                required: true
-              },
-              {
-                type: "string",
-                name: "currency",
-                label: "Moneda",
-                required: true
-              },
-              {
-                type: "string",
-                name: "priceNote",
-                label: "Nota del precio",
-                required: true
-              },
-              {
-                type: "string",
                 name: "ctaText",
-                label: "Texto del bot\xF3n CTA final",
+                label: "Texto del bot\xF3n CTA",
                 required: true
               },
               {
                 type: "string",
                 name: "ctaLink",
-                label: "Enlace del bot\xF3n CTA final",
-                required: true
-              },
-              {
-                type: "string",
-                name: "securityNote",
-                label: "Nota de seguridad",
+                label: "Enlace del bot\xF3n CTA",
                 required: true
               }
             ]
@@ -2672,7 +2568,7 @@ var config_default = defineConfig({
                 name: "packInevitable",
                 label: "Pack Inevitable (horizontal)",
                 ui: {
-                  description: "El pack especial que aparece debajo en dise\xF1o horizontal"
+                  description: "El pack especial que aparece primero en dise\xF1o horizontal"
                 },
                 fields: [
                   {
@@ -2681,7 +2577,7 @@ var config_default = defineConfig({
                     label: "Etiqueta del pack",
                     required: true,
                     ui: {
-                      description: "Ej: 'PACK INEVITABLE' - aparece en badge naranja"
+                      description: "Ej: 'Blog + Web' - aparece en badge naranja"
                     }
                   },
                   {
@@ -2690,7 +2586,7 @@ var config_default = defineConfig({
                     label: "T\xEDtulo del pack",
                     required: true,
                     ui: {
-                      description: "Ej: 'Estrategia + Blog + Web'"
+                      description: "Ej: 'Pack Inevitable'"
                     }
                   },
                   {
@@ -2704,21 +2600,22 @@ var config_default = defineConfig({
                   },
                   {
                     type: "string",
-                    name: "features",
-                    label: "Caracter\xEDsticas incluidas",
+                    name: "benefits",
+                    label: "Qu\xE9 consigues (checks verdes)",
                     list: true,
                     required: true,
                     ui: {
-                      description: "Lista completa de caracter\xEDsticas del pack"
+                      description: "Beneficios principales del pack con checks verdes"
                     }
                   },
                   {
                     type: "string",
-                    name: "originalPrice",
-                    label: "Precio original (tachado)",
+                    name: "features",
+                    label: "Qu\xE9 incluye (bullets grises)",
+                    list: true,
                     required: true,
                     ui: {
-                      description: "Ej: '1.798\u20AC'"
+                      description: "Caracter\xEDsticas detalladas con bullets grises"
                     }
                   },
                   {
@@ -2727,7 +2624,16 @@ var config_default = defineConfig({
                     label: "Precio actual",
                     required: true,
                     ui: {
-                      description: "Ej: '1.399\u20AC'"
+                      description: "Ej: '2.350\u20AC' - Se muestra PRIMERO"
+                    }
+                  },
+                  {
+                    type: "string",
+                    name: "originalPrice",
+                    label: "Valor separado (tachado)",
+                    required: true,
+                    ui: {
+                      description: "Ej: '2.800\u20AC' - Se muestra como 'VALOR SEPARADO'"
                     }
                   },
                   {
@@ -2736,7 +2642,7 @@ var config_default = defineConfig({
                     label: "Ahorro",
                     required: true,
                     ui: {
-                      description: "Ej: '399\u20AC'"
+                      description: "Ej: '450\u20AC'"
                     }
                   },
                   {
@@ -2820,21 +2726,12 @@ var config_default = defineConfig({
                   },
                   {
                     type: "string",
-                    name: "answerTitle",
-                    label: "T\xEDtulo de la respuesta",
-                    required: true,
-                    ui: {
-                      description: "Texto en negrita, ej: 'Empieza con Audit (\u20AC1.495)'"
-                    }
-                  },
-                  {
-                    type: "string",
-                    name: "answerText",
-                    label: "Texto de la respuesta",
+                    name: "answer",
+                    label: "Respuesta",
                     required: true,
                     ui: {
                       component: "textarea",
-                      description: "Explicaci\xF3n detallada"
+                      description: "Respuesta directa a la pregunta"
                     }
                   }
                 ]
@@ -2950,38 +2847,143 @@ var config_default = defineConfig({
               },
               {
                 type: "string",
-                name: "yesItems",
-                label: "Items afirmativos (\u2705)",
-                list: true,
+                name: "intro",
+                label: "Introducci\xF3n",
                 required: true,
                 ui: {
-                  description: "Caracter\xEDsticas que debe cumplir"
+                  component: "textarea",
+                  description: "Texto introductorio bajo el t\xEDtulo"
                 }
               },
               {
-                type: "string",
-                name: "noItems",
-                label: "Items negativos (\u274C)",
+                type: "object",
+                name: "requirements",
+                label: "Requisitos",
                 list: true,
-                required: true,
-                ui: {
-                  description: "Lo que NO es este servicio"
-                }
+                fields: [
+                  {
+                    type: "string",
+                    name: "title",
+                    label: "T\xEDtulo del requisito",
+                    required: true,
+                    ui: {
+                      description: "Ej: 'M\xEDnimo 800\u20AC por proyecto'"
+                    }
+                  },
+                  {
+                    type: "string",
+                    name: "subtitle",
+                    label: "Subt\xEDtulo (opcional)",
+                    ui: {
+                      description: "Ej: '(8 p\xE1ginas)'"
+                    }
+                  },
+                  {
+                    type: "string",
+                    name: "description",
+                    label: "Descripci\xF3n",
+                    required: true,
+                    ui: {
+                      component: "textarea"
+                    }
+                  }
+                ]
+              },
+              {
+                type: "object",
+                name: "disclaimer",
+                label: "Disclaimer final",
+                fields: [
+                  {
+                    type: "string",
+                    name: "text1",
+                    label: "Texto",
+                    required: true,
+                    ui: {
+                      component: "textarea"
+                    }
+                  }
+                ]
               },
               {
                 type: "string",
-                name: "noItemsLink",
-                label: "Enlace de servicio alternativo",
+                name: "ctaButtonText",
+                label: "Texto del bot\xF3n CTA",
+                required: true
+              },
+              {
+                type: "string",
+                name: "ctaLink",
+                label: "Enlace del bot\xF3n CTA",
+                required: true,
                 ui: {
-                  description: "Ej: /redaccion-web"
+                  description: "Ej: /contacto"
                 }
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "workflowSection",
+            label: "3. C\xF3mo trabajamos",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "T\xEDtulo (H2)",
+                required: true
+              },
+              {
+                type: "string",
+                name: "intro",
+                label: "Introducci\xF3n",
+                required: true,
+                ui: {
+                  component: "textarea",
+                  description: "Texto introductorio bajo el t\xEDtulo"
+                }
+              },
+              {
+                type: "object",
+                name: "steps",
+                label: "Pasos del proceso",
+                list: true,
+                fields: [
+                  {
+                    type: "string",
+                    name: "number",
+                    label: "N\xFAmero del paso",
+                    required: true,
+                    ui: {
+                      description: "Ej: '1', '2', '3'..."
+                    }
+                  },
+                  {
+                    type: "string",
+                    name: "title",
+                    label: "T\xEDtulo del paso",
+                    required: true,
+                    ui: {
+                      description: "Ej: 'Me env\xEDas brief del proyecto'"
+                    }
+                  },
+                  {
+                    type: "string",
+                    name: "description",
+                    label: "Descripci\xF3n",
+                    required: true,
+                    ui: {
+                      component: "textarea"
+                    }
+                  }
+                ]
               }
             ]
           },
           {
             type: "object",
             name: "conditionsSection",
-            label: "3. Condiciones de colaboraci\xF3n",
+            label: "4. Precios para agencias",
             fields: [
               {
                 type: "string",
@@ -2990,71 +2992,118 @@ var config_default = defineConfig({
                 required: true
               },
               {
+                type: "string",
+                name: "basePrice",
+                label: "Precio base (n\xFAmero)",
+                required: true,
+                ui: {
+                  description: "Ej: '125' (sin s\xEDmbolo de moneda)"
+                }
+              },
+              {
+                type: "string",
+                name: "currency",
+                label: "S\xEDmbolo de moneda",
+                required: true,
+                ui: {
+                  description: "Ej: '\u20AC'"
+                }
+              },
+              {
+                type: "string",
+                name: "priceDescription",
+                label: "Descripci\xF3n del precio",
+                required: true,
+                ui: {
+                  description: "Ej: 'por p\xE1gina'"
+                }
+              },
+              {
+                type: "string",
+                name: "priceSubtext",
+                label: "Subtexto del precio",
+                required: true,
+                ui: {
+                  description: "Ej: 'm\xE1ximo 1.000 palabras'"
+                }
+              },
+              {
                 type: "object",
-                name: "pricing",
-                label: "Precios",
+                name: "conditions",
+                label: "Condiciones (columnas)",
+                list: true,
                 fields: [
                   {
                     type: "string",
-                    name: "basePriceText",
-                    label: "Precio base",
+                    name: "title",
+                    label: "T\xEDtulo",
                     required: true,
                     ui: {
-                      description: "Ej: '110\u20AC por p\xE1gina (hasta 600 palabras)'"
+                      description: "Ej: 'P\xE1ginas extensas'"
                     }
                   },
                   {
                     type: "string",
-                    name: "additionalPriceText",
-                    label: "Precio adicional",
+                    name: "description",
+                    label: "Descripci\xF3n",
                     required: true,
                     ui: {
-                      description: "Ej: '+50\u20AC por cada 300 palabras adicionales'"
-                    }
-                  },
-                  {
-                    type: "string",
-                    name: "minimumText",
-                    label: "M\xEDnimo proyecto",
-                    required: true,
-                    ui: {
-                      description: "Ej: 'M\xEDnimo: 5 p\xE1ginas por proyecto'"
+                      description: "Ej: '+1.000 palabras: 185\u20AC'"
                     }
                   }
                 ]
               },
               {
-                type: "object",
-                name: "conditions",
-                label: "Condiciones",
-                list: true,
-                fields: [
-                  {
-                    type: "string",
-                    name: "label",
-                    label: "Etiqueta",
-                    required: true
-                  },
-                  {
-                    type: "string",
-                    name: "value",
-                    label: "Valor",
-                    required: true
-                  }
-                ]
+                type: "string",
+                name: "ctaLink",
+                label: "Enlace del bot\xF3n CTA",
+                required: true,
+                ui: {
+                  description: "Ej: '/contacto'"
+                }
+              },
+              {
+                type: "string",
+                name: "ctaText",
+                label: "Texto del bot\xF3n CTA",
+                required: true,
+                ui: {
+                  description: "Ej: 'Pide presupuesto'"
+                }
+              },
+              {
+                type: "string",
+                name: "ctaSubtext",
+                label: "Subtexto del CTA",
+                required: true,
+                ui: {
+                  description: "Texto que aparece debajo del bot\xF3n"
+                }
               }
             ]
           },
           {
             type: "object",
             name: "includesSection",
-            label: "4. Qu\xE9 incluye",
+            label: "5. Qu\xE9 incluye",
             fields: [
               {
                 type: "string",
+                name: "heading",
+                label: "Encabezado principal (H2)",
+                required: true,
+                ui: {
+                  description: "T\xEDtulo grande de la secci\xF3n, ej: 'Qu\xE9 incluye el servicio'"
+                }
+              },
+              {
+                type: "string",
                 name: "title",
-                label: "T\xEDtulo (H2)",
-                required: true
+                label: "T\xEDtulo columna izquierda (H3)",
+                required: true,
+                ui: {
+                  description: "Ej: 'Qu\xE9 incluyo'"
+                }
               },
               {
                 type: "string",
@@ -3075,13 +3124,22 @@ var config_default = defineConfig({
                 label: "Qu\xE9 NO incluye (\u2717)",
                 list: true,
                 required: true
+              },
+              {
+                type: "string",
+                name: "clarification",
+                label: "P\xE1rrafo aclaratorio (opcional)",
+                ui: {
+                  component: "textarea",
+                  description: "Texto que aparece debajo de las dos columnas"
+                }
               }
             ]
           },
           {
             type: "object",
             name: "processSection",
-            label: "5. C\xF3mo trabajamos",
+            label: "6. Proceso (antiguo - puede eliminarse)",
             fields: [
               {
                 type: "string",
@@ -3120,7 +3178,7 @@ var config_default = defineConfig({
           {
             type: "object",
             name: "faqSection",
-            label: "6. Preguntas Frecuentes",
+            label: "7. Preguntas Frecuentes",
             fields: [
               {
                 type: "string",
@@ -3156,7 +3214,7 @@ var config_default = defineConfig({
           {
             type: "object",
             name: "finalCtaSection",
-            label: "7. CTA Final",
+            label: "8. CTA Final",
             fields: [
               {
                 type: "string",

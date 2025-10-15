@@ -5,63 +5,68 @@
   },
   "hero": {
     "subtitle": "REDACCIÓN ESTRATÉGICA PARA BLOGS",
-    "titlePart1": "Tu blog no posiciona",
-    "titlePart2": "Yo lo convierto en referente",
-    "description": "Creo contenido estratégico que posiciona tu negocio como autoridad en tu sector. Tus clientes te buscarán y recomendarán.",
-    "ctaText": "Quiero ser el referente →",
+    "titlePart1": "¿La gente ya no lee?",
+    "titlePart2": "Mentira.",
+    "description": "Tu cliente no lee tonterías ni artículos genéricos. Tu cliente ahora consume contenido auténtico. ¿Y sabes cuál es la decisión más inteligente? Dárselo.",
+    "ctaText": "Quiero saber más",
     "ctaLink": "/contacto"
   },
   "problemsSection": {
-    "title": "¿Reconoces estos errores?",
-    "subtitle": "(lo que veo en 9 de cada 10 blogs)",
+    "title": "Errores de los blogs corporativos",
+    "subtitle": "(los veo en 9 de cada 10 blogs)",
     "problems": [
       {
-        "problem": "Publico cada mes pero nadie me lee",
-        "consequence": "Contenido irrelevante"
+        "problem": "Publicamos mucho y nos leen poco",
+        "consequence": "1.500 palabras que nadie termina de leer. Ahí está el problema. Entiende a tu audiencia y dale lo que espera"
       },
       {
-        "problem": "Escribo sobre lo mismo que todos",
-        "consequence": "Te confundes con la competencia"
+        "problem": "No sabemos sobre qué escribir",
+        "consequence": "Habéis buscado en el blog de la competencia, pero las ideas no están ahí. Os falta mirar en el lugar más importante"
       },
       {
-        "problem": "Mis artículos no aparecen en Google",
-        "consequence": "SEO mal ejecutado"
+        "problem": "Nuestro sector es demasiado técnico",
+        "consequence": "Vuestro sector es el mejor. El menos competido. Donde más podéis ayudar a la audiencia"
       },
       {
-        "problem": "Leo mis posts y me parecen aburridos",
-        "consequence": "Falta narrativa y gancho"
+        "problem": "No tenemos presupuesto para el blog",
+        "consequence": "Estáis perdiendo el altavoz más rentable. Cada artículo estará en Internet de por vida. Lo leerán miles de personas afines"
+      },
+      {
+        "problem": "Dicen que la IA acabará con los blogs",
+        "consequence": "Acabará con los blogs escritos por la propia IA. Y con los blogs chusqueros. Destacarán los blogs auténticos"
       }
     ],
-    "closingText": "Un blog sin estrategia es **tiempo perdido**. Escribes, publicas y nadie te encuentra ni te recuerda."
+    "closingText": "Si nadie te lee... Nadie te compra."
   },
   "approachSection": {
-    "title": "Mi estrategia es diferente",
+    "title": "Mi estrategia",
+    "subtitle": "Simple. Porque lo simple funciona mejor. Tres pasos:",
     "points": [
       {
-        "title": "Análisis profundo antes de escribir",
-        "description": "Investigo qué busca exactamente tu audiencia, qué hace la competencia y qué **oportunidades de contenido** nadie está aprovechando en tu nicho."
+        "title": "Investigo antes de escribir",
+        "description": "Comprendo a tu audiencia porque ellos son los que marcan el camino. Esto es esencial y casi nadie lo hace. Antes de escribir hay que pensar y trazar una estrategia coherente.\n"
       },
       {
-        "title": "Contenido con propósito comercial",
-        "description": "Cada artículo cumple un objetivo estratégico: **posicionar, educar, persuadir o convertir**. Nada se escribe por escribir."
+        "title": "Asigno un objetivo a cada artículo",
+        "description": "Posicionar. Educar. Persuadir. Convertir. Nada se escribe por escribir. Todo cobra sentido."
       },
       {
-        "title": "SEO estratégico, no técnico",
-        "description": "Optimizo para palabras clave con **intención comercial real**. Que te encuentren los que buscan lo que vendes, no cualquiera."
+        "title": "Añado una capa de SEO",
+        "description": "Si vendes pisos de lujo en Albacete, te encontrarán los albaceteños con dinero; Si vendes autocaravanas, te verán los que sueñan con dormir en latas de sardinas."
       }
     ],
-    "conclusion": "Resultado: un blog que genera demanda real y posiciona tu marca como la opción obvia."
+    "conclusion": "Blog estratégico. Fresco. Simple."
   },
   "testimonialsSection": {
-    "title": "Casos de éxito",
+    "title": "Clientes con blogs auténticos",
     "testimonials": [
       {
-        "quote": "En 6 meses mi blog se convirtió en referencia del sector. Ahora los clientes me contactan porque me ven como el experto. Las ventas hablan por sí solas.",
-        "author": "Ana Torres, Consultora Financiera"
+        "quote": "Al principio éramos un poco reacios al cambio. Empezamos con dos artículos al mes, ahora son cuatro y porque Álvaro no quiere ir más rápido. Hemos triplicado el tráfico que llega a la web.",
+        "author": "Ana Torres, CEO de Inmobiliaria de lujo"
       },
       {
-        "quote": "Pasé de 200 visitas mensuales a más de 8.000. Lo mejor es que ahora me buscan clientes ideales, no curiosos. La calidad de leads ha cambiado completamente.",
-        "author": "Roberto Silva, Agencia Marketing Digital"
+        "quote": "Llevamos cerca de tres años delegando el blog en Álvaro. No podemos medir el ROI exacto de la inversión, pero sabemos que a nuestras clientes les encanta y ayuda. Para nosotros eso es lo más importante. Por cierto, también nos escribe los emails de la newsletter y ahí sí que nuestro ROI se dispara. Recomendadísimo.\n",
+        "author": "Roberto Silva, Gerente de Clínica Dental"
       }
     ]
   },
@@ -71,33 +76,30 @@
     "packages": [
       {
         "name": "Estándar",
-        "articles": "2 artículos",
-        "price": "399",
-        "currency": "€",
-        "priceDescription": "Para empezar con contenido estratégico",
+        "articles": "Para empezar a construir autoridad",
+        "price": "450",
+        "currency": "€/mes",
+        "priceDescription": "4 artículos al mes",
         "includes": [
-          "Estrategia de contenido inicial",
-          "2 artículos mensuales (2.000-2.500 palabras)",
-          "Optimización SEO completa",
-          "Calendario editorial",
-          "Investigación de palabras clave",
+          "2 artículos extensos (1.200-1.500 palabras)",
+          "Calendario trimestral",
+          "Optimización SEO ",
           "1 ronda de revisiones por artículo"
         ],
-        "delivery": "Entrega continua cada mes",
-        "format": "2 artículos listos para publicar + calendario",
-        "ctaText": "Empezar →",
+        "delivery": "Contratación mínima 3 meses",
+        "format": "Artículos listos para publicar en tu web",
+        "ctaText": "Empezar",
         "ctaLink": "/contacto",
         "isPopular": false
       },
       {
-        "name": "Intensivo",
-        "articles": "4 artículos",
-        "price": "599",
-        "currency": "€",
-        "priceDescription": "Para posicionarte rápidamente",
+        "name": "Autoridad",
+        "articles": "Para posicionarte rápido",
+        "price": "850",
+        "currency": "€/mes",
+        "priceDescription": "4 artículos al mes",
         "includes": [
-          "Estrategia de contenido completa",
-          "4 artículos mensuales (2.000-2.500 palabras)",
+          "4 artículos de 1.200-1.500 palabras",
           "Optimización SEO avanzada",
           "Calendario editorial estratégico",
           "Análisis de competencia",
@@ -106,7 +108,7 @@
         ],
         "delivery": "Entrega continua cada mes",
         "format": "4 artículos + estrategia + análisis mensual",
-        "ctaText": "Acelerar →",
+        "ctaText": "Acelerar",
         "ctaLink": "/contacto",
         "isPopular": true
       }
@@ -134,23 +136,9 @@
     ]
   },
   "finalCtaSection": {
-    "guaranteeEmoji": "💯",
-    "guaranteeTitle": "Garantía de Satisfacción Total",
-    "guaranteeDescription": "Si en el primer mes no estás completamente satisfecho con la calidad del contenido, **te devuelvo el 100% de tu inversión.** Sin preguntas ni excusas.",
-    "title": "Todo lo que necesitas para posicionarte:",
-    "features": [
-      "Contenido estratégico mensual",
-      "Artículos optimizados para SEO",
-      "Calendario editorial incluido",
-      "Investigación de palabras clave",
-      "Contenido 100% humano",
-      "Revisiones hasta aprobación"
-    ],
-    "price": "599",
-    "currency": "€",
-    "priceNote": "(Facturación mensual - Cancela cuando quieras)",
-    "ctaText": "SÍ, quiero posicionarme →",
-    "ctaLink": "/contacto",
-    "securityNote": "Pago mensual. Cancelas cuando quieras. Garantía total."
+    "title": "¿Preparado para ser el referente?",
+    "description": "Las reglas están cambiando a una velocidad de locos. Poc. Escríbeme para comprobar disponibilidad.",
+    "ctaText": "Comprueba disponibilidad",
+    "ctaLink": "/contacto"
   }
 }

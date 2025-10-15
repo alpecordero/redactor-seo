@@ -535,6 +535,7 @@ type AuditoriaApproachSectionPoints {
 
 type AuditoriaApproachSection {
   title: String!
+  subtitle: String
   points: [AuditoriaApproachSectionPoints]
   conclusion: String!
 }
@@ -573,17 +574,10 @@ type AuditoriaFaqSection {
 }
 
 type AuditoriaFinalCtaSection {
-  guaranteeEmoji: String!
-  guaranteeTitle: String!
-  guaranteeDescription: String!
   title: String!
-  features: [String!]!
-  price: String!
-  currency: String!
-  priceNote: String!
+  description: String!
   ctaText: String!
   ctaLink: String!
-  securityNote: String!
 }
 
 type Auditoria implements Node & Document {
@@ -633,6 +627,7 @@ input AuditoriaApproachSectionPointsFilter {
 
 input AuditoriaApproachSectionFilter {
   title: StringFilter
+  subtitle: StringFilter
   points: AuditoriaApproachSectionPointsFilter
   conclusion: StringFilter
 }
@@ -671,17 +666,10 @@ input AuditoriaFaqSectionFilter {
 }
 
 input AuditoriaFinalCtaSectionFilter {
-  guaranteeEmoji: StringFilter
-  guaranteeTitle: StringFilter
-  guaranteeDescription: StringFilter
   title: StringFilter
-  features: StringFilter
-  price: StringFilter
-  currency: StringFilter
-  priceNote: StringFilter
+  description: StringFilter
   ctaText: StringFilter
   ctaLink: StringFilter
-  securityNote: StringFilter
 }
 
 input AuditoriaFilter {
@@ -739,6 +727,7 @@ type Redaccion_webApproachSectionPoints {
 
 type Redaccion_webApproachSection {
   title: String!
+  subtitle: String
   points: [Redaccion_webApproachSectionPoints]
   conclusion: String!
 }
@@ -784,17 +773,10 @@ type Redaccion_webFaqSection {
 }
 
 type Redaccion_webFinalCtaSection {
-  guaranteeEmoji: String!
-  guaranteeTitle: String!
-  guaranteeDescription: String!
   title: String!
-  features: [String!]!
-  price: String!
-  currency: String!
-  priceNote: String!
+  description: String!
   ctaText: String!
   ctaLink: String!
-  securityNote: String!
 }
 
 type Redaccion_web implements Node & Document {
@@ -844,6 +826,7 @@ input Redaccion_webApproachSectionPointsFilter {
 
 input Redaccion_webApproachSectionFilter {
   title: StringFilter
+  subtitle: StringFilter
   points: Redaccion_webApproachSectionPointsFilter
   conclusion: StringFilter
 }
@@ -894,17 +877,10 @@ input Redaccion_webFaqSectionFilter {
 }
 
 input Redaccion_webFinalCtaSectionFilter {
-  guaranteeEmoji: StringFilter
-  guaranteeTitle: StringFilter
-  guaranteeDescription: StringFilter
   title: StringFilter
-  features: StringFilter
-  price: StringFilter
-  currency: StringFilter
-  priceNote: StringFilter
+  description: StringFilter
   ctaText: StringFilter
   ctaLink: StringFilter
-  securityNote: StringFilter
 }
 
 input Redaccion_webFilter {
@@ -962,6 +938,7 @@ type Redaccion_estrategica_blogsApproachSectionPoints {
 
 type Redaccion_estrategica_blogsApproachSection {
   title: String!
+  subtitle: String
   points: [Redaccion_estrategica_blogsApproachSectionPoints]
   conclusion: String!
 }
@@ -1007,17 +984,10 @@ type Redaccion_estrategica_blogsFaqSection {
 }
 
 type Redaccion_estrategica_blogsFinalCtaSection {
-  guaranteeEmoji: String!
-  guaranteeTitle: String!
-  guaranteeDescription: String!
   title: String!
-  features: [String!]!
-  price: String!
-  currency: String!
-  priceNote: String!
+  description: String!
   ctaText: String!
   ctaLink: String!
-  securityNote: String!
 }
 
 type Redaccion_estrategica_blogs implements Node & Document {
@@ -1067,6 +1037,7 @@ input Redaccion_estrategica_blogsApproachSectionPointsFilter {
 
 input Redaccion_estrategica_blogsApproachSectionFilter {
   title: StringFilter
+  subtitle: StringFilter
   points: Redaccion_estrategica_blogsApproachSectionPointsFilter
   conclusion: StringFilter
 }
@@ -1112,17 +1083,10 @@ input Redaccion_estrategica_blogsFaqSectionFilter {
 }
 
 input Redaccion_estrategica_blogsFinalCtaSectionFilter {
-  guaranteeEmoji: StringFilter
-  guaranteeTitle: StringFilter
-  guaranteeDescription: StringFilter
   title: StringFilter
-  features: StringFilter
-  price: StringFilter
-  currency: StringFilter
-  priceNote: StringFilter
+  description: StringFilter
   ctaText: StringFilter
   ctaLink: StringFilter
-  securityNote: StringFilter
 }
 
 input Redaccion_estrategica_blogsFilter {
@@ -1398,9 +1362,10 @@ type Servicios_pageServicePackagesPackInevitable {
   packLabel: String!
   title: String!
   subtitle: String!
+  benefits: [String!]!
   features: [String!]!
-  originalPrice: String!
   currentPrice: String!
+  originalPrice: String!
   savings: String!
   ctaText: String!
   ctaLink: String!
@@ -1420,8 +1385,7 @@ type Servicios_pageServicePackages {
 
 type Servicios_pageFaqSectionQuestions {
   question: String!
-  answerTitle: String!
-  answerText: String!
+  answer: String!
 }
 
 type Servicios_pageFaqSection {
@@ -1473,9 +1437,10 @@ input Servicios_pageServicePackagesPackInevitableFilter {
   packLabel: StringFilter
   title: StringFilter
   subtitle: StringFilter
+  benefits: StringFilter
   features: StringFilter
-  originalPrice: StringFilter
   currentPrice: StringFilter
+  originalPrice: StringFilter
   savings: StringFilter
   ctaText: StringFilter
   ctaLink: StringFilter
@@ -1495,8 +1460,7 @@ input Servicios_pageServicePackagesFilter {
 
 input Servicios_pageFaqSectionQuestionsFilter {
   question: StringFilter
-  answerTitle: StringFilter
-  answerText: StringFilter
+  answer: StringFilter
 }
 
 input Servicios_pageFaqSectionFilter {
@@ -1537,35 +1501,61 @@ type Colaboraciones_agenciasHero {
   ctaLink: String!
 }
 
-type Colaboraciones_agenciasTargetSection {
+type Colaboraciones_agenciasTargetSectionRequirements {
   title: String!
-  yesItems: [String!]!
-  noItems: [String!]!
-  noItemsLink: String
+  subtitle: String
+  description: String!
 }
 
-type Colaboraciones_agenciasConditionsSectionPricing {
-  basePriceText: String!
-  additionalPriceText: String!
-  minimumText: String!
+type Colaboraciones_agenciasTargetSectionDisclaimer {
+  text1: String!
+}
+
+type Colaboraciones_agenciasTargetSection {
+  title: String!
+  intro: String!
+  requirements: [Colaboraciones_agenciasTargetSectionRequirements]
+  disclaimer: Colaboraciones_agenciasTargetSectionDisclaimer
+  ctaButtonText: String!
+  ctaLink: String!
+}
+
+type Colaboraciones_agenciasWorkflowSectionSteps {
+  number: String!
+  title: String!
+  description: String!
+}
+
+type Colaboraciones_agenciasWorkflowSection {
+  title: String!
+  intro: String!
+  steps: [Colaboraciones_agenciasWorkflowSectionSteps]
 }
 
 type Colaboraciones_agenciasConditionsSectionConditions {
-  label: String!
-  value: String!
+  title: String!
+  description: String!
 }
 
 type Colaboraciones_agenciasConditionsSection {
   title: String!
-  pricing: Colaboraciones_agenciasConditionsSectionPricing
+  basePrice: String!
+  currency: String!
+  priceDescription: String!
+  priceSubtext: String!
   conditions: [Colaboraciones_agenciasConditionsSectionConditions]
+  ctaLink: String!
+  ctaText: String!
+  ctaSubtext: String!
 }
 
 type Colaboraciones_agenciasIncludesSection {
+  heading: String!
   title: String!
   included: [String!]!
   notIncludedTitle: String!
   notIncluded: [String!]!
+  clarification: String
 }
 
 type Colaboraciones_agenciasProcessSectionSteps {
@@ -1600,6 +1590,7 @@ type Colaboraciones_agencias implements Node & Document {
   seo: Colaboraciones_agenciasSeo
   hero: Colaboraciones_agenciasHero
   targetSection: Colaboraciones_agenciasTargetSection
+  workflowSection: Colaboraciones_agenciasWorkflowSection
   conditionsSection: Colaboraciones_agenciasConditionsSection
   includesSection: Colaboraciones_agenciasIncludesSection
   processSection: Colaboraciones_agenciasProcessSection
@@ -1624,35 +1615,61 @@ input Colaboraciones_agenciasHeroFilter {
   ctaLink: StringFilter
 }
 
-input Colaboraciones_agenciasTargetSectionFilter {
+input Colaboraciones_agenciasTargetSectionRequirementsFilter {
   title: StringFilter
-  yesItems: StringFilter
-  noItems: StringFilter
-  noItemsLink: StringFilter
+  subtitle: StringFilter
+  description: StringFilter
 }
 
-input Colaboraciones_agenciasConditionsSectionPricingFilter {
-  basePriceText: StringFilter
-  additionalPriceText: StringFilter
-  minimumText: StringFilter
+input Colaboraciones_agenciasTargetSectionDisclaimerFilter {
+  text1: StringFilter
+}
+
+input Colaboraciones_agenciasTargetSectionFilter {
+  title: StringFilter
+  intro: StringFilter
+  requirements: Colaboraciones_agenciasTargetSectionRequirementsFilter
+  disclaimer: Colaboraciones_agenciasTargetSectionDisclaimerFilter
+  ctaButtonText: StringFilter
+  ctaLink: StringFilter
+}
+
+input Colaboraciones_agenciasWorkflowSectionStepsFilter {
+  number: StringFilter
+  title: StringFilter
+  description: StringFilter
+}
+
+input Colaboraciones_agenciasWorkflowSectionFilter {
+  title: StringFilter
+  intro: StringFilter
+  steps: Colaboraciones_agenciasWorkflowSectionStepsFilter
 }
 
 input Colaboraciones_agenciasConditionsSectionConditionsFilter {
-  label: StringFilter
-  value: StringFilter
+  title: StringFilter
+  description: StringFilter
 }
 
 input Colaboraciones_agenciasConditionsSectionFilter {
   title: StringFilter
-  pricing: Colaboraciones_agenciasConditionsSectionPricingFilter
+  basePrice: StringFilter
+  currency: StringFilter
+  priceDescription: StringFilter
+  priceSubtext: StringFilter
   conditions: Colaboraciones_agenciasConditionsSectionConditionsFilter
+  ctaLink: StringFilter
+  ctaText: StringFilter
+  ctaSubtext: StringFilter
 }
 
 input Colaboraciones_agenciasIncludesSectionFilter {
+  heading: StringFilter
   title: StringFilter
   included: StringFilter
   notIncludedTitle: StringFilter
   notIncluded: StringFilter
+  clarification: StringFilter
 }
 
 input Colaboraciones_agenciasProcessSectionStepsFilter {
@@ -1687,6 +1704,7 @@ input Colaboraciones_agenciasFilter {
   seo: Colaboraciones_agenciasSeoFilter
   hero: Colaboraciones_agenciasHeroFilter
   targetSection: Colaboraciones_agenciasTargetSectionFilter
+  workflowSection: Colaboraciones_agenciasWorkflowSectionFilter
   conditionsSection: Colaboraciones_agenciasConditionsSectionFilter
   includesSection: Colaboraciones_agenciasIncludesSectionFilter
   processSection: Colaboraciones_agenciasProcessSectionFilter
@@ -2264,6 +2282,7 @@ input AuditoriaApproachSectionPointsMutation {
 
 input AuditoriaApproachSectionMutation {
   title: String
+  subtitle: String
   points: [AuditoriaApproachSectionPointsMutation]
   conclusion: String
 }
@@ -2302,17 +2321,10 @@ input AuditoriaFaqSectionMutation {
 }
 
 input AuditoriaFinalCtaSectionMutation {
-  guaranteeEmoji: String
-  guaranteeTitle: String
-  guaranteeDescription: String
   title: String
-  features: [String]
-  price: String
-  currency: String
-  priceNote: String
+  description: String
   ctaText: String
   ctaLink: String
-  securityNote: String
 }
 
 input AuditoriaMutation {
@@ -2359,6 +2371,7 @@ input Redaccion_webApproachSectionPointsMutation {
 
 input Redaccion_webApproachSectionMutation {
   title: String
+  subtitle: String
   points: [Redaccion_webApproachSectionPointsMutation]
   conclusion: String
 }
@@ -2404,17 +2417,10 @@ input Redaccion_webFaqSectionMutation {
 }
 
 input Redaccion_webFinalCtaSectionMutation {
-  guaranteeEmoji: String
-  guaranteeTitle: String
-  guaranteeDescription: String
   title: String
-  features: [String]
-  price: String
-  currency: String
-  priceNote: String
+  description: String
   ctaText: String
   ctaLink: String
-  securityNote: String
 }
 
 input Redaccion_webMutation {
@@ -2461,6 +2467,7 @@ input Redaccion_estrategica_blogsApproachSectionPointsMutation {
 
 input Redaccion_estrategica_blogsApproachSectionMutation {
   title: String
+  subtitle: String
   points: [Redaccion_estrategica_blogsApproachSectionPointsMutation]
   conclusion: String
 }
@@ -2506,17 +2513,10 @@ input Redaccion_estrategica_blogsFaqSectionMutation {
 }
 
 input Redaccion_estrategica_blogsFinalCtaSectionMutation {
-  guaranteeEmoji: String
-  guaranteeTitle: String
-  guaranteeDescription: String
   title: String
-  features: [String]
-  price: String
-  currency: String
-  priceNote: String
+  description: String
   ctaText: String
   ctaLink: String
-  securityNote: String
 }
 
 input Redaccion_estrategica_blogsMutation {
@@ -2658,9 +2658,10 @@ input Servicios_pageServicePackagesPackInevitableMutation {
   packLabel: String
   title: String
   subtitle: String
+  benefits: [String]
   features: [String]
-  originalPrice: String
   currentPrice: String
+  originalPrice: String
   savings: String
   ctaText: String
   ctaLink: String
@@ -2680,8 +2681,7 @@ input Servicios_pageServicePackagesMutation {
 
 input Servicios_pageFaqSectionQuestionsMutation {
   question: String
-  answerTitle: String
-  answerText: String
+  answer: String
 }
 
 input Servicios_pageFaqSectionMutation {
@@ -2711,35 +2711,61 @@ input Colaboraciones_agenciasHeroMutation {
   ctaLink: String
 }
 
-input Colaboraciones_agenciasTargetSectionMutation {
+input Colaboraciones_agenciasTargetSectionRequirementsMutation {
   title: String
-  yesItems: [String]
-  noItems: [String]
-  noItemsLink: String
+  subtitle: String
+  description: String
 }
 
-input Colaboraciones_agenciasConditionsSectionPricingMutation {
-  basePriceText: String
-  additionalPriceText: String
-  minimumText: String
+input Colaboraciones_agenciasTargetSectionDisclaimerMutation {
+  text1: String
+}
+
+input Colaboraciones_agenciasTargetSectionMutation {
+  title: String
+  intro: String
+  requirements: [Colaboraciones_agenciasTargetSectionRequirementsMutation]
+  disclaimer: Colaboraciones_agenciasTargetSectionDisclaimerMutation
+  ctaButtonText: String
+  ctaLink: String
+}
+
+input Colaboraciones_agenciasWorkflowSectionStepsMutation {
+  number: String
+  title: String
+  description: String
+}
+
+input Colaboraciones_agenciasWorkflowSectionMutation {
+  title: String
+  intro: String
+  steps: [Colaboraciones_agenciasWorkflowSectionStepsMutation]
 }
 
 input Colaboraciones_agenciasConditionsSectionConditionsMutation {
-  label: String
-  value: String
+  title: String
+  description: String
 }
 
 input Colaboraciones_agenciasConditionsSectionMutation {
   title: String
-  pricing: Colaboraciones_agenciasConditionsSectionPricingMutation
+  basePrice: String
+  currency: String
+  priceDescription: String
+  priceSubtext: String
   conditions: [Colaboraciones_agenciasConditionsSectionConditionsMutation]
+  ctaLink: String
+  ctaText: String
+  ctaSubtext: String
 }
 
 input Colaboraciones_agenciasIncludesSectionMutation {
+  heading: String
   title: String
   included: [String]
   notIncludedTitle: String
   notIncluded: [String]
+  clarification: String
 }
 
 input Colaboraciones_agenciasProcessSectionStepsMutation {
@@ -2774,6 +2800,7 @@ input Colaboraciones_agenciasMutation {
   seo: Colaboraciones_agenciasSeoMutation
   hero: Colaboraciones_agenciasHeroMutation
   targetSection: Colaboraciones_agenciasTargetSectionMutation
+  workflowSection: Colaboraciones_agenciasWorkflowSectionMutation
   conditionsSection: Colaboraciones_agenciasConditionsSectionMutation
   includesSection: Colaboraciones_agenciasIncludesSectionMutation
   processSection: Colaboraciones_agenciasProcessSectionMutation
