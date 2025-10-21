@@ -1,0 +1,124 @@
+---
+import Layout from '../layouts/Layout.astro'
+
+// Import 404 content from Tina CMS
+import content404 from '../content/404/index.json'
+
+const { seo, hero, suggestions } = content404
+---
+
+<Layout title={seo.title} description={seo.description}>
+  <!-- Hero Section - Error Message -->
+  <section class="relative min-h-[70vh] flex items-center justify-center py-16 md:py-20 lg:py-24 bg-white overflow-hidden">
+    <!-- Subtle background elements -->
+    <div class="absolute inset-0">
+      <div class="absolute top-20 right-20 w-32 h-32 bg-gray-50 rounded-full -z-10"></div>
+      <div class="absolute bottom-32 left-16 w-20 h-20 bg-naranja-vibrante/5 rounded-full -z-10"></div>
+    </div>
+
+    <div class="relative px-4 sm:px-6 lg:px-12 xl:px-16 w-full">
+      <div class="max-w-3xl mx-auto text-center">
+        <!-- Error Code -->
+        <div class="mb-8 animate-on-scroll opacity-0 translate-y-8 transition-all duration-700">
+          <p class="text-9xl md:text-[12rem] font-bold text-gray-100 leading-none select-none">
+            {hero.errorCode}
+          </p>
+        </div>
+
+        <!-- Title -->
+        <div class="mb-6 animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-100">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+            {hero.title}
+          </h1>
+        </div>
+
+        <!-- Description -->
+        <div class="mb-12 animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-200">
+          <p class="text-xl md:text-2xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
+            {hero.description}
+          </p>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-300">
+          <a
+            href={hero.primaryCta.link}
+            class="inline-flex items-center justify-center bg-azul-profundo text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-gray-800 hover:scale-105 transition-all duration-300 shadow-lg"
+          >
+            {hero.primaryCta.text}
+            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+          <a
+            href={hero.secondaryCta.link}
+            class="inline-flex items-center justify-center bg-white text-azul-profundo px-8 py-4 rounded-xl text-lg font-semibold border-2 border-azul-profundo hover:bg-gray-50 hover:scale-105 transition-all duration-300"
+          >
+            {hero.secondaryCta.text}
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Suggestions Section -->
+  <section class="py-16 md:py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
+      <!-- Section Title -->
+      <div class="text-center mb-12 animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-100">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          {suggestions.title}
+        </h2>
+      </div>
+
+      <!-- Suggestions Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {suggestions.links.map((link, index) => (
+          <a
+            href={link.link}
+            class={`animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-${(index + 2) * 100} bg-white p-6 rounded-xl border border-gray-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group`}
+          >
+            <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-naranja-vibrante transition-colors duration-300">
+              {link.title}
+            </h3>
+            <p class="text-gray-600 leading-relaxed">
+              {link.description}
+            </p>
+            <div class="mt-4 flex items-center text-naranja-vibrante opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span class="text-sm font-semibold">Ver más</span>
+              <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script is:inline>
+  // Intersection Observer para animaciones on scroll
+  (function() {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove('opacity-0', 'translate-y-8')
+          entry.target.classList.add('opacity-100', 'translate-y-0')
+          observer.unobserve(entry.target)
+        }
+      })
+    }, observerOptions)
+
+    // Observar todos los elementos con la clase animate-on-scroll
+    document.addEventListener('DOMContentLoaded', () => {
+      const animatedElements = document.querySelectorAll('.animate-on-scroll')
+      animatedElements.forEach(el => observer.observe(el))
+    })
+  })()
+</script>

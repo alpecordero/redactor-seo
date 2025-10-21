@@ -1,0 +1,45 @@
+{
+  "seo": {
+    "title": "404 - Página no encontrada",
+    "description": "La página que buscas no existe o ha sido movida.",
+    "noindex": true
+  },
+  "hero": {
+    "errorCode": "404",
+    "title": "Página no encontrada",
+    "description": "La página que buscas no existe o ha sido movida. No te preocupes, te ayudamos a encontrar lo que necesitas.",
+    "primaryCta": {
+      "text": "Ir a la página principal",
+      "link": "/"
+    },
+    "secondaryCta": {
+      "text": "Ver servicios",
+      "link": "/servicios"
+    }
+  },
+  "suggestions": {
+    "title": "¿Qué estabas buscando?",
+    "links": [
+      {
+        "title": "Redacción Web",
+        "description": "Textos que conectan y convierten",
+        "link": "/redaccion-web"
+      },
+      {
+        "title": "Redacción Blog",
+        "description": "Contenido estratégico para posicionarte",
+        "link": "/redaccion-blog"
+      },
+      {
+        "title": "Pack Inevitable",
+        "description": "Web + Blog en un solo pack",
+        "link": "/pack-inevitable"
+      },
+      {
+        "title": "Contacto",
+        "description": "Hablemos de tu proyecto",
+        "link": "/contacto"
+      }
+    ]
+  }
+}

@@ -3661,6 +3661,153 @@ export default defineConfig({
           },
         ],
       },
+      {
+        name: "error404",
+        label: "Página 404",
+        path: "src/content/404",
+        format: "json",
+        ui: {
+          allowedActions: {
+            create: false,
+            delete: false,
+          },
+        },
+        fields: [
+          {
+            type: "object",
+            name: "seo",
+            label: "SEO",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "Título SEO",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "description",
+                label: "Meta descripción",
+                required: true,
+              },
+              {
+                type: "boolean",
+                name: "noindex",
+                label: "No indexar en buscadores",
+                required: true,
+              },
+            ],
+          },
+          {
+            type: "object",
+            name: "hero",
+            label: "Sección Principal",
+            fields: [
+              {
+                type: "string",
+                name: "errorCode",
+                label: "Código de error",
+                required: true,
+                ui: {
+                  description: "Ej: 404",
+                },
+              },
+              {
+                type: "string",
+                name: "title",
+                label: "Título principal",
+                required: true,
+              },
+              {
+                type: "string",
+                name: "description",
+                label: "Descripción",
+                required: true,
+                ui: {
+                  component: "textarea",
+                },
+              },
+              {
+                type: "object",
+                name: "primaryCta",
+                label: "Botón principal",
+                fields: [
+                  {
+                    type: "string",
+                    name: "text",
+                    label: "Texto del botón",
+                    required: true,
+                  },
+                  {
+                    type: "string",
+                    name: "link",
+                    label: "Enlace",
+                    required: true,
+                  },
+                ],
+              },
+              {
+                type: "object",
+                name: "secondaryCta",
+                label: "Botón secundario",
+                fields: [
+                  {
+                    type: "string",
+                    name: "text",
+                    label: "Texto del botón",
+                    required: true,
+                  },
+                  {
+                    type: "string",
+                    name: "link",
+                    label: "Enlace",
+                    required: true,
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            type: "object",
+            name: "suggestions",
+            label: "Sugerencias",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "Título de la sección",
+                required: true,
+              },
+              {
+                type: "object",
+                name: "links",
+                label: "Enlaces sugeridos",
+                list: true,
+                fields: [
+                  {
+                    type: "string",
+                    name: "title",
+                    label: "Título",
+                    required: true,
+                  },
+                  {
+                    type: "string",
+                    name: "description",
+                    label: "Descripción",
+                    required: true,
+                  },
+                  {
+                    type: "string",
+                    name: "link",
+                    label: "Enlace",
+                    required: true,
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
     ],
   },
 });
