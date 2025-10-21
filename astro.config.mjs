@@ -6,7 +6,15 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   output: 'static',
-  // Redirecciones manejadas en public/_redirects para Cloudflare Pages
+  redirects: {
+    '/servicio-redaccion-seo': '/servicios',
+    '/textos-tiendas-online': '/servicios',
+    '/auditoria-seo': '/servicios',
+    '/servicio-de-keyword-research': '/servicios',
+    '/precios': '/servicios',
+    '/redaccion-estrategica-blogs': '/redaccion-blog',
+    '/privacidad': '/politica-privacidad'
+  },
   vite: {
     plugins: [tailwindcss()],
     build: {
