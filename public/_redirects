@@ -11,6 +11,3 @@
 # Redirecciones de cambios de nomenclatura
 /redaccion-estrategica-blogs /redaccion-blog 301
 /privacidad /politica-privacidad 301
-
-# Fallback para SPA (debe ir al final)
-/* /index.html 200
