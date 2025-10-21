@@ -90,8 +90,8 @@ export type Query = {
   auditoriaConnection: AuditoriaConnection;
   redaccion_web: Redaccion_Web;
   redaccion_webConnection: Redaccion_WebConnection;
-  redaccion_estrategica_blogs: Redaccion_Estrategica_Blogs;
-  redaccion_estrategica_blogsConnection: Redaccion_Estrategica_BlogsConnection;
+  redaccion_blog: Redaccion_Blog;
+  redaccion_blogConnection: Redaccion_BlogConnection;
   contact_page: Contact_Page;
   contact_pageConnection: Contact_PageConnection;
   sobre_mi: Sobre_Mi;
@@ -186,18 +186,18 @@ export type QueryRedaccion_WebConnectionArgs = {
 };
 
 
-export type QueryRedaccion_Estrategica_BlogsArgs = {
+export type QueryRedaccion_BlogArgs = {
   relativePath?: InputMaybe<Scalars['String']['input']>;
 };
 
 
-export type QueryRedaccion_Estrategica_BlogsConnectionArgs = {
+export type QueryRedaccion_BlogConnectionArgs = {
   before?: InputMaybe<Scalars['String']['input']>;
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Float']['input']>;
   last?: InputMaybe<Scalars['Float']['input']>;
   sort?: InputMaybe<Scalars['String']['input']>;
-  filter?: InputMaybe<Redaccion_Estrategica_BlogsFilter>;
+  filter?: InputMaybe<Redaccion_BlogFilter>;
 };
 
 
@@ -280,7 +280,7 @@ export type DocumentFilter = {
   pages?: InputMaybe<PagesFilter>;
   auditoria?: InputMaybe<AuditoriaFilter>;
   redaccion_web?: InputMaybe<Redaccion_WebFilter>;
-  redaccion_estrategica_blogs?: InputMaybe<Redaccion_Estrategica_BlogsFilter>;
+  redaccion_blog?: InputMaybe<Redaccion_BlogFilter>;
   contact_page?: InputMaybe<Contact_PageFilter>;
   sobre_mi?: InputMaybe<Sobre_MiFilter>;
   servicios_page?: InputMaybe<Servicios_PageFilter>;
@@ -325,7 +325,7 @@ export type CollectionDocumentsArgs = {
   folder?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type DocumentNode = Homepage | Pages | Auditoria | Redaccion_Web | Redaccion_Estrategica_Blogs | Contact_Page | Sobre_Mi | Servicios_Page | Colaboraciones_Agencias | Pack_Inevitable | Folder;
+export type DocumentNode = Homepage | Pages | Auditoria | Redaccion_Web | Redaccion_Blog | Contact_Page | Sobre_Mi | Servicios_Page | Colaboraciones_Agencias | Pack_Inevitable | Folder;
 
 export type HomepageSeo = {
   __typename?: 'HomepageSeo';
@@ -1191,14 +1191,14 @@ export type Redaccion_WebConnection = Connection & {
   edges?: Maybe<Array<Maybe<Redaccion_WebConnectionEdges>>>;
 };
 
-export type Redaccion_Estrategica_BlogsSeo = {
-  __typename?: 'Redaccion_estrategica_blogsSeo';
+export type Redaccion_BlogSeo = {
+  __typename?: 'Redaccion_blogSeo';
   title: Scalars['String']['output'];
   description: Scalars['String']['output'];
 };
 
-export type Redaccion_Estrategica_BlogsHero = {
-  __typename?: 'Redaccion_estrategica_blogsHero';
+export type Redaccion_BlogHero = {
+  __typename?: 'Redaccion_blogHero';
   subtitle: Scalars['String']['output'];
   titlePart1: Scalars['String']['output'];
   titlePart2: Scalars['String']['output'];
@@ -1207,48 +1207,48 @@ export type Redaccion_Estrategica_BlogsHero = {
   ctaLink: Scalars['String']['output'];
 };
 
-export type Redaccion_Estrategica_BlogsProblemsSectionProblems = {
-  __typename?: 'Redaccion_estrategica_blogsProblemsSectionProblems';
+export type Redaccion_BlogProblemsSectionProblems = {
+  __typename?: 'Redaccion_blogProblemsSectionProblems';
   problem: Scalars['String']['output'];
   consequence: Scalars['String']['output'];
 };
 
-export type Redaccion_Estrategica_BlogsProblemsSection = {
-  __typename?: 'Redaccion_estrategica_blogsProblemsSection';
+export type Redaccion_BlogProblemsSection = {
+  __typename?: 'Redaccion_blogProblemsSection';
   title: Scalars['String']['output'];
   subtitle: Scalars['String']['output'];
-  problems?: Maybe<Array<Maybe<Redaccion_Estrategica_BlogsProblemsSectionProblems>>>;
+  problems?: Maybe<Array<Maybe<Redaccion_BlogProblemsSectionProblems>>>;
   closingText: Scalars['String']['output'];
 };
 
-export type Redaccion_Estrategica_BlogsApproachSectionPoints = {
-  __typename?: 'Redaccion_estrategica_blogsApproachSectionPoints';
+export type Redaccion_BlogApproachSectionPoints = {
+  __typename?: 'Redaccion_blogApproachSectionPoints';
   title: Scalars['String']['output'];
   description: Scalars['String']['output'];
 };
 
-export type Redaccion_Estrategica_BlogsApproachSection = {
-  __typename?: 'Redaccion_estrategica_blogsApproachSection';
+export type Redaccion_BlogApproachSection = {
+  __typename?: 'Redaccion_blogApproachSection';
   title: Scalars['String']['output'];
   subtitle?: Maybe<Scalars['String']['output']>;
-  points?: Maybe<Array<Maybe<Redaccion_Estrategica_BlogsApproachSectionPoints>>>;
+  points?: Maybe<Array<Maybe<Redaccion_BlogApproachSectionPoints>>>;
   conclusion: Scalars['String']['output'];
 };
 
-export type Redaccion_Estrategica_BlogsTestimonialsSectionTestimonials = {
-  __typename?: 'Redaccion_estrategica_blogsTestimonialsSectionTestimonials';
+export type Redaccion_BlogTestimonialsSectionTestimonials = {
+  __typename?: 'Redaccion_blogTestimonialsSectionTestimonials';
   quote: Scalars['String']['output'];
   author: Scalars['String']['output'];
 };
 
-export type Redaccion_Estrategica_BlogsTestimonialsSection = {
-  __typename?: 'Redaccion_estrategica_blogsTestimonialsSection';
+export type Redaccion_BlogTestimonialsSection = {
+  __typename?: 'Redaccion_blogTestimonialsSection';
   title: Scalars['String']['output'];
-  testimonials?: Maybe<Array<Maybe<Redaccion_Estrategica_BlogsTestimonialsSectionTestimonials>>>;
+  testimonials?: Maybe<Array<Maybe<Redaccion_BlogTestimonialsSectionTestimonials>>>;
 };
 
-export type Redaccion_Estrategica_BlogsPricingSectionPackages = {
-  __typename?: 'Redaccion_estrategica_blogsPricingSectionPackages';
+export type Redaccion_BlogPricingSectionPackages = {
+  __typename?: 'Redaccion_blogPricingSectionPackages';
   name: Scalars['String']['output'];
   articles: Scalars['String']['output'];
   price: Scalars['String']['output'];
@@ -1262,54 +1262,54 @@ export type Redaccion_Estrategica_BlogsPricingSectionPackages = {
   isPopular?: Maybe<Scalars['Boolean']['output']>;
 };
 
-export type Redaccion_Estrategica_BlogsPricingSection = {
-  __typename?: 'Redaccion_estrategica_blogsPricingSection';
+export type Redaccion_BlogPricingSection = {
+  __typename?: 'Redaccion_blogPricingSection';
   title: Scalars['String']['output'];
   subtitle: Scalars['String']['output'];
-  packages?: Maybe<Array<Maybe<Redaccion_Estrategica_BlogsPricingSectionPackages>>>;
+  packages?: Maybe<Array<Maybe<Redaccion_BlogPricingSectionPackages>>>;
 };
 
-export type Redaccion_Estrategica_BlogsFaqSectionQuestions = {
-  __typename?: 'Redaccion_estrategica_blogsFaqSectionQuestions';
+export type Redaccion_BlogFaqSectionQuestions = {
+  __typename?: 'Redaccion_blogFaqSectionQuestions';
   question: Scalars['String']['output'];
   answer: Scalars['String']['output'];
 };
 
-export type Redaccion_Estrategica_BlogsFaqSection = {
-  __typename?: 'Redaccion_estrategica_blogsFaqSection';
+export type Redaccion_BlogFaqSection = {
+  __typename?: 'Redaccion_blogFaqSection';
   title: Scalars['String']['output'];
-  questions?: Maybe<Array<Maybe<Redaccion_Estrategica_BlogsFaqSectionQuestions>>>;
+  questions?: Maybe<Array<Maybe<Redaccion_BlogFaqSectionQuestions>>>;
 };
 
-export type Redaccion_Estrategica_BlogsFinalCtaSection = {
-  __typename?: 'Redaccion_estrategica_blogsFinalCtaSection';
+export type Redaccion_BlogFinalCtaSection = {
+  __typename?: 'Redaccion_blogFinalCtaSection';
   title: Scalars['String']['output'];
   description: Scalars['String']['output'];
   ctaText: Scalars['String']['output'];
   ctaLink: Scalars['String']['output'];
 };
 
-export type Redaccion_Estrategica_Blogs = Node & Document & {
-  __typename?: 'Redaccion_estrategica_blogs';
-  seo?: Maybe<Redaccion_Estrategica_BlogsSeo>;
-  hero?: Maybe<Redaccion_Estrategica_BlogsHero>;
-  problemsSection?: Maybe<Redaccion_Estrategica_BlogsProblemsSection>;
-  approachSection?: Maybe<Redaccion_Estrategica_BlogsApproachSection>;
-  testimonialsSection?: Maybe<Redaccion_Estrategica_BlogsTestimonialsSection>;
-  pricingSection?: Maybe<Redaccion_Estrategica_BlogsPricingSection>;
-  faqSection?: Maybe<Redaccion_Estrategica_BlogsFaqSection>;
-  finalCtaSection?: Maybe<Redaccion_Estrategica_BlogsFinalCtaSection>;
+export type Redaccion_Blog = Node & Document & {
+  __typename?: 'Redaccion_blog';
+  seo?: Maybe<Redaccion_BlogSeo>;
+  hero?: Maybe<Redaccion_BlogHero>;
+  problemsSection?: Maybe<Redaccion_BlogProblemsSection>;
+  approachSection?: Maybe<Redaccion_BlogApproachSection>;
+  testimonialsSection?: Maybe<Redaccion_BlogTestimonialsSection>;
+  pricingSection?: Maybe<Redaccion_BlogPricingSection>;
+  faqSection?: Maybe<Redaccion_BlogFaqSection>;
+  finalCtaSection?: Maybe<Redaccion_BlogFinalCtaSection>;
   id: Scalars['ID']['output'];
   _sys: SystemInfo;
   _values: Scalars['JSON']['output'];
 };
 
-export type Redaccion_Estrategica_BlogsSeoFilter = {
+export type Redaccion_BlogSeoFilter = {
   title?: InputMaybe<StringFilter>;
   description?: InputMaybe<StringFilter>;
 };
 
-export type Redaccion_Estrategica_BlogsHeroFilter = {
+export type Redaccion_BlogHeroFilter = {
   subtitle?: InputMaybe<StringFilter>;
   titlePart1?: InputMaybe<StringFilter>;
   titlePart2?: InputMaybe<StringFilter>;
@@ -1318,41 +1318,41 @@ export type Redaccion_Estrategica_BlogsHeroFilter = {
   ctaLink?: InputMaybe<StringFilter>;
 };
 
-export type Redaccion_Estrategica_BlogsProblemsSectionProblemsFilter = {
+export type Redaccion_BlogProblemsSectionProblemsFilter = {
   problem?: InputMaybe<StringFilter>;
   consequence?: InputMaybe<StringFilter>;
 };
 
-export type Redaccion_Estrategica_BlogsProblemsSectionFilter = {
+export type Redaccion_BlogProblemsSectionFilter = {
   title?: InputMaybe<StringFilter>;
   subtitle?: InputMaybe<StringFilter>;
-  problems?: InputMaybe<Redaccion_Estrategica_BlogsProblemsSectionProblemsFilter>;
+  problems?: InputMaybe<Redaccion_BlogProblemsSectionProblemsFilter>;
   closingText?: InputMaybe<StringFilter>;
 };
 
-export type Redaccion_Estrategica_BlogsApproachSectionPointsFilter = {
+export type Redaccion_BlogApproachSectionPointsFilter = {
   title?: InputMaybe<StringFilter>;
   description?: InputMaybe<StringFilter>;
 };
 
-export type Redaccion_Estrategica_BlogsApproachSectionFilter = {
+export type Redaccion_BlogApproachSectionFilter = {
   title?: InputMaybe<StringFilter>;
   subtitle?: InputMaybe<StringFilter>;
-  points?: InputMaybe<Redaccion_Estrategica_BlogsApproachSectionPointsFilter>;
+  points?: InputMaybe<Redaccion_BlogApproachSectionPointsFilter>;
   conclusion?: InputMaybe<StringFilter>;
 };
 
-export type Redaccion_Estrategica_BlogsTestimonialsSectionTestimonialsFilter = {
+export type Redaccion_BlogTestimonialsSectionTestimonialsFilter = {
   quote?: InputMaybe<StringFilter>;
   author?: InputMaybe<StringFilter>;
 };
 
-export type Redaccion_Estrategica_BlogsTestimonialsSectionFilter = {
+export type Redaccion_BlogTestimonialsSectionFilter = {
   title?: InputMaybe<StringFilter>;
-  testimonials?: InputMaybe<Redaccion_Estrategica_BlogsTestimonialsSectionTestimonialsFilter>;
+  testimonials?: InputMaybe<Redaccion_BlogTestimonialsSectionTestimonialsFilter>;
 };
 
-export type Redaccion_Estrategica_BlogsPricingSectionPackagesFilter = {
+export type Redaccion_BlogPricingSectionPackagesFilter = {
   name?: InputMaybe<StringFilter>;
   articles?: InputMaybe<StringFilter>;
   price?: InputMaybe<StringFilter>;
@@ -1366,51 +1366,51 @@ export type Redaccion_Estrategica_BlogsPricingSectionPackagesFilter = {
   isPopular?: InputMaybe<BooleanFilter>;
 };
 
-export type Redaccion_Estrategica_BlogsPricingSectionFilter = {
+export type Redaccion_BlogPricingSectionFilter = {
   title?: InputMaybe<StringFilter>;
   subtitle?: InputMaybe<StringFilter>;
-  packages?: InputMaybe<Redaccion_Estrategica_BlogsPricingSectionPackagesFilter>;
+  packages?: InputMaybe<Redaccion_BlogPricingSectionPackagesFilter>;
 };
 
-export type Redaccion_Estrategica_BlogsFaqSectionQuestionsFilter = {
+export type Redaccion_BlogFaqSectionQuestionsFilter = {
   question?: InputMaybe<StringFilter>;
   answer?: InputMaybe<StringFilter>;
 };
 
-export type Redaccion_Estrategica_BlogsFaqSectionFilter = {
+export type Redaccion_BlogFaqSectionFilter = {
   title?: InputMaybe<StringFilter>;
-  questions?: InputMaybe<Redaccion_Estrategica_BlogsFaqSectionQuestionsFilter>;
+  questions?: InputMaybe<Redaccion_BlogFaqSectionQuestionsFilter>;
 };
 
-export type Redaccion_Estrategica_BlogsFinalCtaSectionFilter = {
+export type Redaccion_BlogFinalCtaSectionFilter = {
   title?: InputMaybe<StringFilter>;
   description?: InputMaybe<StringFilter>;
   ctaText?: InputMaybe<StringFilter>;
   ctaLink?: InputMaybe<StringFilter>;
 };
 
-export type Redaccion_Estrategica_BlogsFilter = {
-  seo?: InputMaybe<Redaccion_Estrategica_BlogsSeoFilter>;
-  hero?: InputMaybe<Redaccion_Estrategica_BlogsHeroFilter>;
-  problemsSection?: InputMaybe<Redaccion_Estrategica_BlogsProblemsSectionFilter>;
-  approachSection?: InputMaybe<Redaccion_Estrategica_BlogsApproachSectionFilter>;
-  testimonialsSection?: InputMaybe<Redaccion_Estrategica_BlogsTestimonialsSectionFilter>;
-  pricingSection?: InputMaybe<Redaccion_Estrategica_BlogsPricingSectionFilter>;
-  faqSection?: InputMaybe<Redaccion_Estrategica_BlogsFaqSectionFilter>;
-  finalCtaSection?: InputMaybe<Redaccion_Estrategica_BlogsFinalCtaSectionFilter>;
+export type Redaccion_BlogFilter = {
+  seo?: InputMaybe<Redaccion_BlogSeoFilter>;
+  hero?: InputMaybe<Redaccion_BlogHeroFilter>;
+  problemsSection?: InputMaybe<Redaccion_BlogProblemsSectionFilter>;
+  approachSection?: InputMaybe<Redaccion_BlogApproachSectionFilter>;
+  testimonialsSection?: InputMaybe<Redaccion_BlogTestimonialsSectionFilter>;
+  pricingSection?: InputMaybe<Redaccion_BlogPricingSectionFilter>;
+  faqSection?: InputMaybe<Redaccion_BlogFaqSectionFilter>;
+  finalCtaSection?: InputMaybe<Redaccion_BlogFinalCtaSectionFilter>;
 };
 
-export type Redaccion_Estrategica_BlogsConnectionEdges = {
-  __typename?: 'Redaccion_estrategica_blogsConnectionEdges';
+export type Redaccion_BlogConnectionEdges = {
+  __typename?: 'Redaccion_blogConnectionEdges';
   cursor: Scalars['String']['output'];
-  node?: Maybe<Redaccion_Estrategica_Blogs>;
+  node?: Maybe<Redaccion_Blog>;
 };
 
-export type Redaccion_Estrategica_BlogsConnection = Connection & {
-  __typename?: 'Redaccion_estrategica_blogsConnection';
+export type Redaccion_BlogConnection = Connection & {
+  __typename?: 'Redaccion_blogConnection';
   pageInfo: PageInfo;
   totalCount: Scalars['Float']['output'];
-  edges?: Maybe<Array<Maybe<Redaccion_Estrategica_BlogsConnectionEdges>>>;
+  edges?: Maybe<Array<Maybe<Redaccion_BlogConnectionEdges>>>;
 };
 
 export type Contact_PageSeo = {
@@ -2313,8 +2313,8 @@ export type Mutation = {
   createAuditoria: Auditoria;
   updateRedaccion_web: Redaccion_Web;
   createRedaccion_web: Redaccion_Web;
-  updateRedaccion_estrategica_blogs: Redaccion_Estrategica_Blogs;
-  createRedaccion_estrategica_blogs: Redaccion_Estrategica_Blogs;
+  updateRedaccion_blog: Redaccion_Blog;
+  createRedaccion_blog: Redaccion_Blog;
   updateContact_page: Contact_Page;
   createContact_page: Contact_Page;
   updateSobre_mi: Sobre_Mi;
@@ -2409,15 +2409,15 @@ export type MutationCreateRedaccion_WebArgs = {
 };
 
 
-export type MutationUpdateRedaccion_Estrategica_BlogsArgs = {
+export type MutationUpdateRedaccion_BlogArgs = {
   relativePath: Scalars['String']['input'];
-  params: Redaccion_Estrategica_BlogsMutation;
+  params: Redaccion_BlogMutation;
 };
 
 
-export type MutationCreateRedaccion_Estrategica_BlogsArgs = {
+export type MutationCreateRedaccion_BlogArgs = {
   relativePath: Scalars['String']['input'];
-  params: Redaccion_Estrategica_BlogsMutation;
+  params: Redaccion_BlogMutation;
 };
 
 
@@ -2485,7 +2485,7 @@ export type DocumentUpdateMutation = {
   pages?: InputMaybe<PagesMutation>;
   auditoria?: InputMaybe<AuditoriaMutation>;
   redaccion_web?: InputMaybe<Redaccion_WebMutation>;
-  redaccion_estrategica_blogs?: InputMaybe<Redaccion_Estrategica_BlogsMutation>;
+  redaccion_blog?: InputMaybe<Redaccion_BlogMutation>;
   contact_page?: InputMaybe<Contact_PageMutation>;
   sobre_mi?: InputMaybe<Sobre_MiMutation>;
   servicios_page?: InputMaybe<Servicios_PageMutation>;
@@ -2499,7 +2499,7 @@ export type DocumentMutation = {
   pages?: InputMaybe<PagesMutation>;
   auditoria?: InputMaybe<AuditoriaMutation>;
   redaccion_web?: InputMaybe<Redaccion_WebMutation>;
-  redaccion_estrategica_blogs?: InputMaybe<Redaccion_Estrategica_BlogsMutation>;
+  redaccion_blog?: InputMaybe<Redaccion_BlogMutation>;
   contact_page?: InputMaybe<Contact_PageMutation>;
   sobre_mi?: InputMaybe<Sobre_MiMutation>;
   servicios_page?: InputMaybe<Servicios_PageMutation>;
@@ -2864,12 +2864,12 @@ export type Redaccion_WebMutation = {
   finalCtaSection?: InputMaybe<Redaccion_WebFinalCtaSectionMutation>;
 };
 
-export type Redaccion_Estrategica_BlogsSeoMutation = {
+export type Redaccion_BlogSeoMutation = {
   title?: InputMaybe<Scalars['String']['input']>;
   description?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type Redaccion_Estrategica_BlogsHeroMutation = {
+export type Redaccion_BlogHeroMutation = {
   subtitle?: InputMaybe<Scalars['String']['input']>;
   titlePart1?: InputMaybe<Scalars['String']['input']>;
   titlePart2?: InputMaybe<Scalars['String']['input']>;
@@ -2878,41 +2878,41 @@ export type Redaccion_Estrategica_BlogsHeroMutation = {
   ctaLink?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type Redaccion_Estrategica_BlogsProblemsSectionProblemsMutation = {
+export type Redaccion_BlogProblemsSectionProblemsMutation = {
   problem?: InputMaybe<Scalars['String']['input']>;
   consequence?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type Redaccion_Estrategica_BlogsProblemsSectionMutation = {
+export type Redaccion_BlogProblemsSectionMutation = {
   title?: InputMaybe<Scalars['String']['input']>;
   subtitle?: InputMaybe<Scalars['String']['input']>;
-  problems?: InputMaybe<Array<InputMaybe<Redaccion_Estrategica_BlogsProblemsSectionProblemsMutation>>>;
+  problems?: InputMaybe<Array<InputMaybe<Redaccion_BlogProblemsSectionProblemsMutation>>>;
   closingText?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type Redaccion_Estrategica_BlogsApproachSectionPointsMutation = {
+export type Redaccion_BlogApproachSectionPointsMutation = {
   title?: InputMaybe<Scalars['String']['input']>;
   description?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type Redaccion_Estrategica_BlogsApproachSectionMutation = {
+export type Redaccion_BlogApproachSectionMutation = {
   title?: InputMaybe<Scalars['String']['input']>;
   subtitle?: InputMaybe<Scalars['String']['input']>;
-  points?: InputMaybe<Array<InputMaybe<Redaccion_Estrategica_BlogsApproachSectionPointsMutation>>>;
+  points?: InputMaybe<Array<InputMaybe<Redaccion_BlogApproachSectionPointsMutation>>>;
   conclusion?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type Redaccion_Estrategica_BlogsTestimonialsSectionTestimonialsMutation = {
+export type Redaccion_BlogTestimonialsSectionTestimonialsMutation = {
   quote?: InputMaybe<Scalars['String']['input']>;
   author?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type Redaccion_Estrategica_BlogsTestimonialsSectionMutation = {
+export type Redaccion_BlogTestimonialsSectionMutation = {
   title?: InputMaybe<Scalars['String']['input']>;
-  testimonials?: InputMaybe<Array<InputMaybe<Redaccion_Estrategica_BlogsTestimonialsSectionTestimonialsMutation>>>;
+  testimonials?: InputMaybe<Array<InputMaybe<Redaccion_BlogTestimonialsSectionTestimonialsMutation>>>;
 };
 
-export type Redaccion_Estrategica_BlogsPricingSectionPackagesMutation = {
+export type Redaccion_BlogPricingSectionPackagesMutation = {
   name?: InputMaybe<Scalars['String']['input']>;
   articles?: InputMaybe<Scalars['String']['input']>;
   price?: InputMaybe<Scalars['String']['input']>;
@@ -2926,38 +2926,38 @@ export type Redaccion_Estrategica_BlogsPricingSectionPackagesMutation = {
   isPopular?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
-export type Redaccion_Estrategica_BlogsPricingSectionMutation = {
+export type Redaccion_BlogPricingSectionMutation = {
   title?: InputMaybe<Scalars['String']['input']>;
   subtitle?: InputMaybe<Scalars['String']['input']>;
-  packages?: InputMaybe<Array<InputMaybe<Redaccion_Estrategica_BlogsPricingSectionPackagesMutation>>>;
+  packages?: InputMaybe<Array<InputMaybe<Redaccion_BlogPricingSectionPackagesMutation>>>;
 };
 
-export type Redaccion_Estrategica_BlogsFaqSectionQuestionsMutation = {
+export type Redaccion_BlogFaqSectionQuestionsMutation = {
   question?: InputMaybe<Scalars['String']['input']>;
   answer?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type Redaccion_Estrategica_BlogsFaqSectionMutation = {
+export type Redaccion_BlogFaqSectionMutation = {
   title?: InputMaybe<Scalars['String']['input']>;
-  questions?: InputMaybe<Array<InputMaybe<Redaccion_Estrategica_BlogsFaqSectionQuestionsMutation>>>;
+  questions?: InputMaybe<Array<InputMaybe<Redaccion_BlogFaqSectionQuestionsMutation>>>;
 };
 
-export type Redaccion_Estrategica_BlogsFinalCtaSectionMutation = {
+export type Redaccion_BlogFinalCtaSectionMutation = {
   title?: InputMaybe<Scalars['String']['input']>;
   description?: InputMaybe<Scalars['String']['input']>;
   ctaText?: InputMaybe<Scalars['String']['input']>;
   ctaLink?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type Redaccion_Estrategica_BlogsMutation = {
-  seo?: InputMaybe<Redaccion_Estrategica_BlogsSeoMutation>;
-  hero?: InputMaybe<Redaccion_Estrategica_BlogsHeroMutation>;
-  problemsSection?: InputMaybe<Redaccion_Estrategica_BlogsProblemsSectionMutation>;
-  approachSection?: InputMaybe<Redaccion_Estrategica_BlogsApproachSectionMutation>;
-  testimonialsSection?: InputMaybe<Redaccion_Estrategica_BlogsTestimonialsSectionMutation>;
-  pricingSection?: InputMaybe<Redaccion_Estrategica_BlogsPricingSectionMutation>;
-  faqSection?: InputMaybe<Redaccion_Estrategica_BlogsFaqSectionMutation>;
-  finalCtaSection?: InputMaybe<Redaccion_Estrategica_BlogsFinalCtaSectionMutation>;
+export type Redaccion_BlogMutation = {
+  seo?: InputMaybe<Redaccion_BlogSeoMutation>;
+  hero?: InputMaybe<Redaccion_BlogHeroMutation>;
+  problemsSection?: InputMaybe<Redaccion_BlogProblemsSectionMutation>;
+  approachSection?: InputMaybe<Redaccion_BlogApproachSectionMutation>;
+  testimonialsSection?: InputMaybe<Redaccion_BlogTestimonialsSectionMutation>;
+  pricingSection?: InputMaybe<Redaccion_BlogPricingSectionMutation>;
+  faqSection?: InputMaybe<Redaccion_BlogFaqSectionMutation>;
+  finalCtaSection?: InputMaybe<Redaccion_BlogFinalCtaSectionMutation>;
 };
 
 export type Contact_PageSeoMutation = {
@@ -3343,7 +3343,7 @@ export type AuditoriaPartsFragment = { __typename: 'Auditoria', seo?: { __typena
 
 export type Redaccion_WebPartsFragment = { __typename: 'Redaccion_web', seo?: { __typename: 'Redaccion_webSeo', title: string, description: string } | null, hero?: { __typename: 'Redaccion_webHero', subtitle: string, titlePart1: string, titlePart2: string, description: string, ctaText: string, ctaLink: string } | null, problemsSection?: { __typename: 'Redaccion_webProblemsSection', title: string, subtitle: string, closingText: string, problems?: Array<{ __typename: 'Redaccion_webProblemsSectionProblems', problem: string, consequence: string } | null> | null } | null, approachSection?: { __typename: 'Redaccion_webApproachSection', title: string, subtitle?: string | null, conclusion: string, points?: Array<{ __typename: 'Redaccion_webApproachSectionPoints', title: string, description: string } | null> | null } | null, testimonialsSection?: { __typename: 'Redaccion_webTestimonialsSection', title: string, testimonials?: Array<{ __typename: 'Redaccion_webTestimonialsSectionTestimonials', quote: string, author: string } | null> | null } | null, pricingSection?: { __typename: 'Redaccion_webPricingSection', title: string, subtitle: string, commonFeatures?: { __typename: 'Redaccion_webPricingSectionCommonFeatures', title: string, features: Array<string>, additionalPage: string } | null, packages?: Array<{ __typename: 'Redaccion_webPricingSectionPackages', name: string, pages: string, price: string, currency: string, priceDescription: string, includes: Array<string>, delivery: string, format: string, ctaText: string, ctaLink: string, isPopular?: boolean | null } | null> | null } | null, faqSection?: { __typename: 'Redaccion_webFaqSection', title: string, questions?: Array<{ __typename: 'Redaccion_webFaqSectionQuestions', question: string, answer: string } | null> | null } | null, finalCtaSection?: { __typename: 'Redaccion_webFinalCtaSection', title: string, description: string, ctaText: string, ctaLink: string } | null };
 
-export type Redaccion_Estrategica_BlogsPartsFragment = { __typename: 'Redaccion_estrategica_blogs', seo?: { __typename: 'Redaccion_estrategica_blogsSeo', title: string, description: string } | null, hero?: { __typename: 'Redaccion_estrategica_blogsHero', subtitle: string, titlePart1: string, titlePart2: string, description: string, ctaText: string, ctaLink: string } | null, problemsSection?: { __typename: 'Redaccion_estrategica_blogsProblemsSection', title: string, subtitle: string, closingText: string, problems?: Array<{ __typename: 'Redaccion_estrategica_blogsProblemsSectionProblems', problem: string, consequence: string } | null> | null } | null, approachSection?: { __typename: 'Redaccion_estrategica_blogsApproachSection', title: string, subtitle?: string | null, conclusion: string, points?: Array<{ __typename: 'Redaccion_estrategica_blogsApproachSectionPoints', title: string, description: string } | null> | null } | null, testimonialsSection?: { __typename: 'Redaccion_estrategica_blogsTestimonialsSection', title: string, testimonials?: Array<{ __typename: 'Redaccion_estrategica_blogsTestimonialsSectionTestimonials', quote: string, author: string } | null> | null } | null, pricingSection?: { __typename: 'Redaccion_estrategica_blogsPricingSection', title: string, subtitle: string, packages?: Array<{ __typename: 'Redaccion_estrategica_blogsPricingSectionPackages', name: string, articles: string, price: string, currency: string, priceDescription: string, includes: Array<string>, delivery: string, format: string, ctaText: string, ctaLink: string, isPopular?: boolean | null } | null> | null } | null, faqSection?: { __typename: 'Redaccion_estrategica_blogsFaqSection', title: string, questions?: Array<{ __typename: 'Redaccion_estrategica_blogsFaqSectionQuestions', question: string, answer: string } | null> | null } | null, finalCtaSection?: { __typename: 'Redaccion_estrategica_blogsFinalCtaSection', title: string, description: string, ctaText: string, ctaLink: string } | null };
+export type Redaccion_BlogPartsFragment = { __typename: 'Redaccion_blog', seo?: { __typename: 'Redaccion_blogSeo', title: string, description: string } | null, hero?: { __typename: 'Redaccion_blogHero', subtitle: string, titlePart1: string, titlePart2: string, description: string, ctaText: string, ctaLink: string } | null, problemsSection?: { __typename: 'Redaccion_blogProblemsSection', title: string, subtitle: string, closingText: string, problems?: Array<{ __typename: 'Redaccion_blogProblemsSectionProblems', problem: string, consequence: string } | null> | null } | null, approachSection?: { __typename: 'Redaccion_blogApproachSection', title: string, subtitle?: string | null, conclusion: string, points?: Array<{ __typename: 'Redaccion_blogApproachSectionPoints', title: string, description: string } | null> | null } | null, testimonialsSection?: { __typename: 'Redaccion_blogTestimonialsSection', title: string, testimonials?: Array<{ __typename: 'Redaccion_blogTestimonialsSectionTestimonials', quote: string, author: string } | null> | null } | null, pricingSection?: { __typename: 'Redaccion_blogPricingSection', title: string, subtitle: string, packages?: Array<{ __typename: 'Redaccion_blogPricingSectionPackages', name: string, articles: string, price: string, currency: string, priceDescription: string, includes: Array<string>, delivery: string, format: string, ctaText: string, ctaLink: string, isPopular?: boolean | null } | null> | null } | null, faqSection?: { __typename: 'Redaccion_blogFaqSection', title: string, questions?: Array<{ __typename: 'Redaccion_blogFaqSectionQuestions', question: string, answer: string } | null> | null } | null, finalCtaSection?: { __typename: 'Redaccion_blogFinalCtaSection', title: string, description: string, ctaText: string, ctaLink: string } | null };
 
 export type Contact_PagePartsFragment = { __typename: 'Contact_page', seo?: { __typename: 'Contact_pageSeo', title: string, description: string } | null, hero?: { __typename: 'Contact_pageHero', titlePart1: string, titlePart2: string, description: string } | null, form?: { __typename: 'Contact_pageForm', title: string, submitButtonText: string, privacyPolicyText: string, services?: Array<{ __typename: 'Contact_pageFormServices', value: string, label: string } | null> | null } | null, contactInfo?: { __typename: 'Contact_pageContactInfo', title: string, email: string, responseTime: string } | null, messages?: { __typename: 'Contact_pageMessages', successMessage: string, errorMessage: string, loadingText: string } | null };
 
@@ -3431,24 +3431,24 @@ export type Redaccion_WebConnectionQueryVariables = Exact<{
 
 export type Redaccion_WebConnectionQuery = { __typename?: 'Query', redaccion_webConnection: { __typename?: 'Redaccion_webConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'Redaccion_webConnectionEdges', cursor: string, node?: { __typename: 'Redaccion_web', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'Redaccion_webSeo', title: string, description: string } | null, hero?: { __typename: 'Redaccion_webHero', subtitle: string, titlePart1: string, titlePart2: string, description: string, ctaText: string, ctaLink: string } | null, problemsSection?: { __typename: 'Redaccion_webProblemsSection', title: string, subtitle: string, closingText: string, problems?: Array<{ __typename: 'Redaccion_webProblemsSectionProblems', problem: string, consequence: string } | null> | null } | null, approachSection?: { __typename: 'Redaccion_webApproachSection', title: string, subtitle?: string | null, conclusion: string, points?: Array<{ __typename: 'Redaccion_webApproachSectionPoints', title: string, description: string } | null> | null } | null, testimonialsSection?: { __typename: 'Redaccion_webTestimonialsSection', title: string, testimonials?: Array<{ __typename: 'Redaccion_webTestimonialsSectionTestimonials', quote: string, author: string } | null> | null } | null, pricingSection?: { __typename: 'Redaccion_webPricingSection', title: string, subtitle: string, commonFeatures?: { __typename: 'Redaccion_webPricingSectionCommonFeatures', title: string, features: Array<string>, additionalPage: string } | null, packages?: Array<{ __typename: 'Redaccion_webPricingSectionPackages', name: string, pages: string, price: string, currency: string, priceDescription: string, includes: Array<string>, delivery: string, format: string, ctaText: string, ctaLink: string, isPopular?: boolean | null } | null> | null } | null, faqSection?: { __typename: 'Redaccion_webFaqSection', title: string, questions?: Array<{ __typename: 'Redaccion_webFaqSectionQuestions', question: string, answer: string } | null> | null } | null, finalCtaSection?: { __typename: 'Redaccion_webFinalCtaSection', title: string, description: string, ctaText: string, ctaLink: string } | null } | null } | null> | null } };
 
-export type Redaccion_Estrategica_BlogsQueryVariables = Exact<{
+export type Redaccion_BlogQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
 }>;
 
 
-export type Redaccion_Estrategica_BlogsQuery = { __typename?: 'Query', redaccion_estrategica_blogs: { __typename: 'Redaccion_estrategica_blogs', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'Redaccion_estrategica_blogsSeo', title: string, description: string } | null, hero?: { __typename: 'Redaccion_estrategica_blogsHero', subtitle: string, titlePart1: string, titlePart2: string, description: string, ctaText: string, ctaLink: string } | null, problemsSection?: { __typename: 'Redaccion_estrategica_blogsProblemsSection', title: string, subtitle: string, closingText: string, problems?: Array<{ __typename: 'Redaccion_estrategica_blogsProblemsSectionProblems', problem: string, consequence: string } | null> | null } | null, approachSection?: { __typename: 'Redaccion_estrategica_blogsApproachSection', title: string, subtitle?: string | null, conclusion: string, points?: Array<{ __typename: 'Redaccion_estrategica_blogsApproachSectionPoints', title: string, description: string } | null> | null } | null, testimonialsSection?: { __typename: 'Redaccion_estrategica_blogsTestimonialsSection', title: string, testimonials?: Array<{ __typename: 'Redaccion_estrategica_blogsTestimonialsSectionTestimonials', quote: string, author: string } | null> | null } | null, pricingSection?: { __typename: 'Redaccion_estrategica_blogsPricingSection', title: string, subtitle: string, packages?: Array<{ __typename: 'Redaccion_estrategica_blogsPricingSectionPackages', name: string, articles: string, price: string, currency: string, priceDescription: string, includes: Array<string>, delivery: string, format: string, ctaText: string, ctaLink: string, isPopular?: boolean | null } | null> | null } | null, faqSection?: { __typename: 'Redaccion_estrategica_blogsFaqSection', title: string, questions?: Array<{ __typename: 'Redaccion_estrategica_blogsFaqSectionQuestions', question: string, answer: string } | null> | null } | null, finalCtaSection?: { __typename: 'Redaccion_estrategica_blogsFinalCtaSection', title: string, description: string, ctaText: string, ctaLink: string } | null } };
+export type Redaccion_BlogQuery = { __typename?: 'Query', redaccion_blog: { __typename: 'Redaccion_blog', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'Redaccion_blogSeo', title: string, description: string } | null, hero?: { __typename: 'Redaccion_blogHero', subtitle: string, titlePart1: string, titlePart2: string, description: string, ctaText: string, ctaLink: string } | null, problemsSection?: { __typename: 'Redaccion_blogProblemsSection', title: string, subtitle: string, closingText: string, problems?: Array<{ __typename: 'Redaccion_blogProblemsSectionProblems', problem: string, consequence: string } | null> | null } | null, approachSection?: { __typename: 'Redaccion_blogApproachSection', title: string, subtitle?: string | null, conclusion: string, points?: Array<{ __typename: 'Redaccion_blogApproachSectionPoints', title: string, description: string } | null> | null } | null, testimonialsSection?: { __typename: 'Redaccion_blogTestimonialsSection', title: string, testimonials?: Array<{ __typename: 'Redaccion_blogTestimonialsSectionTestimonials', quote: string, author: string } | null> | null } | null, pricingSection?: { __typename: 'Redaccion_blogPricingSection', title: string, subtitle: string, packages?: Array<{ __typename: 'Redaccion_blogPricingSectionPackages', name: string, articles: string, price: string, currency: string, priceDescription: string, includes: Array<string>, delivery: string, format: string, ctaText: string, ctaLink: string, isPopular?: boolean | null } | null> | null } | null, faqSection?: { __typename: 'Redaccion_blogFaqSection', title: string, questions?: Array<{ __typename: 'Redaccion_blogFaqSectionQuestions', question: string, answer: string } | null> | null } | null, finalCtaSection?: { __typename: 'Redaccion_blogFinalCtaSection', title: string, description: string, ctaText: string, ctaLink: string } | null } };
 
-export type Redaccion_Estrategica_BlogsConnectionQueryVariables = Exact<{
+export type Redaccion_BlogConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Float']['input']>;
   last?: InputMaybe<Scalars['Float']['input']>;
   sort?: InputMaybe<Scalars['String']['input']>;
-  filter?: InputMaybe<Redaccion_Estrategica_BlogsFilter>;
+  filter?: InputMaybe<Redaccion_BlogFilter>;
 }>;
 
 
-export type Redaccion_Estrategica_BlogsConnectionQuery = { __typename?: 'Query', redaccion_estrategica_blogsConnection: { __typename?: 'Redaccion_estrategica_blogsConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'Redaccion_estrategica_blogsConnectionEdges', cursor: string, node?: { __typename: 'Redaccion_estrategica_blogs', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'Redaccion_estrategica_blogsSeo', title: string, description: string } | null, hero?: { __typename: 'Redaccion_estrategica_blogsHero', subtitle: string, titlePart1: string, titlePart2: string, description: string, ctaText: string, ctaLink: string } | null, problemsSection?: { __typename: 'Redaccion_estrategica_blogsProblemsSection', title: string, subtitle: string, closingText: string, problems?: Array<{ __typename: 'Redaccion_estrategica_blogsProblemsSectionProblems', problem: string, consequence: string } | null> | null } | null, approachSection?: { __typename: 'Redaccion_estrategica_blogsApproachSection', title: string, subtitle?: string | null, conclusion: string, points?: Array<{ __typename: 'Redaccion_estrategica_blogsApproachSectionPoints', title: string, description: string } | null> | null } | null, testimonialsSection?: { __typename: 'Redaccion_estrategica_blogsTestimonialsSection', title: string, testimonials?: Array<{ __typename: 'Redaccion_estrategica_blogsTestimonialsSectionTestimonials', quote: string, author: string } | null> | null } | null, pricingSection?: { __typename: 'Redaccion_estrategica_blogsPricingSection', title: string, subtitle: string, packages?: Array<{ __typename: 'Redaccion_estrategica_blogsPricingSectionPackages', name: string, articles: string, price: string, currency: string, priceDescription: string, includes: Array<string>, delivery: string, format: string, ctaText: string, ctaLink: string, isPopular?: boolean | null } | null> | null } | null, faqSection?: { __typename: 'Redaccion_estrategica_blogsFaqSection', title: string, questions?: Array<{ __typename: 'Redaccion_estrategica_blogsFaqSectionQuestions', question: string, answer: string } | null> | null } | null, finalCtaSection?: { __typename: 'Redaccion_estrategica_blogsFinalCtaSection', title: string, description: string, ctaText: string, ctaLink: string } | null } | null } | null> | null } };
+export type Redaccion_BlogConnectionQuery = { __typename?: 'Query', redaccion_blogConnection: { __typename?: 'Redaccion_blogConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'Redaccion_blogConnectionEdges', cursor: string, node?: { __typename: 'Redaccion_blog', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'Redaccion_blogSeo', title: string, description: string } | null, hero?: { __typename: 'Redaccion_blogHero', subtitle: string, titlePart1: string, titlePart2: string, description: string, ctaText: string, ctaLink: string } | null, problemsSection?: { __typename: 'Redaccion_blogProblemsSection', title: string, subtitle: string, closingText: string, problems?: Array<{ __typename: 'Redaccion_blogProblemsSectionProblems', problem: string, consequence: string } | null> | null } | null, approachSection?: { __typename: 'Redaccion_blogApproachSection', title: string, subtitle?: string | null, conclusion: string, points?: Array<{ __typename: 'Redaccion_blogApproachSectionPoints', title: string, description: string } | null> | null } | null, testimonialsSection?: { __typename: 'Redaccion_blogTestimonialsSection', title: string, testimonials?: Array<{ __typename: 'Redaccion_blogTestimonialsSectionTestimonials', quote: string, author: string } | null> | null } | null, pricingSection?: { __typename: 'Redaccion_blogPricingSection', title: string, subtitle: string, packages?: Array<{ __typename: 'Redaccion_blogPricingSectionPackages', name: string, articles: string, price: string, currency: string, priceDescription: string, includes: Array<string>, delivery: string, format: string, ctaText: string, ctaLink: string, isPopular?: boolean | null } | null> | null } | null, faqSection?: { __typename: 'Redaccion_blogFaqSection', title: string, questions?: Array<{ __typename: 'Redaccion_blogFaqSectionQuestions', question: string, answer: string } | null> | null } | null, finalCtaSection?: { __typename: 'Redaccion_blogFinalCtaSection', title: string, description: string, ctaText: string, ctaLink: string } | null } | null } | null> | null } };
 
 export type Contact_PageQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
@@ -3863,8 +3863,8 @@ export const Redaccion_WebPartsFragmentDoc = gql`
   }
 }
     `;
-export const Redaccion_Estrategica_BlogsPartsFragmentDoc = gql`
-    fragment Redaccion_estrategica_blogsParts on Redaccion_estrategica_blogs {
+export const Redaccion_BlogPartsFragmentDoc = gql`
+    fragment Redaccion_blogParts on Redaccion_blog {
   __typename
   seo {
     __typename
@@ -4511,9 +4511,9 @@ export const Redaccion_WebConnectionDocument = gql`
   }
 }
     ${Redaccion_WebPartsFragmentDoc}`;
-export const Redaccion_Estrategica_BlogsDocument = gql`
-    query redaccion_estrategica_blogs($relativePath: String!) {
-  redaccion_estrategica_blogs(relativePath: $relativePath) {
+export const Redaccion_BlogDocument = gql`
+    query redaccion_blog($relativePath: String!) {
+  redaccion_blog(relativePath: $relativePath) {
     ... on Document {
       _sys {
         filename
@@ -4526,13 +4526,13 @@ export const Redaccion_Estrategica_BlogsDocument = gql`
       }
       id
     }
-    ...Redaccion_estrategica_blogsParts
+    ...Redaccion_blogParts
   }
 }
-    ${Redaccion_Estrategica_BlogsPartsFragmentDoc}`;
-export const Redaccion_Estrategica_BlogsConnectionDocument = gql`
-    query redaccion_estrategica_blogsConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: Redaccion_estrategica_blogsFilter) {
-  redaccion_estrategica_blogsConnection(
+    ${Redaccion_BlogPartsFragmentDoc}`;
+export const Redaccion_BlogConnectionDocument = gql`
+    query redaccion_blogConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: Redaccion_blogFilter) {
+  redaccion_blogConnection(
     before: $before
     after: $after
     first: $first
@@ -4562,12 +4562,12 @@ export const Redaccion_Estrategica_BlogsConnectionDocument = gql`
           }
           id
         }
-        ...Redaccion_estrategica_blogsParts
+        ...Redaccion_blogParts
       }
     }
   }
 }
-    ${Redaccion_Estrategica_BlogsPartsFragmentDoc}`;
+    ${Redaccion_BlogPartsFragmentDoc}`;
 export const Contact_PageDocument = gql`
     query contact_page($relativePath: String!) {
   contact_page(relativePath: $relativePath) {
@@ -4880,11 +4880,11 @@ export type Requester<C= {}> = <R, V>(doc: DocumentNode, vars?: V, options?: C) 
     redaccion_webConnection(variables?: Redaccion_WebConnectionQueryVariables, options?: C): Promise<{data: Redaccion_WebConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: Redaccion_WebConnectionQueryVariables, query: string}> {
         return requester<{data: Redaccion_WebConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: Redaccion_WebConnectionQueryVariables, query: string}, Redaccion_WebConnectionQueryVariables>(Redaccion_WebConnectionDocument, variables, options);
       },
-    redaccion_estrategica_blogs(variables: Redaccion_Estrategica_BlogsQueryVariables, options?: C): Promise<{data: Redaccion_Estrategica_BlogsQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: Redaccion_Estrategica_BlogsQueryVariables, query: string}> {
-        return requester<{data: Redaccion_Estrategica_BlogsQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: Redaccion_Estrategica_BlogsQueryVariables, query: string}, Redaccion_Estrategica_BlogsQueryVariables>(Redaccion_Estrategica_BlogsDocument, variables, options);
+    redaccion_blog(variables: Redaccion_BlogQueryVariables, options?: C): Promise<{data: Redaccion_BlogQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: Redaccion_BlogQueryVariables, query: string}> {
+        return requester<{data: Redaccion_BlogQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: Redaccion_BlogQueryVariables, query: string}, Redaccion_BlogQueryVariables>(Redaccion_BlogDocument, variables, options);
       },
-    redaccion_estrategica_blogsConnection(variables?: Redaccion_Estrategica_BlogsConnectionQueryVariables, options?: C): Promise<{data: Redaccion_Estrategica_BlogsConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: Redaccion_Estrategica_BlogsConnectionQueryVariables, query: string}> {
-        return requester<{data: Redaccion_Estrategica_BlogsConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: Redaccion_Estrategica_BlogsConnectionQueryVariables, query: string}, Redaccion_Estrategica_BlogsConnectionQueryVariables>(Redaccion_Estrategica_BlogsConnectionDocument, variables, options);
+    redaccion_blogConnection(variables?: Redaccion_BlogConnectionQueryVariables, options?: C): Promise<{data: Redaccion_BlogConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: Redaccion_BlogConnectionQueryVariables, query: string}> {
+        return requester<{data: Redaccion_BlogConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: Redaccion_BlogConnectionQueryVariables, query: string}, Redaccion_BlogConnectionQueryVariables>(Redaccion_BlogConnectionDocument, variables, options);
       },
     contact_page(variables: Contact_PageQueryVariables, options?: C): Promise<{data: Contact_PageQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: Contact_PageQueryVariables, query: string}> {
         return requester<{data: Contact_PageQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: Contact_PageQueryVariables, query: string}, Contact_PageQueryVariables>(Contact_PageDocument, variables, options);

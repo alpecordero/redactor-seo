@@ -312,7 +312,7 @@ fragment Redaccion_webParts on Redaccion_web {
   }
 }
 
-fragment Redaccion_estrategica_blogsParts on Redaccion_estrategica_blogs {
+fragment Redaccion_blogParts on Redaccion_blog {
   __typename
   seo {
     __typename

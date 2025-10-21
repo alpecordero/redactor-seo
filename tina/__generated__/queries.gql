@@ -218,8 +218,8 @@ query redaccion_webConnection($before: String, $after: String, $first: Float, $l
   }
 }
 
-query redaccion_estrategica_blogs($relativePath: String!) {
-  redaccion_estrategica_blogs(relativePath: $relativePath) {
+query redaccion_blog($relativePath: String!) {
+  redaccion_blog(relativePath: $relativePath) {
     ... on Document {
       _sys {
         filename
@@ -232,12 +232,12 @@ query redaccion_estrategica_blogs($relativePath: String!) {
       }
       id
     }
-    ...Redaccion_estrategica_blogsParts
+    ...Redaccion_blogParts
   }
 }
 
-query redaccion_estrategica_blogsConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: Redaccion_estrategica_blogsFilter) {
-  redaccion_estrategica_blogsConnection(
+query redaccion_blogConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: Redaccion_blogFilter) {
+  redaccion_blogConnection(
     before: $before
     after: $after
     first: $first
@@ -267,7 +267,7 @@ query redaccion_estrategica_blogsConnection($before: String, $after: String, $fi
           }
           id
         }
-        ...Redaccion_estrategica_blogsParts
+        ...Redaccion_blogParts
       }
     }
   }

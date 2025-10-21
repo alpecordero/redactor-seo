@@ -1570,10 +1570,10 @@ var config_default = defineConfig({
         ]
       },
       {
-        name: "redaccion_estrategica_blogs",
-        nameOverride: "redaccion-estrategica-blogs",
-        label: "Redacci\xF3n Estrat\xE9gica Blogs",
-        path: "src/content/redaccion-estrategica-blogs",
+        name: "redaccion_blog",
+        nameOverride: "redaccion-blog",
+        label: "Redacci\xF3n Blog",
+        path: "src/content/redaccion-blog",
         format: "json",
         ui: {
           allowedActions: {
