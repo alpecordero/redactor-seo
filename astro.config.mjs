@@ -14,6 +14,26 @@ export default defineConfig({
     '/privacidad': {
       status: 301,
       destination: '/politica-privacidad'
+    },
+    '/servicio-redaccion-seo': {
+      status: 301,
+      destination: '/servicios'
+    },
+    '/textos-tiendas-online': {
+      status: 301,
+      destination: '/servicios'
+    },
+    '/auditoria-seo': {
+      status: 301,
+      destination: '/servicios'
+    },
+    '/servicio-de-keyword-research': {
+      status: 301,
+      destination: '/servicios'
+    },
+    '/precios': {
+      status: 301,
+      destination: '/servicios'
     }
   },
   vite: {
