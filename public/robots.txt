@@ -4,8 +4,8 @@
 User-agent: *
 Allow: /
 
-# Sitemaps
-Sitemap: https://redactorseo.es/sitemap-index.xml
+# Sitemap
+Sitemap: https://redactorseo.es/sitemap.xml
 
 # Crawl delay (opcional, descomenta si hay problemas de carga)
 # Crawl-delay: 1

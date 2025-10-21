@@ -5,6 +5,7 @@ export const GET: APIRoute = async () => {
   const now = new Date().toISOString();
 
   // Páginas principales (indexables)
+  // Nota: política-privacidad NO incluida (noindex)
   const pages = [
     { url: '', priority: '1.0', changefreq: 'weekly' }, // Homepage
     { url: '/servicios', priority: '0.9', changefreq: 'weekly' },
@@ -14,7 +15,6 @@ export const GET: APIRoute = async () => {
     { url: '/colaboraciones-agencias', priority: '0.8', changefreq: 'monthly' },
     { url: '/sobre-mi', priority: '0.7', changefreq: 'monthly' },
     { url: '/contacto', priority: '0.8', changefreq: 'monthly' },
-    { url: '/politica-privacidad', priority: '0.3', changefreq: 'yearly' },
   ];
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
