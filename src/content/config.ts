@@ -31,6 +31,12 @@ const sobreMi = defineCollection({
     subtitle: z.string().optional(),
     profileImage: z.string(),
     storyContent: z.string(),
+    cta: z.object({
+      title: z.string(),
+      description: z.string(),
+      buttonText: z.string(),
+      buttonUrl: z.string(),
+    }).optional(),
   })
 })
 

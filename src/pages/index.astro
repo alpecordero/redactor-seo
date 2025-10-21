@@ -24,26 +24,47 @@ const baseUrl = 'https://redactorseo.es'
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": homepageContent.seo.title,
-      "description": homepageContent.seo.description,
-      "url": baseUrl,
-      "mainEntity": {
-        "@type": "ProfessionalService",
-        "name": "Redactor SEO",
-        "url": baseUrl
-      },
-      "breadcrumb": {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Inicio",
-            "item": baseUrl
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "name": homepageContent.seo.title,
+          "description": homepageContent.seo.description,
+          "url": baseUrl,
+          "mainEntity": {
+            "@type": "ProfessionalService",
+            "name": "Redactor SEO",
+            "url": baseUrl
+          },
+          "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Inicio",
+                "item": baseUrl
+              }
+            ]
           }
-        ]
-      }
+        },
+        ...testimonialsSection.testimonials.map(testimonial => ({
+          "@type": "Review",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": testimonial.name
+          },
+          "reviewBody": testimonial.testimonial,
+          "itemReviewed": {
+            "@type": "ProfessionalService",
+            "@id": `${baseUrl}/#service`
+          }
+        }))
+      ]
     })} />
   </Fragment>
   <!-- Hero Section - Minimalista -->

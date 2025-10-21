@@ -1,10 +1,16 @@
 {
   "seo": {
-    "title": "Sobre Mí - Álvaro Pérez | Redactor SEO especialista en contenidos",
-    "description": "Conoce mi historia, metodología y valores como redactor SEO. Más de 16 años ayudando a empresas a crecer online con contenido estratégico que convierte."
+    "title": "Sobre Mí - ¿Quién está detrás de todo esto?",
+    "description": "Conoce mi historia como redactor SEO. Llevo más de 16 años ayudando a empresas con contenido estratégico que posiciona y convierte."
   },
   "title": "Soy Álvaro",
   "subtitle": "Imagina publicar un artículo sin tener audiencia. ¿Cuál sería el resultado?",
   "profileImage": "/alvaro-seo.jpg",
-  "storyContent": "Lo sé porque hice la prueba en el año 2009. No tenía ni un solo lector. Cero. Entonces, publiqué el primer artículo. Lo lancé al vacío de Internet por pura curiosidad. \n\n¿Qué pasó?\n\nNada durante los primeros 10 días. Cero visitas. Cero motivación.\n\nPoco después:\n\n- Un lector.\n- Tres lectores.\n- Cinco lectores y un seguidor.\n\nPensaba que las visitas llegaban por pura suerte. Y suerte había, pero en realidad tenía otro nombre. Sin saberlo, aquel primer artículo estaba optimizado para SEO y por eso fue descubierto por los lectores. \n\nFue el inicio casual. Aprendí SEO sin cursos. A base de prueba y error. Comprendí lo que Google quería y se lo di.\n\nLa bola de nieve creció tanto que aquel blog cutre de Blogspot ahora es una web conocida que visitan miles de personas cada día.\n\nSin esa web y sin un seguidor del blog no estaría aquí.\n\nEmpecé a trabajar con clientes cuando un lector me escribió un correo que terminaba con esta pregunta:\n\n\"¿Podrías escribir artículos para mi web?\"\n\nAcepté.\n\nAbrí esta web y el resto es historia. Por aquí han pasado más de 150 empresas de todos los tamaños. \n\nAhora es diferente:\n\n- Solo trabajo con negocios serios.\n- Google (casi) ha muerto porque la gente busca diferente. \n- Lo que no ha muerto es la necesidad de que te encuentren. \n\nHoy, y sobre todo mañana, te van a encontrar preguntando a ChatGPT. Ahora el SEO tiene aún más importancia, pero hay que hacerlo diferente.\n\nSi quieres que te encuentren, pincha en el botón que tienes debajo."
+  "storyContent": "Lo sé porque hice la prueba en el año 2009. No tenía ni un solo lector. Cero. Entonces, publiqué el primer artículo. Lo lancé al vacío de Internet por pura curiosidad. \n\n¿Qué pasó?\n\nNada durante los primeros 10 días. Cero visitas. Cero motivación.\n\nPoco después:\n\n- Un lector.\n- Tres lectores.\n- Cinco lectores y un seguidor.\n\nPensaba que las visitas llegaban por pura suerte. Y suerte había, pero en realidad tenía otro nombre. Sin saberlo, aquel primer artículo estaba optimizado para SEO y por eso se posicionó. \n\nFue el inicio casual. Aprendí SEO sin cursos. A base de prueba y error. Comprendí lo que Google quería.\n\nLa bola de nieve creció tanto que aquel blog cutre de Blogspot ahora es una web conocida que visitan miles de personas cada día.\n\nSin esa web y sin un seguidor del blog no estaría aquí. Empecé a trabajar con clientes cuando un lector me hizo la pregunta:\n\n\"¿Puedes escribir artículos para mi web?\"\n\nAcepté.\n\nAbrí esta web y el resto es historia. Por aquí han pasado más de 150 empresas de todos los tamaños. \n\nAhora es diferente:\n\n- Solo trabajo con negocios serios.\n- Elijo proyectos que me motivan. \n- Y no, no tengo hueco para todos. \n\nGoogle está cambiando. La gente ya no busca igual. Preguntan a ChatGPT, a Perplexity, a lo que venga después.\n\nPero la necesidad sigue siendo la misma: aparecer cuando te buscan.\n\nEl SEO no ha muerto. Ha evolucionado. Y quien no evolucione hoy, desaparecerá mañana.\n\nSi quieres que te encuentren, el botón está justo debajo.",
+  "cta": {
+    "title": "Para que te encuentren:",
+    "description": "Pincha en el botón naranja que tienes debajo.",
+    "buttonText": "Quiero que me encuentren",
+    "buttonUrl": "/contacto"
+  }
 }

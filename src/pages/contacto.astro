@@ -3,9 +3,53 @@ import Layout from '../layouts/Layout.astro'
 
 // Import the contact content from Tina CMS
 import contactContent from '../content/contacto/index.json'
+
+const baseUrl = 'https://redactorseo.es'
 ---
 
 <Layout title={contactContent.seo.title} description={contactContent.seo.description}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Inicio",
+              "item": baseUrl
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Contacto",
+              "item": `${baseUrl}/contacto`
+            }
+          ]
+        },
+        {
+          "@type": "ContactPage",
+          "name": "Contacto - Redactor SEO",
+          "description": contactContent.seo.description,
+          "url": `${baseUrl}/contacto`,
+          "mainEntity": {
+            "@type": "ProfessionalService",
+            "name": "Redactor SEO",
+            "url": baseUrl,
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "customer support",
+              "email": "info@redactorseo.es",
+              "availableLanguage": "Spanish",
+              "areaServed": "ES"
+            }
+          }
+        }
+      ]
+    })} />
+  </Fragment>
   <!-- Hero Section Contacto -->
   <section class="relative bg-white py-20 lg:py-32 overflow-hidden">
     <!-- Background Elements -->

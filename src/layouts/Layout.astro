@@ -43,71 +43,115 @@ const fullTitle = title.includes('RedactorSEO.es') ? title : `${title} - Redacto
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "name": "Redactor SEO",
-        "description": "Servicios profesionales de redacción web, SEO y copywriting",
-        "url": "https://redactorseo.es",
-        "email": "info@redactorseo.es",
-        "address": {
-          "@type": "PostalAddress",
-          "addressCountry": "ES",
-          "addressRegion": "España"
-        },
-        "priceRange": "€€-€€€",
-        "areaServed": {
-          "@type": "Country",
-          "name": "España"
-        },
-        "serviceType": ["Redacción SEO", "Copywriting", "Content Marketing"],
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "Servicios de Redacción SEO",
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Redacción Web",
-                "description": "Redacción de páginas web que conectan y convierten",
-                "url": "https://redactorseo.es/redaccion-web"
-              },
-              "price": "399",
-              "priceCurrency": "EUR",
-              "priceSpecification": {
-                "@type": "PriceSpecification",
-                "price": "399",
-                "priceCurrency": "EUR"
-              }
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://redactorseo.es/#organization",
+            "name": "Redactor SEO",
+            "url": "https://redactorseo.es",
+            "description": "Servicios profesionales de redacción SEO y copywriting",
+            "email": "info@redactorseo.es",
+            "founder": {
+              "@id": "https://redactorseo.es/sobre-mi#person"
             },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Redacción Estratégica de Blogs",
-                "description": "Contenido de blog que posiciona como referente",
-                "url": "https://redactorseo.es/redaccion-blog"
-              },
-              "price": "399",
-              "priceCurrency": "EUR",
-              "priceSpecification": {
-                "@type": "UnitPriceSpecification",
-                "price": "399",
-                "priceCurrency": "EUR",
-                "referenceQuantity": {
-                  "@type": "QuantitativeValue",
-                  "value": "1",
-                  "unitCode": "MON"
-                }
-              }
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "ES"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "España"
             }
-          ]
-        },
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "contactType": "Customer Service",
-          "email": "info@redactorseo.es",
-          "availableLanguage": ["Spanish"]
-        }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://redactorseo.es/#website",
+            "url": "https://redactorseo.es",
+            "name": "Redactor SEO",
+            "description": "Servicios profesionales de redacción SEO",
+            "publisher": {
+              "@id": "https://redactorseo.es/#organization"
+            },
+            "inLanguage": "es-ES"
+          },
+          {
+            "@type": "ProfessionalService",
+            "@id": "https://redactorseo.es/#service",
+            "name": "Redactor SEO",
+            "description": "Servicios profesionales de redacción web, SEO y copywriting",
+            "url": "https://redactorseo.es",
+            "provider": {
+              "@id": "https://redactorseo.es/#organization"
+            },
+            "email": "info@redactorseo.es",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "ES",
+              "addressRegion": "España"
+            },
+            "priceRange": "450-2350 EUR",
+            "areaServed": {
+              "@type": "Country",
+              "name": "España"
+            },
+            "serviceType": ["Redacción SEO", "Copywriting", "Content Marketing"],
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Servicios de Redacción SEO",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Redacción Web",
+                    "description": "Redacción de páginas web que conectan y convierten",
+                    "url": "https://redactorseo.es/redaccion-web"
+                  },
+                  "price": "1450",
+                  "priceCurrency": "EUR"
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Redacción Blog",
+                    "description": "Contenido de blog que posiciona como referente",
+                    "url": "https://redactorseo.es/redaccion-blog"
+                  },
+                  "price": "450",
+                  "priceCurrency": "EUR",
+                  "priceSpecification": {
+                    "@type": "UnitPriceSpecification",
+                    "price": "450",
+                    "priceCurrency": "EUR",
+                    "referenceQuantity": {
+                      "@type": "QuantitativeValue",
+                      "value": "1",
+                      "unitCode": "MON"
+                    }
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Pack Inevitable",
+                    "description": "Web completa + Blog estratégico",
+                    "url": "https://redactorseo.es/pack-inevitable"
+                  },
+                  "price": "2350",
+                  "priceCurrency": "EUR"
+                }
+              ]
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "Customer Service",
+              "email": "info@redactorseo.es",
+              "availableLanguage": ["Spanish"]
+            }
+          }
+        ]
       }
     </script>
 

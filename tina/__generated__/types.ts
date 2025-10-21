@@ -86,8 +86,6 @@ export type Query = {
   homepageConnection: HomepageConnection;
   pages: Pages;
   pagesConnection: PagesConnection;
-  auditoria: Auditoria;
-  auditoriaConnection: AuditoriaConnection;
   redaccion_web: Redaccion_Web;
   redaccion_webConnection: Redaccion_WebConnection;
   redaccion_blog: Redaccion_Blog;
@@ -102,6 +100,8 @@ export type Query = {
   colaboraciones_agenciasConnection: Colaboraciones_AgenciasConnection;
   pack_inevitable: Pack_Inevitable;
   pack_inevitableConnection: Pack_InevitableConnection;
+  error404: Error404;
+  error404Connection: Error404Connection;
 };
 
 
@@ -153,21 +153,6 @@ export type QueryPagesConnectionArgs = {
   last?: InputMaybe<Scalars['Float']['input']>;
   sort?: InputMaybe<Scalars['String']['input']>;
   filter?: InputMaybe<PagesFilter>;
-};
-
-
-export type QueryAuditoriaArgs = {
-  relativePath?: InputMaybe<Scalars['String']['input']>;
-};
-
-
-export type QueryAuditoriaConnectionArgs = {
-  before?: InputMaybe<Scalars['String']['input']>;
-  after?: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Float']['input']>;
-  last?: InputMaybe<Scalars['Float']['input']>;
-  sort?: InputMaybe<Scalars['String']['input']>;
-  filter?: InputMaybe<AuditoriaFilter>;
 };
 
 
@@ -275,10 +260,24 @@ export type QueryPack_InevitableConnectionArgs = {
   filter?: InputMaybe<Pack_InevitableFilter>;
 };
 
+
+export type QueryError404Args = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryError404ConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<Error404Filter>;
+};
+
 export type DocumentFilter = {
   homepage?: InputMaybe<HomepageFilter>;
   pages?: InputMaybe<PagesFilter>;
-  auditoria?: InputMaybe<AuditoriaFilter>;
   redaccion_web?: InputMaybe<Redaccion_WebFilter>;
   redaccion_blog?: InputMaybe<Redaccion_BlogFilter>;
   contact_page?: InputMaybe<Contact_PageFilter>;
@@ -286,6 +285,7 @@ export type DocumentFilter = {
   servicios_page?: InputMaybe<Servicios_PageFilter>;
   colaboraciones_agencias?: InputMaybe<Colaboraciones_AgenciasFilter>;
   pack_inevitable?: InputMaybe<Pack_InevitableFilter>;
+  error404?: InputMaybe<Error404Filter>;
 };
 
 export type DocumentConnectionEdges = {
@@ -325,7 +325,7 @@ export type CollectionDocumentsArgs = {
   folder?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type DocumentNode = Homepage | Pages | Auditoria | Redaccion_Web | Redaccion_Blog | Contact_Page | Sobre_Mi | Servicios_Page | Colaboraciones_Agencias | Pack_Inevitable | Folder;
+export type DocumentNode = Homepage | Pages | Redaccion_Web | Redaccion_Blog | Contact_Page | Sobre_Mi | Servicios_Page | Colaboraciones_Agencias | Pack_Inevitable | Error404 | Folder;
 
 export type HomepageSeo = {
   __typename?: 'HomepageSeo';
@@ -740,213 +740,6 @@ export type PagesConnection = Connection & {
   pageInfo: PageInfo;
   totalCount: Scalars['Float']['output'];
   edges?: Maybe<Array<Maybe<PagesConnectionEdges>>>;
-};
-
-export type AuditoriaSeo = {
-  __typename?: 'AuditoriaSeo';
-  title: Scalars['String']['output'];
-  description: Scalars['String']['output'];
-};
-
-export type AuditoriaHero = {
-  __typename?: 'AuditoriaHero';
-  subtitle: Scalars['String']['output'];
-  titlePart1: Scalars['String']['output'];
-  titlePart2: Scalars['String']['output'];
-  description: Scalars['String']['output'];
-  ctaText: Scalars['String']['output'];
-  ctaLink: Scalars['String']['output'];
-};
-
-export type AuditoriaProblemsSectionProblems = {
-  __typename?: 'AuditoriaProblemsSectionProblems';
-  problem: Scalars['String']['output'];
-  consequence: Scalars['String']['output'];
-};
-
-export type AuditoriaProblemsSection = {
-  __typename?: 'AuditoriaProblemsSection';
-  title: Scalars['String']['output'];
-  subtitle: Scalars['String']['output'];
-  problems?: Maybe<Array<Maybe<AuditoriaProblemsSectionProblems>>>;
-  closingText: Scalars['String']['output'];
-};
-
-export type AuditoriaApproachSectionPoints = {
-  __typename?: 'AuditoriaApproachSectionPoints';
-  title: Scalars['String']['output'];
-  description: Scalars['String']['output'];
-};
-
-export type AuditoriaApproachSection = {
-  __typename?: 'AuditoriaApproachSection';
-  title: Scalars['String']['output'];
-  subtitle?: Maybe<Scalars['String']['output']>;
-  points?: Maybe<Array<Maybe<AuditoriaApproachSectionPoints>>>;
-  conclusion: Scalars['String']['output'];
-};
-
-export type AuditoriaTestimonialsSectionTestimonials = {
-  __typename?: 'AuditoriaTestimonialsSectionTestimonials';
-  quote: Scalars['String']['output'];
-  author: Scalars['String']['output'];
-};
-
-export type AuditoriaTestimonialsSection = {
-  __typename?: 'AuditoriaTestimonialsSection';
-  title: Scalars['String']['output'];
-  testimonials?: Maybe<Array<Maybe<AuditoriaTestimonialsSectionTestimonials>>>;
-};
-
-export type AuditoriaPricingSection = {
-  __typename?: 'AuditoriaPricingSection';
-  title: Scalars['String']['output'];
-  subtitle: Scalars['String']['output'];
-  price: Scalars['String']['output'];
-  currency: Scalars['String']['output'];
-  priceDescription: Scalars['String']['output'];
-  includes: Array<Scalars['String']['output']>;
-  delivery: Scalars['String']['output'];
-  format: Scalars['String']['output'];
-  ctaText: Scalars['String']['output'];
-  ctaLink: Scalars['String']['output'];
-};
-
-export type AuditoriaFaqSectionQuestions = {
-  __typename?: 'AuditoriaFaqSectionQuestions';
-  question: Scalars['String']['output'];
-  answer: Scalars['String']['output'];
-};
-
-export type AuditoriaFaqSection = {
-  __typename?: 'AuditoriaFaqSection';
-  title: Scalars['String']['output'];
-  questions?: Maybe<Array<Maybe<AuditoriaFaqSectionQuestions>>>;
-};
-
-export type AuditoriaFinalCtaSection = {
-  __typename?: 'AuditoriaFinalCtaSection';
-  title: Scalars['String']['output'];
-  description: Scalars['String']['output'];
-  ctaText: Scalars['String']['output'];
-  ctaLink: Scalars['String']['output'];
-};
-
-export type Auditoria = Node & Document & {
-  __typename?: 'Auditoria';
-  seo?: Maybe<AuditoriaSeo>;
-  hero?: Maybe<AuditoriaHero>;
-  problemsSection?: Maybe<AuditoriaProblemsSection>;
-  approachSection?: Maybe<AuditoriaApproachSection>;
-  testimonialsSection?: Maybe<AuditoriaTestimonialsSection>;
-  pricingSection?: Maybe<AuditoriaPricingSection>;
-  faqSection?: Maybe<AuditoriaFaqSection>;
-  finalCtaSection?: Maybe<AuditoriaFinalCtaSection>;
-  id: Scalars['ID']['output'];
-  _sys: SystemInfo;
-  _values: Scalars['JSON']['output'];
-};
-
-export type AuditoriaSeoFilter = {
-  title?: InputMaybe<StringFilter>;
-  description?: InputMaybe<StringFilter>;
-};
-
-export type AuditoriaHeroFilter = {
-  subtitle?: InputMaybe<StringFilter>;
-  titlePart1?: InputMaybe<StringFilter>;
-  titlePart2?: InputMaybe<StringFilter>;
-  description?: InputMaybe<StringFilter>;
-  ctaText?: InputMaybe<StringFilter>;
-  ctaLink?: InputMaybe<StringFilter>;
-};
-
-export type AuditoriaProblemsSectionProblemsFilter = {
-  problem?: InputMaybe<StringFilter>;
-  consequence?: InputMaybe<StringFilter>;
-};
-
-export type AuditoriaProblemsSectionFilter = {
-  title?: InputMaybe<StringFilter>;
-  subtitle?: InputMaybe<StringFilter>;
-  problems?: InputMaybe<AuditoriaProblemsSectionProblemsFilter>;
-  closingText?: InputMaybe<StringFilter>;
-};
-
-export type AuditoriaApproachSectionPointsFilter = {
-  title?: InputMaybe<StringFilter>;
-  description?: InputMaybe<StringFilter>;
-};
-
-export type AuditoriaApproachSectionFilter = {
-  title?: InputMaybe<StringFilter>;
-  subtitle?: InputMaybe<StringFilter>;
-  points?: InputMaybe<AuditoriaApproachSectionPointsFilter>;
-  conclusion?: InputMaybe<StringFilter>;
-};
-
-export type AuditoriaTestimonialsSectionTestimonialsFilter = {
-  quote?: InputMaybe<StringFilter>;
-  author?: InputMaybe<StringFilter>;
-};
-
-export type AuditoriaTestimonialsSectionFilter = {
-  title?: InputMaybe<StringFilter>;
-  testimonials?: InputMaybe<AuditoriaTestimonialsSectionTestimonialsFilter>;
-};
-
-export type AuditoriaPricingSectionFilter = {
-  title?: InputMaybe<StringFilter>;
-  subtitle?: InputMaybe<StringFilter>;
-  price?: InputMaybe<StringFilter>;
-  currency?: InputMaybe<StringFilter>;
-  priceDescription?: InputMaybe<StringFilter>;
-  includes?: InputMaybe<StringFilter>;
-  delivery?: InputMaybe<StringFilter>;
-  format?: InputMaybe<StringFilter>;
-  ctaText?: InputMaybe<StringFilter>;
-  ctaLink?: InputMaybe<StringFilter>;
-};
-
-export type AuditoriaFaqSectionQuestionsFilter = {
-  question?: InputMaybe<StringFilter>;
-  answer?: InputMaybe<StringFilter>;
-};
-
-export type AuditoriaFaqSectionFilter = {
-  title?: InputMaybe<StringFilter>;
-  questions?: InputMaybe<AuditoriaFaqSectionQuestionsFilter>;
-};
-
-export type AuditoriaFinalCtaSectionFilter = {
-  title?: InputMaybe<StringFilter>;
-  description?: InputMaybe<StringFilter>;
-  ctaText?: InputMaybe<StringFilter>;
-  ctaLink?: InputMaybe<StringFilter>;
-};
-
-export type AuditoriaFilter = {
-  seo?: InputMaybe<AuditoriaSeoFilter>;
-  hero?: InputMaybe<AuditoriaHeroFilter>;
-  problemsSection?: InputMaybe<AuditoriaProblemsSectionFilter>;
-  approachSection?: InputMaybe<AuditoriaApproachSectionFilter>;
-  testimonialsSection?: InputMaybe<AuditoriaTestimonialsSectionFilter>;
-  pricingSection?: InputMaybe<AuditoriaPricingSectionFilter>;
-  faqSection?: InputMaybe<AuditoriaFaqSectionFilter>;
-  finalCtaSection?: InputMaybe<AuditoriaFinalCtaSectionFilter>;
-};
-
-export type AuditoriaConnectionEdges = {
-  __typename?: 'AuditoriaConnectionEdges';
-  cursor: Scalars['String']['output'];
-  node?: Maybe<Auditoria>;
-};
-
-export type AuditoriaConnection = Connection & {
-  __typename?: 'AuditoriaConnection';
-  pageInfo: PageInfo;
-  totalCount: Scalars['Float']['output'];
-  edges?: Maybe<Array<Maybe<AuditoriaConnectionEdges>>>;
 };
 
 export type Redaccion_WebSeo = {
@@ -1528,6 +1321,14 @@ export type Sobre_MiSeo = {
   description: Scalars['String']['output'];
 };
 
+export type Sobre_MiCta = {
+  __typename?: 'Sobre_miCta';
+  title: Scalars['String']['output'];
+  description: Scalars['String']['output'];
+  buttonText: Scalars['String']['output'];
+  buttonUrl: Scalars['String']['output'];
+};
+
 export type Sobre_Mi = Node & Document & {
   __typename?: 'Sobre_mi';
   seo?: Maybe<Sobre_MiSeo>;
@@ -1535,6 +1336,7 @@ export type Sobre_Mi = Node & Document & {
   subtitle?: Maybe<Scalars['String']['output']>;
   profileImage: Scalars['String']['output'];
   storyContent: Scalars['String']['output'];
+  cta?: Maybe<Sobre_MiCta>;
   id: Scalars['ID']['output'];
   _sys: SystemInfo;
   _values: Scalars['JSON']['output'];
@@ -1545,12 +1347,20 @@ export type Sobre_MiSeoFilter = {
   description?: InputMaybe<StringFilter>;
 };
 
+export type Sobre_MiCtaFilter = {
+  title?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
+  buttonText?: InputMaybe<StringFilter>;
+  buttonUrl?: InputMaybe<StringFilter>;
+};
+
 export type Sobre_MiFilter = {
   seo?: InputMaybe<Sobre_MiSeoFilter>;
   title?: InputMaybe<StringFilter>;
   subtitle?: InputMaybe<StringFilter>;
   profileImage?: InputMaybe<ImageFilter>;
   storyContent?: InputMaybe<StringFilter>;
+  cta?: InputMaybe<Sobre_MiCtaFilter>;
 };
 
 export type Sobre_MiConnectionEdges = {
@@ -2298,6 +2108,111 @@ export type Pack_InevitableConnection = Connection & {
   edges?: Maybe<Array<Maybe<Pack_InevitableConnectionEdges>>>;
 };
 
+export type Error404Seo = {
+  __typename?: 'Error404Seo';
+  title: Scalars['String']['output'];
+  description: Scalars['String']['output'];
+  noindex: Scalars['Boolean']['output'];
+};
+
+export type Error404HeroPrimaryCta = {
+  __typename?: 'Error404HeroPrimaryCta';
+  text: Scalars['String']['output'];
+  link: Scalars['String']['output'];
+};
+
+export type Error404HeroSecondaryCta = {
+  __typename?: 'Error404HeroSecondaryCta';
+  text: Scalars['String']['output'];
+  link: Scalars['String']['output'];
+};
+
+export type Error404Hero = {
+  __typename?: 'Error404Hero';
+  errorCode: Scalars['String']['output'];
+  title: Scalars['String']['output'];
+  description: Scalars['String']['output'];
+  primaryCta?: Maybe<Error404HeroPrimaryCta>;
+  secondaryCta?: Maybe<Error404HeroSecondaryCta>;
+};
+
+export type Error404SuggestionsLinks = {
+  __typename?: 'Error404SuggestionsLinks';
+  title: Scalars['String']['output'];
+  description: Scalars['String']['output'];
+  link: Scalars['String']['output'];
+};
+
+export type Error404Suggestions = {
+  __typename?: 'Error404Suggestions';
+  title: Scalars['String']['output'];
+  links?: Maybe<Array<Maybe<Error404SuggestionsLinks>>>;
+};
+
+export type Error404 = Node & Document & {
+  __typename?: 'Error404';
+  seo?: Maybe<Error404Seo>;
+  hero?: Maybe<Error404Hero>;
+  suggestions?: Maybe<Error404Suggestions>;
+  id: Scalars['ID']['output'];
+  _sys: SystemInfo;
+  _values: Scalars['JSON']['output'];
+};
+
+export type Error404SeoFilter = {
+  title?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
+  noindex?: InputMaybe<BooleanFilter>;
+};
+
+export type Error404HeroPrimaryCtaFilter = {
+  text?: InputMaybe<StringFilter>;
+  link?: InputMaybe<StringFilter>;
+};
+
+export type Error404HeroSecondaryCtaFilter = {
+  text?: InputMaybe<StringFilter>;
+  link?: InputMaybe<StringFilter>;
+};
+
+export type Error404HeroFilter = {
+  errorCode?: InputMaybe<StringFilter>;
+  title?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
+  primaryCta?: InputMaybe<Error404HeroPrimaryCtaFilter>;
+  secondaryCta?: InputMaybe<Error404HeroSecondaryCtaFilter>;
+};
+
+export type Error404SuggestionsLinksFilter = {
+  title?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
+  link?: InputMaybe<StringFilter>;
+};
+
+export type Error404SuggestionsFilter = {
+  title?: InputMaybe<StringFilter>;
+  links?: InputMaybe<Error404SuggestionsLinksFilter>;
+};
+
+export type Error404Filter = {
+  seo?: InputMaybe<Error404SeoFilter>;
+  hero?: InputMaybe<Error404HeroFilter>;
+  suggestions?: InputMaybe<Error404SuggestionsFilter>;
+};
+
+export type Error404ConnectionEdges = {
+  __typename?: 'Error404ConnectionEdges';
+  cursor: Scalars['String']['output'];
+  node?: Maybe<Error404>;
+};
+
+export type Error404Connection = Connection & {
+  __typename?: 'Error404Connection';
+  pageInfo: PageInfo;
+  totalCount: Scalars['Float']['output'];
+  edges?: Maybe<Array<Maybe<Error404ConnectionEdges>>>;
+};
+
 export type Mutation = {
   __typename?: 'Mutation';
   addPendingDocument: DocumentNode;
@@ -2309,8 +2224,6 @@ export type Mutation = {
   createHomepage: Homepage;
   updatePages: Pages;
   createPages: Pages;
-  updateAuditoria: Auditoria;
-  createAuditoria: Auditoria;
   updateRedaccion_web: Redaccion_Web;
   createRedaccion_web: Redaccion_Web;
   updateRedaccion_blog: Redaccion_Blog;
@@ -2325,6 +2238,8 @@ export type Mutation = {
   createColaboraciones_agencias: Colaboraciones_Agencias;
   updatePack_inevitable: Pack_Inevitable;
   createPack_inevitable: Pack_Inevitable;
+  updateError404: Error404;
+  createError404: Error404;
 };
 
 
@@ -2382,18 +2297,6 @@ export type MutationUpdatePagesArgs = {
 export type MutationCreatePagesArgs = {
   relativePath: Scalars['String']['input'];
   params: PagesMutation;
-};
-
-
-export type MutationUpdateAuditoriaArgs = {
-  relativePath: Scalars['String']['input'];
-  params: AuditoriaMutation;
-};
-
-
-export type MutationCreateAuditoriaArgs = {
-  relativePath: Scalars['String']['input'];
-  params: AuditoriaMutation;
 };
 
 
@@ -2480,10 +2383,21 @@ export type MutationCreatePack_InevitableArgs = {
   params: Pack_InevitableMutation;
 };
 
+
+export type MutationUpdateError404Args = {
+  relativePath: Scalars['String']['input'];
+  params: Error404Mutation;
+};
+
+
+export type MutationCreateError404Args = {
+  relativePath: Scalars['String']['input'];
+  params: Error404Mutation;
+};
+
 export type DocumentUpdateMutation = {
   homepage?: InputMaybe<HomepageMutation>;
   pages?: InputMaybe<PagesMutation>;
-  auditoria?: InputMaybe<AuditoriaMutation>;
   redaccion_web?: InputMaybe<Redaccion_WebMutation>;
   redaccion_blog?: InputMaybe<Redaccion_BlogMutation>;
   contact_page?: InputMaybe<Contact_PageMutation>;
@@ -2491,13 +2405,13 @@ export type DocumentUpdateMutation = {
   servicios_page?: InputMaybe<Servicios_PageMutation>;
   colaboraciones_agencias?: InputMaybe<Colaboraciones_AgenciasMutation>;
   pack_inevitable?: InputMaybe<Pack_InevitableMutation>;
+  error404?: InputMaybe<Error404Mutation>;
   relativePath?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type DocumentMutation = {
   homepage?: InputMaybe<HomepageMutation>;
   pages?: InputMaybe<PagesMutation>;
-  auditoria?: InputMaybe<AuditoriaMutation>;
   redaccion_web?: InputMaybe<Redaccion_WebMutation>;
   redaccion_blog?: InputMaybe<Redaccion_BlogMutation>;
   contact_page?: InputMaybe<Contact_PageMutation>;
@@ -2505,6 +2419,7 @@ export type DocumentMutation = {
   servicios_page?: InputMaybe<Servicios_PageMutation>;
   colaboraciones_agencias?: InputMaybe<Colaboraciones_AgenciasMutation>;
   pack_inevitable?: InputMaybe<Pack_InevitableMutation>;
+  error404?: InputMaybe<Error404Mutation>;
 };
 
 export type HomepageSeoMutation = {
@@ -2670,95 +2585,6 @@ export type PagesMutation = {
   testimonial?: InputMaybe<PagesTestimonialMutation>;
   ctaSection?: InputMaybe<PagesCtaSectionMutation>;
   body?: InputMaybe<Scalars['JSON']['input']>;
-};
-
-export type AuditoriaSeoMutation = {
-  title?: InputMaybe<Scalars['String']['input']>;
-  description?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type AuditoriaHeroMutation = {
-  subtitle?: InputMaybe<Scalars['String']['input']>;
-  titlePart1?: InputMaybe<Scalars['String']['input']>;
-  titlePart2?: InputMaybe<Scalars['String']['input']>;
-  description?: InputMaybe<Scalars['String']['input']>;
-  ctaText?: InputMaybe<Scalars['String']['input']>;
-  ctaLink?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type AuditoriaProblemsSectionProblemsMutation = {
-  problem?: InputMaybe<Scalars['String']['input']>;
-  consequence?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type AuditoriaProblemsSectionMutation = {
-  title?: InputMaybe<Scalars['String']['input']>;
-  subtitle?: InputMaybe<Scalars['String']['input']>;
-  problems?: InputMaybe<Array<InputMaybe<AuditoriaProblemsSectionProblemsMutation>>>;
-  closingText?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type AuditoriaApproachSectionPointsMutation = {
-  title?: InputMaybe<Scalars['String']['input']>;
-  description?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type AuditoriaApproachSectionMutation = {
-  title?: InputMaybe<Scalars['String']['input']>;
-  subtitle?: InputMaybe<Scalars['String']['input']>;
-  points?: InputMaybe<Array<InputMaybe<AuditoriaApproachSectionPointsMutation>>>;
-  conclusion?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type AuditoriaTestimonialsSectionTestimonialsMutation = {
-  quote?: InputMaybe<Scalars['String']['input']>;
-  author?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type AuditoriaTestimonialsSectionMutation = {
-  title?: InputMaybe<Scalars['String']['input']>;
-  testimonials?: InputMaybe<Array<InputMaybe<AuditoriaTestimonialsSectionTestimonialsMutation>>>;
-};
-
-export type AuditoriaPricingSectionMutation = {
-  title?: InputMaybe<Scalars['String']['input']>;
-  subtitle?: InputMaybe<Scalars['String']['input']>;
-  price?: InputMaybe<Scalars['String']['input']>;
-  currency?: InputMaybe<Scalars['String']['input']>;
-  priceDescription?: InputMaybe<Scalars['String']['input']>;
-  includes?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  delivery?: InputMaybe<Scalars['String']['input']>;
-  format?: InputMaybe<Scalars['String']['input']>;
-  ctaText?: InputMaybe<Scalars['String']['input']>;
-  ctaLink?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type AuditoriaFaqSectionQuestionsMutation = {
-  question?: InputMaybe<Scalars['String']['input']>;
-  answer?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type AuditoriaFaqSectionMutation = {
-  title?: InputMaybe<Scalars['String']['input']>;
-  questions?: InputMaybe<Array<InputMaybe<AuditoriaFaqSectionQuestionsMutation>>>;
-};
-
-export type AuditoriaFinalCtaSectionMutation = {
-  title?: InputMaybe<Scalars['String']['input']>;
-  description?: InputMaybe<Scalars['String']['input']>;
-  ctaText?: InputMaybe<Scalars['String']['input']>;
-  ctaLink?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type AuditoriaMutation = {
-  seo?: InputMaybe<AuditoriaSeoMutation>;
-  hero?: InputMaybe<AuditoriaHeroMutation>;
-  problemsSection?: InputMaybe<AuditoriaProblemsSectionMutation>;
-  approachSection?: InputMaybe<AuditoriaApproachSectionMutation>;
-  testimonialsSection?: InputMaybe<AuditoriaTestimonialsSectionMutation>;
-  pricingSection?: InputMaybe<AuditoriaPricingSectionMutation>;
-  faqSection?: InputMaybe<AuditoriaFaqSectionMutation>;
-  finalCtaSection?: InputMaybe<AuditoriaFinalCtaSectionMutation>;
 };
 
 export type Redaccion_WebSeoMutation = {
@@ -3008,12 +2834,20 @@ export type Sobre_MiSeoMutation = {
   description?: InputMaybe<Scalars['String']['input']>;
 };
 
+export type Sobre_MiCtaMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  buttonText?: InputMaybe<Scalars['String']['input']>;
+  buttonUrl?: InputMaybe<Scalars['String']['input']>;
+};
+
 export type Sobre_MiMutation = {
   seo?: InputMaybe<Sobre_MiSeoMutation>;
   title?: InputMaybe<Scalars['String']['input']>;
   subtitle?: InputMaybe<Scalars['String']['input']>;
   profileImage?: InputMaybe<Scalars['String']['input']>;
   storyContent?: InputMaybe<Scalars['String']['input']>;
+  cta?: InputMaybe<Sobre_MiCtaMutation>;
 };
 
 export type Servicios_PageSeoMutation = {
@@ -3335,11 +3169,50 @@ export type Pack_InevitableMutation = {
   finalCtaSection?: InputMaybe<Pack_InevitableFinalCtaSectionMutation>;
 };
 
+export type Error404SeoMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  noindex?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+export type Error404HeroPrimaryCtaMutation = {
+  text?: InputMaybe<Scalars['String']['input']>;
+  link?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type Error404HeroSecondaryCtaMutation = {
+  text?: InputMaybe<Scalars['String']['input']>;
+  link?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type Error404HeroMutation = {
+  errorCode?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  primaryCta?: InputMaybe<Error404HeroPrimaryCtaMutation>;
+  secondaryCta?: InputMaybe<Error404HeroSecondaryCtaMutation>;
+};
+
+export type Error404SuggestionsLinksMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  link?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type Error404SuggestionsMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  links?: InputMaybe<Array<InputMaybe<Error404SuggestionsLinksMutation>>>;
+};
+
+export type Error404Mutation = {
+  seo?: InputMaybe<Error404SeoMutation>;
+  hero?: InputMaybe<Error404HeroMutation>;
+  suggestions?: InputMaybe<Error404SuggestionsMutation>;
+};
+
 export type HomepagePartsFragment = { __typename: 'Homepage', seo?: { __typename: 'HomepageSeo', title: string, description: string } | null, hero?: { __typename: 'HomepageHero', subtitle: string, title: string, description: string, candleMessages: Array<string> } | null, googleDeathSection?: { __typename: 'HomepageGoogleDeathSection', title: string, paragraph: string, closingPhrase: string, checkboxItems?: Array<{ __typename: 'HomepageGoogleDeathSectionCheckboxItems', text: string } | null> | null } | null, painPointsSection?: { __typename: 'HomepagePainPointsSection', title: string, subtitleFirstPart: string, aiStatistic?: string | null, phrases: Array<{ __typename: 'HomepagePainPointsSectionPhrases', leftPart: string, rightPart: string }> } | null, transitionMessageSection?: { __typename: 'HomepageTransitionMessageSection', mainText: string, highlightedText: string, continuationText: string } | null, bridgeSection?: { __typename: 'HomepageBridgeSection', title: string, paragraph: string, secondaryParagraph?: string | null, tertiaryParagraph?: string | null, closingParagraph?: string | null } | null, statsSection?: { __typename: 'HomepageStatsSection', title: string, subtitle: string, stats?: Array<{ __typename: 'HomepageStatsSectionStats', value: number, suffix: string, description: string } | null> | null } | null, featuredServiceSection?: { __typename: 'HomepageFeaturedServiceSection', title: string, subtitle: string, benefit1: string, benefit2: string, packLabel: string, packTitle: string, features?: Array<string | null> | null, originalPrice: string, currentPrice: string, savings: string, ctaText: string, ctaLink: string, alternativeServicesText?: string | null, alternativeLinks?: Array<{ __typename: 'HomepageFeaturedServiceSectionAlternativeLinks', text: string, url: string } | null> | null } | null, testimonialsSection?: { __typename: 'HomepageTestimonialsSection', title: string, subtitle: string, testimonials?: Array<{ __typename: 'HomepageTestimonialsSectionTestimonials', name: string, company: string, testimonial: string, image: string, link?: string | null } | null> | null } | null, ctaSection?: { __typename: 'HomepageCtaSection', title: string, description: string, buttonText: string, buttonLink: string } | null };
 
 export type PagesPartsFragment = { __typename: 'Pages', title: string, description?: string | null, subtitle?: string | null, introduction?: string | null, profileImage?: string | null, body?: any | null, experienceSection?: { __typename: 'PagesExperienceSection', title?: string | null, subtitle?: string | null, items?: Array<{ __typename: 'PagesExperienceSectionItems', icon?: string | null, title?: string | null, description?: string | null } | null> | null } | null, valuesSection?: { __typename: 'PagesValuesSection', title?: string | null, subtitle?: string | null, values?: Array<{ __typename: 'PagesValuesSectionValues', title?: string | null, description?: string | null } | null> | null } | null, testimonial?: { __typename: 'PagesTestimonial', quote?: string | null, author?: string | null, role?: string | null } | null, ctaSection?: { __typename: 'PagesCtaSection', title?: string | null, description?: string | null, buttonText?: string | null } | null };
-
-export type AuditoriaPartsFragment = { __typename: 'Auditoria', seo?: { __typename: 'AuditoriaSeo', title: string, description: string } | null, hero?: { __typename: 'AuditoriaHero', subtitle: string, titlePart1: string, titlePart2: string, description: string, ctaText: string, ctaLink: string } | null, problemsSection?: { __typename: 'AuditoriaProblemsSection', title: string, subtitle: string, closingText: string, problems?: Array<{ __typename: 'AuditoriaProblemsSectionProblems', problem: string, consequence: string } | null> | null } | null, approachSection?: { __typename: 'AuditoriaApproachSection', title: string, subtitle?: string | null, conclusion: string, points?: Array<{ __typename: 'AuditoriaApproachSectionPoints', title: string, description: string } | null> | null } | null, testimonialsSection?: { __typename: 'AuditoriaTestimonialsSection', title: string, testimonials?: Array<{ __typename: 'AuditoriaTestimonialsSectionTestimonials', quote: string, author: string } | null> | null } | null, pricingSection?: { __typename: 'AuditoriaPricingSection', title: string, subtitle: string, price: string, currency: string, priceDescription: string, includes: Array<string>, delivery: string, format: string, ctaText: string, ctaLink: string } | null, faqSection?: { __typename: 'AuditoriaFaqSection', title: string, questions?: Array<{ __typename: 'AuditoriaFaqSectionQuestions', question: string, answer: string } | null> | null } | null, finalCtaSection?: { __typename: 'AuditoriaFinalCtaSection', title: string, description: string, ctaText: string, ctaLink: string } | null };
 
 export type Redaccion_WebPartsFragment = { __typename: 'Redaccion_web', seo?: { __typename: 'Redaccion_webSeo', title: string, description: string } | null, hero?: { __typename: 'Redaccion_webHero', subtitle: string, titlePart1: string, titlePart2: string, description: string, ctaText: string, ctaLink: string } | null, problemsSection?: { __typename: 'Redaccion_webProblemsSection', title: string, subtitle: string, closingText: string, problems?: Array<{ __typename: 'Redaccion_webProblemsSectionProblems', problem: string, consequence: string } | null> | null } | null, approachSection?: { __typename: 'Redaccion_webApproachSection', title: string, subtitle?: string | null, conclusion: string, points?: Array<{ __typename: 'Redaccion_webApproachSectionPoints', title: string, description: string } | null> | null } | null, testimonialsSection?: { __typename: 'Redaccion_webTestimonialsSection', title: string, testimonials?: Array<{ __typename: 'Redaccion_webTestimonialsSectionTestimonials', quote: string, author: string } | null> | null } | null, pricingSection?: { __typename: 'Redaccion_webPricingSection', title: string, subtitle: string, commonFeatures?: { __typename: 'Redaccion_webPricingSectionCommonFeatures', title: string, features: Array<string>, additionalPage: string } | null, packages?: Array<{ __typename: 'Redaccion_webPricingSectionPackages', name: string, pages: string, price: string, currency: string, priceDescription: string, includes: Array<string>, delivery: string, format: string, ctaText: string, ctaLink: string, isPopular?: boolean | null } | null> | null } | null, faqSection?: { __typename: 'Redaccion_webFaqSection', title: string, questions?: Array<{ __typename: 'Redaccion_webFaqSectionQuestions', question: string, answer: string } | null> | null } | null, finalCtaSection?: { __typename: 'Redaccion_webFinalCtaSection', title: string, description: string, ctaText: string, ctaLink: string } | null };
 
@@ -3347,13 +3220,15 @@ export type Redaccion_BlogPartsFragment = { __typename: 'Redaccion_blog', seo?: 
 
 export type Contact_PagePartsFragment = { __typename: 'Contact_page', seo?: { __typename: 'Contact_pageSeo', title: string, description: string } | null, hero?: { __typename: 'Contact_pageHero', titlePart1: string, titlePart2: string, description: string } | null, form?: { __typename: 'Contact_pageForm', title: string, submitButtonText: string, privacyPolicyText: string, services?: Array<{ __typename: 'Contact_pageFormServices', value: string, label: string } | null> | null } | null, contactInfo?: { __typename: 'Contact_pageContactInfo', title: string, email: string, responseTime: string } | null, messages?: { __typename: 'Contact_pageMessages', successMessage: string, errorMessage: string, loadingText: string } | null };
 
-export type Sobre_MiPartsFragment = { __typename: 'Sobre_mi', title: string, subtitle?: string | null, profileImage: string, storyContent: string, seo?: { __typename: 'Sobre_miSeo', title: string, description: string } | null };
+export type Sobre_MiPartsFragment = { __typename: 'Sobre_mi', title: string, subtitle?: string | null, profileImage: string, storyContent: string, seo?: { __typename: 'Sobre_miSeo', title: string, description: string } | null, cta?: { __typename: 'Sobre_miCta', title: string, description: string, buttonText: string, buttonUrl: string } | null };
 
 export type Servicios_PagePartsFragment = { __typename: 'Servicios_page', seo?: { __typename: 'Servicios_pageSeo', title: string, description: string, keywords?: string | null, ogTitle?: string | null, ogDescription?: string | null, ogImage?: string | null, canonicalUrl?: string | null, noindex?: boolean | null } | null, hero?: { __typename: 'Servicios_pageHero', titlePart1: string, titlePart2: string, description: string } | null, servicePackages?: { __typename: 'Servicios_pageServicePackages', packages?: Array<{ __typename: 'Servicios_pageServicePackagesPackages', title: string, subtitle: string, price: string, currency: string, priceNote?: string | null, features: Array<string>, ctaText: string, ctaLink: string, isPopular?: boolean | null } | null> | null, packInevitable?: { __typename: 'Servicios_pageServicePackagesPackInevitable', packLabel: string, title: string, subtitle: string, benefits: Array<string>, features: Array<string>, currentPrice: string, originalPrice: string, savings: string, ctaText: string, ctaLink: string } | null, customProjects?: { __typename: 'Servicios_pageServicePackagesCustomProjects', description: string, linkText: string, linkUrl: string } | null } | null, faqSection?: { __typename: 'Servicios_pageFaqSection', title: string, subtitle: string, questions?: Array<{ __typename: 'Servicios_pageFaqSectionQuestions', question: string, answer: string } | null> | null } | null };
 
 export type Colaboraciones_AgenciasPartsFragment = { __typename: 'Colaboraciones_agencias', seo?: { __typename: 'Colaboraciones_agenciasSeo', title: string, description: string } | null, hero?: { __typename: 'Colaboraciones_agenciasHero', subtitle: string, titlePart1: string, titlePart2: string, description: string, ctaText: string, ctaLink: string } | null, targetSection?: { __typename: 'Colaboraciones_agenciasTargetSection', title: string, intro: string, ctaButtonText: string, ctaLink: string, requirements?: Array<{ __typename: 'Colaboraciones_agenciasTargetSectionRequirements', title: string, subtitle?: string | null, description: string } | null> | null, disclaimer?: { __typename: 'Colaboraciones_agenciasTargetSectionDisclaimer', text1: string } | null } | null, workflowSection?: { __typename: 'Colaboraciones_agenciasWorkflowSection', title: string, intro: string, steps?: Array<{ __typename: 'Colaboraciones_agenciasWorkflowSectionSteps', number: string, title: string, description: string } | null> | null } | null, conditionsSection?: { __typename: 'Colaboraciones_agenciasConditionsSection', title: string, basePrice: string, currency: string, priceDescription: string, priceSubtext: string, ctaLink: string, ctaText: string, ctaSubtext: string, conditions?: Array<{ __typename: 'Colaboraciones_agenciasConditionsSectionConditions', title: string, description: string } | null> | null } | null, includesSection?: { __typename: 'Colaboraciones_agenciasIncludesSection', heading: string, title: string, included: Array<string>, notIncludedTitle: string, notIncluded: Array<string>, clarification?: string | null } | null, processSection?: { __typename: 'Colaboraciones_agenciasProcessSection', title: string, steps?: Array<{ __typename: 'Colaboraciones_agenciasProcessSectionSteps', number: string, title: string, description: string } | null> | null } | null, faqSection?: { __typename: 'Colaboraciones_agenciasFaqSection', title: string, questions?: Array<{ __typename: 'Colaboraciones_agenciasFaqSectionQuestions', question: string, answer: string } | null> | null } | null, finalCtaSection?: { __typename: 'Colaboraciones_agenciasFinalCtaSection', title: string, description: string, ctaText: string, ctaLink: string } | null };
 
 export type Pack_InevitablePartsFragment = { __typename: 'Pack_inevitable', seo?: { __typename: 'Pack_inevitableSeo', title: string, description: string } | null, hero?: { __typename: 'Pack_inevitableHero', subtitle: string, title: string, description: string, ctaText: string, ctaLink: string } | null, problemSection?: { __typename: 'Pack_inevitableProblemSection', title: string, content: string, keywords?: Array<string | null> | null } | null, whatIncludesSection?: { __typename: 'Pack_inevitableWhatIncludesSection', title: string, subtitle: string, webRedaction?: { __typename: 'Pack_inevitableWhatIncludesSectionWebRedaction', subtitle: string, description: string, items: Array<string>, keywords?: Array<string | null> | null } | null, strategicBlog?: { __typename: 'Pack_inevitableWhatIncludesSectionStrategicBlog', subtitle: string, description: string, items: Array<string>, keywords?: Array<string | null> | null } | null } | null, forWhomSection?: { __typename: 'Pack_inevitableForWhomSection', title: string, subtitle: string, items: Array<string>, keywords?: Array<string | null> | null } | null, investmentSection?: { __typename: 'Pack_inevitableInvestmentSection', title: string, ctaText: string, ctaLink: string, keywords?: Array<string | null> | null, comparison?: { __typename: 'Pack_inevitableInvestmentSectionComparison', savings?: string | null, separate?: { __typename: 'Pack_inevitableInvestmentSectionComparisonSeparate', total?: string | null, webComplete?: { __typename: 'Pack_inevitableInvestmentSectionComparisonSeparateWebComplete', label?: string | null, price?: string | null } | null, blogFirst?: { __typename: 'Pack_inevitableInvestmentSectionComparisonSeparateBlogFirst', label?: string | null, price?: string | null } | null } | null, package?: { __typename: 'Pack_inevitableInvestmentSectionComparisonPackage', label?: string | null, price?: string | null } | null } | null } | null, processSection?: { __typename: 'Pack_inevitableProcessSection', title: string, keywords?: Array<string | null> | null, steps?: Array<{ __typename: 'Pack_inevitableProcessSectionSteps', number: string, title: string, duration: string, description: string } | null> | null } | null, faqSection?: { __typename: 'Pack_inevitableFaqSection', title: string, keywords?: Array<string | null> | null, questions?: Array<{ __typename: 'Pack_inevitableFaqSectionQuestions', question: string, answer: string } | null> | null } | null, testimonialsSection?: { __typename: 'Pack_inevitableTestimonialsSection', title: string, testimonials?: Array<{ __typename: 'Pack_inevitableTestimonialsSectionTestimonials', quote: string, author: string } | null> | null } | null, finalCtaSection?: { __typename: 'Pack_inevitableFinalCtaSection', title: string, description: string, ctaText: string, ctaLink: string } | null };
+
+export type Error404PartsFragment = { __typename: 'Error404', seo?: { __typename: 'Error404Seo', title: string, description: string, noindex: boolean } | null, hero?: { __typename: 'Error404Hero', errorCode: string, title: string, description: string, primaryCta?: { __typename: 'Error404HeroPrimaryCta', text: string, link: string } | null, secondaryCta?: { __typename: 'Error404HeroSecondaryCta', text: string, link: string } | null } | null, suggestions?: { __typename: 'Error404Suggestions', title: string, links?: Array<{ __typename: 'Error404SuggestionsLinks', title: string, description: string, link: string } | null> | null } | null };
 
 export type HomepageQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
@@ -3392,25 +3267,6 @@ export type PagesConnectionQueryVariables = Exact<{
 
 
 export type PagesConnectionQuery = { __typename?: 'Query', pagesConnection: { __typename?: 'PagesConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PagesConnectionEdges', cursor: string, node?: { __typename: 'Pages', id: string, title: string, description?: string | null, subtitle?: string | null, introduction?: string | null, profileImage?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, experienceSection?: { __typename: 'PagesExperienceSection', title?: string | null, subtitle?: string | null, items?: Array<{ __typename: 'PagesExperienceSectionItems', icon?: string | null, title?: string | null, description?: string | null } | null> | null } | null, valuesSection?: { __typename: 'PagesValuesSection', title?: string | null, subtitle?: string | null, values?: Array<{ __typename: 'PagesValuesSectionValues', title?: string | null, description?: string | null } | null> | null } | null, testimonial?: { __typename: 'PagesTestimonial', quote?: string | null, author?: string | null, role?: string | null } | null, ctaSection?: { __typename: 'PagesCtaSection', title?: string | null, description?: string | null, buttonText?: string | null } | null } | null } | null> | null } };
-
-export type AuditoriaQueryVariables = Exact<{
-  relativePath: Scalars['String']['input'];
-}>;
-
-
-export type AuditoriaQuery = { __typename?: 'Query', auditoria: { __typename: 'Auditoria', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'AuditoriaSeo', title: string, description: string } | null, hero?: { __typename: 'AuditoriaHero', subtitle: string, titlePart1: string, titlePart2: string, description: string, ctaText: string, ctaLink: string } | null, problemsSection?: { __typename: 'AuditoriaProblemsSection', title: string, subtitle: string, closingText: string, problems?: Array<{ __typename: 'AuditoriaProblemsSectionProblems', problem: string, consequence: string } | null> | null } | null, approachSection?: { __typename: 'AuditoriaApproachSection', title: string, subtitle?: string | null, conclusion: string, points?: Array<{ __typename: 'AuditoriaApproachSectionPoints', title: string, description: string } | null> | null } | null, testimonialsSection?: { __typename: 'AuditoriaTestimonialsSection', title: string, testimonials?: Array<{ __typename: 'AuditoriaTestimonialsSectionTestimonials', quote: string, author: string } | null> | null } | null, pricingSection?: { __typename: 'AuditoriaPricingSection', title: string, subtitle: string, price: string, currency: string, priceDescription: string, includes: Array<string>, delivery: string, format: string, ctaText: string, ctaLink: string } | null, faqSection?: { __typename: 'AuditoriaFaqSection', title: string, questions?: Array<{ __typename: 'AuditoriaFaqSectionQuestions', question: string, answer: string } | null> | null } | null, finalCtaSection?: { __typename: 'AuditoriaFinalCtaSection', title: string, description: string, ctaText: string, ctaLink: string } | null } };
-
-export type AuditoriaConnectionQueryVariables = Exact<{
-  before?: InputMaybe<Scalars['String']['input']>;
-  after?: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Float']['input']>;
-  last?: InputMaybe<Scalars['Float']['input']>;
-  sort?: InputMaybe<Scalars['String']['input']>;
-  filter?: InputMaybe<AuditoriaFilter>;
-}>;
-
-
-export type AuditoriaConnectionQuery = { __typename?: 'Query', auditoriaConnection: { __typename?: 'AuditoriaConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'AuditoriaConnectionEdges', cursor: string, node?: { __typename: 'Auditoria', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'AuditoriaSeo', title: string, description: string } | null, hero?: { __typename: 'AuditoriaHero', subtitle: string, titlePart1: string, titlePart2: string, description: string, ctaText: string, ctaLink: string } | null, problemsSection?: { __typename: 'AuditoriaProblemsSection', title: string, subtitle: string, closingText: string, problems?: Array<{ __typename: 'AuditoriaProblemsSectionProblems', problem: string, consequence: string } | null> | null } | null, approachSection?: { __typename: 'AuditoriaApproachSection', title: string, subtitle?: string | null, conclusion: string, points?: Array<{ __typename: 'AuditoriaApproachSectionPoints', title: string, description: string } | null> | null } | null, testimonialsSection?: { __typename: 'AuditoriaTestimonialsSection', title: string, testimonials?: Array<{ __typename: 'AuditoriaTestimonialsSectionTestimonials', quote: string, author: string } | null> | null } | null, pricingSection?: { __typename: 'AuditoriaPricingSection', title: string, subtitle: string, price: string, currency: string, priceDescription: string, includes: Array<string>, delivery: string, format: string, ctaText: string, ctaLink: string } | null, faqSection?: { __typename: 'AuditoriaFaqSection', title: string, questions?: Array<{ __typename: 'AuditoriaFaqSectionQuestions', question: string, answer: string } | null> | null } | null, finalCtaSection?: { __typename: 'AuditoriaFinalCtaSection', title: string, description: string, ctaText: string, ctaLink: string } | null } | null } | null> | null } };
 
 export type Redaccion_WebQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
@@ -3474,7 +3330,7 @@ export type Sobre_MiQueryVariables = Exact<{
 }>;
 
 
-export type Sobre_MiQuery = { __typename?: 'Query', sobre_mi: { __typename: 'Sobre_mi', id: string, title: string, subtitle?: string | null, profileImage: string, storyContent: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'Sobre_miSeo', title: string, description: string } | null } };
+export type Sobre_MiQuery = { __typename?: 'Query', sobre_mi: { __typename: 'Sobre_mi', id: string, title: string, subtitle?: string | null, profileImage: string, storyContent: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'Sobre_miSeo', title: string, description: string } | null, cta?: { __typename: 'Sobre_miCta', title: string, description: string, buttonText: string, buttonUrl: string } | null } };
 
 export type Sobre_MiConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -3486,7 +3342,7 @@ export type Sobre_MiConnectionQueryVariables = Exact<{
 }>;
 
 
-export type Sobre_MiConnectionQuery = { __typename?: 'Query', sobre_miConnection: { __typename?: 'Sobre_miConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'Sobre_miConnectionEdges', cursor: string, node?: { __typename: 'Sobre_mi', id: string, title: string, subtitle?: string | null, profileImage: string, storyContent: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'Sobre_miSeo', title: string, description: string } | null } | null } | null> | null } };
+export type Sobre_MiConnectionQuery = { __typename?: 'Query', sobre_miConnection: { __typename?: 'Sobre_miConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'Sobre_miConnectionEdges', cursor: string, node?: { __typename: 'Sobre_mi', id: string, title: string, subtitle?: string | null, profileImage: string, storyContent: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'Sobre_miSeo', title: string, description: string } | null, cta?: { __typename: 'Sobre_miCta', title: string, description: string, buttonText: string, buttonUrl: string } | null } | null } | null> | null } };
 
 export type Servicios_PageQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
@@ -3544,6 +3400,25 @@ export type Pack_InevitableConnectionQueryVariables = Exact<{
 
 
 export type Pack_InevitableConnectionQuery = { __typename?: 'Query', pack_inevitableConnection: { __typename?: 'Pack_inevitableConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'Pack_inevitableConnectionEdges', cursor: string, node?: { __typename: 'Pack_inevitable', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'Pack_inevitableSeo', title: string, description: string } | null, hero?: { __typename: 'Pack_inevitableHero', subtitle: string, title: string, description: string, ctaText: string, ctaLink: string } | null, problemSection?: { __typename: 'Pack_inevitableProblemSection', title: string, content: string, keywords?: Array<string | null> | null } | null, whatIncludesSection?: { __typename: 'Pack_inevitableWhatIncludesSection', title: string, subtitle: string, webRedaction?: { __typename: 'Pack_inevitableWhatIncludesSectionWebRedaction', subtitle: string, description: string, items: Array<string>, keywords?: Array<string | null> | null } | null, strategicBlog?: { __typename: 'Pack_inevitableWhatIncludesSectionStrategicBlog', subtitle: string, description: string, items: Array<string>, keywords?: Array<string | null> | null } | null } | null, forWhomSection?: { __typename: 'Pack_inevitableForWhomSection', title: string, subtitle: string, items: Array<string>, keywords?: Array<string | null> | null } | null, investmentSection?: { __typename: 'Pack_inevitableInvestmentSection', title: string, ctaText: string, ctaLink: string, keywords?: Array<string | null> | null, comparison?: { __typename: 'Pack_inevitableInvestmentSectionComparison', savings?: string | null, separate?: { __typename: 'Pack_inevitableInvestmentSectionComparisonSeparate', total?: string | null, webComplete?: { __typename: 'Pack_inevitableInvestmentSectionComparisonSeparateWebComplete', label?: string | null, price?: string | null } | null, blogFirst?: { __typename: 'Pack_inevitableInvestmentSectionComparisonSeparateBlogFirst', label?: string | null, price?: string | null } | null } | null, package?: { __typename: 'Pack_inevitableInvestmentSectionComparisonPackage', label?: string | null, price?: string | null } | null } | null } | null, processSection?: { __typename: 'Pack_inevitableProcessSection', title: string, keywords?: Array<string | null> | null, steps?: Array<{ __typename: 'Pack_inevitableProcessSectionSteps', number: string, title: string, duration: string, description: string } | null> | null } | null, faqSection?: { __typename: 'Pack_inevitableFaqSection', title: string, keywords?: Array<string | null> | null, questions?: Array<{ __typename: 'Pack_inevitableFaqSectionQuestions', question: string, answer: string } | null> | null } | null, testimonialsSection?: { __typename: 'Pack_inevitableTestimonialsSection', title: string, testimonials?: Array<{ __typename: 'Pack_inevitableTestimonialsSectionTestimonials', quote: string, author: string } | null> | null } | null, finalCtaSection?: { __typename: 'Pack_inevitableFinalCtaSection', title: string, description: string, ctaText: string, ctaLink: string } | null } | null } | null> | null } };
+
+export type Error404QueryVariables = Exact<{
+  relativePath: Scalars['String']['input'];
+}>;
+
+
+export type Error404Query = { __typename?: 'Query', error404: { __typename: 'Error404', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'Error404Seo', title: string, description: string, noindex: boolean } | null, hero?: { __typename: 'Error404Hero', errorCode: string, title: string, description: string, primaryCta?: { __typename: 'Error404HeroPrimaryCta', text: string, link: string } | null, secondaryCta?: { __typename: 'Error404HeroSecondaryCta', text: string, link: string } | null } | null, suggestions?: { __typename: 'Error404Suggestions', title: string, links?: Array<{ __typename: 'Error404SuggestionsLinks', title: string, description: string, link: string } | null> | null } | null } };
+
+export type Error404ConnectionQueryVariables = Exact<{
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<Error404Filter>;
+}>;
+
+
+export type Error404ConnectionQuery = { __typename?: 'Query', error404Connection: { __typename?: 'Error404Connection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'Error404ConnectionEdges', cursor: string, node?: { __typename: 'Error404', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'Error404Seo', title: string, description: string, noindex: boolean } | null, hero?: { __typename: 'Error404Hero', errorCode: string, title: string, description: string, primaryCta?: { __typename: 'Error404HeroPrimaryCta', text: string, link: string } | null, secondaryCta?: { __typename: 'Error404HeroSecondaryCta', text: string, link: string } | null } | null, suggestions?: { __typename: 'Error404Suggestions', title: string, links?: Array<{ __typename: 'Error404SuggestionsLinks', title: string, description: string, link: string } | null> | null } | null } | null } | null> | null } };
 
 export const HomepagePartsFragmentDoc = gql`
     fragment HomepageParts on Homepage {
@@ -3691,85 +3566,6 @@ export const PagesPartsFragmentDoc = gql`
     buttonText
   }
   body
-}
-    `;
-export const AuditoriaPartsFragmentDoc = gql`
-    fragment AuditoriaParts on Auditoria {
-  __typename
-  seo {
-    __typename
-    title
-    description
-  }
-  hero {
-    __typename
-    subtitle
-    titlePart1
-    titlePart2
-    description
-    ctaText
-    ctaLink
-  }
-  problemsSection {
-    __typename
-    title
-    subtitle
-    problems {
-      __typename
-      problem
-      consequence
-    }
-    closingText
-  }
-  approachSection {
-    __typename
-    title
-    subtitle
-    points {
-      __typename
-      title
-      description
-    }
-    conclusion
-  }
-  testimonialsSection {
-    __typename
-    title
-    testimonials {
-      __typename
-      quote
-      author
-    }
-  }
-  pricingSection {
-    __typename
-    title
-    subtitle
-    price
-    currency
-    priceDescription
-    includes
-    delivery
-    format
-    ctaText
-    ctaLink
-  }
-  faqSection {
-    __typename
-    title
-    questions {
-      __typename
-      question
-      answer
-    }
-  }
-  finalCtaSection {
-    __typename
-    title
-    description
-    ctaText
-    ctaLink
-  }
 }
     `;
 export const Redaccion_WebPartsFragmentDoc = gql`
@@ -3999,6 +3795,13 @@ export const Sobre_MiPartsFragmentDoc = gql`
   subtitle
   profileImage
   storyContent
+  cta {
+    __typename
+    title
+    description
+    buttonText
+    buttonUrl
+  }
 }
     `;
 export const Servicios_PagePartsFragmentDoc = gql`
@@ -4283,6 +4086,43 @@ export const Pack_InevitablePartsFragmentDoc = gql`
   }
 }
     `;
+export const Error404PartsFragmentDoc = gql`
+    fragment Error404Parts on Error404 {
+  __typename
+  seo {
+    __typename
+    title
+    description
+    noindex
+  }
+  hero {
+    __typename
+    errorCode
+    title
+    description
+    primaryCta {
+      __typename
+      text
+      link
+    }
+    secondaryCta {
+      __typename
+      text
+      link
+    }
+  }
+  suggestions {
+    __typename
+    title
+    links {
+      __typename
+      title
+      description
+      link
+    }
+  }
+}
+    `;
 export const HomepageDocument = gql`
     query homepage($relativePath: String!) {
   homepage(relativePath: $relativePath) {
@@ -4397,63 +4237,6 @@ export const PagesConnectionDocument = gql`
   }
 }
     ${PagesPartsFragmentDoc}`;
-export const AuditoriaDocument = gql`
-    query auditoria($relativePath: String!) {
-  auditoria(relativePath: $relativePath) {
-    ... on Document {
-      _sys {
-        filename
-        basename
-        hasReferences
-        breadcrumbs
-        path
-        relativePath
-        extension
-      }
-      id
-    }
-    ...AuditoriaParts
-  }
-}
-    ${AuditoriaPartsFragmentDoc}`;
-export const AuditoriaConnectionDocument = gql`
-    query auditoriaConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: AuditoriaFilter) {
-  auditoriaConnection(
-    before: $before
-    after: $after
-    first: $first
-    last: $last
-    sort: $sort
-    filter: $filter
-  ) {
-    pageInfo {
-      hasPreviousPage
-      hasNextPage
-      startCursor
-      endCursor
-    }
-    totalCount
-    edges {
-      cursor
-      node {
-        ... on Document {
-          _sys {
-            filename
-            basename
-            hasReferences
-            breadcrumbs
-            path
-            relativePath
-            extension
-          }
-          id
-        }
-        ...AuditoriaParts
-      }
-    }
-  }
-}
-    ${AuditoriaPartsFragmentDoc}`;
 export const Redaccion_WebDocument = gql`
     query redaccion_web($relativePath: String!) {
   redaccion_web(relativePath: $relativePath) {
@@ -4853,6 +4636,63 @@ export const Pack_InevitableConnectionDocument = gql`
   }
 }
     ${Pack_InevitablePartsFragmentDoc}`;
+export const Error404Document = gql`
+    query error404($relativePath: String!) {
+  error404(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...Error404Parts
+  }
+}
+    ${Error404PartsFragmentDoc}`;
+export const Error404ConnectionDocument = gql`
+    query error404Connection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: Error404Filter) {
+  error404Connection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...Error404Parts
+      }
+    }
+  }
+}
+    ${Error404PartsFragmentDoc}`;
 export type Requester<C= {}> = <R, V>(doc: DocumentNode, vars?: V, options?: C) => Promise<R>
   export function getSdk<C>(requester: Requester<C>) {
     return {
@@ -4867,12 +4707,6 @@ export type Requester<C= {}> = <R, V>(doc: DocumentNode, vars?: V, options?: C) 
       },
     pagesConnection(variables?: PagesConnectionQueryVariables, options?: C): Promise<{data: PagesConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PagesConnectionQueryVariables, query: string}> {
         return requester<{data: PagesConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PagesConnectionQueryVariables, query: string}, PagesConnectionQueryVariables>(PagesConnectionDocument, variables, options);
-      },
-    auditoria(variables: AuditoriaQueryVariables, options?: C): Promise<{data: AuditoriaQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: AuditoriaQueryVariables, query: string}> {
-        return requester<{data: AuditoriaQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: AuditoriaQueryVariables, query: string}, AuditoriaQueryVariables>(AuditoriaDocument, variables, options);
-      },
-    auditoriaConnection(variables?: AuditoriaConnectionQueryVariables, options?: C): Promise<{data: AuditoriaConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: AuditoriaConnectionQueryVariables, query: string}> {
-        return requester<{data: AuditoriaConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: AuditoriaConnectionQueryVariables, query: string}, AuditoriaConnectionQueryVariables>(AuditoriaConnectionDocument, variables, options);
       },
     redaccion_web(variables: Redaccion_WebQueryVariables, options?: C): Promise<{data: Redaccion_WebQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: Redaccion_WebQueryVariables, query: string}> {
         return requester<{data: Redaccion_WebQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: Redaccion_WebQueryVariables, query: string}, Redaccion_WebQueryVariables>(Redaccion_WebDocument, variables, options);
@@ -4915,6 +4749,12 @@ export type Requester<C= {}> = <R, V>(doc: DocumentNode, vars?: V, options?: C) 
       },
     pack_inevitableConnection(variables?: Pack_InevitableConnectionQueryVariables, options?: C): Promise<{data: Pack_InevitableConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: Pack_InevitableConnectionQueryVariables, query: string}> {
         return requester<{data: Pack_InevitableConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: Pack_InevitableConnectionQueryVariables, query: string}, Pack_InevitableConnectionQueryVariables>(Pack_InevitableConnectionDocument, variables, options);
+      },
+    error404(variables: Error404QueryVariables, options?: C): Promise<{data: Error404Query, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: Error404QueryVariables, query: string}> {
+        return requester<{data: Error404Query, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: Error404QueryVariables, query: string}, Error404QueryVariables>(Error404Document, variables, options);
+      },
+    error404Connection(variables?: Error404ConnectionQueryVariables, options?: C): Promise<{data: Error404ConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: Error404ConnectionQueryVariables, query: string}> {
+        return requester<{data: Error404ConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: Error404ConnectionQueryVariables, query: string}, Error404ConnectionQueryVariables>(Error404ConnectionDocument, variables, options);
       }
     };
   }

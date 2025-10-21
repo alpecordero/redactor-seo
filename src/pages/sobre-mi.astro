@@ -29,13 +29,43 @@ const data = sobreContent || defaultData
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Álvaro Pérez",
-      "jobTitle": "Redactor SEO",
-      "description": "Redactor SEO especializado en contenido que posiciona, conecta y convierte.",
-      "url": `${baseUrl}/sobre-mi`,
-      "image": `${baseUrl}/alvaro-seo.jpg`,
-      "email": "info@redactorseo.es"
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Inicio",
+              "item": baseUrl
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Sobre Mí",
+              "item": `${baseUrl}/sobre-mi`
+            }
+          ]
+        },
+        {
+          "@type": "Person",
+          "@id": `${baseUrl}/sobre-mi#person`,
+          "name": "Álvaro Pérez",
+          "jobTitle": "Redactor SEO",
+          "description": "Redactor SEO especializado en contenido que posiciona, conecta y convierte.",
+          "url": `${baseUrl}/sobre-mi`,
+          "image": `${baseUrl}/alvaro-seo.jpg`,
+          "email": "info@redactorseo.es",
+          "worksFor": {
+            "@id": `${baseUrl}/#organization`
+          },
+          "knowsAbout": ["SEO", "Content Marketing", "Copywriting", "Redacción Web"],
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "ES"
+          }
+        }
+      ]
     })} />
   </Fragment>
 
@@ -106,13 +136,13 @@ const data = sobreContent || defaultData
   <section class="py-20 md:py-32 lg:py-40 bg-black text-white">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 text-center">
       <h2 class="text-3xl md:text-4xl font-bold mb-6">
-        ¿Listo para hacer crecer tu negocio?
+        {data.cta?.title || "¿Listo para hacer crecer tu negocio?"}
       </h2>
       <p class="text-xl text-gray-300 mb-10 leading-relaxed max-w-3xl mx-auto">
-        Cuéntame tu proyecto y te explico cómo puedo ayudarte a conseguir más clientes
+        {data.cta?.description || "Cuéntame tu proyecto y te explico cómo puedo ayudarte a conseguir más clientes"}
       </p>
-      <a href="/contacto" class="bg-naranja-vibrante text-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-orange-600 hover:scale-105 transition-all duration-300 inline-block">
-        Empezar mi proyecto
+      <a href={data.cta?.buttonUrl || "/contacto"} class="bg-naranja-vibrante text-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-orange-600 hover:scale-105 transition-all duration-300 inline-block">
+        {data.cta?.buttonText || "Empezar mi proyecto"}
       </a>
     </div>
   </section>

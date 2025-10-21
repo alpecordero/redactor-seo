@@ -108,61 +108,6 @@ query pagesConnection($before: String, $after: String, $first: Float, $last: Flo
   }
 }
 
-query auditoria($relativePath: String!) {
-  auditoria(relativePath: $relativePath) {
-    ... on Document {
-      _sys {
-        filename
-        basename
-        hasReferences
-        breadcrumbs
-        path
-        relativePath
-        extension
-      }
-      id
-    }
-    ...AuditoriaParts
-  }
-}
-
-query auditoriaConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: AuditoriaFilter) {
-  auditoriaConnection(
-    before: $before
-    after: $after
-    first: $first
-    last: $last
-    sort: $sort
-    filter: $filter
-  ) {
-    pageInfo {
-      hasPreviousPage
-      hasNextPage
-      startCursor
-      endCursor
-    }
-    totalCount
-    edges {
-      cursor
-      node {
-        ... on Document {
-          _sys {
-            filename
-            basename
-            hasReferences
-            breadcrumbs
-            path
-            relativePath
-            extension
-          }
-          id
-        }
-        ...AuditoriaParts
-      }
-    }
-  }
-}
-
 query redaccion_web($relativePath: String!) {
   redaccion_web(relativePath: $relativePath) {
     ... on Document {
@@ -543,6 +488,61 @@ query pack_inevitableConnection($before: String, $after: String, $first: Float, 
           id
         }
         ...Pack_inevitableParts
+      }
+    }
+  }
+}
+
+query error404($relativePath: String!) {
+  error404(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...Error404Parts
+  }
+}
+
+query error404Connection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: Error404Filter) {
+  error404Connection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...Error404Parts
       }
     }
   }

@@ -745,372 +745,6 @@ export default defineConfig({
         ],
       },
       {
-        name: "auditoria",
-        label: "Auditoría de Contenido",
-        path: "src/content/auditoria",
-        format: "json",
-        ui: {
-          allowedActions: {
-            create: false,
-            delete: false,
-          },
-        },
-        fields: [
-          {
-            type: "object",
-            name: "seo",
-            label: "SEO",
-            fields: [
-              {
-                type: "string",
-                name: "title",
-                label: "Título SEO",
-                required: true,
-                ui: {
-                  description: "Título que aparece en Google (máx. 60 caracteres)",
-                },
-              },
-              {
-                type: "string",
-                name: "description",
-                label: "Meta descripción",
-                required: true,
-                ui: {
-                  component: "textarea",
-                  description: "Descripción que aparece en Google (máx. 160 caracteres)",
-                },
-              },
-            ],
-          },
-          {
-            type: "object",
-            name: "hero",
-            label: "1. Sección Hero",
-            fields: [
-              {
-                type: "string",
-                name: "subtitle",
-                label: "Subtítulo",
-                required: true,
-                ui: {
-                  description: "Ej: 'AUDITORÍA DE CONTENIDO'",
-                },
-              },
-              {
-                type: "string",
-                name: "titlePart1",
-                label: "Título - Parte 1 (Negro)",
-                required: true,
-                ui: {
-                  description: "Primera parte del título que aparece en negro",
-                },
-              },
-              {
-                type: "string",
-                name: "titlePart2",
-                label: "Título - Parte 2 (Naranja)",
-                required: true,
-                ui: {
-                  description: "Segunda parte del título que aparece en naranja",
-                },
-              },
-              {
-                type: "string",
-                name: "description",
-                label: "Descripción",
-                required: true,
-                ui: {
-                  component: "textarea",
-                },
-              },
-              {
-                type: "string",
-                name: "ctaText",
-                label: "Texto del botón CTA",
-                required: true,
-              },
-              {
-                type: "string",
-                name: "ctaLink",
-                label: "Enlace del botón CTA",
-                required: true,
-              },
-            ],
-          },
-          {
-            type: "object",
-            name: "problemsSection",
-            label: "2. Sección Problemas",
-            fields: [
-              {
-                type: "string",
-                name: "title",
-                label: "Título (H2)",
-                required: true,
-              },
-              {
-                type: "string",
-                name: "subtitle",
-                label: "Subtítulo",
-                required: true,
-              },
-              {
-                type: "object",
-                name: "problems",
-                label: "Problemas",
-                list: true,
-                fields: [
-                  {
-                    type: "string",
-                    name: "problem",
-                    label: "Problema (izquierda)",
-                    required: true,
-                  },
-                  {
-                    type: "string",
-                    name: "consequence",
-                    label: "Consecuencia (derecha)",
-                    required: true,
-                  },
-                ],
-              },
-              {
-                type: "string",
-                name: "closingText",
-                label: "Texto de cierre",
-                required: true,
-                ui: {
-                  component: "textarea",
-                },
-              },
-            ],
-          },
-          {
-            type: "object",
-            name: "approachSection",
-            label: "3. Mi Enfoque",
-            fields: [
-              {
-                type: "string",
-                name: "title",
-                label: "Título (H2)",
-                required: true,
-              },
-              {
-                type: "string",
-                name: "subtitle",
-                label: "Subtítulo",
-                required: false,
-                description: "Texto aclaratorio debajo del título",
-              },
-              {
-                type: "object",
-                name: "points",
-                label: "Puntos del enfoque",
-                list: true,
-                fields: [
-                  {
-                    type: "string",
-                    name: "title",
-                    label: "Título del punto",
-                    required: true,
-                  },
-                  {
-                    type: "string",
-                    name: "description",
-                    label: "Descripción",
-                    required: true,
-                    ui: {
-                      component: "textarea",
-                    },
-                  },
-                ],
-              },
-              {
-                type: "string",
-                name: "conclusion",
-                label: "Texto de conclusión",
-                required: true,
-              },
-            ],
-          },
-          {
-            type: "object",
-            name: "testimonialsSection",
-            label: "4. Casos de Éxito",
-            fields: [
-              {
-                type: "string",
-                name: "title",
-                label: "Título (H2)",
-                required: true,
-              },
-              {
-                type: "object",
-                name: "testimonials",
-                label: "Testimonios",
-                list: true,
-                fields: [
-                  {
-                    type: "string",
-                    name: "quote",
-                    label: "Testimonio",
-                    required: true,
-                    ui: {
-                      component: "textarea",
-                    },
-                  },
-                  {
-                    type: "string",
-                    name: "author",
-                    label: "Autor",
-                    required: true,
-                  },
-                ],
-              },
-            ],
-          },
-          {
-            type: "object",
-            name: "pricingSection",
-            label: "5. Precio y Qué Incluye",
-            fields: [
-              {
-                type: "string",
-                name: "title",
-                label: "Título principal",
-                required: true,
-              },
-              {
-                type: "string",
-                name: "subtitle",
-                label: "Subtítulo explicativo",
-                required: true,
-              },
-              {
-                type: "string",
-                name: "price",
-                label: "Precio (solo número)",
-                required: true,
-              },
-              {
-                type: "string",
-                name: "currency",
-                label: "Moneda",
-                required: true,
-              },
-              {
-                type: "string",
-                name: "priceDescription",
-                label: "Descripción del precio",
-                required: true,
-              },
-              {
-                type: "string",
-                name: "includes",
-                label: "Qué incluye",
-                list: true,
-                required: true,
-              },
-              {
-                type: "string",
-                name: "delivery",
-                label: "Información de entrega",
-                required: true,
-              },
-              {
-                type: "string",
-                name: "format",
-                label: "Información de formato",
-                required: true,
-              },
-              {
-                type: "string",
-                name: "ctaText",
-                label: "Texto del botón CTA",
-                required: true,
-              },
-              {
-                type: "string",
-                name: "ctaLink",
-                label: "Enlace del botón CTA",
-                required: true,
-              },
-            ],
-          },
-          {
-            type: "object",
-            name: "faqSection",
-            label: "6. Preguntas Frecuentes",
-            fields: [
-              {
-                type: "string",
-                name: "title",
-                label: "Título (H2)",
-                required: true,
-              },
-              {
-                type: "object",
-                name: "questions",
-                label: "Preguntas y Respuestas",
-                list: true,
-                fields: [
-                  {
-                    type: "string",
-                    name: "question",
-                    label: "Pregunta",
-                    required: true,
-                  },
-                  {
-                    type: "string",
-                    name: "answer",
-                    label: "Respuesta",
-                    required: true,
-                    ui: {
-                      component: "textarea",
-                    },
-                  },
-                ],
-              },
-            ],
-          },
-          {
-            type: "object",
-            name: "finalCtaSection",
-            label: "7. CTA Final",
-            fields: [
-              {
-                type: "string",
-                name: "title",
-                label: "Título",
-                required: true,
-              },
-              {
-                type: "string",
-                name: "description",
-                label: "Descripción",
-                required: true,
-                ui: {
-                  component: "textarea",
-                },
-              },
-              {
-                type: "string",
-                name: "ctaText",
-                label: "Texto del botón CTA",
-                required: true,
-              },
-              {
-                type: "string",
-                name: "ctaLink",
-                label: "Enlace del botón CTA",
-                required: true,
-              },
-            ],
-          },
-        ],
-      },
-      {
         name: "redaccion_web",
         nameOverride: "redaccion-web",
         label: "Redacción Web",
@@ -2243,6 +1877,50 @@ export default defineConfig({
               component: "textarea",
               description: "Tu historia completa. Separa los párrafos con dobles saltos de línea. Aproximadamente 600 palabras.",
             },
+          },
+          {
+            type: "object",
+            name: "cta",
+            label: "Sección CTA (Llamada a la Acción)",
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "Título del CTA",
+                required: true,
+                ui: {
+                  description: "Ej: '¿Listo para hacer crecer tu negocio?'",
+                },
+              },
+              {
+                type: "string",
+                name: "description",
+                label: "Descripción del CTA",
+                required: true,
+                ui: {
+                  component: "textarea",
+                  description: "Texto que aparece debajo del título",
+                },
+              },
+              {
+                type: "string",
+                name: "buttonText",
+                label: "Texto del botón",
+                required: true,
+                ui: {
+                  description: "Ej: 'Empezar mi proyecto'",
+                },
+              },
+              {
+                type: "string",
+                name: "buttonUrl",
+                label: "URL del botón",
+                required: true,
+                ui: {
+                  description: "Ruta a la que enlaza el botón (Ej: '/contacto')",
+                },
+              },
+            ],
           },
         ],
       },

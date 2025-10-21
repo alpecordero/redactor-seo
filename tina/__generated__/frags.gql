@@ -144,84 +144,6 @@ fragment PagesParts on Pages {
   body
 }
 
-fragment AuditoriaParts on Auditoria {
-  __typename
-  seo {
-    __typename
-    title
-    description
-  }
-  hero {
-    __typename
-    subtitle
-    titlePart1
-    titlePart2
-    description
-    ctaText
-    ctaLink
-  }
-  problemsSection {
-    __typename
-    title
-    subtitle
-    problems {
-      __typename
-      problem
-      consequence
-    }
-    closingText
-  }
-  approachSection {
-    __typename
-    title
-    subtitle
-    points {
-      __typename
-      title
-      description
-    }
-    conclusion
-  }
-  testimonialsSection {
-    __typename
-    title
-    testimonials {
-      __typename
-      quote
-      author
-    }
-  }
-  pricingSection {
-    __typename
-    title
-    subtitle
-    price
-    currency
-    priceDescription
-    includes
-    delivery
-    format
-    ctaText
-    ctaLink
-  }
-  faqSection {
-    __typename
-    title
-    questions {
-      __typename
-      question
-      answer
-    }
-  }
-  finalCtaSection {
-    __typename
-    title
-    description
-    ctaText
-    ctaLink
-  }
-}
-
 fragment Redaccion_webParts on Redaccion_web {
   __typename
   seo {
@@ -445,6 +367,13 @@ fragment Sobre_miParts on Sobre_mi {
   subtitle
   profileImage
   storyContent
+  cta {
+    __typename
+    title
+    description
+    buttonText
+    buttonUrl
+  }
 }
 
 fragment Servicios_pageParts on Servicios_page {
@@ -723,5 +652,41 @@ fragment Pack_inevitableParts on Pack_inevitable {
     description
     ctaText
     ctaLink
+  }
+}
+
+fragment Error404Parts on Error404 {
+  __typename
+  seo {
+    __typename
+    title
+    description
+    noindex
+  }
+  hero {
+    __typename
+    errorCode
+    title
+    description
+    primaryCta {
+      __typename
+      text
+      link
+    }
+    secondaryCta {
+      __typename
+      text
+      link
+    }
+  }
+  suggestions {
+    __typename
+    title
+    links {
+      __typename
+      title
+      description
+      link
+    }
   }
 }
