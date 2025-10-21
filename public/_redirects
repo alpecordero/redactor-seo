@@ -1,1 +1,16 @@
+# Redirecciones 301 para Cloudflare Pages
+# Importante: Las redirecciones deben ir ANTES del fallback SPA
+
+# Redirecciones de URLs antiguas a /servicios
+/servicio-redaccion-seo /servicios 301
+/textos-tiendas-online /servicios 301
+/auditoria-seo /servicios 301
+/servicio-de-keyword-research /servicios 301
+/precios /servicios 301
+
+# Redirecciones de cambios de nomenclatura
+/redaccion-estrategica-blogs /redaccion-blog 301
+/privacidad /politica-privacidad 301
+
+# Fallback para SPA (debe ir al final)
 /* /index.html 200
