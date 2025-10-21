@@ -99,11 +99,11 @@ Este sitio web utiliza los siguientes servicios tecnológicos:
 
 No utilizamos cookies de marketing, publicidad o redes sociales que requieran tu consentimiento previo.
 
-Para más información sobre el tratamiento de datos, consulta nuestra [Política de Privacidad](/privacidad).
+Para más información sobre el tratamiento de datos, consulta nuestra [Política de Privacidad](/politica-privacidad).
 
 ## Protección de datos
 
-El tratamiento de datos personales se rige por lo establecido en nuestra [Política de Privacidad](/privacidad), en cumplimiento del Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018 de Protección de Datos Personales y garantía de los derechos digitales.
+El tratamiento de datos personales se rige por lo establecido en nuestra [Política de Privacidad](/politica-privacidad), en cumplimiento del Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018 de Protección de Datos Personales y garantía de los derechos digitales.
 
 ## Comunicaciones comerciales
 
