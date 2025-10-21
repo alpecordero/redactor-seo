@@ -24,11 +24,15 @@ export default defineConfig({
     plugins: [tailwindcss()],
     build: {
       cssCodeSplit: true,
+      minify: 'esbuild',
       rollupOptions: {
         output: {
           manualChunks: {
             vendor: ['astro']
-          }
+          },
+          // Optimize chunk size
+          chunkFileNames: '_astro/[name].[hash].js',
+          assetFileNames: '_astro/[name].[hash][extname]'
         }
       }
     }
@@ -37,5 +41,10 @@ export default defineConfig({
     assets: '_astro',
     inlineStylesheets: 'auto' // Let Astro inline small CSS automatically
   },
-  compressHTML: true
+  compressHTML: true,
+  // Prefetch links for faster navigation
+  prefetch: {
+    prefetchAll: true,
+    defaultStrategy: 'viewport'
+  }
 });

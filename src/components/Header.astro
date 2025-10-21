@@ -75,18 +75,8 @@ const navigation = [
 </header>
 
 <script>
-  // Simple mobile menu toggle with overlay
-  const mobileMenuButton = document.getElementById('mobile-menu-button')
-  const mobileMenu = document.getElementById('mobile-menu')
-  const mobileMenuOverlay = document.getElementById('mobile-menu-overlay')
-
-  const toggleMenu = () => {
-    const isHidden = mobileMenu?.classList.contains('hidden')
-    mobileMenu?.classList.toggle('hidden')
-    mobileMenuOverlay?.classList.toggle('hidden')
-    mobileMenuButton?.setAttribute('aria-expanded', isHidden ? 'true' : 'false')
-  }
-
-  mobileMenuButton?.addEventListener('click', toggleMenu)
-  mobileMenuOverlay?.addEventListener('click', toggleMenu)
+  // Optimized mobile menu toggle - defer execution
+  const b=document.getElementById('mobile-menu-button'),m=document.getElementById('mobile-menu'),o=document.getElementById('mobile-menu-overlay');
+  const t=()=>{const h=m?.classList.contains('hidden');m?.classList.toggle('hidden');o?.classList.toggle('hidden');b?.setAttribute('aria-expanded',h?'true':'false')};
+  b?.addEventListener('click',t);o?.addEventListener('click',t);
 </script>
