@@ -1,86 +1,10 @@
 {
-  "valuesSection": {
-    "title": "Los principios que guían mi trabajo",
-    "subtitle": "Valores que se reflejan en cada proyecto y cada texto que escribo",
-    "values": [
-      {
-        "title": "Transparencia total",
-        "description": "Sin letra pequeña ni promesas vacías. Te explico exactamente qué hago, cómo lo hago y qué resultados puedes esperar."
-      },
-      {
-        "title": "Compromiso real",
-        "description": "Tu éxito es mi éxito. Me involucro en tu proyecto como si fuera mío y trabajo hasta conseguir los objetivos."
-      },
-      {
-        "title": "Calidad sin compromisos",
-        "description": "Prefiero hacer menos proyectos pero con la máxima calidad que aceptar cualquier trabajo por volumen."
-      },
-      {
-        "title": "Comunicación constante",
-        "description": "Informes regulares, feedback continuo y disponibilidad total para resolver cualquier duda o ajuste."
-      }
-    ]
-  },
   "seo": {
     "title": "Sobre Mí - Álvaro Pérez | Redactor SEO especialista en contenidos",
     "description": "Conoce mi historia, metodología y valores como redactor SEO. Más de 16 años ayudando a empresas a crecer online con contenido estratégico que convierte."
   },
-  "hero": {
-    "title": "Soy Álvaro",
-    "subtitle": "Redactor SEO · Estratega de contenidos",
-    "introduction": "Transformo ideas en contenido que posiciona, conecta y convierte. Más de 16 años ayudando a empresas a crecer online.",
-    "profileImage": "/alvaro-seo.jpg"
-  },
-  "experienceSection": {
-    "title": "Mi experiencia al servicio de tu negocio",
-    "subtitle": "Años perfeccionando el arte de crear contenido que realmente funciona",
-    "items": [
-      {
-        "icon": "🎯",
-        "title": "Estrategia SEO",
-        "description": "Análisis profundo de keywords, competencia y oportunidades para crear contenido que posicione desde el primer día."
-      },
-      {
-        "icon": "✍️",
-        "title": "Redacción especializada",
-        "description": "Textos que conectan con tu audiencia y transmiten la personalidad única de tu marca con un estilo propio."
-      },
-      {
-        "icon": "📈",
-        "title": "Resultados medibles",
-        "description": "Seguimiento constante de métricas y optimización continua para maximizar el ROI de cada pieza de contenido."
-      },
-      {
-        "icon": "🤝",
-        "title": "Colaboración estrecha",
-        "description": "Trabajo codo a codo contigo para entender tu negocio y crear contenido alineado con tus objetivos."
-      },
-      {
-        "icon": "🚀",
-        "title": "Proyectos escalables",
-        "description": "Estrategias de contenido que crecen con tu negocio y se adaptan a las necesidades del mercado."
-      },
-      {
-        "icon": "💡",
-        "title": "Innovación constante",
-        "description": "Siempre al día con las últimas tendencias en SEO y marketing de contenidos para mantenerte por delante."
-      }
-    ]
-  },
-  "storySection": {
-    "title": "Mi historia con el SEO",
-    "subtitle": "De marketer tradicional a especialista en contenido que convierte"
-  },
-  "storyContent": "Los inicios\n\nNo siempre me dediqué al SEO. Empecé en el mundo del marketing tradicional, pero pronto me di cuenta de que el futuro estaba online. Me especialicé en marketing digital y, específicamente, en SEO porque me fascinaba la idea de crear contenido que realmente funcionara.\n\nEl mundo digital cambia constantemente, y adaptarse es la única manera de mantenerse relevante.",
-  "testimonial": {
-    "quote": "Álvaro no solo mejoró nuestro posicionamiento, sino que entendió perfectamente nuestro negocio y nos ayudó a comunicar mejor nuestro valor. Los resultados hablan por sí solos.",
-    "author": "María González",
-    "role": "CEO, TechStart"
-  },
-  "ctaSection": {
-    "title": "¿Hablamos de tu proyecto?",
-    "description": "Cuéntame qué necesitas y veamos cómo puedo ayudarte a conseguir tus objetivos",
-    "buttonText": "Empezar ahora",
-    "buttonLink": "/contacto"
-  }
+  "title": "Soy Álvaro",
+  "subtitle": "Imagina publicar un artículo sin tener audiencia. ¿Cuál sería el resultado?",
+  "profileImage": "/alvaro-seo.jpg",
+  "storyContent": "Lo sé porque hice la prueba en el año 2009. No tenía ni un solo lector. Cero. Entonces, publiqué el primer artículo. Lo lancé al vacío de Internet por pura curiosidad. \n\n¿Qué pasó?\n\nNada durante los primeros 10 días. Cero visitas. Cero motivación.\n\nPoco después:\n\n- Un lector.\n- Tres lectores.\n- Cinco lectores y un seguidor.\n\nPensaba que las visitas llegaban por pura suerte. Y suerte había, pero en realidad tenía otro nombre. Sin saberlo, aquel primer artículo estaba optimizado para SEO y por eso fue descubierto por los lectores. \n\nFue el inicio casual. Aprendí SEO sin cursos. A base de prueba y error. Comprendí lo que Google quería y se lo di.\n\nLa bola de nieve creció tanto que aquel blog cutre de Blogspot ahora es una web conocida que visitan miles de personas cada día.\n\nSin esa web y sin un seguidor del blog no estaría aquí.\n\nEmpecé a trabajar con clientes cuando un lector me escribió un correo que terminaba con esta pregunta:\n\n\"¿Podrías escribir artículos para mi web?\"\n\nAcepté.\n\nAbrí esta web y el resto es historia. Por aquí han pasado más de 150 empresas de todos los tamaños. \n\nAhora es diferente:\n\n- Solo trabajo con negocios serios.\n- Google (casi) ha muerto porque la gente busca diferente. \n- Lo que no ha muerto es la necesidad de que te encuentren. \n\nHoy, y sobre todo mañana, te van a encontrar preguntando a ChatGPT. Ahora el SEO tiene aún más importancia, pero hay que hacerlo diferente.\n\nSi quieres que te encuentren, pincha en el botón que tienes debajo."
 }

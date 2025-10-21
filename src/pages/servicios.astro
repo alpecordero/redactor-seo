@@ -79,10 +79,15 @@ const baseUrl = 'https://redactorseo.es'
 
     <div class="relative px-4 sm:px-6 lg:px-12 xl:px-16 w-full">
       <div class="max-w-3xl mx-auto text-center">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-8 lg:mb-12">
+        <!-- H1 principal -->
+        <div class="mb-8 lg:mb-12">
+          <h1 class="text-sm font-medium tracking-wide text-gray-500 uppercase">SERVICIOS DE REDACCIÓN PROFESIONAL</h1>
+        </div>
+
+        <p class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-8 lg:mb-12">
           {hero.titlePart1}
           <span class="block text-naranja-vibrante mt-4">{hero.titlePart2}</span>
-        </h1>
+        </p>
 
         <p class="text-xl md:text-2xl text-gray-600 leading-relaxed mb-12 lg:mb-16 max-w-2xl mx-auto">
           {hero.description}
@@ -151,7 +156,7 @@ const baseUrl = 'https://redactorseo.es'
                     <span class="text-3xl font-bold text-azul-profundo">{packInevitable.currentPrice.replace('€', '')}<span class="text-2xl">€</span></span>
                   </div>
                   <div class="flex justify-between items-center">
-                    <span class="text-gray-600 font-medium text-sm">VALOR SEPARADO:</span>
+                    <span class="text-gray-600 font-medium text-sm">VALOR:</span>
                     <span class="text-gray-500 line-through text-2xl">{packInevitable.originalPrice}</span>
                   </div>
                   <div class="border-t-2 border-gray-300 my-2"></div>

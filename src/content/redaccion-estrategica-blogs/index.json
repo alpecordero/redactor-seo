@@ -17,11 +17,15 @@
     "problems": [
       {
         "problem": "Publicamos mucho y nos leen poco",
-        "consequence": "1.500 palabras que nadie termina de leer. Ahí está el problema. Entiende a tu audiencia y dale lo que espera"
+        "consequence": "1.500 palabras que nadie termina de leer. Ahí está el problema. Entiende a tu audiencia y escribe para ella"
       },
       {
         "problem": "No sabemos sobre qué escribir",
         "consequence": "Habéis buscado en el blog de la competencia, pero las ideas no están ahí. Os falta mirar en el lugar más importante"
+      },
+      {
+        "problem": "Escribimos con ChatGPT",
+        "consequence": "Tu cliente detecta el contenido generado por la IA. Lo huele a kilómetros. Y lo odia"
       },
       {
         "problem": "Nuestro sector es demasiado técnico",
@@ -29,11 +33,7 @@
       },
       {
         "problem": "No tenemos presupuesto para el blog",
-        "consequence": "Estáis perdiendo el altavoz más rentable. Cada artículo estará en Internet de por vida. Lo leerán miles de personas afines"
-      },
-      {
-        "problem": "Dicen que la IA acabará con los blogs",
-        "consequence": "Acabará con los blogs escritos por la propia IA. Y con los blogs chusqueros. Destacarán los blogs auténticos"
+        "consequence": "Tenéis oro delante. Cada artículo estará en Internet de por vida. Lo leerán miles de potenciales clientes"
       }
     ],
     "closingText": "Si nadie te lee... Nadie te compra."
@@ -52,7 +52,7 @@
       },
       {
         "title": "Añado una capa de SEO",
-        "description": "Si vendes pisos de lujo en Albacete, te encontrarán los albaceteños con dinero; Si vendes autocaravanas, te verán los que sueñan con dormir en latas de sardinas."
+        "description": "Si vendes pisos de lujo en Albacete, te encontrarán los albaceteños con dinero; Si vendes autocaravanas, te leerán los que sueñan con dormir en una lata de sardinas."
       }
     ],
     "conclusion": "Blog estratégico. Fresco. Simple."
@@ -65,7 +65,7 @@
         "author": "Ana Torres, CEO de Inmobiliaria de lujo"
       },
       {
-        "quote": "Llevamos cerca de tres años delegando el blog en Álvaro. No podemos medir el ROI exacto de la inversión, pero sabemos que a nuestras clientes les encanta y ayuda. Para nosotros eso es lo más importante. Por cierto, también nos escribe los emails de la newsletter y ahí sí que nuestro ROI se dispara. Recomendadísimo.\n",
+        "quote": "Llevamos cerca de tres años delegando el blog en Álvaro. No podemos medir el ROI exacto de la inversión, pero sabemos que a nuestras clientas les encanta y ayuda. Para nosotros eso es lo más importante. Por cierto, también hemos delegado en él los emails de la newsletter y ahí nuestro ROI se ha disparado. Recomendadísimo!!\n",
         "author": "Roberto Silva, Gerente de Clínica Dental"
       }
     ]
@@ -82,9 +82,9 @@
         "priceDescription": "4 artículos al mes",
         "includes": [
           "2 artículos extensos (1.200-1.500 palabras)",
-          "Calendario trimestral",
-          "Optimización SEO ",
-          "1 ronda de revisiones por artículo"
+          "Calendario editorial trimestral",
+          "Optimización SEO",
+          "1 revisión por artículo"
         ],
         "delivery": "Contratación mínima 3 meses",
         "format": "Artículos listos para publicar en tu web",
@@ -100,11 +100,9 @@
         "priceDescription": "4 artículos al mes",
         "includes": [
           "4 artículos de 1.200-1.500 palabras",
-          "Optimización SEO avanzada",
-          "Calendario editorial estratégico",
-          "Análisis de competencia",
-          "Guía de enlazado interno",
-          "2 rondas de revisiones por artículo"
+          "Calendario editorial trimestral",
+          "Optimización SEO",
+          "2 revisiones por artículo"
         ],
         "delivery": "Entrega continua cada mes",
         "format": "4 artículos + estrategia + análisis mensual",
@@ -118,26 +116,30 @@
     "title": "Preguntas frecuentes",
     "questions": [
       {
-        "question": "¿3 meses es suficiente para ver resultados?",
-        "answer": "Los primeros artículos empiezan a posicionar desde el mes 2. A los 3 meses tendrás **24 artículos estratégicos** trabajando para ti las 24 horas. Es cuando realmente se nota el impacto en autoridad y tráfico cualificado."
+        "question": "¿Por qué tengo que contratar cómo mínimo 3 meses?",
+        "answer": "Estarías perdiendo tu dinero contratando un solo mes. La estrategia en torno a los blogs corporativos debe ser siempre a medio y largo plazo. "
       },
       {
-        "question": "2.995€ mensuales es mucho para contenido",
-        "answer": "No es solo contenido. Es una **estrategia completa de posicionamiento** que incluye investigación, redacción, SEO, distribución y consultoría mensual. Una agencia te cobraría 8.000€+ por lo mismo, y sin garantías."
+        "question": "¿Cuántos artículos mensuales me recomiendas y por qué?",
+        "answer": "Al 80% de mis clientes les recomiendo empezar poco a poco (Pack Esencial). Es mejor un artículo estratégico cada dos semanas y mantenerlo durante dos años, que empezar al doble de velocidad y abandonar por impaciencia. Para ganar autoridad, posicionamiento y convertir todo eso a ventas necesitas mirar al largo plazo. Las empresas que lo tienen claro sí pueden elegir el Pack Autoridad para impulsar su presencia online a mayor velocidad."
+      },
+      {
+        "question": "¿Qué incluye el servicio de redacción para blogs?",
+        "answer": "No es solo contenido. Es una estrategia completa. Incluye plan de posicionamiento a largo plazo, calendario trimestral de contenido y redacción SEO."
       },
       {
         "question": "¿Trabajas con cualquier nicho?",
-        "answer": "Trabajo con sectores B2B y servicios profesionales: consultorías, tecnología, finanzas, salud, legal, inmobiliario... Lo importante es que tengas **audiencia dispuesta a pagar** por servicios de valor."
+        "answer": "Trabajo con empresas y profesionales de casi todos los sectores: tecnología, finanzas, salud, deportes, inmobiliario... Consúltame para saber si el tuyo encaja con mi forma de trabajar."
       },
       {
         "question": "¿Qué pasa después de los 3 meses?",
-        "answer": "Tienes dos opciones: continuar conmigo para **dominar completamente tu nicho**, o implementar la estrategia con tu equipo usando los templates y guías que te proporciono. Ambas funcionan."
+        "answer": "Tienes dos opciones: continuar conmigo para dominar tu nicho o no continuar."
       }
     ]
   },
   "finalCtaSection": {
     "title": "¿Preparado para ser el referente?",
-    "description": "Las reglas están cambiando a una velocidad de locos. Poc. Escríbeme para comprobar disponibilidad.",
+    "description": "Las reglas están cambiando a una velocidad de locos. Es posible que cuando leas esto no tenga disponibilidad para atentes a nuevos clientes. Para comprobarlo, escríbeme pinchando el botón:",
     "ctaText": "Comprueba disponibilidad",
     "ctaLink": "/contacto"
   }

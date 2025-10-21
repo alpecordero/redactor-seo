@@ -56,21 +56,21 @@ const baseUrl = 'https://redactorseo.es'
 
     <div class="relative px-4 sm:px-6 lg:px-12 xl:px-16 w-full">
       <div class="max-w-4xl mx-auto text-center">
-        <!-- Subtitle -->
+        <!-- H1 principal -->
         <div class="mb-6 lg:mb-8 mt-4 lg:mt-8">
-          <p class="text-sm font-medium tracking-wide text-gray-500 uppercase">{hero.subtitle}</p>
+          <h1 class="text-sm font-medium tracking-wide text-gray-500 uppercase">{hero.subtitle}</h1>
         </div>
 
         <!-- Google Memorial Message -->
         <div class="mb-8">
           <div class="max-w-4xl mx-auto text-center">
-            <h1 class="font-bold leading-none tracking-tight">
+            <p class="font-bold leading-none tracking-tight">
               <span class="block text-6xl sm:text-7xl md:text-8xl lg:text-8xl xl:text-9xl mb-6 sm:mb-8">
                 <span style="color: #4285F4;">G</span><span style="color: #EA4335;">o</span><span style="color: #FBBC04;">o</span><span style="color: #4285F4;">g</span><span style="color: #34A853;">l</span><span style="color: #EA4335;">e</span>
               </span>
               <span class="block text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-500 font-light tracking-wider mb-6 sm:mb-8">1995-2025</span>
               <span class="block text-7xl sm:text-8xl md:text-9xl lg:text-9xl xl:text-[8rem] text-gray-900 font-bold tracking-tighter mb-8 sm:mb-12">D.E.P</span>
-            </h1>
+            </p>
           </div>
         </div>
 
@@ -285,12 +285,12 @@ const baseUrl = 'https://redactorseo.es'
             <div class="max-w-sm mx-auto border-2 border-gray-300 rounded-lg p-6 bg-gray-50">
               <div class="space-y-3">
                 <div class="flex justify-between items-center">
-                  <span class="text-gray-600 font-medium">VALOR REAL:</span>
-                  <span class="text-gray-500 line-through text-3xl">{featuredServiceSection.originalPrice}</span>
-                </div>
-                <div class="flex justify-between items-center">
                   <span class="text-gray-900 font-bold">PRECIO:</span>
                   <span class="text-3xl font-bold text-azul-profundo">{featuredServiceSection.currentPrice}</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-gray-600 font-medium">VALOR:</span>
+                  <span class="text-gray-500 line-through text-3xl">{featuredServiceSection.originalPrice}</span>
                 </div>
                 <div class="border-t-2 border-gray-300 my-3"></div>
                 <div class="flex justify-between items-center">

@@ -20,7 +20,22 @@ const pages = defineCollection({
   })
 })
 
+const sobreMi = defineCollection({
+  type: 'data',
+  schema: z.object({
+    seo: z.object({
+      title: z.string(),
+      description: z.string(),
+    }),
+    title: z.string(),
+    subtitle: z.string().optional(),
+    profileImage: z.string(),
+    storyContent: z.string(),
+  })
+})
+
 export const collections = {
   blog,
   pages,
+  'sobre-mi': sobreMi,
 }

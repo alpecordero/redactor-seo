@@ -12,12 +12,16 @@
     "title": "Hablemos de tu proyecto",
     "services": [
       {
-        "value": "renovar-textos-web",
-        "label": "Renovar los textos de la web"
+        "value": "nuevos-textos-web",
+        "label": "Nuevos textos para mi web"
       },
       {
-        "value": "contenido-estrategico-blog",
-        "label": "Crear contenido estratégico para el blog"
+        "value": "contenido-recurrente-blog",
+        "label": "Contenido recurrente para mi blog"
+      },
+      {
+        "value": "pack-inevitable",
+        "label": "Pack Inevitable"
       },
       {
         "value": "otros",

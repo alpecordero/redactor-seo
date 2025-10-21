@@ -1,0 +1,370 @@
+---
+import Layout from '../layouts/Layout.astro'
+
+import content from '../content/pack-inevitable/index.json'
+
+const {
+  hero,
+  problemSection,
+  whatIncludesSection,
+  forWhomSection,
+  investmentSection,
+  processSection,
+  testimonialsSection,
+  faqSection,
+  finalCtaSection
+} = content
+
+const baseUrl = 'https://redactorseo.es'
+---
+
+<Layout title={content.seo.title} description={content.seo.description}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Renovación Web y Blog Estratégico",
+      "description": "Servicio completo de redacción web y blog para negocios locales",
+      "serviceType": "Redacción Web y Blog",
+      "url": `${baseUrl}/pack-inevitable`,
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "Redactor SEO",
+        "url": baseUrl
+      },
+      "areaServed": "ES",
+      "offers": {
+        "@type": "Offer",
+        "price": "1399",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock"
+      }
+    })} />
+  </Fragment>
+
+  <!-- Hero Section -->
+  <section class="relative py-16 md:py-20 lg:py-24 bg-white overflow-hidden">
+    <div class="absolute inset-0">
+      <div class="absolute top-20 right-20 w-32 h-32 bg-gray-50 rounded-full -z-10"></div>
+      <div class="absolute bottom-32 left-16 w-20 h-20 bg-naranja-vibrante/5 rounded-full -z-10"></div>
+    </div>
+
+    <div class="relative px-4 sm:px-6 lg:px-12 xl:px-16 w-full">
+      <div class="max-w-3xl mx-auto text-center">
+        <div class="mb-8 lg:mb-12">
+          <h1 class="text-sm font-medium tracking-wide text-gray-500 uppercase">{hero.subtitle}</h1>
+        </div>
+
+        <p class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-8 lg:mb-12 whitespace-pre-line" set:html={hero.title.replace(/\"([^\"]+)\"/g, '<span class="text-naranja-vibrante">"$1"</span>')}>
+        </p>
+
+        <p class="text-xl md:text-2xl text-gray-600 leading-relaxed mb-12 lg:mb-16 max-w-2xl mx-auto">
+          {hero.description}
+        </p>
+
+        <a href={hero.ctaLink} class="bg-azul-profundo text-white px-10 py-5 rounded-lg text-xl font-bold hover:bg-gray-800 hover:scale-105 transition-all duration-300 inline-block shadow-lg">
+          {hero.ctaText}
+        </a>
+
+        <div class="mt-16 mb-0 flex justify-center">
+          <div class="animate-bounce">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-naranja-vibrante">
+              <path d="M7 13L12 18L17 13M12 6V17" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem Section -->
+  <section class="py-20 md:py-32 lg:py-40 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
+      <div class="text-center">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-8">
+          {problemSection.title}
+        </h2>
+        <p class="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto" set:html={problemSection.content}>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What Includes Section -->
+  <section class="py-20 md:py-32 lg:py-40 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-6">
+          {whatIncludesSection.title}
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          {whatIncludesSection.subtitle}
+        </p>
+      </div>
+
+      <!-- Grid de 2 columnas -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+
+        <!-- Web Redaction Card -->
+        <div class="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300">
+          <div class="mb-6">
+            <h3 class="text-2xl font-bold text-gray-900 mb-3">
+              {whatIncludesSection.webRedaction.subtitle}
+            </h3>
+            <p class="text-base text-gray-600 leading-relaxed mb-6">
+              {whatIncludesSection.webRedaction.description}
+            </p>
+          </div>
+
+          <div class="space-y-2">
+            {whatIncludesSection.webRedaction.items.map((item) => (
+              <div class="flex items-start space-x-2">
+                <svg class="w-5 h-5 text-naranja-vibrante flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                <span class="text-sm text-gray-700">{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Strategic Blog Card -->
+        <div class="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300">
+          <div class="mb-6">
+            <h3 class="text-2xl font-bold text-gray-900 mb-3">
+              {whatIncludesSection.strategicBlog.subtitle}
+            </h3>
+            <p class="text-base text-gray-600 leading-relaxed mb-6">
+              {whatIncludesSection.strategicBlog.description}
+            </p>
+          </div>
+
+          <div class="space-y-2">
+            {whatIncludesSection.strategicBlog.items.map((item) => (
+              <div class="flex items-start space-x-2">
+                <svg class="w-5 h-5 text-naranja-vibrante flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                <span class="text-sm text-gray-700">{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- For Whom Section -->
+  <section class="py-20 md:py-32 lg:py-40 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-8">
+          {forWhomSection.title}
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          {forWhomSection.subtitle}
+        </p>
+      </div>
+
+      <div class="max-w-3xl mx-auto space-y-4">
+        {forWhomSection.items.map((item) => (
+          <div class="bg-white p-6 rounded-lg">
+            <p class="text-xl text-gray-700">{item}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Investment Section -->
+  <section class="py-20 md:py-32 lg:py-40 bg-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
+      <div class="text-center mb-12">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+          {investmentSection.title}
+        </h2>
+      </div>
+
+      <!-- Tarjeta única del pack -->
+      <div class="max-w-md mx-auto">
+        <div class="bg-white rounded-2xl p-8 border-2 border-naranja-vibrante shadow-2xl relative">
+          {/* Badge "Pack completo" */}
+          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+            <span class="bg-naranja-vibrante text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wide">
+              PACK COMPLETO
+            </span>
+          </div>
+
+          {/* Header del paquete */}
+          <div class="text-center mb-8">
+            <h3 class="text-2xl font-bold mb-2 text-azul-profundo">
+              Pack Inevitable
+            </h3>
+            <p class="text-sm text-gray-500 mb-6">Web + Blog estratégico</p>
+          </div>
+
+          {/* Pricing Box */}
+          <div class="bg-gray-50 border-2 border-gray-200 rounded-xl p-6 mb-6">
+            <div class="space-y-3">
+              <div class="flex justify-between items-center">
+                <span class="text-gray-900 font-bold">PRECIO:</span>
+                <span class="text-3xl font-bold text-azul-profundo">{investmentSection.comparison.package.price.replace('€', '')}<span class="text-2xl">€</span></span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-gray-600 font-medium text-sm">VALOR:</span>
+                <span class="text-gray-500 line-through text-2xl">{investmentSection.comparison.separate.total}</span>
+              </div>
+              <div class="border-t-2 border-gray-300 my-2"></div>
+              <div class="flex justify-between items-center">
+                <span class="text-naranja-vibrante font-medium">AHORRAS:</span>
+                <span class="text-2xl font-medium text-naranja-vibrante">{investmentSection.comparison.savings.replace('€', '')}<span class="text-xl">€</span></span>
+              </div>
+            </div>
+          </div>
+
+          {/* Características */}
+          <div class="mb-8">
+            <div class="space-y-3">
+              <div class="flex items-start space-x-2">
+                <svg class="w-5 h-5 text-naranja-vibrante flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                <span class="text-sm text-gray-700">{investmentSection.comparison.separate.webComplete.label}</span>
+              </div>
+              <div class="flex items-start space-x-2">
+                <svg class="w-5 h-5 text-naranja-vibrante flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                <span class="text-sm text-gray-700">{investmentSection.comparison.separate.blogFirst.label}</span>
+              </div>
+              <div class="flex items-start space-x-2">
+                <svg class="w-5 h-5 text-naranja-vibrante flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                <span class="text-sm text-gray-700">Optimización SEO + IA + Conversión</span>
+              </div>
+              <div class="flex items-start space-x-2">
+                <svg class="w-5 h-5 text-naranja-vibrante flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                <span class="text-sm text-gray-700">Entrega en 15 días</span>
+              </div>
+            </div>
+          </div>
+
+          {/* CTA */}
+          <div class="text-center">
+            <a
+              href={investmentSection.ctaLink}
+              class="w-full inline-flex items-center justify-center bg-naranja-vibrante text-white px-8 py-4 rounded-xl text-lg font-bold hover:bg-orange-600 hover:scale-105 transition-all duration-300 shadow-lg uppercase tracking-wide"
+            >
+              {investmentSection.ctaText}
+              <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="py-20 md:py-32 lg:py-40 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-8">
+          {processSection.title}
+        </h2>
+      </div>
+
+      <!-- Lista de pasos estilo enfoque -->
+      <div class="max-w-2xl mx-auto space-y-12">
+        {processSection.steps.map((step, index) => (
+          <div class="text-left">
+            <div class="flex items-start gap-4 mb-3">
+              <div class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center flex-shrink-0">
+                <span class="text-white font-bold text-sm">{step.number}</span>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-xl font-semibold text-gray-900 mb-1">{step.title}</h3>
+                <p class="text-sm text-naranja-vibrante font-medium">{step.duration}</p>
+              </div>
+            </div>
+            <p class="text-lg text-gray-600 leading-relaxed ml-12">{step.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-20 md:py-32 lg:py-40 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4">
+          {testimonialsSection.title}
+        </h2>
+      </div>
+
+      <div class="space-y-12 max-w-3xl mx-auto">
+        {testimonialsSection.testimonials.map((testimonial) => (
+          <div class="border-l-4 border-gray-200 pl-6">
+            <blockquote class="text-lg text-gray-600 leading-relaxed mb-4">
+              "{testimonial.quote}"
+            </blockquote>
+            <cite class="text-gray-900 font-medium">{testimonial.author}</cite>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-20 md:py-32 lg:py-40 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          {faqSection.title}
+        </h2>
+      </div>
+
+      <div class="space-y-4 max-w-3xl mx-auto">
+        {faqSection.questions.map((faq) => (
+          <details class="bg-white rounded-lg border border-gray-200 overflow-hidden group">
+            <summary class="flex justify-between items-center p-6 cursor-pointer">
+              <h3 class="text-lg font-semibold text-gray-900">
+                {faq.question}
+              </h3>
+              <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-6 pb-6">
+              <p class="text-gray-600 leading-relaxed">{faq.answer}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section class="py-20 md:py-32 lg:py-40 bg-black text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 text-center">
+      <h2 class="text-3xl md:text-4xl font-display font-bold mb-4">
+        {finalCtaSection.title}
+      </h2>
+      <p class="text-xl text-gray-300 mb-10">
+        {finalCtaSection.description}
+      </p>
+      <a
+        href={finalCtaSection.ctaLink}
+        class="bg-naranja-vibrante text-white px-8 py-4 rounded-lg text-lg font-body font-bold hover:bg-orange-600 hover:scale-105 transition-all duration-300 inline-block"
+      >
+        {finalCtaSection.ctaText}
+      </a>
+    </div>
+  </section>
+</Layout>

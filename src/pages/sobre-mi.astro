@@ -4,7 +4,7 @@ import { getEntry } from 'astro:content'
 
 let entry, sobreContent
 try {
-  entry = await getEntry('sobre_mi', 'index')
+  entry = await getEntry('sobre-mi', 'index')
   if (entry) {
     sobreContent = entry.data
   }
@@ -17,75 +17,9 @@ const baseUrl = 'https://redactorseo.es'
 // Valores por defecto si no se puede cargar el contenido
 const defaultData = {
   title: "Soy Álvaro",
-  introduction: "Transformo ideas en contenido que posiciona, conecta y convierte. Más de 16 años ayudando a empresas a crecer online.",
-  experienceSection: {
-    title: "Mi experiencia al servicio de tu negocio",
-    subtitle: "Años perfeccionando el arte de crear contenido que realmente funciona",
-    items: [
-      {
-        icon: "🎯",
-        title: "Estrategia SEO",
-        description: "Análisis profundo de keywords, competencia y oportunidades para crear contenido que posicione desde el primer día."
-      },
-      {
-        icon: "✍️",
-        title: "Redacción especializada",
-        description: "Textos que conectan con tu audiencia y transmiten la personalidad única de tu marca con un estilo propio."
-      },
-      {
-        icon: "📈",
-        title: "Resultados medibles",
-        description: "Seguimiento constante de métricas y optimización continua para maximizar el ROI de cada pieza de contenido."
-      },
-      {
-        icon: "🤝",
-        title: "Colaboración estrecha",
-        description: "Trabajo codo a codo contigo para entender tu negocio y crear contenido alineado con tus objetivos."
-      },
-      {
-        icon: "🚀",
-        title: "Proyectos escalables",
-        description: "Estrategias de contenido que crecen con tu negocio y se adaptan a las necesidades del mercado."
-      },
-      {
-        icon: "💡",
-        title: "Innovación constante",
-        description: "Siempre al día con las últimas tendencias en SEO y marketing de contenidos para mantenerte por delante."
-      }
-    ]
-  },
-  valuesSection: {
-    title: "Los principios que guían mi trabajo",
-    subtitle: "Valores que se reflejan en cada proyecto y cada texto que escribo",
-    values: [
-      {
-        title: "Transparencia total",
-        description: "Sin letra pequeña ni promesas vacías. Te explico exactamente qué hago, cómo lo hago y qué resultados puedes esperar."
-      },
-      {
-        title: "Compromiso real",
-        description: "Tu éxito es mi éxito. Me involucro en tu proyecto como si fuera mío y trabajo hasta conseguir los objetivos."
-      },
-      {
-        title: "Calidad sin compromisos",
-        description: "Prefiero hacer menos proyectos pero con la máxima calidad que aceptar cualquier trabajo por volumen."
-      },
-      {
-        title: "Comunicación constante",
-        description: "Informes regulares, feedback continuo y disponibilidad total para resolver cualquier duda o ajuste."
-      }
-    ]
-  },
-  testimonial: {
-    quote: "Álvaro no solo mejoró nuestro posicionamiento, sino que entendió perfectamente nuestro negocio y nos ayudó a comunicar mejor nuestro valor.",
-    author: "María González",
-    role: "CEO, TechStart"
-  },
-  ctaSection: {
-    title: "¿Hablamos de tu proyecto?",
-    description: "Cuéntame qué necesitas y veamos cómo puedo ayudarte a conseguir tus objetivos",
-    buttonText: "Empezar ahora"
-  }
+  subtitle: "Redactor SEO",
+  profileImage: "/alvaro-seo.jpg",
+  storyContent: "Aquí va tu historia..."
 }
 
 const data = sobreContent || defaultData
@@ -97,144 +31,84 @@ const data = sobreContent || defaultData
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Álvaro Pérez",
-      "jobTitle": "Redactor y Copywriter",
-      "description": "Redactor SEO especializado en contenido que posiciona, conecta y convierte. Más de 5 años ayudando a empresas a crecer online.",
+      "jobTitle": "Redactor SEO",
+      "description": "Redactor SEO especializado en contenido que posiciona, conecta y convierte.",
       "url": `${baseUrl}/sobre-mi`,
       "image": `${baseUrl}/alvaro-seo.jpg`,
-      "email": "info@redactorseo.es",
-      "worksFor": {
-        "@type": "ProfessionalService",
-        "name": "Redactor SEO",
-        "url": baseUrl
-      },
-      "knowsAbout": ["SEO", "Redacción Web", "Copywriting", "Content Marketing", "Marketing Digital"],
-      "alumniOf": {
-        "@type": "EducationalOrganization",
-        "name": "Formación en Marketing Digital y SEO"
-      }
+      "email": "info@redactorseo.es"
     })} />
   </Fragment>
-  <!-- Hero Section -->
-  <section class="relative bg-white py-20 lg:py-32 overflow-hidden">
-    <!-- Background Elements -->
-    <div class="absolute inset-0">
-      <div class="absolute top-20 left-20 w-72 h-72 bg-azul-profundo/5 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-20 right-20 w-96 h-96 bg-naranja-vibrante/5 rounded-full blur-3xl"></div>
-    </div>
 
-    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <!-- Content -->
-        <div>
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-            <span class="block text-black">{(data.hero?.title || data.title)?.split(' ')[0] || 'Soy'}</span>
-            <span class="block text-naranja-vibrante">{(data.hero?.title || data.title)?.split(' ')[1] || 'Álvaro'}</span>
+  <!-- Main Content -->
+  <section class="py-20 md:py-32 lg:py-40 bg-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
+      <!-- Header with Image -->
+      <div class="flex flex-col lg:flex-row gap-12 items-center lg:items-start mb-16">
+        <!-- Text Content -->
+        <div class="flex-1 text-center lg:text-left">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
+            {data.title || "Soy Álvaro"}
           </h1>
-
-          <p class="text-xl text-gray-600 mb-8 max-w-lg">
-            {data.hero?.introduction || data.introduction}
-          </p>
-
-          <div class="flex flex-col sm:flex-row gap-4 mb-12">
-            <a href="/contacto" class="bg-naranja-vibrante text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-600 transition-all duration-300 text-center inline-flex items-center justify-center group">
-              Trabajemos juntos
-              <svg class="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-              </svg>
-            </a>
-            <a href="/servicios" class="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg font-medium hover:border-naranja-vibrante hover:text-naranja-vibrante transition-all duration-300 text-center">
-              Ver servicios
-            </a>
-          </div>
-
-          <!-- Métricas -->
-          <div class="grid grid-cols-3 gap-6 pt-8 border-t border-gray-200">
-            <div class="text-center">
-              <div class="text-2xl md:text-3xl font-bold text-black">5+</div>
-              <div class="text-sm text-gray-500 mt-1">Años experiencia</div>
-            </div>
-            <div class="text-center">
-              <div class="text-2xl md:text-3xl font-bold text-black">100+</div>
-              <div class="text-sm text-gray-500 mt-1">Proyectos</div>
-            </div>
-            <div class="text-center">
-              <div class="text-2xl md:text-3xl font-bold text-black">300%</div>
-              <div class="text-sm text-gray-500 mt-1">Crecimiento medio</div>
-            </div>
-          </div>
+          {data.subtitle && (
+            <p class="text-xl md:text-2xl text-gray-600">
+              {data.subtitle}
+            </p>
+          )}
         </div>
 
         <!-- Profile Image -->
-        <div class="flex justify-center lg:justify-end">
-          <div class="relative">
-            <div class="w-80 h-80 md:w-96 md:h-96 relative">
-              <img src={data.hero?.profileImage || "/alvaro-seo.jpg"} alt="Álvaro Pérez - Redactor SEO" class="w-full h-full rounded-lg object-contain" />
-            </div>
-
+        <div class="flex-shrink-0">
+          <div class="w-64 h-64 md:w-80 md:h-80">
+            <img
+              src={data.profileImage || "/alvaro-seo.jpg"}
+              alt="Álvaro Pérez - Redactor SEO"
+              class="w-full h-full rounded-lg object-contain"
+            />
           </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Story Section -->
-  <section class="py-20 bg-gray-50">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold text-black mb-4">
-          {data.storySection?.title ? (
-            <span set:html={data.storySection.title.replace('SEO', '<span class="text-naranja-vibrante">SEO</span>')}></span>
-          ) : (
-            <>Mi historia con el <span class="text-naranja-vibrante">SEO</span></>
-          )}
-        </h2>
-        <p class="text-xl text-gray-600">
-          {data.storySection?.subtitle || "De marketer tradicional a especialista en contenido que convierte"}
-        </p>
-      </div>
+      <!-- Story Content -->
+      <div class="max-w-3xl mx-auto mb-16">
+        {data.storyContent && data.storyContent.split('\n\n').map((block: string) => {
+          // Check if block contains bullet points
+          const lines = block.split('\n');
+          const hasBullets = lines.some(line => line.trim().startsWith('-'));
 
-      <div class="space-y-12">
-        <div class="space-y-8">
-          {data.storyContent && data.storyContent.split('\n\n').map((paragraph: string) => (
-            <p class="text-lg leading-relaxed text-gray-700">{paragraph}</p>
-          ))}
-        </div>
-      </div>
-    </div>
-  </section>
+          if (hasBullets) {
+            // Process as list
+            const listItems = lines
+              .filter(line => line.trim().startsWith('-'))
+              .map(line => line.trim().substring(1).trim());
 
-
-
-  <!-- Testimonial Section -->
-  <section class="py-20 bg-white">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-8">
-        <h2 class="text-3xl font-bold text-black mb-8">
-          Lo que dicen mis <span class="text-naranja-vibrante">clientes</span>
-        </h2>
-      </div>
-
-      <div class="bg-gray-50 rounded-lg p-8 text-center">
-        <svg class="w-10 h-10 text-naranja-vibrante mx-auto mb-6" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
-        </svg>
-        <blockquote class="text-xl md:text-2xl leading-relaxed mb-6 text-gray-700">
-          "{data.testimonial?.quote || 'Álvaro transformó completamente nuestra estrategia de contenido. Los resultados hablan por sí solos.'}"
-        </blockquote>
-        <cite class="text-gray-600 font-medium">
-          {data.testimonial?.author || 'María González'}, {data.testimonial?.role || 'CEO de TechStart'}
-        </cite>
+            return (
+              <ul class="space-y-3 mb-8">
+                {listItems.map((item: string) => (
+                  <li class="flex items-start space-x-3">
+                    <svg class="w-5 h-5 text-naranja-vibrante flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-lg text-gray-700">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            );
+          } else {
+            // Process as paragraph
+            return <p class="text-xl text-gray-600 leading-relaxed mb-8">{block}</p>;
+          }
+        })}
       </div>
     </div>
   </section>
 
   <!-- CTA Section -->
   <section class="py-20 md:py-32 lg:py-40 bg-black text-white">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">
         ¿Listo para hacer crecer tu negocio?
       </h2>
-      <p class="text-xl text-gray-300 mb-10">
+      <p class="text-xl text-gray-300 mb-10 leading-relaxed max-w-3xl mx-auto">
         Cuéntame tu proyecto y te explico cómo puedo ayudarte a conseguir más clientes
       </p>
       <a href="/contacto" class="bg-naranja-vibrante text-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-orange-600 hover:scale-105 transition-all duration-300 inline-block">
@@ -243,25 +117,3 @@ const data = sobreContent || defaultData
     </div>
   </section>
 </Layout>
-
-<style>
-
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0) rotate(0deg);
-    }
-    25% {
-      transform: translateY(-5px) rotate(2deg);
-    }
-    50% {
-      transform: translateY(-10px) rotate(-1deg);
-    }
-    75% {
-      transform: translateY(-5px) rotate(1deg);
-    }
-  }
-
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
-  }
-</style>

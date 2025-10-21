@@ -5,53 +5,57 @@
   },
   "hero": {
     "subtitle": "REDACCIÓN WEB COMPLETA",
-    "titlePart1": "¿La IA acabará con los negocios online?",
-    "titlePart2": "Falso.",
-    "description": "Desaparecerán aquellos negocios que sigan al rebaño. Que usen las mismas herramientas que el resto. Solo tienes un camino: impactar en el corazón de tu audiencia.",
-    "ctaText": "Quiero sobrevivir a la IA",
+    "titlePart1": "Tú sabes que eres bueno",
+    "titlePart2": "Ellos aún no.",
+    "description": "El cliente entra en tu web. Ve fotos, colores y texto genérico. ¿Y qué hace? Irse. Se va a la competencia.",
+    "ctaText": "Actualiza tu mensaje",
     "ctaLink": "/contacto"
   },
   "problemsSection": {
-    "title": "¿Te suena familiar?",
-    "subtitle": "(situaciones que veo constantemente)",
+    "title": "La realidad online:",
+    "subtitle": "(situaciones demasiado frecuentes)",
     "problems": [
       {
-        "problem": "Mi web parece de 2015",
-        "consequence": "Pierdes credibilidad"
+        "problem": "Mi web no atrae clientes",
+        "consequence": "Te falta copywriting. En castellano: persuadir. Guia al cliente para que compre o contrate tus servicios"
       },
       {
         "problem": "Los clientes no entienden qué hago",
-        "consequence": "Te van a la competencia"
+        "consequence": "Te falta claridad en el mensaje. "
       },
       {
         "problem": "Sueno como todos los demás",
-        "consequence": "No destacas"
+        "consequence": "Te falta originalidad. Si no destacas ya sabes lo que pasa, ¿verdad? El cliente corre hacia la competencia"
+      },
+      {
+        "problem": "Perdí tráfico en Google y no me recomiendan las IAs",
+        "consequence": "Te falta estrategia. La redacción SEO ha cambiado. "
       },
       {
         "problem": "Mi página 'Sobre nosotros' es aburrida",
         "consequence": "No generas confianza"
       }
     ],
-    "closingText": "Una web mal redactada es **dinero tirado a la basura**. Los clientes entran, no entienden y se van."
+    "closingText": "Una web mal redactada siempre termina así:\nLos clientes entran, no entienden nada y se van."
   },
   "approachSection": {
-    "title": "Mi método es diferente",
-    "subtitle": "(tres pasos para conectar con tu audiencia)",
+    "title": "Mi método",
+    "subtitle": "Para conectar con tu audiencia",
     "points": [
       {
-        "title": "Primero entiendo tu negocio",
-        "description": "Analizo tu audiencia, competencia y propuesta de valor. **No escribo una línea** hasta que no entiendo exactamente cómo generas dinero."
+        "title": "Entiendo tu negocio",
+        "description": "Analizo tu audiencia y propuesta de valor. No escribo una línea hasta que no entiendo exactamente cómo generas dinero."
       },
       {
         "title": "Escribo para humanos, no para Google",
-        "description": "El SEO viene después. Primero hago que tu mensaje sea **claro, persuasivo y memorable**. Que tus clientes te entiendan al 100%."
+        "description": "El SEO viene después. Primero hago que tu mensaje sea claro y persuasivo. Objetivo: que tus clientes te entiendan al 100% y que pulsen el botón de \"Comprar\" o el de \"Contratar mis servicios\"."
       },
       {
-        "title": "Cada página tiene un objetivo",
-        "description": "No escribo 'páginas bonitas'. Cada texto tiene un propósito específico: **informar, persuadir o convertir**. Todo orientado a resultados."
+        "title": "Decido el objetivo de cada página",
+        "description": "No escribo páginas bonitas. Cada texto tiene un propósito específico: informar, generar confianza o convertir visitas en clientes. Simple."
       }
     ],
-    "conclusion": "Resultado: una web que habla el idioma de tus clientes y los convence para comprarte."
+    "conclusion": "Resultado: una web que habla el mismo idioma de tus clientes"
   },
   "testimonialsSection": {
     "title": "Casos de éxito",
@@ -69,24 +73,31 @@
   "pricingSection": {
     "title": "¿Cuánto cuesta tener una web que vende?",
     "subtitle": "Elige el paquete que mejor se adapte a tu negocio",
+    "commonFeatures": {
+      "title": "Todos los paquetes incluyen:",
+      "features": [
+        "Investigación de tu negocio y competencia",
+        "Textos listos para copiar/pegar en tu web",
+        "2 rondas de revisión hasta aprobación"
+      ],
+      "additionalPage": "Página adicional: +275€"
+    },
     "packages": [
       {
         "name": "Esencial",
         "pages": "3 páginas",
         "price": "950",
         "currency": "€",
-        "priceDescription": "Para empezar con lo básico",
+        "priceDescription": "Para arrancar con lo básico",
         "includes": [
-          "Página de inicio que enganche",
-          "Página 'Sobre nosotros' o Servicios",
-          "Página de contacto optimizada",
-          "Investigación de audiencia",
-          "SEO básico integrado",
-          "1 ronda de revisiones"
+          "3 páginas a elegir",
+          "Optimizado para Google, IAs y conversión",
+          "1 ronda de revisiones",
+          "Entrega en 7 días"
         ],
-        "delivery": "7 días laborables",
+        "delivery": "Entrega en 7 días",
         "format": "Textos listos para copiar y pegar",
-        "ctaText": "Empezar →",
+        "ctaText": "Empezar",
         "ctaLink": "/contacto",
         "isPopular": false
       },
@@ -95,41 +106,34 @@
         "pages": "5 páginas",
         "price": "1.450",
         "currency": "€",
-        "priceDescription": "El más elegido para webs profesionales",
+        "priceDescription": "Para una web profesional completa",
         "includes": [
-          "Página de inicio que enganche y convierta",
-          "Página 'Sobre nosotros' que genere confianza",
-          "Página de servicios/productos que vendan",
-          "Página de contacto optimizada",
-          "Una página adicional (FAQ, testimonios, etc.)",
-          "Investigación previa de audiencia y competencia",
-          "Estrategia SEO básica integrada",
-          "2 rondas de revisiones incluidas"
+          "5 páginas a elegir",
+          "Optimizado para Google, IAs y conversión",
+          "2 rondas de revisiones",
+          "Entrega en 10-15 días"
         ],
-        "delivery": "14 días laborables",
+        "delivery": "Entrega en 10-15 días laborables",
         "format": "Textos listos para copiar y pegar + Documento estratégico",
-        "ctaText": "Renovar mi web →",
+        "ctaText": "Elegir completo",
         "ctaLink": "/contacto",
         "isPopular": true
       },
       {
-        "name": "Premium",
+        "name": "Pro",
         "pages": "8 páginas",
         "price": "1.950",
         "currency": "€",
-        "priceDescription": "Para webs completas y ambiciosas",
+        "priceDescription": "Para proyectos amplios",
         "includes": [
-          "Todo lo del paquete Completo +",
-          "2 páginas adicionales estratégicas",
-          "Análisis competencia en profundidad",
-          "Estrategia SEO avanzada",
-          "Guía de tono de voz de marca",
+          "8 páginas a elegir",
+          "Optimizado para Google, IAs y conversión",
           "3 rondas de revisiones",
-          "Consultoría estratégica incluida"
+          "Entrega en 15-20 días"
         ],
         "delivery": "21 días laborables",
         "format": "Textos + Documento estratégico + Guía de marca",
-        "ctaText": "Ir a lo grande →",
+        "ctaText": "Ir a Pro →",
         "ctaLink": "/contacto",
         "isPopular": false
       }
@@ -139,20 +143,52 @@
     "title": "Preguntas frecuentes",
     "questions": [
       {
-        "question": "¿Trabajas con cualquier sector?",
-        "answer": "Sí, he redactado para consultorías, e-commerce, servicios profesionales, SaaS, inmobiliarias... Lo importante no es el sector, sino **entender cómo funciona tu negocio** y qué necesitan tus clientes."
+        "question": "¿Puedo elegir cualquier tipo de página?",
+        "answer": "Sí. Eliges qué páginas necesitas: home, servicios, sobre nosotros, contacto, FAQ, testimonios, proceso, equipo, o cualquier otra. Si no tienes claro cuáles son prioritarias para tu negocio, te ayudo a decidir según tu objetivo."
       },
       {
-        "question": "1.495€ es mucho dinero para textos",
-        "answer": "No son solo textos. Es una **estrategia completa de comunicación** que incluye investigación, análisis de competencia, arquitectura de contenido y copywriting persuasivo. Una agencia te cobraría 5.000€+ por lo mismo."
+        "question": "¿Qué diferencia hay entre los 3 paquetes además del número de páginas?",
+        "answer": "Ninguna. Los tres incluyen el mismo nivel de calidad, investigación y optimización. La única diferencia real es la cantidad de páginas y el tiempo de entrega."
       },
       {
-        "question": "¿Y si no me gustan los textos?",
-        "answer": "Incluyo **2 rondas de revisiones** para ajustar lo que necesites. Si aún así no estás satisfecho, tienes garantía de devolución del 100% en los primeros 7 días tras la entrega."
+        "question": "¿En qué formato me entregas los textos?",
+        "answer": "Word por defecto. Puedo entregar en otros formatos si me lo indicas. Los textos van listos para copiar/pegar con indicaciones claras de dónde va cada cosa."
       },
       {
-        "question": "No tengo diseñador para implementar",
-        "answer": "Te entrego los textos **listos para copiar y pegar** con indicaciones claras de estructura. Cualquier diseñador o tú mismo podéis implementarlos fácilmente."
+        "question": "¿Incluyes las meta descriptions y títulos SEO?",
+        "answer": "Sí, cada página incluye título y meta descripción optimizadas, además de la estructura de encabezados (H1, H2, H3) pensada para SEO y legibilidad para que sea recomendada por ChatGPT y otras IAs."
+      },
+      {
+        "question": "¿Subes tú los textos a mi web o me los pasas?",
+        "answer": "Te los paso listos para que tú o tu equipo los suba. No subo contenido a WordPress, Wix, Shopify ni otras plataformas (no soy maquetador, soy redactor SEO). "
+      },
+      {
+        "question": "¿Qué necesitas de mí para empezar?",
+        "answer": "Un documento sencillo con esta información: qué vendes, a quién, qué te diferencia de la competencia, qué tono prefieres (formal, cercano, técnico...), y ejemplos de páginas web que te gusten. "
+      },
+      {
+        "question": "¿Puedo ver ejemplos de tu trabajo antes de contratar?",
+        "answer": "Por confidencialidad con clientes, no muestro portfolio público. Pero si necesitas estar 100% seguro antes de contratar, puedo escribirte una página de muestra (300 palabras) sobre tu negocio por 75€. Si luego contratas cualquier paquete, descuento esos 75€ del precio final."
+      },
+      {
+        "question": "¿Por qué tus precios son más altos que otros redactores?",
+        "answer": "Porque no escribo \"contenido\", escribo estrategia de conversión. Hay redactores más baratos (200-400€ por web completa) que copian lo que ya existe o usan plantillas genéricas. Yo investigo tu negocio, competencia y audiencia antes de escribir. \nEs la diferencia entre \"llenar páginas\" y \"vender con palabras\"."
+      },
+      {
+        "question": "Mi web ya existe pero los textos no funcionan, ¿puedes reescribirla?",
+        "answer": "Sí, es uno de mis casos más frecuentes. Cuéntame qué páginas necesitas \n    reescribir y eliges el paquete según cantidad. El proceso es el mismo: \n    investigación + estrategia + redacción optimizada."
+      },
+      {
+        "question": "¿Incluyes investigación de palabras clave o tengo que dártelas?",
+        "answer": "Incluido. Investigo qué busca tu audiencia y qué keywords tienen \n    potencial para tu negocio. Si ya tienes palabras clave definidas \n    (por un SEO o agencia), las uso. Si no, las investigo yo."
+      },
+      {
+        "question": "¿Qué pasa si no me gusta el resultado?",
+        "answer": "Tienes 2 rondas de revisión para ajustar lo que no funcione. \n    En 10 años, nunca he tenido un cliente insatisfecho después de las revisiones \n    porque trabajo el brief inicial a fondo. Si aun así no estás conforme, \n    hablamos y encontramos solución (puede ser reescritura, ajuste de enfoque, \n    o en último caso devolverte parte del pago si realmente fallé)."
+      },
+      {
+        "question": "¿Ofreces garantía de resultados (más ventas, más tráfico)?",
+        "answer": "No. Nadie honesto puede garantizar resultados porque dependen de muchos factores \n    fuera del contenido (tu producto, precio, diseño, tráfico, competencia). \n    Lo que SÍ garantizo: textos estratégicos, optimizados, diferenciados, \n    y revisiones hasta tu aprobación. El resto es trabajo conjunto."
       }
     ]
   },

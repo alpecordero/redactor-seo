@@ -51,15 +51,15 @@ const baseUrl = 'https://redactorseo.es'
 
     <div class="relative px-4 sm:px-6 lg:px-12 xl:px-16 w-full">
       <div class="max-w-3xl mx-auto text-center">
-        <!-- Subtitle -->
+        <!-- H1 principal -->
         <div class="mb-8 lg:mb-12">
-          <p class="text-sm font-medium tracking-wide text-gray-500 uppercase">{hero.subtitle}</p>
+          <h1 class="text-sm font-medium tracking-wide text-gray-500 uppercase">{hero.subtitle}</h1>
         </div>
 
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-8 lg:mb-12">
+        <p class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-8 lg:mb-12">
           {hero.titlePart1}
           <span class="block text-naranja-vibrante mt-4">{hero.titlePart2}</span>
-        </h1>
+        </p>
 
         <p class="text-xl md:text-2xl text-gray-600 leading-relaxed mb-12 lg:mb-16 max-w-2xl mx-auto">
           {hero.description}
@@ -183,7 +183,7 @@ const baseUrl = 'https://redactorseo.es'
       </div>
 
       <!-- Grid de 3 paquetes -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center max-w-6xl mx-auto mb-16">
         {pricingSection.packages.map((pkg, index) => (
           <div class={`bg-white rounded-2xl p-8 transition-all duration-300 ${
             pkg.isPopular
@@ -201,11 +201,11 @@ const baseUrl = 'https://redactorseo.es'
 
             {/* Header del paquete */}
             <div class="text-center mb-6">
-              <h3 class={`text-2xl font-bold mb-2 ${pkg.isPopular ? 'text-naranja-vibrante' : 'text-gray-900'}`}>
+              <h3 class="text-2xl font-bold mb-2 text-azul-profundo">
                 {pkg.name}
               </h3>
               <p class="text-sm text-gray-500 mb-4">{pkg.pages}</p>
-              <div class={`text-5xl font-bold mb-2 ${pkg.isPopular ? 'text-azul-profundo' : 'text-gray-900'}`}>
+              <div class="text-5xl font-bold mb-2 text-azul-profundo">
                 {pkg.price}<span class="text-3xl">{pkg.currency}</span>
               </div>
               <p class="text-sm text-gray-600">{pkg.priceDescription}</p>
@@ -225,14 +225,6 @@ const baseUrl = 'https://redactorseo.es'
               </div>
             </div>
 
-            {/* Info adicional */}
-            <div class="text-center mb-6">
-              <div class="space-y-1 text-xs text-gray-500">
-                <p><strong>ENTREGA:</strong> {pkg.delivery}</p>
-                <p><strong>FORMATO:</strong> {pkg.format}</p>
-              </div>
-            </div>
-
             {/* CTA */}
             <div class="text-center">
               <a
@@ -249,6 +241,32 @@ const baseUrl = 'https://redactorseo.es'
           </div>
         ))}
       </div>
+
+      <!-- Características comunes a todos los paquetes -->
+      {pricingSection.commonFeatures && (
+        <div class="max-w-3xl mx-auto">
+          <div class="bg-gray-50 rounded-2xl p-8 md:p-10 border border-gray-200">
+            <h3 class="text-xl font-bold text-gray-900 mb-6 text-center">
+              {pricingSection.commonFeatures.title}
+            </h3>
+            <div class="space-y-4 mb-8">
+              {pricingSection.commonFeatures.features.map((feature) => (
+                <div class="flex items-start space-x-3">
+                  <svg class="w-5 h-5 text-naranja-vibrante flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                  </svg>
+                  <span class="text-base text-gray-700">{feature}</span>
+                </div>
+              ))}
+            </div>
+            <div class="pt-6 border-t border-gray-300">
+              <p class="text-center text-base text-gray-900 font-semibold">
+                {pricingSection.commonFeatures.additionalPage}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
 
     </div>
   </section>
