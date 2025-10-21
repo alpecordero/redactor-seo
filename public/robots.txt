@@ -1,0 +1,53 @@
+# Robots.txt para redactorseo.es
+# Generado: 2025-01-21
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://redactorseo.es/sitemap-index.xml
+
+# Crawl delay (opcional, descomenta si hay problemas de carga)
+# Crawl-delay: 1
+
+# Bloquear acceso a archivos del CMS (Tina)
+Disallow: /admin/
+
+# Bloquear archivos de sistema
+Disallow: /_astro/
+Disallow: /api/
+
+# Permitir bots principales
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Bots de IA (permitir para indexación en ChatGPT, Perplexity, etc.)
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
