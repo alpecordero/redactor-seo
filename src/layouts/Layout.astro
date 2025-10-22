@@ -54,6 +54,9 @@ const ogImage = image || new URL('/og-image.jpg', Astro.site).href
     <link rel="preload" href="/fonts/inter-600.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/inter-700.woff2" as="font" type="font/woff2" crossorigin />
 
+    <!-- Plausible Analytics with proxy -->
+    <script defer data-api="/api/event" data-domain="redactorseo.es" src="/js/script.js"></script>
+
     <!-- Favicon optimized -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
