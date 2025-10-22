@@ -662,27 +662,44 @@ const baseUrl = 'https://redactorseo.es'
     return Math.floor(1100 + (s1 % 200) + (s2 % 150) + s3);
   }
 
-  document.addEventListener('DOMContentLoaded', async function() {
+  // Usar requestIdleCallback para posponer tareas no críticas fuera de la ruta de render
+  function initCounter() {
     const counterNumber = document.getElementById('counterNumber');
 
-    // Mostrar fallback inmediatamente para evitar bloqueo del render
     if (counterNumber) {
+      // Mostrar fallback inmediatamente (sin fetch)
       const fallbackCount = getFallbackCount();
       counterNumber.textContent = fallbackCount.toLocaleString('es-ES');
 
-      // Actualizar con el valor real de forma asíncrona (no bloqueante)
-      getCurrentCount().then(currentCount => {
-        counterNumber.textContent = currentCount.toLocaleString('es-ES');
-      }).catch(() => {
-        // Ya tenemos el fallback mostrado, no hacer nada
-      });
+      // Posponer fetch real hasta que el navegador esté idle
+      const updateWithRealCount = () => {
+        getCurrentCount().then(currentCount => {
+          counterNumber.textContent = currentCount.toLocaleString('es-ES');
+        }).catch(() => {
+          // Fallback ya mostrado, silenciar error
+        });
+      };
+
+      // Usar requestIdleCallback si está disponible, sino setTimeout
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(updateWithRealCount, { timeout: 2000 });
+      } else {
+        setTimeout(updateWithRealCount, 100);
+      }
     }
 
     const candleButton = document.getElementById('candleButton');
     if (candleButton) {
       candleButton.addEventListener('click', lightCandle);
     }
-  });
+  }
+
+  // Ejecutar cuando el DOM esté listo pero sin bloquear
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCounter);
+  } else {
+    initCounter();
+  }
 
   async function lightCandle() {
     const button = document.getElementById('candleButton');
