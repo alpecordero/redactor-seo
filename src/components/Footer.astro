@@ -20,59 +20,44 @@ const links = {
 
 <footer class="bg-black">
   <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
-    <div class="xl:grid xl:grid-cols-3 xl:gap-8">
-      <div class="space-y-8 xl:col-span-1">
-        <div>
-          <h3 class="text-2xl font-bold text-white">RedactorSEO</h3>
-          <p class="mt-4 text-gray-300 text-base">
-            Impulso tu presencia online con contenido optimizado para SEO que atrae, convierte y posiciona tu marca en los primeros resultados.
-          </p>
-        </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
+      <div>
+        <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Servicios</h3>
+        <ul class="mt-4 space-y-4">
+          {links.servicios.map((item) => (
+            <li>
+              <a href={item.href} class="text-base text-gray-300 hover:text-white transition-colors">
+                {item.name}
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
-      
-      <div class="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
-        <div class="md:grid md:grid-cols-2 md:gap-8">
-          <div>
-            <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Servicios</h3>
-            <ul class="mt-4 space-y-4">
-              {links.servicios.map((item) => (
-                <li>
-                  <a href={item.href} class="text-base text-gray-300 hover:text-white transition-colors">
-                    {item.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
 
-          <div class="mt-12 md:mt-0">
-            <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Empresa</h3>
-            <ul class="mt-4 space-y-4">
-              {links.empresa.map((item) => (
-                <li>
-                  <a href={item.href} class="text-base text-gray-300 hover:text-white transition-colors">
-                    {item.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+      <div>
+        <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Empresa</h3>
+        <ul class="mt-4 space-y-4">
+          {links.empresa.map((item) => (
+            <li>
+              <a href={item.href} class="text-base text-gray-300 hover:text-white transition-colors">
+                {item.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
 
-        <div class="md:grid md:grid-cols-1 md:gap-8">
-          <div>
-            <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Legal</h3>
-            <ul class="mt-4 space-y-4">
-              {links.legal.map((item) => (
-                <li>
-                  <a href={item.href} class="text-base text-gray-300 hover:text-white transition-colors">
-                    {item.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+      <div>
+        <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Legal</h3>
+        <ul class="mt-4 space-y-4">
+          {links.legal.map((item) => (
+            <li>
+              <a href={item.href} class="text-base text-gray-300 hover:text-white transition-colors">
+                {item.name}
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
     
