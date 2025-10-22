@@ -67,9 +67,7 @@ const baseUrl = 'https://redactorseo.es'
       ]
     })} />
   </Fragment>
-  <!-- Hero Section - Minimalista -->
-  <section id="hero" class="relative py-16 md:py-20 lg:py-24 bg-white overflow-hidden">
-    <!-- Subtle background elements -->
+  <section id="hero" class="relative pt-16 pb-8 md:pt-20 md:pb-12 lg:pt-24 lg:pb-16 bg-white overflow-hidden">
     <div class="absolute inset-0">
       <div class="absolute top-20 right-20 w-40 h-40 bg-gray-50 rounded-full -z-10"></div>
       <div class="absolute bottom-32 left-16 w-24 h-24 bg-naranja-vibrante/5 rounded-full -z-10"></div>
@@ -77,12 +75,10 @@ const baseUrl = 'https://redactorseo.es'
 
     <div class="relative px-4 sm:px-6 lg:px-12 xl:px-16 w-full">
       <div class="max-w-4xl mx-auto text-center">
-        <!-- H1 principal -->
         <div class="mb-6 lg:mb-8 mt-4 lg:mt-8">
           <h1 class="text-sm font-medium tracking-wide text-gray-500 uppercase">{hero.subtitle}</h1>
         </div>
 
-        <!-- Google Memorial Message -->
         <div class="mb-8">
           <div class="max-w-4xl mx-auto text-center">
             <p class="font-bold leading-none tracking-tight">
@@ -95,7 +91,6 @@ const baseUrl = 'https://redactorseo.es'
           </div>
         </div>
 
-        <!-- Minimalist CTA with memorial theme -->
         <div class="flex justify-center mb-6 sm:mb-8">
           <button
             id="candleButton"
@@ -107,14 +102,12 @@ const baseUrl = 'https://redactorseo.es'
           </button>
         </div>
 
-        <!-- Counter display -->
         <div class="mb-4 sm:mb-6">
           <p id="candleCounter" class="text-gray-600 text-lg flex items-center justify-center gap-2">
             <span class="candle-emoji">🕯️</span> <span id="counterNumber">0</span> almas han rendido homenaje
           </p>
         </div>
 
-        <!-- Message display area -->
         <div id="candleMessage" class="mb-8 opacity-0 transition-all duration-500 transform translate-y-4">
           <div class="bg-gray-100 border border-gray-200 rounded-lg px-6 py-4 max-w-md mx-auto shadow-sm">
             <p id="messageText" class="text-gray-800 font-medium text-center"></p>
@@ -126,7 +119,6 @@ const baseUrl = 'https://redactorseo.es'
 
   </section>
 
-  <!-- Google Death Section -->
   <section class="py-20 md:py-32 lg:py-40 bg-gray-50 lazy-load">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
       <div class="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 text-center">
@@ -161,7 +153,6 @@ const baseUrl = 'https://redactorseo.es'
     </div>
   </section>
 
-  <!-- Pain Points Section -->
   <section class="py-20 md:py-32 lg:py-40 bg-white">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
       <div class="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 text-center">
@@ -196,11 +187,9 @@ const baseUrl = 'https://redactorseo.es'
     </div>
   </section>
 
-  <!-- Transition Message Section -->
   <section class="py-20 md:py-32 lg:py-40 bg-azul-profundo">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
       <div class="text-center animate-on-scroll opacity-0 translate-y-8 transition-all duration-700">
-        <!-- Quote -->
         <div class="animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-200">
           <blockquote class="text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-relaxed">
             {transitionMessageSection.mainText} <span class="text-naranja-vibrante">{transitionMessageSection.highlightedText}</span>
@@ -213,7 +202,6 @@ const baseUrl = 'https://redactorseo.es'
     </div>
   </section>
 
-  <!-- Bridge Section -->
   <section class="py-20 md:py-32 lg:py-40 bg-gray-50">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
       <div class="text-center animate-on-scroll opacity-0 translate-y-8 transition-all duration-700">
@@ -238,7 +226,6 @@ const baseUrl = 'https://redactorseo.es'
     </div>
   </section>
 
-  <!-- Featured Service Section -->
   <section class="py-20 md:py-32 lg:py-40 bg-white">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
       <div class="text-center mb-12">
@@ -249,7 +236,6 @@ const baseUrl = 'https://redactorseo.es'
           {featuredServiceSection.subtitle}
         </p>
 
-        <!-- Benefits list -->
         <div class="flex justify-center mt-12 mb-16">
           <div class="inline-flex flex-col gap-6">
             <div class="flex items-center gap-4">
@@ -269,23 +255,19 @@ const baseUrl = 'https://redactorseo.es'
       </div>
 
       <div class="max-w-2xl mx-auto">
-        <!-- Pack Card -->
         <div class="border-2 border-gray-200 rounded-2xl p-8 bg-white hover:border-naranja-vibrante transition-all duration-300 hover:shadow-xl relative pt-10">
-          <!-- Pack Label positioned outside/above -->
           <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
             <span class="inline-block bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded-full border border-gray-300">
               {featuredServiceSection.packLabel}
             </span>
           </div>
 
-          <!-- Pack Header -->
           <div class="text-center mb-8 pb-6 border-b-2 border-dashed border-gray-300">
             <h3 class="text-2xl font-bold text-gray-900">
               {featuredServiceSection.packTitle}
             </h3>
           </div>
 
-          <!-- Features with checks -->
           {featuredServiceSection.features && featuredServiceSection.features.length > 0 && (
             <div class="mb-8 flex justify-center">
               <div class="space-y-2 inline-block">
@@ -301,7 +283,6 @@ const baseUrl = 'https://redactorseo.es'
             </div>
           )}
 
-          <!-- Pricing -->
           <div class="mb-8">
             <div class="max-w-sm mx-auto border-2 border-gray-300 rounded-lg p-6 bg-gray-50">
               <div class="space-y-3">
@@ -322,7 +303,6 @@ const baseUrl = 'https://redactorseo.es'
             </div>
           </div>
 
-          <!-- CTA Button -->
           <div class="text-center">
             <a
               href={featuredServiceSection.ctaLink}
@@ -333,7 +313,6 @@ const baseUrl = 'https://redactorseo.es'
           </div>
         </div>
 
-        <!-- Alternative Options -->
         {featuredServiceSection.alternativeLinks && featuredServiceSection.alternativeLinks.length > 0 && (
           <div class="mt-12">
             <div class="text-center">
@@ -353,7 +332,6 @@ const baseUrl = 'https://redactorseo.es'
     </div>
   </section>
 
-  <!-- Testimonials Section -->
   <section class="py-20 md:py-32 lg:py-40 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
       <div class="text-center animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 mb-16">
@@ -406,7 +384,6 @@ const baseUrl = 'https://redactorseo.es'
     </div>
   </section>
 
-  <!-- Stats Section -->
   <section class="py-20 md:py-32 lg:py-40 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
       <div class="text-center animate-on-scroll opacity-0 translate-y-8 transition-all duration-700">
@@ -429,7 +406,6 @@ const baseUrl = 'https://redactorseo.es'
     </div>
   </section>
 
-  <!-- CTA Section -->
   <section class="py-20 md:py-32 lg:py-40 bg-black text-white">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 text-center animate-on-scroll opacity-0 translate-y-8 transition-all duration-700">
       <h2 class="text-3xl md:text-4xl font-display font-bold mb-4">
@@ -599,8 +575,6 @@ const baseUrl = 'https://redactorseo.es'
 </style>
 
 <script define:vars={{ candleMessages: hero.candleMessages }}>
-  // Los mensajes ahora vienen desde el CMS y son editables en Tina
-
   const COUNTER_API = 'https://redactor-seo-counter.dawn-smoke-fbd0.workers.dev';
   let sessionId = sessionStorage.getItem('cs_sid') || null;
 
@@ -662,23 +636,18 @@ const baseUrl = 'https://redactorseo.es'
     return Math.floor(1100 + (s1 % 200) + (s2 % 150) + s3);
   }
 
-  // Lazy load del contador: solo cargar DESPUÉS de window.load + cuando sea visible
   function initCounter() {
     const counterNumber = document.getElementById('counterNumber');
 
     if (counterNumber) {
-      // 1. Mostrar fallback inmediatamente (sin fetch)
       const fallbackCount = getFallbackCount();
       counterNumber.textContent = fallbackCount.toLocaleString('es-ES');
 
-      // 2. Estrategia agresiva: fetch SOLO después de window.load completo
       const loadRealCount = () => {
-        // Usar IntersectionObserver para cargar solo si es visible
         if ('IntersectionObserver' in window) {
           const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
               if (entry.isIntersecting) {
-                // Solo cargar cuando sea visible
                 getCurrentCount().then(currentCount => {
                   counterNumber.textContent = currentCount.toLocaleString('es-ES');
                 }).catch(() => {});
@@ -689,23 +658,19 @@ const baseUrl = 'https://redactorseo.es'
 
           observer.observe(counterNumber);
         } else {
-          // Fallback sin IntersectionObserver
           getCurrentCount().then(currentCount => {
             counterNumber.textContent = currentCount.toLocaleString('es-ES');
           }).catch(() => {});
         }
       };
 
-      // 3. Ejecutar DESPUÉS del evento load (fuera de ruta crítica)
       if (document.readyState === 'complete') {
-        // Ya cargado, usar requestIdleCallback
         if ('requestIdleCallback' in window) {
           requestIdleCallback(loadRealCount, { timeout: 3000 });
         } else {
           setTimeout(loadRealCount, 500);
         }
       } else {
-        // Esperar a window.load
         window.addEventListener('load', () => {
           if ('requestIdleCallback' in window) {
             requestIdleCallback(loadRealCount, { timeout: 3000 });
@@ -722,7 +687,6 @@ const baseUrl = 'https://redactorseo.es'
     }
   }
 
-  // Ejecutar init lo antes posible (solo para fallback + event listener)
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initCounter);
   } else {
