@@ -662,29 +662,57 @@ const baseUrl = 'https://redactorseo.es'
     return Math.floor(1100 + (s1 % 200) + (s2 % 150) + s3);
   }
 
-  // Usar requestIdleCallback para posponer tareas no críticas fuera de la ruta de render
+  // Lazy load del contador: solo cargar DESPUÉS de window.load + cuando sea visible
   function initCounter() {
     const counterNumber = document.getElementById('counterNumber');
 
     if (counterNumber) {
-      // Mostrar fallback inmediatamente (sin fetch)
+      // 1. Mostrar fallback inmediatamente (sin fetch)
       const fallbackCount = getFallbackCount();
       counterNumber.textContent = fallbackCount.toLocaleString('es-ES');
 
-      // Posponer fetch real hasta que el navegador esté idle
-      const updateWithRealCount = () => {
-        getCurrentCount().then(currentCount => {
-          counterNumber.textContent = currentCount.toLocaleString('es-ES');
-        }).catch(() => {
-          // Fallback ya mostrado, silenciar error
-        });
+      // 2. Estrategia agresiva: fetch SOLO después de window.load completo
+      const loadRealCount = () => {
+        // Usar IntersectionObserver para cargar solo si es visible
+        if ('IntersectionObserver' in window) {
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                // Solo cargar cuando sea visible
+                getCurrentCount().then(currentCount => {
+                  counterNumber.textContent = currentCount.toLocaleString('es-ES');
+                }).catch(() => {});
+                observer.disconnect();
+              }
+            });
+          }, { rootMargin: '50px' });
+
+          observer.observe(counterNumber);
+        } else {
+          // Fallback sin IntersectionObserver
+          getCurrentCount().then(currentCount => {
+            counterNumber.textContent = currentCount.toLocaleString('es-ES');
+          }).catch(() => {});
+        }
       };
 
-      // Usar requestIdleCallback si está disponible, sino setTimeout
-      if ('requestIdleCallback' in window) {
-        requestIdleCallback(updateWithRealCount, { timeout: 2000 });
+      // 3. Ejecutar DESPUÉS del evento load (fuera de ruta crítica)
+      if (document.readyState === 'complete') {
+        // Ya cargado, usar requestIdleCallback
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(loadRealCount, { timeout: 3000 });
+        } else {
+          setTimeout(loadRealCount, 500);
+        }
       } else {
-        setTimeout(updateWithRealCount, 100);
+        // Esperar a window.load
+        window.addEventListener('load', () => {
+          if ('requestIdleCallback' in window) {
+            requestIdleCallback(loadRealCount, { timeout: 3000 });
+          } else {
+            setTimeout(loadRealCount, 500);
+          }
+        });
       }
     }
 
@@ -694,7 +722,7 @@ const baseUrl = 'https://redactorseo.es'
     }
   }
 
-  // Ejecutar cuando el DOM esté listo pero sin bloquear
+  // Ejecutar init lo antes posible (solo para fallback + event listener)
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initCounter);
   } else {
