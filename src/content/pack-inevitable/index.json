@@ -4,10 +4,10 @@
     "description": "Redacción web (5 páginas a elegir) + blog estratégico (3 meses). Contenido optimizado para aparecer en Google y en las recomendaciones de ChatGPT."
   },
   "hero": {
-    "subtitle": "PRESENCIA DIGITAL COMPLETA - PACK INEVITABLE",
+    "subtitle": "PACK INEVITABLE",
     "title": "Llevas 3 años diciendo:\n\"Arreglaré la web\" y \"Retomaré el blog\"",
     "description": "Mucho tiempo, ¿no crees? Hoy es el día. O dentro de otros 3 años estarás exactamente en el mismo lugar.",
-    "ctaText": "Consultar ahora",
+    "ctaText": "Transforma tu web ahora",
     "ctaLink": "/contacto"
   },
   "problemSection": {
@@ -70,20 +70,20 @@
     "comparison": {
       "separate": {
         "webComplete": {
-          "label": "Redacción web (5 páginas)",
+          "label": "Redacción web de 5 páginas (Valor 1.450€)",
           "price": "1.399€"
         },
         "blogFirst": {
-          "label": "Blog estratégico (6 artículos para 3 meses)",
+          "label": "Blog estratégico 3 meses (Valor 1.350€)",
           "price": "399€"
         },
         "total": "2.800€"
       },
       "package": {
         "label": "Con este paquete",
-        "price": "2.350€"
+        "price": "1.900€"
       },
-      "savings": "399€"
+      "savings": "900€"
     },
     "ctaText": "Sé inevitable",
     "ctaLink": "/contacto",

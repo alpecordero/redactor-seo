@@ -59,14 +59,14 @@
         "Todo optimizado para Google y recomendaciones de IA"
       ],
       "features": [
-        "Redacción de 5 páginas estratégicas",
-        "Creación de 6 artículos (dos cada mes)",
+        "Redacción de 5 páginas (valor 1.450€)",
+        "Tres meses de blog (valor 450€ x 3 meses = 1.350€)",
         "Plan de contenido trimestral",
         "Entrega en 15 días (web) + entregas mensuales (blog)"
       ],
-      "currentPrice": "2.350€",
+      "currentPrice": "1.900€",
       "originalPrice": "2.800€",
-      "savings": "450€",
+      "savings": "900€",
       "ctaText": "Ver pack",
       "ctaLink": "/pack-inevitable"
     },
