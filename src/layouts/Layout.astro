@@ -46,6 +46,9 @@ const ogImage = image || new URL('/og-image.jpg', Astro.site).href
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
 
+    <!-- Preconnect to external origins for faster network requests -->
+    <link rel="preconnect" href="https://redactor-seo-counter.dawn-smoke-fbd0.workers.dev" crossorigin />
+
     <!-- Preload critical fonts for optimal performance -->
     <link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/inter-600.woff2" as="font" type="font/woff2" crossorigin />
@@ -273,7 +276,6 @@ const ogImage = image || new URL('/og-image.jpg', Astro.site).href
       // Reveal lazy content after DOMContentLoaded with minimal overhead
       document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('.lazy-load').forEach(el=>{el.style.cssText='opacity:1;visibility:visible;transition:opacity .3s ease'})});
     </script>
-
 
     <slot name="head" />
   </head>

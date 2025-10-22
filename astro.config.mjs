@@ -29,7 +29,7 @@ export default defineConfig({
   },
   build: {
     assets: '_astro',
-    inlineStylesheets: 'auto' // Let Astro inline small CSS automatically
+    inlineStylesheets: 'always' // Inline ALL CSS to eliminate render-blocking requests
   },
   compressHTML: true,
   // Prefetch links for faster navigation

@@ -598,25 +598,8 @@ const baseUrl = 'https://redactorseo.es'
 
 </style>
 
-<script>
-  const candleMessages = [
-    "Por gastar 3.000€ en una web cutre",
-    "Porque tú entiendes lo que escribes...",
-    "... pero ellos no",
-    "Por el Kit Digital (no has caído, ¿verdad?)",
-    "Por escribir cosas que nadie lee",
-    "Por no saber qué poner en el \"Sobre nosotros\"",
-    "Por darle las llaves de tu negocio a ChatGPT",
-    "Por pensar que lo anterior era buena idea",
-    "Por tirar el dinero en anuncios",
-    "Por las agencias SEO que no saben hacer SEO",
-    "Por el fin de una era",
-    "Por el inicio de otra",
-    "¿Sabes?",
-    "Ahora importa esto:",
-    "Estrategia. Creatividad. Contenido.",
-    "Resucita tu página web 👇"
-  ];
+<script define:vars={{ candleMessages: hero.candleMessages }}>
+  // Los mensajes ahora vienen desde el CMS y son editables en Tina
 
   const COUNTER_API = 'https://redactor-seo-counter.dawn-smoke-fbd0.workers.dev';
   let sessionId = sessionStorage.getItem('cs_sid') || null;
@@ -681,14 +664,18 @@ const baseUrl = 'https://redactorseo.es'
 
   document.addEventListener('DOMContentLoaded', async function() {
     const counterNumber = document.getElementById('counterNumber');
+
+    // Mostrar fallback inmediatamente para evitar bloqueo del render
     if (counterNumber) {
-      try {
-        const currentCount = await getCurrentCount();
+      const fallbackCount = getFallbackCount();
+      counterNumber.textContent = fallbackCount.toLocaleString('es-ES');
+
+      // Actualizar con el valor real de forma asíncrona (no bloqueante)
+      getCurrentCount().then(currentCount => {
         counterNumber.textContent = currentCount.toLocaleString('es-ES');
-      } catch (error) {
-        const fallbackCount = getFallbackCount();
-        counterNumber.textContent = fallbackCount.toLocaleString('es-ES');
-      }
+      }).catch(() => {
+        // Ya tenemos el fallback mostrado, no hacer nada
+      });
     }
 
     const candleButton = document.getElementById('candleButton');
