@@ -61,7 +61,7 @@
     "title": "Clientes con blogs auténticos:",
     "testimonials": [
       {
-        "quote": "Al principio éramos un poco reacios al cambio. Empezamos con dos artículos al mes, ahora son cuatro y porque Álvaro no quiere ir más rápido. Hemos triplicado el tráfico que llega a la web.",
+        "quote": "Al principio éramos un poco reacios al cambio. Empezamos con dos artículos al mes, ahora son cuatro y porque Álvaro no quiere ir más rápido.",
         "author": "Ana Torres, CEO de Inmobiliaria de lujo"
       },
       {
@@ -158,7 +158,7 @@
     ]
   },
   "finalCtaSection": {
-    "title": "Sé el referente:",
+    "title": "Sé el referente",
     "description": "Es posible que cuando leas esto no tenga disponibilidad para atentes a nuevos clientes. Para comprobarlo, escríbeme pinchando este botón:",
     "ctaText": "Comprueba disponibilidad",
     "ctaLink": "/contacto"
