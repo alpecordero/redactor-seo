@@ -4,11 +4,11 @@
     "description": "¿Publicar por publicar? Eso no funciona. Creo la estrategia completa para tu blog: calendario editorial y artículos que atraen clientes. Sin relleno. Con resultados."
   },
   "hero": {
-    "subtitle": "REDACCIÓN ESTRATÉGICA PARA BLOGS",
+    "subtitle": "SERVICIO REDACCIÓN PARA BLOGS",
     "titlePart1": "¿La gente ya no lee?",
     "titlePart2": "Mentira.",
     "description": "Tu cliente no lee tonterías ni artículos genéricos. Tu cliente ahora consume contenido auténtico. ¿Y sabes cuál es la decisión más inteligente? Dárselo.",
-    "ctaText": "Quiero saber más",
+    "ctaText": "Dale el mejor contenido",
     "ctaLink": "/contacto"
   },
   "problemsSection": {
@@ -25,26 +25,26 @@
       },
       {
         "problem": "Escribimos con ChatGPT",
-        "consequence": "Tu cliente detecta el contenido generado por la IA. Lo huele a kilómetros. Y lo odia"
+        "consequence": "Tu cliente detecta el contenido generado por la IA. Lo huele a kilómetros. Lo odia."
       },
       {
         "problem": "Nuestro sector es demasiado técnico",
         "consequence": "Vuestro sector es el mejor. El menos competido. Donde más podéis ayudar a la audiencia"
       },
       {
-        "problem": "No tenemos presupuesto para el blog",
-        "consequence": "Tenéis oro delante. Cada artículo estará en Internet de por vida. Lo leerán miles de potenciales clientes"
+        "problem": "Tenemos poco presupuesto para el blog",
+        "consequence": "Aumentadlo. Cada artículo estará en Internet de por vida. Llegará a miles de potenciales clientes. La publicidad online nunca conseguirá eso"
       }
     ],
-    "closingText": "Si nadie te lee... Nadie te compra."
+    "closingText": "Nadie te lee. Nadie te compra."
   },
   "approachSection": {
     "title": "Mi estrategia",
     "subtitle": "Simple. Porque lo simple funciona mejor. Tres pasos:",
     "points": [
       {
-        "title": "Investigo antes de escribir",
-        "description": "Comprendo a tu audiencia porque ellos son los que marcan el camino. Esto es esencial y casi nadie lo hace. Antes de escribir hay que pensar y trazar una estrategia coherente.\n"
+        "title": "Dibujo la estrategia",
+        "description": "Comprendo a tu público objetivo y diseño un ecosistema de contenidos para atraerlo. Esto es esencial para que tu blog funcione y casi nadie lo hace. \n"
       },
       {
         "title": "Asigno un objetivo a cada artículo",
@@ -52,36 +52,36 @@
       },
       {
         "title": "Añado una capa de SEO",
-        "description": "Si vendes pisos de lujo en Albacete, te encontrarán los albaceteños con dinero; Si vendes autocaravanas, te leerán los que sueñan con dormir en una lata de sardinas."
+        "description": "Si vendes pisos de lujo en Madrid, te encontrarán los madrileños con dinero; si tienes un negocio de estética, te leerán los que valoran su físico. El tráfico orgánico llega cuando apuntas en la dirección correcta."
       }
     ],
     "conclusion": "Blog estratégico. Fresco. Simple."
   },
   "testimonialsSection": {
-    "title": "Clientes con blogs auténticos",
+    "title": "Clientes con blogs auténticos:",
     "testimonials": [
       {
         "quote": "Al principio éramos un poco reacios al cambio. Empezamos con dos artículos al mes, ahora son cuatro y porque Álvaro no quiere ir más rápido. Hemos triplicado el tráfico que llega a la web.",
         "author": "Ana Torres, CEO de Inmobiliaria de lujo"
       },
       {
-        "quote": "Llevamos cerca de tres años delegando el blog en Álvaro. No podemos medir el ROI exacto de la inversión, pero sabemos que a nuestras clientas les encanta y ayuda. Para nosotros eso es lo más importante. Por cierto, también hemos delegado en él los emails de la newsletter y ahí nuestro ROI se ha disparado. Recomendadísimo!!\n",
-        "author": "Roberto Silva, Gerente de Clínica Dental"
+        "quote": "Llevamos cerca de tres años delegando el blog en Álvaro. No podemos medir el ROI exacto de la inversión, pero sabemos que a nuestras clientas les encanta y ayuda. Para nosotros eso es lo más importante. Por cierto, también hemos delegado en él los emails de la newsletter y ahí nuestro ROI se ha disparado. \n",
+        "author": "Roberto Álvarez, Gerente de Clínica Estética"
       }
     ]
   },
   "pricingSection": {
     "title": "¿Cuánto cuesta convertirse en referente?",
-    "subtitle": "Elige el ritmo que mejor se adapte a tu estrategia",
+    "subtitle": "Dos planes. Dos ritmos.",
     "packages": [
       {
-        "name": "Estándar",
+        "name": "Esencial",
         "articles": "Para empezar a construir autoridad",
         "price": "450",
         "currency": "€/mes",
         "priceDescription": "4 artículos al mes",
         "includes": [
-          "2 artículos extensos (1.200-1.500 palabras)",
+          "2 artículos extensos (1.000-2.000 palabras)",
           "Calendario editorial trimestral",
           "Optimización SEO",
           "1 revisión por artículo"
@@ -99,7 +99,7 @@
         "currency": "€/mes",
         "priceDescription": "4 artículos al mes",
         "includes": [
-          "4 artículos de 1.200-1.500 palabras",
+          "4 artículos extensos (1.000-2.000 palabras)",
           "Calendario editorial trimestral",
           "Optimización SEO",
           "2 revisiones por artículo"
@@ -116,30 +116,50 @@
     "title": "Preguntas frecuentes",
     "questions": [
       {
-        "question": "¿Por qué tengo que contratar cómo mínimo 3 meses?",
+        "question": "¿Por qué tengo que contratar un mínimo de 3 meses?",
         "answer": "Estarías perdiendo tu dinero contratando un solo mes. La estrategia en torno a los blogs corporativos debe ser siempre a medio y largo plazo. "
       },
       {
-        "question": "¿Cuántos artículos mensuales me recomiendas y por qué?",
-        "answer": "Al 80% de mis clientes les recomiendo empezar poco a poco (Pack Esencial). Es mejor un artículo estratégico cada dos semanas y mantenerlo durante dos años, que empezar al doble de velocidad y abandonar por impaciencia. Para ganar autoridad, posicionamiento y convertir todo eso a ventas necesitas mirar al largo plazo. Las empresas que lo tienen claro sí pueden elegir el Pack Autoridad para impulsar su presencia online a mayor velocidad."
+        "question": "¿Cuál es la forma de pago?",
+        "answer": "Pago por transferencia bancaria. Recibirás la factura mes a mes, antes de recibir los contenidos."
       },
       {
-        "question": "¿Qué incluye el servicio de redacción para blogs?",
-        "answer": "No es solo contenido. Es una estrategia completa. Incluye plan de posicionamiento a largo plazo, calendario trimestral de contenido y redacción SEO."
+        "question": "¿Cuándo me envías los artículos para publicar en el blog?",
+        "answer": "Te confirmaré la fecha de entrega exacta en la contratación, así sabrás cuándo podrás publicarlos."
       },
       {
-        "question": "¿Trabajas con cualquier nicho?",
-        "answer": "Trabajo con empresas y profesionales de casi todos los sectores: tecnología, finanzas, salud, deportes, inmobiliario... Consúltame para saber si el tuyo encaja con mi forma de trabajar."
+        "question": "¿Puedo elegir los temas de los artículos?",
+        "answer": "Sí, cada trimestre te enviaré una nueva propuesta de contenidos alineada con tus objetivos. Tendrás varios temas para elegir."
+      },
+      {
+        "question": "Esencial o Autoridad, ¿cuál elijo?",
+        "answer": "Al 80% de mis clientes les recomiendo empezar poco a poco (Pack Esencial). Es mejor publicar un artículo estratégico cada quince días y mantenerlo durante dos años, que empezar al doble de velocidad y abandonar por impaciencia. Para ganar autoridad y posicionamiento debes mirar a largo plazo. Solo a las empresas que lo tienen claro les recomiendo elegir el Pack Autoridad para impulsar su presencia online a mayor velocidad."
+      },
+      {
+        "question": "¿Qué incluye tu servicio de redacción para blogs?",
+        "answer": "No es solo contenido. Es una estrategia completa diseñada a largo plazo y ejecutada trimestralmente. Incluye estrategia, propuesta de contenidos y redacción SEO."
+      },
+      {
+        "question": "¿Trabajas con cualquier sector?",
+        "answer": "Desde 2009 he ayudado a posicionar artículos a más de 150 empresas. Como puedes imaginar, han sido muchos sectores: tecnología, finanzas, salud, deportes, viajes, inmobiliario... Consúltame para saber si el tuyo encaja con mi forma de trabajar."
       },
       {
         "question": "¿Qué pasa después de los 3 meses?",
         "answer": "Tienes dos opciones: continuar conmigo para dominar tu nicho o no continuar."
+      },
+      {
+        "question": "¿Puedo añadir más artículos al mes?",
+        "answer": "Depende de la disponibilidad. Generalmente no acepto más volumen de artículos al mes. Consúltame para comprobarlo."
+      },
+      {
+        "question": "¿Redactas artículos sueltos?",
+        "answer": "No. Solo ofrezco el servicio completo: estrategia a largo plazo + artículos listos para publicar."
       }
     ]
   },
   "finalCtaSection": {
-    "title": "¿Preparado para ser el referente?",
-    "description": "Las reglas están cambiando a una velocidad de locos. Es posible que cuando leas esto no tenga disponibilidad para atentes a nuevos clientes. Para comprobarlo, escríbeme pinchando el botón:",
+    "title": "Sé el referente:",
+    "description": "Es posible que cuando leas esto no tenga disponibilidad para atentes a nuevos clientes. Para comprobarlo, escríbeme pinchando este botón:",
     "ctaText": "Comprueba disponibilidad",
     "ctaLink": "/contacto"
   }

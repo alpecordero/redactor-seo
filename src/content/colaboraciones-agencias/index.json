@@ -7,13 +7,13 @@
     "subtitle": "COLABORACIONES B2B",
     "titlePart1": "Redactor SEO para",
     "titlePart2": "Agencias de Marketing",
-    "description": "Tus clientes esperan textos a la altura de tu agencia. ChatGPT, Gemini o Grok no te los van a dar.",
+    "description": "Los clientes esperan textos a la altura de tu agencia. ChatGPT, Gemini o Grok no te los van a dar.",
     "ctaText": "Solicita colaboración",
     "ctaLink": "/contacto"
   },
   "targetSection": {
     "title": "¿Es para tu agencia?",
-    "intro": "Trabajo con agencias de marketing que buscan copywriting y redacción profesional. Si cumples estos 5 requisitos, quizá podamos colaborar:",
+    "intro": "Trabajo con agencias de marketing que buscan copywriting y redacción web profesional. Si cumples estos 5 requisitos, quizá podamos colaborar:",
     "requirements": [
       {
         "title": "Mínimo 625€ por proyecto",
@@ -46,12 +46,12 @@
   },
   "workflowSection": {
     "title": "¿Cómo trabajo?",
-    "intro": "Tu cliente no tiene por qué saber que delegas la redacción de los textos. Trabajo bajo acuerdos de confidencialidad. El proceso es el siguiente:\n\n",
+    "intro": "Tu cliente no tiene por qué saber que delegas la redacción de los textos. Trabajo bajo acuerdos de confidencialidad. El proceso:\n\n",
     "steps": [
       {
         "number": "1",
-        "title": "Hablamos de tu proyecto",
-        "description": "El estilo del proyecto que tienes entre manos, el número de páginas y todos los detalles que consideres importantes."
+        "title": "Hablamos de tu cliente",
+        "description": "El estilo del proyecto, el número de páginas y todos los detalles que consideres importantes."
       },
       {
         "number": "2",
@@ -61,17 +61,17 @@
       {
         "number": "3",
         "title": "Me envías briefing",
-        "description": "Cliente, sector, keywords objetivo, tono deseado, referencias (si las hay). Cuanto más claro, mejor será el resultado."
+        "description": "Keywords objetivo, tono deseado, referencias (si las hay). Cuanto más claro, mejor será el resultado."
       },
       {
         "number": "4",
         "title": "Programo las entregas escalonadamente",
-        "description": "Recibirás los textos progresivamente para que puedas avanzar en el proyecto. Lo haré en el formato que prefieras, y adaptándome al diseño web, para que solo tengas que copiar y pegar en la web del cliente."
+        "description": "Recibirás los textos progresivamente para que puedas avanzar en el proyecto. Lo haré adaptándome al diseño web para que solo tengas que copiar y pegar en la web del cliente."
       },
       {
         "number": "5",
         "title": "Ajustes",
-        "description": "¿Algo no te convence? Hago los ajustes necesarios en un plazo de 48 horas. Por último, envío la factura final del 50% restante."
+        "description": "¿Algo no te convence? Hago los ajustes necesarios en un plazo de 48 horas. Por último, envío la factura del 50% restante."
       }
     ]
   },
@@ -100,6 +100,7 @@
     "title": "Lo que sí incluye",
     "included": [
       "Redacción SEO optimizada según tu briefing",
+      "Copywriting",
       "Optimización on-page (title, meta description, estructura H1-H3)",
       "Estructura para legibilidad de IAs",
       "Entrega en el formato que necesites"
@@ -152,15 +153,15 @@
       },
       {
         "question": "¿Haces estrategia o solo redacción?",
-        "answer": "Solo redacción. Si tu cliente necesita estrategia completa, revisa mi <a href=\"/redaccion-web\">servicio directo</a>."
+        "answer": "Solo redacción. Si tu cliente necesita estrategia, revisa mi <a href=\"/servicios\">servicios de redacción web</a>."
       },
       {
         "question": "¿Cuántas palabras se incluyen en el precio?",
-        "answer": "El precio base cubre el trabajo profesional de redacción SEO hasta 1.000 palabras."
+        "answer": "El precio base cubre el trabajo de redacción SEO hasta 1.000 palabras."
       },
       {
         "question": "¿Redactas páginas de servicios o landings más amplias?",
-        "answer": "Sí, las agencias suelen demandar la creación de textos optimizados para landings de 1.200 o 1.500 palabras. El precio entre 1.000 y 1.500 palabras es de 185€."
+        "answer": "Sí, con algunas agencias trabajo landings de 1.500 o 2.000 palabras. El precio para páginas extensas es de 185€."
       },
       {
         "question": "¿Por qué una página de contacto cuesta lo mismo que una más amplia?",
@@ -168,7 +169,7 @@
       },
       {
         "question": "¿Por qué tus precios son más altos que los de otros redactores?",
-        "answer": "Aporto experiencia SEO demostrable. Tú mismo puedes comprobar el posicionamiento de esta web desde sus inicios (estable en el top 1 de Google y recomendada por las IAs). Además, cumplo plazos y entrego calidad que no te hace quedar mal con tu cliente. No necesitas supervisar cada palabra ni comprobar si he usado ChatGPT. La profesionalidad te ahorra tiempo y dolores de cabeza."
+        "answer": "Aporto experiencia SEO demostrable. Tú mismo puedes comprobar el posicionamiento de esta web desde sus inicios (estable en el top 1 de Google y recomendada por las IAs). Además, cumplo plazos y entrego calidad que te hace quedar bien con tu cliente. He trabajado para muchas agencias de marketing. No necesitarás supervisar cada palabra ni comprobar si he usado ChatGPT. La profesionalidad te ahorra tiempo y dolores de cabeza."
       },
       {
         "question": "¿Envías factura? ¿El IVA está incluido?",

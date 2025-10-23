@@ -199,9 +199,7 @@ const baseUrl = 'https://redactorseo.es'
 
         <!-- Mensaje final -->
         <div class="mt-16 max-w-3xl mx-auto">
-          <p class="text-xl text-gray-600 leading-relaxed text-center">
-            {approachSection.conclusion}
-          </p>
+          <p class="text-xl text-gray-600 leading-relaxed text-center" set:html={approachSection.conclusion}></p>
         </div>
       </div>
     </div>
@@ -301,6 +299,18 @@ const baseUrl = 'https://redactorseo.es'
         ))}
       </div>
 
+      <!-- Nota sobre IVA -->
+      <div class="text-center my-12">
+        <p class="text-sm text-gray-500">*Los precios no incluyen el IVA</p>
+      </div>
+
+      <!-- Nota sobre página adicional -->
+      <div class="text-center mb-12">
+        <p class="text-lg text-gray-600">
+          {pricingSection.commonFeatures.additionalPage}
+        </p>
+      </div>
+
       <!-- Características comunes a todos los paquetes -->
       {pricingSection.commonFeatures && (
         <div class="max-w-3xl mx-auto">
@@ -308,7 +318,7 @@ const baseUrl = 'https://redactorseo.es'
             <h3 class="text-xl font-bold text-gray-900 mb-6 text-center">
               {pricingSection.commonFeatures.title}
             </h3>
-            <div class="space-y-4 mb-8">
+            <div class="space-y-4">
               {pricingSection.commonFeatures.features.map((feature) => (
                 <div class="flex items-start space-x-3">
                   <svg class="w-5 h-5 text-naranja-vibrante flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
@@ -317,11 +327,6 @@ const baseUrl = 'https://redactorseo.es'
                   <span class="text-base text-gray-700">{feature}</span>
                 </div>
               ))}
-            </div>
-            <div class="pt-6 border-t border-gray-300">
-              <p class="text-center text-base text-gray-900 font-semibold">
-                {pricingSection.commonFeatures.additionalPage}
-              </p>
             </div>
           </div>
         </div>
@@ -350,7 +355,7 @@ const baseUrl = 'https://redactorseo.es'
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </summary>
-            <div class="px-6 pb-6">
+            <div class="px-6 pb-6 faq-content">
               <p class="text-gray-600 leading-relaxed" set:html={faq.answer}></p>
             </div>
           </details>
@@ -380,5 +385,15 @@ const baseUrl = 'https://redactorseo.es'
 <style>
   .prose {
     max-width: none;
+  }
+
+  .faq-content :global(a) {
+    color: #E55A2E;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+  }
+
+  .faq-content :global(a:hover) {
+    color: #ea580c;
   }
 </style>

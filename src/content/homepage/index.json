@@ -24,7 +24,7 @@
   },
   "googleDeathSection": {
     "title": "El SEO que te venden no funciona",
-    "paragraph": "La gente se ha modernizado. Tú igual sigues siendo un clásico y has tecleado \"redactor seo\" en Google. Pero tu audiencia está cambiando. Observa:",
+    "paragraph": "La gente se ha modernizado. Puede que tú estés aquí por escribir \"redactor seo\" en Google y verlo en Top 1. Pero tu audiencia está cambiando. Observa:",
     "checkboxItems": [
       {
         "text": "El 70% de las búsquedas terminan sin clic. Fuente: [SingleGrain.com](https://www.singlegrain.com/digital-marketing-strategy/how-aeo-can-help-with-zero-click-searches-in-2025/)"
@@ -33,7 +33,7 @@
         "text": "El 77% usan ChatGPT como motor de búsqueda. Fuente: [Adobe.com](https://www.adobe.com/express/learn/blog/chatgpt-as-a-search-engine)"
       }
     ],
-    "closingPhrase": "Te buscan en ChatGPT. <strong>Y ahí no sales.</strong>"
+    "closingPhrase": "Preguntan a ChatGPT. <strong>Y la IA no te recomienda</strong>"
   },
   "painPointsSection": {
     "title": "Esto es lo que hace todo el mundo",
@@ -71,8 +71,8 @@
     "title": "Esto es lo que hacen Tesla, Nike y Apple",
     "paragraph": "Invierten seis cifras anuales en contenido de alta calidad. Fuente: [Originality.ai](https://originality.ai/blog/ai-generated-content-dominates-on-some-fortune-500-sites)",
     "secondaryParagraph": "Saben que sus clientes usan la IA por comodidad, pero <strong>eligen a las marcas por la conexión humana</strong>. Por eso, cambiar los textos con ChatGPT es como intentar abrir una Mahou con los dientes. No funcionará y puede tener consecuencias.",
-    "tertiaryParagraph": "Si Apple invierte seis cifras en contenido, ¿cuánto necesitas invertir tú?",
-    "closingParagraph": "Mucho menos. Lo que necesitas es claridad y dos activos."
+    "tertiaryParagraph": "Si Apple invierte seis cifras en contenido, ¿cuánto debes invertir tú?",
+    "closingParagraph": "Mucho menos. Necesitas claridad y dos activos."
   },
   "statsSection": {
     "title": "Experiencia en números",

@@ -13,11 +13,11 @@
     "services": [
       {
         "value": "nuevos-textos-web",
-        "label": "Nuevos textos para mi web"
+        "label": "Redacción web"
       },
       {
         "value": "contenido-recurrente-blog",
-        "label": "Contenido recurrente para mi blog"
+        "label": "Redacción blog"
       },
       {
         "value": "pack-inevitable",

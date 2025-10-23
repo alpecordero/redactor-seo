@@ -248,10 +248,10 @@ const baseUrl = 'https://redactorseo.es'
       <!-- Tarjeta única del pack -->
       <div class="max-w-md mx-auto">
         <div class="bg-white rounded-2xl p-8 border-2 border-naranja-vibrante shadow-2xl relative">
-          {/* Badge "Pack completo" */}
+          {/* Badge "Oferta" */}
           <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
             <span class="bg-naranja-vibrante text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wide">
-              PACK COMPLETO
+              OFERTA
             </span>
           </div>
 
@@ -325,6 +325,11 @@ const baseUrl = 'https://redactorseo.es'
             </a>
           </div>
         </div>
+      </div>
+
+      <!-- Nota sobre IVA -->
+      <div class="text-center mt-12">
+        <p class="text-sm text-gray-500">*Los precios no incluyen el IVA</p>
       </div>
     </div>
   </section>
@@ -400,8 +405,8 @@ const baseUrl = 'https://redactorseo.es'
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </summary>
-            <div class="px-6 pb-6">
-              <p class="text-gray-600 leading-relaxed">{faq.answer}</p>
+            <div class="px-6 pb-6 faq-content">
+              <p class="text-gray-600 leading-relaxed" set:html={faq.answer}></p>
             </div>
           </details>
         ))}
@@ -427,3 +432,15 @@ const baseUrl = 'https://redactorseo.es'
     </div>
   </section>
 </Layout>
+
+<style>
+  .faq-content :global(a) {
+    color: #E55A2E;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+  }
+
+  .faq-content :global(a:hover) {
+    color: #ea580c;
+  }
+</style>
