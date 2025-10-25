@@ -53,7 +53,7 @@ const baseUrl = 'https://redactorseo.es'
           "url": `${baseUrl}/redaccion-blog`,
           "provider": {
             "@type": "ProfessionalService",
-            "name": "Redactor SEO",
+            "name": "Redactor Seo",
             "url": baseUrl
           },
           "areaServed": {
@@ -79,24 +79,14 @@ const baseUrl = 'https://redactorseo.es'
             }
           }))
         },
-        ...testimonialsSection.testimonials.map(testimonial => ({
-          "@type": "Review",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5"
-          },
-          "author": {
-            "@type": "Person",
-            "name": testimonial.name
-          },
-          "reviewBody": testimonial.quote,
-          "itemReviewed": {
-            "@type": "Service",
-            "name": "Servicio de Redacción Estratégica de Blogs SEO",
-            "url": `${baseUrl}/redaccion-blog`
-          }
-        }))
+        {
+          "@type": "Organization",
+          "name": "Redactor Seo",
+          "url": baseUrl,
+          "logo": `${baseUrl}/logo.png`,
+          "sameAs": [],
+          "description": "Redactor SEO profesional especializado en contenido que posiciona en buscadores y convierte visitantes en clientes."
+        }
       ]
     })} />
   </Fragment>

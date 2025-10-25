@@ -32,7 +32,7 @@ const baseUrl = 'https://redactorseo.es'
           "url": baseUrl,
           "mainEntity": {
             "@type": "ProfessionalService",
-            "name": "Redactor SEO",
+            "name": "Redactor Seo",
             "url": baseUrl
           },
           "breadcrumb": {
@@ -47,23 +47,18 @@ const baseUrl = 'https://redactorseo.es'
             ]
           }
         },
-        ...testimonialsSection.testimonials.map(testimonial => ({
-          "@type": "Review",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5"
-          },
-          "author": {
+        {
+          "@type": "Organization",
+          "name": "Redactor Seo",
+          "url": baseUrl,
+          "logo": `${baseUrl}/logo.png`,
+          "sameAs": [],
+          "description": "Redactor SEO profesional especializado en contenido que posiciona en buscadores y convierte visitantes en clientes.",
+          "founder": {
             "@type": "Person",
-            "name": testimonial.name
-          },
-          "reviewBody": testimonial.testimonial,
-          "itemReviewed": {
-            "@type": "ProfessionalService",
-            "@id": `${baseUrl}/#service`
+            "name": "Álvaro Pérez"
           }
-        }))
+        }
       ]
     })} />
   </Fragment>
