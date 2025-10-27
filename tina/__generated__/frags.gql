@@ -96,6 +96,7 @@ fragment HomepageParts on Homepage {
     __typename
     title
     description
+    secondaryDescription
     buttonText
     buttonLink
   }

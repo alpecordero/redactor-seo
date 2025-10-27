@@ -214,6 +214,7 @@ type HomepageTestimonialsSection {
 type HomepageCtaSection {
   title: String!
   description: String!
+  secondaryDescription: String!
   buttonText: String!
   buttonLink: String!
 }
@@ -358,6 +359,7 @@ input HomepageTestimonialsSectionFilter {
 input HomepageCtaSectionFilter {
   title: StringFilter
   description: StringFilter
+  secondaryDescription: StringFilter
   buttonText: StringFilter
   buttonLink: StringFilter
 }
@@ -2020,6 +2022,7 @@ input HomepageTestimonialsSectionMutation {
 input HomepageCtaSectionMutation {
   title: String
   description: String
+  secondaryDescription: String
   buttonText: String
   buttonLink: String
 }

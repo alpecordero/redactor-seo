@@ -9,6 +9,7 @@
     "description": "La familia del SEO no te olvida.",
     "candleMessages": [
       "Por los que siguen poniendo muchas palabras clave",
+      "Por lo que no son recomendados por la IA",
       "Por los que no actualizan su web desde 2015",
       "Por los que escriben en un blog que nadie lee",
       "Por los que usan ChatGPT para reescribir su web",
@@ -33,7 +34,7 @@
         "text": "El 77% usan ChatGPT como motor de búsqueda. Fuente: [Adobe.com](https://www.adobe.com/express/learn/blog/chatgpt-as-a-search-engine)"
       }
     ],
-    "closingPhrase": "Preguntan a ChatGPT. <strong>Y la IA no te recomienda</strong>"
+    "closingPhrase": "Preguntan a ChatGPT <strong>y no te recomienda</strong>"
   },
   "painPointsSection": {
     "title": "Esto es lo que hace todo el mundo",
@@ -105,7 +106,8 @@
     "features": [
       "Redacción web de 5 páginas (Valor: 1.450€)",
       "3 meses de blog estratégico (Valor: 1.350€)",
-      "Optimización SEO + IA + Conversión",
+      "Optimización SEO + Conversión",
+      "Optimización para que te recomiende la IA",
       "Entrega de las páginas: 15 días",
       "Entrega de los artículos: mensual"
     ],
@@ -160,6 +162,7 @@
   "ctaSection": {
     "title": "¿Preparado para impulsar tu negocio?",
     "description": "El mundo está cambiando. La redacción SEO, también.",
+    "secondaryDescription": "Para que te recomiende la IA pincha aquí:",
     "buttonText": "Transforma tu proyecto",
     "buttonLink": "/contacto"
   }

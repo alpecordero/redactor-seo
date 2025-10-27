@@ -99,7 +99,7 @@ const baseUrl = 'https://redactorseo.es'
 
         <div class="mb-4 sm:mb-6">
           <p id="candleCounter" class="text-gray-600 text-lg flex items-center justify-center gap-2">
-            <span class="candle-emoji">🕯️</span> <span id="counterNumber">0</span> almas han rendido homenaje
+            <span class="candle-emoji">🕯️</span> <span id="counterNumber" class="counter-placeholder"></span> almas han rendido homenaje
           </p>
         </div>
 
@@ -406,8 +406,11 @@ const baseUrl = 'https://redactorseo.es'
       <h2 class="text-3xl md:text-4xl font-display font-bold mb-4">
         {ctaSection.title}
       </h2>
-      <p class="text-xl text-gray-300 mb-10">
+      <p class="text-xl text-gray-300 mb-3">
         {ctaSection.description}
+      </p>
+      <p class="text-xl text-gray-300 mb-10">
+        {ctaSection.secondaryDescription}
       </p>
       <a
         href={ctaSection.buttonLink}
@@ -567,6 +570,14 @@ const baseUrl = 'https://redactorseo.es'
       0 0 40px rgba(255, 138, 76, 0.2);
   }
 
+  /* Reserve space for counter to prevent layout shift */
+  .counter-placeholder {
+    display: inline-block;
+    min-width: 3.5rem;
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+  }
+
 </style>
 
 <script define:vars={{ candleMessages: hero.candleMessages }}>
@@ -635,9 +646,8 @@ const baseUrl = 'https://redactorseo.es'
     const counterNumber = document.getElementById('counterNumber');
 
     if (counterNumber) {
-      const fallbackCount = getFallbackCount();
-      counterNumber.textContent = fallbackCount.toLocaleString('es-ES');
-
+      // Don't set fallback - it's already rendered from server
+      // Just load the real count when ready
       const loadRealCount = () => {
         if ('IntersectionObserver' in window) {
           const observer = new IntersectionObserver((entries) => {
@@ -645,7 +655,9 @@ const baseUrl = 'https://redactorseo.es'
               if (entry.isIntersecting) {
                 getCurrentCount().then(currentCount => {
                   counterNumber.textContent = currentCount.toLocaleString('es-ES');
-                }).catch(() => {});
+                }).catch(() => {
+                  // Keep the server-rendered fallback on error
+                });
                 observer.disconnect();
               }
             });
@@ -655,7 +667,9 @@ const baseUrl = 'https://redactorseo.es'
         } else {
           getCurrentCount().then(currentCount => {
             counterNumber.textContent = currentCount.toLocaleString('es-ES');
-          }).catch(() => {});
+          }).catch(() => {
+            // Keep the server-rendered fallback on error
+          });
         }
       };
 

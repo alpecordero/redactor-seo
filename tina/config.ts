@@ -546,8 +546,20 @@ export default defineConfig({
               {
                 type: "string",
                 name: "description",
-                label: "Descripción",
+                label: "Descripción - Primera frase",
                 required: true,
+                ui: {
+                  description: "Primera frase que aparece antes del texto secundario",
+                },
+              },
+              {
+                type: "string",
+                name: "secondaryDescription",
+                label: "Descripción - Segunda frase",
+                required: true,
+                ui: {
+                  description: "Segunda frase que aparece justo encima del botón (ej: 'Para que te recomiende la IA pincha aquí:')",
+                },
               },
               {
                 type: "string",

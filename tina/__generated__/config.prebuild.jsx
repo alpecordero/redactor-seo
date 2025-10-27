@@ -546,8 +546,20 @@ var config_default = defineConfig({
               {
                 type: "string",
                 name: "description",
-                label: "Descripci\xF3n",
-                required: true
+                label: "Descripci\xF3n - Primera frase",
+                required: true,
+                ui: {
+                  description: "Primera frase que aparece antes del texto secundario"
+                }
+              },
+              {
+                type: "string",
+                name: "secondaryDescription",
+                label: "Descripci\xF3n - Segunda frase",
+                required: true,
+                ui: {
+                  description: "Segunda frase que aparece justo encima del bot\xF3n (ej: 'Para que te recomiende la IA pincha aqu\xED:')"
+                }
               },
               {
                 type: "string",
