@@ -15,7 +15,7 @@
   "dependencies": {
     "@astrojs/cloudflare": "^12.6.10",
     "@astrojs/sitemap": "^3.6.0",
-    "@tailwindcss/vite": "^4.1.13",
+    "@tailwindcss/vite": "^4.1.18",
     "@tinacms/cli": "^1.10.2",
     "astro": "^5.13.7",
     "tailwindcss": "^4.1.13",
