@@ -13,11 +13,11 @@
     "tinacms:admin": "tinacms admin"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^12.6.10",
+    "@astrojs/cloudflare": "^12.6.12",
     "@astrojs/sitemap": "^3.6.0",
     "@tailwindcss/vite": "^4.1.13",
     "@tinacms/cli": "^1.10.2",
-    "astro": "^5.13.7",
+    "astro": "^5.16.5",
     "tailwindcss": "^4.1.13",
     "tinacms": "^2.8.2"
   }
